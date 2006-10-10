@@ -25,8 +25,9 @@ include "uninetttopp.php3";
 <p align=center>
 [<a href="#Brukertilgang">Brukertilgang</a>]
 [<a href="#tftp">tftp</a>]
-[<a href="#radius">Dokumentasjon</a>]
+[<a href="#radius">Radius</a>]
 [<a href="#syslog">Syslog</a>]
+[<a href="#nav">NAV</a>]
 [<a href="#netflow">Netflow</a>]
 </p>
 
@@ -36,14 +37,31 @@ include "uninetttopp.php3";
 Dette dokument er myntet på lokalt IKT driftspersonell ved
 høgskole/universitet som er bruker av verktøykassen.
 Verktøykassene er som kjent drevet fra UNINETT. Driftsinstruks
-for UNINETT beredskapsvakt foreligger.
-Her beskriver vi bruken av hver enkelt tjeneste.
-</p>
+for UNINETT beredskapsvakt 
+<a 
+href="http://drift.uninett.no/rutiner/verktoykasser.html">foreligger</a>
+i tillegg.
+</p><p> 
+For å benytte flere av tjenestene beskrevet her kreves naturligvis
+relevant konfigurasjon av nettutstyret. Her viser vi til følgende
+UNINETT fagspesifikasjoner:
 
-<h2><a name="Brukertilgang">Brukertilgang</a></h2>
+<ul>
+<li> <a href="http://wiki.uninett.no/gigacapus/UFS105">
+Anbefalt konfigurasjon for svitsjer i campusnett</a>
+<li> <a href="http://wiki.uninett.no/gigacapus/UFS109">Cisco IOS 
+kokebok</a>
+<li> <a 
+href="http://wiki.uninett.no/gigacapus/UFS110">Alcatel kokebok</a>
+<li> <a href="http://wiki.uninett.no/gigacapus/UFS111">HP 
+kokebok</a>
+</ul>
+
+
+<h2><a name="Brukertilgang">Brukertilgang til verktøykassen</a></h2>
 
 <p>
-For å logge inn på verktøykassen med <tt>ssh</tt> må du ha bruker.
+For å logge inn på verktøykassen med ssh må du ha bruker.
 Du bør være medlem av gruppen <tt>netsys</tt>, da det bl.a. gir 
 filrettigheter under <tt>/tftpboot</tt>. Videre vil du om du kjører
 <tt>/bin/bash</tt> få satt hensiktsmessig <tt>umask</tt> for 
@@ -142,23 +160,12 @@ client 128.39.109.0/26 {
 Det vi angir her at alle svitsjene i området 128.39.109.1-63 tillates
 å snakke radius med verktøykassen gitt at de er konfigurert med
 samme felles-hemmelighet.
-</p><p> 
+</p>
  
  
-For konfigurasjon av nettutstyret, se relevante UFS-dokumenter:
-<ol>
-<li> Cisco: <a href="http://wiki.uninett.no/gigacapusUFS109">UFS109</a>
-<li> Alcatel: <a 
-href="http://wiki.uninett.no/gigacapusUFS110">UFS110</a>
-<li> HP: <a href="http://wiki.uninett.no/gigacapusUFS111">UFS111</a>
-</ol>
-
 <h2><a name="syslog">Syslog</a></h2>
 
 All nettelektronikk bør syslogge til verktøykassa. 
-For konfigurasjon av nettutstyret se relevante UFS-dokumenter
-(Cisco: UFS109, Alcatel: UFS110, HP: UFS111).
- 
 Syslog er satt opp slik at nettelektronikk logger til to filer;
 <pre> 
 /var/log/network.log
@@ -176,6 +183,14 @@ network.log blir ikke tømt, men komprimert og rotert en gang i døgnet.
 Dere kan således velge å søke i syslog i tekstmodus, direkte på
 verktøykassen, eller via NAV.
 </p>
+
+<h2><a name="nav">NAV</a></h2>
+
+NAV er omfattende å forklare. Vi vil her videreutvikle
+dokumentasjonen på 
+<li> <a 
+href="http://metanav.ntnu.no">NAV wiki</a>
+og henviser foreløbig bare til denne.
 
 <h2><a name="netflow">Netflow</a></h2>
 
