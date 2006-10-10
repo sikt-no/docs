@@ -30,24 +30,22 @@ include "uninetttopp.php3";
 [<a href="#netflow">Netflow</a>]
 </p>
 
-<h2>Innledning</h2>
+<h2>Innledning</h2><br>
 <p>
  
 Dette dokument er myntet på lokalt IKT driftspersonell ved
 høgskole/universitet som er bruker av verktøykassen.
-</p><p> 
 Verktøykassene er som kjent drevet fra UNINETT. Driftsinstruks
 for UNINETT beredskapsvakt foreligger.
-</p><p> 
 Her beskriver vi bruken av hver enkelt tjeneste.
 </p>
 
-<h2><a name="Brukertilgang">Brukertilgang</a></h2>
+<h2><a name="Brukertilgang">Brukertilgang</a></h2><br>
 
 <p>
 For å logge inn på verktøykassen med ssh må du ha bruker.
 Du bør være medlem av gruppen netsys, da det bl.a. gir 
-filrettigheter under /tftpboot. Videre vil du om du kjører
+filrettigheter under <tt>/tftpboot</tt>. Videre vil du om du kjører
 /bin/bash få satt hensiktsmessig umask for tftptjenesten.
 </p><p> 
  
@@ -60,13 +58,13 @@ For å legge til ny bruker gjør administrator:
 Merk at det er det samme passord som blir brukt ved 
 radiusantentisering mot nettelektronikken.
 </p><p> 
-Merk også at for uninett driftspersonell så legges _ikke_ inn 
+Merk også at for uninett driftspersonell så legges <i>ikke</i> inn 
 passord. Siden pam benyttes ved ssh innlogging så vil en bruker som 
 ikke har lokalt satt passord hente dette fra radius. Radius er satt
 til å releet til trane hvor passordinformasjon hentes.
 </p>
 
-<h2><a name="tftp">tftp</a></h2>
+<h2><a name="tftp">tftp</a></h2><br>
 
 <p>
 tftptjenesten gjør det mulig å skrive og laste konfigurasjon 
@@ -114,7 +112,7 @@ tftp duger ikke ved oppgradering av store software imager (over 32MB).
 Da kan man benytte ftp, evt scp. Vi håper at man klarer seg med
 scp og har ikke satt opp ftp tjener på verktøykassen per dags dato.
 
-<h2><a name="radius">Radius</a></h2>
+<h2><a name="radius">Radius</a></h2><br>
 
 <p>
 Det er ingen bruker-konfigurasjon forbundet med radius som trengs å
@@ -155,7 +153,7 @@ href="http://wiki.uninett.no/gigacapusUFS110">UFS110</a>
 <li> HP: <a href="http://wiki.uninett.no/gigacapusUFS111">UFS111</a>
 </ol>
 
-<h2><a name="syslog">Syslog</a></h2>
+<h2><a name="syslog">Syslog</a></h2><br>
 
 All nettelektronikk bør syslogge til verktøykassa. 
 For konfigurasjon av nettutstyret se relevante UFS-dokumenter
@@ -179,7 +177,7 @@ Dere kan således velge å søke i syslog i tekstmodus, direkte på
 verktøykassen, eller via NAV.
 </p>
 
-<h2><a name="netflow">Netflow</a></h2>
+<h2><a name="netflow">Netflow</a></h2><br>
 
 Her kommer info...
 
