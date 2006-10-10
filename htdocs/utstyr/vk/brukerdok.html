@@ -39,8 +39,9 @@ høgskole/universitet som er bruker av verktøykassen.
 Verktøykassene er som kjent drevet fra UNINETT. Driftsinstruks
 for UNINETT beredskapsvakt 
 <a 
-href="http://drift.uninett.no/rutiner/verktoykasser.html">foreligger</a>
-i tillegg.
+href="http://drift.uninett.no/rutiner/verktoykasser.html">foreligger
+i tillegg.</a>
+
 </p><p> 
 For å benytte flere av tjenestene beskrevet her kreves naturligvis
 relevant konfigurasjon av nettutstyret. Her viser vi til følgende
@@ -48,13 +49,14 @@ UNINETT fagspesifikasjoner:
 
 <ul>
 <li> <a href="http://wiki.uninett.no/gigacampus/UFS105">
-Anbefalt konfigurasjon for svitsjer i campusnett</a>
+Anbefalt konfigurasjon for svitsjer i campusnett (UFS105)</a>
 <li> <a href="http://wiki.uninett.no/gigacampus/UFS109">Cisco IOS 
-kokebok</a>
+kokebok (UFS109)</a>
 <li> <a 
-href="http://wiki.uninett.no/gigacampus/UFS110">Alcatel kokebok</a>
+href="http://wiki.uninett.no/gigacampus/UFS110">Alcatel kokebok 
+(UFS110)</a>
 <li> <a href="http://wiki.uninett.no/gigacampus/UFS111">HP 
-kokebok</a>
+kokebok (UFS111)</a>
 </ul>
 
 
@@ -100,8 +102,15 @@ konfigurasjon
      for den nye boksen til verktøykassa!
 </ol>
 Tilsvarende kan bokser slettes fra <tt>tftpd.txt</tt> / 
-<tt>tftpd.conf</tt>.
+<tt>tftpd.conf</tt>. 
+<ul>
+<li> Merk: På sikt vil vi søke å automatisere
+denne manuelle vedlikeholdsprosessen ved å bruke NAV som kilde.
+Dvs at du kun legger inn utstyr i NAV, utstyret vil da automagisk
+kunne bruke tftp-tjenesten.
+</ul>
 <p> 
+
 For å bevare historikk på konfigurasjon benyttes RCS. Opplegget
 er automatisert ved at en nattlig cronjobb sjekker inn
 ny versjon av alle filer som er endret. I tillegg rapporteres 
