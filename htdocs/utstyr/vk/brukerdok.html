@@ -30,7 +30,7 @@ include "uninetttopp.php3";
 [<a href="#netflow">Netflow</a>]
 </p>
 
-<h2>Innledning</h2><br>
+<h2>Innledning</h2>
 <p>
  
 Dette dokument er myntet på lokalt IKT driftspersonell ved
@@ -40,13 +40,14 @@ for UNINETT beredskapsvakt foreligger.
 Her beskriver vi bruken av hver enkelt tjeneste.
 </p>
 
-<h2><a name="Brukertilgang">Brukertilgang</a></h2><br>
+<h2><a name="Brukertilgang">Brukertilgang</a></h2>
 
 <p>
-For å logge inn på verktøykassen med ssh må du ha bruker.
-Du bør være medlem av gruppen netsys, da det bl.a. gir 
+For å logge inn på verktøykassen med <tt>ssh</tt> må du ha bruker.
+Du bør være medlem av gruppen <tt>netsys</tt>, da det bl.a. gir 
 filrettigheter under <tt>/tftpboot</tt>. Videre vil du om du kjører
-/bin/bash få satt hensiktsmessig umask for tftptjenesten.
+<tt>/bin/bash</tt> få satt hensiktsmessig <tt>umask</tt> for 
+tftp-tjenesten.
 </p><p> 
  
 For å legge til ny bruker gjør administrator:
@@ -57,44 +58,42 @@ For å legge til ny bruker gjør administrator:
 <p>
 Merk at det er det samme passord som blir brukt ved 
 radiusantentisering mot nettelektronikken.
-</p><p> 
-Merk også at for uninett driftspersonell så legges <i>ikke</i> inn 
-passord. Siden pam benyttes ved ssh innlogging så vil en bruker som 
-ikke har lokalt satt passord hente dette fra radius. Radius er satt
-til å releet til trane hvor passordinformasjon hentes.
 </p>
 
-<h2><a name="tftp">tftp</a></h2><br>
+<h2><a name="tftp">tftp</a></h2>
 
 <p>
-tftptjenesten gjør det mulig å skrive og laste konfigurasjon 
-til/fra nettutstyret. tftp demonen er sikret med en 
-konfigurasjonsfil /tftpboot/tftpd.conf. For å forenkle vedlikehold
-blir denne filen autogenerert etter følgende kjøreregler.
+tftp-tjenesten gjør det mulig å skrive og laste konfigurasjon 
+til/fra nettutstyret. tftp-demonen er sikret med en 
+konfigurasjonsfil <tt>/tftpboot/tftpd.conf</tt>. For å forenkle 
+vedlikehold blir denne filen autogenerert etter følgende kjøreregler.
 </p><p> 
 Når en ny svitsj skal legges til i tftp konfigurasjonen:
 <ol>
-<li> Legg til svitsjen i /tftpboot/tftpd.txt
+<li> Legg til svitsjen i <tt>/tftpboot/tftpd.txt</tt>
      Syntaks sees lett i fila: 
 <pre>
-	 <svitsj>        <ipadresse>
+	 "svitsj"        "ipadresse"
 </pre>
-<li> Etter at fila redigert, kjør make (du står på /tftpboot)
-     Vips, så er ny tftp.conf laget. Du kan da skrive konfigurasjon
+<li> Etter at fila redigert, kjør <tt>make</tt> (du står på 
+<tt>/tftpboot</tt>)
+     Vips, så er ny <tt>tftp.conf</tt> laget. Du kan da skrive 
+konfigurasjon
      for den nye boksen til verktøykassa!
 </ol>
-Tilsvarende kan bokser slettes fra tftpd.txt / tftpd.conf.
+Tilsvarende kan bokser slettes fra <tt>tftpd.txt</tt> / 
+<tt>tftpd.conf</tt>.
 <p> 
 For å bevare historikk på konfigurasjon benyttes RCS. Opplegget
 er automatisert ved at en nattlig cronjobb sjekker inn
 ny versjon av alle filer som er endret. I tillegg rapporteres 
 alle endringene i epost til mottager angitt som
-nocoperators i fila /etc/default/uninett.conf
-(angi nye brukere ved å bruke komma-separert liste, merk filen
-er styrt fra uninett cfengine)
+<tt>nocoperators</tt> i fila <tt>/etc/default/uninett.conf</tt>
+(merk at denne filen er styrt av uninetts cfengine, ta kontakt
+med drift@uninett.no for å få gjort endringer).
 </p><p> 
 I tillegg til konfigurasjoner ligger også aksesslistefiler
-på /tftpboot. Vedlikehold av disse og arbeid med aksesslister
+på <tt>/tftpboot</tt>. Vedlikehold av disse og arbeid med aksesslister
 generelt er ikke omtalt her.
 </p><p> 
 En nattlig cronjobb sørger for å kopiere konfigurasjoner fra
@@ -102,7 +101,7 @@ verktøykassa til trane.uninett.no, som er UNINETTs sentrale
 konfigurasjonsserver. 
 </p><p> 
  
-En siste ting som ligger på /tftpboot er software imager.
+En siste ting som ligger på <tt>/tftpboot</tt> er software imager.
 Disse kan lastes til svitsjer for oppgradering.
 </p>
 
@@ -112,21 +111,22 @@ tftp duger ikke ved oppgradering av store software imager (over 32MB).
 Da kan man benytte ftp, evt scp. Vi håper at man klarer seg med
 scp og har ikke satt opp ftp tjener på verktøykassen per dags dato.
 
-<h2><a name="radius">Radius</a></h2><br>
+<h2><a name="radius">Radius</a></h2>
 
 <p>
 Det er ingen bruker-konfigurasjon forbundet med radius som trengs å
 konfigureres på verktøykassene. Dette fordi radius er satt opp
-til bruke /etc/passwd som sin brukerkilde. Dersom brukerne her
+til bruke <tt>/etc/passwd</tt> som sin brukerkilde. Dersom brukerne her
 har satt passord blir dette benyttet ved radiusautentisering.
-Dersom bruker på nettutstyret logger seg på med @uninett.no 
+Dersom bruker på nettutstyret logger seg på med <tt>@uninett.no</tt> 
 endelse så er radiustjener på verktøykassen satt opp til
 å relee forespørsel til radiustjener på trane.uninett.no. 
 Således kan UNINETT drift komme inn (dersom ønskelig).
 </p><p> 
  
 Det som imidlertid må konfigureres (og dette gjøres i uninetts cfengine 
-oppsett) er /etc/freeradius/clients.conf
+oppsett, ta kontakt med drift@uninett.no) er 
+<tt>/etc/freeradius/clients.conf</tt>
 </p><p> 
  
 Eksempel fra hil;
@@ -153,7 +153,7 @@ href="http://wiki.uninett.no/gigacapusUFS110">UFS110</a>
 <li> HP: <a href="http://wiki.uninett.no/gigacapusUFS111">UFS111</a>
 </ol>
 
-<h2><a name="syslog">Syslog</a></h2><br>
+<h2><a name="syslog">Syslog</a></h2>
 
 All nettelektronikk bør syslogge til verktøykassa. 
 For konfigurasjon av nettutstyret se relevante UFS-dokumenter
@@ -177,7 +177,7 @@ Dere kan således velge å søke i syslog i tekstmodus, direkte på
 verktøykassen, eller via NAV.
 </p>
 
-<h2><a name="netflow">Netflow</a></h2><br>
+<h2><a name="netflow">Netflow</a></h2>
 
 Her kommer info...
 
