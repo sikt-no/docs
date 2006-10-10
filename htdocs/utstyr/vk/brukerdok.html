@@ -35,48 +35,58 @@ include "uninetttopp.php3";
  
 Dette dokument er myntet på lokalt IKT driftspersonell ved
 høgskole/universitet som er bruker av verktøykassen.
- 
+</p><p> 
 Verktøykassene er som kjent drevet fra UNINETT. Driftsinstruks
 for UNINETT beredskapsvakt foreligger.
- 
+</p><p> 
 Her beskriver vi bruken av hver enkelt tjeneste.
-
 </p>
 
 <h2><a name="Brukertilgang">Brukertilgang</a></h2>
 
+<p>
 For å logge inn på verktøykassen med ssh må du ha bruker.
 Du bør være medlem av gruppen netsys, da det bl.a. gir 
 filrettigheter under /tftpboot. Videre vil du om du kjører
 /bin/bash få satt hensiktsmessig umask for tftptjenesten.
+</p><p> 
  
 For å legge til ny bruker gjør administrator:
+<pre>
   useradd -g netops -m -s /bin/bash nyfyr
   passwd nyfyr
- 
+</pre>
+<p>
 Merk at det er det samme passord som blir brukt ved 
 radiusantentisering mot nettelektronikken.
- 
+</p><p> 
 Merk også at for uninett driftspersonell så legges _ikke_ inn 
 passord. Siden pam benyttes ved ssh innlogging så vil en bruker som 
 ikke har lokalt satt passord hente dette fra radius. Radius er satt
 til å releet til trane hvor passordinformasjon hentes.
+</p>
 
 <h2><a name="tftp">tftp</a></h2>
 
+<p>
 tftptjenesten gjør det mulig å skrive og laste konfigurasjon 
 til/fra nettutstyret. tftp demonen er sikret med en 
 konfigurasjonsfil /tftpboot/tftpd.conf. For å forenkle vedlikehold
 blir denne filen autogenerert etter følgende kjøreregler.
- 
+</p><p> 
 Når en ny svitsj skal legges til i tftp konfigurasjonen:
-  1) Legg til svitsjen i /tftpboot/tftpd.txt
-     Syntaks sees lett i fila:  <svitsj>        <ipadresse>
-  2) Etter at fila redigert, kjør make (du står på /tftpboot)
+<ol>
+<li> Legg til svitsjen i /tftpboot/tftpd.txt
+     Syntaks sees lett i fila: 
+<pre>
+	 <svitsj>        <ipadresse>
+</pre>
+<li> Etter at fila redigert, kjør make (du står på /tftpboot)
      Vips, så er ny tftp.conf laget. Du kan da skrive konfigurasjon
      for den nye boksen til verktøykassa!
+</ol>
 Tilsvarende kan bokser slettes fra tftpd.txt / tftpd.conf.
- 
+<p> 
 For å bevare historikk på konfigurasjon benyttes RCS. Opplegget
 er automatisert ved at en nattlig cronjobb sjekker inn
 ny versjon av alle filer som er endret. I tillegg rapporteres 
@@ -84,26 +94,29 @@ alle endringene i epost til mottager angitt som
 nocoperators i fila /etc/default/uninett.conf
 (angi nye brukere ved å bruke komma-separert liste, merk filen
 er styrt fra uninett cfengine)
- 
+</p><p> 
 I tillegg til konfigurasjoner ligger også aksesslistefiler
 på /tftpboot. Vedlikehold av disse og arbeid med aksesslister
 generelt er ikke omtalt her.
- 
+</p><p> 
 En nattlig cronjobb sørger for å kopiere konfigurasjoner fra
 verktøykassa til trane.uninett.no, som er UNINETTs sentrale
 konfigurasjonsserver. 
+</p><p> 
  
 En siste ting som ligger på /tftpboot er software imager.
 Disse kan lastes til svitsjer for oppgradering.
+</p>
 
-ftp
----
+<h4>ftp / scp </h4>
+
 tftp duger ikke ved oppgradering av store software imager (over 32MB).
 Da kan man benytte ftp, evt scp. Vi håper at man klarer seg med
 scp og har ikke satt opp ftp tjener på verktøykassen per dags dato.
 
 <h2><a name="radius">Radius</a></h2>
 
+<p>
 Det er ingen bruker-konfigurasjon forbundet med radius som trengs å
 konfigureres på verktøykassene. Dette fordi radius er satt opp
 til bruke /etc/passwd som sin brukerkilde. Dersom brukerne her
@@ -112,9 +125,11 @@ Dersom bruker på nettutstyret logger seg på med @uninett.no
 endelse så er radiustjener på verktøykassen satt opp til
 å relee forespørsel til radiustjener på trane.uninett.no. 
 Således kan UNINETT drift komme inn (dersom ønskelig).
+</p><p> 
  
 Det som imidlertid må konfigureres (og dette gjøres i uninetts cfengine 
 oppsett) er /etc/freeradius/clients.conf
+</p><p> 
  
 Eksempel fra hil;
 
@@ -124,16 +139,21 @@ client 128.39.109.0/26 {
    shortname    = hil-mngmt
 } 
 </pre>
+</p><p> 
  
 Det vi angir her at alle svitsjene i området 128.39.109.1-63 tillates
 å snakke radius med verktøykassen gitt at de er konfigurert med
 samme felles-hemmelighet.
+</p><p> 
  
  
-For konfigurasjon av nettutstyret se relevante UFS-dokumenter
-(Cisco: 
-<a href="http://wiki.uninett.no/UFS109">UFS109</a>, Alcatel: UFS110, HP: 
-UFS111).
+For konfigurasjon av nettutstyret, se relevante UFS-dokumenter:
+<ol>
+<li> Cisco: <a href="http://wiki.uninett.no/gigacapusUFS109">UFS109</a>
+<li> Alcatel: <a 
+href="http://wiki.uninett.no/gigacapusUFS110">UFS110</a>
+<li> HP: <a href="http://wiki.uninett.no/gigacapusUFS111">UFS111</a>
+</ol>
 
 <h2><a name="syslog">Syslog</a></h2>
 
@@ -142,21 +162,26 @@ For konfigurasjon av nettutstyret se relevante UFS-dokumenter
 (Cisco: UFS109, Alcatel: UFS110, HP: UFS111).
  
 Syslog er satt opp slik at nettelektronikk logger til to filer;
- 
+<pre> 
 /var/log/network.log
 /var/log/network_nav.log
- 
+</pre>
+
 Sistnevnte fil blir igjen lest og tømt av NAV sin bakgrunnsprosess
 logengine som kjører en gang i minuttet. Dataene blir lagt i NAVdb sin 
 syslog-database og er igjen søkbare gjennom NAVs syslog analyzer tool.
+</p><p> 
  
 network.log blir ikke tømt, men komprimert og rotert en gang i døgnet.
+</p><p> 
  
 Dere kan således velge å søke i syslog i tekstmodus, direkte på
 verktøykassen, eller via NAV.
+</p>
 
 <h2><a name="netflow">Netflow</a></h2>
 
+Her kommer info...
 
 <h2><a name="Kontaktpunkt">Kontaktpunkt</a></h2>
 
