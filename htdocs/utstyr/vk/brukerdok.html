@@ -119,18 +119,17 @@ alle endringene i epost til mottager angitt som
 (merk at denne filen er styrt av uninetts cfengine, ta kontakt
 med drift@uninett.no for å få gjort endringer).
 </p><p> 
-I tillegg til konfigurasjoner ligger også aksesslistefiler
+
+<ul>
+<li> I tillegg til konfigurasjoner ligger også aksesslistefiler
 på <tt>/tftpboot</tt>. Vedlikehold av disse og arbeid med aksesslister
 generelt er ikke omtalt her.
-</p><p> 
-En nattlig cronjobb sørger for å kopiere konfigurasjoner fra
+<li> En nattlig cronjobb sørger for å kopiere konfigurasjoner fra
 verktøykassa til trane.uninett.no, som er UNINETTs sentrale
 konfigurasjonsserver. 
-</p><p> 
- 
-En siste ting som ligger på <tt>/tftpboot</tt> er software imager.
+<li> En siste ting som ligger på <tt>/tftpboot</tt> er software imager.
 Disse kan lastes til svitsjer for oppgradering.
-</p>
+</ul>
 
 <h4>ftp / scp </h4>
 
@@ -182,14 +181,13 @@ Syslog er satt opp slik at nettelektronikk logger til to filer;
 </pre>
 
 Sistnevnte fil blir igjen lest og tømt av NAV sin bakgrunnsprosess
-logengine som kjører en gang i minuttet. Dataene blir lagt i NAVdb sin 
+logengine som kjører en gang i minuttet. Dataene blir lagt i NAVdb 
+sin 
 syslog-database og er igjen søkbare gjennom NAVs syslog analyzer tool.
 </p><p> 
  
-network.log blir ikke tømt, men komprimert og rotert en gang i døgnet.
-</p><p> 
- 
-Dere kan således velge å søke i syslog i tekstmodus, direkte på
+<tt>network.log</tt> blir ikke tømt, men komprimert og rotert en gang i 
+døgnet. Dere kan således velge å søke i syslog i tekstmodus, direkte på
 verktøykassen, eller via NAV.
 </p>
 
