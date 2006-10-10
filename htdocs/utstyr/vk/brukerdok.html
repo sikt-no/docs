@@ -4,7 +4,7 @@ $mal_temabilde="teknisk";                     // obligatorisk, se liste på
                                         // www.uninett.no/info/info/bilder.html
 $mal_blurb="";          // valgfritt (tekst under bilde) 
 $mal_kontekst="";                       // valgfritt
-$mal_overskrift="Driftsinstruks Verktøykasser"; // obligatorisk
+$mal_overskrift="Brukerdokumentasjon Verktøykasser"; // obligatorisk
 $mal_modus="";                          // valgfritt
 $mal_tittel="";                         // valgfritt, normalt blir tittelen
                                         // tjener: kontekst - overskrift - modus
@@ -13,7 +13,7 @@ include "uninetttopp.php3";
 
 <dl>
   <dt>REVISJON:
-  <dd>Verktøykasse-drift.2006.01
+  <dd>Verktøykasse-brukerdok.2006.01
   <dt>ANSVARLIG:
   <dd>Vidar.Faltinsen@uninett.no
   <dt>DATO:
@@ -23,92 +23,145 @@ include "uninetttopp.php3";
 <hr>
 
 <p align=center>
-[<a href="#Tjenester">Tjenester</a>]
-[<a href="#Overvåking">Overvåking</a>]
-[<a href="#Dokumentasjon">Dokumentasjon</a>]
-[<a href="#Kontaktpersoner">Kontaktpersoner</a>]
+[<a href="#Brukertilgang">Brukertilgang</a>]
+[<a href="#tftp">tftp</a>]
+[<a href="#radius">Dokumentasjon</a>]
+[<a href="#syslog">Syslog</a>]
+[<a href="#netflow">Netflow</a>]
 </p>
 
 <h2>Innledning</h2>
 <p>
-Verktøykassene er utplassert på en rekke høgskoler og universiteter.
-De benyttes av lokalt IKT personell for drift av egen infrastruktur.
-Vi har driftsansvar. Verktøykassene er en egen klasse i cfengine.
-Dette betnyr at noe configurasjonsendringen gjøres i cfengine, noe
-gjøres lokalt.
+ 
+Dette dokument er myntet på lokalt IKT driftspersonell ved
+høgskole/universitet som er bruker av verktøykassen.
+ 
+Verktøykassene er som kjent drevet fra UNINETT. Driftsinstruks
+for UNINETT beredskapsvakt foreligger.
+ 
+Her beskriver vi bruken av hver enkelt tjeneste.
+
 </p>
 
-<h2><a name="Tjenester">Tjenester</a></h2>
+<h2><a name="Brukertilgang">Brukertilgang</a></h2>
 
-<p>
-En liste over tjenester som skal kjøre er gitt. Alle disse
-overvåkes. Man kan også på boksen sjekke om prosessen kjører
-(ps -edf | grep "tjenesten").
+For å logge inn på verktøykassen med ssh må du ha bruker.
+Du bør være medlem av gruppen netsys, da det bl.a. gir 
+filrettigheter under /tftpboot. Videre vil du om du kjører
+/bin/bash få satt hensiktsmessig umask for tftptjenesten.
  
-For hver tjeneste beskrives start/stop rituale og hvor 
-konfigurasjonsfil er. En nærmere beskrivelse av tjenesten er gitt
-i <brukerdokumantasjon>
+For å legge til ny bruker gjør administrator:
+  useradd -g netops -m -s /bin/bash nyfyr
+  passwd nyfyr
+ 
+Merk at det er det samme passord som blir brukt ved 
+radiusantentisering mot nettelektronikken.
+ 
+Merk også at for uninett driftspersonell så legges _ikke_ inn 
+passord. Siden pam benyttes ved ssh innlogging så vil en bruker som 
+ikke har lokalt satt passord hente dette fra radius. Radius er satt
+til å releet til trane hvor passordinformasjon hentes.
+
+<h2><a name="tftp">tftp</a></h2>
+
+tftptjenesten gjør det mulig å skrive og laste konfigurasjon 
+til/fra nettutstyret. tftp demonen er sikret med en 
+konfigurasjonsfil /tftpboot/tftpd.conf. For å forenkle vedlikehold
+blir denne filen autogenerert etter følgende kjøreregler.
+ 
+Når en ny svitsj skal legges til i tftp konfigurasjonen:
+  1) Legg til svitsjen i /tftpboot/tftpd.txt
+     Syntaks sees lett i fila:  <svitsj>        <ipadresse>
+  2) Etter at fila redigert, kjør make (du står på /tftpboot)
+     Vips, så er ny tftp.conf laget. Du kan da skrive konfigurasjon
+     for den nye boksen til verktøykassa!
+Tilsvarende kan bokser slettes fra tftpd.txt / tftpd.conf.
+ 
+For å bevare historikk på konfigurasjon benyttes RCS. Opplegget
+er automatisert ved at en nattlig cronjobb sjekker inn
+ny versjon av alle filer som er endret. I tillegg rapporteres 
+alle endringene i epost til mottager angitt som
+nocoperators i fila /etc/default/uninett.conf
+(angi nye brukere ved å bruke komma-separert liste, merk filen
+er styrt fra uninett cfengine)
+ 
+I tillegg til konfigurasjoner ligger også aksesslistefiler
+på /tftpboot. Vedlikehold av disse og arbeid med aksesslister
+generelt er ikke omtalt her.
+ 
+En nattlig cronjobb sørger for å kopiere konfigurasjoner fra
+verktøykassa til trane.uninett.no, som er UNINETTs sentrale
+konfigurasjonsserver. 
+ 
+En siste ting som ligger på /tftpboot er software imager.
+Disse kan lastes til svitsjer for oppgradering.
+
+ftp
+---
+tftp duger ikke ved oppgradering av store software imager (over 32MB).
+Da kan man benytte ftp, evt scp. Vi håper at man klarer seg med
+scp og har ikke satt opp ftp tjener på verktøykassen per dags dato.
+
+<h2><a name="radius">Radius</a></h2>
+
+Det er ingen bruker-konfigurasjon forbundet med radius som trengs å
+konfigureres på verktøykassene. Dette fordi radius er satt opp
+til bruke /etc/passwd som sin brukerkilde. Dersom brukerne her
+har satt passord blir dette benyttet ved radiusautentisering.
+Dersom bruker på nettutstyret logger seg på med @uninett.no 
+endelse så er radiustjener på verktøykassen satt opp til
+å relee forespørsel til radiustjener på trane.uninett.no. 
+Således kan UNINETT drift komme inn (dersom ønskelig).
+ 
+Det som imidlertid må konfigureres (og dette gjøres i uninetts cfengine 
+oppsett) er /etc/freeradius/clients.conf
+ 
+Eksempel fra hil;
+
+<pre> 
+client 128.39.109.0/26 {
+   secret       = felles-hemmelighet
+   shortname    = hil-mngmt
+} 
+</pre>
+ 
+Det vi angir her at alle svitsjene i området 128.39.109.1-63 tillates
+å snakke radius med verktøykassen gitt at de er konfigurert med
+samme felles-hemmelighet.
  
  
-<h3>tftpd</h3>
+For konfigurasjon av nettutstyret se relevante UFS-dokumenter
+(Cisco: 
+<a href="http://wiki.uninett.no/UFS109">UFS109</a>, Alcatel: UFS110, HP: 
+UFS111).
+
+<h2><a name="syslog">Syslog</a></h2>
+
+All nettelektronikk bør syslogge til verktøykassa. 
+For konfigurasjon av nettutstyret se relevante UFS-dokumenter
+(Cisco: UFS109, Alcatel: UFS110, HP: UFS111).
+ 
+Syslog er satt opp slik at nettelektronikk logger til to filer;
+ 
+/var/log/network.log
+/var/log/network_nav.log
+ 
+Sistnevnte fil blir igjen lest og tømt av NAV sin bakgrunnsprosess
+logengine som kjører en gang i minuttet. Dataene blir lagt i NAVdb sin 
+syslog-database og er igjen søkbare gjennom NAVs syslog analyzer tool.
+ 
+network.log blir ikke tømt, men komprimert og rotert en gang i døgnet.
+ 
+Dere kan således velge å søke i syslog i tekstmodus, direkte på
+verktøykassen, eller via NAV.
+
+<h2><a name="netflow">Netflow</a></h2>
+
+
+<h2><a name="Kontaktpunkt">Kontaktpunkt</a></h2>
 
 <ul>
-<li>  Demon:       sparkes i gang under /usr/sbin/inetd
-<li> start/stop:  ikke relevant
-<li> configfil:  /etc/inetd.conf
- </ul>
-
-<h3>radiusd</h3>
-
-<ul>
-<li> Demon:       /usr/sbin/freeradius
-<li> start/stop:  /etc/init.d/freeradius {start|stop}
-<li> configfil:  flere, under /etc/freeradius
-</ul>
- 
-<h3>syslog</h3>
-
-<ul>
-<li> Demon:       /sbin/syslog-ng
-<li> start/stop:  /etc/init.d/sysylog-ng {start|stop}
-<li> configfil:  /etc/syslog-ng/syslog-ng.conf
-</ul>
- 
-<h3>NAV</h3>
-
-En rekke bakgrunnsprosesser og cronjobber skal kjøre.
-En status sees med:
-<ul>
-<li> /usr/lib/nav/nav status
-</ul> 
-
-<h3>backupd</h3>
-
-?
-
-</p> 
-
-
-
-<h2><a name="Overvåking">Overvåking</a></h2>
-
-<p>Tjenesten overvåkes med <a
-href="http://storebror.uninett.no/bb/">Hobbit</a>.
-Se verktøykasse-gruppen.</p>
-
-<h2><a name="Dokumentasjon">Dokumentasjon</a></h2>
-
-Det er laget brukerdokumentasjon for verktøykassene HER(peker kommer).
-Se <a href="http://metanav.ntnu.no">NAV wiki</a>
-for mer info om NAV
-</p>
-
-<h2><a name="Kontaktpersoner">Kontaktpersoner</a></h2>
-
-<ul>
-<li>Vidar.Faltinsen@uninett.no</li>
-<li>Vegard.Vesterheim@uninett.no</li>
-<li>Vegard.Antonsen@uninett.no</li>
+<li>drift@uninett.no</li>
 </ul>
 
 <?php
