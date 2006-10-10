@@ -1,0 +1,117 @@
+<?php
+$mal_kontaktadresse="gigacampus@uninett.no"; // obligatorisk
+$mal_temabilde="teknisk";                     // obligatorisk, se liste på
+                                        // www.uninett.no/info/info/bilder.html
+$mal_blurb="";          // valgfritt (tekst under bilde) 
+$mal_kontekst="";                       // valgfritt
+$mal_overskrift="Driftsinstruks Verktøykasser"; // obligatorisk
+$mal_modus="";                          // valgfritt
+$mal_tittel="";                         // valgfritt, normalt blir tittelen
+                                        // tjener: kontekst - overskrift - modus
+include "uninetttopp.php3";
+?>
+
+<dl>
+  <dt>REVISJON:
+  <dd>Verktøykasse-drift.2006.01
+  <dt>ANSVARLIG:
+  <dd>Vidar.Faltinsen@uninett.no
+  <dt>DATO:
+  <dd>2006-10-10
+</dl>
+
+<hr>
+
+<p align=center>
+[<a href="#Tjenester">Tjenester</a>]
+[<a href="#Overvåking">Overvåking</a>]
+[<a href="#Dokumentasjon">Dokumentasjon</a>]
+[<a href="#Kontaktpersoner">Kontaktpersoner</a>]
+</p>
+
+<h2>Innledning</h2>
+<p>
+Verktøykassene er utplassert på en rekke høgskoler og universiteter.
+De benyttes av lokalt IKT personell for drift av egen infrastruktur.
+Vi har driftsansvar. Verktøykassene er en egen klasse i cfengine.
+Dette betnyr at noe configurasjonsendringen gjøres i cfengine, noe
+gjøres lokalt.
+</p>
+
+<h2><a name="Tjenester">Tjenester</a></h2>
+
+<p>
+En liste over tjenester som skal kjøre er gitt. Alle disse
+overvåkes. Man kan også på boksen sjekke om prosessen kjører
+(ps -edf | grep "tjenesten").
+ 
+For hver tjeneste beskrives start/stop rituale og hvor 
+konfigurasjonsfil er. En nærmere beskrivelse av tjenesten er gitt
+i <brukerdokumantasjon>
+ 
+ 
+<h3>tftpd</h3>
+
+<ul>
+<li>  Demon:       sparkes i gang under /usr/sbin/inetd
+<li> start/stop:  ikke relevant
+<li> configfil:  /etc/inetd.conf
+ </ul>
+
+<h3>radiusd</h3>
+
+<ul>
+<li> Demon:       /usr/sbin/freeradius
+<li> start/stop:  /etc/init.d/freeradius {start|stop}
+<li> configfil:  flere, under /etc/freeradius
+</ul>
+ 
+<h3>syslog</h3>
+
+<ul>
+<li> Demon:       /sbin/syslog-ng
+<li> start/stop:  /etc/init.d/sysylog-ng {start|stop}
+<li> configfil:  /etc/syslog-ng/syslog-ng.conf
+</ul>
+ 
+<h3>NAV</h3>
+
+En rekke bakgrunnsprosesser og cronjobber skal kjøre.
+En status sees med:
+<ul>
+<li> /usr/lib/nav/nav status
+</ul> 
+
+<h3>backupd</h3>
+
+?
+
+</p> 
+
+
+
+<h2><a name="Overvåking">Overvåking</a></h2>
+
+<p>Tjenesten overvåkes med <a
+href="http://storebror.uninett.no/bb/">Hobbit</a>.
+Se verktøykasse-gruppen.</p>
+
+<h2><a name="Dokumentasjon">Dokumentasjon</a></h2>
+
+Det er laget brukerdokumentasjon for verktøykassene HER(peker kommer).
+Se <a href="http://metanav.ntnu.no">NAV wiki</a>
+for mer info om NAV
+</p>
+
+<h2><a name="Kontaktpersoner">Kontaktpersoner</a></h2>
+
+<ul>
+<li>Vidar.Faltinsen@uninett.no</li>
+<li>Vegard.Vesterheim@uninett.no</li>
+<li>Vegard.Antonsen@uninett.no</li>
+</ul>
+
+<?php
+include "uninettbunn.php3";
+?>
+
