@@ -82,7 +82,9 @@ For å legge til ny bruker gjør administrator:
 </pre>
 <p>
 Merk at det er det samme passord som blir brukt ved 
-radiusantentisering mot nettelektronikken.
+radiusantentisering mot nettelektronikken. Merk også at det
+kan bli endringer her, ssh nøkler for ssh innlogging er
+svært aktuelt.
 </p>
 
 <h2><a name="tftp">tftp</a></h2>
@@ -205,26 +207,48 @@ href="http://metanav.ntnu.no">NAV wiki</a>. Litt starthjelp:
 
 <ul>
 <li> Web brukeradministrasjon. <br>
-Det er ikke noe dokument som hvordan du opprette brukere og
+Det er ikke noe dokument som beskriver hvordan du oppretter brukere og
 hvordan du tilordner brukere til grupper. Helt kort; dette gjør du
-under tool useradmin. Det er rett frem å legge til brukere, men
+under "tool useradmin". Det er rett frem å legge til brukere, men
 husk st de må tilordnes en eller flere grupper. Merk også at du
-kan redigere privelegiene til en gruppe. Se f.eks på ReadAll gruppen,
-her vil du se at denne har et web access privilegie som gir tilgang
-til en del tools, men ikke alle. Dette gir deg en ide om hvordan
-web_access privilegie kan justeres. Merk ar report_access ikke
+kan redigere privilegiene til en gruppe. Se f.eks på <tt>ReadAll</tt> 
+gruppen,
+her vil du se at denne har et <tt>web_access</tt> privilegie som gir 
+tilgang til en del "tools", men ikke alle. Dette gir deg en ide om 
+hvordan <tt>web_access</tt> privilegie kan justeres. Merk at 
+<tt>report_access</tt> <i>ikke</i>
 er i bruk (det vises i grensesnittet). Merk også at det er mulig
-å bruke ldap som brukerkilde, mer info kommer...
+å bruke ldap som brukerkilde. Du må da gjøre innstillinger i
+fila <tt>/etc/nav/webfront/webfront.conf</tt>. 
+
+<li>Sett velkomstmelding m.m.<br>
+En rekke filer i katalogen <tt>/etc/nav/webfront/</tt> kan redigeres
+for å tilpasse utseende NAVs hovedside.
+
+<li> Sett epost mottager av NAV admin epost <br>
+Dette gjør du ved å sette <tt>ADMIN_MAIL</tt> i 
+<tt>/etc/nav/nav.conf</tt>. I samme fil, sett også <tt>DOMAIN_SUFFIX</tt>
+til ditt domene. 
 
 <li> Seeding the database <br>
 For at NAV skal overvåke må den få "seed" informasjon fra deg.
-Du bruker edit database tool til dette. Følgende dokument
-beskriver det du må tenke på: 
+Du bruker "edit database tool" til dette. Følgende dokument
+beskriver det du må gjøre: 
 <a 
 href="http://metanav.ntnu.no/moin.cgi/SeedEssentials">SeedEssentials</a>. 
 Det anbefales ellers å lese flere dokumenter under menyen
 <a 
 href="http://metanav.ntnu.no/moin.cgi/NAVConfiguration">NAVConfiguration</a>. 
+
+<li> Varslingssystemet Alert Profiles<br>
+Varslingssystemet er nokså omfattende med mange muligheter. For
+å forenkle initielt oppsett er det en rekke predefinerte filtre
+og filtergrupper du kan bruke. Det følger en bruker manual med
+Alert Profiles, den ser du ved å velge "help" fra sidemenyen
+i "Alert Profiles tool". En 
+<a 
+href="http://metanav.ntnu.no/moin.cgi/AlertProfiles">wiki side</a>. 
+gir også en overordnet introduksjon.
 
 </ul>
 
