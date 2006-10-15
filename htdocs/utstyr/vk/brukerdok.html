@@ -201,8 +201,32 @@ verktøykassen, eller via NAV.
 NAV er omfattende å forklare. Vi vil her videreutvikle
 dokumentasjonen på 
  <a 
-href="http://metanav.ntnu.no">NAV wiki</a>
-og henviser foreløbig bare til denne.
+href="http://metanav.ntnu.no">NAV wiki</a>. Litt starthjelp:
+
+<ul>
+<li> Web brukeradministrasjon. <br>
+Det er ikke noe dokument som hvordan du opprette brukere og
+hvordan du tilordner brukere til grupper. Helt kort; dette gjør du
+under tool useradmin. Det er rett frem å legge til brukere, men
+husk st de må tilordnes en eller flere grupper. Merk også at du
+kan redigere privelegiene til en gruppe. Se f.eks på ReadAll gruppen,
+her vil du se at denne har et web access privilegie som gir tilgang
+til en del tools, men ikke alle. Dette gir deg en ide om hvordan
+web_access privilegie kan justeres. Merk ar report_access ikke
+er i bruk (det vises i grensesnittet). Merk også at det er mulig
+å bruke ldap som brukerkilde, mer info kommer...
+
+<li> Seeding the database <br>
+For at NAV skal overvåke må den få "seed" informasjon fra deg.
+Du bruker edit database tool til dette. Følgende dokument
+beskriver det du må tenke på: 
+<a 
+href="http://metanav.ntnu.no/moin.cgi/SeedEssentials">SeedEssentials</a>. 
+Det anbefales ellers å lese flere dokumenter under menyen
+<a 
+href="http://metanav.ntnu.no/moin.cgi/NAVConfiguration">NAVConfiguration</a>. 
+
+</ul>
 
 <h2><a name="netflow">Netflow</a></h2>
 
