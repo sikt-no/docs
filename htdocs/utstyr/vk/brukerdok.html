@@ -113,14 +113,16 @@ Når en ny svitsj skal legges til i tftp konfigurasjonen:
 <li> Legg til svitsjen i <tt>/tftpboot/tftpd.txt</tt>
      Syntaks sees lett i fila: 
 <pre>
-	 "svitsj"        "ipadresse"
+	 "svitsj"        	"ipadresse"
+eks: 	lillehammer-gsw  	128.39.3.44
 </pre>
 <li> Etter at fila redigert, kjør <tt>make</tt> (du står på 
 <tt>/tftpboot</tt>)
      Vips, så er ny <tt>tftp.conf</tt> laget. 
 <li> Du må da opprette den nye filen med <tt>touch "svitsj-confg"</tt>
+(eks: <tt> touch lillehammer-gsw-confg </tt> )
 <li> Nå kan du fra svitsjen skrive konfigurasjonen til verktøykasse
-med <tt>write network</tt>
+med <tt>write network</tt>. 
 </ol>
 Tilsvarende kan bokser slettes fra <tt>tftpd.txt</tt> / 
 <tt>tftpd.conf</tt>. 
@@ -144,7 +146,8 @@ med drift@uninett.no for å få gjort endringer).
 <ul>
 <li> I tillegg til konfigurasjoner ligger også aksesslistefiler
 på <tt>/tftpboot</tt>. Vedlikehold av disse og arbeid med aksesslister
-generelt er ikke omtalt her.
+generelt er ikke omtalt her. Se <tt>README</tt> fil på <tt>/tftpboot</tt>
+for mer info på dette.
 <li> En nattlig cronjobb sørger for å kopiere konfigurasjoner fra
 verktøykassa til trane.uninett.no, som er UNINETTs sentrale
 konfigurasjonsserver. 
