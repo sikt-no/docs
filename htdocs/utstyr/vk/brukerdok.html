@@ -117,9 +117,10 @@ Når en ny svitsj skal legges til i tftp konfigurasjonen:
 </pre>
 <li> Etter at fila redigert, kjør <tt>make</tt> (du står på 
 <tt>/tftpboot</tt>)
-     Vips, så er ny <tt>tftp.conf</tt> laget. Du kan da skrive 
-konfigurasjon
-     for den nye boksen til verktøykassa!
+     Vips, så er ny <tt>tftp.conf</tt> laget. 
+<li> Du må da opprette den nye filen med <tt>touch "svitsj-confg"</tt>
+<li> Nå kan du fra svitsjen skrive konfigurasjonen til verktøykasse
+med <tt>write network</tt>
 </ol>
 Tilsvarende kan bokser slettes fra <tt>tftpd.txt</tt> / 
 <tt>tftpd.conf</tt>. 
