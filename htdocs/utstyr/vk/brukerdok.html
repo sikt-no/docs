@@ -28,7 +28,7 @@ include "uninetttopp.php3";
 [<a href="#radius">Radius</a>]
 [<a href="#syslog">Syslog</a>]
 [<a href="#nav">NAV</a>]
-[<a href="#netflow">Netflow</a>]
+[<a href="#netflow">Netflow/nfsen</a>]
 </p>
 
 <h2>Innledning</h2>
@@ -291,7 +291,7 @@ NAVs ulike bakgrunnsprosesser og cronjobber er aktive.
 </ul>
 </ul>
 
-<h2><a name="netflow">Netflow</a></h2>
+<h2><a name="netflow">Netflow/nfsen</a></h2>
 
 Verktøykassene bruker <a
 href="http://nfsen.sourceforge.net/">nfsen</a> for å prosessere
@@ -301,11 +301,44 @@ netflow tools</a>.
 
 Dette grensesnittet er tilgjengelig via NAV sin toolbox.
 
+<p>
 Nfsen ser ut til å være litt kilen mhp. på å definere nye
 netflow-eksporører ('sources') etter at systemet er startet , så det
 er lurt å ha alle disse klart på forhånd, og legge alle inn før
 systemet startes opp. Dette gjøres ved å redigere
 <kbd>/etc/nfsen/nfsen.conf</kbd> og oppdatere seksjonen som heter <kbd>sources</kbd>.
+</p><p>
+Et lite crash-kurs i bruk av nfsen:
+Mere detaljer står <ahref="http://nfsen.sourceforge.net/">her</a>.
+</p><p>
+Details-fanen:
+Denne fanen gjelder detaljer for flere andre faner.
+<ul>
+<li>Stå i flows, trykke details fane og du ser detaljer for flows
+<li>Tilsvarende for packets og traffic
+</ul>
+
+Hvordan grave i detaljene:
+<ul>Angi tidsperiode
+<li>Endre t_start og t_end (tidsangivelse)
+<li>OBS: trykk enter etter at du angir tid, ikke klikk til nytt felt
+<li>tidspunktet blir avmerket med grønn farge i grafen
+<li>alternativt marker tidspunkt med å klikke i graf  
+<ul>
+<li>Se til at det står select Left mark under grafen og klikk i grafen for start-tidspunkt
+<li>Velg select Right mark under grafen og klikk i grafen for slutt-tidspunkt
+<li>tidspunktet blir avmerket med grønn farge i grafen.
+</ul>
+<li>Angi hvor mange innslag fra loggen som skal være med i resultat(F.eks list first 10 flows)
+</ul>
+
+
+<ul>
+<li>
+<li>
+<ul>
+</ul>
+</ul>
 
 <h2><a name="Kontaktpunkt">Kontaktpunkt</a></h2>
 
