@@ -309,7 +309,7 @@ systemet startes opp. Dette gjøres ved å redigere
 <kbd>/etc/nfsen/nfsen.conf</kbd> og oppdatere seksjonen som heter <kbd>sources</kbd>.
 </p><p>
 Et lite crash-kurs i bruk av nfsen:
-Mere detaljer står <ahref="http://nfsen.sourceforge.net/">her</a>.
+Mere detaljer står på nfsen sine <a href="http://nfsen.sourceforge.net/">hjemmesider</a>.
 </p><p>
 Details-fanen:
 Denne fanen gjelder detaljer for flere andre faner.
@@ -319,24 +319,54 @@ Denne fanen gjelder detaljer for flere andre faner.
 </ul>
 
 Hvordan grave i detaljene:
-<ul>Angi tidsperiode
+<ul>
+<li>Angi tidsperiode
 <li>Endre t_start og t_end (tidsangivelse)
 <li>OBS: trykk enter etter at du angir tid, ikke klikk til nytt felt
 <li>tidspunktet blir avmerket med grønn farge i grafen
 <li>alternativt marker tidspunkt med å klikke i graf  
 <ul>
-<li>Se til at det står select Left mark under grafen og klikk i grafen for start-tidspunkt
-<li>Velg select Right mark under grafen og klikk i grafen for slutt-tidspunkt
+<li>Se til at det står <tt>Select left Mark</tt> under grafen og klikk i grafen for start-tidspunkt
+<li>Velg <tt>Select right Mark</tt> under grafen og klikk i grafen for slutt-tidspunkt
 <li>tidspunktet blir avmerket med grønn farge i grafen.
 </ul>
 <li>Angi hvor mange innslag fra loggen som skal være med i resultat(F.eks list first 10 flows)
 </ul>
 
+Vise top talkers:
+<ul>
+<li>sorter etter flows, packets eller byte
+<li>angi hvor mange talkers du vil ha med
+</ul>
 
+Søk i netflow dataene:
 <ul>
-<li>
-<li>
+<li>tcpdump-aktig filter format
+<li>Eks.:
 <ul>
+<li><tt>host 158.38.x.y</tt> (Filterer ut all trafikk til/fra host 158.38.x.y)
+<li><tt>src host 158.38.w.x and dst host 158.38.y.z</tt>(Filterer ut all trafikk mellom disse to hostene der trafikken kommer fra 158.38.w.x og sendes til 158.38.y.z, src=source, dst=destination)
+<li><tt>proto tcp and src host 158.38.x.y</tt>(Filterer ut all tcp trafikk sendt ifra 158.38.x.y)
+<li><tt>src host 158.38.w.x or host 158.38.y.z</tt>(Filterer ut trafikk fra host 158.38.x.y eller all trafikk til/fra host 158.38.y.z)
+<li><tt>src host 158.38.x.y and src port 22</tt>(Filterer ut all trafikk fra host 158.38.x.y og der trafikken er sendt ifra port 22(ssh))
+<li><tt>src port gt 80 and src port lt 123</tt>(Filterer ut trafikk sendt ifra portene mellom 80 og 123, gt= greater than, lt=less than)
+<li><tt>src port 80 and not host 158.38.x.y</tt>(Filtrerer ut trafikk sendt ifra port 80 og som ikke er sendt til/fra host 158.38.x.y)
+<li><tt>src net 158.38.x.0/24</tt>(Filterer ut trafikk sendt ifra nettet 158.38.x.0/24)
+</ul>
+</ul>
+
+Lage profiler:<br>
+For søk man gjør ofte kan det være lurt å lage egne profiler som har oversikt over denne trafikken. Merk at dette lager egne flow-filer på filsystemet. Dersom du lager en profil som er langt tilbake i tid, så kan det ta lang tid for nfsen å lage grunnlagsdata for hele perioden.
+<ul>
+<li><tt>Selected profile</tt> står øverst i høyre hjørne.
+<li>Normalt vises selcted profile "live"
+<li>Velg <tt>New profile</tt>
+<ul>
+<li>lag en profil som plukker ut all trafikk av en gitt type, basert på filtre du definerer.
+<li>Navngi denne rapporten.
+<li>Velg en kilde
+<li>Basert på hvor mye data som skal prosesseres tar det en hvis tid å prosessere og lage denne profilen
+<li>Vis profilen etterpå ved å velge denne fra selected profile
 </ul>
 </ul>
 
