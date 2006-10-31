@@ -307,13 +307,14 @@ netflow-eksporører ('sources') etter at systemet er startet , så det
 er lurt å ha alle disse klart på forhånd, og legge alle inn før
 systemet startes opp. Dette gjøres ved å redigere
 <kbd>/etc/nfsen/nfsen.conf</kbd> og oppdatere seksjonen som heter <kbd>sources</kbd>.
+UNINETT vil være behjelpelig med å legge til nye kilder dersom det er nødvendig.
 </p><p>
-Et lite crash-kurs i bruk av nfsen:
-Mere detaljer står på nfsen sine <a href="http://nfsen.sourceforge.net/">hjemmesider</a>.
+
+Mere inngående detaljer angående bruk av nfsen står på <a href="http://nfsen.sourceforge.net/">nfsen</a> sine hjemmesider.
 </p><p>
 Details-fanen:
-Denne fanen gjelder detaljer for flere andre faner.
 <ul>
+<li>Denne fanen gjelder detaljer for flere andre faner.
 <li>Stå i flows, trykke details fane og du ser detaljer for flows
 <li>Tilsvarende for packets og traffic
 </ul>
@@ -345,18 +346,18 @@ Søk i netflow dataene:
 <li>Eks.:
 <ul>
 <li><tt>host 158.38.x.y</tt> (Filterer ut all trafikk til/fra host 158.38.x.y)
-<li><tt>src host 158.38.w.x and dst host 158.38.y.z</tt>(Filterer ut all trafikk mellom disse to hostene der trafikken kommer fra 158.38.w.x og sendes til 158.38.y.z, src=source, dst=destination)
-<li><tt>proto tcp and src host 158.38.x.y</tt>(Filterer ut all tcp trafikk sendt ifra 158.38.x.y)
-<li><tt>src host 158.38.w.x or host 158.38.y.z</tt>(Filterer ut trafikk fra host 158.38.x.y eller all trafikk til/fra host 158.38.y.z)
-<li><tt>src host 158.38.x.y and src port 22</tt>(Filterer ut all trafikk fra host 158.38.x.y og der trafikken er sendt ifra port 22(ssh))
-<li><tt>src port gt 80 and src port lt 123</tt>(Filterer ut trafikk sendt ifra portene mellom 80 og 123, gt= greater than, lt=less than)
-<li><tt>src port 80 and not host 158.38.x.y</tt>(Filtrerer ut trafikk sendt ifra port 80 og som ikke er sendt til/fra host 158.38.x.y)
-<li><tt>src net 158.38.x.0/24</tt>(Filterer ut trafikk sendt ifra nettet 158.38.x.0/24)
+<li><tt>src host 158.38.w.x and dst host 158.38.y.z</tt> (Filterer ut all trafikk mellom disse to hostene der trafikken kommer fra 158.38.w.x og sendes til 158.38.y.z, src=source, dst=destination)
+<li><tt>proto tcp and src host 158.38.x.y</tt> (Filterer ut all tcp trafikk sendt ifra 158.38.x.y)
+<li><tt>src host 158.38.w.x or host 158.38.y.z</tt> (Filterer ut trafikk fra host 158.38.x.y eller all trafikk til/fra host 158.38.y.z)
+<li><tt>src host 158.38.x.y and src port 22</tt> (Filterer ut all trafikk fra host 158.38.x.y og der trafikken er sendt ifra port 22(ssh))
+<li><tt>src port gt 80 and src port lt 123</tt> (Filterer ut trafikk sendt ifra portene mellom 80 og 123, gt= greater than, lt=less than)
+<li><tt>src port 80 and not host 158.38.x.y</tt> (Filtrerer ut trafikk sendt ifra port 80 og som ikke er sendt til/fra host 158.38.x.y)
+<li><tt>src net 158.38.x.0/24</tt> (Filterer ut trafikk sendt ifra nettet 158.38.x.0/24)
 </ul>
 </ul>
 
 Lage profiler:<br>
-For søk man gjør ofte kan det være lurt å lage egne profiler som har oversikt over denne trafikken. Merk at dette lager egne flow-filer på filsystemet. Dersom du lager en profil som er langt tilbake i tid, så kan det ta lang tid for nfsen å lage grunnlagsdata for hele perioden.
+For søk man gjør ofte kan det være lurt å lage egne profiler som har oversikt over denne trafikken. Merk at dette lager egne flow-filer på filsystemet (som også tar plass). Dersom du lager en profil som er langt tilbake i tid, så kan det ta lang tid for nfsen å lage grunnlagsdata for hele perioden.
 <ul>
 <li><tt>Selected profile</tt> står øverst i høyre hjørne.
 <li>Normalt vises selcted profile "live"
