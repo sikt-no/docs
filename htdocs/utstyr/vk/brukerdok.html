@@ -69,7 +69,7 @@ Følgende lenke</a> gir en oversikt per plattform.
 
 <p>
 For å logge inn på verktøykassen med ssh må du ha bruker.
-Du bør være medlem av gruppen <tt>netsys</tt>, da det bl.a. gir 
+Du bør være medlem av gruppen <tt>netops</tt>, da det bl.a. gir 
 filrettigheter under <tt>/tftpboot</tt>. Videre vil du om du kjører
 <tt>/bin/bash</tt> få satt hensiktsmessig <tt>umask</tt> for 
 tftp-tjenesten.
@@ -77,8 +77,8 @@ tftp-tjenesten.
  
 For å legge til ny bruker gjør administrator:
 <pre>
-  useradd -g netops -m -s /bin/bash nyfyr
-  passwd nyfyr
+  useradd -g netops -m -s /bin/bash &lt;nyfyr&gt;
+  passwd &lt;nyfyr&gt;
 </pre>
 <p>
 Merk at det er det samme passord som blir brukt ved 
@@ -89,16 +89,39 @@ svært aktuelt.
 
 <p>Alle brukere som er i gruppe <kbd>netops</kbd> gis (via sudo)
 tilgang til å gjøre noen kommandoer som normalt trenger
-root-tilgang. Dette inkluderer kommandoene:</p>
+root-tilgang. For å se hvilke sudo-muligheter man har kan man kjøre
+kommandoen:
+
+<pre>
+  sudo -l
+</pre>
+
+</p>
+
+<p>Blant kommandoene som kan kjøres via sudo er:</p>
 
 <dl>
-<dt><kbd>/usr/lib/nav/nav</kbd><dt>
+
+  <dt><kbd>/usr/lib/nav/nav</kbd><dt>
   <dd>Generell kommando for å kontrollere nav</d>
-<dt><kbd>/etc/init.d/nav</kbd><dt>
+
+  <dt><kbd>/etc/init.d/nav</kbd><dt>
   <dd>Debian start/stopp-script for nav</dd>
+
+  <dt><kbd>/etc/init.d/apache2 reload</kbd><dt>
+  <dd>Relaste konfigurasjon for webtjeneren</dd>
+
+  <dt><kbd>/etc/init.d/nfsen-snapshot</kbd><dt>
+  <dd>Starte/stoppe nfsen</dd>
 
 </dl>
 
+<p>For å relaste apache webtjeneren kan man feks kjøre kommandoen:</p>
+
+<pre>
+  sudo /etc/init.d/apache2 reload
+</pre
+</p>
 
 <h2><a name="tftp">tftp</a></h2>
 
@@ -116,7 +139,7 @@ Når en ny svitsj skal legges til i tftp konfigurasjonen:
 	 "svitsj"        	"ipadresse"
 eks: 	lillehammer-gsw  	128.39.3.44
 </pre>
-<li> Etter at fila redigert, kjør <tt>make</tt> (du står på 
+<li> Etter at <tt>tftpd.txt</tt> er redigert, kjør <tt>make</tt> (du står på 
 <tt>/tftpboot</tt>)
      Vips, så er ny <tt>tftp.conf</tt> laget. 
 <li> Du må da opprette den nye filen med <tt>touch "svitsj-confg"</tt>
