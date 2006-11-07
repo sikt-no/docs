@@ -70,6 +70,7 @@ Følgende lenke</a> gir en oversikt per plattform.
 UNINETT har driftsansvar for verktøykassene. Dette omfatter initielt
 oppsett, løpende drift og oppgradering. Verktøykassene overvåkes
 døgnkontinuerlig av UNINETT driftsenter/beredskapsvakt. 
+
 <p>
 Verktøykassene utgjør en egen klasse i UNINETTs cfengine driftskonsept.
 cfengine gjør det enkelt å legge til nye verktøy, konfigurasjonsendringer 
@@ -77,6 +78,7 @@ m.m. på alle verktøykassene. cfengine gjør det også enkelt å reetablere
 en havarert maskin raskt. Dette forutsetter i tillegg at det tas backup,
 noe vi gjør for /etc, /tftpboot, loggilfer, RRD-data, postgres database
 og hjemmeområder. Mer at v tar ikke backup av netflowdata. 
+
 <p>
 Siden driftsansvaret ligger til UNINETT er ryddigste løsning at <i>kun</i>
 UNINETT har root privilegier på verktøykassene. Vi er naturligvis opptatt
