@@ -365,6 +365,27 @@ UNINETT vil være behjelpelig med å legge til nye kilder dersom det er nødvendig.
 
 Mere inngående detaljer angående bruk av nfsen står på <a href="http://nfsen.sourceforge.net/">nfsen</a> sine hjemmesider.
 </p><p>
+Generelt om Netflow:
+<ul>
+<li>En flow er definert som et sett av IP pakker som har en del felles felt i pakkehodet.
+<li>De felt som brukes for å identifisere flows er:
+<ul>
+<li> Source IP adress
+<li> Destination IP adress
+<li> Source port number
+<li> Destination port number
+<li> Protocol type
+<li> Type of service
+<li> Input interface
+</ul>
+</ul>
+</p><p>
+Grafene:
+<ul>
+<li>Grafene vil vise trafikk-mønsteret til kildene man eksporterer netflow-data ifra. Default er det satt opp slik at grafene er "stacked". Dvs. at dersom man eksporterer ifra flere kilder (har flere farger på grafene), legges den ene grafen på toppen av den andre. Dette kan man endre ved å trykke på line graph på details-fanen. Her kan man også endre til logaritmisk skala.
+<li>Dersom man vil ekskludere en kilde ifra grafene, kan man trykke på krysset under <kbd>source</kbd> for hver kilde.
+</ul>
+</p><p>
 Details-fanen:
 <ul>
 <li>Denne fanen gjelder detaljer for flere andre faner.
@@ -387,10 +408,12 @@ Hvordan grave i detaljene:
 <li>Angi hvor mange innslag fra loggen som skal være med i resultat(F.eks list first 10 flows)
 </ul>
 
-Vise top talkers:
+List vs. Stat:
 <ul>
-<li>sorter etter flows, packets eller byte
-<li>angi hvor mange talkers du vil ha med
+<ul> <kbd>List</kbd> viser hele flows, og gjør ingen sortering basert på statistikk. Her vil det kun vises de antall flows man har valgt som først stemmer med det utvalget man har valgt.
+<ul> <kbd>Stat</kbd> viser statistisk analyse og kan vise hele flows eller sortere basert på valg du gjør.
+<ul> <kbd>Flows order by <valg></kbd> vil gi deg hele flows sortert etter hva du har valgt.
+<ul> Dersom man velger den nederste boksen vil man kunne se top talkers sortert på valg man gjør. Veldig nyttig dersom man for en gitt periode vil se hvilken IP-adresse som har overført mest data eller pakker. F.eks. dersom det har vært en trafikkstorm, eller angrep.
 </ul>
 
 Søk i netflow dataene:
