@@ -17,7 +17,7 @@ include "uninetttopp.php3";
   <dt>ANSVARLIG:
   <dd>Vidar.Faltinsen@uninett.no
   <dt>DATO:
-  <dd>2006-10-15
+  <dd>2006-11-30
 </dl>
 
 <hr>
@@ -65,25 +65,17 @@ en forsvarlig programvareversjon.
 <a href="http://drift.uninett.no/utstyr/svitsj/oppgradering-sw.mhtml">
 Følgende lenke</a> gir en oversikt per plattform.
 
-<h2><a name="Rootpolicy">Root policy for verktøykassene</a></h2>
+<h2><a name="Sikkerhetsdirektiv">Sikkerhetsdirektiv for verktøykassene</a></h2>
 
-UNINETT har driftsansvar for verktøykassene. Dette omfatter initielt
-oppsett, løpende drift og oppgradering. Verktøykassene overvåkes
-døgnkontinuerlig av UNINETT driftsenter/beredskapsvakt. 
-
-<p>
-Verktøykassene utgjør en egen klasse i UNINETTs cfengine driftskonsept.
-cfengine gjør det enkelt å legge til nye verktøy, konfigurasjonsendringer 
-m.m. på alle verktøykassene. cfengine gjør det også enkelt å reetablere
-en havarert maskin raskt. Dette forutsetter i tillegg at det tas backup,
-noe vi gjør for /etc, /tftpboot, loggilfer, RRD-data, postgres database
-og hjemmeområder. Mer at v tar ikke backup av netflowdata. 
+UNINETT har driftsansvar for verktøykassene. Se definert
+<a href="sikkerhetsdirektiv.html">sikkerhetsdirektiv</a> for detaljer rundt
+drift- og sikkerhetsopplegget.
 
 <p>
 Siden driftsansvaret ligger til UNINETT er ryddigste løsning at <i>kun</i>
 UNINETT har root privilegier på verktøykassene. Vi er naturligvis opptatt
 av at dere som brukere kan gjøre tilstrekkelig for å rette feil
-rundt applikasjonene m.m. Dette gjør vi ved å gi dere nødvendig sudo
+rundt applikasjonene m.m. Dette gjør vi ved å gi dere nødvendige sudo
 rettigheter, samt lesetilgang til filer (se Brukertilgang under).
 
 <h2><a name="kontaktpunkt">Kontaktpunkt</a></h2>    
