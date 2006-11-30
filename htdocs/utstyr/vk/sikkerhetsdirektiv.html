@@ -88,19 +88,19 @@ sikrede omgivelser, på et godt sikret nettsegment (jfr også kap 4).
 
 <h2><a name="driftsopplegg">3. Driftsopplegg</a></h2>
 <p><br>
-UNINETT håndterer anskaffelse, initiell idriftsetting og løpende vedlikehold/
-drift. Verktøykassa er 1U rackmonterbare IBM-servere som kjører Debian. 
-Cfengine benyttes i driftsløsningen, dette gir mange fordeler, blant 
+UNINETT håndterer anskaffelse, initiell idriftsetting og løpende 
+vedlikehold/drift. Verktøykassa er rackmonterbare IBM-servere som kjører Debian. 
+Cfengine benyttes i driftsløsningen. Dette gir mange fordeler, blant 
 annet sentralisert konfigurasjon og administrasjon, herunder fortløpende 
 pakkeoppdatering m.m. I tillegg tar UNINETT backup av lokale 
 konfigurasjonsfiler, brukerdata og data som produseres av verktøyene.
 Et unntak er netflow rådata.
 <p> 
 UNINETT driftsenter og UNINETT beredskapsvakt overvåker verktøykassene døgnkontinuerlig, 
-herunder at alle tjenenester går, diskfyllingsgrad, cpu- og minneforbruk m.m. Tiltak blir truffet ved 
-insidenter. Ved evt alvorlig maskinvarehavari har UNINETT 
+herunder at alle tjenenester går. Vi monitorer diskfyllingsgrad, cpu- og minneforbruk m.m. 
+Tiltak blir truffet ved insidenter. Ved evt alvorlig maskinvarehavari har UNINETT 
 reservedelslager og skal så raskt som mulig reetablere ny maskin, sende 
-denne ut, og få verktøykassen operativ igjen.
+denne ut og få verktøykassen operativ igjen.
 
 
 <h2><a name="sikkerhet">4. Sikkerhet</a></h2>
@@ -147,8 +147,8 @@ assistanse fra UNINETT driftsenter interessant, bør tilgangen opprettholdes.
 Relevant driftspersonale ved institusjonen gis brukertilgang til  
 verktøykassene. Brukertilgang er bl.a. nødvendig for å håndtere 
 tftp-tjenesten. Det er også nødvendig for å se i loggfiler, se i netflow 
-rådatafiler (men her er det meste tilgjengelig via web), se i loggfiler 
-og database m.m. Drifspersonale gis også et tilstrekkelig sett av sudo 
+rådatafiler (men her er det meste tilgjengelig via web) og i database m.m. 
+Drifspersonale gis også et tilstrekkelig sett av sudo 
 rettigheter slik at man lokalt kan restarte nav, apache, nfsen m.m. Det
 forutsettes at lokalt driftspersonale har en brukeradferd som samsvarer med
 de privilegier som er gitt.
