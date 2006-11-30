@@ -1,0 +1,322 @@
+<?php
+$mal_kontaktadresse="gigacampus@uninett.no"; // obligatorisk
+$mal_temabilde="teknisk";                     // obligatorisk, se liste på
+                                        // www.uninett.no/info/info/bilder.html
+$mal_blurb="";          // valgfritt (tekst under bilde) 
+$mal_kontekst="";                       // valgfritt
+$mal_overskrift="Brukerdokumentasjon Verktøykasser"; // obligatorisk
+$mal_modus="";                          // valgfritt
+$mal_tittel="";                         // valgfritt, normalt blir tittelen
+                                        // tjener: kontekst - overskrift - modus
+include "uninetttopp.php3";
+?>
+
+<dl>
+  <dt>REVISJON:
+  <dd>Verktøykasse-sikkerhetsdirektiv.2006.01
+  <dt>ANSVARLIG:
+  <dd>Vidar.Faltinsen@uninett.no
+  <dt>DATO:
+  <dd>2006-11-30
+</dl>
+
+<hr>
+
+<ol>
+<li> [<a href="#omvk">Om verktøykassene</a>]
+<li> [<a href="#driftsansvar">Driftsansvar</a>]
+<li> [<a href="#driftsopplegg">Driftsopplegg</a>]
+<li> [<a href="#sikkerhet">Sikkerhet</a>]
+<li> [<a href="#kontaktpunkt">Kontaktpunkt</a>]
+<li> [<a href="#brukertilgang">Brukertilgang til verktøykassene</a>]
+<ol>
+<li> [<a href="#web">Web-tilgang (ssl)</a>]
+<li> [<a href="#ssh">ssh innlogging</a>]
+<li> [<a href="#radius">Radius-base for nettelektronikk</a>]
+</ol>
+<li> [<a href="#sikring">Sikring av sensitive data</a>]
+</ol>
+
+<h2><a name="om">Om verktøykassene</a></h2>
+
+<p>
+tftp-tjenesten gjør det mulig å skrive og laste konfigurasjon 
+til/fra nettutstyret. tftp-demonen er sikret med en 
+konfigurasjonsfil <tt>/tftpboot/tftpd.conf</tt>. For å forenkle 
+vedlikehold blir denne filen autogenerert etter følgende kjøreregler.
+</p><p> 
+Når en ny svitsj skal legges til i tftp konfigurasjonen:
+<ol>
+<li> Legg til svitsjen i <tt>/tftpboot/tftpd.txt</tt>
+     Syntaks sees lett i fila: 
+<pre>
+	 "svitsj"        	"ipadresse"
+eks: 	lillehammer-gsw  	128.39.3.44
+</pre>
+<li> Etter at <tt>tftpd.txt</tt> er redigert, kjør <tt>make</tt> (du står på 
+<tt>/tftpboot</tt>)
+     Vips, så er ny <tt>tftp.conf</tt> laget. 
+<li> Du må da opprette den nye filen med <tt>touch "svitsj-confg"</tt>
+(eks: <tt> touch lillehammer-gsw-confg </tt> )
+<li> Nå kan du fra svitsjen skrive konfigurasjonen til verktøykasse
+med <tt>write network</tt>. 
+</ol>
+Tilsvarende kan bokser slettes fra <tt>tftpd.txt</tt> / 
+<tt>tftpd.conf</tt>. 
+<ul>
+<li> Merk: På sikt vil vi søke å automatisere
+denne manuelle vedlikeholdsprosessen ved å bruke NAV som kilde.
+Dvs at du kun legger inn utstyr i NAV, utstyret vil da automagisk
+kunne bruke tftp-tjenesten.
+</ul>
+<p> 
+
+For å bevare historikk på konfigurasjon benyttes RCS. Opplegget
+er automatisert ved at en nattlig cronjobb sjekker inn
+ny versjon av alle filer som er endret. I tillegg rapporteres 
+alle endringene i epost til mottager angitt som
+<tt>nocoperators</tt> i fila <tt>/etc/default/uninett.conf</tt>
+(merk at denne filen er styrt av uninetts cfengine, ta kontakt
+med drift@uninett.no for å få gjort endringer).
+</p><p> 
+
+<ul>
+<li> I tillegg til konfigurasjoner ligger også aksesslistefiler
+på <tt>/tftpboot</tt>. Vedlikehold av disse og arbeid med aksesslister
+generelt er ikke omtalt her. Se <tt>README</tt> fil på <tt>/tftpboot</tt>
+for mer info på dette.
+<li> En nattlig cronjobb sørger for å kopiere konfigurasjoner fra
+verktøykassa til trane.uninett.no, som er UNINETTs sentrale
+konfigurasjonsserver. 
+<li> En siste ting som ligger på <tt>/tftpboot</tt> er software imager.
+Disse kan lastes til svitsjer for oppgradering.
+</ul>
+
+<h4>ftp / scp </h4>
+
+tftp duger ikke ved oppgradering av store software imager (over 32MB).
+Da kan man benytte ftp, evt scp. Vi håper at man klarer seg med
+scp og har ikke satt opp ftp tjener på verktøykassen per dags dato.
+
+<h2><a name="radius">Radius</a></h2>
+
+<p>
+Det er ingen bruker-konfigurasjon forbundet med radius som trengs å
+konfigureres på verktøykassene. Dette fordi radius er satt opp
+til bruke <tt>/etc/passwd</tt> som sin brukerkilde. Dersom brukerne her
+har satt passord blir dette benyttet ved radiusautentisering.
+Dersom bruker på nettutstyret logger seg på med <tt>@uninett.no</tt> 
+endelse så er radiustjener på verktøykassen satt opp til
+å relee forespørsel til radiustjener på trane.uninett.no. 
+Således kan UNINETT drift komme inn (dersom ønskelig).
+</p><p> 
+ 
+Det som imidlertid må konfigureres (og dette gjøres i uninetts cfengine 
+oppsett, ta kontakt med drift@uninett.no) er 
+<tt>/etc/freeradius/clients.conf</tt>
+</p><p> 
+ 
+Eksempel fra hil;
+
+<pre> 
+client 128.39.109.0/26 {
+   secret       = felles-hemmelighet
+   shortname    = hil-mngmt
+} 
+</pre>
+</p><p> 
+ 
+Det vi angir her at alle svitsjene i området 128.39.109.1-63 tillates
+å snakke radius med verktøykassen gitt at de er konfigurert med
+samme felles-hemmelighet.
+</p>
+ 
+ 
+<h2><a name="syslog">Syslog</a></h2>
+
+All nettelektronikk bør syslogge til verktøykassa. 
+Syslog er satt opp slik at nettelektronikk logger til to filer;
+<pre> 
+/var/log/network.log
+/var/log/network_nav.log
+</pre>
+
+Sistnevnte fil blir igjen lest og tømt av NAV sin bakgrunnsprosess
+logengine som kjører en gang i minuttet. Dataene blir lagt i NAVdb 
+sin 
+syslog-database og er igjen søkbare gjennom NAVs syslog analyzer tool.
+</p><p> 
+ 
+<tt>network.log</tt> blir ikke tømt, men komprimert og rotert en gang i 
+døgnet. Dere kan således velge å søke i syslog i tekstmodus, direkte på
+verktøykassen, eller via NAV.
+</p>
+
+<h2><a name="nav">NAV</a></h2>
+
+NAV er omfattende å forklare. Vi vil her videreutvikle
+dokumentasjonen på 
+ <a 
+href="http://metanav.ntnu.no">NAV wiki</a>. Litt starthjelp:
+
+<ul>
+<li> Web brukeradministrasjon. <br>
+Det er ikke noe dokument som beskriver hvordan du oppretter brukere og
+hvordan du tilordner brukere til grupper. Helt kort; dette gjør du
+under "tool useradmin". Det er rett frem å legge til brukere, men
+husk st de må tilordnes en eller flere grupper. Merk også at du
+kan redigere privilegiene til en gruppe. Se f.eks på <tt>ReadAll</tt> 
+gruppen,
+her vil du se at denne har et <tt>web_access</tt> privilegie som gir 
+tilgang til en del "tools", men ikke alle. Dette gir deg en ide om 
+hvordan <tt>web_access</tt> privilegie kan justeres. Merk at 
+<tt>report_access</tt> <i>ikke</i>
+er i bruk (det vises i grensesnittet). Merk også at det er mulig
+å bruke ldap som brukerkilde. Du må da gjøre innstillinger i
+fila <tt>/etc/nav/webfront/webfront.conf</tt>. 
+
+<li>Sett velkomstmelding m.m.<br>
+En rekke filer i katalogen <tt>/etc/nav/webfront/</tt> kan redigeres
+for å tilpasse utseende til NAVs hovedside.
+
+<li> Sett epost mottager av NAV admin epost <br>
+Dette gjør du ved å sette <tt>ADMIN_MAIL</tt> i 
+<tt>/etc/nav/nav.conf</tt>. I samme fil, sett også <tt>DOMAIN_SUFFIX</tt>
+til ditt domene. 
+
+<li> Sett passord til NAVs posgresdatabase <br>
+Denne er satt for deg, du kan endre passord ved å endre attributten
+<tt>userpw_nav</tt> i <tt>/etc/nav/db.conf</tt>. Merk at du 
+kan aksessere denne databasen (hoveddelen av den) ved å bruke dette
+passordet når du skriver <tt>psql manage nav</tt>. For dypere feilsøking,
+eller dypere forståelse av databasen er dette nyttig.
+
+<li> Seeding the database <br>
+For at NAV skal overvåke nettverket ditt må den få "seed" informasjon fra 
+deg. Du bruker "edit database tool" til dette. Følgende dokument
+beskriver det du må gjøre: 
+<a 
+href="http://metanav.ntnu.no/moin.cgi/SeedEssentials">SeedEssentials</a>. 
+Det anbefales ellers å lese flere dokumenter under menyen
+<a 
+href="http://metanav.ntnu.no/moin.cgi/NAVConfiguration">NAVConfiguration</a>. 
+
+<li> Varslingssystemet Alert Profiles<br>
+Varslingssystemet er nokså omfattende med mange muligheter. For
+å forenkle initielt oppsett er det en rekke predefinerte filtre
+og filtergrupper du kan bruke. Det følger en bruker manual med
+Alert Profiles, den ser du ved å velge "help" fra sidemenyen
+i "Alert Profiles tool". En 
+<a 
+href="http://metanav.ntnu.no/moin.cgi/AlertProfiles">wiki side</a>
+gir også en overordnet introduksjon.
+
+<li> Sjekk status på bakgrunnsprosesser og logger <br>
+<ul>
+<li> Kommandoen <tt>/usr/lib/nav/nav status</tt> gir status på om
+NAVs ulike bakgrunnsprosesser og cronjobber er aktive.
+<li> Innsamlingsmotoren getDeviceData logger (bl.a.) til
+<tt>/var/log/nav/getDeviceData.log </tt>
+<li> I samme katalog se tilsvarende log for 
+<tt>getBoksmacs.log</tt> (camloggeren), 
+<tt>networkdiscovery/</tt>  (topologioppdageren)
+<tt>pping.log</tt> (statusmonitoren),
+<tt>servicemon.log</tt> (tjenesteovervåkeren), 
+<tt>thresholdMon.log</tt> (terskelovervåkeren),
+<tt>eventengine.log</tt> (hendelsessystemet) og
+<tt>alertengine.log</tt> (alarmsystemet).
+</ul>
+</ul>
+
+<h2><a name="netflow">Netflow/nfsen</a></h2>
+
+Verktøykassene bruker <a
+href="http://nfsen.sourceforge.net/">nfsen</a> for å prosessere
+netflowdata som blir eksportert fra rutere. Nfsen er et web-basert
+grensesnitt til <a href="http://nfdump.sourceforge.net/">nfdump
+netflow tools</a>.
+
+Dette grensesnittet er tilgjengelig via NAV sin toolbox.
+
+<p>
+Nfsen ser ut til å være litt kilen mhp. på å definere nye
+netflow-eksporører ('sources') etter at systemet er startet , så det
+er lurt å ha alle disse klart på forhånd, og legge alle inn før
+systemet startes opp. Dette gjøres ved å redigere
+<kbd>/etc/nfsen/nfsen.conf</kbd> og oppdatere seksjonen som heter <kbd>sources</kbd>.
+UNINETT vil være behjelpelig med å legge til nye kilder dersom det er nødvendig.
+</p><p>
+
+Mere inngående detaljer angående bruk av nfsen står på <a href="http://nfsen.sourceforge.net/">nfsen</a> sine hjemmesider.
+</p><p>
+Details-fanen:
+<ul>
+<li>Denne fanen gjelder detaljer for flere andre faner.
+<li>Stå i flows, trykke details fane og du ser detaljer for flows
+<li>Tilsvarende for packets og traffic
+</ul>
+
+Hvordan grave i detaljene:
+<ul>
+<li>Angi tidsperiode
+<li>Endre t_start og t_end (tidsangivelse)
+<li>OBS: trykk enter etter at du angir tid, ikke klikk til nytt felt
+<li>tidspunktet blir avmerket med grønn farge i grafen
+<li>alternativt marker tidspunkt med å klikke i graf  
+<ul>
+<li>Se til at det står <tt>Select left Mark</tt> under grafen og klikk i grafen for start-tidspunkt
+<li>Velg <tt>Select right Mark</tt> under grafen og klikk i grafen for slutt-tidspunkt
+<li>tidspunktet blir avmerket med grønn farge i grafen.
+</ul>
+<li>Angi hvor mange innslag fra loggen som skal være med i resultat(F.eks list first 10 flows)
+</ul>
+
+Vise top talkers:
+<ul>
+<li>sorter etter flows, packets eller byte
+<li>angi hvor mange talkers du vil ha med
+</ul>
+
+Søk i netflow dataene:
+<ul>
+<li>tcpdump-aktig filter format
+<li>Eks.:
+<ul>
+<li><tt>host 158.38.x.y</tt> (Filterer ut all trafikk til/fra host 158.38.x.y)
+<li><tt>src host 158.38.w.x and dst host 158.38.y.z</tt> (Filterer ut all trafikk mellom disse to hostene der trafikken kommer fra 158.38.w.x og sendes til 158.38.y.z, src=source, dst=destination)
+<li><tt>proto tcp and src host 158.38.x.y</tt> (Filterer ut all tcp trafikk sendt ifra 158.38.x.y)
+<li><tt>src host 158.38.w.x or host 158.38.y.z</tt> (Filterer ut trafikk fra host 158.38.x.y eller all trafikk til/fra host 158.38.y.z)
+<li><tt>src host 158.38.x.y and src port 22</tt> (Filterer ut all trafikk fra host 158.38.x.y der trafikken er sendt ifra port 22(ssh))
+<li><tt>src port gt 80 and src port lt 123</tt> (Filterer ut trafikk sendt ifra portene mellom 80 og 123, gt= greater than, lt=less than)
+<li><tt>src port 80 and not host 158.38.x.y</tt> (Filtrerer ut trafikk sendt ifra port 80 og som ikke er sendt til/fra host 158.38.x.y)
+<li><tt>src net 158.38.x.0/24</tt> (Filterer ut trafikk sendt ifra nettet 158.38.x.0/24)
+</ul>
+</ul>
+
+Ferdigdefinerte filter man bruker ofte:
+<ul>
+<li>Disse kan lagres som filer i filsystemet under katalogen <tt>/var/nfsen/filters</tt>
+<li>Vanlig filtersyntaks brukes i disse filene også.
+<li>Ferdigdefinerte filtre velges under boksen man skriver inn filtre der det vanligvis står <tt>and none</tt>
+</ul>
+
+Lage profiler:<br>
+For søk man gjør ofte og som man vil følge med grafisk over tid kan det være lurt å lage egne profiler som har oversikt over denne trafikken. Merk at dette lager egne flow-filer på filsystemet (som også tar plass). Dersom du lager en profil som er langt tilbake i tid, så kan det ta lang tid for nfsen å lage grunnlagsdata for hele perioden.
+<ul>
+<li><tt>Selected profile</tt> står øverst i høyre hjørne.
+<li>Normalt vises selcted profile "live"
+<li>Velg <tt>New profile</tt>
+<ul>
+<li>lag en profil som plukker ut all trafikk av en gitt type, basert på filtre du definerer.
+<li>Navngi denne rapporten.
+<li>Velg en kilde
+<li>Basert på hvor mye data som skal prosesseres tar det en hvis tid å prosessere og lage denne profilen
+<li>Vis profilen etterpå ved å velge denne fra selected profile
+</ul>
+</ul>
+
+
+<?php
+include "uninettbunn.php3";
+?>
+
