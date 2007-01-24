@@ -17,7 +17,7 @@ include "uninetttopp.php3";
   <dt>ANSVARLIG:
   <dd>Vidar.Faltinsen@uninett.no
   <dt>DATO:
-  <dd>2006-11-30
+  <dd>2007-01-24
 </dl>
 
 <hr>
@@ -334,6 +334,25 @@ NAVs ulike bakgrunnsprosesser og cronjobber er aktive.
 <tt>eventengine.log</tt> (hendelsessystemet) og
 <tt>alertengine.log</tt> (alarmsystemet).
 </ul>
+</ul>
+
+<h3>Feilsøking av mobiltelefon/SMS-utsending</h3>
+
+<p>Dersom du har problemer med utsending av SMS fra verktøykassen, kan du gjøre litt førstelinjes feilsøking før du feilmelder situasjonen til drift@uninett.no.
+</p>
+
+<ul>
+  <li>Kontrollér at Gammu klarer å gjenkjenne den tilkoblede mobiltelefonen:
+      <tt>sudo -u navcron gammu --identify</tt>
+  </li>
+
+  <li>Forsøk å sende ut en SMS med Gammu:
+      <tt>echo "Melding" | sudo -u navcron gammu --sendsms TEXT &lt;tlfnr&gt;</tt>
+  </li>
+
+  <li>Forsøk å sende ut en test-SMS med NAVs SMS-daemon:
+      <tt>sudo -u navcron /usr/lib/nav/smsd.pl -t &lt;tlfnr&gt;</tt>
+  </li>
 </ul>
 
 <h2><a name="netflow">Netflow/nfsen</a></h2>
