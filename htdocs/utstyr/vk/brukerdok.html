@@ -29,6 +29,7 @@ include "uninetttopp.php3";
 [<a href="#syslog">Syslog</a>]
 [<a href="#nav">NAV</a>]
 [<a href="#netflow">Netflow/nfsen</a>]
+[<a href="#cmdline">Commandline tools</a>]
 </p>
 
 <h2>Innledning</h2>
@@ -216,8 +217,7 @@ endelse så er radiustjener på verktøykassen satt opp til
 Således kan UNINETT drift komme inn (dersom ønskelig).
 </p><p> 
  
-Det som imidlertid må konfigureres (og dette gjøres i uninetts cfengine 
-oppsett, ta kontakt med drift@uninett.no) er 
+Det som imidlertid må konfigureres er 
 <tt>/etc/freeradius/clients.conf</tt>
 </p><p> 
  
@@ -462,6 +462,27 @@ For søk man gjør ofte og som man vil følge med grafisk over tid kan det være lur
 </ul>
 </ul>
 
+
+<h2><a name="cmdline">Command line tools</a></h2>
+
+En del kjekke command line tools er installert på verktøykassene.
+Her følger en liste og kort omtale:
+
+<ul>
+<li> ping og traceroute (trenger vel ingen kommentar)
+<li> snmpwalk (m.fl.)<br>
+     Brukes til å polle utstyr med snmp, kjekt for NAV feilsøking.
+<pre>     
+     Typisk syntaks: 
+        snmpwalk -v2c -c <din-community> <ip-adresse> <oid>
+     Eks:
+        snmpwalk -v2c -c public 10.10.10.1 ifinoctet
+        (henter inoctet tellere fra boks 10.10.10.1)
+<li> nmap <br>
+     Brukes til scanne en host/sjekke om en port/sett av porter
+     er åpne.
+<li>
+</ul>
 
 <?php
 include "uninettbunn.php3";
