@@ -29,6 +29,7 @@ include "uninetttopp.php3";
 [<a href="#syslog">Syslog</a>]
 [<a href="#nav">NAV</a>]
 [<a href="#netflow">Netflow/nfsen</a>]
+[<a href="#console">Konsoll</a>]
 [<a href="#cmdline">Commandline tools</a>]
 </p>
 
@@ -462,6 +463,33 @@ For søk man gjør ofte og som man vil følge med grafisk over tid kan det være lur
 </ul>
 </ul>
 
+<h2><a name="console">Konsoll</a></h2>
+
+<p>Dersom man kobler utstyr til serieporten på verktøykassen, så vil
+innkommende data bli logget til
+<kbd>/var/log/conserver/serial</kbd>. Kan feks. brukes til å se
+boot-meldinger fra en ruter/svitsj uten å ha direkte tilgang til
+konsollet.</p>
+
+<p>Dersom utstyret som er tilkoblet serieporten også lytter på
+serieporten, kan man bruke kommandoen <kbd>console serial</kbd> til å
+få tilgang til utstyret. Kan feks. brukes til å logge inn på en svitsj.</p>
+
+<p>Kommandoen <kbd>man console</kbd> gir instruksjoner om hvordan
+bruke <kbd>console</kbd>-programmet. Man kommuniserer med
+console-programmet ved å sende en såkalt escape-sekvens, dette er
+pr. default tastesekvensen 'control-E c'. Escape-sekvensen etterfølges
+så av et nytt tastetrykk for å angi selve kommandoen. De viktigste er:
+
+<dl>
+  <dt>?</dt>
+  <dd>Vis liste med kommandoer</dd>
+
+  <dt>.</dt>
+  <dd>Avslutt console-sesjonen</dd>
+</dl>
+
+<p>Så, for å avslutte sesjonen, taster man altså <kbd>control-E c .</kbd></p>
 
 <h2><a name="cmdline">Command line tools</a></h2>
 
