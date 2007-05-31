@@ -178,13 +178,14 @@ kunne bruke tftp-tjenesten.
 </ul>
 <p> 
 
-For å bevare historikk på konfigurasjon benyttes RCS. Opplegget
-er automatisert ved at en nattlig cronjobb sjekker inn
-ny versjon av alle filer som er endret. I tillegg rapporteres 
-alle endringene i epost til mottager angitt som
-<tt>nocoperators</tt> i fila <tt>/etc/default/uninett.conf</tt>
-(merk at denne filen er styrt av uninetts cfengine, ta kontakt
-med drift@uninett.no for å få gjort endringer).
+For å bevare historikk på konfigurasjon benyttes RCS. Opplegget er
+automatisert ved at en nattlig cronjobb sjekker inn ny versjon av alle
+filer som er endret. Alle endringer blir rapportert som epost til
+mottagere angitt via variabelen <tt>nocoperators</tt> i fila
+<tt>/etc/default/uninett.conf</tt> (merk at denne filen er styrt av
+uninetts cfengine, ta kontakt med drift@uninett.no for å få gjort
+endringer). En varsling om låste RCS filer (avglemte innsjekkinger)
+blir også sendt periodisk til samme adresse.
 </p><p> 
 
 <ul>
