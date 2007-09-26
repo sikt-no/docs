@@ -1,0 +1,129 @@
+<?php
+$mal_kontaktadresse="vegard.antonsen@uninett.no"; // obligatorisk
+$mal_overskrift="Hobbit"; // obligatorisk
+$mal_tegnsett="utf-8";
+include "uninetttopp.php3";
+?>
+<dl>
+  <dt>REVISJON:</dt>
+  <dd>SEPT-2007<dd>
+  <dt>ANSVARLIG:</dt>
+  <dd>Vegard Antonsen</dd>
+  <dt>DATO:</dt>
+  <dd>21.09.2007</dd>
+</dl>
+
+<hr>
+
+<h2>Innledning</h2>
+<p>
+Hobbit kjører på verktøykassen og sørger for overvåking av lokale servermaskiner som ligger i NAV. Det er kun utstyr som legges inn i kategorien SRV i NAV som blir automatisk overvåket av Hobbit.
+For mer informasjon om Hobbit, se <a href="http://hobbitmon.sourceforge.net">hobbit sine hjemmesider.</a>
+</p>
+
+<h2>Tjenester</h2>
+<p>
+Det er Hobbit og Apache som må kjøres for at tjenesten skal virke.
+</p>
+
+<strong>hobbit</strong>
+<ul>
+	<li>Daemon: </li>
+	<li>Start/stop: /etc/init.d/hobbit {start/stop/restart}</li>
+	<li>Configfiler: /etc/hobbit/</li> 
+</ul>
+
+<strong>apache2</strong>
+<ul>
+	<li>Daemon: /usr/sbin/apache2</li>
+	<li>Start/stopp: /etc/init.d/apache2 {start/stop/restart/reload}</li>
+	<li>config: /etc/apache2/sites-available/nav</li>
+</ul>
+
+<h2>Brukerdokumentasjon</h2>
+
+<h3>Maskiner som overvåkes med Hobbit </h3>
+<p>
+Hver time kjører et script på verktøykassen som konfigurerer Hobbit til å overvåke alle maskiner fra SRV-kategorien i NAV.  Dette gjør at det er bare ett sted for vedlikehold listen over servere som skal overvåkes i NAV og Hobbit.
+Når en maskin registreres i NAV, kan den legges inn i opptil flere underkategorier. Disse underkategoriene blir brukt som grupper i Hobbit.
+</p>
+
+<h3>Overvåking av grupper</h3>
+<p>
+Man kan sette opp overvåking av bestemte services for hver enkelt gruppe. Man kan f.eks overvåke SMTP for alle servere som ligger i mail-gruppa. Dette gjøres ved å logge på verktøykassen med ssh.
+Man redigerer filen <code>/etc/nav/navsrv2hobbit.conf</code>.
+Her er et eksempel på hvordan man kan gjøre det:
+</p>
+
+<pre><code>
+[ALL]
+services = ssh
+
+[MAIL]
+services = smtp
+</code></pre>
+
+<p>
+Her ser vi at ssh overvåkes for samtlige maskiner, mens SMTP overvåkes bare for den gruppen av maskiner som befinner seg i underkategorien MAIL i NAV.  SSH ligger som standardovervåking for samtlige maskiner.
+</p>
+
+<h3>Overvåking av maskiner</h3>
+<p>
+Man kan sette opp bestemte overvåkinger for hver enkelt maskin. Dette gjøres i ei config-fil på verktøykassen som ligger under <code>/etc/hobbit/hobbit-clients.d/hobbit.cfg</code>.
+Config-fila kan se slik ut:
+</p>
+<pre><code>
+HOST=testserver.uninett.no
+PROC        cfenvd 1 1 yellow
+PROC        cfservd 1 1 red
+PROC        munin-node 1 -1 red
+PROC        sshd
+PROC        ntpd 1 1 yellow
+DISK        /home 95 98
+DISK        /var/log 95 98
+</code></pre>
+<p>
+Her ser vi hvilke bestemte prosesser som er satt opp til overvåking med at det står PROC foran prosessnavnet.
+Bak hver prosess kan man ha et tall som angir hvor mange prosesser som kan kjøres. På prosessen cfenvd står det først tallet 1 som betyr at det minimum må være
+en prosess (mincount) ved det navnet og bak tallet står det 1 (maxcount). Dette betyr at det kan kun være én og bare én prosess av cfenvd.
+Hvis ikke dette er oppfylt vil den blir markert som gul i Hobbit, i motsetning til cfservd, der det vil bli markert som rødt.
+Man kan på denne måten angi hvor mange prosesser som skal kjøre. I tillegg kan man bruke verdien -1, som betyr at det kan være uendelig mange prosesser som kjøres.
+</p>
+<p>
+I tillegg kan man sette opp overvåking av disk-partisjoner. Hvis <code>/home</code> (som i eks. over) fylles opp til 95% vil den bli gul, mens kommer den på 98% vil den flagges rød i Hobbit.
+</p>
+<p>
+Som standard på samtlige servere står det følgende regler (<code>/etc/hobbit/hobbit-client.cfg</code>):
+</p>
+<pre><code>
+DEFAULT
+UP      1h
+LOAD    5.0 10.0
+DISK    * 90 95
+MEMPHYS 100 101
+MEMSWAP 50 80
+MEMACT  90 97
+</code></pre>
+
+
+<h3>Installere hobbit-client på klienten</h3>
+<ul>
+  <li>Det må installeres hobbit-client på klienten som skal overvåkes.</li>
+  <li>IP-adressen til verktøykassen må settes i <code>/etc/default/hobbit-client</code>, slik at hobbit-client ver hvor den skal rapportere.</li>
+  <li>For Windows-maskiner som skal overvåkes må det installeres <em>BBWin</em> på klienten.</li>
+</ul>
+
+<h3>Varsling</h3>
+<p>
+Viser til <a href="http://metanav.uninett.no/" title="Gå til NAVs wikisider">dokumentasjon om NAV</a>.
+</p>
+
+<h2>Kontaktpersoner</h2>
+<ul>
+  <li>vegard.antonsen@uninett.no</li>
+  <li>morten.brekkevold@uninett.no</li>
+</ul>
+
+<?php
+include "uninettbunn.php3";
+?>
