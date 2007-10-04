@@ -471,6 +471,14 @@ For søk man gjør ofte og som man vil følge med grafisk over tid kan det være lur
 </ul>
 </ul>
 
+<h3>Feilsøking av nfsen</h3>
+Dersom du har problemer med nfsen er det ett par ting man kan sjekke foer man melder feil.
+<ul>
+<li>Går alle nødvendige prosesser?<br>
+1 nfsend og 1 nfcapd per kilde(netflow-eksportør) Dersom ikke restart nfsen.
+<li>Mottar du flows fra kilde?<br>
+Bruk gjerne tcpdump for å sjekke om du mottar flows. F.eks <tt>tcpdump port 2055</tt> Hvilken port du lytter på kan du finne i <tt>/etc/nfsen/nfsen.conf</tt> under sources. Dersom ikke, sjekk ruterconfig og access-lister.
+
 <h2><a name="console">Konsoll</a></h2>
 
 <p>Dersom man kobler utstyr til serieporten på verktøykassen, så vil
