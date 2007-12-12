@@ -133,7 +133,7 @@ kommandoen:
   <dt><kbd>/etc/init.d/apache2 reload</kbd><dt>
   <dd>Relaste konfigurasjon for webtjeneren</dd>
 
-  <dt><kbd>/etc/init.d/nfsen-snapshot</kbd><dt>
+  <dt><kbd>/etc/init.d/nfsen</kbd><dt>
   <dd>Starte/stoppe nfsen</dd>
 
 </dl>
@@ -370,7 +370,7 @@ Nfsen ser ut til å være litt kilen mhp. på å definere nye
 netflow-eksporører ('sources') etter at systemet er startet , så det
 er lurt å ha alle disse klart på forhånd, og legge alle inn før
 systemet startes opp. Dette gjøres ved å redigere
-<kbd>/etc/nfsen/nfsen.conf</kbd> og oppdatere seksjonen som heter <kbd>sources</kbd>.
+<kbd>/etc/nfsen/nfsen.conf.local</kbd> og oppdatere seksjonen som heter <kbd>sources</kbd>.
 UNINETT vil være behjelpelig med å legge til nye kilder dersom det er nødvendig.
 </p><p>
 
@@ -394,37 +394,23 @@ Generelt om Netflow:
 Grafene:
 <ul>
 <li>Grafene vil vise trafikk-mønsteret til kildene man eksporterer netflow-data ifra. Default er det satt opp slik at grafene er "stacked". Dvs. at dersom man eksporterer ifra flere kilder (har flere farger på grafene), legges den ene grafen på toppen av den andre. Dette kan man endre ved å trykke på line graph på details-fanen. Her kan man også endre til logaritmisk skala.
+<li>Under Graphs-fanen kan man se større grafer for henholdsvis Flows, Packets eller Traffic.
+<li>Under Details-fanen kan man se detaljer for enten Flows, Packets eller Traffic. Man kan velge en av de andre i de små thumbnailene på høyresiden.
 <li>Dersom man vil ekskludere en kilde ifra grafene, kan man trykke på krysset under <kbd>source</kbd> for hver kilde.
 </ul>
 </p><p>
-Details-fanen:
-<ul>
-<li>Denne fanen gjelder detaljer for flere andre faner.
-<li>Stå i flows, trykke details fane og du ser detaljer for flows
-<li>Tilsvarende for packets og traffic
-</ul>
 
 Hvordan grave i detaljene:
 <ul>
 <li>Angi tidsperiode
-<li>Endre t_start og t_end (tidsangivelse)
-<li>OBS: trykk enter etter at du angir tid, ikke klikk til nytt felt
-<li>tidspunktet blir avmerket med grønn farge i grafen
-<li>alternativt marker tidspunkt med å klikke i graf  
-<ul>
-<li>Se til at det står <tt>Select left Mark</tt> under grafen og klikk i grafen for start-tidspunkt
-<li>Velg <tt>Select right Mark</tt> under grafen og klikk i grafen for slutt-tidspunkt
-<li>tidspunktet blir avmerket med grønn farge i grafen.
-</ul>
-<li>Angi hvor mange innslag fra loggen som skal være med i resultat(F.eks list first 10 flows)
+<li>Dette gjør du enten ved å la den stå på <kbd>Single Timeslot</kbd> (5 min) under grafen, eller du velger en lengre tidsperiode med å velge <kbd>Time Window</kbd> under grafen og drar på pila som er nederst på grafen. Tidspunktet blir avmerket med grønn farge i grafen
 </ul>
 
-List vs. Stat:
+List Flows vs. Stat TopN:
 <ul>
-<li> <kbd>List</kbd> viser hele flows, og gjør ingen sortering basert på statistikk. Her vil det kun vises de antall flows man har valgt som først stemmer med det utvalget man har valgt.
-<li> <kbd>Stat</kbd> viser statistisk analyse og kan vise hele flows eller sortere basert på valg du gjør.
-<li> <kbd>Flows order by <valg></kbd> vil gi deg hele flows sortert etter hva du har valgt.
-<li> Dersom man velger den nederste boksen vil man kunne se top talkers sortert på valg man gjør. Veldig nyttig dersom man for en gitt periode vil se hvilken IP-adresse som har overført mest data eller pakker. F.eks. dersom det har vært en trafikkstorm, eller angrep.
+<li> <kbd>List Flows</kbd> viser hele flows, og gjør ingen sortering basert på statistikk. Her vil det kun vises de antall flows man har valgt som først stemmer med det utvalget man har valgt. Man kan også aggregere data basert på de valgene man gjør.
+<li> <kbd>Stat TopN</kbd> viser statistisk analyse og sorterer output basert på valgene du gjør.
+<li> <kbd>Stat Any IP Address order by bytes</kbd> vil f.eks gi deg en liste over de som har overført mest data i valgt tidsperiode.
 </ul>
 
 Søk i netflow dataene:
@@ -457,10 +443,10 @@ Ferdigdefinerte filter man bruker ofte:
 </ul>
 
 Lage profiler:<br>
-For søk man gjør ofte og som man vil følge med grafisk over tid kan det være lurt å lage egne profiler som har oversikt over denne trafikken. Merk at dette lager egne flow-filer på filsystemet (som også tar plass). Dersom du lager en profil som er langt tilbake i tid, så kan det ta lang tid for nfsen å lage grunnlagsdata for hele perioden.
+For søk man gjør ofte og som man vil følge med grafisk over tid kan det være lurt å lage egne profiler som har oversikt over denne trafikken. Dersom man velger Real Profile lager dette egne flow-filer på filsystemet (som også tar plass). Dersom du lager en profil som er langt tilbake i tid, så kan det ta lang tid for nfsen å lage grunnlagsdata for hele perioden. Dersom du lager en Shadow Profile, lager den ikke egne flow-filer på filsystemet, men den bruker bare datagrunnlaget som allerede ligger der. Du vil likevel få tegnet egne grafiske profiler for dataene du vil filtrere ut. Bruk av channels gjør at du kan skreddersy grafene og fargene etter dine behov. Se <a href="http://nfsen.sourceforge.net/">dokumentasjon på sourceforge</a> for detaljer.
 <ul>
-<li><tt>Selected profile</tt> står øverst i høyre hjørne.
-<li>Normalt vises selcted profile "live"
+<li><tt>Profile</tt> står øverst i høyre hjørne.
+<li>Normalt vises Profile "live"
 <li>Velg <tt>New profile</tt>
 <ul>
 <li>lag en profil som plukker ut all trafikk av en gitt type, basert på filtre du definerer.
