@@ -457,13 +457,21 @@ For søk man gjør ofte og som man vil følge med grafisk over tid kan det være lur
 </ul>
 </ul>
 
+<ul>
+<li>Alert:
+<ul>
+<li>I nyeste utgave av nfsen kan man lage terskelbaserte alarmer.
+<li>Dokumentasjonen på <a href="http://nfsen.sourceforge.net/#mozTocId859236">nfsen sine sider</a> sier viser detaljer for hvordan man oppretter alarmer.
+</ul>
+</ul>
+
 <h3>Feilsøking av nfsen</h3>
 Dersom du har problemer med nfsen er det ett par ting man kan sjekke foer man melder feil.
 <ul>
 <li>Går alle nødvendige prosesser?<br>
 1 nfsend og 1 nfcapd per kilde(netflow-eksportør) Dersom ikke restart nfsen.
 <li>Mottar du flows fra kilde?<br>
-Bruk gjerne tcpdump for å sjekke om du mottar flows. F.eks <tt>tcpdump port 2055</tt> Hvilken port du lytter på kan du finne i <tt>/etc/nfsen/nfsen.conf</tt> under sources. Dersom ikke, sjekk ruterconfig og access-lister.
+Bruk gjerne tcpdump for å sjekke om du mottar flows. F.eks <tt>tcpdump port 2055</tt> Hvilken port du lytter på kan du finne i <tt>/etc/nfsen/nfsen.conf.local</tt> under sources. Dersom ikke, sjekk ruterconfig og access-lister.
 </ul>
 
 <h2><a name="console">Konsoll</a></h2>
