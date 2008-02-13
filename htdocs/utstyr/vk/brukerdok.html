@@ -430,8 +430,8 @@ host 158.38.x.y der trafikken er sendt ifra port 22(ssh))
 <li><tt>src port gt 80 and src port lt 123</tt> (Filtrerer ut trafikk sendt ifra 
 portene mellom 80 og 123, gt= greater than, lt=less than)
 <li><tt>src port 80 and not host 158.38.x.y</tt> (Filtrerer ut trafikk sendt ifra port 80 og som ikke er sendt til/fra host 158.38.x.y)
-<li><tt>src net 158.38.x.0/24</tt> (Filtrerer ut trafikk sendt ifra nettet 
-158.38.x.0/24)
+<li><tt>src net 158.38.x.0/24</tt> (Filtrerer ut trafikk sendt ifra nettet 158.38.x.0/24)
+<li><tt>Ett annet triks er å angi hvilke interface man skal se på. Eks. in if 24, vil kun plukke ut trafikk som kommer inn på interface 24. Hvilket nummer ett interface har på et cisco-ruter finner man ut med kommandoen <kbd>show snmp mib ifmib ifindex</kbd>. (Husk at netflow kun eksporteres fra trafikk inn på et interface. Trafikk ut på et interface vil ikke bli eksportert, og må følgelig filtreres ut fra det interfacet hvor denne trafikken kommer inn.)
 </ul>
 </ul>
 
