@@ -353,20 +353,20 @@ Bus 001 Device 001: ID 0000:0000
 </pre>
   </li>
 
-  <li>Kontrollér at Gammu klarer å gjenkjenne den tilkoblede mobiltelefonen:
+  <li>Verifisér at Gammu klarer å gjenkjenne den tilkoblede mobiltelefonen:
       <tt>sudo -u navcron gammu --identify</tt>
   </li>
 
-  <li>Kontrollér at mobiltelefonen har forbindelse med GSM-nettverket:
+  <li>Verifisér at mobiltelefonen har forbindelse med GSM-nettverket:
       <tt>sudo -u navcron gammu --monitor 1</tt>
   </li>
 
-  <li>Forsøk å sende ut en SMS med Gammu:
+  <li>Verifisér at Gammu kan sende SMS-meldinger til din telefon:
       <tt>echo "Melding" | sudo -u navcron gammu --sendsms TEXT &lt;tlfnr&gt;</tt>
   </li>
 
-  <li>Forsøk å sende ut en test-SMS med NAVs SMS-daemon:
-      <tt>sudo -u navcron /usr/lib/nav/smsd.pl -t &lt;tlfnr&gt;</tt>
+  <li>Verifisér at NAVs SMS-daemon kan sende SMS-meldinger til din telefon:
+      <tt>sudo -u navcron /usr/lib/nav/smsd.py -t &lt;tlfnr&gt;</tt>
   </li>
 </ul>
 
