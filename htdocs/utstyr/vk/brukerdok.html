@@ -267,83 +267,96 @@ dokumentasjonen på
  <a 
 href="http://metanav.ntnu.no">NAV wiki</a>. Litt starthjelp:
 
-<ul>
-<li> Web brukeradministrasjon. <br>
+<dl>
+<dt> Web brukeradministrasjon: </dt>
+<dd>
 Det er ikke noe dokument som beskriver hvordan du oppretter brukere og
 hvordan du tilordner brukere til grupper. Helt kort; dette gjør du
 under "tool useradmin". Det er rett frem å legge til brukere, men
-husk st de må tilordnes en eller flere grupper. Merk også at du
-kan redigere privilegiene til en gruppe. Se f.eks på <tt>ReadAll</tt> 
-gruppen,
-her vil du se at denne har et <tt>web_access</tt> privilegie som gir 
+husk at de må tilordnes en eller flere grupper.  Merk også at du
+kan redigere privilegiene til en gruppe. Se f.eks på gruppen <em>ReadAll</em>,
+her vil du se at denne har et <var>web_access</var> privilegie som gir 
 tilgang til en del "tools", men ikke alle. Dette gir deg en ide om 
-hvordan <tt>web_access</tt> privilegie kan justeres. Merk at 
-<tt>report_access</tt> <i>ikke</i>
-er i bruk (det vises i grensesnittet). Merk også at det er mulig
-å bruke ldap som brukerkilde. Du må da gjøre innstillinger i
-fila <tt>/etc/nav/webfront/webfront.conf</tt>. 
+hvordan <var>web_access</var> privilegie kan justeres. Merk at det er mulig
+å bruke ldap til brukerautentisering. Du må da gjøre innstillinger i
+fila <var>/etc/nav/webfront/webfront.conf</var>. 
+</dd>
 
-<li>Sett velkomstmelding m.m.<br>
-En rekke filer i katalogen <tt>/etc/nav/webfront/</tt> kan redigeres
-for å tilpasse utseende til NAVs hovedside.
+<dt>Sett velkomstmelding m.m.:</dt>
+<dd>
+  En rekke filer i katalogen <var>/etc/nav/webfront/</var> kan redigeres
+  for å tilpasse utseende til NAVs hovedside.
+</dd>
 
-<li> Sett epost mottager av NAV admin epost <br>
-Dette gjør du ved å sette <tt>ADMIN_MAIL</tt> i 
-<tt>/etc/nav/nav.conf</tt>. I samme fil, sett også <tt>DOMAIN_SUFFIX</tt>
-til ditt domene. 
+<dt>Sett mottaker av NAV-adminstrativ epost: </dt>
+<dd>
+  All administrativ epost fra NAV sendes til driftspersonell hos
+  UNINETT, som konfigurert av <em>cfengine</em> i variabelen
+  <var>ADMIN_MAIL</var> i filen <var>/etc/nav.conf</var>.  Dersom du
+  ønsker kopier av denne eposten, gi beskjed til <a
+  href="mailto:drift@uninett.no">drift@uninett.no</a>.
+</dd>
 
-<li> Sett passord til NAVs posgresdatabase <br>
-Denne er satt for deg, du kan endre passord ved å endre attributten
-<tt>userpw_nav</tt> i <tt>/etc/nav/db.conf</tt>. Merk at du 
-kan aksessere denne databasen (hoveddelen av den) ved å bruke dette
-passordet når du skriver <tt>psql manage nav</tt>. For dypere feilsøking,
-eller dypere forståelse av databasen er dette nyttig.
+<dt> Sett passord til NAVs PostgreSQL-database: </dt>
+<dd>
+  Dette er satt for deg.  Passordet kan leses fra attributten
+  <var>userpw_nav</var> i filen <var>/etc/nav/db.conf</var>.  Merk at
+  du kan aksessere denne databasen ved å bruke dette passordet når du
+  skriver <kbd>psql nav nav</kbd>. For dypere feilsøking, eller dypere
+  forståelse av databasen er dette nyttig.
+</dd>
 
-<li> Seeding the database <br>
-For at NAV skal overvåke nettverket ditt må den få "seed" informasjon fra 
-deg. Du bruker "edit database tool" til dette. Følgende dokument
-beskriver det du må gjøre: 
-<a 
-href="http://metanav.ntnu.no/moin.cgi/SeedEssentials">SeedEssentials</a>. 
-Det anbefales ellers å lese flere dokumenter under menyen
-<a 
-href="http://metanav.ntnu.no/moin.cgi/NAVConfiguration">NAVConfiguration</a>. 
+<dt> &quot;Seede&quot; databasen: </dt>
+<dd>
 
-<li> Varslingssystemet Alert Profiles<br>
-Varslingssystemet er nokså omfattende med mange muligheter. For
-å forenkle initielt oppsett er det en rekke predefinerte filtre
-og filtergrupper du kan bruke. Det følger en bruker manual med
-Alert Profiles, den ser du ved å velge "help" fra sidemenyen
-i "Alert Profiles tool". En 
-<a 
-href="http://metanav.ntnu.no/moin.cgi/AlertProfiles">wiki side</a>
-gir også en overordnet introduksjon.
+  For at NAV skal overvåke nettverket ditt må den få &quot;seed&quot;
+  informasjon fra deg. Du bruker verktøyet <em>Seed Database</em> (fra
+  Toolbox) til dette. Følgende dokument beskriver det du må gjøre:
+  <a 
+  href="http://metanav.uninett.no/seedessentials">Seed essentials</a>. 
+  Det anbefales ellers å lese flere dokumenter under menyen
+  <a 
+  href="http://metanav.uninett.no/navconfiguration">NAV Configuration</a>. 
+</dd>
 
-<li> Sjekk status på bakgrunnsprosesser og logger <br>
-<ul>
-<li> Kommandoen <tt>sudo nav status</tt> gir status på om
-NAVs ulike bakgrunnsprosesser og cronjobber er aktive.
-<li> Innsamlingsmotoren getDeviceData logger (bl.a.) til
-<tt>/var/log/nav/getDeviceData.log </tt>
-<li> I samme katalog se tilsvarende log for 
-<tt>getBoksmacs.log</tt> (camloggeren), 
-<tt>networkdiscovery/</tt>  (topologioppdageren)
-<tt>pping.log</tt> (statusmonitoren),
-<tt>servicemon.log</tt> (tjenesteovervåkeren), 
-<tt>thresholdMon.log</tt> (terskelovervåkeren),
-<tt>eventengine.log</tt> (hendelsessystemet) og
-<tt>alertengine.log</tt> (alarmsystemet).
-</ul>
-</ul>
+<dt> Varslingssystemet Alert Profiles: </dt>
+<dd>
+  Varslingssystemet er nokså omfattende med mange muligheter. For å
+  forenkle initielt oppsett er det en rekke forhåndsdefinerte filtre
+  og filtergrupper du kan bruke.  Les <a
+  href="http://metanav.uninett.no/alertprofiles">wiki-siden om Alert
+  Profiles</a> for en introduksjon til systemet.
+</dd>
 
-<h3>Feilsøking av mobiltelefon/SMS-utsending</h3>
+<dt> Sjekk status på bakgrunnsprosesser og logger </dt>
+<dd>
+  <ul>
+    <li> Kommandoen <kbd>sudo nav status</kbd> gir status på om
+         NAVs ulike bakgrunnsprosesser og cronjobber er aktive.</li>
+
+    <li> Innsamlingsmotoren getDeviceData logger (bl.a.) til
+         <var>/var/log/nav/getDeviceData.log </var> </li>
+
+    <li> I samme katalog se tilsvarende log for 
+         <var>getBoksmacs.log</var> (camloggeren), 
+	 <var>networkdiscovery/</var>  (topologioppdageren)
+	 <var>pping.log</var> (statusmonitoren),
+	 <var>servicemon.log</var> (tjenesteovervåkeren), 
+	 <var>thresholdMon.log</var> (terskelovervåkeren),
+	 <var>eventengine.log</var> (hendelsessystemet) og
+	 <var>alertengine.log</var> (alarmsystemet). </li>
+  </ul>
+<dd>
+</dl>
+
+<h3><a name="feilsok-sms">Feilsøking av mobiltelefon/SMS-utsending</a></h3>
 
 <p>Dersom du har problemer med utsending av SMS fra verktøykassen, kan du gjøre litt førstelinjes feilsøking før du feilmelder situasjonen til drift@uninett.no.
 </p>
 
 <ul>
   <li><p>Verifisér at mobilen er synlig på USB-bussen:
-      <tt>lsusb</tt></p>
+      <kbd>lsusb</kbd></p>
       <p>Forventet output skal ligne på dette:</p>
       <pre>Bus 004 Device 001: ID 0000:0000
 Bus 003 Device 001: ID 0000:0000
@@ -354,19 +367,19 @@ Bus 001 Device 001: ID 0000:0000
   </li>
 
   <li>Verifisér at Gammu klarer å gjenkjenne den tilkoblede mobiltelefonen:
-      <tt>sudo -u navcron gammu --identify</tt>
+      <kbd>sudo -u navcron gammu --identify</kbd>
   </li>
 
   <li>Verifisér at mobiltelefonen har forbindelse med GSM-nettverket:
-      <tt>sudo -u navcron gammu --monitor 1</tt>
+      <kbd>sudo -u navcron gammu --monitor 1</kbd>
   </li>
 
   <li>Verifisér at Gammu kan sende SMS-meldinger til din telefon:
-      <tt>echo "Melding" | sudo -u navcron gammu --sendsms TEXT &lt;tlfnr&gt;</tt>
+      <kbd>echo "Melding" | sudo -u navcron gammu --sendsms TEXT &lt;tlfnr&gt;</kbd>
   </li>
 
   <li>Verifisér at NAVs SMS-daemon kan sende SMS-meldinger til din telefon:
-      <tt>sudo -u navcron /usr/lib/nav/smsd.py -t &lt;tlfnr&gt;</tt>
+      <kbd>sudo -u navcron /usr/lib/nav/smsd.py -t &lt;tlfnr&gt;</kbd>
   </li>
 </ul>
 
