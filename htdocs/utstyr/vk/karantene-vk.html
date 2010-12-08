@@ -27,15 +27,14 @@ I tillleg kan man der man har tatt ibruk 802.1x bruke "fallback-VLAN/unauth-VLAN
 <h2>Oppsett på ruter</h2>
 <p>
 <h3>Skru på globalt</h3>
-<code>ip wccp web-cache redirect-list 108 group-list 8</code>
+<code>ip wccp web-cache redirect-list 108 group-list 8</code><br>
 Vha. denne kommandoen skrur man på WCCP globalt på ruteren. I tillegg setter vi en redirect-list som
 definerer hva som IKKE skal WCCP'es og en group-list som definerer hvilke Squid-servere som har lov til å
 opprette GRE-tunnel mot denne ruteren. Disse access-listene kan f.eks se slik ut:
 <code>
 <pre>
 access-list 8 permit 129.241.23.234
-access-list 8 deny
-any
+access-list 8 deny any
 access-list 108 remark ** Ting som skal unnslippe WCCP
 access-list 108 deny ip any host 129.241.18.32
 access-list 108 permit ip any any
@@ -98,7 +97,7 @@ HUSK: Ett slikt interface for HVER ruter som serveren skal kunne snakke med.
 <p>
 Slik ser hele squid.conf ut:
 <code>
-</pre>
+<pre>
 acl manager proto cache_object
 acl localhost src 127.0.0.1/32
 acl to_localhost dst 127.0.0.0/8
