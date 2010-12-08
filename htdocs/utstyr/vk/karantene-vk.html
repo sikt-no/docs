@@ -32,20 +32,24 @@ Vha. denne kommandoen skrur man på WCCP globalt på ruteren. I tillegg setter v
 definerer hva som IKKE skal WCCP'es og en group-list som definerer hvilke Squid-servere som har lov til å
 opprette GRE-tunnel mot denne ruteren. Disse access-listene kan f.eks se slik ut:
 <code>
+<pre>
 access-list 8 permit 129.241.23.234
 access-list 8 deny
 any
 access-list 108 remark ** Ting som skal unnslippe WCCP
 access-list 108 deny ip any host 129.241.18.32
 access-list 108 permit ip any any
+</pre>
 </code>
 
 <h3>Skru på for ett vlan</h3>
 <code>
+<pre>
 interface Vlan333
 ip access-group vlan333in in
 ip access-group vlan333out out
 ip wccp web-cache redirect in
+</pre>
 </code>
 Her setter vi at all web-trafikk (port 80) inn på VLANet skal redirigeres. På VLANene har vi i tillegg definert
 èn inngående og èn utgående access-liste. Dette for at i enkelte karantenenett skal det være mulig å gjøre
@@ -62,6 +66,7 @@ Denne fila vedlikeholdes via svn, og endringer må gjøres der.
 For at GRE-tunnelen (mellom ruter og server) skal fungere opp mot de forskjellige ruterene, så må det legges
 inn ett tunnel-interface for hver ruter som ser slik ut:
 <code>
+<pre>
 auto <tunnellnavn>
     iface <tunnellnavn> inet static
     address <adresse for vk>
@@ -69,10 +74,12 @@ auto <tunnellnavn>
     mtu 1476
     pre-up iptunnel add <tunnellnavn> mode gre local <adresse for vk> remote <loopback for ruter>
     post-down iptunnel del <tunnellnavn>
+</pre>
 </code>
 
 Her er ett ekspempel ved hiof:
 <code>
+<pre>
 auto tun-c6500-h-1
     iface tun-c6500-h-1 inet static
     address 158.39.160.109
@@ -80,6 +87,7 @@ auto tun-c6500-h-1
     mtu 1476
     pre-up iptunnel add tun-c6500-h-1 mode gre local 158.39.160.109 remote 128.39.0.92
     post-down iptunnel del tun-c6500-h-1
+</pre>
 </code>
 Her er adressen på tunnel-interfacet lik IP-adressen til serveren, men med maske 255.255.255.255. MTU
 settes til 1476 for å slippe fragmentering av GRE-pakkene.
@@ -90,6 +98,7 @@ HUSK: Ett slikt interface for HVER ruter som serveren skal kunne snakke med.
 <p>
 Slik ser hele squid.conf ut:
 <code>
+</pre>
 acl manager proto cache_object
 acl localhost src 127.0.0.1/32
 acl to_localhost dst 127.0.0.0/8
@@ -155,6 +164,7 @@ refresh_pattern .	0	20%	4320
 icp_port 3130
 
 coredump_dir /var/spool/squid3
+</pre>
 </code>
 </p>
 
@@ -162,6 +172,7 @@ coredump_dir /var/spool/squid3
 <p>
 Slik ser squidGuard.conf ut:
 <code>
+<pre>
 logdir /var/log/squid3
 
 # Her er det kun definert èn klasse
@@ -189,25 +200,29 @@ acl {
                 redirect 302:http://karantene.hix.no
         }
 }
-
+</pre>
 </code>
 </p>
 
 <h3>/var/lib/squidguard/db/aapne_url</h3>
 <p>
 <code>
+<pre>
 # List opp hvilke URL'er som skal slippe igjennom uten redirect
 www.hix.no/kontakt_it_avdeling.html
+</pre>
 </code>
 </p>
 
 <h3>/var/lib/squidguard/db/aapne_domain</h3>
 <p>
 <code>
+<pre>
 # List opp hvilke domener som skal slippe igjennom uten redirect
 hix.no
 microsoftupdate.com
 virusupdate.com
+</pre>
 </code>
 </p>
 
