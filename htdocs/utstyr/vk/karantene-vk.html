@@ -31,6 +31,7 @@ I tillleg kan man der man har tatt ibruk 802.1x bruke "fallback-VLAN/unauth-VLAN
 Vha. denne kommandoen skrur man på WCCP globalt på ruteren. I tillegg setter vi en redirect-list som
 definerer hva som IKKE skal WCCP'es og en group-list som definerer hvilke Squid-servere som har lov til å
 opprette GRE-tunnel mot denne ruteren. Disse access-listene ser f.eks slik ut for ruter i halden:
+<pre>
 <code>
 access-list 8 permit 158.39.160.109
 access-list 8 deny any
@@ -38,18 +39,30 @@ access-list 108 remark ** Ting som skal unnslippe WCCP
 access-list 108 deny ip any host 158.39.162.29
 access-list 108 permit ip any any
 </code>
+</pre>
 <p>
 <h3>Skru på for ett vlan</h3>
+<pre>
 <code>
 interface Vlan333
 ip access-group vlan333in in
 ip access-group vlan333out out
 ip wccp web-cache redirect in
 </code>
+</pre>
 Her setter vi at all web-trafikk (port 80) inn på VLANet skal redirigeres. På VLANene har vi i tillegg definert
 èn inngående og èn utgående access-liste. Dette for at i enkelte karantenenett skal det være mulig å gjøre
 enkelte ting (f.eks lese og sende mail). Slike åpninger defineres da i disse access-listene.
 </p>
+<h3>Pakkefilter/brannmur</h3>
+GRE-trafikk må tillates fra ruteren sin loopback-adresse til vk. I tillegg må det tillates trafikk fra IP-adressene til ruteren som er brukt i squid.conf. Se nedenfor. Det beste er kanskje å gi full tilgang til disse IP-adressene:
+<pre>
+<code>
+access-list xxx permit gre host 128.39.103.5 host 158.39.160.109
+access-list xxx permit ip host 128.39.46.74 host 158.38.160.109
+</code>
+</pre>
+Verktøykassen må også få lov til å sende web-trafikk med "forfalsket" IP-adresse. Det betyr at man er nødt til å skru av urpf (<code>ip verify unicast source reachable-via rx allow-default</code>) på vlan-interfacet der verktøykassen står.
 
 <h2>Oppsett på verktøykasse</h2>
 
@@ -231,6 +244,7 @@ Denne vedlikeholdes via subversion, og det må stå ett 1-tall i fila for at red
 <p>
 <h3>IPtables</h3>
 I filene <code> /etc/network/if-up.d/squid3 </code> og <code>/etc/network/if-down.d/squid3</code> legger vi inn oppstart/fjerning av iptables-regel når interface går opp eller ned.
+<pre>
 <code>if-up.d/squid3</code> ser slik ut:
 <code>
 #! /bin/sh -e
@@ -247,7 +261,7 @@ I <code>if-down.d/squid3</code> fjerner vi den samme regelen:
 if [ "$IFACE" = tun-c6500-h-1 ]; then
         iptables -t nat -D PREROUTING -i tun-c6500-h-1 -p tcp --dport 80 -j REDIRECT --to-ports 3128
 fi
-
+</pre>
 tun-c6500-h-1 refererer her til tunnellinterfacet i /etc/network/interfaces. Har man flere tuneller må man ha egne innslag for hver tunnell.
 Dette sørger for at trafikk inn på tunnel-interfacet (fra ruteren) på TCP-port 80 blir REDIRECT'et til TCP-port 3128 hvor squid lytter.
 </p>
