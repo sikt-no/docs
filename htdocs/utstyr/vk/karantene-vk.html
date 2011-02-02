@@ -31,7 +31,6 @@ I tillleg kan man der man har tatt ibruk 802.1x bruke "fallback-VLAN/unauth-VLAN
 Vha. denne kommandoen skrur man på WCCP globalt på ruteren. I tillegg setter vi en redirect-list som
 definerer hva som IKKE skal WCCP'es og en group-list som definerer hvilke Squid-servere som har lov til å
 opprette GRE-tunnel mot denne ruteren. Disse access-listene ser f.eks slik ut for ruter i halden:
-<pre>
 <code>
 access-list 8 permit 158.39.160.109
 access-list 8 deny any
@@ -39,16 +38,14 @@ access-list 108 remark ** Ting som skal unnslippe WCCP
 access-list 108 deny ip any host 158.39.162.29
 access-list 108 permit ip any any
 </code>
-</pre>
+<p>
 <h3>Skru på for ett vlan</h3>
-<pre>
 <code>
 interface Vlan333
 ip access-group vlan333in in
 ip access-group vlan333out out
 ip wccp web-cache redirect in
 </code>
-</pre>
 Her setter vi at all web-trafikk (port 80) inn på VLANet skal redirigeres. På VLANene har vi i tillegg definert
 èn inngående og èn utgående access-liste. Dette for at i enkelte karantenenett skal det være mulig å gjøre
 enkelte ting (f.eks lese og sende mail). Slike åpninger defineres da i disse access-listene.
@@ -56,22 +53,24 @@ enkelte ting (f.eks lese og sende mail). Slike åpninger defineres da i disse ac
 
 <h2>Oppsett på verktøykasse</h2>
 
-Alle verktøykasser er satt opp default til ikke å starte squid. For at verktøykassen skal kjøre squid er du nødt til å legge til ei tom fil i cfengine /etc/default/squid. (Fra før finnes det ei fil der som sier exit)
+halden-vk har ett ferdig oppsett med de rette filene i subversion, og kan brukes som mal. Pass på å gjøre lokale tilpasninger som passer per vk ved kopiering.
+<p>
+<h3>squid3</h3>
+Alle verktøykasser er satt opp default til ikke å starte squid. For at verktøykassen skal kjøre squid er du nødt til å legge til ei tom fil i cfengine per vk i katalogen /etc/default/squid. (Fra før finnes det ei fil der som sier exit)
 
 <h3>/etc/network/interfaces</h3>
-<p>
-Denne fila vedlikeholdes via svn, og endringer må gjøres der.
+Denne fila vedlikeholdes via subversion, og endringer må gjøres der.
 For at GRE-tunnelen (mellom ruter og server) skal fungere opp mot de forskjellige ruterene, så må det legges
-inn ett tunnel-interface for hver ruter som ser slik ut:
+inn ett tunnel-interface for hver ruter som ser slik ut. NB: her brukes IP-adressen til loopback interfacen til ruteren som tunnel-endepunkt i motsetning til i squid.conf der vi ikke kan bruke loopback-interfacen sin IP-adresse.
 <pre>
 <code>
-auto <tunnellnavn>
-    iface <tunnellnavn> inet static
-    address <adresse for vk>
+auto 'tunnellnavn'
+    iface 'tunnellnavn' inet static
+    address 'adresse for vk'
     netmask 255.255.255.255
     mtu 1476
-    pre-up iptunnel add <tunnellnavn> mode gre local <adresse for vk> remote <loopback for ruter>
-    post-down iptunnel del <tunnellnavn>
+    pre-up iptunnel add 'tunnellnavn' mode gre local 'adresse for vk' remote 'loopback for ruter'
+    post-down iptunnel del 'tunnellnavn'
 </code>
 </pre>
 
@@ -83,7 +82,7 @@ auto tun-c6500-h-1
     address 158.39.160.109
     netmask 255.255.255.255
     mtu 1476
-    pre-up iptunnel add tun-c6500-h-1 mode gre local 158.39.160.109 remote 128.39.0.92
+    pre-up iptunnel add tun-c6500-h-1 mode gre local 158.39.160.109 remote 128.39.103.5
     post-down iptunnel del tun-c6500-h-1
 </code>
 </pre>
@@ -94,7 +93,7 @@ HUSK: Ett slikt interface for HVER ruter som serveren skal kunne snakke med.
 
 <h3>/etc/squid3/squid.conf</h3>
 <p>
-Slik ser hele squid.conf ut:
+Slik ser hele squid.conf ut, og her må man tilpasse IP-adresse i wccp2_router til å stemme lokalt:
 <pre>
 <code>
 acl manager proto cache_object
@@ -130,7 +129,7 @@ http_access allow karantenenett
 # wccp2_router skal staa til default gw for squid server, eller til nærmeste link-adresse (loopback fungerer ikke)
 wccp2_router 158.39.160.1
 wccp2_router 128.39.46.74
-# Dersom verktøykassen står tilkoblet ruteren den skal snakke wccp med, kan dette gjøres på lag 2 med disse kommandoene. Disse må være utkommentert dersom institusjonen har flere studiesteder, og skal bruke denne løsningen mot samme verktøykasse. (Trafikk må da gå på lag 3)
+# Dersom verktøykassen står tilkoblet ruteren den skal snakke wccp med, kan dette gjøres på lag 2 (og dermed også i hardware på ruteren) med disse kommandoene. Disse må være utkommentert dersom institusjonen har flere studiesteder, og skal bruke denne løsningen mot samme verktøykasse. (Trafikk må da gå på lag 3)
 #wccp2_forwarding_method 2
 #wccp2_return_method 2
 #wccp2_assignment_method 2
@@ -226,17 +225,37 @@ virusupdate.com
 
 <p>
 <h3>/proc/sys/net/ipv4/ip_forward</h3>
-Denne må stå til 1
+Denne vedlikeholdes via subversion, og det må stå ett 1-tall i fila for at redirigering kan skje via iptables.
 </p>
 
 <p>
 <h3>IPtables</h3>
-<code>iptables -t nat -A PREROUTING -i tun-c6500-k-1 -p tcp --dport 80 -j REDIRECT --to-ports 3128</code>
-FIX: Denne legges inn under /etc/network/ifup/....
-tun-c6500-k-1 refererer her til tunnellinterfacet i /etc/network/interfaces. Har man flere tuneller må man ha egne innslag for hver tunnell.
+I filene <code> /etc/network/if-up.d/squid3 </code> og <code>/etc/network/if-down.d/squid3</code> legger vi inn oppstart/fjerning av iptables-regel når interface går opp eller ned.
+<code>if-up.d/squid3</code> ser slik ut:
+<code>
+#! /bin/sh -e
+
+# Insert iptables rule when tunnell interface is going up
+if [ "$IFACE" = tun-c6500-h-1 ]; then
+        iptables -t nat -A PREROUTING -i tun-c6500-h-1 -p tcp --dport 80 -j REDIRECT --to-ports 3128
+fi
+</code>
+I <code>if-down.d/squid3</code> fjerner vi den samme regelen:
+#! /bin/sh -e
+
+# Remove iptables rule when tunnell interface is going down
+if [ "$IFACE" = tun-c6500-h-1 ]; then
+        iptables -t nat -D PREROUTING -i tun-c6500-h-1 -p tcp --dport 80 -j REDIRECT --to-ports 3128
+fi
+
+tun-c6500-h-1 refererer her til tunnellinterfacet i /etc/network/interfaces. Har man flere tuneller må man ha egne innslag for hver tunnell.
 Dette sørger for at trafikk inn på tunnel-interfacet (fra ruteren) på TCP-port 80 blir REDIRECT'et til TCP-port 3128 hvor squid lytter.
 </p>
 
+<h2>Overvåkning</h2>
+<p>
+Husk å legge til overvåkning av squid i bigbrother for hver enkelt vk!
+</p>
 <h2>Kontaktpersoner</h2>
 <ul>
   <li>rune.sydskjor@uninett.no</li>
