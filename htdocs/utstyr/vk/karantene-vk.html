@@ -61,11 +61,13 @@ GRE-trafikk må tillates fra ruteren sin loopback-adresse til vk. I tillegg må 
 access-list xxx permit gre host 128.39.103.5 host 158.39.160.109
 access-list xxx permit ip host 128.39.46.74 host 158.38.160.109
 </code>
-Verktøykassen må også få lov til å sende web-trafikk med "forfalsket" IP-adresse. Det betyr at man er nødt til å skru av urpf (<code>ip verify unicast source reachable-via rx allow-default</code>) på vlan-interfacet der verktøykassen står.
-
-Det må også plukkes ut et nett for å bruke til IP-adresser for karantene-nettet, og en DHCP-server som deler ut adresser i dette segmentet for dette vlan'et.
 </pre>
-
+<p>
+Verktøykassen må også få lov til å sende web-trafikk med "forfalsket" IP-adresse. Det betyr at man er nødt til å skru av urpf (<code>ip verify unicast source reachable-via rx allow-default</code>) på vlan-interfacet der verktøykassen står.
+</p>
+<p>
+Det må også plukkes ut et nett for å bruke til IP-adresser for karantene-nettet, og en DHCP-server som deler ut adresser i dette segmentet for dette vlan'et.
+</p>
 <h2>Oppsett på verktøykasse</h2>
 
 halden-vk har ett ferdig oppsett med de rette filene i subversion, og kan brukes som mal. Pass på å gjøre lokale tilpasninger som passer per vk ved kopiering.
