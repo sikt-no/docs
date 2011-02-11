@@ -58,8 +58,11 @@ enkelte ting (f.eks lese og sende mail). Slike åpninger defineres da i disse ac
 GRE-trafikk må tillates fra ruteren sin loopback-adresse til vk. I tillegg må det tillates trafikk fra IP-adressene til ruteren som er brukt i squid.conf. WCCP bruker UDP port 2048 mellom ruter og verktøykasse. Se nedenfor. Det beste er kanskje å gi full tilgang til disse IP-adressene:
 <pre>
 <code>
+! Tillatt wccp mot verktøykasse
 access-list xxx permit gre host 128.39.103.5 host 158.39.160.109
 access-list xxx permit ip host 128.39.46.74 host 158.38.160.109
+! Tillat web-trafikk mot verktøykassen
+access-list xxx permit tcp any host 158.38.160.109 80
 </code>
 </pre>
 <p>
@@ -219,7 +222,7 @@ acl {
 </p>
 
 <h3>/var/lib/squidguard/db/aapne_url</h3>
-Denne fila er skrivbar for lokale brukere som er medlem av gruppa netops
+Denne fila opprettes og redigeres direkte på hver enkelt vk og er skrivbar for lokale brukere som er medlem av gruppa netops
 <pre>
 <code>
 # List opp hvilke URL'er som skal slippe igjennom uten redirect
@@ -228,7 +231,7 @@ www.hix.no/kontakt_it_avdeling.html
 </pre>
 
 <h3>/var/lib/squidguard/db/aapne_domain</h3>
-Denne fila er skrivbar for lokale brukere som er medlem av gruppa netops
+Denne fila opprettes og redigeres direkte på hver enkelt vk og er skrivbar for lokale brukere som er medlem av gruppa netops
 <pre>
 <code>
 # List opp hvilke domener som skal slippe igjennom uten redirect
@@ -240,12 +243,12 @@ virusupdate.com
 
 <p>
 <h3>/proc/sys/net/ipv4/ip_forward</h3>
-Denne vedlikeholdes via subversion, og det må stå ett 1-tall i fila for at redirigering kan skje via iptables.
+Denne redigeres direkte på hver enkelt vk, og det må stå ett 1-tall i fila for at redirigering kan skje via iptables.
 </p>
 
 <p>
 <h3>IPtables</h3>
-I filene <code> /etc/network/if-up.d/squid3 </code> og <code>/etc/network/if-down.d/squid3</code> legger vi inn oppstart/fjerning av iptables-regel når interface går opp eller ned.
+Disse vedlikeholdes via cfengine. I filene <code> /etc/network/if-up.d/squid3 </code> og <code>/etc/network/if-down.d/squid3</code> legger vi inn oppstart/fjerning av iptables-regel når interface går opp eller ned.
 <pre>
 <code>if-up.d/squid3</code> ser slik ut:
 <code>
