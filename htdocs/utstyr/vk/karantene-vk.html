@@ -23,7 +23,10 @@ hvorfor brukeren har havnet der.
 I tillegg trenger man også komponenter som setter en aktuell svitsjeport i et karantenenett/VLAN. Arnold i NAV kan for eksempel brukes for dette.
 I tillleg kan man der man har tatt ibruk 802.1x bruke "fallback-VLAN/unauth-VLAN" på switchene som sørger for å sette en bruker i karantene-vlan'et dersom han ikke klarer å logge seg inn.
 </p>
-
+<h2> Lag 2 WCCP vs. Lag 3 WCCP</h2>
+<p>
+Vi har to måter vi kan gjøre WCCP på. Enten via lag 2, der redirigering foregår i hardware på ruteren. Denne metoden er å foretrekke, men det krever at verktøykassen er svitsjet på lag 2 på ruteren der karantene vlan'et er definert. Denne løsningen fungerer mao. ikke der vi har en sentral verktøykasse og man vil ha karantene vlan på flere studiesteder. Da må man bruke WCCP på lag 3 istedet, og opprette en GRE-tunell fra ruteren mot verktøykassen. Lenger ned i dokumentasjonen er det nevnt ulike krav til de ulike metodene. Merk også at det kan se ut som noen rutertyper kun støtter lag 2 WCCP. Dette er sett på 4506 f.eks.
+</p>
 <h2>Oppsett på ruter/hos kunde</h2>
 <p>
 <h3>Skru på globalt</h3>
@@ -55,30 +58,34 @@ Her setter vi at all web-trafikk (port 80) inn på VLANet skal redirigeres. På 
 enkelte ting (f.eks lese og sende mail). Slike åpninger defineres da i disse access-listene.
 </p>
 <h3>Pakkefilter/brannmur</h3>
-GRE-trafikk må tillates fra ruteren sin loopback-adresse til vk. I tillegg må det tillates trafikk fra IP-adressene til ruteren som er brukt i squid.conf. WCCP bruker UDP port 2048 mellom ruter og verktøykasse. Se nedenfor. Det beste er kanskje å gi full tilgang til disse IP-adressene:
+For lag 3 WCCP må GRE-trafikk tillates fra ruteren sin loopback-adresse til vk. For både lag2 og lag3 WCCP må det tillates trafikk fra IP-adressene til ruteren som er brukt i squid.conf. WCCP bruker UDP port 2048 mellom ruter og verktøykasse. Se nedenfor. Det beste er kanskje å gi full tilgang til disse IP-adressene:
 <pre>
 <code>
+! For filter ut mot verktøykasse:
 ! Tillatt wccp mot verktøykasse
-access-list xxx permit gre host 128.39.103.5 host 158.39.160.109
+access-list xxx permit gre host 128.39.103.5 host 158.39.160.109 ! kun for lag 3 WCCP
 access-list xxx permit ip host 128.39.46.74 host 158.38.160.109
-! Tillat web-trafikk mot verktøykassen
-access-list xxx permit tcp any host 158.38.160.109 80
+! Tillat trafikk fra karantene-nett mot hvem som helst på port 80
+access-list xxx permit tcp 'karantene-nett' any eq 80
 </code>
 </pre>
 <p>
-Verktøykassen må også få lov til å sende web-trafikk med "forfalsket" IP-adresse. Det betyr at man er nødt til å skru av urpf (<code>ip verify unicast source reachable-via rx allow-default</code>) på vlan-interfacet der verktøykassen står.
+Verktøykassen må også få lov til å sende web-trafikk med "forfalsket" IP-adresse. Det betyr at man er nødt til å skru av urpf (<code>ip verify unicast source reachable-via rx allow-default</code>) på vlan-interfacet der verktøykassen står. Evt. dersom man har pakkefilter utgående fra vk, så må det tillates trafikk fra hvem som helst fra port 80 mot karantene-adressene
+<code>
+access-list xxx permit tcp any eq 80 'karantene-nett'
+</code>
 </p>
 <p>
 Det må også plukkes ut et nett for å bruke til IP-adresser for karantene-nettet, og en DHCP-server som deler ut adresser i dette segmentet for dette vlan'et.
 </p>
 <h2>Oppsett på verktøykasse</h2>
 
-halden-vk har ett ferdig oppsett med de rette filene i subversion, og kan brukes som mal. Pass på å gjøre lokale tilpasninger som passer per vk ved kopiering.
+halden-vk har ett ferdig oppsett med de rette filene i subversion for lag 3 WCCP, og kan brukes som mal. For lag 2 WCCP kan du bruke nesna-vk som mal. Pass på å gjøre lokale tilpasninger som passer per vk ved kopiering.
 <p>
 <h3>squid3</h3>
 Alle verktøykasser er satt opp default til ikke å starte squid. For at verktøykassen skal kjøre squid er du nødt til å legge til ei tom fil i cfengine per vk i katalogen /etc/default/squid. (Fra før finnes det ei fil der som sier exit)
 
-<h3>/etc/network/interfaces</h3>
+<h3>/etc/network/interfaces. Merk, kun nødvendig for lag 3 WCCP</h3>
 Denne fila vedlikeholdes via subversion, og endringer må gjøres der.
 For at GRE-tunnelen (mellom ruter og server) skal fungere opp mot de forskjellige ruterene, så må det legges
 inn ett tunnel-interface for hver ruter som ser slik ut. NB: her brukes IP-adressen til loopback interfacen til ruteren som tunnel-endepunkt i motsetning til i squid.conf der vi ikke kan bruke loopback-interfacen sin IP-adresse.
@@ -108,7 +115,7 @@ auto tun-c6500-h-1
 </pre>
 Her er adressen på tunnel-interfacet lik IP-adressen til serveren, men med maske 255.255.255.255. MTU
 settes til 1476 for å slippe fragmentering av GRE-pakkene.
-HUSK: Ett slikt interface for HVER ruter som serveren skal kunne snakke med.
+HUSK: Ett slikt interface for HVER ruter som serveren skal kunne snakke med. <code>ifup 'tunnellnavn'</code> må kjøres manuelt på vk etterpå for å få opp interfacet.
 </p>
 
 <h3>/etc/squid3/squid.conf</h3>
@@ -254,19 +261,29 @@ Disse vedlikeholdes via cfengine. I filene <code> /etc/network/if-up.d/squid3 </
 <code>
 #! /bin/sh -e
 
+# For lag 3 WCCP:
 # Insert iptables rule when tunnell interface is going up
 if [ "$IFACE" = tun-c6500-h-1 ]; then
         iptables -t nat -A PREROUTING -i tun-c6500-h-1 -p tcp --dport 80 -j REDIRECT --to-ports 3128
 fi
+
+# For lag 2 WCCP:
+iptables -t nat -A PREROUTING -i eth0 -p tcp -s 'karantenenett/maske' --dport 80 -j REDIRECT --to-ports 3128
+
 </code>
 I <code>if-down.d/squid3</code> fjerner vi den samme regelen:
 <code>
 #! /bin/sh -e
 
+# For lag 3 WCCP:
 # Remove iptables rule when tunnell interface is going down
 if [ "$IFACE" = tun-c6500-h-1 ]; then
         iptables -t nat -D PREROUTING -i tun-c6500-h-1 -p tcp --dport 80 -j REDIRECT --to-ports 3128
 fi
+
+# For lag 2 WCCP:
+iptables -t nat -D PREROUTING -i eth0 -p tcp -s 'karantenenett/maske' --dport 80 -j REDIRECT --to-ports 3128
+
 </code>
 </pre>
 tun-c6500-h-1 refererer her til tunnellinterfacet i /etc/network/interfaces. Har man flere tuneller må man ha egne innslag for hver tunnell.
