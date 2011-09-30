@@ -1,0 +1,54 @@
+<?php
+$mal_kontaktadresse="rune.sydskjor@uninett.no"; // obligatorisk
+$mal_overskrift="Firewall builder"; // obligatorisk
+$mal_tegnsett="utf-8";
+include "uninetttopp.php3";
+?>
+<dl>
+  <dt>REVISJON:</dt>
+  <dd>SEPT-2011<dd>
+  <dt>ANSVARLIG:</dt>
+  <dd>Rune Sydskjør</dd>
+  <dt>DATO:</dt>
+  <dd>30.09.2011</dd>
+</dl>
+
+<hr>
+
+<h2>Innledning</h2>
+<p>
+Lange og komplekse pakkefilter, redundante rutere og introduksjon av IPv6 har gjort at det er nødvendig å se på alternative måter å lage pakkefilter på. Firewall builder (fwbuilder) er installert på verktøykassene, og kan brukes til å håndtere blant annet Cisco aksesslister.  Denne dokumentasjonen er skrevet basert på hvordan UNINETT har tatt ibruk fwbuilder lokalt hos seg. Fremgangsmåten som brukes og løsningene man kommer frem til kan selvfølgelig være helt forskjellig ifra det vi har gjort. Denne dokumentasjonen er altså ment som tips til hvordan man kommer igang, og enkelte ting man bør være obs på.
+For mer informasjon om Firewall builder, se <a href="http://www.fwbuilder.org/">fwbuilder sine hjemmesider.</a>
+</p>
+<p> Fremgangsmåten for å etablere filter via firewall builder er lik måten man gjør det med "manuelle filter", og her er tips til hvordan det gjøres:
+<a href="https://ow.feide.no/_media/gigacampus:ufs:ufs_106.pdf">UFS 106</a>
+</p>
+
+<h2>Komme igang med programmet, og få filer inn i RCS</h2>
+<ul>
+	<li>Logg inn på verktøykassen med din ssh-klient. Husk at X11-forwarding må være påslått.</li>
+	<li>Programmet startes med fwbuilder</li>
+	<li>Opprett en firewall eller gjør noe småtteri som gjør at du kan lagre det du har gjort som ei fil.</li>
+	<li>Lagre fila under vk:/tftpboot/</li>
+	<li>Gå ut av programmet</li>
+	<li>Fra terminalvinduet stående i tftpboot, sjekk inn den nye fila med ci -u <filnavn>, og skriv inn en kommentar</li>
+	<li>Neste gang starter du nå programmet med fwbuilder <filnavn>. Når du nå kommer inn i firewall builder vil du få oversikt over alle tidligere revisjoner, og kommentarene som er skrevet inn for hvilke endringer som er gjort</li>
+	<li>Du vil heretter få spørsmål om å sjekke inn fila og kommentere hva du har gjort når du forlater programmet</li>
+</ul>
+
+<h2>Definere ruter(e)</h2>
+<p>
+<ul>
+	<li>Opprett ruter (firewall i GUI'et) </li>
+</ul>
+</p>
+
+<h2>Kontaktpersoner</h2>
+<ul>
+  <li>rune.sydskjor@uninett.no</li>
+  <li>morten.knutsen@uninett.no</li>
+</ul>
+
+<?php
+include "uninettbunn.php3";
+?>
