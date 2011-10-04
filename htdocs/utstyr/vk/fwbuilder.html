@@ -84,6 +84,12 @@ Her er ett eksempel der vi har opprettet to rutere (uninett-gw og uninett-gw2), 
 	<li>Du kan kopiere objekt som allerede er brukt på høyresiden i regelsettet også. Hold inn ctrl mens du peker på ett objekt, og dra dit du vil kopiere til. Slik slipper du å finne igjen objekter du bruker ofte på venstre-siden hele tiden.</li>
 	<li>Kommenter reglene dine slik at du finner ting igjen i selve reglene.</li>
 	<li>Du kan låse av objekter som du ikke vil at noen skal endre på ved ett uhell. Høyreklikk på objektet og velg lock. Låsen fjernes igjen ved samme operasjon. Men da er det ett bevist valg å gjøre endringer der iallefall. Veldig kjekt å gjøre for interface f.eks som sjelden endres. Men følgene ved at noen gjør feil ting der kan være kritiske.</li>
+	<li>Siden grupper av objekter følger flat struktur ift. mapper har vi navngitt alle grupper med suffix:
+		<ul>
+		<li>(iface) for grupper av interface-objekter</li>
+		<li>(nett) for grupper av nettverks-objekter</li>
+		<li>(hosts) for grupper av host-objekter</li>
+		</ul>
 	<li>For å sikre at vi får write mem + write net etter at filte er lagt over editerer vi for hver ruter “Firewall Settings…” Prolog/Epilog og legger til følgende i epilogen:
 		<pre>
 		exit
@@ -93,6 +99,7 @@ Her er ett eksempel der vi har opprettet to rutere (uninett-gw og uninett-gw2), 
 		exit
 		</pre>
 	</li>
+	<li>Husk å fjerne de gamle filtrene fra ruteren, og evt. fra tftpboot på verktøykassen i etterkant. Da slipper du forvirring på hvilken liste som faktisk er i drift.</li>
 
 </ul>
 
