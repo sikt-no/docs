@@ -42,7 +42,7 @@ For mer informasjon om Firewall builder, se <a href="http://www.fwbuilder.org/">
 	<li>Opprett ruter (heretter kalt firewall, som også brukes i GUI) </li>
 	<li>Vi anbefaler å ikke bruke snmp til å hente inn informasjon om interfacer. Grunnen til det er at man sannsynligvis ønsker å legge over filter fra ett interface i gangen. Da er det beste å gjøre dette kontrollert en av gangen, slik at ikke man ødelegger gamle lister på interfacer man ikke er klar til å legge over i første omgang.</li>
 	<li>Opprett ett interface på firewall. Vi starter med Loopback0 som er management-interface. Merk dette med management og unprotected. Legg inn adresser på interfacet. Det er denne adressen som blir brukt når programmet skal legge over filterne til ruteren.</li>
-</li>
+</ul>
 
 <h2>Lage filter for et gitt interface</h2>
 <ul>
@@ -74,6 +74,7 @@ Her er ett eksempel der vi har opprettet to rutere (uninett-gw og uninett-gw2), 
 	<li>Når du er klar til å legge over reglene velger du install. Her vil den først kompilere reglene for deg.</li>
 	<li>Velg inspect generated files. Slik kan du gå inn å kontrollere hva som faktisk blir lagt over til ruteren i form av pakkefilter-regler.</li>
 	<li>Dersom alt ser fint ut trykk next, og du vil få opp ett innloggingsvindu mot ruteren. Her kan du etterhvert følge med mens ruteren jobber med å legge over filtrene. Du kan også velge dry run om du bare vil teste å legge over reglene til ruteren.</li>
+</ul>
 
 <h2>Tips og triks</h2>
 <ul>
