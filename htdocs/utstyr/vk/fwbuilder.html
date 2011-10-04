@@ -84,6 +84,16 @@ Her er ett eksempel der vi har opprettet to rutere (uninett-gw og uninett-gw2), 
 	<li>Du kan kopiere objekt som allerede er brukt på høyresiden i regelsettet også. Hold inn ctrl mens du peker på ett objekt, og dra dit du vil kopiere til. Slik slipper du å finne igjen objekter du bruker ofte på venstre-siden hele tiden.</li>
 	<li>Kommenter reglene dine slik at du finner ting igjen i selve reglene.</li>
 	<li>Du kan låse av objekter som du ikke vil at noen skal endre på ved ett uhell. Høyreklikk på objektet og velg lock. Låsen fjernes igjen ved samme operasjon. Men da er det ett bevist valg å gjøre endringer der iallefall. Veldig kjekt å gjøre for interface f.eks som sjelden endres. Men følgene ved at noen gjør feil ting der kan være kritiske.</li>
+	<li>For å sikre at vi får write mem + write net etter at filte er lagt over editerer vi for hver ruter “Firewall Settings…” Prolog/Epilog og legger til følgende i epilogen:
+		<pre>
+		exit
+		write memory
+		tclsh
+		exec copy running-config tftp://trane.uninett.no/uninett-gw-confg
+		exit
+		</pre>
+	</li>
+
 </ul>
 
 </p>
