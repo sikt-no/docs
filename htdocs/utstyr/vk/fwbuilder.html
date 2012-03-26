@@ -42,6 +42,7 @@ For mer informasjon om Firewall builder, se <a href="http://www.fwbuilder.org/">
 	<li>Opprett ruter (heretter kalt firewall, som også brukes i GUI) </li>
 	<li>Vi anbefaler å ikke bruke snmp til å hente inn informasjon om interfacer. Grunnen til det er at man sannsynligvis ønsker å legge over filter fra ett interface i gangen. Da er det beste å gjøre dette kontrollert en av gangen, slik at ikke man ødelegger gamle lister på interfacer man ikke er klar til å legge over i første omgang.</li>
 	<li>Opprett ett interface på firewall. Vi starter med Loopback0 som er management-interface. Merk dette med management og unprotected. Legg inn adresser på interfacet. Det er denne adressen som blir brukt når programmet skal legge over filterne til ruteren.</li>
+	<li>Man må velge om policy'en for ruteren skal være bare IPv4 eller både IPv4 og IPv6. Dette gjør du ved å dobbeltklikke på Policy under ruteren, og velger Rule set.</li>
 </ul>
 
 <h2>Lage filter for et gitt interface</h2>
