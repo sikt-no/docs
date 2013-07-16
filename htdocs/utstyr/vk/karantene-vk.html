@@ -286,7 +286,8 @@ iptables -t nat -D PREROUTING -i eth0 -p tcp -s 'karantenenett/maske' --dport 80
 </code>
 </pre>
 tun-c6500-h-1 refererer her til tunnellinterfacet i /etc/network/interfaces. Har man flere tuneller må man ha egne innslag for hver tunnell.
-Dette sørger for at trafikk inn på tunnel-interfacet (fra ruteren) på TCP-port 80 blir REDIRECT'et til TCP-port 3128 hvor squid lytter.
+Dette sørger for at trafikk inn på tunnel-interfacet (fra ruteren) på TCP-port 80 blir REDIRECT'et til TCP-port 3128 hvor squid lytter.<br>
+<code> iptables -v -t nat -nL </code> gir deg status på disse reglene.
 </p>
 
 <h2>Overvåkning</h2>
