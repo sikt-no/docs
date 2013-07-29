@@ -249,7 +249,7 @@ virusupdate.com
 
 <p>
 <h3>/proc/sys/net/ipv4/ip_forward</h3>
-Denne må stå til 1 slik at redirigering kan skje via iptables. Kopier lokal utgave av /etc/sysctl.conf fra vk inn i subversion og legg til linja <code>net.ipv4.ip_forward = 1</code>. Endringa legges til i runtime ved å kjøre sysctl -p etter at fila er kopiert ut på vk.
+Denne må stå til 1 slik at redirigering kan skje via iptables. Opprett fila 10_ipv4_forward.conf under katalogen /etc/sysctl.d/ inn i subversion og legg inn linja <code>net.ipv4.ip_forward = 1</code>. Endringa legges til i runtime ved å kjøre sysctl -p etter at fila er kopiert ut på vk.
 </p>
 
 <p>
