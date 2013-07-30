@@ -267,7 +267,9 @@ if [ "$IFACE" = tun-c6500-h-1 ]; then
 fi
 
 # For lag 2 WCCP:
-iptables -t nat -A PREROUTING -i eth0 -p tcp -s 'karantenenett/maske' --dport 80 -j REDIRECT --to-ports 3128
+if [ "$IFACE" = eth0 ]; then
+	iptables -t nat -A PREROUTING -i eth0 -p tcp -s 'karantenenett/maske' --dport 80 -j REDIRECT --to-ports 3128
+fi
 
 </code>
 I <code>if-down.d/squid3</code> fjerner vi den samme regelen:
@@ -281,7 +283,9 @@ if [ "$IFACE" = tun-c6500-h-1 ]; then
 fi
 
 # For lag 2 WCCP:
-iptables -t nat -D PREROUTING -i eth0 -p tcp -s 'karantenenett/maske' --dport 80 -j REDIRECT --to-ports 3128
+if [ "$IFACE" = eth0 ]; then
+	iptables -t nat -D PREROUTING -i eth0 -p tcp -s 'karantenenett/maske' --dport 80 -j REDIRECT --to-ports 3128
+fi
 
 </code>
 </pre>
