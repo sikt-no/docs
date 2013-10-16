@@ -81,7 +81,7 @@ Her er ett eksempel der vi har opprettet to rutere (uninett-gw og uninett-gw2), 
 <h2>Tips og triks</h2>
 <ul>
 	<li>Prøv ut prosessen på ett test-vlan i første omgang for å gjøre deg kjent med hvordan ting fungerer</li>
-	<li>Under menyen Edit -> Preferences -> Objects -> Policy rules, velg Create new policy rules with direction Outbound, slik at du slipper å endre den for nye regler du legger inn. Det samme kan du gjøre for Create new policy rules with action Accept.</li>
+	<li>Under menyen Edit -> Preferences -> Objects -> Policy rules, velg Create new policy rules with direction Outbound, slik at du slipper å endre den for nye regler du legger inn. Det samme kan du gjøre for Create new policy rules with action Accept. Her er det også mulig å velge default dummy objekt for src, dst, service og interface. Dette kan være kjekt for å unngå at man glemmer å legge inn ett objekt på en av disse. Ved å høyreklikke på dummy-objektet får du opp en meny der du kan velge å endre til any.</li>
 	<li>Det er mulig å endre bakgrunnsfarge på reglene i regelsettet. Dette kan være kjekt for å for eksempel merke regler som er midlertidig, eller som må sjekkes nærmere.</li>
 	<li>Du kan kopiere objekt som allerede er brukt på høyresiden i regelsettet også. Hold inn ctrl mens du peker på ett objekt, og dra dit du vil kopiere til. Slik slipper du å finne igjen objekter du bruker ofte på venstre-siden hele tiden.</li>
 	<li>Kommenter reglene dine slik at du finner ting igjen i selve reglene.</li>
@@ -92,6 +92,7 @@ Her er ett eksempel der vi har opprettet to rutere (uninett-gw og uninett-gw2), 
 		<li>(nett) for grupper av nettverks-objekter</li>
 		<li>(hosts) for grupper av host-objekter</li>
 		</ul>
+	<li>Etter kompilering får man opp en knapp der man kan se diff av de gamle og nye listene. For at dette skal virke må det under menyen Edit -> Preferences -> Diff, være krysset av for "Enable autocompiling when loading file". Vi bruker meld som diff-viewer, og stien til den må også være angitt der. For å unngå at meld viser alle kommentarer som eventuelt har endret seg i koden din, så er det lurt å legge inn ett filter som overser kommentarene. I menyen til meld, Edit -> Preferences -> Text Filters, legg inn en ny regel som som ser slik ut "^! Rule.*" (Uten semikolon).
 	<li>For å sikre at vi får write mem + write net etter at filte er lagt over editerer vi for hver ruter “Firewall Settings…” Prolog/Epilog og legger til følgende i epilogen:
 		<pre>
 		exit
