@@ -13,11 +13,11 @@ include "uninetttopp.php3";
 
 <dl>
   <dt>REVISJON:
-  <dd>Verktøykasse-brukerdok.2006.01
+  <dd>Verktøykasse-brukerdok.2014.01
   <dt>ANSVARLIG:
-  <dd>Vidar.Faltinsen@uninett.no
+  <dd>Morten.Brekkevold@uninett.no
   <dt>DATO:
-  <dd>2007-01-24
+  <dd>2014-08-13
 </dl>
 
 <hr>
@@ -31,7 +31,7 @@ include "uninetttopp.php3";
 [<a href="#netflow">Netflow/nfsen</a>]
 [<a href="#console">Konsoll</a>]
 [<a href="#cmdline">Commandline tools</a>]
-[<a href="#hobbit">Hobbit </a>]
+[<a href="#hobbit">Hobbit/Xymon </a>]
 </p>
 
 <h2>Innledning</h2>
@@ -265,7 +265,7 @@ verktøykassen, eller via NAV.
 NAV er omfattende å forklare. Vi vil her videreutvikle
 dokumentasjonen på 
  <a 
-href="http://metanav.ntnu.no">NAV wiki</a>. Litt starthjelp:
+href="https://nav.uninett.no/doc/latest">NAVs nettsider</a>. Litt starthjelp:
 
 <dl>
 <dt> Web brukeradministrasjon: </dt>
@@ -285,7 +285,7 @@ fila <var>/etc/nav/webfront/webfront.conf</var>.
 <dt>Sett velkomstmelding m.m.:</dt>
 <dd>
   En rekke filer i katalogen <var>/etc/nav/webfront/</var> kan redigeres
-  for å tilpasse utseende til NAVs hovedside.
+  for å tilpasse innholdet i forside-widgetene for velkomstmelding og lenker.
 </dd>
 
 <dt>Sett mottaker av NAV-adminstrativ epost: </dt>
@@ -309,14 +309,17 @@ fila <var>/etc/nav/webfront/webfront.conf</var>.
 <dt> &quot;Seede&quot; databasen: </dt>
 <dd>
 
-  For at NAV skal overvåke nettverket ditt må den få &quot;seed&quot;
-  informasjon fra deg. Du bruker verktøyet <em>Seed Database</em> (fra
-  Toolbox) til dette. Følgende dokument beskriver det du må gjøre:
-  <a 
-  href="http://metanav.uninett.no/seedessentials">Seed essentials</a>. 
+  For at NAV skal overvåke nettverket ditt må den få &quot;seed&quot;-informasjon 
+  fra deg. Du bruker verktøyet <em>Seed Database</em> (fra
+  Toolbox) til dette. Les mer om hvordan du 
+  <a href="https://nav.uninett.no/doc/latest/intro/getting-started.html#seeding-your-database"
+  >legger inn seed-data i NAV</a> og <a 
+  href="https://nav.uninett.no/doc/latest/intro/getting-organized.html"
+  >hvordan du organiserer informasjonen</a> i NAVs offisielle dokumentasjon.
+
   Det anbefales ellers å lese flere dokumenter under menyen
   <a 
-  href="http://metanav.uninett.no/navconfiguration">NAV Configuration</a>. 
+  href="https://nav.uninett.no/wiki/navconfiguration">NAV Configuration</a>. 
 </dd>
 
 <dt> Varslingssystemet Alert Profiles: </dt>
@@ -324,7 +327,7 @@ fila <var>/etc/nav/webfront/webfront.conf</var>.
   Varslingssystemet er nokså omfattende med mange muligheter. For å
   forenkle initielt oppsett er det en rekke forhåndsdefinerte filtre
   og filtergrupper du kan bruke.  Les <a
-  href="http://metanav.uninett.no/alertprofiles">wiki-siden om Alert
+  href="https://nav.uninett.no/wiki/alertprofiles">wiki-siden om Alert
   Profiles</a> for en introduksjon til systemet.
 </dd>
 
@@ -334,15 +337,14 @@ fila <var>/etc/nav/webfront/webfront.conf</var>.
     <li> Kommandoen <kbd>sudo nav status</kbd> gir status på om
          NAVs ulike bakgrunnsprosesser og cronjobber er aktive.</li>
 
-    <li> Innsamlingsmotoren getDeviceData logger (bl.a.) til
-         <var>/var/log/nav/getDeviceData.log </var> </li>
+    <li> Innsamlingsmotoren <em>ipdevpoll</em> logger (bl.a.) til
+         <var>/var/log/nav/ipdevpoll.log </var> </li>
 
     <li> I samme katalog se tilsvarende log for 
-         <var>getBoksmacs.log</var> (camloggeren), 
-	 <var>networkdiscovery/</var>  (topologioppdageren)
+	 <var>navtopology.log</var>  (topologioppdageren)
 	 <var>pping.log</var> (statusmonitoren),
 	 <var>servicemon.log</var> (tjenesteovervåkeren), 
-	 <var>thresholdMon.log</var> (terskelovervåkeren),
+	 <var>thresholdmon.log</var> (terskelovervåkeren),
 	 <var>eventengine.log</var> (hendelsessystemet) og
 	 <var>alertengine.log</var> (alarmsystemet). </li>
   </ul>
@@ -355,14 +357,27 @@ fila <var>/etc/nav/webfront/webfront.conf</var>.
 </p>
 
 <ul>
-  <li><p>Verifisér at mobilen er synlig på USB-bussen:
+  <li><p>Dersom mobilen/GSM-enheten er koblet til med en USB, verifisér at mobilen/GSM-enheten er synlig på USB-bussen:
       <kbd>lsusb</kbd></p>
-      <p>Forventet output skal ligne på dette:</p>
+      <p>Forventet output skal ligne på dette</p>
       <pre>Bus 004 Device 001: ID 0000:0000
 Bus 003 Device 001: ID 0000:0000
 Bus 002 Device 001: ID 0000:0000
 Bus 001 Device 003: ID 0fce:d057 Sony Ericsson Mobile Communications AB
 Bus 001 Device 001: ID 0000:0000
+</pre>
+      <p>
+        Dersom det er en GSM-enhet tilkoblet med USB-dongle er det donglen,
+        og ikke GSM-enheten som blir identifisert. Se siste linje:
+      </p>
+      <pre>Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 005 Device 002: ID 0a81:0205 Chesen Electronics Corp. PS/2 Keyboard+Mouse Adapter
+Bus 005 Device 003: ID 0403:6001 Future Technology Devices International, Ltd FT232 USB-Serial (UART) IC
 </pre>
   </li>
 
@@ -371,7 +386,7 @@ Bus 001 Device 001: ID 0000:0000
   </li>
 
   <li>Verifisér at mobiltelefonen har forbindelse med GSM-nettverket:
-      <kbd>sudo -u navcron gammu --monitor 1</kbd>
+      <kbd>sudo -u navcron gammu --networkinfo</kbd>
   </li>
 
   <li>Verifisér at Gammu kan sende SMS-meldinger til din telefon:
@@ -386,8 +401,8 @@ Bus 001 Device 001: ID 0000:0000
 
 <h3><a name="nav-radius-accounting">Sette opp NAV/verktøykassen for Radius Accounting-logging</a></h3>
 
-<p>NAV 3.5 tilbyr <a
-href="http://metanav.uninett.no/radius">brukersporing via
+<p>NAV 3.5 og nyere tilbyr <a
+href="https://nav.uninett.no/wiki/radius">brukersporing via
 accounting-logging fra FreeRADIUS-tjenere</a>.  Dette krever en del
 aktiv inngripen fra din egen side.</p>
 
@@ -396,8 +411,8 @@ brukerinnlogginger, må denne konfigureres til å logge accounting-data
 til NAVs PostgreSQL-database.  I tillegg bør man sette opp et
 Python-program på FreeRADIUS-tjeneren som overvåker error-loggen dens
 og dytter disse innslagene til samme PostgreSQL-database.  <a
-href="http://metanav.uninett.no/radius">Fremgangsmåten er dokumentert
-på MetaNAV-wikien.</a></p>
+href="https://nav.uninett.no/wiki/radius">Fremgangsmåten er dokumentert
+på NAV-wikien.</a></p>
 
 <p>Deretter må UNINETT gjøre konfigurasjonsendringer på
 verktøykassens PostgreSQL-database, slik at denne tillater innlogging
@@ -581,7 +596,7 @@ Her følger en liste og kort omtale:
 
 </ul>
 
-<h2><a name="hobbit">Hobbit</a></h2>
+<h2><a name="hobbit">Hobbit/Xymon</a></h2>
 Brukerdokumentasjon for Hobbit, se <a href="http://drift.uninett.no/utstyr/vk/hobbit-vk.html"> her </a>
 
 <?php
