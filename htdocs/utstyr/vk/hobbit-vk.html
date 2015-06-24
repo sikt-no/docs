@@ -52,8 +52,8 @@ og konfigurasjonsfiler vil fremdeles referere til Hobbit).
 Hver time kjører et script på verktøykassen som konfigurerer Xymon til å
 overvåke alle maskiner fra SRV-kategorien i NAV. Dette gjør at det er bare ett
 sted for vedlikehold listen over servere som skal overvåkes i NAV og Xymon.
-Når en maskin registreres i NAV, kan den legges inn i opptil flere
-underkategorier. Disse underkategoriene blir brukt som grupper i Xymon.
+Når en maskin registreres i NAV, kan den legges inn i opptil flere grupper
+(<em>device groups</em>). Disse gruppene blir også brukt som grupper i Xymon.
 </p>
 
 <h3>Overvåking av grupper</h3>
@@ -75,8 +75,8 @@ services = smtp
 
 <p>
 Her ser vi at ssh overvåkes for samtlige maskiner, mens SMTP overvåkes bare
-for den gruppen av maskiner som befinner seg i underkategorien MAIL i NAV. SSH
-ligger som standardovervåking for samtlige maskiner.
+for den gruppen av maskiner som befinner seg i gruppen MAIL i NAV. SSH ligger
+som standardovervåking for samtlige maskiner.
 </p>
 
 <h3>Overvåking av maskiner</h3>
