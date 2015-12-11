@@ -43,9 +43,9 @@ høgskole/universitet som er bruker av verktøykassen.
 Verktøykassene er som kjent drevet fra UNINETT. Driftsinstruks
 for UNINETT beredskapsvakt
 <a
-href="http://drift.uninett.no/rutiner/verktoykasser.html">foreligger
-i tillegg.</a> For en generell beskrivelse av verktøykassene se
-<a href="http://www.gigacampus.no/verktoykasse.html">her</a>.
+href="https://kind.uninett.no/driftwiki/instruks/vk/index.html">foreligger
+i tillegg.</a> For en generell beskrivelse av verktøykassetjenesten, se
+<a href="https://www.uninett.no/verkt%C3%B8ykasse">her</a>.
 
 </p><p>
 For å benytte flere av tjenestene på verktøykassen kreves naturlig nok
@@ -53,14 +53,14 @@ relevant konfigurasjon av nettutstyret. Vi viser til følgende
 UNINETT fagspesifikasjoner:
 
 <ul>
-<li> <a href="http://gigacampus:kompakt2@wiki.uninett.no/gigacampus/UFS105">
+<li> <a href="https://openwiki.uninett.no/gigacampus:ufs105">
 Anbefalt konfigurasjon for svitsjer i campusnett (UFS105)</a>
-<li> <a href="http://gigacampus:kompakt2@wiki.uninett.no/gigacampus/UFS109">Cisco IOS
+<li> <a href="https://openwiki.uninett.no/gigacampus:ufs109">Cisco IOS
 kokebok (UFS109)</a>
 <li> <a
-href="http://gigacampus:kompakt2@wiki.uninett.no/gigacampus/UFS110">Alcatel kokebok
+href="https://openwiki.uninett.no/gigacampus:ufs110">Alcatel kokebok
 (UFS110)</a>
-<li> <a href="http://gigacampus:kompakt2@wiki.uninett.no/gigacampus/UFS111">HP
+<li> <a href="https://openwiki.uninett.no/gigacampus:ufs111">HP
 kokebok (UFS111)</a>
 </ul>
 
@@ -213,9 +213,9 @@ Det er ingen bruker-konfigurasjon forbundet med radius som trengs å
 konfigureres på verktøykassene. Dette fordi radius er satt opp
 til bruke <tt>/etc/passwd</tt> som sin brukerkilde. Dersom brukerne her
 har satt passord blir dette benyttet ved radiusautentisering.
-Dersom bruker på nettutstyret logger seg på med <tt>@uninett.no</tt>
-endelse så er radiustjener på verktøykassen satt opp til
-å relee forespørsel til radiustjener på trane.uninett.no.
+Dersom bruker på nettutstyret logger seg på med <tt>@uninett.no</tt>-endelse
+så er radiustjener på verktøykassen satt opp til
+å relée forespørsler til radiustjener på <tt>trane.uninett.no</tt>.
 Således kan UNINETT drift komme inn (dersom ønskelig).
 </p><p>
 
@@ -223,7 +223,7 @@ Det som imidlertid må konfigureres er
 <tt>/etc/freeradius/clients.conf</tt>
 </p><p>
 
-Eksempel fra hil;
+Eksempel fra HiL:
 
 <pre>
 client 128.39.109.0/26 {
@@ -235,7 +235,8 @@ client 128.39.109.0/26 {
 
 Det vi angir her at alle svitsjene i området 128.39.109.1-63 tillates
 å snakke radius med verktøykassen gitt at de er konfigurert med
-samme felles-hemmelighet.
+samme felles-hemmelighet. Endringer i <tt>/etc/freeradius/clients.conf</tt>
+styres med Puppet og må meldes inn til <a href="mailto:drift@uninett.no">drift@uninett.no</a>.
 </p>
 
 
