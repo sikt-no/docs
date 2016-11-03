@@ -13,11 +13,11 @@ include "uninetttopp.php3";
 
 <dl>
   <dt>REVISJON:
-  <dd>Verktøykasse-brukerdok.2015.01
+  <dd>Verktøykasse-brukerdok.2016.01
   <dt>ANSVARLIG:
   <dd>Morten.Brekkevold@uninett.no
   <dt>DATO:
-  <dd>2015-12-11
+  <dd>2016-11-03
 </dl>
 
 <hr>
@@ -33,6 +33,7 @@ include "uninetttopp.php3";
 [<a href="#console">Konsoll</a>]
 [<a href="#cmdline">Commandline tools</a>]
 [<a href="#hobbit">Hobbit/Xymon </a>]
+[<a href="#fwbuilder">Firewall Builder</a>]
 </p>
 
 <h2>Innledning</h2>
@@ -47,48 +48,81 @@ href="https://kind.uninett.no/driftwiki/instruks/vk/index.html">foreligger
 i tillegg.</a> For en generell beskrivelse av verktøykassetjenesten, se
 <a href="https://www.uninett.no/verkt%C3%B8ykasse">her</a>.
 
-</p><p>
+</p>
+<p>
 For å benytte flere av tjenestene på verktøykassen kreves naturlig nok
 relevant konfigurasjon av nettutstyret. Vi viser til følgende
 UNINETT fagspesifikasjoner:
+</p>
 
 <ul>
-<li> <a href="https://openwiki.uninett.no/gigacampus:ufs105">
-Anbefalt konfigurasjon for svitsjer i campusnett (UFS105)</a>
-<li> <a href="https://openwiki.uninett.no/gigacampus:ufs109">Cisco IOS
-kokebok (UFS109)</a>
-<li> <a
-href="https://openwiki.uninett.no/gigacampus:ufs110">Alcatel kokebok
-(UFS110)</a>
-<li> <a href="https://openwiki.uninett.no/gigacampus:ufs111">HP
-kokebok (UFS111)</a>
+  <li>
+    <a href="https://openwiki.uninett.no/gigacampus:ufs105">
+      Anbefalt konfigurasjon for svitsjer i campusnett (UFS105)</a>
+  </li>
+  <li>
+    <a href="https://openwiki.uninett.no/gigacampus:ufs109">Cisco IOS
+      kokebok (UFS109)</a>
+  </li>
+  <li>
+    <a
+       href="https://openwiki.uninett.no/gigacampus:ufs110">Alcatel kokebok
+      (UFS110)</a>
+  </li>
+  <li> <a href="https://openwiki.uninett.no/gigacampus:ufs111">HP
+      kokebok (UFS111)</a>
+  </li>
 </ul>
 
-Vi minner også om at svitsjene i campusnettet bør (les: må) være på
+<p>
+Vi minner også om at svitsjene i campusnettet bør (les: <em>må</em>) være på
 en forsvarlig programvareversjon.
-<a href="http://drift.uninett.no/utstyr/svitsj/oppgradering-sw.mhtml">
-Følgende lenke</a> gir en oversikt per plattform.
+</p>
+
+<h2><a name="vedlikeholdsvindu">Vedlikeholdsvindu</a></h2>
+
+<p>
+  Tjenesten har fast vedlikeholdsvindu på <em>tirsdager mellom klokken 10:00 og
+    11:00</em>.
+</p>
+
+<p>
+  I dette tidsrommet kan det bli utført mindre oppgraderinger og omstart av
+  maskinvaren, hovedsakelig i forbindelse med sikkerhetsoppdateringer, uten at
+  det blir gitt nærmere beskjed i forkant. Det kan forekomme merkbare
+  driftsforstyrrelser.
+</p>
 
 <h2><a name="Sikkerhetsdirektiv">Sikkerhetsdirektiv for verktøykassene</a></h2>
 
+<p>
 UNINETT har driftsansvar for verktøykassene, se definert
 <a href="sikkerhetsdirektiv.html">sikkerhetsdirektiv</a> for detaljer rundt
 drift- og sikkerhetsopplegget.
+</p>
 
 <p>
-Siden driftsansvaret ligger til UNINETT er ryddigste løsning at <i>kun</i>
-UNINETT har root privilegier på verktøykassene. Vi er naturligvis opptatt
+Siden driftsansvaret ligger til UNINETT er ryddigste løsning at <em>kun</em>
+UNINETT har root-privilegier på verktøykassene. Vi er naturligvis opptatt
 av at dere som brukere kan gjøre tilstrekkelig for å rette feil
-rundt applikasjonene m.m. Dette gjør vi ved å gi dere nødvendige sudo
-rettigheter, samt lesetilgang til filer (se Brukertilgang under).
+rundt applikasjonene m.m. Dette gjør vi ved å gi dere nødvendige
+sudo-rettigheter, samt lesetilgang til filer (se Brukertilgang under).
+</p>
 
 <h3><a name="kontaktpunkt">Kontaktpunkt</a></h3>
 
 <ul>
-<li> For driftshenvendelser, ta kontakt med <a href="mailto:drift@uninett.no">drift@uninett.no</a>
-<li> For diskusjon/spørsmål om bruk av verktøyene, bruk <a href="mailto:vk@uninett.no">vk@uninett.no</a>. <br>
-Alle som er registrert i UNINETTs driftsdatabase som teknisk ansvarlig for en verktøykasse ute hos en kunde blir automatisk abonnent på denne listen.</ul>
-
+  <li>
+    For driftshenvendelser, ta kontakt med <a href="mailto:drift@uninett.no">drift@uninett.no</a>
+  </li>
+  <li>
+    For diskusjon/spørsmål om bruk av verktøyene, bruk <a href="mailto:vk@uninett.no">vk@uninett.no</a>.<br>
+    Alle som er registrert i UNINETTs driftsdatabase som teknisk ansvarlig for en verktøykasse ute hos en kunde blir automatisk abonnent på denne listen.
+  </li>
+  <li>
+    Se ellers <a href="https://www.uninett.no/kontakt">kontaktadresser og telefonnumre på våre hjemmesider</a>
+  </li>
+</ul>
 <h2><a name="Brukertilgang">Brukertilgang til verktøykassen</a></h2>
 
 <p>
@@ -598,6 +632,9 @@ Her følger en liste og kort omtale:
 
 <h2><a name="hobbit">Hobbit/Xymon</a></h2>
 Brukerdokumentasjon for Hobbit, se <a href="http://drift.uninett.no/utstyr/vk/hobbit-vk.html"> her </a>
+
+<h2><a name="fwbuilder">Firewall Builder (fwbuilder)</a></h2>
+<a href="http://drift.uninett.no/utstyr/vk/fwbuilder.html">Brukerdokumentasjon for Firewall Builder foreligger på en egen side</a>.
 
 <?php
 include "uninettbunn.php3";
