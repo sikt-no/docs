@@ -493,25 +493,34 @@ FreeRADIUS-tjeneren med.  </p>
 
 <h2><a name="netflow">Netflow/nfsen</a></h2>
 
+<p>
 Verktøykassene bruker <a
 href="http://nfsen.sourceforge.net/">nfsen</a> for å prosessere
 netflowdata som blir eksportert fra rutere. Nfsen er et web-basert
 grensesnitt til <a href="http://nfdump.sourceforge.net/">nfdump
 netflow tools</a>.
+</p>
 
+<p>
 Dette grensesnittet er tilgjengelig via NAV sin toolbox.
+</p>
 
 <p>
 Nfsen ser ut til å være litt kilen mhp. på å definere nye
 netflow-eksportører ('sources') etter at systemet er startet , så det
 er lurt å ha alle disse klart på forhånd, og legge alle inn før
-systemet startes opp. Dette gjøres ved å redigere
-<kbd>/etc/nfsen/nfsen.conf.local</kbd> og oppdatere seksjonen som heter <kbd>sources</kbd>.
-UNINETT vil være behjelpelig med å legge til nye kilder dersom det er nødvendig.
-</p><p>
+systemet startes opp.</p>
 
+<p>
+Kildene defineres under <kbd>sources</kbd> i 
+<kbd>/etc/nfsen/nfsen.conf.local</kbd>. Denne filen konfigureres av Puppet; eventuelle endringsønsker må meldes til UNINETT.
+</p>
+
+<p>
 Mere inngående detaljer angående bruk av nfsen står på <a href="http://nfsen.sourceforge.net/">nfsen</a> sine hjemmesider.
-</p><p>
+</p>
+
+<p>
 Generelt om Netflow:
 <ul>
 <li>En flow er definert som et sett av IP pakker som har en del felles felt i pakkehodet.
