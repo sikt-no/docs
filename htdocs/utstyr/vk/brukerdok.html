@@ -82,8 +82,8 @@ en forsvarlig programvareversjon.
 <h2><a name="vedlikeholdsvindu">Vedlikeholdsvindu</a></h2>
 
 <p>
-  Tjenesten har fast vedlikeholdsvindu på <em>tirsdager mellom klokken 10:00 og
-    11:00</em>.
+  Tjenesten har fast vedlikeholdsvindu på <strong>tirsdager mellom klokken 10:00 og
+    11:00</strong>.
 </p>
 
 <p>
@@ -163,10 +163,10 @@ kommandoen:
   <dt><kbd>nav</kbd><dt>
   <dd>Generell kommando for å kontrollere nav</dd>
 
-  <dt><kbd>/etc/init.d/apache2 reload</kbd><dt>
+  <dt><kbd>service apache2 reload</kbd><dt>
   <dd>Relaste konfigurasjon for webtjeneren</dd>
 
-  <dt><kbd>/etc/init.d/nfsen</kbd><dt>
+  <dt><kbd>service nfsen [start|stop]</kbd><dt>
   <dd>Starte/stoppe nfsen</dd>
 
 </dl>
@@ -174,7 +174,7 @@ kommandoen:
 <p>For å relaste apache webtjeneren kan man feks kjøre kommandoen:</p>
 
 <pre>
-  sudo /etc/init.d/apache2 reload
+  sudo service apache2 reload
 </pre>
 </p>
 
@@ -614,20 +614,21 @@ En del kjekke command line tools er installert på verktøykassene.
 Her følger en liste og kort omtale:
 
 <ul>
-<li> ping og traceroute (trenger vel ingen kommentar)</li>
-<li> snmpwalk (m.fl.)<br>
-     Brukes til å polle utstyr med snmp, kjekt for NAV feilsøking.<pre>
+  <li> ping og traceroute (trenger vel ingen kommentar)</li>
+  <li> snmpwalk (m.fl.)<br>
+    Brukes til å polle utstyr med snmp, kjekt for NAV feilsøking.
+    <pre>
      Typisk syntaks:
         snmpwalk -v2c -c <din-community> <ip-adresse> <oid>
      Eks:
         snmpwalk -v2c -c public 10.10.10.1 ifinoctet
         (henter inoctet tellere fra boks 10.10.10.1)
-  </pre>
+    </pre>
   </li>
-<li> nmap <br>
-     Brukes til scanne en host/sjekke om en port/sett av porter
-     er åpne.
-</li>
+  <li> nmap <br>
+    Brukes til scanne en host/sjekke om en port/sett av porter
+    er åpne.
+  </li>
 </ul>
 
 <h2><a name="hobbit">Hobbit/Xymon</a></h2>
