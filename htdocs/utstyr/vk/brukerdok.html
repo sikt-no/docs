@@ -276,8 +276,8 @@ styres med Puppet og må meldes inn til <a href="mailto:drift@uninett.no">drift@u
 
 <h2><a name="syslog">Syslog</a></h2>
 
-All nettelektronikk bør syslogge til verktøykassa.
-Syslog er satt opp slik at nettelektronikk logger til to filer;
+All nettelektronikk bør syslogge til verktøykassen.
+Syslog er satt opp slik at alle meldinger logget til verktøykassen fra nettverket på facility <tt>local6</tt> og <tt>local7</tt> blir lagret i disse to filene:
 <pre>
 /var/log/network.log
 /var/log/network_nav.log
