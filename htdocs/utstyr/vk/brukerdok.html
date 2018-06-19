@@ -41,8 +41,8 @@ include "uninetttopp.php3";
 
 Dette dokument er myntet på lokalt IKT driftspersonell ved
 høgskole/universitet som er bruker av verktøykassen.
-Verktøykassene er som kjent drevet fra UNINETT. Driftsinstruks
-for UNINETT beredskapsvakt
+Verktøykassene er som kjent drevet fra Uninett. Driftsinstruks
+for Uninett beredskapsvakt
 <a
 href="https://kind.uninett.no/driftwiki/instruks/vk/index.html">foreligger
 i tillegg.</a> For en generell beskrivelse av verktøykassetjenesten, se
@@ -52,7 +52,7 @@ i tillegg.</a> For en generell beskrivelse av verktøykassetjenesten, se
 <p>
 For å benytte flere av tjenestene på verktøykassen kreves naturlig nok
 relevant konfigurasjon av nettutstyret. Vi viser til følgende
-UNINETT fagspesifikasjoner:
+Uninett fagspesifikasjoner:
 </p>
 
 <ul>
@@ -96,14 +96,14 @@ en forsvarlig programvareversjon.
 <h2><a name="Sikkerhetsdirektiv">Sikkerhetsdirektiv for verktøykassene</a></h2>
 
 <p>
-UNINETT har driftsansvar for verktøykassene, se definert
+Uninett har driftsansvar for verktøykassene, se definert
 <a href="sikkerhetsdirektiv.html">sikkerhetsdirektiv</a> for detaljer rundt
 drift- og sikkerhetsopplegget.
 </p>
 
 <p>
-Siden driftsansvaret ligger til UNINETT er ryddigste løsning at <em>kun</em>
-UNINETT har root-privilegier på verktøykassene. Vi er naturligvis opptatt
+Siden driftsansvaret ligger til Uninett er ryddigste løsning at <em>kun</em>
+Uninett har root-privilegier på verktøykassene. Vi er naturligvis opptatt
 av at dere som brukere kan gjøre tilstrekkelig for å rette feil
 rundt applikasjonene m.m. Dette gjør vi ved å gi dere nødvendige
 sudo-rettigheter, samt lesetilgang til filer (se Brukertilgang under).
@@ -117,7 +117,7 @@ sudo-rettigheter, samt lesetilgang til filer (se Brukertilgang under).
   </li>
   <li>
     For diskusjon/spørsmål om bruk av verktøyene, bruk <a href="mailto:vk@uninett.no">vk@uninett.no</a>.<br>
-    Alle som er registrert i UNINETTs driftsdatabase som teknisk ansvarlig for en verktøykasse ute hos en kunde blir automatisk abonnent på denne listen.
+    Alle som er registrert i Uninetts driftsdatabase som teknisk ansvarlig for en verktøykasse ute hos en kunde blir automatisk abonnent på denne listen.
   </li>
   <li>
     Se ellers <a href="https://www.uninett.no/kontakt">kontaktadresser og telefonnumre på våre hjemmesider</a>
@@ -217,7 +217,7 @@ automatisert ved at en nattlig cronjobb sjekker inn ny versjon av alle
 filer som er endret. Alle endringer blir rapportert som epost til
 mottagere angitt via variabelen <tt>nocoperators</tt> i fila
 <tt>/etc/default/uninett.conf</tt> (merk at denne filen er styrt av
-UNINETTs Puppet, ta kontakt med <a href="mailto:drift@uninett.no">drift@uninett.no</a> for å få gjort
+Uninetts Puppet, ta kontakt med <a href="mailto:drift@uninett.no">drift@uninett.no</a> for å få gjort
 endringer). En varsling om låste RCS filer (avglemte innsjekkinger)
 blir også sendt periodisk til samme adresse.
 </p><p>
@@ -250,7 +250,7 @@ har satt passord blir dette benyttet ved radiusautentisering.
 Dersom bruker på nettutstyret logger seg på med <tt>@uninett.no</tt>-endelse
 så er radiustjener på verktøykassen satt opp til
 å relée forespørsler til radiustjener på <tt>trane.uninett.no</tt>.
-Således kan UNINETT drift komme inn (dersom ønskelig).
+Således kan Uninett drift komme inn (dersom ønskelig).
 </p><p>
 
 Det som imidlertid må konfigureres er
@@ -325,7 +325,7 @@ fila <var>/etc/nav/webfront/webfront.conf</var>.
 <h3>Sett mottaker av NAV-adminstrativ epost</h3>
 <p>
   All administrativ epost fra NAV sendes til driftspersonell hos
-  UNINETT, som konfigurert av <em>Puppet</em> i variabelen
+  Uninett, som konfigurert av <em>Puppet</em> i variabelen
   <var>ADMIN_MAIL</var> i filen <var>/etc/nav/nav.conf</var>.  Dersom du
   ønsker kopier av denne eposten, ta kontakt med Uninett.
 </p>
@@ -446,7 +446,7 @@ og dytter disse innslagene til samme PostgreSQL-database.  <a
 href="https://nav.uninett.no/wiki/radius">Fremgangsmåten er dokumentert
 på NAV-wikien.</a></p>
 
-<p>Deretter må UNINETT gjøre konfigurasjonsendringer på
+<p>Deretter må Uninett gjøre konfigurasjonsendringer på
 verktøykassens PostgreSQL-database, slik at denne tillater innlogging
 fra din FreeRADIUS-tjener.  Meld inn følgende detaljer til <a
   href="mailto:drift@uninett.no">drift@uninett.no</a>:
@@ -456,7 +456,7 @@ fra din FreeRADIUS-tjener.  Meld inn følgende detaljer til <a
     <li>IP-adressen(e) til din(e) FreeRADIUS-tjener(e).</li>
   </ul>
 
-<p>UNINETT vil sørge for at det opprettes en PostgreSQL-bruker for
+<p>Uninett vil sørge for at det opprettes en PostgreSQL-bruker for
 radius accounting, og at denne gis tilgang til de riktige tabellene i
 NAV fra de gitte IP-adressene.  Du vil få et brukernavn og et passord
 til PostgreSQL-databasen, som skal brukes til å konfigurere
@@ -503,7 +503,7 @@ systemet startes opp.</p>
 
 <p>
 Kildene defineres under <kbd>sources</kbd> i
-<kbd>/etc/nfsen/nfsen.conf.local</kbd>. Denne filen konfigureres av Puppet; eventuelle endringsønsker må meldes til UNINETT.
+<kbd>/etc/nfsen/nfsen.conf.local</kbd>. Denne filen konfigureres av Puppet; eventuelle endringsønsker må meldes til Uninett.
 </p>
 
 <p>
