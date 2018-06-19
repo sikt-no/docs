@@ -13,11 +13,11 @@ include "uninetttopp.php3";
 
 <dl>
   <dt>REVISJON:
-  <dd>Verktøykasse-brukerdok.2016.01
+  <dd>Verktøykasse-brukerdok.2018.01
   <dt>ANSVARLIG:
   <dd>Morten.Brekkevold@uninett.no
   <dt>DATO:
-  <dd>2016-11-03
+  <dd>2018-06-19
 </dl>
 
 <hr>
@@ -467,24 +467,19 @@ FreeRADIUS-tjeneren med.  </p>
 
 <p>
   Webtjeneren på verktøykassen er bare tilgjengelig over <em>HTTPS</em>. Dette
-  krever et tjenersertifikat. Enn så lenge har vi tillatt bruk av selvsignerte
-  sertifikater, men anbefaler sterkt å bestille et ordentlig sertifikat til
-  dette formålet. Dersom din institusjon abonnerer
-  på <a href="https://www.uninett.no/scs">UNINETTs sertifikattjeneste</a> er
-  dette svært enkelt å bestille.
+  krever et tjenersertifikat. Vi bruker i
+  dag <a href="https://letsencrypt.org/">Let's Encrypt</a> til å automatisk
+  utstede sertifikater til webtjeneren.
 </p>
 
 <p>
-  Enten du bruker UNINETTs sertifikattjeneste eller en annen leverandør, kan
-  du generere en ny sertifikatforespørsel med kommandoen <kbd>vk-certreq</kbd>
-  på verktøykassen. Følg instruksjonene du får av denne kommandoen.
-</p>
-
-<p>
-  For en brukbar innføring i håndtering av SSL-sertifikater med OpenSSL, kan
-  du lese denne
-  artikkelen: <a href="https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs">OpenSSL
-  Essentials: Working with SSL Certificates, Private Keys and CSRs</a>.
+  Let's Encrypt krever i utgangspunktet at webtjeneren er tilgjengelig fra
+  sine IP-adressser for å kunne utfordre den til å bevise sin identitet. Disse
+  IP-adressene offentliggjøres ikke, og Let's Encrypt forbeholder seg retten
+  til å endre disse når som helst, uten forvarsel. Webtjeneren på verktøykassen
+  holder de nødvendige URLene åpne for verden, men kan ellers begrense aksess
+  til et valgfritt sett med IP-adresser. Henvend deg til vårt kontaktpunkt
+  dersom du ønsker endringer i restriksjonene.
 </p>
 
 <h2><a name="netflow">Netflow/nfsen</a></h2>
