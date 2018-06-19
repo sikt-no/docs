@@ -295,52 +295,52 @@ verktøykassen, eller via NAV.
 
 <h2><a name="nav">NAV</a></h2>
 
-NAV er omfattende å forklare. Vi vil her videreutvikle
+<p>NAV er omfattende å forklare. Vi vil her videreutvikle
 dokumentasjonen på
  <a
 href="https://nav.uninett.no/doc/latest">NAVs nettsider</a>. Litt starthjelp:
+</p>
 
-<dl>
-<dt> Web brukeradministrasjon: </dt>
-<dd>
+
+<h3>Web brukeradministrasjon</h3>
+<p>
 Det er ikke noe dokument som beskriver hvordan du oppretter brukere og
 hvordan du tilordner brukere til grupper. Helt kort; dette gjør du
-under "tool useradmin". Det er rett frem å legge til brukere, men
+under verktøyet <em>User and API Administration</em>. Det er rett frem å legge til brukere, men
 husk at de må tilordnes en eller flere grupper.  Merk også at du
 kan redigere privilegiene til en gruppe. Se f.eks på gruppen <em>ReadAll</em>,
-her vil du se at denne har et <var>web_access</var> privilegie som gir
-tilgang til en del "tools", men ikke alle. Dette gir deg en ide om
-hvordan <var>web_access</var> privilegie kan justeres. Merk at det er mulig
-å bruke ldap til brukerautentisering. Du må da gjøre innstillinger i
+her vil du se at denne har et <var>web_access</var>-privilegie som gir
+tilgang til en del verktøy, men ikke alle. Dette gir deg en ide om
+hvordan <var>web_access</var>-privilegier kan justeres. Merk at det er mulig
+å bruke LDAP til brukerautentisering. Du må da gjøre innstillinger i
 fila <var>/etc/nav/webfront/webfront.conf</var>.
-</dd>
+</p>
 
-<dt>Sett velkomstmelding m.m.:</dt>
-<dd>
+<h3>Sett velkomstmelding m.m.</h3>
+<p>
   En rekke filer i katalogen <var>/etc/nav/webfront/</var> kan redigeres
   for å tilpasse innholdet i forside-widgetene for velkomstmelding og lenker.
-</dd>
+</p>
 
-<dt>Sett mottaker av NAV-adminstrativ epost: </dt>
-<dd>
+<h3>Sett mottaker av NAV-adminstrativ epost</h3>
+<p>
   All administrativ epost fra NAV sendes til driftspersonell hos
   UNINETT, som konfigurert av <em>Puppet</em> i variabelen
   <var>ADMIN_MAIL</var> i filen <var>/etc/nav/nav.conf</var>.  Dersom du
-  ønsker kopier av denne eposten, gi beskjed til <a
-  href="mailto:drift@uninett.no">drift@uninett.no</a>.
-</dd>
+  ønsker kopier av denne eposten, ta kontakt med Uninett.
+</p>
 
-<dt> Sett passord til NAVs PostgreSQL-database: </dt>
-<dd>
+<h3>Sett passord til NAVs PostgreSQL-database</h3>
+<p>
   Dette er satt for deg.  Passordet kan leses fra attributten
   <var>userpw_nav</var> i filen <var>/etc/nav/db.conf</var>.  Merk at
   du kan aksessere denne databasen ved å bruke dette passordet når du
   skriver <kbd>psql nav nav</kbd>. For dypere feilsøking, eller dypere
   forståelse av databasen er dette nyttig.
-</dd>
+</p>
 
-<dt> &quot;Seede&quot; databasen: </dt>
-<dd>
+<h3> &quot;Seede&quot; databasen:</h3>
+<p>
 
   For at NAV skal overvåke nettverket ditt må den få &quot;seed&quot;-informasjon
   fra deg. Du bruker verktøyet <em>Seed Database</em> (fra
@@ -353,19 +353,19 @@ fila <var>/etc/nav/webfront/webfront.conf</var>.
   Det anbefales ellers å lese flere dokumenter under menyen
   <a
   href="https://nav.uninett.no/wiki/navconfiguration">NAV Configuration</a>.
-</dd>
+</p>
 
-<dt> Varslingssystemet Alert Profiles: </dt>
-<dd>
+<h3> Varslingssystemet Alert Profiles</h3>
+<p>
   Varslingssystemet er nokså omfattende med mange muligheter. For å
   forenkle initielt oppsett er det en rekke forhåndsdefinerte filtre
   og filtergrupper du kan bruke.  Les <a
   href="https://nav.uninett.no/wiki/alertprofiles">wiki-siden om Alert
   Profiles</a> for en introduksjon til systemet.
-</dd>
+</p>
 
-<dt> Sjekk status på bakgrunnsprosesser og logger </dt>
-<dd>
+<h3>Sjekk status på bakgrunnsprosesser og logger</h3>
+<p>
   <ul>
     <li> Kommandoen <kbd>sudo nav status</kbd> gir status på om
          NAVs ulike bakgrunnsprosesser og cronjobber er aktive.</li>
@@ -381,8 +381,7 @@ fila <var>/etc/nav/webfront/webfront.conf</var>.
 	 <var>eventengine.log</var> (hendelsessystemet) og
 	 <var>alertengine.log</var> (alarmsystemet). </li>
   </ul>
-<dd>
-</dl>
+</p>
 
 <h3><a name="feilsok-sms">Feilsøking av mobiltelefon/SMS-utsending</a></h3>
 
