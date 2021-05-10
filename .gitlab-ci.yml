@@ -3,8 +3,8 @@ include:
     file: "/gitlab-ci-helpers.yml"
 
 variables:
-  KUBE_PROD_DOMAIN: interndocs.uninett.no
-  KUBE_TEST_ID: interndocs
+  KUBE_PROD_DOMAIN: docs.uninett.no
+  KUBE_TEST_ID: docs
   HTTP_PORT: "80" # The port number of the web server.
   REPLICAS: "1"
 
