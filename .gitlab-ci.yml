@@ -39,7 +39,6 @@ production:
   variables:
     REPLICAS: "2"
   script:
-    - deploy-auth-proxy
     - deploy deployment.yaml
   when: on_success
 
@@ -47,7 +46,6 @@ review:
   extends: .review
   stage: review
   script:
-    - deploy-auth-proxy
     - deploy deployment.yaml
 
 stop_review:
