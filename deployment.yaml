@@ -27,6 +27,9 @@ spec:
       containers:
         - name: app
           image: $CI_REGISTRY_IMAGE:$CI_REGISTRY_TAG
+          ports:
+          - name: web
+            containerPort: $HTTP_PORT
           livenessProbe:
             httpGet:
               path: /healthz
