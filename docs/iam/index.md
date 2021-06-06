@@ -5,7 +5,7 @@ disableTitleTagline: true
 
 Identitets- og tilgangsstyring (IAM) handler om å gi studenter, forskere og ansatte riktig tilgang til digitale systemer, tjenester og ressurser, samt avslutte tilgang for brukere som ikke lenger skal ha det.
 
-[Les mer om IAM-tjeneste](https://www.uninett.no/en/node/2257)
+[Les mer om IAM-tjenesten på uninett.no](https://www.uninett.no/en/node/2257)
 
 Her vil du finne overordnet systemdokumentasjon, og etterhvert brukerdokumentasjon. [En overordnet arkitektur for IAM](./arkitektur) og [gevinster](./gevinster) vil være en gode steder å starte for å bedre forstå IAM.
 
