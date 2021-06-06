@@ -4,7 +4,7 @@ title: Livssyklus for identitet og tilgang
 
 
 
-![Livssyklus tilganger](/img/iam/Bilde2.png)
+![Livssyklus tilganger](/img/iam/bilde2.png)
 
 
 Integrasjonslaget, RI Connect, består av en rekke konnektorer (Action Set) som er utviklet etter omforent kravspesifikasjon for å motta kravstilte attributter fra kildesystem som SAP, FS og OrgReg  , prosessere denne informasjonen og forsyne en rekke målsystemer som AD, LDAP, Inspera og Adgangskontroll med informasjon om brukere og deres tilganger.
@@ -64,7 +64,7 @@ Tilgangsmodellen i RI er en kombinasjon av rolle- og attributtbasert modell. All
 
 Det benyttes et utvidbart utvalg av parametere for å bestemme og tildele forretningsroller og systemroller.
 
-![To-trinnsprosess for tildeling av tilganger](/img/iam/Bilde4.png)
+![To-trinnsprosess for tildeling av tilganger](/img/iam/bilde4.png)
 
 
 
@@ -72,7 +72,7 @@ Det benyttes et utvidbart utvalg av parametere for å bestemme og tildele forret
 
 En JML-prosess for en ansatt kan se ut på følgende vis:
 
-![Eksempel på JML for ansatt](/img/iam/Bilde5.png)
+![Eksempel på JML for ansatt](/img/iam/bilde5.png)
 
 Figur: Eksempel på JML for ansatt
 
@@ -82,7 +82,7 @@ Løsningen baserer seg på en hendelsesdrevet arkitektur, der endringer på viss
 
 En JML-prosess for en student kan se ut som følger:
 
-![Eksempel på JML for student](/img/iam/Bilde6.png)
+![Eksempel på JML for student](/img/iam/bilde6.png)
 
 Figur 6:
 

@@ -39,7 +39,7 @@ Eksempelet nedenfor viser en tenkt ansatt, og hvordan en automatisk flyt kan skj
 
 I virkeligheten vil forretningsrollen Ansatt innrømmes en rekke basistilganger, mens eksempelet viser videre bare regelsettet for TPP og Inspera.
 
-![Eksempel på JML for student](/img/iam/Bilde7.png)
+![Eksempel på JML for student](/img/iam/bilde7.png)
 
 Figur 7: Eksempel på prosessering av "Joiner" (AMF/ORG-ERA)
 
