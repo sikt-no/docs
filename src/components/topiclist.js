@@ -32,7 +32,6 @@ export function TopicList({ children }) {
       <main>
         <section className={styles.features}>
           <div className="container">
-            <div>Vi jobber med å etablere docs.uninett.no for å samle teknisk dokumentasjon for Uninetts tjenester. Det vil ta litt tid før all dokumentasjonen er etablert og samlet. Gi gjerne tilbakemelding til <a href="mailto:kontakt@uninett.no">kontakt@uninett.no</a> om disse sidene. </div>
             <div className={styles.topics}>
               {children}
             </div>
