@@ -88,9 +88,9 @@ Figur 6:
 
 Trigger for «Joiner» vil være en melding om aktivStudent (alternativt aktivKlasse). For «Mover» vil det være endringer i studieforholdet inkludert nytt emne, noe som antas skje hyppig. «Leaver» vil trigges av at studiet er fullført (eller avsluttet før fullførelse) aktivStudent settes til usant.
 
-### Eksterne
+### Gjester
 
-Eksterne brukere kategoriseres og registreres i henhold til følgende struktur:
+Gjester kategoriseres og registreres i henhold til følgende struktur:
 
 | Kategori  | Beskrivelse | Krav til registrering | Register |
 | ---  | --- | --- | --- |
