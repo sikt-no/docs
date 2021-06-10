@@ -398,53 +398,123 @@ Access: On SD
 dfø:ansatte/{id} -> .medarbeiderundergruppe = [95]
 ```
 
+## Metadirectory Institusjon (v2 - updated)
 
 
-## Metadirectory Institusjon
+| Attribute                        | Display name                 | Description                                                                  | Type                | Example                                                                                                | Mullti valued |
+| -------------------------------- | ---------------------------- | ---------------------------------------------------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------ | ------------- |
+| displayName                      | Display Name                 | Preferred Name if present, legal if not                                      | String              | Micky Mouse                                                                                            |               |
+| employeeNumber                   | Employee Number              | Employee number.                                                             | String              | 30202                                                                                                  |               |
+| givenName                        | First Name                   | User’s first name.                                                           | String              | Micky                                                                                                  |               |
+| idautoID                         | UHID                         | UHID (Automatically Generated GUID)                                          | String              | 3ddf4822-77ed-4c27-909e-7c826ca10423                                                                   |               |
+| idautoPersonAffiliations         | Affiliations                 | Multivalued field containing all birthright roles associated with the person | String              | \[Employee, Student\]                                                                                  | ✓             |
+| idautoPersonAltUserName          | FEIDE ID                     | Username with suffix                                                         | String              | laols0070@uib.no                                                                                       |               |
+| idautoPersonAlternateID          | Username                     | Username                                                                     | String              | laols0070                                                                                              |               |
+| idautoPersonAppRoles1            | OrgEra Affiliations          | Multivalued list of top-level affiliations used for app AuthZ                | String              | \[uib:employee:MN-SEKR.MN, uib:studieadministrivt ansatt:MN-SEKR.MN\]                                  |               |
+| idautoPersonAppRoles2            | OrgEra Assigned Entitlements | OrgEra Assigned Entitlements                                                 | String              | \[active directory, ldap, framework, lenel, ms office 365\]                                            | ✓             |
+| idautoPersonAppRoles5            | Provisioned Entitlements     | Entitlements that have been provisioned to the user.                         | String              | \[lenel, apex\]                                                                                        | ✓             |
+| idautoPersonAppRoles6            | Requestable Entitlements     | Entitlements that have been requested by the user                            | String              | \[topdesk:operator, topdeskoperatorgroup:4c28c38f-c1aa-4685-a5d6-dad78923f241\]                        | ✓             |
+| idautoPersonAppRoles7            | Target IDs                   | User identifiers for synced target systems.                                  | String              | \[topdeskoperator:0f24b366-35d4-4891-98d5-b4a372c099ec, topdesk:d03b615b-5a86-47a4-a06d-45925c5431a6\] | ✓             |
+| idautoPersonBadgeID              | Employee Lenel Card Number   | Employee Lenel Access Card Number                                            | String              | 12345                                                                                                  |               |
+| idautoPersonBarcodeNumber        | Student Lenel Card Number    | Student Lenel Access Card Number                                             | String              | 12345                                                                                                  |               |
+| idautoPersonBirthDate            | Birthdate                    | User's Date of Birth                                                         | String              | 30.01.1980                                                                                             |               |
+| idautoPersonClaimCode            | Claim Code                   | Claim Code with date it was assigned                                         | String              | 11f08c1d-c265-45d7-89d2-7a371f5629c5|20210413                                                          |               |
+| idautoPersonClaimFlag            | Account Claimed              | Indicates whether or not the account has been claimed                        | Boolean             | TRUE                                                                                                   |               |
+| idautoPersonCourses              | Course Enrollments           | List of course enrollment with enrollment type                               | String              | studentteacher:BIO201                                                                                  | ✓             |
+| idautoPersonCriterias1Desc       | Hard Match Conflicts         | Hard Match Conflicting username                                              | Multi-Lined String  | perut4623                                                                                              |               |
+| idautoPersonCriterias2Desc       | Soft Match Conflicts         | Soft Match Conflicting username                                              | Multi-Lined String  | perut4623                                                                                              |               |
+| idautoPersonDeprovisionDate      | Deprovision Date             | Used for tracking when an account was disabled in AD by RI                   | String              | 31.03.2021                                                                                             |               |
+| idautoPersonDeptCodes            | OrgEra Roles                 |                                                                              | String              | Example Value Employees: 1011|2310 104|1|1|01.10.2020|31.12.9999                                       | ✓             |
+| idautoPersonEmailAddresses       | Email Aliases                | Email aliases                                                                | Email               | elmik7024@uib.no                                                                                       | ✓             |
+| idautoPersonEmplClasses          | Employee Classifications     | Employee Classifications                                                     | String              | Administrativt personale                                                                               | ✓             |
+| idautoPersonEmplTypes            | Org Tuple                    | Multivalued Stedkode tuple                                                   | String              | 0012240000|MN-IFT|Institutt for fysikk og teknologi|Department of Physics and Technology|122400        | ✓             |
+| idautoPersonEnrollDate           | Enrollment Date              | Student Enrollment Date                                                      | String              | 31.07.2020                                                                                             |               |
+| idautoPersonFacDeptCodes         | Department Codes             | Employee Department Codes                                                    | String              | PRMEDISIN                                                                                              | ✓             |
+| idautoPersonFacSchoolCodes       | Student Tuple                |                                                                              | String              | 0012600000|MN-BIO|Institutt for biovitenskap|0|126000                                                  | ✓             |
+| idautoPersonHireDate             | Hire Date                    | Employee Hire Date                                                           | String              | 31.07.2021                                                                                             |               |
+| idautoPersonHomeCellphone        | Personal Phone               | Cell Phone                                                                   | String              | 4741234568                                                                                             |               |
+| idautoPersonHomeDirectory        | Home Directory               | Path to user’s home directory                                                | String              |                                                                                                        |               |
+| idautoPersonHomeEmail            | Personal Email               | Personal Email Address                                                       | Email Single-Valued | micky@hotmail.com                                                                                      |               |
+| idautoPersonJobTitles            | Title                        | Job Titles                                                                   | String              | 1113 Prosjektleder                                                                                     | ✓             |
+| idautoPersonLastDateWorked       | Last WorkDate                | Employee Last Date Worked                                                    | String              | 31.07.2021                                                                                             |               |
+| idautoPersonLastEnrollDate       | Last Enroll Date             | Last Enroll Date                                                             | String              | 31.07.2021                                                                                             |               |
+| idautoPersonLocCodesJobCodes     | OrgEra Org Path              | Org Tuple                                                                    | String              | uib|MED|MED-FELLES|                                                                                    | ✓             |
+| idautoPersonMailNotificationDate | Claim Notification Date      | Date claim account email sent                                                | String              | 31.07.2021                                                                                             |               |
+| idautoPersonManagerID            | Manager UHID                 | UniqueID of the user's manager                                               | String              | 4c28c38f-c1aa-4685-a5d6-dad78923f241                                                                   |               |
+| idautoPersonNationalID           | NIN / Passport               | National ID Number or Passport Number                                        | String              | 5095103105                                                                                             |               |
+| idautoPersonOfficePhone          | Office Phone                 | Office Phone Number                                                          | String              | ##########                                                                                             |               |
+| idautoPersonOtherID              | UHID                         | UH-ID - Unique Identifier                                                    | String              | 4c28c38f-c1aa-4685-a5d6-dad78923f241                                                                   |               |
+| idautoPersonPINCode              | PIN Code                     | Lenel Access Card PIN Code                                                   | String              | 1234                                                                                                   |               |
+| idautoPersonPositionCode         | Positions                    | SAP Position Code                                                            | String              | 30002225                                                                                               |               |
+| idautoPersonPrimaryAffiliation   | Primary Affiliation          | User’s primary affiliation                                                   | String              | Employee                                                                                               |               |
+| idautoPersonSchoolCode           | Student Number               | Student Number                                                               | String              | 38019                                                                                                  |               |
+| idautoPersonStatusOverride       | Status Override              | Status Override                                                              | String              | true                                                                                                   |               |
+| idautoPersonWorkAddress1         | Work Address                 | Work Address                                                                 | String              | Armauer Hansens hus, Haukelandsveien 28, 5020 Bergen, no                                               |               |
+| idautoStatus                     | Status                       | Status                                                                       | String              | A | I                                                                                                  |               |
+| l                                | Home City                    | User’s Home City                                                             | String              | Oslo                                                                                                   |               |
+| mail                             | Email                        | User’s institution email address                                             | Email Single-Valued | user@uib.no                                                                                            |               |
+| manager                          | Manager                      | DN of User’s Manager                                                         | DN                  |                                                                                                        |               |
+| postalCode                       | Home Postal Code             | User's Home Postal Code                                                      | String              | 1234                                                                                                   |               |
+| sn                               | Last Name                    | User’s last name                                                             | String              | Mouse                                                                                                  |               |
+| title                            | Title                        | User’s title.                                                                | String              | 1434 Rådgiver                                                                                          |               |
+| uid                              | User name                    | User name                                                                    | String              | laols0070                                                                                              |               |
 
-| Attribute                      | Description                                                         |
-| ------------------------------ | ------------------------------------------------------------------- |
-| Country                        | Central Directory “co” attribute                                    |
-| displayName                    | Central Directory “displayName” attribute                           |
-| Uid                            | Central Directory “sAMAccountName” attribute                        |
-| idautoStatus                   | Central Directory “idautoStatus” scoped attribute                   |
-| idautoPersonAlternateId        | Central Directory “idautoPersonAlternateId” attribute               |
-| givenName                      | Central Directory “givenName” attribute                             |
-| idautoID                       | Central Directory “idautoId” attribute                              |
-| idautoPersonAffiliations       | Central Directory “idautoPersonAffiliations” scoped attribute       |
-| idautoPersonBirthdate          | Central Directory “idautoPersonBirthdate” attribute                 |
-| idautoSchoolStreetAddress      | Central Directory “idautoPersonWorkAddress1” attribute              |
-| idautoPersonDeprovisionDate    | Central Directory “idautoPersonDeprovisionDate” scoped attribute    |
-| idautoPersonEntitlements       | Central Directory “idautoPersonEntitlements” scoped attribute       |
-| idautoPersonGradYear           | Central Directory “idautoPersonGradYear” scoped attribute           |
-| idautoPersonHomeCellPhone      | Central Directory “idautoPersonHomeCellPhone” attribute             |
-| idautoPersonHomeEmail          | Central Directory “idautoPersonHomeEmail” attribute                 |
-| postalCode                     | Central Directory “idautoPersonHomePostalCode” attribute            |
-| L                              | Central Directory “idautoPersonHomeCity” attribute                  |
-| St                             | Central Directory “idautoPersonHomeState” attribute                 |
-| idautoPersonDisableOverride    | Central Directory “idautoPersonLockoutFromSystem1” attribute        |
-| idautoPersonManagerId          | Central Directory “idautoPersonManagerId” scoped attribute          |
-| idautoPersonNationalId         | Central Directory “idautoPersonNationalId” attribute                |
-| idautoPersonPreferredLastName  | Central Directory “idautoPersonPreferredLastName” attribute         |
-| idautoPersonPreferredName      | Central Directory “givenName” attribute                             |
-| idautoPersonPrimaryAffiliation | Central Directory “idautoPersonPrimaryAffiliation” scoped attribute |
-| idautoPersonSchoolCode         | Central Directory “idautoPersonStuSchoolCode” scoped attribute      |
-| employeeNumber                 | Central Directory “employeeId” attribute                            |
-| Mail                           | Central Directory “mail” attribute                                  |
-| idautoPersonEmailAddress       | Central Directory “mailLocalAddress” attribute                      |
-| idautoPersonHireDate           | Central Directory “idautoPersonEntryDate” scoped attribute          |
-| idautoPersonLastDateWorked     | Central Directory “idautoPersonLastDateWorked” scoped attribute     |
-| idautoPersonEnrollDate         | Central Directory “idautoPersonEnrollDate” scoped attribute         |
-| idautoPersonLastEnrollDate     | Central Directory “idautoPersonLastEnrollDate” scoped attribute     |
-| idautoPersonLeaveFlag          | Central Directory “idautoPersonLeaveFlag” attribute                 |
-| idautoPersonSchool             | Central Directory “physicalDeliveryOfficeName” attribute            |
-| idautoPersonOtherId            | Central Directory “idautoPersonOtherId” attribute                   |
-| Sn                             | Central Directory “sn” attribute                                    |
-| idautoPersonClaimFlag          | Central Directory “idautoPersonClaimFlag” attribute                 |
-| idautoPersonClaimDate          | Central Directory “idautoPersonClaimDate” attribute                 |
-| idautoPersonClaimCode          | Central Directory “idautoPersonClaimCode” attribute                 |
-| idautoPersonLanguage           | Central Directory “idautoPersonLanguage” attribute                  |
-| idautoPersonBarCodeNumber      | Central Directory “idautoPersonBarCodeNumber” attribute             |
+More comments:
+
+* idautoPersonEmplTypes
+  * Multivalued Stedkode tuple including: Cost Center Code (orgKostnadssted), Cost Center Short Name (orgKortnavn), Cost Center Long Name (navn), English Name (engelsknavn), and Stedkode (first 6 digits of cost center code)
+* idautoPersonDeptCodes
+  * employees: ORG-ERA Tuple including origin, orgid, parent, org, advorg, SKO, YRK, Role
+  * Students: studentstatus=aktiv|privatist=false|student=true
+
+
+
+
+# ## Metadirectory Institusjon# 
+
+# | Attribute                      | Description                                                         |
+# | ------------------------------ | ------------------------------------------------------------------- |
+# | Country                        | Central Directory “co” attribute                                    |
+# | displayName                    | Central Directory “displayName” attribute                           |
+# | Uid                            | Central Directory “sAMAccountName” attribute                        |
+# | idautoStatus                   | Central Directory “idautoStatus” scoped attribute                   |
+# | idautoPersonAlternateId        | Central Directory “idautoPersonAlternateId” attribute               |
+# | givenName                      | Central Directory “givenName” attribute                             |
+# | idautoID                       | Central Directory “idautoId” attribute                              |
+# | idautoPersonAffiliations       | Central Directory “idautoPersonAffiliations” scoped attribute       |
+# | idautoPersonBirthdate          | Central Directory “idautoPersonBirthdate” attribute                 |
+# | idautoSchoolStreetAddress      | Central Directory “idautoPersonWorkAddress1” attribute              |
+# | idautoPersonDeprovisionDate    | Central Directory “idautoPersonDeprovisionDate” scoped attribute    |
+# | idautoPersonEntitlements       | Central Directory “idautoPersonEntitlements” scoped attribute       |
+# | idautoPersonGradYear           | Central Directory “idautoPersonGradYear” scoped attribute           |
+# | idautoPersonHomeCellPhone      | Central Directory “idautoPersonHomeCellPhone” attribute             |
+# | idautoPersonHomeEmail          | Central Directory “idautoPersonHomeEmail” attribute                 |
+# | postalCode                     | Central Directory “idautoPersonHomePostalCode” attribute            |
+# | L                              | Central Directory “idautoPersonHomeCity” attribute                  |
+# | St                             | Central Directory “idautoPersonHomeState” attribute                 |
+# | idautoPersonDisableOverride    | Central Directory “idautoPersonLockoutFromSystem1” attribute        |
+# | idautoPersonManagerId          | Central Directory “idautoPersonManagerId” scoped attribute          |
+# | idautoPersonNationalId         | Central Directory “idautoPersonNationalId” attribute                |
+# | idautoPersonPreferredLastName  | Central Directory “idautoPersonPreferredLastName” attribute         |
+# | idautoPersonPreferredName      | Central Directory “givenName” attribute                             |
+# | idautoPersonPrimaryAffiliation | Central Directory “idautoPersonPrimaryAffiliation” scoped attribute |
+# | idautoPersonSchoolCode         | Central Directory “idautoPersonStuSchoolCode” scoped attribute      |
+# | employeeNumber                 | Central Directory “employeeId” attribute                            |
+# | Mail                           | Central Directory “mail” attribute                                  |
+# | idautoPersonEmailAddress       | Central Directory “mailLocalAddress” attribute                      |
+# | idautoPersonHireDate           | Central Directory “idautoPersonEntryDate” scoped attribute          |
+# | idautoPersonLastDateWorked     | Central Directory “idautoPersonLastDateWorked” scoped attribute     |
+# | idautoPersonEnrollDate         | Central Directory “idautoPersonEnrollDate” scoped attribute         |
+# | idautoPersonLastEnrollDate     | Central Directory “idautoPersonLastEnrollDate” scoped attribute     |
+# | idautoPersonLeaveFlag          | Central Directory “idautoPersonLeaveFlag” attribute                 |
+# | idautoPersonSchool             | Central Directory “physicalDeliveryOfficeName” attribute            |
+# | idautoPersonOtherId            | Central Directory “idautoPersonOtherId” attribute                   |
+# | Sn                             | Central Directory “sn” attribute                                    |
+# | idautoPersonClaimFlag          | Central Directory “idautoPersonClaimFlag” attribute                 |
+# | idautoPersonClaimDate          | Central Directory “idautoPersonClaimDate” attribute                 |
+# | idautoPersonClaimCode          | Central Directory “idautoPersonClaimCode” attribute                 |
+# | idautoPersonLanguage           | Central Directory “idautoPersonLanguage” attribute                  |
+# | idautoPersonBarCodeNumber      | Central Directory “idautoPersonBarCodeNumber” attribute             |
 
 ## AD
 
