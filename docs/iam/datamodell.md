@@ -470,51 +470,6 @@ More comments:
 
 
 
-# ## Metadirectory Institusjon#
-
-# | Attribute                      | Description                                                         |
-# | ------------------------------ | ------------------------------------------------------------------- |
-# | Country                        | Central Directory “co” attribute                                    |
-# | displayName                    | Central Directory “displayName” attribute                           |
-# | Uid                            | Central Directory “sAMAccountName” attribute                        |
-# | idautoStatus                   | Central Directory “idautoStatus” scoped attribute                   |
-# | idautoPersonAlternateId        | Central Directory “idautoPersonAlternateId” attribute               |
-# | givenName                      | Central Directory “givenName” attribute                             |
-# | idautoID                       | Central Directory “idautoId” attribute                              |
-# | idautoPersonAffiliations       | Central Directory “idautoPersonAffiliations” scoped attribute       |
-# | idautoPersonBirthdate          | Central Directory “idautoPersonBirthdate” attribute                 |
-# | idautoSchoolStreetAddress      | Central Directory “idautoPersonWorkAddress1” attribute              |
-# | idautoPersonDeprovisionDate    | Central Directory “idautoPersonDeprovisionDate” scoped attribute    |
-# | idautoPersonEntitlements       | Central Directory “idautoPersonEntitlements” scoped attribute       |
-# | idautoPersonGradYear           | Central Directory “idautoPersonGradYear” scoped attribute           |
-# | idautoPersonHomeCellPhone      | Central Directory “idautoPersonHomeCellPhone” attribute             |
-# | idautoPersonHomeEmail          | Central Directory “idautoPersonHomeEmail” attribute                 |
-# | postalCode                     | Central Directory “idautoPersonHomePostalCode” attribute            |
-# | L                              | Central Directory “idautoPersonHomeCity” attribute                  |
-# | St                             | Central Directory “idautoPersonHomeState” attribute                 |
-# | idautoPersonDisableOverride    | Central Directory “idautoPersonLockoutFromSystem1” attribute        |
-# | idautoPersonManagerId          | Central Directory “idautoPersonManagerId” scoped attribute          |
-# | idautoPersonNationalId         | Central Directory “idautoPersonNationalId” attribute                |
-# | idautoPersonPreferredLastName  | Central Directory “idautoPersonPreferredLastName” attribute         |
-# | idautoPersonPreferredName      | Central Directory “givenName” attribute                             |
-# | idautoPersonPrimaryAffiliation | Central Directory “idautoPersonPrimaryAffiliation” scoped attribute |
-# | idautoPersonSchoolCode         | Central Directory “idautoPersonStuSchoolCode” scoped attribute      |
-# | employeeNumber                 | Central Directory “employeeId” attribute                            |
-# | Mail                           | Central Directory “mail” attribute                                  |
-# | idautoPersonEmailAddress       | Central Directory “mailLocalAddress” attribute                      |
-# | idautoPersonHireDate           | Central Directory “idautoPersonEntryDate” scoped attribute          |
-# | idautoPersonLastDateWorked     | Central Directory “idautoPersonLastDateWorked” scoped attribute     |
-# | idautoPersonEnrollDate         | Central Directory “idautoPersonEnrollDate” scoped attribute         |
-# | idautoPersonLastEnrollDate     | Central Directory “idautoPersonLastEnrollDate” scoped attribute     |
-# | idautoPersonLeaveFlag          | Central Directory “idautoPersonLeaveFlag” attribute                 |
-# | idautoPersonSchool             | Central Directory “physicalDeliveryOfficeName” attribute            |
-# | idautoPersonOtherId            | Central Directory “idautoPersonOtherId” attribute                   |
-# | Sn                             | Central Directory “sn” attribute                                    |
-# | idautoPersonClaimFlag          | Central Directory “idautoPersonClaimFlag” attribute                 |
-# | idautoPersonClaimDate          | Central Directory “idautoPersonClaimDate” attribute                 |
-# | idautoPersonClaimCode          | Central Directory “idautoPersonClaimCode” attribute                 |
-# | idautoPersonLanguage           | Central Directory “idautoPersonLanguage” attribute                  |
-# | idautoPersonBarCodeNumber      | Central Directory “idautoPersonBarCodeNumber” attribute             |
 
 ## AD
 
