@@ -398,7 +398,7 @@ Access: On SD
 dfø:ansatte/{id} -> .medarbeiderundergruppe = [95]
 ```
 
-## Metadirectory Institusjon (v2 - updated)
+## Portal directory
 
 
 | Attribute                        | Display name                 | Description                                                                  | Type                | Example                                                                                                | Mullti valued |
@@ -470,7 +470,7 @@ More comments:
 
 
 
-# ## Metadirectory Institusjon# 
+# ## Metadirectory Institusjon#
 
 # | Attribute                      | Description                                                         |
 # | ------------------------------ | ------------------------------------------------------------------- |
