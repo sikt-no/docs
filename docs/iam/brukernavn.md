@@ -224,4 +224,4 @@ Alle brukere med fødselsnummer aktiverer sin konto ved bruk av ID-porten. Alle 
 
 ## Om gjestebrukere
 
-Alle gjester (med unntak av kortvarige gjester) registreres i SAP. Kortvarige gjester kan registreres direkte i IAM av en sponsor. Institusjonene kan definere reglene for hvem som er godkjent som sponsor. 
+Alle gjester (med unntak av kortvarige gjester) registreres i SAP. Kortvarige gjester kan registreres direkte i IAM av en sponsor. Institusjonene kan definere reglene for hvem som er godkjent som sponsor.

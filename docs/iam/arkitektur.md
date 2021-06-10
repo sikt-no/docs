@@ -5,7 +5,7 @@ title: Overordnet arkitektur
 
 Identitets- og tilgangsstyring (IAM) er samling prosesser og teknologier for å hjelpe institusjonen med å tildele studenter, forskere og ansatte riktige tilganger i henhold til når et tjenstlig behov oppstår, forvalte disse på en etterprøvbar måte og deaktivere disse når behovet opphører. Det er dermed en viktig forutsetning for håndteringen av digitale identiteters livssyklus.
 
-Felles IAM innfører felles teknologi for hele sektoren som et viktig virkemiddel i å understøtte strategiske mål som studentmobilitet, livslang læring og bedre samhandling mellom institusjoner, samtidig som det bidrar til økt bedre brukeropplevelse, mer rasjonell forvaltning og styrket etterlevelse av lovverk.
+Felles IAM innfører felles teknologi for hele sektoren som et viktig virkemiddel i å understøtte [strategiske mål og gevinster](./gevinster).
 
 Hovedstegene i IAM består av:
 
@@ -20,9 +20,17 @@ Hovedstegene i IAM består av:
 
 ![Forsyning og tilgangskontroll](/img/iam/figur1.png)
 
+
+## Systemarkitektur
+
+
 Felles IAM innfører ett felles produkt for forsyning, RapidIdentity (RI) fra Identity Automation. RI består av flere komponenter, der de viktigste er:
 
 * Rapid Identity Core Services bestående av et integrasjonslag (Connect) lagringsstruktur (MetaVault og Metadirectory) samt en portal tilgang til tjenesten
 * Rapid Identity Institution Service bestående av lokal lagringsstruktur (Portal Directory) samt en portal for sluttbrukere og forvaltere av tjenesten.
 
+
 I tillegg innføres en tjeneste for sikker identifisering og kontoaktivering for nye ansatte og studenter, Uninett Account Claim.
+
+
+![systemarkitektur](/img/iam/systemarkitektur.png)

@@ -5,15 +5,446 @@ title: Datamodell
 
 ## MetaVault database skjema
 
-TBD
+### Identity Store Table
+
+Table contains a digital identity (defined by a UH-ID) and its association with one or more unique identifiers. Unique identifiers can be a National ID, a temporary National ID, an employee number scoped for an institution, a student number scoped for an institution, an EPPN, and SO number, or a combination of attributes such as legal last name, passport number, country, and institutional affiliation.
+
+| Field      | Data Type | Field Length | Nullable | Pri Key | Source: master\_employee and master\_student processing |
+| ---------- | --------- | ------------ | -------- | ------- | ------------------------------------------------------- |
+| uhid       | varchar   | 36           | No       | X       | Randomly generated GUID                                 |
+| identifier | varchar   | 200          | No       | X       | identifier type + “:” + identifier value                |
+| uhida      | varchar   | 36           | Yes      |         | Only used when identities are merged Former  uhid       |
+
+### Persons table
+
+Table contains master information for all persons.
+
+| **Field**                 | **Data Type** | **Field Length** | **Nullable** |
+| ------------------------- | ------------- | ---------------- | ------------ |
+| id                        | varchar       | 50               | No           |
+| uhid                      | varchar       | 36               | No           |
+| uhun                      | varchar       | 9                | No           |
+| status                    | char          | 1                | No           |
+| eppn                      | varchar       | 36               | Yes          |
+| employee\_no              | varchar       | 45               | Yes          |
+| first\_name               | varchar       | 254              | Yes          |
+| last\_name                | varchar       | 254              | Yes          |
+| fnr                       | varchar       | 12               | Yes          |
+| alternate\_identification | varchar       | 100              | Yes          |
+| birthdate                 | varchar       | 10               | Yes          |
+| classification\_group     | varchar       | 5                | Yes          |
+| classification\_subgroup  | varchar       | 5                | Yes          |
+| start\_date               | varchar       | 10               | Yes          |
+| end\_date                 | varchar       | 10               | Yes          |
+| end\_reason               | varchar       | 254              | Yes          |
+| main\_position            | varchar       | 12               | Yes          |
+| main\_position\_percent   | varchar       | 6                | Yes          |
+| main\_organization        | varchar       | 12               | Yes          |
+| secondary\_positions      | varchar       | 500              | Yes          |
+| external\_id              | varchar       | 254              | Yes          |
+| email                     | varchar       | 254              | Yes          |
+| telephone                 | varchar       | 100              | Yes          |
+| personal\_mobile          | varchar       | 30               | Yes          |
+| personal\_mobile\_foreign | varchar       | 30               | Yes          |
+| personal\_postal\_code    | varchar       | 20               | Yes          |
+| personal\_city            | varchar       | 50               | Yes          |
+| personal\_state           | varchar       | 50               | Yes          |
+| personal\_email           | varchar       | 100              | Yes          |
+| passport\_number          | varchar       | 50               | Yes          |
+| dead                      | bit           |                  | Yes          |
+| hard\_match\_conflicts    | varchar       | 4000             | Yes          |
+| soft\_match\_conflicts    | varchar       | 4000             | Yes          |
+| updated\_date             | date          |                  | Yes          |
+| extension\_sent           | date          |                  | Yes          |
+| extended\_to              | date          |                  | Yes          |
+| fs\_pin                   | varchar       | 12               | Yes          |
+| source\_institution       | varchar       | 10               | No           |
+| source\_system            | varchar       | 3                | No           |
+| source\_id                | varchar       | 50               | No           |
+| created\_at               | datetime      |                  | No           |
+| updated\_at               | datetime      |                  | No           |
+| process\_id               | varchar       | 100              | Yes          |
+| processed\_at             | datetime      |                  | Yes          |
+
+
+### SAP Tables
+
+Tables contain SAP information for orgs and positions. The load tables are populated directly using API calls to SAP/IntArk. The master tables are processed using data in the load tables.
+
+* SAP Load Tables
+  * `employees_load`
+  * `orgs_load`
+  * `positions_load`
+* SAP Master Tables
+  * `master_orgs`
+  * `master_positions`
+  * `organization`
+
+
+#### SAP master_orgs
+
+| **Field**           | **Data Type** | **Field Length** | **Nullable** | **Pri Key** | **Source Table: **orgs\_load                                                   |
+| ------------------- | ------------- | ---------------- | ------------ | ----------- | ------------------------------------------------------------------------------ |
+| id                  | varchar       | 100              | No           | X           | source\_institution + “:” + source\_system + “:orgs:” + id                     |
+| managed\_by         | varchar       | 100              | No           | X           | source\_institution + “:” + source\_system + “:employee:” + managerEmployeeNos |
+| short\_name         | varchar       | 45               | No           |             | shortName                                                                      |
+| name                | varchar       | 45               | No           |             | name                                                                           |
+| parent\_id          | varchar       | 45               | Yes          |             | source\_institution + “:” + source\_system + “:orgs:” + parentId               |
+| status              | varchar       | 1                | No           |             | “A”                                                                            |
+| street              | varchar       | 100              | Yes          |             | N/A                                                                            |
+| city                | varchar       | 100              | Yes          |             | N/A                                                                            |
+| state               | varchar       | 45               | Yes          |             | N/A                                                                            |
+| postal\_code        | varchar       | 45               | Yes          |             | N/A                                                                            |
+| country             | varchar       | 45               | Yes          |             | N/A                                                                            |
+| costcenter          | varchar       | 45               | Yes          |             | costcenter                                                                     |
+| source\_institution | varchar       | 45               | No           |             | source\_institution                                                            |
+| source\_system      | varchar       | 45               | No           |             | source\_system                                                                 |
+| source\_id          | varchar       | 45               | No           |             | id                                                                             |
+| inserted\_at        | datetime      |                  | No           |             | _System date_                                                                  |
+| updated\_at         | datetime      |                  | No           |             | _System date_                                                                  |
+| processed\_at       | datetime      |                  | Yes          |             | _System date_                                                                  |
+| process\_id         | varchar       | 45               | Yes          |             | _Internal process ID_                                                          |
+
+
+#### SAP master_positions
+
+| **Field**           | **Data Type** | **Field Length** | **Nullable** | **Pri Key** | **Source Table: **positions\_load                                    |
+| ------------------- | ------------- | ---------------- | ------------ | ----------- | -------------------------------------------------------------------- |
+| id                  | varchar       | 45               | No           | X           | source\_institution + “:” + source\_system + “:positions:” + id      |
+| held\_by            | varchar       | 45               | No           | X           | source\_institution + “:” + source\_system + “:employee:” + held\_by |
+| held\_from          | date          |                  | Yes          |             | held\_from                                                           |
+| held\_until         | date          |                  | Yes          |             | held\_until                                                          |
+| status              | varchar       | 1                | No           |             | _calculated – “A”|”I”_                                               |
+| job\_code           | varchar       | 12               | Yes          |             | job\_code                                                            |
+| title               | varchar       | 50               | Yes          |             | title                                                                |
+| organization        | varchar       | 33               | No           |             | source\_institution + “:” + source\_system + “:orgs:” + organization |
+| yrk                 | varchar       | 10               | Yes          |             | yrk                                                                  |
+| position\_group     | varchar       | 50               | Yes          |             | postion\_group                                                       |
+| position\_group\_id | varchar       | 12               | Yes          |             | postion\_group\_id                                                   |
+| source\_institution | varchar       | 45               | No           |             | source\_institution                                                  |
+| source\_system      | varchar       | 45               | No           |             | source\_system                                                       |
+| source\_id          | varchar       | 45               | No           |             | id + “:” held\_by                                                    |
+| inserted\_at        | datetime      |                  | No           |             | _System date_                                                        |
+| updated\_at         | datetime      |                  | No           |             | _System date_                                                        |
+| processed\_at       | datetime      |                  | Yes          |             | _System date_                                                        |
+| process\_id         | varchar       | 45               | Yes          |             | _Internal process ID_                                                |
+
+### FS Tables
+
+Tables contain FS information for assessment times, countries, languages, semester, student assessments, student teachers, study levels, study programs, study rights, and topics. The load tables are populated directly using API calls to FS/IntArk. The master tables are processed using data in the load tables.
+
+* FS Load tables
+  * `assessmenttimes_load`
+  * `countries_load`
+  * `languages_load`
+  * `roles_load`
+  * `semester_load`
+  * `studentassessments_load`
+  * `students_load`
+  * `studentteaching_load`
+  * `studylevels_load`
+  * `studyprograms_load`
+  * `studyrights_load`
+  * `teaching_load`
+  * `teachingactivity_load`
+  * `topics_load`
+* FS Master Tables
+  * `master_assessmenttimes`
+  * `master_countries`
+  * `master_languages`
+  * `master_roles`
+  * `master_semester`
+  * `master_studentassessments`
+  * `master_studentteacher`
+  * `master_studylevels`
+  * `master_studyprograms`
+  * `master_studyrights`
+  * `master_teaching`
+  * `master_teachingactivity`
+  * `master_topics`
+
+
+### OrgReg Table
+
+The orgreg_load table contains a list of organizations from the orgreg API endpoint.
+
+| **saf**                       | **Data Type** | **Field Length** | **Nullable** | **Pri Key** | **API Source: **orgreg                        |
+| ----------------------------- | ------------- | ---------------- | ------------ | ----------- | --------------------------------------------- |
+| source\_institution           | varchar       | 5                | No           | X           | _static – Action Set ‘institution’ parameter_ |
+| source\_system                | varchar       | 10               | No           | X           | _static – ‘OrgReg’_                           |
+| external\_key\_source\_system | varchar       | 45               | No           | X           | externalKeys.sourceSystem                     |
+| external\_key\_type           | varchar       | 45               | No           | X           | externalKeys.Type                             |
+| external\_key\_value          | varchar       | 45               | No           | X           | externalKeys.Value                            |
+| source\_id                    | varchar       | 20               | No           | X           | ouId                                          |
+| note                          | varchar       | 200              | Yes          |             | note                                          |
+| english\_name                 | varchar       | 200              | Yes          |             | englishName                                   |
+| valid\_from                   | date          |                  | Yes          |             | validFrom                                     |
+| norwegian\_homepage           | varchar       | 100              | Yes          |             | norwegianHomepage                             |
+| norwegian\_name               | varchar       | 100              | Yes          |             | norwegianName                                 |
+| email                         | varchar       | 45               | Yes          |             | email                                         |
+| acronym                       | varchar       | 45               | Yes          |             | acronym                                       |
+| english\_homepage             | varchar       | 45               | Yes          |             | englishHomepage                               |
+| postal\_code                  | varchar       | 45               | Yes          |             | postalAddress.postalCode                      |
+| country                       | varchar       | 45               | Yes          |             | postalAddress.country                         |
+| state                         | varchar       | 45               | Yes          |             | postalAddress.stateOrProvinceName             |
+| city                          | varchar       | 45               | Yes          |             | postalAddress.city                            |
+| fax                           | varchar       | 45               | Yes          |             | fax                                           |
+| visit\_street                 | varchar       | 100              | Yes          |             | visitAddress.street                           |
+| visit\_city                   | varchar       | 45               | Yes          |             | visitAddress.city                             |
+| visit\_country                | varchar       | 45               | Yes          |             | visitAddress.country                          |
+| visit\_postal\_code           | varchar       | 45               | Yes          |             | visitAddress.postalCode                       |
+| phone                         | varchar       | 45               | Yes          |             | phone.countryCode + phone.number              |
+| predecessors                  | varchar       | 45               | Yes          |             | predecessors                                  |
+| inserted\_on                  | datetime      |                  | No           |             | _System date_                                 |
+| updated\_on                   | datetime      |                  | No           |             | _System date_                                 |
+| processed\_on                 | datetime      |                  | Yes          |             | _System date_                                 |
+| process\_id                   | varchar       | 45               | Yes          |             | _Internal process ID_                         |
+
+
+
+
+
 
 ## Metadirectory Core
 
-TBD
+| Attribute name                    | Description                                                                                                                                                                                                                 | Source  |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| sAMAccountName                    | Uhun                                                                                                                                                                                                                        |         |
+| @dn                               | “cn=” + sAMAccountName + “,OU=People,OU=Accounts,DC=meta,DC=local”                                                                                                                                                          |         |
+| displayName                       | first name + “ “ + last name                                                                                                                                                                                                |         |
+| userPrincipalName                 | sAMAccountName + “@meta.local”                                                                                                                                                                                              |         |
+| idautoPersonAlternateId           | uhun                                                                                                                                                                                                                        |         |
+| givenName                         | First name                                                                                                                                                                                                                  |         |
+| idautoId                          | uhid                                                                                                                                                                                                                        |         |
+| idautoPersonOtherId               | uhid                                                                                                                                                                                                                        |         |
+| Sn                                | Last name                                                                                                                                                                                                                   |         |
+| idautoPersonNationalID            | NIN or Passport Number                                                                                                                                                                                                      |         |
+| idautoPersonBirthdate             | Birthdate                                                                                                                                                                                                                   |         |
+| idautoPersonAffiliations          | See description below                                                                                                                                                                                                       | SAF/FS  |
+| idautoPersonAffiliations (scoped) | See description below                                                                                                                                                                                                       | SAF/FS  |
+| idautoPersonSchoolIDs             | Multivalue list of all SAP/Employee ID's associated with the person (prefixed to indicate institution of origin)                                                                                                            | SAP     |
+| idautoPersonWorkAddress1          | User's Work Address                                                                                                                                                                                                         | SAP     |
+| idautoPersonHomeCellphone         | User's Cell/Mobile Phone Number                                                                                                                                                                                             | SAP     |
+| idautoPersonHomeEmail             | User's Private Email Address                                                                                                                                                                                                | SAP     |
+| idautoPersonHomePostalCode        | User's Home Postal Code                                                                                                                                                                                                     | SAP     |
+| idautoPersonHomeCity              | User's Home Region/County (landsdeler)                                                                                                                                                                                      | SAP     |
+| idautoPersonHomeState             | User's Home Region/County (landsdeler)                                                                                                                                                                                      | SAP     |
+| idautoPersonManagerID             | UniqueID of the user's manager                                                                                                                                                                                              | SAP     |
+| Manager                           | DN of the user's manager (Used to identify a users Leder in Portal for workflow purposes only)                                                                                                                              | SAP     |
+| idautoPersonEntryDate             | Oldest held-by date on a position                                                                                                                                                                                           | SAP     |
+| idautoPersonLastDateWorked        | Oldest held-until date on a position unless user currently holds a position.                                                                                                                                                | SAP     |
+| idautoPersonFacSchoolCodes        | Multivalued Stedkode tuple including: Cost Center Code (orgKostnadssted), Cost Center Short Name (orgKortnavn), Cost Center Long Name (navn), English Name (engelsknavn), and Stedkode (first 6 digits of cost center code) | SAP     |
+| employeeID                        |                                                                                                                                                                                                                             | SAP     |
+| idautoPersonSchoolCodes           | Multivalue list of all Student Numbers associated with the person.                                                                                                                                                          | FS      |
+| idautoPersonStuSchoolCodes        | Multivalue list of all FS ID's associated with the person                                                                                                                                                                   | FS      |
+| idautoPersonWorkAddress1          | User's Work Address                                                                                                                                                                                                         | FS      |
+| idautoPersonHomeCellphone         | User's Cell/Mobile Phone Number                                                                                                                                                                                             | FS      |
+| idautoPersonHomeEmail             | User's Private Email Address                                                                                                                                                                                                | FS      |
+| idautoPersonEnrollDate            | Oldest held-by date on a study right, student teaching, or assessment, scoped                                                                                                                                               | FS      |
+| idautoPersonLastEnrollDate        | Oldest held-until date on a study right, student teaching, or assessment, unless user currently holds one, scoped.                                                                                                          | FS      |
+| idautoPersonCourses               | Study program codes                                                                                                                                                                                                         | FS      |
+| idautoPersonPrimaryParent         | User’s home institution.  Calculated based on first school person is associated with chronologically                                                                                                                        | FS      |
+| idautoPersonSchoolCode            | Student Number from user's Home Institution                                                                                                                                                                                 | FS      |
+| idautoPersonStuSchoolCode         | FS ID Number from user's Home Institution                                                                                                                                                                                   | FS      |
+| Mail                              | User's Email Address from Home Institution                                                                                                                                                                                  | Derived |
+| idautoPersonDeprovisionDate       | Used for tracking when an account was disabled in AD by RI                                                                                                                                                                  | Derived |
+| idautoPersonDSSSystemUpdates      | Date Connect last updated the object                                                                                                                                                                                        | Derived |
+| idautoPersonClaimFlag             | Indicates whether an account has been claimed or not. Populated via the user account claiming process.                                                                                                                      | Claim   |
+| idautoPersonClaimDate             | Indicates the date when an account was claimed.  Populated via the user account claiming process.                                                                                                                           | Claim   |
+| idautoPersonClaimCode             |                                                                                                                                                                                                                             | Claim   |
+| idautoPersonStatusOverride        | Status Override Flag                                                                                                                                                                                                        | Manual  |
+| idautoPersonDoNotDeprovision      | Boolean to prevent disablement process from being executed                                                                                                                                                                  | Manual  |
+| idautoPersonLockoutFromSystem1    | Flag to prevent action sets from recreating/re-enabling an immediate termination account                                                                                                                                    | Manual  |
+
+
+### idautoPersonAffiliations
+
+Employee
+Separated Employee
+Student
+Separated Student
+
+### idautoPersonAffiliations (scoped)
+
+
+#### AdministrativeTechnicalStaff
+
+```
+dfo:stillinger/{id}->stillingskat -> "stillingskatBetegn": "Administrativt personale"
+dfo:stillinger/{id}->stillingskat -> "stillingskatBetegn": "Drifts- og teknisk pers./andre tilsatte"
+```
+
+Create: Immediately
+Access: On SD
+
+#### Faculty
+
+```
+dfo:stillinger/{id}->stillingskat -> "stillingskatBetegn": "Undervisnings- og forsknings personale"
+```
+
+Create: Immediately
+Access: On SD
+
+#### HourlyPaid
+
+```
+dfo:stillinger/{id}-> stillingskat
+dfo: ansatte/{id}-> medarbeiderundergruppe -> timelønnet
+```
+
+Create: Immediately
+Access: On SD
+
+#### Separated Employee
+
+Has an End Date associated with the position, and had no other active roles or study rights
+
+On EndDate EOD
+
+#### Deceased
+
+DFØ API: dead Flag = true
+
+Immediately
+
+#### Delete Employee
+
+Disable Date + 180d
+
+#### Student
+
+Case 1, All bullet points are true:
+* Studierett = true
+* studieretter/{id} -> .privatist = false
+* studieretter/{id} -> .aktivStudent = true
+
+Case 2, all bullet points are true:
+* Undervisningsmelding = true
+* studentundervisning/{id} ->.opptatt = true ('J')
+
+Immediately on active right of study, up to 65 days prior to start date
+
+#### Private Candidate
+
+Case 1, all bullet points are true:
+* Studierett = true
+* studieretter/{id} -> .privatist = true
+* studieretter/{id} -> .aktivStudent = true
+
+Case 2, all bullet points are true:
+* Eksamensmelding = true
+* studentundervisning/{id} ->.opptatt = false ('N')
+* No active studierett with Privatist = false"
+
+Immediately on active study right for current semester up to 65 days prior to semester start date (there is a function in the API that will allow you to convert a semester name into a start and end date)
+
+#### Leave of Absence
+
+```
+fsapi:Studieretter -> studentstatus -> PERMISJON = TRUE
+idautoPersonLeaveFlag = True"
+```
+
+#### Separated Students
+
+They will have an end date in their study right that is equal to or earlier than today
+
+#### No Grace Period
+
+fsapi:studieretter -> studentstatus
+
+```
+(if studentstatus = FULLFØRT or UTGÅTT or SLUTTET or UNDERKJENT --> give grace flag
+if studentstatus = IKKE AKTIV or OVERGANG or TRUKKET or UTESTENGT or INNDRATT  --> no grace flag)
+```
+
+idautoPersonLeaveFlag = FALSE
+
+Immediately
+
+#### Deceased
+
+dead = y
+
+Immediately
+
+#### Delete Student
+
+Disable Date + 180d
+
+#### Long Term Guest - Emeritus:
+
+```
+dfø:ansatte/{id} -> .medarbeidergruppe = 9
+dfø:ansatte/{id} -> .medarbeiderundergruppe = [93]
+```
+
+Create: Immediately
+Access: On SD
+
+#### Long Term Guest - Visiting Researcher
+
+```
+dfø:ansatte/{id} -> .medarbeiderundergruppe = [94]
+```
+
+Create: Immediately
+Access: On SD
+
+#### Long term Guest - Consultant
+
+```
+dfø:ansatte/{id} -> .medarbeiderundergruppe = [95]
+```
+
+
 
 ## Metadirectory Institusjon
 
-TBD
+| Attribute                      | Description                                                         |
+| ------------------------------ | ------------------------------------------------------------------- |
+| Country                        | Central Directory “co” attribute                                    |
+| displayName                    | Central Directory “displayName” attribute                           |
+| Uid                            | Central Directory “sAMAccountName” attribute                        |
+| idautoStatus                   | Central Directory “idautoStatus” scoped attribute                   |
+| idautoPersonAlternateId        | Central Directory “idautoPersonAlternateId” attribute               |
+| givenName                      | Central Directory “givenName” attribute                             |
+| idautoID                       | Central Directory “idautoId” attribute                              |
+| idautoPersonAffiliations       | Central Directory “idautoPersonAffiliations” scoped attribute       |
+| idautoPersonBirthdate          | Central Directory “idautoPersonBirthdate” attribute                 |
+| idautoSchoolStreetAddress      | Central Directory “idautoPersonWorkAddress1” attribute              |
+| idautoPersonDeprovisionDate    | Central Directory “idautoPersonDeprovisionDate” scoped attribute    |
+| idautoPersonEntitlements       | Central Directory “idautoPersonEntitlements” scoped attribute       |
+| idautoPersonGradYear           | Central Directory “idautoPersonGradYear” scoped attribute           |
+| idautoPersonHomeCellPhone      | Central Directory “idautoPersonHomeCellPhone” attribute             |
+| idautoPersonHomeEmail          | Central Directory “idautoPersonHomeEmail” attribute                 |
+| postalCode                     | Central Directory “idautoPersonHomePostalCode” attribute            |
+| L                              | Central Directory “idautoPersonHomeCity” attribute                  |
+| St                             | Central Directory “idautoPersonHomeState” attribute                 |
+| idautoPersonDisableOverride    | Central Directory “idautoPersonLockoutFromSystem1” attribute        |
+| idautoPersonManagerId          | Central Directory “idautoPersonManagerId” scoped attribute          |
+| idautoPersonNationalId         | Central Directory “idautoPersonNationalId” attribute                |
+| idautoPersonPreferredLastName  | Central Directory “idautoPersonPreferredLastName” attribute         |
+| idautoPersonPreferredName      | Central Directory “givenName” attribute                             |
+| idautoPersonPrimaryAffiliation | Central Directory “idautoPersonPrimaryAffiliation” scoped attribute |
+| idautoPersonSchoolCode         | Central Directory “idautoPersonStuSchoolCode” scoped attribute      |
+| employeeNumber                 | Central Directory “employeeId” attribute                            |
+| Mail                           | Central Directory “mail” attribute                                  |
+| idautoPersonEmailAddress       | Central Directory “mailLocalAddress” attribute                      |
+| idautoPersonHireDate           | Central Directory “idautoPersonEntryDate” scoped attribute          |
+| idautoPersonLastDateWorked     | Central Directory “idautoPersonLastDateWorked” scoped attribute     |
+| idautoPersonEnrollDate         | Central Directory “idautoPersonEnrollDate” scoped attribute         |
+| idautoPersonLastEnrollDate     | Central Directory “idautoPersonLastEnrollDate” scoped attribute     |
+| idautoPersonLeaveFlag          | Central Directory “idautoPersonLeaveFlag” attribute                 |
+| idautoPersonSchool             | Central Directory “physicalDeliveryOfficeName” attribute            |
+| idautoPersonOtherId            | Central Directory “idautoPersonOtherId” attribute                   |
+| Sn                             | Central Directory “sn” attribute                                    |
+| idautoPersonClaimFlag          | Central Directory “idautoPersonClaimFlag” attribute                 |
+| idautoPersonClaimDate          | Central Directory “idautoPersonClaimDate” attribute                 |
+| idautoPersonClaimCode          | Central Directory “idautoPersonClaimCode” attribute                 |
+| idautoPersonLanguage           | Central Directory “idautoPersonLanguage” attribute                  |
+| idautoPersonBarCodeNumber      | Central Directory “idautoPersonBarCodeNumber” attribute             |
 
 ## AD
 
