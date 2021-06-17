@@ -13,11 +13,11 @@ include "uninetttopp.php3";
 
 <dl>
   <dt>REVISJON:
-  <dd>Verktøykasse-brukerdok.2019.01
+  <dd>Verktøykasse-brukerdok.2021.01
   <dt>ANSVARLIG:
   <dd>Morten.Brekkevold@uninett.no
   <dt>DATO:
-  <dd>2019-08-09
+  <dd>2021-06-17
 </dl>
 
 <hr>
@@ -113,7 +113,7 @@ sudo-rettigheter, samt lesetilgang til filer (se Brukertilgang under).
 
 <ul>
   <li>
-    For driftshenvendelser, ta kontakt med <a href="mailto:drift@uninett.no">drift@uninett.no</a>
+    For driftshenvendelser, ta kontakt med <a href="mailto:kontakt@uninett.no">drift@uninett.no</a>
   </li>
   <li>
     For diskusjon/spørsmål om bruk av verktøyene, bruk <a href="mailto:vk@uninett.no">vk@uninett.no</a>.<br>
@@ -217,7 +217,7 @@ automatisert ved at en nattlig cronjobb sjekker inn ny versjon av alle
 filer som er endret. Alle endringer blir rapportert som epost til
 mottagere angitt via variabelen <tt>nocoperators</tt> i fila
 <tt>/etc/default/uninett.conf</tt> (merk at denne filen er styrt av
-Uninetts Puppet, ta kontakt med <a href="mailto:drift@uninett.no">drift@uninett.no</a> for å få gjort
+Uninetts Puppet, ta kontakt med <a href="mailto:kontakt@uninett.no">kontakt@uninett.no</a> for å få gjort
 endringer). En varsling om låste RCS filer (avglemte innsjekkinger)
 blir også sendt periodisk til samme adresse.
 </p><p>
@@ -262,7 +262,7 @@ client 128.39.109.0/26 {
 Det vi angir her at alle svitsjene i området 128.39.109.1-63 tillates
 å snakke radius med verktøykassen gitt at de er konfigurert med
 samme felles-hemmelighet. Endringer i <tt>/etc/freeradius/clients.conf</tt>
-styres med Puppet og må meldes inn til <a href="mailto:drift@uninett.no">drift@uninett.no</a>.
+styres med Puppet og må meldes inn til <a href="mailto:kontakt@uninett.no">kontakt@uninett.no</a>.
 </p>
 
 
@@ -377,7 +377,7 @@ fila <var>/etc/nav/webfront/webfront.conf</var>.
 
 <h3><a name="feilsok-sms">Feilsøking av mobiltelefon/SMS-utsending</a></h3>
 
-<p>Dersom du har problemer med utsending av SMS fra verktøykassen, kan du gjøre litt førstelinjes feilsøking før du feilmelder situasjonen til <a href="mailto:drift@uninett.no">drift@uninett.no</a>.
+<p>Dersom du har problemer med utsending av SMS fra verktøykassen, kan du gjøre litt førstelinjes feilsøking før du feilmelder situasjonen til <a href="mailto:kontakt@uninett.no">kontakt@uninett.no</a>.
 </p>
 
 <ul>
@@ -441,7 +441,7 @@ på NAV-wikien.</a></p>
 <p>Deretter må Uninett gjøre konfigurasjonsendringer på
 verktøykassens PostgreSQL-database, slik at denne tillater innlogging
 fra din FreeRADIUS-tjener.  Meld inn følgende detaljer til <a
-  href="mailto:drift@uninett.no">drift@uninett.no</a>:
+  href="mailto:kontakt@uninett.no">kontakt@uninett.no</a>:
 </p>
   <ul>
     <li>At du ønsker å sende FreeRADIUS accounting-logger til verktøykassen.</li>
