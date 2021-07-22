@@ -1,10 +1,10 @@
 <?php
 $mal_kontaktadresse="kontakt@uninett.no"; // obligatorisk
-$mal_temabilde="teknisk";                     // obligatorisk, se liste på
+$mal_temabilde="teknisk";                     // obligatorisk, se liste pÃ¥
                                         // www.uninett.no/info/info/bilder.html
 $mal_blurb="";          // valgfritt (tekst under bilde)
 $mal_kontekst="";                       // valgfritt
-$mal_overskrift="Brukerdokumentasjon Verktøykasser"; // obligatorisk
+$mal_overskrift="Brukerdokumentasjon VerktÃ¸ykasser"; // obligatorisk
 $mal_modus="";                          // valgfritt
 $mal_tittel="";                         // valgfritt, normalt blir tittelen
                                         // tjener: kontekst - overskrift - modus
@@ -13,7 +13,7 @@ include "uninetttopp.php3";
 
 <dl>
   <dt>REVISJON:
-  <dd>Verktøykasse-brukerdok.2021.01
+  <dd>VerktÃ¸ykasse-brukerdok.2021.01
   <dt>ANSVARLIG:
   <dd>Morten.Brekkevold@uninett.no
   <dt>DATO:
@@ -28,30 +28,30 @@ include "uninetttopp.php3";
 [<a href="#radius">Radius</a>]
 [<a href="#syslog">Syslog</a>]
 [<a href="#nav">NAV</a>]
-[<a href="#sertifikathandtering">Sertifikathåndtering</a>]
+[<a href="#sertifikathandtering">SertifikathÃ¥ndtering</a>]
 [<a href="#netflow">Netflow/NfSen</a>]
 [<a href="#console">Konsoll</a>]
 [<a href="#cmdline">Commandline tools</a>]
 [<a href="#hobbit">Hobbit/Xymon </a>]
-[<a href="#fwbuilder">Firewall Builder</a>]
+#  UTDATERT DOKUMENT [<a href="#fwbuilder">Firewall Builder</a>]
 </p>
 
 <h2>Innledning</h2>
 <p>
 
-Dette dokument er myntet på lokalt IKT driftspersonell ved
-høgskole/universitet som er bruker av verktøykassen.
-Verktøykassene er som kjent drevet fra Uninett. Driftsinstruks
+Dette dokument er myntet pÃ¥ lokalt IKT driftspersonell ved
+hÃ¸gskole/universitet som er bruker av verktÃ¸ykassen.
+VerktÃ¸ykassene er som kjent drevet fra Uninett. Driftsinstruks
 for Uninett beredskapsvakt
 <a
 href="https://kind.uninett.no/driftwiki/instruks/vk/index.html">foreligger
-i tillegg.</a> For en generell beskrivelse av verktøykassetjenesten, se
+i tillegg.</a> For en generell beskrivelse av verktÃ¸ykassetjenesten, se
 <a href="https://www.uninett.no/verkt%C3%B8ykasse">her</a>.
 
 </p>
 <p>
-For å benytte flere av tjenestene på verktøykassen kreves naturlig nok
-relevant konfigurasjon av nettutstyret. Vi viser til følgende
+For Ã¥ benytte flere av tjenestene pÃ¥ verktÃ¸ykassen kreves naturlig nok
+relevant konfigurasjon av nettutstyret. Vi viser til fÃ¸lgende
 Uninett fagspesifikasjoner:
 </p>
 
@@ -75,37 +75,37 @@ Uninett fagspesifikasjoner:
 </ul>
 
 <p>
-Vi minner også om at svitsjene i campusnettet bør (les: <em>må</em>) være på
+Vi minner ogsÃ¥ om at svitsjene i campusnettet bÃ¸r (les: <em>mÃ¥</em>) vÃ¦re pÃ¥
 en forsvarlig programvareversjon.
 </p>
 
 <h2><a name="vedlikeholdsvindu">Vedlikeholdsvindu</a></h2>
 
 <p>
-  Tjenesten har fast vedlikeholdsvindu på <strong>tirsdager mellom klokken 10:00 og
+  Tjenesten har fast vedlikeholdsvindu pÃ¥ <strong>tirsdager mellom klokken 10:00 og
     11:00</strong>.
 </p>
 
 <p>
-  I dette tidsrommet kan det bli utført mindre oppgraderinger og omstart av
+  I dette tidsrommet kan det bli utfÃ¸rt mindre oppgraderinger og omstart av
   maskinvaren, hovedsakelig i forbindelse med sikkerhetsoppdateringer, uten at
-  det blir gitt nærmere beskjed i forkant. Det kan forekomme merkbare
+  det blir gitt nÃ¦rmere beskjed i forkant. Det kan forekomme merkbare
   driftsforstyrrelser.
 </p>
 
-<h2><a name="Sikkerhetsdirektiv">Sikkerhetsdirektiv for verktøykassene</a></h2>
+<h2><a name="Sikkerhetsdirektiv">Sikkerhetsdirektiv for verktÃ¸ykassene</a></h2>
 
 <p>
-Uninett har driftsansvar for verktøykassene, se definert
+Uninett har driftsansvar for verktÃ¸ykassene, se definert
 <a href="sikkerhetsdirektiv.html">sikkerhetsdirektiv</a> for detaljer rundt
 drift- og sikkerhetsopplegget.
 </p>
 
 <p>
-Siden driftsansvaret ligger til Uninett er ryddigste løsning at <em>kun</em>
-Uninett har root-privilegier på verktøykassene. Vi er naturligvis opptatt
-av at dere som brukere kan gjøre tilstrekkelig for å rette feil
-rundt applikasjonene m.m. Dette gjør vi ved å gi dere nødvendige
+Siden driftsansvaret ligger til Uninett er ryddigste lÃ¸sning at <em>kun</em>
+Uninett har root-privilegier pÃ¥ verktÃ¸ykassene. Vi er naturligvis opptatt
+av at dere som brukere kan gjÃ¸re tilstrekkelig for Ã¥ rette feil
+rundt applikasjonene m.m. Dette gjÃ¸r vi ved Ã¥ gi dere nÃ¸dvendige
 sudo-rettigheter, samt lesetilgang til filer (se Brukertilgang under).
 </p>
 
@@ -116,38 +116,38 @@ sudo-rettigheter, samt lesetilgang til filer (se Brukertilgang under).
     For driftshenvendelser, ta kontakt med <a href="mailto:kontakt@uninett.no">kontakt@uninett.no</a>
   </li>
   <li>
-    For diskusjon/spørsmål om bruk av verktøyene, bruk <a href="mailto:vk@uninett.no">vk@uninett.no</a>.<br>
-    Alle som er registrert i Uninetts driftsdatabase som teknisk ansvarlig for en verktøykasse ute hos en kunde blir automatisk abonnent på denne listen.
+    For diskusjon/spÃ¸rsmÃ¥l om bruk av verktÃ¸yene, bruk <a href="mailto:vk@uninett.no">vk@uninett.no</a>.<br>
+    Alle som er registrert i Uninetts driftsdatabase som teknisk ansvarlig for en verktÃ¸ykasse ute hos en kunde blir automatisk abonnent pÃ¥ denne listen.
   </li>
   <li>
-    Se ellers <a href="https://www.uninett.no/kontakt">kontaktadresser og telefonnumre på våre hjemmesider</a>
+    Se ellers <a href="https://www.uninett.no/kontakt">kontaktadresser og telefonnumre pÃ¥ vÃ¥re hjemmesider</a>
   </li>
 </ul>
-<h2><a name="Brukertilgang">Brukertilgang til verktøykassen</a></h2>
+<h2><a name="Brukertilgang">Brukertilgang til verktÃ¸ykassen</a></h2>
 
 <p>
-For å logge inn på verktøykassen med ssh må du ha bruker.
-Du bør være medlem av gruppen <tt>netops</tt>, da det bl.a. gir
-filrettigheter under <tt>/tftpboot</tt>. Videre vil du om du kjører
-<tt>/bin/bash</tt> få satt hensiktsmessig <tt>umask</tt> for
+For Ã¥ logge inn pÃ¥ verktÃ¸ykassen med ssh mÃ¥ du ha bruker.
+Du bÃ¸r vÃ¦re medlem av gruppen <tt>netops</tt>, da det bl.a. gir
+filrettigheter under <tt>/tftpboot</tt>. Videre vil du om du kjÃ¸rer
+<tt>/bin/bash</tt> fÃ¥ satt hensiktsmessig <tt>umask</tt> for
 tftp-tjenesten.
 </p><p>
 
-For å legge til ny bruker gjør administrator:
+For Ã¥ legge til ny bruker gjÃ¸r administrator:
 <pre>
   useradd -g netops -m -s /bin/bash &lt;nyperson&gt;
   passwd &lt;nyperson&gt;
 </pre>
 <p>
 Merk at det er det samme passord som blir brukt ved
-radiusautentisering mot nettelektronikken. Merk også at det
-kan bli endringer her, SSH-nøkler for SSH-innlogging er
-svært aktuelt.
+radiusautentisering mot nettelektronikken. Merk ogsÃ¥ at det
+kan bli endringer her, SSH-nÃ¸kler for SSH-innlogging er
+svÃ¦rt aktuelt.
 </p>
 
 <p>Alle brukere som er i gruppe <kbd>netops</kbd> gis (via <em>sudo</em>)
-tilgang til å gjøre noen kommandoer som normalt trenger
-root-tilgang. For å se hvilke sudo-muligheter man har kan man kjøre
+tilgang til Ã¥ gjÃ¸re noen kommandoer som normalt trenger
+root-tilgang. For Ã¥ se hvilke sudo-muligheter man har kan man kjÃ¸re
 kommandoen:
 
 <pre>
@@ -156,12 +156,12 @@ kommandoen:
 
 </p>
 
-<p>Blant kommandoene som kan kjøres via sudo er:</p>
+<p>Blant kommandoene som kan kjÃ¸res via sudo er:</p>
 
 <dl>
 
   <dt><kbd>nav</kbd><dt>
-  <dd>Generell kommando for å kontrollere nav</dd>
+  <dd>Generell kommando for Ã¥ kontrollere nav</dd>
 
   <dt><kbd>service apache2 reload</kbd><dt>
   <dd>Relaste konfigurasjon for webtjeneren</dd>
@@ -171,7 +171,7 @@ kommandoen:
 
 </dl>
 
-<p>For å relaste apache webtjeneren kan man feks kjøre kommandoen:</p>
+<p>For Ã¥ relaste apache webtjeneren kan man feks kjÃ¸re kommandoen:</p>
 
 <pre>
   sudo service apache2 reload
@@ -181,12 +181,12 @@ kommandoen:
 <h2><a name="tftp">tftp</a></h2>
 
 <p>
-tftp-tjenesten gjør det mulig å skrive og laste konfigurasjon
+tftp-tjenesten gjÃ¸r det mulig Ã¥ skrive og laste konfigurasjon
 til/fra nettutstyret. tftp-demonen er sikret med en
-konfigurasjonsfil <tt>/tftpboot/tftpd.conf</tt>. For å forenkle
-vedlikehold blir denne filen autogenerert etter følgende kjøreregler.
+konfigurasjonsfil <tt>/tftpboot/tftpd.conf</tt>. For Ã¥ forenkle
+vedlikehold blir denne filen autogenerert etter fÃ¸lgende kjÃ¸reregler.
 </p><p>
-Når en ny svitsj skal legges til i tftp konfigurasjonen:
+NÃ¥r en ny svitsj skal legges til i tftp konfigurasjonen:
 <ol>
 <li> Legg til svitsjen i <tt>/tftpboot/tftpd.txt</tt>
      Syntaks sees lett i fila:
@@ -194,40 +194,40 @@ Når en ny svitsj skal legges til i tftp konfigurasjonen:
 	 "svitsj"        	"ipadresse"
 eks: 	lillehammer-gsw  	128.39.3.44
 </pre>
-<li> Etter at <tt>tftpd.txt</tt> er redigert, kjør <tt>make</tt> (du står på
+<li> Etter at <tt>tftpd.txt</tt> er redigert, kjÃ¸r <tt>make</tt> (du stÃ¥r pÃ¥
 <tt>/tftpboot</tt>)
-     Vips, så er ny <tt>tftp.conf</tt> laget.
-<li> Du må da opprette den nye filen med <tt>touch "svitsj-confg"</tt>
+     Vips, sÃ¥ er ny <tt>tftp.conf</tt> laget.
+<li> Du mÃ¥ da opprette den nye filen med <tt>touch "svitsj-confg"</tt>
 (eks: <tt> touch lillehammer-gsw-confg </tt> )
-<li> Nå kan du fra svitsjen skrive konfigurasjonen til verktøykasse
+<li> NÃ¥ kan du fra svitsjen skrive konfigurasjonen til verktÃ¸ykasse
 med <tt>write network</tt>.
 </ol>
 Tilsvarende kan bokser slettes fra <tt>tftpd.txt</tt> /
 <tt>tftpd.conf</tt>.
 <ul>
-<li> Merk: På sikt vil vi søke å automatisere
-denne manuelle vedlikeholdsprosessen ved å bruke NAV som kilde.
+<li> Merk: PÃ¥ sikt vil vi sÃ¸ke Ã¥ automatisere
+denne manuelle vedlikeholdsprosessen ved Ã¥ bruke NAV som kilde.
 Dvs at du kun legger inn utstyr i NAV, utstyret vil da automagisk
 kunne bruke tftp-tjenesten.
 </ul>
 <p>
 
-For å bevare historikk på konfigurasjon benyttes RCS. Opplegget er
+For Ã¥ bevare historikk pÃ¥ konfigurasjon benyttes RCS. Opplegget er
 automatisert ved at en nattlig cronjobb sjekker inn ny versjon av alle
 filer som er endret. Alle endringer blir rapportert som epost til
 mottagere angitt via variabelen <tt>nocoperators</tt> i fila
 <tt>/etc/default/uninett.conf</tt> (merk at denne filen er styrt av
-Uninetts Puppet, ta kontakt med <a href="mailto:kontakt@uninett.no">kontakt@uninett.no</a> for å få gjort
-endringer). En varsling om låste RCS filer (avglemte innsjekkinger)
-blir også sendt periodisk til samme adresse.
+Uninetts Puppet, ta kontakt med <a href="mailto:kontakt@uninett.no">kontakt@uninett.no</a> for Ã¥ fÃ¥ gjort
+endringer). En varsling om lÃ¥ste RCS filer (avglemte innsjekkinger)
+blir ogsÃ¥ sendt periodisk til samme adresse.
 </p><p>
 
 <ul>
-<li> I tillegg til konfigurasjoner ligger også aksesslistefiler
-på <tt>/tftpboot</tt>. Vedlikehold av disse og arbeid med aksesslister
-generelt er ikke omtalt her. Se <tt>README</tt> fil på <tt>/tftpboot</tt>
-for mer info på dette.
-<li> En siste ting som ligger på <tt>/tftpboot</tt> er software imager.
+<li> I tillegg til konfigurasjoner ligger ogsÃ¥ aksesslistefiler
+pÃ¥ <tt>/tftpboot</tt>. Vedlikehold av disse og arbeid med aksesslister
+generelt er ikke omtalt her. Se <tt>README</tt> fil pÃ¥ <tt>/tftpboot</tt>
+for mer info pÃ¥ dette.
+<li> En siste ting som ligger pÃ¥ <tt>/tftpboot</tt> er software imager.
 Disse kan lastes til svitsjer for oppgradering.
 </ul>
 
@@ -235,17 +235,17 @@ Disse kan lastes til svitsjer for oppgradering.
 <h2><a name="radius">Radius</a></h2>
 
 <p>
-Det er ingen bruker-konfigurasjon forbundet med radius som trengs å
-konfigureres på verktøykassene. Dette fordi radius er satt opp
+Det er ingen bruker-konfigurasjon forbundet med radius som trengs Ã¥
+konfigureres pÃ¥ verktÃ¸ykassene. Dette fordi radius er satt opp
 til bruke <tt>/etc/passwd</tt> som sin brukerkilde. Dersom brukerne her
 har satt passord blir dette benyttet ved radiusautentisering.
-Dersom bruker på nettutstyret logger seg på med <tt>@uninett.no</tt>-endelse
-så er radiustjener på verktøykassen satt opp til
-å relée forespørsler til radiustjener på <tt>trane.uninett.no</tt>.
-Således kan Uninett drift komme inn (dersom ønskelig).
+Dersom bruker pÃ¥ nettutstyret logger seg pÃ¥ med <tt>@uninett.no</tt>-endelse
+sÃ¥ er radiustjener pÃ¥ verktÃ¸ykassen satt opp til
+Ã¥ relÃ©e forespÃ¸rsler til radiustjener pÃ¥ <tt>trane.uninett.no</tt>.
+SÃ¥ledes kan Uninett drift komme inn (dersom Ã¸nskelig).
 </p><p>
 
-Det som imidlertid må konfigureres er
+Det som imidlertid mÃ¥ konfigureres er
 <tt>/etc/freeradius/clients.conf</tt>
 </p><p>
 
@@ -259,36 +259,36 @@ client 128.39.109.0/26 {
 </pre>
 </p><p>
 
-Det vi angir her at alle svitsjene i området 128.39.109.1-63 tillates
-å snakke radius med verktøykassen gitt at de er konfigurert med
+Det vi angir her at alle svitsjene i omrÃ¥det 128.39.109.1-63 tillates
+Ã¥ snakke radius med verktÃ¸ykassen gitt at de er konfigurert med
 samme felles-hemmelighet. Endringer i <tt>/etc/freeradius/clients.conf</tt>
-styres med Puppet og må meldes inn til <a href="mailto:kontakt@uninett.no">kontakt@uninett.no</a>.
+styres med Puppet og mÃ¥ meldes inn til <a href="mailto:kontakt@uninett.no">kontakt@uninett.no</a>.
 </p>
 
 
 <h2><a name="syslog">Syslog</a></h2>
 
-All nettelektronikk bør syslogge til verktøykassen.
-Syslog er satt opp slik at alle meldinger logget til verktøykassen fra nettverket på facility <tt>local6</tt> og <tt>local7</tt> blir lagret i disse to filene:
+All nettelektronikk bÃ¸r syslogge til verktÃ¸ykassen.
+Syslog er satt opp slik at alle meldinger logget til verktÃ¸ykassen fra nettverket pÃ¥ facility <tt>local6</tt> og <tt>local7</tt> blir lagret i disse to filene:
 <pre>
 /var/log/network.log
 /var/log/network_nav.log
 </pre>
 
-Sistnevnte fil blir igjen lest og tømt av NAV sin bakgrunnsprosess
-<tt>logengine</tt> som kjører én gang i minuttet. Dataene blir lagt i NAVs
-syslog-database og er igjen søkbare gjennom NAVs Syslog Analyzer tool.
+Sistnevnte fil blir igjen lest og tÃ¸mt av NAV sin bakgrunnsprosess
+<tt>logengine</tt> som kjÃ¸rer Ã©n gang i minuttet. Dataene blir lagt i NAVs
+syslog-database og er igjen sÃ¸kbare gjennom NAVs Syslog Analyzer tool.
 </p><p>
 
-<tt>network.log</tt> blir ikke tømt, men komprimert og rotert en gang i
-døgnet. Dere kan således velge å søke i syslog i tekstmodus, direkte på
-verktøykassen, eller via NAV.
+<tt>network.log</tt> blir ikke tÃ¸mt, men komprimert og rotert en gang i
+dÃ¸gnet. Dere kan sÃ¥ledes velge Ã¥ sÃ¸ke i syslog i tekstmodus, direkte pÃ¥
+verktÃ¸ykassen, eller via NAV.
 </p>
 
 <h2><a name="nav">NAV</a></h2>
 
-<p>NAV er omfattende å forklare. Vi vil her videreutvikle
-dokumentasjonen på
+<p>NAV er omfattende Ã¥ forklare. Vi vil her videreutvikle
+dokumentasjonen pÃ¥
  <a
 href="https://nav.uninett.no/doc/latest">NAVs nettsider</a>. Litt starthjelp:
 </p>
@@ -297,21 +297,21 @@ href="https://nav.uninett.no/doc/latest">NAVs nettsider</a>. Litt starthjelp:
 <h3>Web brukeradministrasjon</h3>
 <p>
 Det er ikke noe dokument som beskriver hvordan du oppretter brukere og
-hvordan du tilordner brukere til grupper. Helt kort; dette gjør du
-under verktøyet <em>User and API Administration</em>. Det er rett frem å legge til brukere, men
-husk at de må tilordnes en eller flere grupper.  Merk også at du
-kan redigere privilegiene til en gruppe. Se f.eks på gruppen <em>ReadAll</em>,
+hvordan du tilordner brukere til grupper. Helt kort; dette gjÃ¸r du
+under verktÃ¸yet <em>User and API Administration</em>. Det er rett frem Ã¥ legge til brukere, men
+husk at de mÃ¥ tilordnes en eller flere grupper.  Merk ogsÃ¥ at du
+kan redigere privilegiene til en gruppe. Se f.eks pÃ¥ gruppen <em>ReadAll</em>,
 her vil du se at denne har et <var>web_access</var>-privilegie som gir
-tilgang til en del verktøy, men ikke alle. Dette gir deg en ide om
+tilgang til en del verktÃ¸y, men ikke alle. Dette gir deg en ide om
 hvordan <var>web_access</var>-privilegier kan justeres. Merk at det er mulig
-å bruke LDAP til brukerautentisering. Du må da gjøre innstillinger i
+Ã¥ bruke LDAP til brukerautentisering. Du mÃ¥ da gjÃ¸re innstillinger i
 fila <var>/etc/nav/webfront/webfront.conf</var>.
 </p>
 
 <h3>Sett velkomstmelding m.m.</h3>
 <p>
   En rekke filer i katalogen <var>/etc/nav/webfront/</var> kan redigeres
-  for å tilpasse innholdet i forside-widgetene for velkomstmelding og lenker.
+  for Ã¥ tilpasse innholdet i forside-widgetene for velkomstmelding og lenker.
 </p>
 
 <h3>Sett mottaker av NAV-adminstrativ epost</h3>
@@ -319,47 +319,47 @@ fila <var>/etc/nav/webfront/webfront.conf</var>.
   All administrativ epost fra NAV sendes til driftspersonell hos
   Uninett, som konfigurert av <em>Puppet</em> i variabelen
   <var>ADMIN_MAIL</var> i filen <var>/etc/nav/nav.conf</var>.  Dersom du
-  ønsker kopier av denne eposten, ta kontakt med Uninett.
+  Ã¸nsker kopier av denne eposten, ta kontakt med Uninett.
 </p>
 
 <h3>Sett passord til NAVs PostgreSQL-database</h3>
 <p>
   Dette er satt for deg.  Passordet kan leses fra attributten
   <var>userpw_nav</var> i filen <var>/etc/nav/db.conf</var>.  Merk at
-  du kan aksessere denne databasen ved å bruke dette passordet når du
-  skriver <kbd>psql nav nav</kbd>. For dypere feilsøking, eller dypere
-  forståelse av databasen er dette nyttig.
+  du kan aksessere denne databasen ved Ã¥ bruke dette passordet nÃ¥r du
+  skriver <kbd>psql nav nav</kbd>. For dypere feilsÃ¸king, eller dypere
+  forstÃ¥else av databasen er dette nyttig.
 </p>
 
 <h3> &quot;Seede&quot; databasen:</h3>
 <p>
 
-  For at NAV skal overvåke nettverket ditt må den få &quot;seed&quot;-informasjon
-  fra deg. Du bruker verktøyet <em>Seed Database</em> (fra
+  For at NAV skal overvÃ¥ke nettverket ditt mÃ¥ den fÃ¥ &quot;seed&quot;-informasjon
+  fra deg. Du bruker verktÃ¸yet <em>Seed Database</em> (fra
   Toolbox) til dette. Les mer om hvordan du
   <a href="https://nav.uninett.no/doc/latest/intro/getting-started.html#seeding-your-database"
   >legger inn seed-data i NAV</a> og <a
   href="https://nav.uninett.no/doc/latest/intro/getting-organized.html"
   >hvordan du organiserer informasjonen</a> i NAVs offisielle dokumentasjon.
 
-  Det anbefales ellers å lese flere dokumenter under menyen
+  Det anbefales ellers Ã¥ lese flere dokumenter under menyen
   <a
   href="https://nav.uninett.no/wiki/navconfiguration">NAV Configuration</a>.
 </p>
 
 <h3> Varslingssystemet Alert Profiles</h3>
 <p>
-  Varslingssystemet er nokså omfattende med mange muligheter. For å
-  forenkle initielt oppsett er det en rekke forhåndsdefinerte filtre
+  Varslingssystemet er noksÃ¥ omfattende med mange muligheter. For Ã¥
+  forenkle initielt oppsett er det en rekke forhÃ¥ndsdefinerte filtre
   og filtergrupper du kan bruke.  Les <a
   href="https://nav.uninett.no/wiki/alertprofiles">wiki-siden om Alert
   Profiles</a> for en introduksjon til systemet.
 </p>
 
-<h3>Sjekk status på bakgrunnsprosesser og logger</h3>
+<h3>Sjekk status pÃ¥ bakgrunnsprosesser og logger</h3>
 <p>
   <ul>
-    <li> Kommandoen <kbd>sudo nav status</kbd> gir status på om
+    <li> Kommandoen <kbd>sudo nav status</kbd> gir status pÃ¥ om
          NAVs ulike bakgrunnsprosesser og cronjobber er aktive.</li>
 
     <li> Innsamlingsmotoren <em>ipdevpoll</em> logger (bl.a.) til
@@ -368,22 +368,22 @@ fila <var>/etc/nav/webfront/webfront.conf</var>.
     <li> I samme katalog se tilsvarende log for
 	 <var>navtopology.log</var>  (topologioppdageren)
 	 <var>pping.log</var> (statusmonitoren),
-	 <var>servicemon.log</var> (tjenesteovervåkeren),
-	 <var>thresholdmon.log</var> (terskelovervåkeren),
+	 <var>servicemon.log</var> (tjenesteovervÃ¥keren),
+	 <var>thresholdmon.log</var> (terskelovervÃ¥keren),
 	 <var>eventengine.log</var> (hendelsessystemet) og
 	 <var>alertengine.log</var> (alarmsystemet). </li>
   </ul>
 </p>
 
-<h3><a name="feilsok-sms">Feilsøking av mobiltelefon/SMS-utsending</a></h3>
+<h3><a name="feilsok-sms">FeilsÃ¸king av mobiltelefon/SMS-utsending</a></h3>
 
-<p>Dersom du har problemer med utsending av SMS fra verktøykassen, kan du gjøre litt førstelinjes feilsøking før du feilmelder situasjonen til <a href="mailto:kontakt@uninett.no">kontakt@uninett.no</a>.
+<p>Dersom du har problemer med utsending av SMS fra verktÃ¸ykassen, kan du gjÃ¸re litt fÃ¸rstelinjes feilsÃ¸king fÃ¸r du feilmelder situasjonen til <a href="mailto:kontakt@uninett.no">kontakt@uninett.no</a>.
 </p>
 
 <ul>
-  <li><p>Dersom mobilen/GSM-enheten er koblet til med en USB, verifisér at mobilen/GSM-enheten er synlig på USB-bussen:
+  <li><p>Dersom mobilen/GSM-enheten er koblet til med en USB, verifisÃ©r at mobilen/GSM-enheten er synlig pÃ¥ USB-bussen:
       <kbd>lsusb</kbd></p>
-      <p>Forventet output skal ligne på dette</p>
+      <p>Forventet output skal ligne pÃ¥ dette</p>
       <pre>Bus 004 Device 001: ID 0000:0000
 Bus 003 Device 001: ID 0000:0000
 Bus 002 Device 001: ID 0000:0000
@@ -405,25 +405,25 @@ Bus 005 Device 003: ID 0403:6001 Future Technology Devices International, Ltd FT
 </pre>
   </li>
 
-  <li>Verifisér at Gammu klarer å gjenkjenne den tilkoblede mobiltelefonen:
+  <li>VerifisÃ©r at Gammu klarer Ã¥ gjenkjenne den tilkoblede mobiltelefonen:
       <kbd>sudo -u navcron gammu --identify</kbd>
   </li>
 
-  <li>Verifisér at mobiltelefonen har forbindelse med GSM-nettverket:
+  <li>VerifisÃ©r at mobiltelefonen har forbindelse med GSM-nettverket:
       <kbd>sudo -u navcron gammu --networkinfo</kbd>
   </li>
 
-  <li>Verifisér at Gammu kan sende SMS-meldinger til din telefon:
+  <li>VerifisÃ©r at Gammu kan sende SMS-meldinger til din telefon:
       <kbd>echo "Melding" | sudo -u navcron gammu --sendsms TEXT &lt;tlfnr&gt;</kbd>
   </li>
 
-  <li>Verifisér at NAVs SMS-daemon kan sende SMS-meldinger til din telefon:
+  <li>VerifisÃ©r at NAVs SMS-daemon kan sende SMS-meldinger til din telefon:
       <kbd>sudo -u navcron smsd.py -t &lt;tlfnr&gt;</kbd>
   </li>
 </ul>
 
 
-<h3><a name="nav-radius-accounting">Sette opp NAV/verktøykassen for Radius Accounting-logging</a></h3>
+<h3><a name="nav-radius-accounting">Sette opp NAV/verktÃ¸ykassen for Radius Accounting-logging</a></h3>
 
 <p>NAV tilbyr <a
 href="https://nav.uninett.no/wiki/radius">brukersporing via
@@ -431,53 +431,53 @@ accounting-logging fra FreeRADIUS-tjenere</a>.  Dette krever en del
 aktiv inngripen fra din egen side.</p>
 
 <p>Der man har en FreeRADIUS-tjener som autentiserer
-brukerinnlogginger, må denne konfigureres til å logge accounting-data
-til NAVs PostgreSQL-database.  I tillegg bør man sette opp et
-Python-program på FreeRADIUS-tjeneren som overvåker error-loggen dens
+brukerinnlogginger, mÃ¥ denne konfigureres til Ã¥ logge accounting-data
+til NAVs PostgreSQL-database.  I tillegg bÃ¸r man sette opp et
+Python-program pÃ¥ FreeRADIUS-tjeneren som overvÃ¥ker error-loggen dens
 og dytter disse innslagene til samme PostgreSQL-database.  <a
-href="https://nav.uninett.no/wiki/radius">Fremgangsmåten er dokumentert
-på NAV-wikien.</a></p>
+href="https://nav.uninett.no/wiki/radius">FremgangsmÃ¥ten er dokumentert
+pÃ¥ NAV-wikien.</a></p>
 
-<p>Deretter må Uninett gjøre konfigurasjonsendringer på
-verktøykassens PostgreSQL-database, slik at denne tillater innlogging
-fra din FreeRADIUS-tjener.  Meld inn følgende detaljer til <a
+<p>Deretter mÃ¥ Uninett gjÃ¸re konfigurasjonsendringer pÃ¥
+verktÃ¸ykassens PostgreSQL-database, slik at denne tillater innlogging
+fra din FreeRADIUS-tjener.  Meld inn fÃ¸lgende detaljer til <a
   href="mailto:kontakt@uninett.no">kontakt@uninett.no</a>:
 </p>
   <ul>
-    <li>At du ønsker å sende FreeRADIUS accounting-logger til verktøykassen.</li>
+    <li>At du Ã¸nsker Ã¥ sende FreeRADIUS accounting-logger til verktÃ¸ykassen.</li>
     <li>IP-adressen(e) til din(e) FreeRADIUS-tjener(e).</li>
   </ul>
 
-<p>Uninett vil sørge for at det opprettes en PostgreSQL-bruker for
+<p>Uninett vil sÃ¸rge for at det opprettes en PostgreSQL-bruker for
 radius accounting, og at denne gis tilgang til de riktige tabellene i
-NAV fra de gitte IP-adressene.  Du vil få et brukernavn og et passord
-til PostgreSQL-databasen, som skal brukes til å konfigurere
+NAV fra de gitte IP-adressene.  Du vil fÃ¥ et brukernavn og et passord
+til PostgreSQL-databasen, som skal brukes til Ã¥ konfigurere
 FreeRADIUS-tjeneren med.  </p>
 
-<h2><a name="sertifikathandtering">Sertifikathåndtering</a></h2>
+<h2><a name="sertifikathandtering">SertifikathÃ¥ndtering</a></h2>
 
 <p>
-  Webtjeneren på verktøykassen er bare tilgjengelig over <em>HTTPS</em>. Dette
+  Webtjeneren pÃ¥ verktÃ¸ykassen er bare tilgjengelig over <em>HTTPS</em>. Dette
   krever et tjenersertifikat. Vi bruker i
-  dag <a href="https://letsencrypt.org/">Let's Encrypt</a> til å automatisk
+  dag <a href="https://letsencrypt.org/">Let's Encrypt</a> til Ã¥ automatisk
   utstede sertifikater til webtjeneren.
 </p>
 
 <p>
   Let's Encrypt krever i utgangspunktet at webtjeneren er tilgjengelig fra
-  sine IP-adressser for å kunne utfordre den til å bevise sin identitet. Disse
-  IP-adressene offentliggjøres ikke, og Let's Encrypt forbeholder seg retten
-  til å endre disse når som helst, uten forvarsel. Webtjeneren på verktøykassen
-  holder de nødvendige URLene åpne for verden, men kan ellers begrense aksess
-  til et valgfritt sett med IP-adresser. Henvend deg til vårt kontaktpunkt
-  dersom du ønsker endringer i restriksjonene.
+  sine IP-adressser for Ã¥ kunne utfordre den til Ã¥ bevise sin identitet. Disse
+  IP-adressene offentliggjÃ¸res ikke, og Let's Encrypt forbeholder seg retten
+  til Ã¥ endre disse nÃ¥r som helst, uten forvarsel. Webtjeneren pÃ¥ verktÃ¸ykassen
+  holder de nÃ¸dvendige URLene Ã¥pne for verden, men kan ellers begrense aksess
+  til et valgfritt sett med IP-adresser. Henvend deg til vÃ¥rt kontaktpunkt
+  dersom du Ã¸nsker endringer i restriksjonene.
 </p>
 
 <h2><a name="netflow">Netflow/NfSen</a></h2>
 
 <p>
-Verktøykassene bruker <a
-href="http://nfsen.sourceforge.net/">NfSen</a> for å prosessere
+VerktÃ¸ykassene bruker <a
+href="http://nfsen.sourceforge.net/">NfSen</a> for Ã¥ prosessere
 netflowdata som blir eksportert fra rutere. NfSen er et web-basert
 grensesnitt til <a href="http://nfdump.sourceforge.net/">nfdump
 netflow tools</a>.
@@ -488,25 +488,25 @@ Dette grensesnittet er tilgjengelig via NAV sin toolbox.
 </p>
 
 <p>
-Nfsen ser ut til å være litt kilen mhp. på å definere nye
-netflow-eksportører ('sources') etter at systemet er startet , så det
-er lurt å ha alle disse klart på forhånd, og legge alle inn før
+Nfsen ser ut til Ã¥ vÃ¦re litt kilen mhp. pÃ¥ Ã¥ definere nye
+netflow-eksportÃ¸rer ('sources') etter at systemet er startet , sÃ¥ det
+er lurt Ã¥ ha alle disse klart pÃ¥ forhÃ¥nd, og legge alle inn fÃ¸r
 systemet startes opp.</p>
 
 <p>
 Kildene defineres under <kbd>sources</kbd> i
-<kbd>/etc/nfsen/nfsen.conf.local</kbd>. Denne filen konfigureres av Puppet; eventuelle endringsønsker må meldes til Uninett.
+<kbd>/etc/nfsen/nfsen.conf.local</kbd>. Denne filen konfigureres av Puppet; eventuelle endringsÃ¸nsker mÃ¥ meldes til Uninett.
 </p>
 
 <p>
-Mere inngående detaljer angående bruk av nfsen står på <a href="http://nfsen.sourceforge.net/">nfsen</a> sine hjemmesider.
+Mere inngÃ¥ende detaljer angÃ¥ende bruk av nfsen stÃ¥r pÃ¥ <a href="http://nfsen.sourceforge.net/">nfsen</a> sine hjemmesider.
 </p>
 
 <p>
 Generelt om Netflow:
 <ul>
 <li>En flow er definert som et sett av IP pakker som har en del felles felt i pakkehodet.
-<li>De felt som brukes for å identifisere flows er:
+<li>De felt som brukes for Ã¥ identifisere flows er:
 <ul>
 <li> Source IP adress
 <li> Destination IP adress
@@ -520,27 +520,27 @@ Generelt om Netflow:
 </p><p>
 Grafene:
 <ul>
-<li>Grafene vil vise trafikk-mønsteret til kildene man eksporterer netflow-data ifra. Default er det satt opp slik at grafene er "stacked". Dvs. at dersom man eksporterer ifra flere kilder (har flere farger på grafene), legges den ene grafen på toppen av den andre. Dette kan man endre ved å trykke på line graph på details-fanen. Her kan man også endre til logaritmisk skala.
-<li>Under Graphs-fanen kan man se større grafer for henholdsvis Flows, Packets eller Traffic.
-<li>Under Details-fanen kan man se detaljer for enten Flows, Packets eller Traffic. Man kan velge en av de andre i de små thumbnailene på høyresiden.
-<li>Dersom man vil ekskludere en kilde ifra grafene, kan man trykke på krysset under <kbd>source</kbd> for hver kilde.
+<li>Grafene vil vise trafikk-mÃ¸nsteret til kildene man eksporterer netflow-data ifra. Default er det satt opp slik at grafene er "stacked". Dvs. at dersom man eksporterer ifra flere kilder (har flere farger pÃ¥ grafene), legges den ene grafen pÃ¥ toppen av den andre. Dette kan man endre ved Ã¥ trykke pÃ¥ line graph pÃ¥ details-fanen. Her kan man ogsÃ¥ endre til logaritmisk skala.
+<li>Under Graphs-fanen kan man se stÃ¸rre grafer for henholdsvis Flows, Packets eller Traffic.
+<li>Under Details-fanen kan man se detaljer for enten Flows, Packets eller Traffic. Man kan velge en av de andre i de smÃ¥ thumbnailene pÃ¥ hÃ¸yresiden.
+<li>Dersom man vil ekskludere en kilde ifra grafene, kan man trykke pÃ¥ krysset under <kbd>source</kbd> for hver kilde.
 </ul>
 </p><p>
 
 Hvordan grave i detaljene:
 <ul>
 <li>Angi tidsperiode
-<li>Dette gjør du enten ved å la den stå på <kbd>Single Timeslot</kbd> (5 min) under grafen, eller du velger en lengre tidsperiode med å velge <kbd>Time Window</kbd> under grafen og drar på pila som er nederst på grafen. Tidspunktet blir avmerket med grønn farge i grafen
+<li>Dette gjÃ¸r du enten ved Ã¥ la den stÃ¥ pÃ¥ <kbd>Single Timeslot</kbd> (5 min) under grafen, eller du velger en lengre tidsperiode med Ã¥ velge <kbd>Time Window</kbd> under grafen og drar pÃ¥ pila som er nederst pÃ¥ grafen. Tidspunktet blir avmerket med grÃ¸nn farge i grafen
 </ul>
 
 List Flows vs. Stat TopN:
 <ul>
-<li> <kbd>List Flows</kbd> viser hele flows, og gjør ingen sortering basert på statistikk. Her vil det kun vises de antall flows man har valgt som først stemmer med det utvalget man har valgt. Man kan også aggregere data basert på de valgene man gjør.
-<li> <kbd>Stat TopN</kbd> viser statistisk analyse og sorterer output basert på valgene du gjør.
-<li> <kbd>Stat Any IP Address order by bytes</kbd> vil f.eks gi deg en liste over de som har overført mest data i valgt tidsperiode.
+<li> <kbd>List Flows</kbd> viser hele flows, og gjÃ¸r ingen sortering basert pÃ¥ statistikk. Her vil det kun vises de antall flows man har valgt som fÃ¸rst stemmer med det utvalget man har valgt. Man kan ogsÃ¥ aggregere data basert pÃ¥ de valgene man gjÃ¸r.
+<li> <kbd>Stat TopN</kbd> viser statistisk analyse og sorterer output basert pÃ¥ valgene du gjÃ¸r.
+<li> <kbd>Stat Any IP Address order by bytes</kbd> vil f.eks gi deg en liste over de som har overfÃ¸rt mest data i valgt tidsperiode.
 </ul>
 
-Søk i netflow dataene:
+SÃ¸k i netflow dataene:
 <ul>
 <li>tcpdump-aktig filter format
 <li>Eks.:
@@ -558,56 +558,56 @@ host 158.38.x.y der trafikken er sendt ifra port 22(ssh))
 portene mellom 80 og 123, gt= greater than, lt=less than)
 <li><tt>src port 80 and not host 158.38.x.y</tt> (Filtrerer ut trafikk sendt ifra port 80 og som ikke er sendt til/fra host 158.38.x.y)
 <li><tt>src net 158.38.x.0/24</tt> (Filtrerer ut trafikk sendt ifra nettet 158.38.x.0/24)
-<li>Ett annet triks er å angi hvilke interface man skal plukke ut trafikk ifra. Eks. <tt>in if 24</tt>, vil kun plukke ut trafikk som kommer inn på interface 24. Hvilket nummer et interface har på et cisco-ruter finner man ut med kommandoen <tt>show snmp mib ifmib ifindex</tt>. (Husk at netflow kun eksporteres fra trafikk inn på et interface. Trafikk ut på et interface vil ikke bli eksportert, og må følgelig filtreres ut fra det interfacet hvor denne trafikken kommer inn.) Skriver man derfor <tt>out if 24</tt> vil dette da bety det samme som, gi meg all trafikk <b>inn</b> på alle interface bortsett fra 24.
+<li>Ett annet triks er Ã¥ angi hvilke interface man skal plukke ut trafikk ifra. Eks. <tt>in if 24</tt>, vil kun plukke ut trafikk som kommer inn pÃ¥ interface 24. Hvilket nummer et interface har pÃ¥ et cisco-ruter finner man ut med kommandoen <tt>show snmp mib ifmib ifindex</tt>. (Husk at netflow kun eksporteres fra trafikk inn pÃ¥ et interface. Trafikk ut pÃ¥ et interface vil ikke bli eksportert, og mÃ¥ fÃ¸lgelig filtreres ut fra det interfacet hvor denne trafikken kommer inn.) Skriver man derfor <tt>out if 24</tt> vil dette da bety det samme som, gi meg all trafikk <b>inn</b> pÃ¥ alle interface bortsett fra 24.
 </ul>
 </ul>
 
 Ferdigdefinerte filter man bruker ofte:
 <ul>
 <li>Disse kan lagres som filer i filsystemet under katalogen <tt>/var/lib/nfsen/filters</tt>
-<li>Vanlig filtersyntaks brukes i disse filene også.
-<li>Ferdigdefinerte filtre velges under boksen man skriver inn filtre der det vanligvis står <tt>and none</tt>
+<li>Vanlig filtersyntaks brukes i disse filene ogsÃ¥.
+<li>Ferdigdefinerte filtre velges under boksen man skriver inn filtre der det vanligvis stÃ¥r <tt>and none</tt>
 </ul>
 
 Lage profiler:<br>
-For søk man gjør ofte og som man vil følge med grafisk over tid kan det være lurt å lage egne profiler som har oversikt over denne trafikken. Dersom man velger Real Profile lager dette egne flow-filer på filsystemet (som også tar plass). Dersom du lager en profil som er langt tilbake i tid, så kan det ta lang tid for nfsen å lage grunnlagsdata for hele perioden. Dersom du lager en Shadow Profile, lager den ikke egne flow-filer på filsystemet, men den bruker bare datagrunnlaget som allerede ligger der. Du vil likevel få tegnet egne grafiske profiler for dataene du vil filtrere ut. Bruk av channels gjør at du kan skreddersy grafene og fargene etter dine behov. Se <a href="http://nfsen.sourceforge.net/">dokumentasjon på sourceforge</a> for detaljer.
+For sÃ¸k man gjÃ¸r ofte og som man vil fÃ¸lge med grafisk over tid kan det vÃ¦re lurt Ã¥ lage egne profiler som har oversikt over denne trafikken. Dersom man velger Real Profile lager dette egne flow-filer pÃ¥ filsystemet (som ogsÃ¥ tar plass). Dersom du lager en profil som er langt tilbake i tid, sÃ¥ kan det ta lang tid for nfsen Ã¥ lage grunnlagsdata for hele perioden. Dersom du lager en Shadow Profile, lager den ikke egne flow-filer pÃ¥ filsystemet, men den bruker bare datagrunnlaget som allerede ligger der. Du vil likevel fÃ¥ tegnet egne grafiske profiler for dataene du vil filtrere ut. Bruk av channels gjÃ¸r at du kan skreddersy grafene og fargene etter dine behov. Se <a href="http://nfsen.sourceforge.net/">dokumentasjon pÃ¥ sourceforge</a> for detaljer.
 <ul>
-<li><tt>Profile</tt> står øverst i høyre hjørne.
+<li><tt>Profile</tt> stÃ¥r Ã¸verst i hÃ¸yre hjÃ¸rne.
 <li>Normalt vises Profile "live"
 <li>Velg <tt>New profile</tt>
 <ul>
-<li>lag en profil som plukker ut all trafikk av en gitt type, basert på filtre du definerer.
+<li>lag en profil som plukker ut all trafikk av en gitt type, basert pÃ¥ filtre du definerer.
 <li>Navngi denne rapporten.
 <li>Velg en kilde
-<li>Basert på hvor mye data som skal prosesseres tar det en hvis tid å prosessere og lage denne profilen
-<li>Vis profilen etterpå ved å velge denne fra selected profile
+<li>Basert pÃ¥ hvor mye data som skal prosesseres tar det en hvis tid Ã¥ prosessere og lage denne profilen
+<li>Vis profilen etterpÃ¥ ved Ã¥ velge denne fra selected profile
 </ul>
 </ul>
 
 Alert:<br>
 <ul>
 <li>I nyeste utgave av nfsen kan man lage terskelbaserte alarmer.
-<li>Dokumentasjonen på <a href="http://nfsen.sourceforge.net/#mozTocId859236">nfsen sine sider</a> sier viser detaljer for hvordan man oppretter alarmer. OBS: Husk å sette/endre filteret for alarmen dersom du ønsker å teste dette. Default står den på 'not any' som ikke vil gi deg noe trafikk!
+<li>Dokumentasjonen pÃ¥ <a href="http://nfsen.sourceforge.net/#mozTocId859236">nfsen sine sider</a> sier viser detaljer for hvordan man oppretter alarmer. OBS: Husk Ã¥ sette/endre filteret for alarmen dersom du Ã¸nsker Ã¥ teste dette. Default stÃ¥r den pÃ¥ 'not any' som ikke vil gi deg noe trafikk!
 </ul>
 
-<h3>Feilsøking av nfsen</h3>
+<h3>FeilsÃ¸king av nfsen</h3>
 Dersom du har problemer med nfsen er det ett par ting man kan sjekke foer man melder feil.
 <ul>
-<li>Går alle nødvendige prosesser?<br>
-1 nfsend og 1 nfcapd per kilde(netflow-eksportør) Dersom ikke restart nfsen.
+<li>GÃ¥r alle nÃ¸dvendige prosesser?<br>
+1 nfsend og 1 nfcapd per kilde(netflow-eksportÃ¸r) Dersom ikke restart nfsen.
 <li>Mottar du flows fra kilde?<br>
-Bruk gjerne tcpdump for å sjekke om du mottar flows. F.eks <tt>tcpdump port 2055</tt> Hvilken port du lytter på kan du finne i <tt>/etc/nfsen/nfsen.conf.local</tt> under sources. Dersom ikke, sjekk ruterconfig og access-lister.
+Bruk gjerne tcpdump for Ã¥ sjekke om du mottar flows. F.eks <tt>tcpdump port 2055</tt> Hvilken port du lytter pÃ¥ kan du finne i <tt>/etc/nfsen/nfsen.conf.local</tt> under sources. Dersom ikke, sjekk ruterconfig og access-lister.
 </ul>
 
 <h2><a name="cmdline">Command line tools</a></h2>
 
-En del kjekke command line tools er installert på verktøykassene.
-Her følger en liste og kort omtale:
+En del kjekke command line tools er installert pÃ¥ verktÃ¸ykassene.
+Her fÃ¸lger en liste og kort omtale:
 
 <ul>
   <li> ping og traceroute (trenger vel ingen kommentar)</li>
   <li> snmpwalk (m.fl.)<br>
-    Brukes til å polle utstyr med snmp, kjekt for NAV feilsøking.
+    Brukes til Ã¥ polle utstyr med snmp, kjekt for NAV feilsÃ¸king.
     <pre>
      Typisk syntaks:
         snmpwalk -v2c -c <din-community> <ip-adresse> <oid>
@@ -618,7 +618,7 @@ Her følger en liste og kort omtale:
   </li>
   <li> nmap <br>
     Brukes til scanne en host/sjekke om en port/sett av porter
-    er åpne.
+    er Ã¥pne.
   </li>
 </ul>
 
@@ -626,7 +626,7 @@ Her følger en liste og kort omtale:
 Brukerdokumentasjon for Hobbit, se <a href="http://drift.uninett.no/utstyr/vk/hobbit-vk.html"> her </a>
 
 <h2><a name="fwbuilder">Firewall Builder (fwbuilder)</a></h2>
-<a href="http://drift.uninett.no/utstyr/vk/fwbuilder.html">Brukerdokumentasjon for Firewall Builder foreligger på en egen side</a>.
+<a href="http://drift.uninett.no/utstyr/vk/fwbuilder.html">Brukerdokumentasjon for Firewall Builder foreligger pÃ¥ en egen side</a>.
 
 <?php
 include "uninettbunn.php3";
