@@ -34,21 +34,21 @@ se <a href="https://xymon.sourceforge.io/">Xymons hjemmesider.</a>
 
 <h2>Tjenester</h2>
 <p>
-Det er Xymon og Apache som må kjøres for at tjenesten skal virke.
+Det er Xymon og Apache som må kjøre for at tjenesten skal virke.
 </p>
 
 <strong>xymon</strong>
 <ul>
 	<li>Daemon: </li>
-	<li>Start/stop: /etc/init.d/hobbit {start/stop/restart}</li>
-	<li>Configfiler: /etc/hobbit/</li> 
+	<li>Start/stop: <code>/etc/init.d/xymon {start/stop/restart}</code></li>
+	<li>Configfiler: <code>/etc/xymon/</code></li>
 </ul>
 
 <strong>apache2</strong>
 <ul>
-	<li>Daemon: /usr/sbin/apache2</li>
-	<li>Start/stopp: /etc/init.d/apache2 {start/stop/restart/reload}</li>
-	<li>config: /etc/apache2/sites-available/nav</li>
+	<li>Daemon: <code>/usr/sbin/apache2</code></li>
+	<li>Start/stopp: <code>/etc/init.d/apache2 {start/stop/restart/reload}</code></li>
+	<li>config: <code>/etc/apache2/sites-enabled/25-nav-secure.conf</code></li>
 </ul>
 
 <h2>Brukerdokumentasjon</h2>
@@ -149,7 +149,7 @@ MEMACT  90 97
     Programmet <strong>xymon-client</strong> må installeres på klienten som skal
     overvåkes.
   </li>
-  
+
   <li>
     IP-adressen til verktøykassen må settes
     i <code>/etc/default/xymon-client</code>, slik at xymon-client ver hvor
