@@ -1,16 +1,16 @@
 <?php
 $mal_kontaktadresse="drift@uninett.no"; // obligatorisk
-$mal_overskrift="Hobbit / Xymon"; // obligatorisk
+$mal_overskrift="Xymon / Hobbit"; // obligatorisk
 $mal_tegnsett="utf-8";
 include "uninetttopp.php3";
 ?>
 <dl>
   <dt>REVISJON:</dt>
-  <dd>JUN-2015<dd>
+  <dd>AUG-2021<dd>
   <dt>ANSVARLIG:</dt>
   <dd>Morten Brekkevold</dd>
   <dt>DATO:</dt>
-  <dd>24.06.2015</dd>
+  <dd>26.08.2021</dd>
 </dl>
 
 <hr>
@@ -21,17 +21,23 @@ Xymon (tidl. <em>Hobbit</em>) er et tjenesteovervåkningsverktøy som kjører p�
 verktøykassen, og som er integrert med NAV-installasjonen der. Det er kun
 utstyr som legges inn i kategorien SRV i NAV som blir automatisk overvåket av
 Xymon. For mer informasjon om Xymon,
-se <a href="http://sourceforge.net/projects/xymon/">Xymons hjemmesider.</a>
+se <a href="https://xymon.sourceforge.io/">Xymons hjemmesider.</a>
+</p>
+
+<p>
+  Da Hobbit ble omdøpt til Xymon, var det en del begrepsbruk og
+  konfigurasjonsfiler som også endret seg. Dersom du er vant med de gamle
+  filene og begrepene, kan du
+  lese <a href="https://xymon.com/help/upgrade-to-430.txt">Xymons</a>
+  oppgraderingsnotater.
 </p>
 
 <h2>Tjenester</h2>
 <p>
-Det er Hobbit og Apache som må kjøres for at tjenesten skal virke (I Debian
-Wheezy er ikke omdøping av Hobbit til Xymon komplett, så de fleste kommandoer
-og konfigurasjonsfiler vil fremdeles referere til Hobbit).
+Det er Xymon og Apache som må kjøres for at tjenesten skal virke.
 </p>
 
-<strong>hobbit</strong>
+<strong>xymon</strong>
 <ul>
 	<li>Daemon: </li>
 	<li>Start/stop: /etc/init.d/hobbit {start/stop/restart}</li>
@@ -49,9 +55,9 @@ og konfigurasjonsfiler vil fremdeles referere til Hobbit).
 
 <h3>Maskiner som overvåkes med Xymon</h3>
 <p>
-Hver time kjører et script på verktøykassen som konfigurerer Xymon til å
-overvåke alle maskiner fra SRV-kategorien i NAV. Dette gjør at det er bare ett
-sted for vedlikehold listen over servere som skal overvåkes i NAV og Xymon.
+Hvert kvarter kjører et script på verktøykassen som konfigurerer Xymon til å
+overvåke alle maskiner fra <code>SRV</code>-kategorien i NAV. Dette gjør at det er bare ett
+sted for å vedlikeholde listen over servere som skal overvåkes i NAV og Xymon.
 Når en maskin registreres i NAV, kan den legges inn i opptil flere grupper
 (<em>device groups</em>). Disse gruppene blir også brukt som grupper i Xymon.
 </p>
@@ -81,10 +87,15 @@ som standardovervåking for samtlige maskiner.
 
 <h3>Overvåking av maskiner</h3>
 <p>
-Man kan sette opp bestemte overvåkinger for hver enkelt maskin. Dette gjøres i
-ei config-fil på verktøykassen som ligger
-under <code>/etc/hobbit/hobbit-clients.d/hobbit.cfg</code>. Config-fila kan se
-slik ut:
+  Man kan sette opp bestemte overvåkinger for hver enkelt maskin, ved å legge
+  til sine egne konfigurasjonsfiler på verktøykassen, under
+  <code>/etc/xymon/analysis.d/</code>. Verktøykassen overvåker seg selv med
+  Xymon på denne måten, og konfigurasjonen som brukes her kan ses i
+  filen <code>vk.cfg</code>.
+</p>
+
+<p>
+  Et eksempel på en slik konfigurasjonsfil kan se slik ut:
 </p>
 
 <pre><code>
@@ -100,14 +111,14 @@ DISK        /var/log 95 98
 
 <p>
 Her ser vi hvilke bestemte prosesser som er satt opp til overvåking med at det
-står PROC foran prosessnavnet. Bak hver prosess kan man ha et tall som angir
-hvor mange prosesser som kan kjøres. På prosessen cfenvd står det først tallet
-1 som betyr at det minimum må være en prosess (mincount) ved det navnet og bak
-tallet står det 1 (maxcount). Dette betyr at det kan kun være én og bare én
-prosess av cfenvd. Hvis ikke dette er oppfylt vil den blir markert som gul i
-Xymon, i motsetning til cfservd, der det vil bli markert som rødt. Man kan på
+står <code>PROC</code> foran prosessnavnet. Bak hver prosess kan man ha et tall som angir
+hvor mange prosesser som kan kjøres. På prosessen <code>cfenvd</code> står det først tallet
+<code>1</code>, som betyr at det minimum må være én prosess (<em>mincount</em>) ved det navnet og bak
+tallet står det <code>1</code> (<em>maxcount</em>). Dette betyr at det kan kun være én (og bare én)
+prosess av <code>cfenvd</code>. Hvis ikke dette er oppfylt vil den blir markert som gul i
+Xymon, i motsetning til <code>cfservd</code>, der det vil bli markert som rødt. Man kan på
 denne måten angi hvor mange prosesser som skal kjøre. I tillegg kan man bruke
-verdien -1, som betyr at det kan være uendelig mange prosesser som kjøres.
+verdien <code>-1</code>, som betyr at det kan være uendelig mange prosesser som kjøres.
 </p>
 
 <p>
@@ -117,8 +128,8 @@ mens kommer den på 98% vil den flagges rød i Xymon.
 </p>
 
 <p>
-Som standard på samtlige servere står det følgende regler
-(<code>/etc/hobbit/hobbit-client.cfg</code>):
+  Som standard på samtlige servere står det følgende regler
+  (<code>/etc/xymon/analysis.cfg</code>):
 </p>
 
 <pre><code>
@@ -132,38 +143,38 @@ MEMACT  90 97
 </code></pre>
 
 
-<h3>Installere Hobbit-client på klienten</h3>
+<h3>Installere xymon-client på klienten</h3>
 <ul>
   <li>
-    Det må installeres hobbit-client (eller xymon-client) på klienten som skal
+    Programmet <strong>xymon-client</strong> må installeres på klienten som skal
     overvåkes.
   </li>
   
   <li>
     IP-adressen til verktøykassen må settes
-    i <code>/etc/default/hobbit-client</code>, slik at hobbit-client ver hvor
+    i <code>/etc/default/xymon-client</code>, slik at xymon-client ver hvor
     den skal rapportere.
   </li>
 
   <li>
-    For Windows-maskiner som skal overvåkes må det
-    installeres <em><a href="http://bbwin.sourceforge.net/">BBWin</a></em> på
-    klienten.
+    For Windows-maskiner som skal overvåkes
+    må <em><a href="http://bbwin.sourceforge.net/">BBWin</a></em> installeres
+    på klienten.
   </li>
 
 </ul>
 
 <h3>Varsling</h3>
 <p>
-Varsling fra Hobbit er integrert med NAVs hendelses- og alarmsystem, og styres
-gjennom din personlige alarmprofil i NAV. Viser
-til <a href="https://nav.uninett.no/" title="Gå til NAVs
-hjemmesider">dokumentasjon om NAV</a>.
+Varsling fra Xymon er integrert med NAVs hendelses- og alarmsystem, og styres
+gjennom din personlige alarmprofil i NAV. Her viser vi
+til <a href="https://nav.readthedocs.io/" title="Gå til NAVs
+dokumentasjon">dokumentasjon om NAV</a>.
 </p>
 
 <h2>Kontaktadresser</h2>
 <ul>
-  <li><a href="mailto:drift@uninett.no">drift@uninett.no</a></li>
+  <li><a href="mailto:kontakt@uninett.no">kontakt@uninett.no</a></li>
 </ul>
 
 <?php
