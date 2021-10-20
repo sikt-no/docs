@@ -13,5 +13,6 @@ COPY static ./static/
 RUN npm run build
 
 FROM nginx:1.21.3-alpine
+RUN apk --no-cache upgrade curl libcurl  # Fix CVE-2021-22945
 COPY nginx-config/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=site-builder /site/build /web
