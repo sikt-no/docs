@@ -1,4 +1,4 @@
-FROM node:14.16.0-buster-slim as site-builder
+FROM node:14.18.1-buster-slim as site-builder
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		git \
 	&& rm -rf /var/lib/apt/lists/*
@@ -12,6 +12,7 @@ COPY src ./src/
 COPY static ./static/
 RUN npm run build
 
-FROM nginx:1.19.8-alpine
+FROM nginx:1.21.3-alpine
+RUN apk --no-cache upgrade curl libcurl  # Fix CVE-2021-22945
 COPY nginx-config/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=site-builder /site/build /web
