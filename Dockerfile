@@ -1,4 +1,4 @@
-FROM node:14.16.0-buster-slim as site-builder
+FROM node:14.18.1-buster-slim as site-builder
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		git \
 	&& rm -rf /var/lib/apt/lists/*
