@@ -36,6 +36,13 @@ const topics = <>
   >
      Uninetts beste praksis fagspesifikasjoner (UFS). Fagspesifikasjonene er nedskrevne og vedtatte anbefalinger tuftet på universitets- og høyskolesektorens kollektive IT-faglige erfaringer.
   </Topic>
+  <Topic
+    title="Lokalnett - CNaaS"
+    link="docs/cnaas/index"
+    imageUrl="img/uninett_logo.svg"
+  >
+     Lokalnett fra Uninett - CNaaS leverer lokalnett for organisasjoner og bedrifter i kunnskaps-Norge! Vårt lokalnett er en forlengelse av forskningsnettet - Uninetts internett med høy hastighet, høy oppetid og sikkerhet i høysete. Vi leverer fastnett, trådløst nettverk, rutere, brannmurer og dataromnett.
+  </Topic>
 
 </>;
 
