@@ -2,4 +2,4 @@
 title: Lokalnett - CNaaS
 ---
 
-Dokumentasjon forbundet med CNaaS.
+Dokumentasjon forbundet med CNaaS. 
