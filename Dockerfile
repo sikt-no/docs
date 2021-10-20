@@ -12,6 +12,6 @@ COPY src ./src/
 COPY static ./static/
 RUN npm run build
 
-FROM nginx:1.19.8-alpine
+FROM nginx:1.21.3-alpine
 COPY nginx-config/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=site-builder /site/build /web
