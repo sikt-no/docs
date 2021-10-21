@@ -27,7 +27,7 @@ Dersom det ikke er link på nettkortet så...
 ### Tilkobling til eduroam
 
 - Verifiser at brukeren har brukernavn/passord i lokalt brukerdatabase.
-  - Dersom brukeren er ekstern, så må det tas kontakt med brukerens hjemmeorganisasjon for feilsøking.  
+  - Om dette er en eduroam gjestebruker skal spørsmål om brukernavn, passord og oppsett gå direkte fra bruker til egen institusjon.  
 - Sjekk at trådløsnettet eduroam er synlig for klienten.
 - Kjør eduroam-oppsett på [](https://www.eduroam.no/connect)
 - Sjekk eventuell feilmelding ved oppkobling og gi informasjon om dette ved eskalering. 
