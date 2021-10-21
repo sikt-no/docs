@@ -43,7 +43,7 @@ Uninett registerer følgende kontaktpunkter i sine systemer som brukes ved behov
 - **Teknisk ansvarlig**: En eller flere personer som er teknisk ansvarlig hos kunden. Brukes som kontaktpunkt ved alvorlige hendelser utenfor kundens normalåpningstid. 
 - **Juridisk/administrativ ansvarlig**: En eller flere personer som kan kontaktes ved merkantile henvendelser. 
 
-### Kontaktpunkter hos Uninett
+### Kontaktpunkter hos Uninett {#kontaktuninett}
 
 Uninetts single point of contact er alltid Uninett Servicesenter (USC).  
 
@@ -85,22 +85,7 @@ Dersom overvåkningssystemene ikke gir noe indikasjon på at det er noe feil så
 
 #### Eskalering til Uninett
 
-Ved eskalering til Uninett servicesenter, så må en del informasjon være med i meldingen til Uninett. Mye av dette kan finnes via artikkelen om grunnleggende feilsøking som ble vist til ovenfor. 
-
-Minimum bør følgende informasjon være med:
-
-- God beskrivelse av problemet
-  - Hvordan oppleves problemet? Tregt, ustabilt/blir koblet av nett, får ikke kontakt med enkelte eller flere nettsider, får ikke logget på nettet?
-  - Beskriv også eventuelt hvilke nettsider/tjenester som fungerer og ikke fungerer. 
-- Brukernavn
-- Lokasjon for brukeren 
-  - Rom-nummer
-  - Punktnummer (ved trådbasert tilkobling)
-- MAC-adresse på nettkortet til brukeren.
-- Informasjon fra grunnleggende feilsøking. 
-  - Ta med alt som ble avdekt under grunnleggende feilsøking. 
-
-Husk: heller for mye informasjon enn for lite. Dersom Uninett må etterspørre mer informasjon, så vil dette bidra til lengre løsningstid. 
+Se [](info-ved-eskalering) for å se hva som må være med av informasjon før sak eskaleres til Uninett. Kontaktpunkt for Uninett finnes lengre opp i denne artikkelen under [](#kontaktuninett).
 
 ### Uninett Servicesenter (USC)
 
