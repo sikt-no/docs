@@ -85,7 +85,7 @@ Dersom overvåkningssystemene ikke gir noe indikasjon på at det er noe feil så
 
 #### Eskalering til Uninett
 
-Se [](info-ved-eskalering) for å se hva som må være med av informasjon før sak eskaleres til Uninett. Kontaktpunkt for Uninett finnes lengre opp i denne artikkelen under [](#kontaktuninett).
+Se [Nødvendig informasjon før eskalering av lokalnett-relaterte saker til Uninett](info-ved-eskalering) for å se hva som må være med av informasjon før sak eskaleres til Uninett. Kontaktpunkt for Uninett finnes lengre opp i denne artikkelen under [Kontaktpunkter hos Uninett](#kontaktuninett).
 
 ### Uninett Servicesenter (USC)
 
