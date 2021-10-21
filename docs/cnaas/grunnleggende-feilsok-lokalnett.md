@@ -57,7 +57,7 @@ På Linux kan man installere `wavemon` og kjøre dette. Da vil man få masse nyt
 
 Denne informasjonen bør være med i en eventuell eskalering uavhengig om det er dårlig eller bra signal, siden det gir informasjon om SSID (trådløsnettnavn), MAC-adressen til klienten, kanal/bånd, protokoller med mer. 
 
-## Sjekk om brukeren får IPv4/IPv6-adresse.
+## Sjekk om brukeren får IPv4/IPv6-adresse og identifisering av brukerens MAC-adresse.
 
 ### Windows
 
@@ -71,6 +71,8 @@ Kjør kommandoen: `ipconfig`. Finn så rett innslag basert på nettkort-navnet d
 - Finnes det en IP-adresse for IPv6? 
     - Merk at det ikke er nok at maskinen har en adresse som starter på fe80::. Den skal også ha en fullverdig IPv6-adresse som f.eks starter på 2001:700:
     - Dersom maskinen ikke har IPv6-adresse, så KAN dette være grunnen til problemene dersom IPv6 er skrudd på på dette nettet. Uansett så kan dette meldes inn ved eskalering. 
+
+Noter deg også kortets MAC-adresse slik at du har dette til eventuell eskalering. Dette finner du som "Fysisk adresse"/"Physical address" i resultatet av kommandoen over. 
 
 ### Mac
 
@@ -86,6 +88,7 @@ Kjør kommandoen: `ip a`. Da vil IPv4 vises som ***inet*** og IPv6 vises som ***
     - Merk at det ikke er nok at maskinen har en adresse som starter på fe80::. Den skal også ha en fullverdig IPv6-adresse som f.eks starter på 2001:700:
     - Dersom maskinen ikke har IPv6-adresse, så KAN dette være grunnen til problemene dersom IPv6 er skrudd på på dette nettet. Uansett så kan dette meldes inn ved eskalering. 
 
+Noter deg også kortets MAC-adresse slik at du har dette til eventuell eskalering. Dette finner du som "link/ether" i resultatet av kommandoen over. 
 
 ## Sjekk nåbarhet til ressurser
 
