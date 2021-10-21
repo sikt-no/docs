@@ -67,7 +67,7 @@ Kunden har som ansvar å utføre følgende oppgaver, enten av brukerstøttefunks
 - Utføre tilkoblinger i kommunikasjonsrom/etasjefordelere for å koble til brukerpunkter ute i kontorarealene til svitsjer. 
 - Bytte komponenenter som er defekte etter ønske fra Uninett. 
 
-#### Utføre grunnleggende feilsøking
+#### Grunnleggende feilsøking
 
 Når brukere opplever feil/hendelser så skal kundens brukerstøtte og/eller tekniske ressurspersoner gjøre grunnleggende feilsøking før eventuelt eskalering til Uninett. 
 
@@ -81,35 +81,13 @@ Opplæring i overvåkningssystemer gis etter behov.
   - Gjelder kun dersom kunden har fått tilgang til det trådløse overvåkningssystemet.
   - Logg inn og sjekk om det er rapporterte feil i trådløsnettet.  
 
-**Sjekkliste grunnleggende feilsøking**
-
-- Ved trådbasert tilkobling. 
-  - Sjekk at brukerpunktet er tilkoblet svitsjen i etasjefordeler/kommunikasjonsrom. 
-  - Sjekk om det er link på nettkortet. 
-  - Sjekk om brukeren får IPv4/IPv6-adresse.
-  - Sjekk om det er mulig å kjøre ping mot default gateway. 
-  - Sjekk om det er mulig å kjøre navneoppslag mot f.eks www.google.com
-- Ved trådløs tilkobling til eduroam
-  - Verifiser at brukeren har brukernavn/passord i lokalt brukerdatabase.
-    - Dersom brukeren er ekstern, så må det tas kontakt med brukerens hjemmeorganisasjon for feilsøking.  
-  - Sjekk at trådløsnettet eduroam er synlig for klienten.
-  - Kjør eduroam-oppsett på [](https://www.eduroam.no/connect)
-  - Sjekk eventuell feilmelding ved oppkobling. 
-  - Sjekk om brukeren får IPv4/IPv6-adresse.
-  - Sjekk om det er mulig å kjøre ping mot default gateway. 
-  - Sjekk om det er mulig å kjøre navneoppslag mot f.eks www.google.com
-- Ved trådløs tilkobling til gjestenett
-  - Sjekk at det trådløse gjestenettet er synlig for klienten.
-  - Sjekk eventuell feilmelding ved oppkobling. 
-  - Sjekk om brukeren får IPv4/IPv6-adresse.
-  - Sjekk om det er mulig å kjøre ping mot default gateway. 
-  - Sjekk om det er mulig å kjøre navneoppslag mot f.eks www.google.com
-  - Dersom dere har tilgang til administrasjonsverktøyet for trådløsnettet, sjekk status for klienten der. 
-    - Instruksjon for hvordan dere bruker et slikt verktøy, vil være gitt separat. 
+Dersom overvåkningssystemene ikke gir noe indikasjon på at det er noe feil så kommer "Uninetts guide med tips og triks for å utføre grunnleggende feilsøking i lokalnett" til nytte. Denne finner du på [Grunnleggende feilsøking ved problemer i lokalnett](grunnleggende-feilsok-lokalnett). Her får du også mye informasjon som du kan bruke ved eskalering til Uninett. 
 
 #### Eskalering til Uninett
 
-Ved eskalering til Uninett servicesenter, så bør følgende informasjon være med i meldingen til Uninett:
+Ved eskalering til Uninett servicesenter, så må en del informasjon være med i meldingen til Uninett. Mye av dette kan finnes via artikkelen om grunnleggende feilsøking som ble vist til ovenfor. 
+
+Minimum bør følgende informasjon være med:
 
 - God beskrivelse av problemet
   - Hvordan oppleves problemet? Tregt, ustabilt/blir koblet av nett, får ikke kontakt med enkelte eller flere nettsider, får ikke logget på nettet?
@@ -118,7 +96,7 @@ Ved eskalering til Uninett servicesenter, så bør følgende informasjon være m
 - Lokasjon for brukeren 
   - Rom-nummer
   - Punktnummer (ved trådbasert tilkobling)
-- MAC-adresse på nettkortet til brukeren
+- MAC-adresse på nettkortet til brukeren.
 - Informasjon fra grunnleggende feilsøking. 
   - Ta med alt som ble avdekt under grunnleggende feilsøking. 
 
