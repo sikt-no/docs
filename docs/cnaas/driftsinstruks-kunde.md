@@ -1,0 +1,138 @@
+---
+title: Driftsinstruks for kunder av "Lokalnett fra Uninett - CNaaS"
+sidebars_label: Driftsinstruks - kunde
+---
+
+![](/static/img/uninett_logo.svg)
+
+## Innledning
+
+Dette dokumentet har som mål å beskrive grensesnittet mellom Uninett og kunder av tjenesten "Lokalnett fra Uninett - CNaaS". 
+
+Med dette menes hvordan Uninetts kunde skal ta kontakt med Uninett både ved hendelser/problemer (incidents), spørsmål (support) og bestillinger/endringer. Det omhandler også krav til informasjon som kunden må ha med i sine henvendelser. Det beskrives også hvordan Uninett skal ta kontakt med kunden og krav til varslingstider ved planlagte og hasteendringer (change). 
+
+I tillegg beskriver dokumentet hvordan Uninett skal ta kontakt med kunden ved hendelser/problemer og endringer (change). 
+
+## Roller
+
+### Kundens brukerstøtte/tekniske ressurspersoner
+
+Kunden skal sørge for en brukerstøtte-funksjon for henvendelser fra sine brukere. Dette betyr at alle henvendelser fra kundens brukere skal gå til kundens brukerstøtte og ikke direkte til Uninett. 
+
+Kunden skal også ha en eller flere tekniske ressurspersoner som skal utføre nødvendig lokalt arbeid for sine brukere og eventuelt Uninett ved behov. 
+
+### Uninett Servicesenter (USC)
+
+Uninetts Servicesenter er Uninetts single point of contact (SPOC) og 1.linje. Alle henvendelser som eskaleres fra kundens brukerstøtte skal gå til USC. Se kontaktinformasjon nedenfor.  
+
+### Uninett 2. linje (Campustjenester)
+
+Fageksperter i Uninett Campustjenester fungerer som 2. linje i Uninett. Alle henvendelser som eskaleres fra USC går hit. 
+
+## Kontaktpunkter
+
+### Kontaktpunkter hos kunden
+
+Uninett registerer følgende kontaktpunkter i sine systemer som brukes ved behov:
+
+*De tre første kan med fordel være samme kontaktpunkt, f.eks kundens brukerstøtte.*
+
+- **Varslingspunkt Incidents**: Her sendes alle varsler om incidents som Uninett oppdager i kundens nett. Dette bør ikke være personlig epost-adresse og telefonnummer. 
+- **Varslingspunkt Change**: Her sendes alle varsler om planlagte endringer i kundens nett. Dette bør ikke være personlig epost-adresse og telefonnummer.  
+- **Lokalt supportpunkt**: Her registereres kontaktinformasjon for kundens brukerstøtte for å informere eventuelle brukere som kontakter Uninett direkte. Dette brukes også som kontaktpunkt dersom Uninett har behov for å få utført lokalt arbeid på en eller flere komponenter i lokalnettet. Dette bør ikke være personlig epost-adresse og telefonnummer. 
+- **Teknisk ansvarlig**: En eller flere personer som er teknisk ansvarlig hos kunden. Brukes som kontaktpunkt ved alvorlige hendelser utenfor kundens normalåpningstid. 
+- **Juridisk/administrativ ansvarlig**: En eller flere personer som kan kontaktes ved merkantile henvendelser. 
+
+### Kontaktpunkter hos Uninett
+
+Uninetts single point of contact er alltid Uninett Servicesenter (USC).  
+
+E-post: kontakt@uninett.no
+Telefon: 73 55 79 00
+
+Se [Uninetts nettside](https://www.uninett.no/uninetts-apningstider) for åpningstider. 
+
+Kritiske henvendelser kan meldes 24/7. Utenfor ordinær arbeidstid, ring oppgitte telefonnummer og tast 1. 
+
+## Ansvar
+
+### Kundens brukerstøtte og tekniske ressurspersoner 
+
+Kunden har ikke noe overvåkningsansvar av utstyret eller nettet. Dette er Uninetts ansvar. 
+
+Kunden har som ansvar å utføre følgende oppgaver, enten av brukerstøttefunksjonen eller ved tekniske ressurspersoner:
+
+#### Utføre lokalt arbeid 
+
+- Utføre tilkoblinger i kommunikasjonsrom/etasjefordelere for å koble til brukerpunkter ute i kontorarealene til svitsjer. 
+- Bytte komponenenter som er defekte etter ønske fra Uninett. 
+
+#### Utføre grunnleggende feilsøking
+
+Når brukere opplever feil/hendelser så skal kundens brukerstøtte og/eller tekniske ressurspersoner gjøre grunnleggende feilsøking før eventuelt eskalering til Uninett. 
+
+**Sjekke overvåkningssystemer**
+
+Opplæring i overvåkningssystemer gis etter behov. 
+
+- Sjekk status i NAV. Spesielt viktig ved henvendelse fra flere brukere.
+  - Logg inn på lokal NAV-installasjon og sjekk om det er noen alarmer som kan være grunne til problemet. 
+- Sjekk status i trådløst administrasjonssystem. Spesielt viktig ved henvendelse fra flere brukere.  
+  - Gjelder kun dersom kunden har fått tilgang til det trådløse overvåkningssystemet.
+  - Logg inn og sjekk om det er rapporterte feil i trådløsnettet.  
+
+**Sjekkliste grunnleggende feilsøking**
+
+- Ved trådbasert tilkobling. 
+  - Sjekk at brukerpunktet er tilkoblet svitsjen i etasjefordeler/kommunikasjonsrom. 
+  - Sjekk om det er link på nettkortet. 
+  - Sjekk om brukeren får IPv4/IPv6-adresse.
+  - Sjekk om det er mulig å kjøre ping mot default gateway. 
+  - Sjekk om det er mulig å kjøre navneoppslag mot f.eks www.google.com
+- Ved trådløs tilkobling til eduroam
+  - Verifiser at brukeren har brukernavn/passord i lokalt brukerdatabase.
+    - Dersom brukeren er ekstern, så må det tas kontakt med brukerens hjemmeorganisasjon for feilsøking.  
+  - Sjekk at trådløsnettet eduroam er synlig for klienten.
+  - Kjør eduroam-oppsett på [](https://www.eduroam.no/connect)
+  - Sjekk eventuell feilmelding ved oppkobling. 
+  - Sjekk om brukeren får IPv4/IPv6-adresse.
+  - Sjekk om det er mulig å kjøre ping mot default gateway. 
+  - Sjekk om det er mulig å kjøre navneoppslag mot f.eks www.google.com
+- Ved trådløs tilkobling til gjestenett
+  - Sjekk at det trådløse gjestenettet er synlig for klienten.
+  - Sjekk eventuell feilmelding ved oppkobling. 
+  - Sjekk om brukeren får IPv4/IPv6-adresse.
+  - Sjekk om det er mulig å kjøre ping mot default gateway. 
+  - Sjekk om det er mulig å kjøre navneoppslag mot f.eks www.google.com
+  - Dersom dere har tilgang til administrasjonsverktøyet for trådløsnettet, sjekk status for klienten der. 
+    - Instruksjon for hvordan dere bruker et slikt verktøy, vil være gitt separat. 
+
+#### Eskalering til Uninett
+
+Ved eskalering til Uninett servicesenter, så bør følgende informasjon være med i meldingen til Uninett:
+
+- God beskrivelse av problemet
+  - Hvordan oppleves problemet? Tregt, ustabilt/blir koblet av nett, får ikke kontakt med enkelte eller flere nettsider, får ikke logget på nettet?
+  - Beskriv også eventuelt hvilke nettsider/tjenester som fungerer og ikke fungerer. 
+- Brukernavn
+- Lokasjon for brukeren 
+  - Rom-nummer
+  - Punktnummer (ved trådbasert tilkobling)
+- MAC-adresse på nettkortet til brukeren
+- Informasjon fra grunnleggende feilsøking. 
+  - Ta med alt som ble avdekt under grunnleggende feilsøking. 
+
+Husk: heller for mye informasjon enn for lite. Dersom Uninett må etterspørre mer informasjon, så vil dette bidra til lengre løsningstid. 
+
+### Uninett Servicesenter (USC)
+
+USC har som ansvar å bistå kundens brukerstøtte i grunnleggende feilsøking og eventuelt eskalere hendelser/problemer og support-saker til Uninetts 2. linje ved Uninett Campustjenester. 
+
+USC har også som ansvar å varsle kundens brukerstøtte ved planlagte endringer eller hendelser som oppdages av Uninett. Vanligvis vil USC varsle kunden om planlagte endringer minst 8 virkedager før endringstidspunktet. Ved hasteendringer, vil det varsles så tidlig som mulig, men kunden kan bli kontaktet på kontaktpunkt "Teknisk ansvarlig" for å gi innspill til tidspunkt for endringen. 
+
+### Uninett 2. linje (Campustjenester)
+
+Uninetts 2. linje har som ansvar å utføre dypere feilsøking på hendelser/problemer og spørsmål fra kunden. 
+
+Ressurser her har også som ansvar å sørge for kontinuerlig drift og overvåkning av kundens lokalnett. De vil, gjennom USC, sørge for å varsle kunden ved avvik/hendelser og planlagte endringer. Planlagte endringer kan f.eks være halvårlig programvareoppgradering av komponeneter i kundens lokalnett. 
+
