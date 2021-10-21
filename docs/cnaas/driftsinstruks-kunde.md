@@ -3,7 +3,7 @@ title: Driftsinstruks for kunder av "Lokalnett fra Uninett - CNaaS"
 sidebars_label: Driftsinstruks - kunde
 ---
 
-![](/static/img/uninett_logo.svg)
+![](/img/uninett_logo.svg)
 
 ## Innledning
 
