@@ -57,7 +57,7 @@ På Linux kan man installere `wavemon` og kjøre dette. Da vil man få masse nyt
 
 Denne informasjonen bør være med i en eventuell eskalering uavhengig om det er dårlig eller bra signal, siden det gir informasjon om SSID (trådløsnettnavn), MAC-adressen til klienten, kanal/bånd, protokoller med mer. 
 
-## Sjekk om brukeren får IPv4/IPv6-adresse og identifisering av brukerens MAC-adresse.
+## Sjekk om brukeren får IPv4/IPv6-adresse og identifisering av brukerens MAC-adresse. {#adresser}
 
 ### Windows
 
