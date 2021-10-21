@@ -43,7 +43,7 @@ Kvaliteten på signalet sett fra klienten kan gi en pekepinn på om problemet er
 
 #### Windows
 
-Kjør kommandoen `netsh wlan show interface`. Her får du masse nyttig informasjon, men først og fremst så bør det kikkes på linjen "Signal" som angi signalstyrken i prosent. 
+Kjør kommandoen `netsh wlan show interface`. Her får du masse nyttig informasjon, men først og fremst så bør det kikkes på linjen *Signal* som angi signalstyrken i prosent. 
 
 Denne informasjonen bør være med i en eventuell eskalering uavhengig om det er dårlig eller bra signal, siden det gir informasjon om SSID (trådløsnettnavn), MAC-adressen til klienten, kanal/bånd, protokoller med mer. 
 
@@ -61,7 +61,7 @@ Denne informasjonen bør være med i en eventuell eskalering uavhengig om det er
 
 ### Windows
 
-Først finn rett nettkort å feilsøke. Dette kan finnes ved å kjøre `netsh interface show interface` som gir deg en liste over nettkort. Nettkortet du skal feilsøke må ha status "Tilkoblet" eller "Connected". For trådbasert tilkobling heter det ofte noe som starter med "Ethernet". Nettkort som heter noe med "vEthernet" er IKKE de som du skal se på nå. 
+Først finn rett nettkort å feilsøke. Dette kan finnes ved å kjøre `netsh interface show interface` som gir deg en liste over nettkort. Nettkortet du skal feilsøke må ha status *Tilkoblet* eller *Connected*. For trådbasert tilkobling heter det ofte noe som starter med *Ethernet*. Nettkort som heter noe med *vEthernet* er IKKE de som du skal se på nå. 
 
 Kjør kommandoen: `ipconfig`. Finn så rett innslag basert på nettkort-navnet du fant over. Sjekk deretter følgende:
 
@@ -72,7 +72,7 @@ Kjør kommandoen: `ipconfig`. Finn så rett innslag basert på nettkort-navnet d
     - Merk at det ikke er nok at maskinen har en adresse som starter på fe80::. Den skal også ha en fullverdig IPv6-adresse som f.eks starter på 2001:700:
     - Dersom maskinen ikke har IPv6-adresse, så KAN dette være grunnen til problemene dersom IPv6 er skrudd på på dette nettet. Uansett så kan dette meldes inn ved eskalering. 
 
-Noter deg også kortets MAC-adresse slik at du har dette til eventuell eskalering. Dette finner du som "Fysisk adresse"/"Physical address" i resultatet av kommandoen over. 
+Noter deg også kortets MAC-adresse slik at du har dette til eventuell eskalering. Dette finner du som *Fysisk adresse*/*Physical address* i resultatet av kommandoen over. 
 
 ### Mac
 
@@ -80,7 +80,7 @@ HER KOMMER MER SNART!
 
 ### Linux
 
-Kjør kommandoen: `ip a`. Da vil IPv4 vises som ***inet*** og IPv6 vises som ***inet6***. Finn rett nettkort og sjekk følgende:
+Kjør kommandoen: `ip a`. Da vil IPv4 vises som *inet* og IPv6 vises som *inet6*. Finn rett nettkort og sjekk følgende:
 
 - Finnes det en IP-adresse for IPv4? 
     - Dersom maskinen ikke har IPv4-adresse, så er feilen DHCP-tildeling. Da er dette "problemet" som kan meldes inn ved eskalering. 
@@ -88,7 +88,7 @@ Kjør kommandoen: `ip a`. Da vil IPv4 vises som ***inet*** og IPv6 vises som ***
     - Merk at det ikke er nok at maskinen har en adresse som starter på fe80::. Den skal også ha en fullverdig IPv6-adresse som f.eks starter på 2001:700:
     - Dersom maskinen ikke har IPv6-adresse, så KAN dette være grunnen til problemene dersom IPv6 er skrudd på på dette nettet. Uansett så kan dette meldes inn ved eskalering. 
 
-Noter deg også kortets MAC-adresse slik at du har dette til eventuell eskalering. Dette finner du som "link/ether" i resultatet av kommandoen over. 
+Noter deg også kortets MAC-adresse slik at du har dette til eventuell eskalering. Dette finner du som *link/ether* i resultatet av kommandoen over. 
 
 ## Sjekk nåbarhet til ressurser
 
