@@ -71,7 +71,7 @@ Kunden har som ansvar å utføre følgende oppgaver, enten av brukerstøttefunks
 
 Når brukere opplever feil/hendelser så skal kundens brukerstøtte og/eller tekniske ressurspersoner gjøre grunnleggende feilsøking før eventuelt eskalering til Uninett. 
 
-**Sjekke overvåkningssystemer**
+*Sjekke overvåkningssystemer*
 
 Opplæring i overvåkningssystemer gis etter behov. 
 
