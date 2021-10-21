@@ -37,6 +37,26 @@ Dersom det ikke er link på nettkortet så...
 - Sjekk at det trådløse gjestenettet er synlig for klienten.
 - Sjekk eventuell feilmelding ved oppkobling og gi informasjon om dette ved eskalering. 
 
+### Sjekk kvaliteten på signalet
+
+Kvaliteten på signalet sett fra klienten kan gi en pekepinn på om problemet er basert på signalstyrke og også gi nyttig informasjon ved eventuell eskalering. Dette kan sjekkes på de forskjellige operativsystemene slik:
+
+#### Windows
+
+Kjør kommandoen `netsh wlan show interface`. Her får du masse nyttig informasjon, men først og fremst så bør det kikkes på linjen "Signal" som angi signalstyrken i prosent. 
+
+Denne informasjonen bør være med i en eventuell eskalering uavhengig om det er dårlig eller bra signal, siden det gir informasjon om SSID (trådløsnettnavn), MAC-adressen til klienten, kanal/bånd, protokoller med mer. 
+
+#### Mac
+
+HER KOMMER MER SNART!
+
+#### Linux
+
+På Linux kan man installere `wavemon` og kjøre dette. Da vil man få masse nyttig informasjon, slik som signalkvalitet og signalstyrke. 
+
+Denne informasjonen bør være med i en eventuell eskalering uavhengig om det er dårlig eller bra signal, siden det gir informasjon om SSID (trådløsnettnavn), MAC-adressen til klienten, kanal/bånd, protokoller med mer. 
+
 ## Sjekk om brukeren får IPv4/IPv6-adresse.
 
 ### Windows
