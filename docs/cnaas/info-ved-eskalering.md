@@ -9,7 +9,7 @@ sidebars_label: Informasjon ved eskalering
 
 Her finner du informasjon om hva som bør være med av informasjon i en sak som er relatert til problemer med lokalnett levert av Uninett. 
 
-Les [](driftsinstruks-kunde) for å se hvordan du kontakter og eskalerer saker til Uninett.
+Les [Driftsinstruks for kunder av "Lokalnett fra Uninett - CNaaS"](driftsinstruks-kunde) for å se hvordan du kontakter og eskalerer saker til Uninett.
 
 ## Informasjon som bør være med i en sak
 
@@ -24,9 +24,9 @@ Les [](driftsinstruks-kunde) for å se hvordan du kontakter og eskalerer saker t
   - Bygg-nummer/-navn
   - Rom-nummer
   - Punktnummer (ved trådbasert tilkobling)
-- MAC-adresse på nettkortet til brukeren. Tips: Se [](grunnleggende-feilsok-lokalnett#adresser) for å se hvordan du finner MAC-adressen til brukeren. 
+- MAC-adresse på nettkortet til brukeren. Tips: Se [Grunnleggende feilsøking ved problemer i lokalnett](grunnleggende-feilsok-lokalnett#adresser) for å se hvordan du finner MAC-adressen til brukeren. 
 - Informasjon fra grunnleggende feilsøking. 
-  - Ta med alt som ble avdekt under grunnleggende feilsøking (Se artikkel [](grunnleggende-feilsok-lokalnett)). 
+  - Ta med alt som ble avdekt under grunnleggende feilsøking (Se artikkel [Grunnleggende feilsøking ved problemer i lokalnett](grunnleggende-feilsok-lokalnett)). 
 
 Husk: heller for mye informasjon enn for lite. Dersom Uninett må etterspørre mer informasjon, så vil dette bidra til lengre løsningstid. 
 
