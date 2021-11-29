@@ -73,7 +73,7 @@ Virksomheten selv vil kunne gjøre enkelte endringer selv. F.eks vil kunden ha m
 
 #### Bestille endringer i lokalnettet
 
-Endringer i nettet som kunden selv ikke kan utføre, må bestilles av kunden via [Kontaktpunkter hos Uninett](#kontaktuninett). Merk at kun personer som er satt som "Teknisk ansvarlig", som beskrevet i [Kontaktpunkter hos kunden](#kontaktkunden), vil kunne bestille endringer. 
+Endringer i nettet som kunden selv ikke kan utføre, må bestilles av kunden via [Kontaktpunkter hos Uninett](#kontaktuninett). Merk at kun personer som er satt som "Teknisk ansvarlig", som beskrevet i [Kontaktpunkter hos kunden](#kontaktkunden), vil kunne bestille endringer. Dersom en tredjepart trenger at det utføres endringer, skal dette gå via en av de kontaktpersonene som står nevnt som "Teknisk ansvarlige". 
 
 #### Grunnleggende feilsøking
 
