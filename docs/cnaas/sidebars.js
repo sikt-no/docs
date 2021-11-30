@@ -3,6 +3,6 @@ module.exports = [
   'cnaas/driftsinstruks-kunde',
   'cnaas/grunnleggende-feilsok-lokalnett',
   'cnaas/info-ved-eskalering',
-  'cnaas/sameksistens-wifi-bygg'
+  'cnaas/sameksistens-wifi-kontorbygg'
 ];
 
