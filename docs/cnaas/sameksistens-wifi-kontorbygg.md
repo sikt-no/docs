@@ -40,7 +40,7 @@ Det anbefales at alle leietakere i et kontorbygg setter opp sine Wi-Fi-nett med 
 
 I det internasjonale miljøet med Wi-Fi-ekspertise er det bred enighet om at aksesspunkter KUN skal settes opp til å bruke kanalene 1, 6 og 11 i 2.4GHz frekvensbåndet. Dette fordi at disse er tilstrekkelig adskilte og at de da ikke forstyrrer hverandre. 
 
-![](/img/24ghz.png)
+![](/img/cnaas/24ghz.png)
 
 *Anbefaling:
 Alle leietakere i et kontorbygg bør sørge for at aksesspunkter kun bruker kanalene 1, 6 og 11 på 2.4GHz. Dette kan som oftest gjøres i systemet ved å velge hvilke kanaler systemet skal kunne bruke ved automatisk kanalvalg eller ved å statisk sette kanaler på de forskjellige aksesspunktene. I tillegg bør alle slå av foreldet standard 802.11b. Dette gjøres ved å fjerne hastigheter 1, 2, 5.5 og 11Mbps som en mulig hastighet i konfigurasjon (detaljer varierer litt fra produsent til produsent).*
