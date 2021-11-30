@@ -1,6 +1,5 @@
 ---
-title: Driftsinstruks for kunder av "Lokalnett fra Uninett - CNaaS"
-sidebars_label: Driftsinstruks - kunde
+title: Sameksistens på Wi-Fi i kontorbygg
 ---
 
 ![](/img/uninett_logo.svg)
