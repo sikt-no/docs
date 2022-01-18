@@ -1,49 +1,67 @@
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
-module.exports = {
+// @ts-check
+// Note: type annotations allow type checking and IDEs autocompletion
+
+const lightCodeTheme = require('prism-react-renderer/themes/github');
+const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+
+/** @type {import('@docusaurus/types').Config} */
+const config = {
   title: 'Uninett technical documentation',
   tagline: 'Documentation for Uninett services',
   url: 'https://sikt-no.github.io',
-  baseUrl: '/docs/',
-  projectName: 'sikt-no.github.io',
-  organizationName: 'sikt-no',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  themeConfig: {
-    navbar: {
-      title: 'Uninett dokumentajson',
-      logo: {
-        alt: 'Uninett',
-        src: 'img/uninett_logo.svg',
-      },
-    },
-    footer: {
-      style: 'dark',
-      links: [],
-      copyright: `Copyright © ${new Date().getFullYear()} Uninett AS`,
-    },
-    colorMode: {
-      disableSwitch: true,
-    },
-  },
+  organizationName: 'sikt-no',
+  projectName: 'sikt-no.github.io',
+
   presets: [
     [
-      '@docusaurus/preset-classic',
-      {
+      'classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://scm.uninett.no/platon/docs-uninett-no/-/edit/master/',
+            'https://github.com/sikt-no/docs',
           showLastUpdateTime: true,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      },
+      }),
     ],
   ],
-  plugins: [
-    require.resolve('docusaurus-lunr-search'),
-  ],
+
+  themeConfig: 
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      navbar: {
+        title: 'Uninett dokumentasjon',
+        logo: {
+          alt: 'Uninett logo',
+          src: 'img/uninett_logo.svg',
+        },
+      },
+      footer: {
+        style: 'dark',
+        links: [],
+        copyright: `Copyright © ${new Date().getFullYear()} Uninett AS`,
+      },
+      prism: {
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
+      },
+      colorMode: {
+        disableSwitch: true,
+      },
+    }),
+    
+    plugins: [
+      require.resolve('docusaurus-lunr-search'),
+    ],
 };
+
+module.exports = config;

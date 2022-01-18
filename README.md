@@ -5,7 +5,7 @@ This repository contains the site [docs.uninett.no](https://docs.uninett.no/).
 
 ## Editing the site
 
-This website is built using [Docusaurus 2](https://v2.docusaurus.io/).
+This website is built using [Docusaurus 2](https://docusaurus.io/).
 
 
 ### Installing a development environemt
@@ -137,7 +137,7 @@ Once the Docker images are updated, you may also want to [update the Node packag
 
 ### Updating Docusaurus
 
-Docusaurus 2 is still in alpha, which means that they sometimes perform breaking changes.
+Docusaurus 2 is still in beta, which means that they sometimes perform breaking changes.
 Some extra care should therefore be taken when updating Docusaurus.
 
 The safest way to update Docusaurus is to create two directories with the old and new version of Docusaurus and then compare those two directories.
@@ -148,7 +148,7 @@ First install the version in use in `packages.json` in the `old`-directory:
 ```console
 $ mkdir -p /tmp/docusaurus-update/old
 $ cd /tmp/docusaurus-update/old
-$ npx @docusaurus/init@2.0.0-alpha.71 init platon-uninett-no classic
+$ npx create-docusaurus@2.0.0-beta.14 platon-uninett-no classic
 [...]
 Success! Created platon-uninett-no
 Inside that directory, you can run several commands:
@@ -161,7 +161,7 @@ Then install the latest version in the `new`-directory:
 ```console
 $ mkdir -p /tmp/docusaurus-update/new
 $ cd /tmp/docusaurus-update/new
-$ npx @docusaurus/init@latest init platon-uninett-no classic
+$ npx create-docusaurus@latest platon-uninett-no classic
 [...]
 Success! Created platon-uninett-no
 Inside that directory, you can run several commands:

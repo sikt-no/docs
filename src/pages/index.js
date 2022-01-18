@@ -10,14 +10,14 @@ import {
 const topics = <>
   <Topic
     title="IAM"
-    link="docs/iam/index"
+    link="docs/iam"
     imageUrl="img/uninett_logo.svg"
   >
     Identitets- og tilgangsstyring (IAM) handler om å gi studenter, forskere og ansatte riktig tilgang til digitale systemer, tjenester og ressurser, samt avslutte tilgang for brukere som ikke lenger skal ha det.
   </Topic>
   <Topic
     title="Datadeling"
-    link="docs/datadeling/index"
+    link="docs/datadeling"
     imageUrl="img/uninett_logo.svg"
   >
     Datadeling. Tilgangsstyring for API-er.
@@ -38,7 +38,7 @@ const topics = <>
   </Topic>
   <Topic
     title="Lokalnett - CNaaS"
-    link="docs/cnaas/index"
+    link="docs/cnaas"
     imageUrl="img/uninett_logo.svg"
   >
      Lokalnett fra Uninett - CNaaS leverer lokalnett for organisasjoner og bedrifter i kunnskaps-Norge! Vårt lokalnett er en forlengelse av forskningsnettet - Uninetts internett med høy hastighet, høy oppetid og sikkerhet i høysete. Vi leverer fastnett, trådløst nettverk, rutere, brannmurer og dataromnett.
