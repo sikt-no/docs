@@ -9,7 +9,7 @@ const config = {
   title: 'Uninett technical documentation',
   tagline: 'Documentation for Uninett services',
   url: 'https://sikt-no.github.io',
-  baseUrl: '/',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
