@@ -1,0 +1,37 @@
+name: Test deployment to GitHub Pages
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/deploy.yml'
+      - 'docs/**'
+      - 'src/**'
+      - 'static/**'
+      - '**.js'
+
+jobs:
+  test-deploy:
+    name: Test deployment to GitHub Pages
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    defaults:
+      run:
+        working-directory: docs
+    steps:
+      # Checkout code
+      - uses: actions/checkout@v2
+
+      # Setup Node 14
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      # Install modules from the package lockfile instead of package.json
+      - name: Test build
+        run: |
+          npm ci
+          npm run build

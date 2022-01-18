@@ -2,8 +2,10 @@
 module.exports = {
   title: 'Uninett technical documentation',
   tagline: 'Documentation for Uninett services',
-  url: 'https://docs.uninett.no',
+  url: 'https://sikt-no.github.io',
   baseUrl: '/',
+  projectName: 'sikt-no.github.io',
+  organizationName: 'sikt-no',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
