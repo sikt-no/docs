@@ -4,12 +4,12 @@ on:
   pull_request:
     branches:
       - master
-    paths:
-      - '.github/workflows/deploy.yml'
-      - 'docs/**'
-      - 'src/**'
-      - 'static/**'
-      - '**.js'
+#    paths:
+#      - '.github/workflows/deploy.yml'
+#      - 'docs/**'
+#      - 'src/**'
+#      - 'static/**'
+#      - '**.js'
 
 jobs:
   test-deploy:
