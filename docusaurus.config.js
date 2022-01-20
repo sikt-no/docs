@@ -8,13 +8,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Uninett technical documentation',
   tagline: 'Documentation for Uninett services',
-  url: 'https://sikt-no.github.io',
-  baseUrl: '/docs/',
+  url: 'https://docs.uninett.no/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'sikt-no',
-  projectName: 'sikt-no.github.io',
+  projectName: 'docs.uninett.no',
 
   presets: [
     [
