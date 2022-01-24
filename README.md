@@ -8,7 +8,7 @@ This repository contains the site [docs.uninett.no](https://docs.uninett.no/).
 This website is built using [Docusaurus 2](https://docusaurus.io/).
 
 
-### Installing a development environemt
+### Installing a development environment
 
 Docusaurus uses [Node.js](https://nodejs.org/), so you need to install that if you do not have it.
 
@@ -22,11 +22,11 @@ npm run start
 
 You can then access a live version of the site at [http://localhost:3000/](http://localhost:3000/).
 
-### Notes about searching in a development environment
+### Search inside a development environment
 
 The dependency in use for offline searching only supports production builds. Hence you will see the search in the top right corner always displaying "Loading..." when running the development server.
 
-If you wish to test the search function while developing you will need to make a production build first by running `npm run build` then serving it regularly with 'npm run serve':
+If you wish to test the search function while developing you will need to make a production build first by running `npm run build` then serving it regularly with `npm run serve`:
 
 ```sh
 npm run build
@@ -73,24 +73,27 @@ To prevent accidentally breaking the project due to unintended upgrades of depen
 There are three sets of dependencies that can be updated:
 
 * The versions of Node packages.
+* The versions of GitHub Actions.
 * Docusaurus.
 
+### Updating Node and GitHub Actions dependencies automatically
+Dependabot will automatically check for updates to node modules monthly and GitHub Actions weekly. If an update is available, it will proceed to create a new branch, commit the change and submit a pull request to merge the dependency upgrades into master.
 
-### Updating Node packages
+### Updating Node packages locally
 
 To update the versions of Node packages, we need to update `package.json` and `package-lock.json`.
 
-Since we use pinned versions for consistency it might be necessary to manually inspect `package.json` and change the versions to the newest version available through npm.
+Since we use pinned versions for consistency it might be necessary to manually inspect `package.json` and change the versions to the newest version available through npm. After the change you may want to run `npm install` to upgrade package-lock.json to reflect the changes.
 
-Once done you can perform the package update:
+You can also automatically update all the packages listed to the latest version with npm:
 
-***Warning: this will also modify package-lock.json***
+***Warning: This will modify package.json and package-lock.json***
 
 ```sh
 npm update
 ```
 
-Please proceed to inspect that the resulting build(s) work as expected before you decide to merge this into master.
+Please proceed to inspect that the resulting build(s) work as expected before you decide to merge this upgrade into master.
 
 ### Updating Docusaurus
 
