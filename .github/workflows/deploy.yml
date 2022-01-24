@@ -10,6 +10,8 @@ on:
       - 'src/**'
       - 'static/**'
       - '**.js'
+      - 'package.json'
+      - 'package-lock.json'
 
 jobs:
   deploy:
@@ -24,11 +26,11 @@ jobs:
       # Checkout code
       - uses: actions/checkout@v2
 
-      # Setup Node 14
+      # Setup Node LTS
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: 'lts/*'
           cache: 'npm'
 
       # Cache
