@@ -7,9 +7,8 @@ updates:
     # default location of `.github/workflows`
     directory: "/"
     schedule:
-      # Check for updates to GitHub Actions every weekday
+      # Check for updates to GitHub Actions every week
       interval: "weekly"
-    # Max 5 open pull requests
     open-pull-requests-limit: 20
 
   # Maintain dependencies for npm
@@ -17,9 +16,8 @@ updates:
   # npm files stored in the root directory
     directory: "/"
     schedule:
-      # Check for updates to GitHub Actions every weekday
+      # Check for updates to Node.js modules every month
       interval: "monthly"
-    # Max 5 open pull requests
     open-pull-requests-limit: 20
     # Default: Always increase the version requirement to match the new version
     versioning-strategy: increase
