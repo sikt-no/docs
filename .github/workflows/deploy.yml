@@ -12,7 +12,6 @@ on:
       - '**.js'
       - 'package.json'
       - 'package-lock.json'
-      - 'build/CNAME'
 
 jobs:
   deploy:
@@ -62,4 +61,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # Build output to publish to the branch 'gh-pages'
           publish_dir: ./build
+          # Custom domain must be set with this Action, otherwise it won't be included!
+          cname: docs.uninett.no
           # Authorship should be implicit
