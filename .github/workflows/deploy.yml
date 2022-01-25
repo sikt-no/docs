@@ -12,6 +12,7 @@ on:
       - '**.js'
       - 'package.json'
       - 'package-lock.json'
+      - 'build/CNAME'
 
 jobs:
   deploy:

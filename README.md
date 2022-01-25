@@ -1,5 +1,7 @@
 # docs.uninett.no
 
+[![Deploy to GitHub Pages](https://github.com/sikt-no/docs/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/sikt-no/docs/actions/workflows/deploy.yml)
+
 This repository contains the site [docs.uninett.no](https://docs.uninett.no/).
 
 
