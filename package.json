@@ -15,7 +15,7 @@
     "lint": "git ls-files '*.js' '**/*.js' ':!:src/' | xargs ./node_modules/.bin/eslint"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.15",
+    "@docusaurus/core": "2.0.0-beta.16",
     "@docusaurus/preset-classic": "2.0.0-beta.15",
     "@mdx-js/react": "^1.6.21",
     "docusaurus-lunr-search": "^2.1.15",
