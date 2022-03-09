@@ -34,7 +34,7 @@ const topics = <>
     link="https://www.uninett.no/en/node/2055"
     imageUrl="img/sikt_logo.svg"
   >
-     Sikts beste praksis fagspesifikasjoner (UFS). Fagspesifikasjonene er nedskrevne og vedtatte anbefalinger tuftet på universitets- og høyskolesektorens kollektive IT-faglige erfaringer.
+     Sikts beste praksis fagspesifikasjoner (SFS). Fagspesifikasjonene er nedskrevne og vedtatte anbefalinger tuftet på universitets- og høyskolesektorens kollektive IT-faglige erfaringer.
   </Topic>
   <Topic
     title="Lokalnett - CNaaS"
