@@ -1,15 +1,15 @@
 ---
-title: Nødvendig informasjon før eskalering av lokalnett-relaterte saker til Uninett.
+title: Nødvendig informasjon før eskalering av lokalnett-relaterte saker til Sikt.
 sidebars_label: Informasjon ved eskalering
 ---
 
-![](/img/uninett_logo.svg)
+![](/img/sikt_logo.svg)
 
 ## Innledning
 
-Her finner du informasjon om hva som bør være med av informasjon i en sak som er relatert til problemer med lokalnett levert av Uninett. 
+Her finner du informasjon om hva som bør være med av informasjon i en sak som er relatert til problemer med lokalnett levert av Sikt. 
 
-Les [Driftsinstruks for kunder av "Lokalnett fra Uninett - CNaaS"](driftsinstruks-kunde) for å se hvordan du kontakter og eskalerer saker til Uninett.
+Les [Driftsinstruks for kunder av "Lokalnett fra Sikt - CNaaS"](driftsinstruks-kunde) for å se hvordan du kontakter og eskalerer saker til Sikt.
 
 ## Informasjon som bør være med i en sak
 
@@ -28,7 +28,7 @@ Les [Driftsinstruks for kunder av "Lokalnett fra Uninett - CNaaS"](driftsinstruk
 - Informasjon fra grunnleggende feilsøking. 
   - Ta med alt som ble avdekt under grunnleggende feilsøking (Se artikkel [Grunnleggende feilsøking ved problemer i lokalnett](grunnleggende-feilsok-lokalnett)). 
 
-Husk: heller for mye informasjon enn for lite. Dersom Uninett må etterspørre mer informasjon, så vil dette bidra til lengre løsningstid. 
+Husk: heller for mye informasjon enn for lite. Dersom Sikt må etterspørre mer informasjon, så vil dette bidra til lengre løsningstid. 
 
 
 
