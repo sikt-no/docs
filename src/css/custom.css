@@ -6,6 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  --ifm-link-color: #6F4DFA;
   --ifm-color-primary: #6F4DFA;
   --ifm-color-primary-dark: rgb(60, 13, 248);
   --ifm-color-primary-darker: rgb(42, 5, 191);
@@ -26,7 +27,3 @@
 html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
-
-a {
-  color: #0F0035;
-} 
