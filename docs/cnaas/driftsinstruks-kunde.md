@@ -21,13 +21,13 @@ Kunden skal sørge for en brukerstøtte-funksjon for henvendelser fra sine bruke
 
 Kunden skal også ha en eller flere tekniske ressurspersoner som skal utføre nødvendig lokalt arbeid for sine brukere og eventuelt Sikt ved behov. Noen kunder har ekstra avtale med Sikt hvor Sikt sørger for tilgang til tekniske ressurspersoner lokalt gjennom lokale universiteter/høgskoler. Disse kundene trenger da ikke egne tekniske ressurser lokalt. 
 
-### Sikt Servicesenter (USC)
+### Sikt Servicesenter (SSC)
 
-Sikts Servicesenter er Sikts single point of contact (SPOC) og 1.linje. Alle henvendelser som eskaleres fra kundens brukerstøtte skal gå til USC. Se kontaktinformasjon nedenfor.  
+Sikts Servicesenter er Sikts single point of contact (SPOC) og 1.linje. Alle henvendelser som eskaleres fra kundens brukerstøtte skal gå til SSC. Se kontaktinformasjon nedenfor.  
 
 ### Sikt 2. linje (Campustjenester)
 
-Fageksperter i Sikt Campustjenester fungerer som 2. linje i Sikt. Alle henvendelser som eskaleres fra USC går hit. 
+Fageksperter i Sikt Campustjenester fungerer som 2. linje i Sikt. Alle henvendelser som eskaleres fra SSC går hit. 
 
 ## Kontaktpunkter
 
@@ -45,7 +45,7 @@ Sikt registerer følgende kontaktpunkter i sine systemer som brukes ved behov:
 
 ### Kontaktpunkter hos Sikt {#kontaktsikt}
 
-Sikts single point of contact er alltid Sikt Servicesenter (USC).  
+Sikts single point of contact er alltid Sikt Servicesenter (SSC).  
 
 E-post: kontakt@sikt.no
 Telefon: 73 55 79 00
@@ -95,15 +95,15 @@ Dersom overvåkningssystemene ikke gir noe indikasjon på at det er noe feil så
 
 Se [Nødvendig informasjon før eskalering av lokalnett-relaterte saker til Sikt](info-ved-eskalering) for å se hva som må være med av informasjon før sak eskaleres til Sikt. Kontaktpunkt for Sikt finnes lengre opp i denne artikkelen under [Kontaktpunkter hos Sikt](#kontaktsikt).
 
-### Sikt Servicesenter (USC)
+### Sikt Servicesenter (SSC)
 
-USC har som ansvar å bistå kundens brukerstøtte i grunnleggende feilsøking og eventuelt eskalere hendelser/problemer og support-saker til Sikts 2. linje ved Sikt Campustjenester. 
+SSC har som ansvar å bistå kundens brukerstøtte i grunnleggende feilsøking og eventuelt eskalere hendelser/problemer og support-saker til Sikts 2. linje ved Sikt Campustjenester. 
 
-USC har også som ansvar å varsle kundens brukerstøtte ved planlagte endringer eller hendelser som oppdages av Sikt. Vanligvis vil USC varsle kunden om planlagte endringer minst 8 virkedager før endringstidspunktet. Ved hasteendringer, vil det varsles så tidlig som mulig, men kunden kan bli kontaktet på kontaktpunkt "Teknisk ansvarlig" for å gi innspill til tidspunkt for endringen. 
+SSC har også som ansvar å varsle kundens brukerstøtte ved planlagte endringer eller hendelser som oppdages av Sikt. Vanligvis vil SSC varsle kunden om planlagte endringer minst 8 virkedager før endringstidspunktet. Ved hasteendringer, vil det varsles så tidlig som mulig, men kunden kan bli kontaktet på kontaktpunkt "Teknisk ansvarlig" for å gi innspill til tidspunkt for endringen. 
 
 ### Sikt 2. linje (Campustjenester)
 
 Sikts 2. linje har som ansvar å utføre dypere feilsøking på hendelser/problemer og spørsmål fra kunden. 
 
-Ressurser her har også som ansvar å sørge for kontinuerlig drift og overvåkning av kundens lokalnett. De vil, gjennom USC, sørge for å varsle kunden ved avvik/hendelser og planlagte endringer. Planlagte endringer kan f.eks være halvårlig programvareoppgradering av komponeneter i kundens lokalnett. 
+Ressurser her har også som ansvar å sørge for kontinuerlig drift og overvåkning av kundens lokalnett. De vil, gjennom SSC, sørge for å varsle kunden ved avvik/hendelser og planlagte endringer. Planlagte endringer kan f.eks være halvårlig programvareoppgradering av komponeneter i kundens lokalnett. 
 

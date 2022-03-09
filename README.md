@@ -110,9 +110,9 @@ First install the version in use in `packages.json` in the `old`-directory:
 ```console
 $ mkdir -p /tmp/docusaurus-update/old
 $ cd /tmp/docusaurus-update/old
-$ npx create-docusaurus@2.0.0-beta.14 platon-sikt-no classic
+$ npx create-docusaurus@2.0.0-beta.14 docs-sikt-no classic
 [...]
-Success! Created platon-sikt-no
+Success! Created docs-sikt-no
 Inside that directory, you can run several commands:
 [...]
 Happy hacking!
@@ -123,9 +123,9 @@ Then install the latest version in the `new`-directory:
 ```console
 $ mkdir -p /tmp/docusaurus-update/new
 $ cd /tmp/docusaurus-update/new
-$ npx create-docusaurus@latest platon-sikt-no classic
+$ npx create-docusaurus@latest docs-sikt-no classic
 [...]
-Success! Created platon-sikt-no
+Success! Created docs-sikt-no
 Inside that directory, you can run several commands:
 [...]
 Happy hacking!
