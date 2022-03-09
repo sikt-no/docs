@@ -2,7 +2,7 @@
 title: Sameksistens på Wi-Fi i kontorbygg
 ---
 
-![](/img/uninett_logo.svg)
+![](/img/sikt_logo.svg)
 
 ## Innledning 
 
@@ -14,7 +14,7 @@ Wi-Fi bruker i dag frekvenser som gjør at signalene lett flyter utover i areale
 
 Når det eksisterer mange autonome Wi-Fi-løsninger for de forskjellige leietakerne i et bygg, så vil én leietaker lett kunne se signaler fra en annen leietakers Wi-Fi. Dette fordi at autonome systemer sjelden bryr seg om å gjøre signalforholdene optimale for noen andre enn seg selv. 
 
-*Dette dokumentet har som mål å informere om utfordringer dette kan skape i kontorbygg og hvilke kjøreregler Uninett anbefaler å ha for at Wi-Fi skal bli så godt som mulig for alle parter.*
+*Dette dokumentet har som mål å informere om utfordringer dette kan skape i kontorbygg og hvilke kjøreregler Sikt anbefaler å ha for at Wi-Fi skal bli så godt som mulig for alle parter.*
 
 ## Litt mer om frekvenser og kanaler
 

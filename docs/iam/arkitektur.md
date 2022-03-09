@@ -30,7 +30,7 @@ Felles IAM innfører ett felles produkt for forsyning, RapidIdentity (RI) fra Id
 * Rapid Identity Institution Service bestående av lokal lagringsstruktur (Portal Directory) samt en portal for sluttbrukere og forvaltere av tjenesten.
 
 
-I tillegg innføres en tjeneste for sikker identifisering og kontoaktivering for nye ansatte og studenter, Uninett Account Claim.
+I tillegg innføres en tjeneste for sikker identifisering og kontoaktivering for nye ansatte og studenter, Sikt Account Claim.
 
 
 ![systemarkitektur](/img/iam/systemarkitektur.png)

@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Uninett technical documentation',
-  tagline: 'Documentation for Uninett services',
+  title: 'Sikt technical documentation',
+  tagline: 'Documentation for Sikt services',
   url: 'https://docs.uninett.no/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -39,16 +39,16 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Uninett dokumentasjon',
+        title: 'Sikt dokumentasjon',
         logo: {
-          alt: 'Uninett logo',
-          src: 'img/uninett_logo.svg',
+          alt: 'Sikt logo',
+          src: 'img/sikt_logo.svg',
         },
       },
       footer: {
         style: 'dark',
         links: [],
-        copyright: `Copyright © ${new Date().getFullYear()} Uninett AS`,
+        copyright: `Copyright © ${new Date().getFullYear()} Sikt – Kunnskapssektorens tjenesteleverandør`,
       },
       prism: {
         theme: lightCodeTheme,
