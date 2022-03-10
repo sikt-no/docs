@@ -15,6 +15,12 @@
   --ifm-color-primary-lighter: rgb(169, 148, 252);
   --ifm-color-primary-lightest: rgb(197, 184, 253);
   --ifm-code-font-size: 95%;
+  font-family: sans-serif;
+  --ifm-heading-font-weight: 500;
+}
+
+.footer {
+  --ifm-footer-background-color: #0F0035;
 }
 
 .docusaurus-highlight-code-line {

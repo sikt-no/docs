@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Sikt technical documentation',
-  tagline: 'Documentation for Sikt services',
+  title: 'Sikt teknisk dokumentasjon',
+  tagline: 'Teknisk dokumentasjon på løsningene Sikt leverer for utdanning og forskning.',
   url: 'https://docs.uninett.no/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -39,15 +39,65 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Sikt dokumentasjon',
+        title: 'teknisk dokumentasjon',
         logo: {
           alt: 'Sikt logo',
           src: 'img/sikt_logo.svg',
+          srcDark: 'img/sikt_logo_white.svg',
         },
       },
       footer: {
+        logo: {
+          alt: 'Sikt Logo',
+          src: 'img/sikt_logo_white.svg',
+          width: 104,
+          height: 28,
+        },
         style: 'dark',
-        links: [],
+        links: [
+          {
+            title: 'Sikt Docs',
+            items: [
+              {
+                html: '<p>Teknisk dokumentasjon på fellesløsningene Sikt leverer for utdanning og forskning.</p>',
+              },
+            ],
+          },
+          {
+            title: 'Hvordan bidra?',
+            items: [
+              {
+                label: 'Endre innholdet fra nettleseren',
+                to: 'https://github.com/sikt-no/docs#editing-the-site-directly-from-the-web-browser',
+              },
+              {
+                label: 'Endre innholdet lokalt',
+                to: 'https://github.com/sikt-no/docs#editing-the-site-locally',
+              },
+              {
+                label: 'Opprette en issue i GitHub',
+                to: 'https://github.com/sikt-no/docs/issues',
+              },
+            ],
+          },
+          {
+            title: 'Kontaktinformasjon',
+            items: [
+              {
+                label: 'Kontakt oss',
+                to: 'https://sikt.no/kontakt-oss',
+              },
+              {
+                label: 'About Sikt',
+                to: 'https://sikt.no/about-sikt',
+              },
+              {
+                label: 'Personvernerklæring',
+                to: 'https://sikt.no/personvernerklaering',
+              },
+            ],
+          },
+        ],
         copyright: `Copyright © ${new Date().getFullYear()} Sikt – Kunnskapssektorens tjenesteleverandør`,
       },
       prism: {
@@ -55,7 +105,8 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       colorMode: {
-        disableSwitch: true,
+        defaultMode: 'light',
+        disableSwitch: false,
       },
     }),
     

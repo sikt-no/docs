@@ -1,0 +1,36 @@
+.description {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  /*
+  light color:
+  background-color: #F3F1FE;
+  color: #000; */
+  background-color: #0F0035;
+  color: #FFF;
+  display: flex;
+  padding: 4rem 2rem;
+}
+
+@media screen and (max-width: 996px) {
+  .description {
+    padding: 2rem;
+  }
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0F0035;
+}
