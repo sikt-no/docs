@@ -20,6 +20,10 @@ Hovedstegene i IAM består av:
 
 ![Forsyning og tilgangskontroll](/img/iam/figur1.png)
 
+Eksempler på høynivå arkitektur finner man i figurene under:
+![](/img/iam/arkitekturflyt1.png)
+![](/img/iam/arkitekturflyt2.png)
+
 
 ## Systemarkitektur
 
