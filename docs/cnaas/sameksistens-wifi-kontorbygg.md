@@ -2,8 +2,6 @@
 title: Sameksistens på Wi-Fi i kontorbygg
 ---
 
-![](/img/sikt_logo.svg)
-
 ## Innledning 
 
 Wi-Fi er i dag like vanlig og like viktig for bedrifter i et kontorbygg som ventilasjon og strøm. Det er da også viktig at det er stabilt og med tilstrekkelig kapasitet for at bedriftens ansatte skal kunne utføre sine arbeidsoppgaver og gjennomføre virtuelle møter. 

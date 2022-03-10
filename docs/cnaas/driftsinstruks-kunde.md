@@ -3,8 +3,6 @@ title: Driftsinstruks for kunder av "Lokalnett fra Sikt - CNaaS"
 sidebars_label: Driftsinstruks - kunde
 ---
 
-![](/img/sikt_logo.svg)
-
 ## Innledning
 
 Dette dokumentet har som mål å beskrive grensesnittet mellom Sikt og kunder av tjenesten "Lokalnett fra Sikt - CNaaS". 

@@ -4,11 +4,28 @@
 
 This repository contains the site [docs.uninett.no](https://docs.uninett.no/).
 
-
-## Editing the site
-
 This website is built using [Docusaurus 2](https://docusaurus.io/).
 
+## Editing the site directly from the web browser
+
+Editing the site directly on GitHub is suitable for non-technical personell who wish to edit the site contents as easy as possible. This can be performed through simply visiting the page you wish to edit, and then clicking on the "Edit this page" / pencil symbol link visible in the bottom left of the page.
+
+Another option is to [browse the Sikt Docs file structure directly on GitHub](https://github.com/sikt-no/docs/tree/master/docs), on GitHub you will be able to edit pages, upload images, create new pages and even create new folders which will represent a new Topic/subject if necessary.
+
+Do note that in order for this new Subject/Topic to be visible on the landing page you will have to add it to the index. Some experience with React.js will be beneficial for this task. If you require help feel free to contact Platon. You can add a new SUbject/Topic-component inside of the file located in src>pages>index.js. It should look similar to this:
+```xml
+  <Topic
+    title="mySubject"
+    link="docs/mySubject"
+    imageUrl="img/mySubjectImageIfAvailable.svg"
+  >
+    Write a short description about my subject here.
+  </Topic>
+```
+
+## Editing the site locally
+
+In order to edit this site locally you will have to clone the repository, commit your changes and initiate a pull request. For external contributors you may instead fork the repository and initiate a pull request from that fork.
 
 ### Installing a development environment
 

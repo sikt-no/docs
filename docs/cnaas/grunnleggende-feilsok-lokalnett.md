@@ -2,8 +2,6 @@
 title: Grunnleggende feilsøking ved problemer i lokalnett
 ---
 
-![](/img/sikt_logo.svg)
-
 ## Innledning
 
 Denne artikkelen har som mål å gi hjelp til brukerstøtte når brukere har problemer med tilkobling til eller bruk av lokalnettet. Den inneholder da litt tips og triks slik at brukerstøtte kan isolere problemet og gir viktig grunnlag for feilsøking ved eskalering til Sikt.

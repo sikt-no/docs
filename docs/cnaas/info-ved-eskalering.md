@@ -3,8 +3,6 @@ title: Nødvendig informasjon før eskalering av lokalnett-relaterte saker til S
 sidebars_label: Informasjon ved eskalering
 ---
 
-![](/img/sikt_logo.svg)
-
 ## Innledning
 
 Her finner du informasjon om hva som bør være med av informasjon i en sak som er relatert til problemer med lokalnett levert av Sikt. 
