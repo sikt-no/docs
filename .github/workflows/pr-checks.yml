@@ -27,7 +27,7 @@ jobs:
           node-version: 'lts/*'
 
       - name: Cache Node.js modules / dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         env:
           cache-name: cache-node-modules-pr-checks
         with:
