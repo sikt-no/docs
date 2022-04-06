@@ -13,11 +13,11 @@ include "uninetttopp.php3";
 
 <dl>
   <dt>REVISJON:
-  <dd>Verktøykasse-brukerdok.2021.01
+  <dd>Verktøykasse-brukerdok.2022.01
   <dt>ANSVARLIG:
-  <dd>Morten.Brekkevold@uninett.no
+  <dd>Morten.Brekkevold@sikt.no
   <dt>DATO:
-  <dd>2021-06-17
+  <dd>2022-04-06
 </dl>
 
 <hr>
@@ -41,8 +41,8 @@ include "uninetttopp.php3";
 
 Dette dokument er myntet på lokalt IKT driftspersonell ved
 høgskole/universitet som er bruker av verktøykassen.
-Verktøykassene er som kjent drevet fra Uninett. Driftsinstruks
-for Uninett beredskapsvakt
+Verktøykassene er som kjent drevet fra Sikt. Driftsinstruks
+for Sikt Service Center og beredskapsvakt
 <a
 href="https://kind.uninett.no/driftwiki/instruks/vk/index.html">foreligger
 i tillegg.</a> For en generell beskrivelse av verktøykassetjenesten, se
@@ -78,14 +78,14 @@ en forsvarlig programvareversjon.
 <h2><a name="Sikkerhetsdirektiv">Sikkerhetsdirektiv for verktøykassene</a></h2>
 
 <p>
-Uninett har driftsansvar for verktøykassene, se definert
+Sikt har driftsansvar for verktøykassene, se definert
 <a href="sikkerhetsdirektiv.html">sikkerhetsdirektiv</a> for detaljer rundt
 drift- og sikkerhetsopplegget.
 </p>
 
 <p>
-Siden driftsansvaret ligger til Uninett er ryddigste løsning at <em>kun</em>
-Uninett har root-privilegier på verktøykassene. Vi er naturligvis opptatt
+Siden driftsansvaret ligger til Sikt er ryddigste løsning at <em>kun</em>
+Sikt har root-privilegier på verktøykassene. Vi er naturligvis opptatt
 av at dere som brukere kan gjøre tilstrekkelig for å rette feil
 rundt applikasjonene m.m. Dette gjør vi ved å gi dere nødvendige
 sudo-rettigheter, samt lesetilgang til filer (se Brukertilgang under).
@@ -95,14 +95,14 @@ sudo-rettigheter, samt lesetilgang til filer (se Brukertilgang under).
 
 <ul>
   <li>
-    For driftshenvendelser, ta kontakt med <a href="mailto:kontakt@uninett.no">kontakt@uninett.no</a>
+    For driftshenvendelser, ta kontakt med <a href="mailto:kontakt@sikt.no">kontakt@sikt.no</a>
   </li>
   <li>
     For diskusjon/spørsmål om bruk av verktøyene, bruk <a href="mailto:vk@uninett.no">vk@uninett.no</a>.<br>
-    Alle som er registrert i Uninetts driftsdatabase som teknisk ansvarlig for en verktøykasse ute hos en kunde blir automatisk abonnent på denne listen.
+    Alle som er registrert i Sikts driftsdatabase som teknisk ansvarlig for en verktøykasse ute hos en kunde blir automatisk abonnent på denne listen.
   </li>
   <li>
-    Se ellers <a href="https://www.uninett.no/kontakt">kontaktadresser og telefonnumre på våre hjemmesider</a>
+    Se ellers <a href="https://sikt.no/kontakt-oss">kontaktadresser og telefonnumre på våre hjemmesider</a>
   </li>
 </ul>
 <h2><a name="Brukertilgang">Brukertilgang til verktøykassen</a></h2>
@@ -199,7 +199,7 @@ automatisert ved at en nattlig cronjobb sjekker inn ny versjon av alle
 filer som er endret. Alle endringer blir rapportert som epost til
 mottagere angitt via variabelen <tt>nocoperators</tt> i fila
 <tt>/etc/default/uninett.conf</tt> (merk at denne filen er styrt av
-Uninetts Puppet, ta kontakt med <a href="mailto:kontakt@uninett.no">kontakt@uninett.no</a> for å få gjort
+Sikts Puppet, ta kontakt med <a href="mailto:kontakt@sikt.no">kontakt@sikt.no</a> for å få gjort
 endringer). En varsling om låste RCS filer (avglemte innsjekkinger)
 blir også sendt periodisk til samme adresse.
 </p><p>
@@ -224,7 +224,7 @@ har satt passord blir dette benyttet ved radiusautentisering.
 Dersom bruker på nettutstyret logger seg på med <tt>@uninett.no</tt>-endelse
 så er radiustjener på verktøykassen satt opp til
 å relée forespørsler til radiustjener på <tt>trane.uninett.no</tt>.
-Således kan Uninett drift komme inn (dersom ønskelig).
+Således kan Sikt drift komme inn (dersom ønskelig).
 </p><p>
 
 Det som imidlertid må konfigureres er
@@ -244,7 +244,7 @@ client 128.39.109.0/26 {
 Det vi angir her at alle svitsjene i området 128.39.109.1-63 tillates
 å snakke radius med verktøykassen gitt at de er konfigurert med
 samme felles-hemmelighet. Endringer i <tt>/etc/freeradius/clients.conf</tt>
-styres med Puppet og må meldes inn til <a href="mailto:kontakt@uninett.no">kontakt@uninett.no</a>.
+styres med Puppet og må meldes inn til <a href="mailto:kontakt@sikt.no">kontakt@sikt.no</a>.
 </p>
 
 
@@ -269,10 +269,9 @@ verktøykassen, eller via NAV.
 
 <h2><a name="nav">NAV</a></h2>
 
-<p>NAV er omfattende å forklare. Vi vil her videreutvikle
-dokumentasjonen på
- <a
-href="https://nav.uninett.no/doc/latest">NAVs nettsider</a>. Litt starthjelp:
+<p>NAV er omfattende å forklare. Vi viser her
+til <a href="https://nav.readthedocs.io/en/latest/">NAVs egen
+dokumentasjon</a>.  Litt starthjelp:
 </p>
 
 
@@ -299,9 +298,9 @@ fila <var>/etc/nav/webfront/webfront.conf</var>.
 <h3>Sett mottaker av NAV-adminstrativ epost</h3>
 <p>
   All administrativ epost fra NAV sendes til driftspersonell hos
-  Uninett, som konfigurert av <em>Puppet</em> i variabelen
+  Sikt, som konfigurert av <em>Puppet</em> i variabelen
   <var>ADMIN_MAIL</var> i filen <var>/etc/nav/nav.conf</var>.  Dersom du
-  ønsker kopier av denne eposten, ta kontakt med Uninett.
+  ønsker kopier av denne eposten, ta kontakt med Sikt.
 </p>
 
 <h3>Sett passord til NAVs PostgreSQL-database</h3>
@@ -319,15 +318,10 @@ fila <var>/etc/nav/webfront/webfront.conf</var>.
   For at NAV skal overvåke nettverket ditt må den få &quot;seed&quot;-informasjon
   fra deg. Du bruker verktøyet <em>Seed Database</em> (fra
   Toolbox) til dette. Les mer om hvordan du
-  <a href="https://nav.uninett.no/doc/latest/intro/getting-started.html#seeding-your-database"
+  <a href="https://nav.readthedocs.io/en/latest/intro/getting-started.html#seeding-your-database"
   >legger inn seed-data i NAV</a> og <a
-  href="https://nav.uninett.no/doc/latest/intro/getting-organized.html"
+  href="https://nav.readthedocs.io/en/latest/intro/getting-organized.html"
   >hvordan du organiserer informasjonen</a> i NAVs offisielle dokumentasjon.
-
-  Det anbefales ellers å lese flere dokumenter under menyen
-  <a
-  href="https://nav.uninett.no/wiki/navconfiguration">NAV Configuration</a>.
-</p>
 
 <h3> Varslingssystemet Alert Profiles</h3>
 <p>
@@ -359,7 +353,7 @@ fila <var>/etc/nav/webfront/webfront.conf</var>.
 
 <h3><a name="feilsok-sms">Feilsøking av mobiltelefon/SMS-utsending</a></h3>
 
-<p>Dersom du har problemer med utsending av SMS fra verktøykassen, kan du gjøre litt førstelinjes feilsøking før du feilmelder situasjonen til <a href="mailto:kontakt@uninett.no">kontakt@uninett.no</a>.
+<p>Dersom du har problemer med utsending av SMS fra verktøykassen, kan du gjøre litt førstelinjes feilsøking før du feilmelder situasjonen til <a href="mailto:kontakt@sikt.no">kontakt@sikt.no</a>.
 </p>
 
 <ul>
@@ -420,17 +414,17 @@ og dytter disse innslagene til samme PostgreSQL-database.  <a
 href="https://nav.uninett.no/wiki/radius">Fremgangsmåten er dokumentert
 på NAV-wikien.</a></p>
 
-<p>Deretter må Uninett gjøre konfigurasjonsendringer på
+<p>Deretter må Sikt gjøre konfigurasjonsendringer på
 verktøykassens PostgreSQL-database, slik at denne tillater innlogging
 fra din FreeRADIUS-tjener.  Meld inn følgende detaljer til <a
-  href="mailto:kontakt@uninett.no">kontakt@uninett.no</a>:
+  href="mailto:kontakt@sikt.no">kontakt@sikt.no</a>:
 </p>
   <ul>
     <li>At du ønsker å sende FreeRADIUS accounting-logger til verktøykassen.</li>
     <li>IP-adressen(e) til din(e) FreeRADIUS-tjener(e).</li>
   </ul>
 
-<p>Uninett vil sørge for at det opprettes en PostgreSQL-bruker for
+<p>Sikt vil sørge for at det opprettes en PostgreSQL-bruker for
 radius accounting, og at denne gis tilgang til de riktige tabellene i
 NAV fra de gitte IP-adressene.  Du vil få et brukernavn og et passord
 til PostgreSQL-databasen, som skal brukes til å konfigurere
@@ -477,7 +471,7 @@ systemet startes opp.</p>
 
 <p>
 Kildene defineres under <kbd>sources</kbd> i
-<kbd>/etc/nfsen/nfsen.conf.local</kbd>. Denne filen konfigureres av Puppet; eventuelle endringsønsker må meldes til Uninett.
+<kbd>/etc/nfsen/nfsen.conf.local</kbd>. Denne filen konfigureres av Puppet; eventuelle endringsønsker må meldes til Sikt.
 </p>
 
 <p>
@@ -605,7 +599,7 @@ Her følger en liste og kort omtale:
 </ul>
 
 <h2><a name="hobbit">Hobbit/Xymon</a></h2>
-Brukerdokumentasjon for Hobbit, se <a href="http://drift.uninett.no/utstyr/vk/hobbit-vk.html"> her </a>
+Brukerdokumentasjon for Hobbit, se <a href="https://drift.uninett.no/utstyr/vk/hobbit-vk.html"> her </a>
 
 <h2><a name="fwbuilder">Firewall Builder (fwbuilder)</a></h2>
 <a href="http://drift.uninett.no/utstyr/vk/fwbuilder.html">Brukerdokumentasjon for Firewall Builder foreligger på en egen side</a>.
