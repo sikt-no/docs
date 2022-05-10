@@ -6,6 +6,16 @@ title: Grunnleggende feilsøking ved problemer i lokalnett
 
 Denne artikkelen har som mål å gi hjelp til brukerstøtte når brukere har problemer med tilkobling til eller bruk av lokalnettet. Den inneholder da litt tips og triks slik at brukerstøtte kan isolere problemet og gir viktig grunnlag for feilsøking ved eskalering til Sikt.
 
+## Feilsøkingsscript
+
+Vi har utarbeidet en liste over kommandoer som kan kjøres på en klient for å få mer info for feilsøking. Disse kommandoene har vi lagt inn i script-filer som kan lastes ned og kjøres på maskinene. MERK: Kjør dette når maskinen har problemer!! Det er liten vits å kjøre dette når maskinen IKKE har problemer. 
+
+Under kan du se en liste over script som kan kjøres på de forskellige operativsystemene. 
+
+### Windows
+
+Last ned og kjør scriptet `netinfo.cmd` på maskina som har problemer. Når dette scriptet kjøres så blir det laget en fil `netinfo.log` som kan vidersendes til CNaaS for dypere feilsøking.
+
 ## Trådbasert tilkobling 
 
 ### Sjekk at brukerpunktet er tilkoblet svitsjen i etasjefordeler/kommunikasjonsrom. 
