@@ -16,6 +16,8 @@ Under kan du se en liste over script som kan kjøres på de forskellige operativ
 
 Last ned og kjør scriptet `netinfo.cmd` på maskina som har problemer. Når dette scriptet kjøres så blir det laget en fil `netinfo.log` som kan vidersendes til CNaaS for dypere feilsøking.
 
+Last ned [netinfo.cmd](netinfo.cmd)
+
 ## Trådbasert tilkobling 
 
 ### Sjekk at brukerpunktet er tilkoblet svitsjen i etasjefordeler/kommunikasjonsrom. 
