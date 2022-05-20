@@ -14,9 +14,7 @@ Under kan du se en liste over script som kan kjøres på de forskellige operativ
 
 ### Windows
 
-Last ned og kjør scriptet `netinfo.cmd` på maskina som har problemer. Når dette scriptet kjøres så blir det laget en fil `netinfo.log` som kan vidersendes til CNaaS for dypere feilsøking.
-
-Last ned [netinfo.cmd](netinfo.cmd)
+Last ned [netinfo.cmd](netinfo.cmd). Du kan endre navnet på fila eller kjøre den med navnet som den får etter nedlasting. 
 
 ## Trådbasert tilkobling 
 
