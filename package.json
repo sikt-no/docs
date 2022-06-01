@@ -20,7 +20,7 @@
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
     "docusaurus-lunr-search": "^2.1.15",
-    "eslint": "^8.12.0",
+    "eslint": "^8.16.0",
     "eslint-plugin-react": "^7.29.4",
     "prism-react-renderer": "^1.2.1",
     "react": "^17.0.1",
