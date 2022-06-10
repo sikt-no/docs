@@ -4,7 +4,7 @@ title: Livssyklus for identitet og tilgang
 
 
 
-![Livssyklus tilganger](/img/iam/iamforvaltning.png)
+![Livssyklus tilganger](/img/iam/iamforvaltning.PNG)
 
 
 Integrasjonslaget, RI Connect, består av en rekke konnektorer (Action Set) som er utviklet etter omforent kravspesifikasjon for å motta kravstilte attributter fra kildesystem som SAP, FS og OrgReg  , prosessere denne informasjonen og forsyne en rekke målsystemer som AD, LDAP, Inspera og Adgangskontroll med informasjon om brukere og deres tilganger.
