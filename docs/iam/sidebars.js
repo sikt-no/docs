@@ -9,14 +9,14 @@ module.exports = [
       'iam/uib-pilot',
     ],
   },
-    {
+  {
     type: 'category',
     label: 'Prosessinformasjon',
     items: [
-       'iam/ansvar',
+      'iam/ansvar',
     ],
   },
-    {
+  {
     type: 'category',
     label: 'Produktinformasjon',
     items: [
@@ -29,7 +29,7 @@ module.exports = [
       'iam/rapportering',
     ],
   },
-    {
+  {
     type: 'category',
     label: 'Brukerinformasjon',
     items: [
