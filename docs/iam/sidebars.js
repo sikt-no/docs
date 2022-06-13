@@ -1,39 +1,51 @@
 module.exports = [
   'iam/index',
   'iam/gevinster',
-  'iam/arkitektur',
-  'iam/livssyklus',
-  'iam/brukernavn',
-  'iam/kildedata',
-  'iam/virksomhetsroller',
-  'iam/tilgangsstyring',
-  'iam/ansvar',
-  'iam/datamodell',
-  'iam/kontoaktivering',
-  'iam/passordpolicy',
-  'iam/rapportering',
   {
     type: 'category',
-    label: 'Integrasjon med målsystemer',
+    label: 'Prosjektinformasjon',
     items: [
-      'iam/rest-api',
+      'iam/prosjekt', 
+      'iam/uib-pilot',
     ],
   },
+  {
+    type: 'category',
+    label: 'Prosessinformasjon',
+    items: [
+      'iam/ansvar',
+    ],
+  },
+  {
+    type: 'category',
+    label: 'Produktinformasjon',
+    items: [
+      'iam/produkt',
+      'iam/arkitektur',
+      'iam/datamodell',
+      'iam/kildedata',
+      'iam/rest-api',
+      'iam/passordpolicy',
+      'iam/rapportering',
+    ],
+  },
+  {
+    type: 'category',
+    label: 'Brukerinformasjon',
+    items: [
+      'iam/kontoaktivering',
+      'iam/tilgangsstyring',
+    ],
+  },
+  'iam/livssyklus',
+  'iam/brukernavn',
+  'iam/virksomhetsroller',
   {
     type: 'category',
     label: 'UiB Pilot',
     items: [
-      'iam/uib-pilot',
       'iam/uib-targets',
     ],
   },
-  {
-    type: 'category',
-    label: 'Styringsdokumentasjon',
-    items: [
-      'iam/prosjekt',
-    ],
-  },
-  'iam/produkt',
   'iam/referanser',
 ];
