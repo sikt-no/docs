@@ -4,23 +4,24 @@ title: Passordpolicy
 
 
 
-## Valid characters
+## Gyldige tegn
 
-Password can only contain characters that are part of ISO 8859-1.
+Passordet kan kun inneholde tegn som er en del av ISO 8859-1.
 
 
-## Maximum password length
+## Passordlengde
 
-The password cannot be more than 127 characters.  
+Passordet kan maksimalt inneholde 127 tegn.
 
-## Minimum password complexity
+Minimum lengde varierer basert på kompleksiteten til passordet.
 
-The password must have a complexity of more than 32 points.
-
-Algorithm for calculating password complexity points:
+## Beregning av passord kompleksitet
 
 Kompleksiteten av et passord måles i poeng. Poengsummen et passord vil få er avhengig av bl.a. lengde og antall tegngrupper som er representert i passordet.
+Passordet må ha en kompleksitet på minst 32 poeng for å være gyldig.
 
+
+Algoritmen for å kalkulere kompleksitets poeng:
 * 4 poeng for det første tegnet i passordet
 * 2 poeng for hvert av de neste syv tegn
 * Hvert tegn fra tegn 9 til og med tegn 20 får 1.5 poeng
@@ -31,12 +32,17 @@ Kompleksiteten av et passord måles i poeng. Poengsummen et passord vil få er a
 
 Felles IAM har valgt å gjenbruke [samme passord policy som er brukt ved UiO](https://www.uio.no/tjenester/it/brukernavn-passord/passordtjenester/hjelp/kompleksitet.html), som er godt begrunnet.
 
-## Password cannot be reused
+## Gjenbruk av passord
 
-The password cannot be set to one of the previous passwords (of the same user).
+En bruker kan ikke gjenbruke et tidligere brukt passord.
 
-## Password expiration policy
+## Utløpstid på passord
 
-*We will propose to remove this part of the policy. Given the password rules above enforcing srong passwords for all accounts, and the extended use of MFA, password expiration will be re-evaluated.*
+Vi praktiserer ikke utløpstid på passord basert på anbefalinger fra blant annet [National Institute of Standards and Technology (NIST)](https://pages.nist.gov/800-63-FAQ/#q-b05).
 
-The password should expire 13 months after it is set. The user will be notified and encouraged to set a new password before it expires.
+Med et høyt kompleksitetskrav og bruk av tofaktorautentisering vil utløp av passord gjøre mer skade enn gagn.
+
+## Anbefalinger
+Bruk helst et helt nytt og unikt passord som ikke er det samme eller ligner på det du bruker på andre nettsteder.
+
+Vi støtter råd og anbefalinger fra [Nasjonal Sikkerhetsmyndighet (NSM)](https://nsm.no/fagomrader/digital-sikkerhet/rad-og-anbefalinger-innenfor-digital-sikkerhet/rad-og-anbefalinger-om-passord).
