@@ -40,7 +40,7 @@ En bruker kan ikke gjenbruke et tidligere brukt passord.
 
 Vi praktiserer ikke utløpstid på passord basert på anbefalinger fra blant annet [National Institute of Standards and Technology (NIST)](https://pages.nist.gov/800-63-FAQ/#q-b05).
 
-Med et høyt kompleksitetskrav og bruk av tofaktorautentisering vil utløp av passord gjøre mer skade enn gagn.
+Med et høyt kompleksitetskrav og bruk av tofaktorautentisering vil utløp av passord gjøre mer skade enn nytte.
 
 ## Anbefalinger
 Bruk helst et helt nytt og unikt passord som ikke er det samme eller ligner på det du bruker på andre nettsteder.
