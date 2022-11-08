@@ -74,4 +74,3 @@ For deg som er sluttbruker av IntArk, for eksempel forsker eller student.
 
 - [Kontaktinformasjonen til Sikt](https://sikt.no/kontakt-oss)
 - [Erfaringer fra andre](/docs/datadeling/erfaringer/)
-- [Kurs](/docs/datadeling/kurs)
