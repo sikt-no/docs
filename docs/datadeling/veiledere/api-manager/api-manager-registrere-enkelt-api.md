@@ -25,8 +25,6 @@ Fyll inn navn, versjonsnummer, beskrivelse og context-path for API-et. Bruk et g
 
 Context-path er en del av URL-en til APIet. Eksempelet over som fører til for UiOs gateway vil være tilgjengelig på URLen https://gw-uio.intark.uh-it.no/my-first-echo-api
 
-TODO: Legg til riktig link
-
 Merk at disse path-ene er en begrenset ressurs. Registrerer man f.eks. et utviklings-API under /personer , vil en ikke ha mulighet til å registrere test-miljø under /personer/test. Da kan det være bedre å bruke f.eks. /personer/utv/v1
 
 ![Context path example](/datadeling/img/image-20200924102426-3.png)

@@ -176,7 +176,7 @@ av hverandre.
 
 ## Notifikasjoner
 
-TODO: Flytt alt dette til "god-praksis".
+<!-- TODO: Flytt alt dette til "god-praksis". -->
 
 I IntArk bruker vi RabbitMQ primært for det vi kaller **tynne meldinger**,
 eller **notifikasjoner**. Notifikasjonene brukes primært til å informere om at
@@ -189,73 +189,58 @@ Datatilbyder må dokumentere sine notifikasjoner i sin institusjons API-katalog.
 
 For nyutviklede system, bør du vurdere å bruke standariserte format, for eksempel [CloudEvents](https://cloudevents.io/).
 
-TODO: Legg inn dømer frå CloudEvents! Resten er mindre viktig.
-
 For eksempel bruker Cerebrum og SAPUiO et notifikasjonsformat som er inspirert av [SCIM](http://www.simplecloud.info/) sitt [utkast til standard på et meldingsformat](https://tools.ietf.org/html/draft-hunt-idevent-scim-00), der vi bruker versjonen med minimalt med informasjon. Et eksempel på hvordan ei melding vil se ut, **omtrent**:
 
-```
-
+```json
 {
   // token identifier (unik id for meldingen)
   "jti": "4d3559ec67504aaba65d40b0363faad8",
   // endringer
-  "eventUris": [
-    "urn:ietf:params:event:SCIM:create"
-  ],
+  "eventUris": ["urn:ietf:params:event:SCIM:create"],
   // timestamp
   "iat": 1458496404,
   // issuer
   "iss": "https://cerebrum-uio.uio.no",
   // audience (spreads/kontekst) - gjør det enklere å forkaste meldinger du ikke er interessert i
-  "aud": [
-   "AD\_account",
-   "exchange\_acc@uio.no",
-   "LDAP\_account"
-  ],
+  "aud": ["AD_account", "exchange_acc@uio.no", "LDAP_account"],
   // URL til entitet (GET)
- **"sub": "https://cerebrum-ws.uio.no/v1/accounts/1234",**
+  "sub": "https://cerebrum-ws.uio.no/v1/accounts/1234",
   // Parametre til event - her: hvilke attributter hos objektet som er påviret - gjør det enklere å forkaste meldinger du ikke er interessert i
-  "urn:ietf:params:event:SCIM:create":{
-    "attributes":["id","name","userName","password","emails"],
+  "urn:ietf:params:event:SCIM:create": {
+    "attributes": ["id", "name", "userName", "password", "emails"]
   }
 }
-
 ```
-
-
 
 Andre system, som FS og TP, bruker et format som er avledet fra [JWT](https://jwt.io)-standarden. Et eksempel på en notifikasjon fra FS om at en person er oppdatert (routing key er i dette tilfelle _no.uio.fs.FS-prod.personer.update_)
 
-```
-
-{"sub": "personer/56154",
- "iss": "FS-prod",
- "iat": "1582344412462",
- "operation": "update",
- "jti": "35380ac0-247d-44b3-9be3-2f2dded049ee",
- "person\_id": "56154"}
+```json
+{
+  "sub": "personer/56154",
+  "iss": "FS-prod",
+  "iat": "1582344412462",
+  "operation": "update",
+  "jti": "35380ac0-247d-44b3-9be3-2f2dded049ee",
+  "person_id": "56154"
+}
 ```
 
 Det kan og være lurt å ta en avgjørelse om hvordan du skal referere til ressurser i kildesystem. For eksempel er vi bundet til et spesielt domene i dette tilfellet:
 
-```
-
-{"sub": "https://api-waygate.uio.no/eksempeltjeneste/5"}
+```json
+{ "sub": "https://api-waygate.uio.no/eksempeltjeneste/5" }
 ```
 
 Mens følgende ikke er bundet til en spesifikk maskin:
 
-```
-
-{"sub": "/5",
- "iss": "eksempeltjeneste"}
-
+```json
+{ "sub": "/5", "iss": "eksempeltjeneste" }
 ```
 
 Det samme kan du oppnå med en mer formalisert URN:
 
-```
-{"sub": "urn:eksempeltjeneste:5"}
+```json
+{ "sub": "urn:eksempeltjeneste:5" }
 ```
 
 I de to siste eksemplene har vi ikke inkludert informasjon om _hvor_ en ressurs er lokalisert. Når du henter ressursen må du da velge å slå opp maskinnavnet. Erfaringsmessig letter dette arbeidet med å flytte tjenester mellom forskjellige miljø.

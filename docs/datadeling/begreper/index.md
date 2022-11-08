@@ -19,7 +19,7 @@ Mange systemer har behov for å provisjoneres, for eksempel med alle
 brukerkontoer som skal ha tilgang. Begrepet Integrasjon brukes
 som regel om å koble sammen tjenester, mens provisjonering er det å flytte
 data. Alternativt kan et system bli oppdatert med informasjon ved
-behov, ved såkalt *Just In Time provisjonering (JIT)*. Et siste alternativ er
+behov, ved såkalt _Just In Time provisjonering (JIT)_. Et siste alternativ er
 systemer som ikke kan integrere, og du må legge inn data
 manuelt.
 
@@ -42,11 +42,9 @@ enhet.
 
 Se også: Autoritativt kildesystem
 
-<!-- TODO: flytt begrepa frå tabell til ein betre oversikt. Treng truleg å
-  ryddast i også. -->
-
 ## Andre begrep
 
+<!-- prettier-ignore -->
 | Begrep | Forklaring |
 | --- | --- |
 | Konsument | Rollen til en tjeneste eller system som ønsker å motta data fra en tilbyder. Avhengig av kontekst, kan dette også være snakk om en person, gruppe, enhet, utvikler eller sluttbruker. |

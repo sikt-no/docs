@@ -76,7 +76,7 @@ Token-basert autentisering er sikkert og fleksibelt å ta i bruk, om enn litt me
 Gatewayen kan autentisere seg med et klient-sertifikat. Dette er, som token-basert autentisering, mye sikrere enn ved bruk av API-nøkkel eller brukernavn og passord. Konfigureres under.
 
 SSL - Client Authentication
-[TODO-\> teste dette]
+
 Fyll inn type sertificat (PKCS#12,PFX, Java key store/PEM-sertifikat/nøkkel-par) samt lim inn sertifikat-fila (eller path til denne om den er gjort tilgjengelig på filsystemet til API gateway-en) og evt. passord
 
 ### Timeouts

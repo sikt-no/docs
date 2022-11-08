@@ -13,7 +13,7 @@ DFØs løsninger for økonomi og lønn brukes av mange i sektoren. DFØ tilbyr A
 
 DFØ tilbyr flere ulike API-er for ulike data, som ansattinformasjon, stillingsdata og organisasjonsdata. Se [DFØs API-portal](https://api-portal.dfo.no/) for mer informasjon.
 
-TODO: For å kunne bruke DFØs API må din institusjon bli "oppgradert" hos DFØ. Mange institusjoner må i dag forholde seg til CSV-filer fra DFØ. Dette må gjøres i dialog med DFØ, og dette vil kunne ta tid.
+For å kunne bruke DFØs API må din institusjon bli "oppgradert" hos DFØ. Mange institusjoner må i dag forholde seg til CSV-filer fra DFØ. Dette må gjøres i dialog med DFØ, og dette vil kunne ta tid.
 
 DFØ krever autentisering via
 [Maskinporten](https://samarbeid.digdir.no/maskinporten/maskinporten/25) i sin
@@ -32,8 +32,6 @@ DFØ er en fellestjeneste, og må/bør derfor settes opp likt hos alle institusj
 
 [Lonnssystem-api-template.json](Lonnssystem-api-template.json)
 
-
-
 ## Hvordan sette opp API-ene
 
 1. Registrer din institusjon hos Maskinporten, [se planleggingsaktiviteten her](https://samarbeid.digdir.no/maskinporten/konsument/119). Registrer deretter en integrasjon i maskinporten, se veiledning her(https://docs.digdir.no/docs/Maskinporten/maskinporten_sjolvbetjening_web.html) Sluttresultatet er at du har en integrasjon hvor du kan autentisere vha. virksomhetssertifikat eller et sertifikat du har laget selv (og som bare brukes mot denne integrasjonen) Integrasjonen må ha blitt tildelt de nødvendige scopes og du må ha issuer-ID tilgjengelig
@@ -45,8 +43,10 @@ DFØ er en fellestjeneste, og må/bør derfor settes opp likt hos alle institusj
    3. Hvis prod: gå inn på proxy -\> backend services. Fjern "-test" fra URLen slik at det står https://api.dfo.no
    4. Klikk på Design og policy-en HTTP Callout. Endre URL til den til tokentjenesten. Endre headeren X-Gravitee-Api-Key til nøkkelen fra punkt 2 om du har satt opp maskinporten-API i API Manager. Under headeren iss legger du inn ISSUER-ID for maskinporten-integrasjonen. Om du kjører token-tjenesten selv, konfigurer sikker autentisering og evt. headere/parametre etter behov.
 4. Registrer DFØ SAP som tjeneste i _Selvbetjeningsportalen for RabbitMQ_ (se [veileder for å registrere tjenesten](/docs/datadeling/veiledere/meldingsk%C3%B8/opprett-tjeneste)). Hent ut tilkoblingsdetaljene som det blir opplyst om.
+
    - Om DFØ skal publisere meldinger direkte til deres rabbitmq, Send med tilkoblingsdetaljene for publisering av notifikasjoner fra selvbetjeningsportalen. Passordet bør sendes på andre måter enn via e-post.
    - Om dere heller vil hente meldinger fra rabbitmq hos DFØ (eller en annen rabbitmq-installasjon) gjøres det vel å sette opp en shovel i rabbitMQ. Det finnes flere oppskrifter på hvordan man setter opp shovel. Her er oppskrift på en måte man kan sette det opp i rabbitMQ, mens man fremdeles gjør tilgangsstyring i BROM. Dette krever ekstra tilganger i rabbitMQ for å gjøre nødvendig oppsett.
+
      1. Registrer applikasjon i BROM. Velg at den skal publisere meldinger. Velg et godt navn og beskrivelse, dette er applikasjonen som utviklere abonnerer på om de vil ha meldinger fra deres SAP-installasjon
      2. (Valgfritt) For å lett kunne se om shovel-en fungerer kan du opprette en applikasjon som abonnerer på meldinger fra applikasjonen du opprettet i forrige punkt. Godkjenn denne. Når shovelen fungerer vil det komme meldinger inn i meldingskøen for denne applikasjonen. Merk: denne bør slettes i ettertid.
      3. Om IntArk-koordinator ikke har nødvendige rettigheter i rabbitMQ fra før,  kontakt support som oppretter bruker med nødvendinge rettigheter.

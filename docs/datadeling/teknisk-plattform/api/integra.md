@@ -1,5 +1,5 @@
 ---
-description: "Hjelp til oppsett av Integra sitt API.\n\n\nTODO: Uavklart, m\xE5 lages"
+description: "Hjelp til oppsett av Integra sitt API."
 title: Integra
 ---
 
@@ -7,23 +7,17 @@ title: Integra
 
 Hjelp til oppsett av Integra sitt API.
 
-TODO: Uavklart, må lages
-
 ## Om API-et
-
-TODO
 
 DFØs løsninger for økonomi og lønn brukes av mange i sektoren. DFØ tilbyr API som er felles for sektoren, men der hver institusjon får ut sine data.
 
 DFØ tilbyr flere ulike API-er for ulike data, som ansattinformasjon, stillingsdata og organisasjonsdata. Se [DFØs API-portal](https://api-portal.dfo.no/) for mer informasjon.
 
-TODO: For å kunne bruke DFØs API må din institusjon bli "oppgradert" hos DFØ. Mange institusjoner må i dag forholde seg til CSV-filer fra DFØ. Dette må gjøres i dialog med DFØ, og dette vil kunne ta tid.
+For å kunne bruke DFØs API må din institusjon bli "oppgradert" hos DFØ. Mange institusjoner må i dag forholde seg til CSV-filer fra DFØ. Dette må gjøres i dialog med DFØ, og dette vil kunne ta tid.
 
 ## Standardoppsett
 
-DFØ er en fellestjeneste, og må/bør derfor settes opp likt hos alle institusjoner. Du kan sette dette opp ved å laste inn fil med standardoppsett:
-
-**TODO.json**
+DFØ er en fellestjeneste, og må/bør derfor settes opp likt hos alle institusjoner. Du kan sette dette opp ved å laste inn fil med standardoppsett.
 
 ## Hvordan sette opp API-ene
 
@@ -32,10 +26,10 @@ DFØ er en fellestjeneste, og må/bør derfor settes opp likt hos alle institusj
 3. Du som er lokal tjenesteier for DFØ må kontakte DFØ om API-et. Vanligvis gjøres dette ved å sende en e-post til integrasjon@dfo.no med:
    1. Be om å få API-nøkkel som gir full tilgang til din institusjons data i DFØs API-er.
    2. Send med tilkoblingsdetaljene for publisering av notifikasjoner fra selvbetjeningsportalen. Passordet bør sendes på andre måter enn via e-post.
-4. Når du har fått API-nøkler, må du legge de inn i API manager. (TODO: Lag veileder for dette?)
+4. Når du har fått API-nøkler, må du legge de inn i API manager.
    1. Logg på API manager
    2. Gå til ditt DFØ-API
-   3. Gå til siden "meta" TODO
+   3. Gå til siden "meta"
    4. Legg inn API-nøklene i feltet **value**, der name-feltet heter "DFØ ansatt", "DFØ stilling", og "DFØ organisasjon", etc.
 
 API-et og meldingshåndtering er nå satt opp.

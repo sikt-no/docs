@@ -1,5 +1,5 @@
 ---
-description: "Hjelp til oppsett av Inspera sitt API.\n\n\nTODO: test/verifisering"
+description: "Hjelp til oppsett av Inspera sitt API."
 title: Inspera
 ---
 
@@ -13,7 +13,7 @@ DFØs løsninger for økonomi og lønn brukes av mange i sektoren. DFØ tilbyr A
 
 DFØ tilbyr flere ulike API-er for ulike data, som ansattinformasjon, stillingsdata og organisasjonsdata. Se [DFØs API-portal](https://api-portal.dfo.no/) for mer informasjon.
 
-TODO: For å kunne bruke DFØs API må din institusjon bli "oppgradert" hos DFØ. Mange institusjoner må i dag forholde seg til CSV-filer fra DFØ. Dette må gjøres i dialog med DFØ, og dette vil kunne ta tid.
+For å kunne bruke DFØs API må din institusjon bli "oppgradert" hos DFØ. Mange institusjoner må i dag forholde seg til CSV-filer fra DFØ. Dette må gjøres i dialog med DFØ, og dette vil kunne ta tid.
 
 ## Standardoppsett
 
