@@ -11,13 +11,9 @@ title: Forvaltning av tilganger til API
 
 # Forvaltning av tilganger til API
 
-TODO: Dette er foreløpig kun et forslag
-
 Informasjonen som er lagret i ulike systemer og som finnes tilgjengelige bak f.eks. API er ofte nyttig for andre. De bør få tilgang til denne informasjonen. Samtidig må vi sikre at informasjon som er fortrolig eller sensitiv ikke kommer på avveie.
 
 Det er derfor viktig å ha rutiner for hvem som skal ha og ikke ha tilgang til informasjon og data.
-
-TODO: Dette er foreløpig kun et forslag
 
 ${resource:toc title=[Innholdsfortegnelse:]}
 I API manager spør man om tilgang ved å [opprette en applikasjon](https://www.usit.uio.no/prosjekter/datadeling/arbeidsomrader/integrasjonsarkitektur/dokumentasjon/veiledere/api-manager/api-manager-be-om-tilgang.html#toc2), og søker om å [abonnere på en plan](https://www.usit.uio.no/prosjekter/datadeling/arbeidsomrader/integrasjonsarkitektur/dokumentasjon/veiledere/api-manager/api-manager-be-om-tilgang.html#toc4) for et API som er gjort tilgjengelig. For deg som forvalter tilgang til et API, og skal behandle søknader og avgjøre om applikasjoner skal få tilgang eller ikke, er det en fordel om rutiner og vilkår er klargjort på forhånd.

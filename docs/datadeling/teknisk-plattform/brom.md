@@ -72,8 +72,6 @@ Når en applikasjon får tilgang til en annen applikasjons notifikasjoner, sette
 
 [![Bildet kan inneholde: font, rektangel, parallell, diagram.](/datadeling/img/brom-flow-0.svg)](/datadeling/img/brom-flow-0.svg)
 
-
-
 Selvbetjeningsportalen for RabbitMQ konfigureres også opp til å vere autentiserings- og autorisasjonskilde for RabbitMQ. Det betyr at applikasjoner i selvbetjeningsportalen også kan brukes til å logge på i RabbitMQ sitt managementgrensesnitt. Navnet og passordet til applikasjonen benyttes for å logge inn i managementgrensesnittet. Man får bare tilgang til data og oppsett til den relaterte applikasjonen.
 
 Selvbetjeningsportalen kjører i IntArks tekniske plattform. Se [oversikt over den tekniske plattformen for URL](/docs/datadeling/teknisk-plattform/oversikt).
@@ -112,8 +110,7 @@ RabbitMQ sletter "shovel" som kopierer tilbyderens meldinger over til konsumente
 
 Gruppen/brukerne får full tilgang til å administrere applikasjonen i Selvbetjeningsportalen. Dette inkluderer også tilgang til applikasjonens passord i RabbitMQ, som betyr at gruppen/brukerne også får tilgang til å administrere vhosten i RabbitMQ.
 
-- **Flere applikasjoner kan abonnere på hverandre sine meldinger.**  
-  TODO?
+- **Flere applikasjoner kan abonnere på hverandre sine meldinger.**
 
 [![](/datadeling/img/brom-flow.svg)](/datadeling/img/brom-flow.svg)
 

@@ -11,8 +11,6 @@ Må svare ut:
 
 Hva må Uninett gjøre? Hva må USIT gjøre? Hva kan/må institusjonene gjøre?
 
-TODO: Fyll ut
-
 Teknisk plattform skal dekke prosessene beskrevet i referansearkitekturen for datadeling i UHF-sektoren:
 
 ![](/datadeling/img/arch-datautveksling.png)

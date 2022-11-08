@@ -59,7 +59,7 @@ For å endre en plan, klikk på blyant-ikonet for å redigere. Man må gå gjenn
 
 ## Avslutte planer
 
-For å gjøre en plan utilgjengelig for nye abonneneter gjør man dem Deprecated. Eksisterende abonnenter vil fortsette å fungere (TODO: sjekke om epost for å bytte blir sendt), men nye applikasjoner som vil bruke API-et må velge en annen plan. Ved å lukke planen vil eksisterende abonnement slutte å fungere.
+For å gjøre en plan utilgjengelig for nye abonneneter gjør man dem Deprecated. Eksisterende abonnenter vil fortsette å fungere, men nye applikasjoner som vil bruke API-et må velge en annen plan. Ved å lukke planen vil eksisterende abonnement slutte å fungere.
 
 ## Opprette plan med få rettigheter og begrensning av bruk
 
@@ -75,7 +75,7 @@ På side 3, Restrictions, huk av for Path Authorization. I dette eksempelet bruk
 
 Du kan legge på så mange path pattern i hvitelist som du vil. Når du har lagt inn en eller flere hvitelister vil alle andre paths være svartelistet. Tilsvarende til alle endre være godkjente om du svartelister en eller flere path.
 
-Det fungerer ikke å kombinere svartelister og hvitelister (TODO: teste at det er slik). Om begge typer er definert vil kun hvitelistene fungere (TODO: test).
+Det fungerer ikke å kombinere svartelister og hvitelister. Om begge typer er definert vil kun hvitelistene fungere.
 
 Methods som blir brukt her blir også kalt HTTP verbs.
 
