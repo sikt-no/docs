@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="206.10698mm"
+   height="130.02081mm"
+   viewBox="0 0 206.10698 130.02081"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="forenkla-queue-exchange.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="342.53051"
+     inkscape:cy="4.357429"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-2.3352027,-2.8176246)">
+    <rect
+       id="rect7645"
+       width="76.692924"
+       height="62.505093"
+       x="2.3352027"
+       y="2.8176246"
+       ry="2.688108"
+       style="fill:#dbdbe3;stroke-width:0.25264084" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.97818398px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.21311699"
+       x="23.146135"
+       y="11.223676"
+       id="text7649"><tspan
+         sodipodi:role="line"
+         id="tspan7647"
+         x="23.146135"
+         y="11.223676"
+         style="font-weight:bold;font-size:4.54649591px;stroke-width:0.21311699">Applikasjon A</tspan></text>
+    <rect
+       style="fill:#afdde9;stroke:#000000;stroke-width:0.29499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect7651"
+       width="67.111351"
+       height="17.576874"
+       x="7.0711155"
+       y="15.149766"
+       ry="2.4053106" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.6940279px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.21311699"
+       x="11.508504"
+       y="22.651245"
+       id="text8460"><tspan
+         sodipodi:role="line"
+         x="11.508504"
+         y="22.651245"
+         style="stroke-width:0.21311699"
+         id="tspan8462"><tspan
+   style="font-weight:bold;stroke-width:0.21311699"
+   id="tspan8468">exchange</tspan> - Tjenesten </tspan><tspan
+         sodipodi:role="line"
+         x="11.508504"
+         y="27.26878"
+         style="stroke-width:0.21311699"
+         id="tspan8466">publiserer sine meldinger her</tspan></text>
+    <g
+       id="g8528"
+       transform="matrix(0.80548155,0,0,0.80548155,-2.103164,-1.8872149)">
+      <rect
+         ry="4.2979493"
+         y="46.875469"
+         x="11.359402"
+         height="31.407387"
+         width="40.252033"
+         id="rect7651-3"
+         style="fill:none;stroke:#000000;stroke-width:0.30540738;stroke-miterlimit:4;stroke-dasharray:0.61081474, 0.61081474;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         id="text8460-4"
+         y="55.425163"
+         x="14.517567"
+         style="font-style:normal;font-weight:normal;font-size:4.58611107px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           id="tspan8466-5"
+           style="stroke-width:0.26458332"
+           y="55.425163"
+           x="14.517567"
+           sodipodi:role="line"><tspan
+   id="tspan8509"
+   style="font-weight:bold">kø</tspan> for </tspan><tspan
+           id="tspan8515"
+           style="stroke-width:0.26458332"
+           y="61.157803"
+           x="14.517567"
+           sodipodi:role="line">meldinger </tspan><tspan
+           id="tspan8517"
+           style="stroke-width:0.26458332"
+           y="66.890442"
+           x="14.517567"
+           sodipodi:role="line">fra en </tspan><tspan
+           id="tspan8519"
+           style="stroke-width:0.26458332"
+           y="72.623077"
+           x="14.517567"
+           sodipodi:role="line">applikasjon</tspan></text>
+    </g>
+    <rect
+       id="rect7645-4"
+       width="76.692932"
+       height="62.692188"
+       x="131.51604"
+       y="2.8176246"
+       ry="2.6961539"
+       style="fill:#dbdbe3;stroke-width:0.25301868" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.97818398px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.21311699"
+       x="152.32697"
+       y="11.223675"
+       id="text7649-6"><tspan
+         sodipodi:role="line"
+         id="tspan7647-2"
+         x="152.32697"
+         y="11.223675"
+         style="font-weight:bold;font-size:4.54649591px;stroke-width:0.21311699">Applikasjon B</tspan></text>
+    <rect
+       style="fill:#afdde9;stroke:#000000;stroke-width:0.29484066;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect7651-2"
+       width="67.111351"
+       height="17.576874"
+       x="136.25195"
+       y="15.149767"
+       ry="2.4053106" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.6940279px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.21311699"
+       x="140.68935"
+       y="22.651247"
+       id="text8460-8"><tspan
+         sodipodi:role="line"
+         x="140.68935"
+         y="22.651247"
+         style="stroke-width:0.21311699"
+         id="tspan8462-4"><tspan
+   style="font-weight:bold;stroke-width:0.21311699"
+   id="tspan8468-9">exchange</tspan> - Tjenesten </tspan><tspan
+         sodipodi:role="line"
+         x="140.68935"
+         y="27.268782"
+         style="stroke-width:0.21311699"
+         id="tspan8466-2">publiserer sine meldinger her</tspan></text>
+    <g
+       id="g8528-3"
+       transform="matrix(0.80548155,0,0,0.80548155,127.07766,-1.887215)">
+      <rect
+         ry="4.2979493"
+         y="46.875469"
+         x="11.359402"
+         height="31.407387"
+         width="40.252033"
+         id="rect7651-3-56"
+         style="fill:#d7eef4;stroke:#000000;stroke-width:0.30523083;stroke-miterlimit:4;stroke-dasharray:0.30523079, 0.30523079;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         id="text8460-4-44"
+         y="55.425163"
+         x="14.517567"
+         style="font-style:normal;font-weight:normal;font-size:4.58611107px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           id="tspan8466-5-4"
+           style="stroke-width:0.26458332"
+           y="55.425163"
+           x="14.517567"
+           sodipodi:role="line"><tspan
+   id="tspan8509-9"
+   style="font-weight:bold">kø</tspan> for </tspan><tspan
+           id="tspan8515-49"
+           style="stroke-width:0.26458332"
+           y="61.157803"
+           x="14.517567"
+           sodipodi:role="line">meldinger </tspan><tspan
+           id="tspan8517-8"
+           style="stroke-width:0.26458332"
+           y="66.890442"
+           x="14.517567"
+           sodipodi:role="line">fra </tspan><tspan
+           id="tspan8519-3"
+           style="stroke-width:0.26458332"
+           y="72.623077"
+           x="14.517567"
+           sodipodi:role="line">applikasjon A</tspan></text>
+    </g>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.24600001;stroke-miterlimit:4;stroke-dasharray:0.246, 0.246;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect7651-3-7-9"
+       width="32.422272"
+       height="25.298071"
+       x="170.96552"
+       y="35.87011"
+       ry="3.4619188" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.6940279px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.21311699"
+       x="173.50937"
+       y="42.756733"
+       id="text8460-4-4-7"><tspan
+         sodipodi:role="line"
+         x="173.50937"
+         y="42.756733"
+         style="stroke-width:0.21311699"
+         id="tspan8466-5-6-6"><tspan
+   style="font-weight:bold;stroke-width:0.21311699"
+   id="tspan8509-7-9">kø</tspan> for </tspan><tspan
+         sodipodi:role="line"
+         x="173.50937"
+         y="47.374268"
+         style="stroke-width:0.21311699"
+         id="tspan8515-4-4">meldinger </tspan><tspan
+         sodipodi:role="line"
+         x="173.50937"
+         y="51.991802"
+         style="stroke-width:0.21311699"
+         id="tspan8517-7-7">fra en annen </tspan><tspan
+         sodipodi:role="line"
+         x="173.50937"
+         y="56.609337"
+         style="stroke-width:0.21311699"
+         id="tspan8519-4-2">applikasjon</tspan></text>
+    <g
+       id="g9130"
+       transform="matrix(0.91007432,0,0,0.91007432,8.7164683,5.0460063)">
+      <path
+         sodipodi:nodetypes="cccccccc"
+         inkscape:connector-curvature="0"
+         id="path8868"
+         d="M 80.885654,40.906037 V 53.74044 l 39.117686,0.242157 0.0754,11.865762 L 131.38443,47.68648 119.928,29.282444 v 11.623602 z"
+         style="fill:none;stroke:#000000;stroke-width:0.38211805px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         id="text8876"
+         y="45.778122"
+         x="82.677628"
+         style="font-style:normal;font-weight:normal;font-size:4.58611107px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           id="tspan8878"
+           style="font-weight:bold;font-size:3.52777767px;line-height:0;text-align:start;text-anchor:start;stroke-width:0.26458332"
+           y="45.778122"
+           x="82.677628"
+           sodipodi:role="line">Tilgang </tspan><tspan
+           id="tspan8882"
+           style="font-size:3.52777767px;line-height:0;text-align:start;text-anchor:start;stroke-width:0.26458332"
+           y="51.510761"
+           x="82.677628"
+           sodipodi:role="line">(meldinger kopieres)</tspan></text>
+    </g>
+    <rect
+       id="rect7645-4-0"
+       width="76.69294"
+       height="61.756744"
+       x="131.74924"
+       y="71.081688"
+       ry="2.6559241"
+       style="fill:#dbdbe3;stroke-width:0.25112391" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.97818398px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.21311699"
+       x="152.56017"
+       y="79.48774"
+       id="text7649-6-9"><tspan
+         sodipodi:role="line"
+         id="tspan7647-2-1"
+         x="152.56017"
+         y="79.48774"
+         style="font-weight:bold;font-size:4.54649591px;stroke-width:0.21311699">Applikasjon C</tspan></text>
+    <rect
+       style="fill:#afdde9;stroke:#000000;stroke-width:0.29484066;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect7651-2-5"
+       width="67.111351"
+       height="17.576874"
+       x="136.48515"
+       y="83.413826"
+       ry="2.4053106" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.6940279px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.21311699"
+       x="140.92255"
+       y="90.915306"
+       id="text8460-8-6"><tspan
+         sodipodi:role="line"
+         x="140.92255"
+         y="90.915306"
+         style="stroke-width:0.21311699"
+         id="tspan8462-4-1"><tspan
+   style="font-weight:bold;stroke-width:0.21311699"
+   id="tspan8468-9-1">exchange</tspan> - Tjenesten </tspan><tspan
+         sodipodi:role="line"
+         x="140.92255"
+         y="95.532845"
+         style="stroke-width:0.21311699"
+         id="tspan8466-2-6">publiserer sine meldinger her</tspan></text>
+    <g
+       id="g8528-3-2"
+       transform="matrix(0.80548155,0,0,0.80548155,127.31085,66.37685)">
+      <rect
+         ry="4.2979493"
+         y="46.875469"
+         x="11.359402"
+         height="31.407387"
+         width="40.252033"
+         id="rect7651-3-56-1"
+         style="fill:#d7eef4;stroke:#000000;stroke-width:0.30523083;stroke-miterlimit:4;stroke-dasharray:0.30523079, 0.30523079;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         id="text8460-4-44-7"
+         y="55.425163"
+         x="14.517567"
+         style="font-style:normal;font-weight:normal;font-size:4.58611107px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           id="tspan8466-5-4-8"
+           style="stroke-width:0.26458332"
+           y="55.425163"
+           x="14.517567"
+           sodipodi:role="line"><tspan
+   id="tspan8509-9-1"
+   style="font-weight:bold">kø</tspan> for </tspan><tspan
+           id="tspan8515-49-8"
+           style="stroke-width:0.26458332"
+           y="61.157803"
+           x="14.517567"
+           sodipodi:role="line">meldinger </tspan><tspan
+           id="tspan8517-8-1"
+           style="stroke-width:0.26458332"
+           y="66.890442"
+           x="14.517567"
+           sodipodi:role="line">fra </tspan><tspan
+           id="tspan8519-3-4"
+           style="stroke-width:0.26458332"
+           y="72.623077"
+           x="14.517567"
+           sodipodi:role="line">applikasjon A</tspan></text>
+    </g>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.24600001;stroke-miterlimit:4;stroke-dasharray:0.246, 0.246;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect7651-3-7-9-8"
+       width="32.422272"
+       height="25.298071"
+       x="171.19872"
+       y="104.13418"
+       ry="3.4619188" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.6940279px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.21311699"
+       x="173.74255"
+       y="111.0208"
+       id="text8460-4-4-7-8"><tspan
+         sodipodi:role="line"
+         x="173.74255"
+         y="111.0208"
+         style="stroke-width:0.21311699"
+         id="tspan8466-5-6-6-5"><tspan
+   style="font-weight:bold;stroke-width:0.21311699"
+   id="tspan8509-7-9-0">kø</tspan> for </tspan><tspan
+         sodipodi:role="line"
+         x="173.74255"
+         y="115.63834"
+         style="stroke-width:0.21311699"
+         id="tspan8515-4-4-2">meldinger </tspan><tspan
+         sodipodi:role="line"
+         x="173.74255"
+         y="120.25587"
+         style="stroke-width:0.21311699"
+         id="tspan8517-7-7-4">fra en annen</tspan><tspan
+         sodipodi:role="line"
+         x="173.74255"
+         y="124.87341"
+         style="stroke-width:0.21311699"
+         id="tspan8519-4-2-5">applikasjon </tspan></text>
+    <g
+       id="g9124"
+       transform="matrix(0.79904582,0.4356157,-0.4356157,0.79904582,73.997652,-44.107501)">
+      <path
+         sodipodi:nodetypes="cccccccc"
+         inkscape:connector-curvature="0"
+         id="path8868-7"
+         d="m 74.425952,108.86804 v 12.83441 l 39.952918,0.24215 0.077,11.86577 11.54707,-18.16188 -11.70103,-18.404038 v 11.623598 z"
+         style="fill:none;stroke:#000000;stroke-width:0.38617572px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         id="text8876-1"
+         y="113.74013"
+         x="76.757355"
+         style="font-style:normal;font-weight:normal;font-size:4.58611107px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           id="tspan8878-2"
+           style="font-weight:bold;font-size:3.52777767px;line-height:0;text-align:start;text-anchor:start;stroke-width:0.26458332"
+           y="113.74013"
+           x="76.757355"
+           sodipodi:role="line">Tilgang </tspan><tspan
+           id="tspan8882-0"
+           style="font-size:3.52777767px;line-height:0;text-align:start;text-anchor:start;stroke-width:0.26458332"
+           y="119.47276"
+           x="76.757355"
+           sodipodi:role="line">(meldinger kopieres)</tspan></text>
+    </g>
+  </g>
+</svg>
