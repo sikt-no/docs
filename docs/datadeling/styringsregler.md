@@ -294,7 +294,7 @@ disse konsumentene må følge.
 Institusjonene trenger å ha oversikt og kontroll over hvem som har tilgang til
 deres data.
 
-Se også de [tekniske retningslinjene](https://www.usit.uio.no/prosjekter/datadeling/arbeidsomrader/integrasjonsarkitektur/dokumentasjon/teknisk-plattform/oversikt.html) for mer detaljer om sikring av tjenester og integrasjoner.
+Se også de [tekniske retningslinjene](/docs/datadeling/teknisk-plattform/oversikt) for mer detaljer om sikring av tjenester og integrasjoner.
 
 <table>
     <thead>
@@ -329,8 +329,6 @@ referansearkitekturen for deling av data i høyere utdanning og
 forsking](https://unit-norge.github.io/unit-ra/main/B%C3%B8ker/Referansearkitektur%20for%20deling%20av%20data%20i%20h%C3%B8yere%20utdanning%20og%20forsking.html#_roller_og_ansvar_for_informasjonsforvaltning).
 Se også [IntArk sin anbefaling relatert til
 rollene](/docs/datadeling/hva-er/roller/).
-
-
 
 <table>
     <thead>
