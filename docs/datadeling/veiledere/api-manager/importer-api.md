@@ -33,5 +33,5 @@ API-definisjoner, men det er ofte ønskelig med et mer beskrivende navn.
 
 Under Proxy og Endpoints, sjekk at URL-en til backend er riktig. Autentisering
 mot backend er ofte ikke satt opp. Se veilederen for å [Konfigurere
-backend](https://www.usit.uio.no/prosjekter/datadeling/arbeidsomrader/integrasjonsarkitektur/dokumentasjon/veiledere/api-manager/backend.html)
+backend](/docs/datadeling/veiledere/api-manager/backend)
 for dette.

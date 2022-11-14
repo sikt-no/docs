@@ -69,7 +69,7 @@ Proxy-konfigurasjon gjøres ogå under HTTP-konfigurasjon. I "CONFIGURATION" men
 
 Ved token-basert autentisering menes som oftest autentisering med Java Web Tokens (JWTs). Disse er oftest kortvarige og må genereres med jevne mellomrom, f.eks. hver time eller hvert tiende minutt. De kan også være for engangsbruk. Som oftest må man lage et en-gangs-token, kontakte en Authorization Server med det genererte en-gangs-tokenet, og få tilbake et token som er gyldig i en kort stund.
 
-Token-basert autentisering er sikkert og fleksibelt å ta i bruk, om enn litt mer komplisert å konfigurere. Dette gjøres ved hjelp av policies eller et annet API. [Se egen veiledning](https://www.usit.uio.no/prosjekter/datadeling/arbeidsomrader/integrasjonsarkitektur/dokumentasjon/veiledere/api-manager/jwt-mot-backend.html) for detaljert fremgangsmåte.
+Token-basert autentisering er sikkert og fleksibelt å ta i bruk, om enn litt mer komplisert å konfigurere. Dette gjøres ved hjelp av policies eller et annet API. [Se egen veiledning](/docs/datadeling/veiledere/api-manager/jwt-mot-backend) for detaljert fremgangsmåte.
 
 ### Sertifikater
 

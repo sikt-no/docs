@@ -22,7 +22,7 @@ Utvalg av veiledere for IntArks API manager, Gravitee.
   Veiledning for hvordan man registrerer et enkelt API i Gravitee. I tillegg
   til å registrere API må man opprette en eller flere planer.
 
-- [Forvaltning av tilganger til API.](https://www.usit.uio.no/prosjekter/datadeling/arbeidsomrader/integrasjonsarkitektur/dokumentasjon/veiledere/api-manager/api-tilganger)
+- [Forvaltning av tilganger til API.](/docs/datadeling/veiledere/api-manager/api-tilganger.md)
 
 ## Meldingskø
 

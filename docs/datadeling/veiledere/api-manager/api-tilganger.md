@@ -15,8 +15,7 @@ Informasjonen som er lagret i ulike systemer og som finnes tilgjengelige bak f.e
 
 Det er derfor viktig å ha rutiner for hvem som skal ha og ikke ha tilgang til informasjon og data.
 
-${resource:toc title=[Innholdsfortegnelse:]}
-I API manager spør man om tilgang ved å [opprette en applikasjon](https://www.usit.uio.no/prosjekter/datadeling/arbeidsomrader/integrasjonsarkitektur/dokumentasjon/veiledere/api-manager/api-manager-be-om-tilgang.html#toc2), og søker om å [abonnere på en plan](https://www.usit.uio.no/prosjekter/datadeling/arbeidsomrader/integrasjonsarkitektur/dokumentasjon/veiledere/api-manager/api-manager-be-om-tilgang.html#toc4) for et API som er gjort tilgjengelig. For deg som forvalter tilgang til et API, og skal behandle søknader og avgjøre om applikasjoner skal få tilgang eller ikke, er det en fordel om rutiner og vilkår er klargjort på forhånd.
+I API manager spør man om tilgang ved å [opprette en applikasjon](/docs/datadeling/veiledere/api-manager/api-manager-be-om-tilgang#opprett-en-enkel-applikasjon), og søker om å [abonnere på en plan](/docs/datadeling/veiledere/api-manager/api-manager-be-om-tilgang#søk-om-tilgang) for et API som er gjort tilgjengelig. For deg som forvalter tilgang til et API, og skal behandle søknader og avgjøre om applikasjoner skal få tilgang eller ikke, er det en fordel om rutiner og vilkår er klargjort på forhånd.
 
 Det er derfor lurt å kartlegge, dokumentere og gjerne merke API-er og planer med hvilken kategori informasjonen bak API-et gir tilgang til.
 
