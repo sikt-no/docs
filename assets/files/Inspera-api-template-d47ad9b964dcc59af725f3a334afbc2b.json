@@ -1,0 +1,231 @@
+{
+  "name": "Inspera-API",
+  "version": "1",
+  "description": "API for Inspera",
+  "visibility": "PRIVATE",
+  "paths": {
+    "/": [
+      {
+        "methods": [
+          "CONNECT",
+          "DELETE",
+          "GET",
+          "HEAD",
+          "OPTIONS",
+          "PATCH",
+          "POST",
+          "PUT",
+          "TRACE"
+        ],
+        "policy-http-callout": {
+          "scope": "REQUEST",
+          "method": "POST",
+          "useSystemProxy": false,
+          "exitOnError": false,
+          "errorCondition": "{#calloutResponse.status >= 400 and #calloutResponse.status <= 599}",
+          "errorStatusCode": "500",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            }
+          ],
+          "variables": [
+            {
+              "value": "{#jsonPath(#calloutResponse.content, '$.access_token')}",
+              "name": "inspera-access-token"
+            }
+          ],
+          "url": "https://XX.inspera.no/api/authenticate/token/",
+          "body": "grant_type=authorization_code&client_id={#properties['inspera-prod-client-id']}&code={#properties['inspera-prod-client-secret']}",
+          "removeHeaders": [],
+          "whitelistHeaders": [],
+          "addHeaders": []
+        },
+        "description": "Callout til /authenticate/token/ for å hente access-token",
+        "enabled": true
+      },
+      {
+        "methods": [
+          "CONNECT",
+          "DELETE",
+          "GET",
+          "HEAD",
+          "OPTIONS",
+          "PATCH",
+          "POST",
+          "PUT",
+          "TRACE"
+        ],
+        "transform-headers": {
+          "scope": "REQUEST",
+          "removeHeaders": [],
+          "whitelistHeaders": [],
+          "addHeaders": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {#context.attributes['inspera-access-token']}"
+            }
+          ]
+        },
+        "description": "Legge til access-token",
+        "enabled": true
+      }
+    ]
+  },
+  "resources": [],
+  "properties": [
+    {
+      "key": "inspera-prod-client-id",
+      "value": ""
+    },
+    {
+      "key": "inspera-prod-client-secret",
+      "value": ""
+    }
+  ],
+  "pages": [],
+  "plans": [
+    {
+      "id": "366a21aa-8c85-418c-aa21-aa8c85918c31",
+      "name": "Lese tilgang for brukeradministrering.",
+      "description": "Lese tilgang for brukeradminstrering i Inspera",
+      "validation": "MANUAL",
+      "security": "API_KEY",
+      "securityDefinition": "{\"propagateApiKey\":false}",
+      "type": "API",
+      "status": "PUBLISHED",
+      "apis": ["7d619e9f-fa15-40ab-a19e-9ffa1520abbb"],
+      "order": 2,
+      "characteristics": [],
+      "created_at": 1623071097804,
+      "updated_at": 1623071194602,
+      "published_at": 1623071194602,
+      "paths": {
+        "/": [
+          {
+            "methods": [
+              "CONNECT",
+              "DELETE",
+              "GET",
+              "HEAD",
+              "OPTIONS",
+              "PATCH",
+              "POST",
+              "PUT",
+              "TRACE"
+            ],
+            "resource-filtering": {
+              "whitelist": [
+                {
+                  "methods": ["GET"],
+                  "pattern": "/v1/users/**"
+                }
+              ],
+              "blacklist": []
+            },
+            "enabled": true
+          }
+        ]
+      },
+      "comment_required": true,
+      "comment_message": "Legg ved formål for tilgang"
+    },
+    {
+      "id": "9f714a0d-8ff2-483c-b14a-0d8ff2e83cf2",
+      "name": "Full tilgang til brukeradministrasjon",
+      "description": "Lese og skrive tilgang for brukeradministrasjon i Inspera",
+      "validation": "MANUAL",
+      "security": "API_KEY",
+      "securityDefinition": "{\"propagateApiKey\":false}",
+      "type": "API",
+      "status": "PUBLISHED",
+      "apis": ["7d619e9f-fa15-40ab-a19e-9ffa1520abbb"],
+      "order": 1,
+      "characteristics": [],
+      "created_at": 1622554645807,
+      "updated_at": 1622722036020,
+      "published_at": 1622721595364,
+      "paths": {
+        "/": [
+          {
+            "methods": [
+              "CONNECT",
+              "DELETE",
+              "GET",
+              "HEAD",
+              "OPTIONS",
+              "PATCH",
+              "POST",
+              "PUT",
+              "TRACE"
+            ],
+            "resource-filtering": {
+              "whitelist": [
+                {
+                  "methods": [],
+                  "pattern": "/v1/users/**"
+                }
+              ],
+              "blacklist": []
+            },
+            "enabled": true
+          }
+        ]
+      },
+      "comment_required": true,
+      "comment_message": "Legg ved formål med tilgangen"
+    }
+  ],
+  "metadata": [
+    {
+      "key": "email-support",
+      "name": "email-support",
+      "format": "MAIL",
+      "value": "${(api.primaryOwner.email)!''}",
+      "defaultValue": "support@change.me",
+      "apiId": "7d619e9f-fa15-40ab-a19e-9ffa1520abbb"
+    }
+  ],
+  "path_mappings": [],
+  "proxy": {
+    "virtual_hosts": [
+      {
+        "path": "/inspera"
+      }
+    ],
+    "strip_context_path": false,
+    "preserve_host": false,
+    "groups": [
+      {
+        "name": "default-group",
+        "endpoints": [
+          {
+            "name": "default",
+            "target": "https://XX.inspera.no/api",
+            "weight": 1,
+            "backup": false,
+            "type": "HTTP",
+            "inherit": true,
+            "tenants": []
+          }
+        ],
+        "load_balancing": {
+          "type": "ROUND_ROBIN"
+        },
+        "http": {
+          "connectTimeout": 5000,
+          "idleTimeout": 60000,
+          "keepAlive": true,
+          "readTimeout": 10000,
+          "pipelining": false,
+          "maxConcurrentConnections": 100,
+          "useCompression": true,
+          "followRedirects": false,
+          "encodeURI": false
+        }
+      }
+    ]
+  },
+  "response_templates": {}
+}
