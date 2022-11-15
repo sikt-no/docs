@@ -10,10 +10,9 @@ føringer følges.
 
 Relevant informasjon:
 
-- [Hva er IntArk](/docs/datadeling/hva-er)
-- [Konsekvenser for organisasjonen](/docs/datadeling/hva-er/konsekvenser)
+- [Hva er IntArk](https://www.uninett.no/Intark)
+- [Konsekvenser for organisasjonen](/docs/datadeling/om/konsekvenser)
 - [Rollene i IntArk](/docs/datadeling/hva-er/roller)
-- [Forvaltningen av IntArk i sektoren](/docs/datadeling/forvaltning)
 - [Styringsreglene til IntArk](/docs/datadeling/styringsregler)
 
 ## Hvordan kommer jeg i gang med IntArk?

@@ -9,8 +9,8 @@ Følger du styringsreglene, så følger du IntArk.
 ## Om styringsreglene
 
 Formålet med styringsreglene for IntArk er å oppsummere de viktigste
-implikasjonene og kravene fra [formålet til
-IntArk](/docs/datadeling/hva-er/styringsreglene-kategorisering),
+implikasjonene og kravene fra formålet til
+IntArk,
 [integrasjonsprinsippene](/docs/datadeling/prinsippene) og
 [referansearkitekturen for
 datadeling](https://unit-norge.github.io/unit-ra/main/B%c3%b8ker/Referansearkitektur%20for%20deling%20av%20data%20i%20h%c3%b8yere%20utdanning%20og%20forsking.html).
@@ -90,7 +90,7 @@ datadeling for alle. Dette gjelder primært for datatilbydere.
             <td>
                 En samlet oversikt gjør det enklere for datakonsumenter å finne
                 frem til institusjonens data, og for institusjonen gir det
-                bedre oversikt over hvilke data som deles med hvem. 
+                bedre oversikt over hvilke data som deles med hvem.
             </td>
         </tr>
         <tr>

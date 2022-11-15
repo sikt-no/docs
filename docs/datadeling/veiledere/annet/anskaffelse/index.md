@@ -45,7 +45,7 @@ ikke har behov for integrasjoner fra starten av.
 - Referansearkitekturen for deling av data i kunnskapssektoren er et målbilde
   for hvor vi ønsker at sektoren skal være om noen år.
 
-- [Styringsreglene for fellestjenesten](/docs/datadeling/styringsreglene) er
+- [Styringsreglene for fellestjenesten](/docs/datadeling/styringsregler) er
   hva institusjonen må følge for å bruke fellestjenesten. Også anskaffede
   IT-tjenester må følge disse.
 
@@ -62,7 +62,7 @@ høyere krav til IT-tjenesters evne til datadeling.
 ## Hvordan kommer jeg i gang som innkjøper?
 
 Se oversikt over [vurderinger ved anskaffelse av IT-tjenester og
--systemer](/docs/datadeling/veiledere/annet/anskaffelse/detaljert) som du kan
+-systemer](/docs/datadeling/veiledere/annet/anskaffelse/vurderinger) som du kan
 ta med dei i din anskaffelse. Dette gir deg ikke konkrete svar, men
 betrakninger fra tidligere erfaringer.
 

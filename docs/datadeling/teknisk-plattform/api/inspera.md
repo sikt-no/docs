@@ -17,7 +17,7 @@ For å kunne bruke DFØs API må din institusjon bli "oppgradert" hos DFØ. Mang
 
 ## Standardoppsett
 
-[Last ned template for API-definisjonen for Inspera.](/docs/datadeling/teknisk-plattform/api/Inspera-api-template.json)
+[Last ned template for API-definisjonen for Inspera.](./Inspera-api-template.json)
 
 ## Hvordan sette opp API-ene
 
