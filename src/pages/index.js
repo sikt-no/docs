@@ -34,6 +34,12 @@ const topics = <>
      Sikts beste praksis fagspesifikasjoner (SFS). Fagspesifikasjonene er nedskrevne og vedtatte anbefalinger tuftet på universitets- og høyskolesektorens kollektive IT-faglige erfaringer.
   </Topic>
   <Topic
+    title="Hostmaster"
+    link="docs/hostmaster"
+  >
+     Sikt bistår sine kunder med domeneregistrering under .no. Vi bistår også med ulike DNS-tjenester og spørsmål som gjelder tildeling og forvaltning av IP-adresser.
+  </Topic>
+  <Topic
     title="Lokalnett - CNaaS"
     link="docs/cnaas"
   >
