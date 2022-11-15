@@ -12,15 +12,15 @@ IntArk](/docs/datadeling/om/komponenter).
 
 ![Gravitee](/datadeling/img/gravitee-logo.png)
 
-**Administrasjon av dine API og tilganger**
+### Administrasjon av dine API og tilganger
 
 Vi bruker [Gravitee](/docs/datadeling/teknisk-plattform/gravitee) som API
 Manager, og hver institusjon får sin egen, isolerte Gravitee-instans.
 
 Mer detaljer om API manager:
 
-- [Hvordan vi bruker Gravitee](/docs/datadeling/teknisk-plattform/api-plan-applikasjon)
-- [Tekniske detaljer](/docs/datadeling/teknisk-plattform/teknisk)
+- [Hvordan vi bruker Gravitee](/docs/datadeling/teknisk-plattform/gravitee)
+- [Tekniske detaljer](/docs/datadeling/teknisk-plattform/oversikt)
 
 [Veiledere for API manager](/docs/datadeling/veiledere):
 
@@ -32,7 +32,7 @@ Mer detaljer om API manager:
 
 ![Gravitee](/datadeling/img/gravitee-logo.png)
 
-**Tilgangskontroll for dine API**
+### Tilgangskontroll for dine API
 
 API gateway er en proxy for ditt API, som brukes for tilgangskontroll og
 logging. API gateway styres av API manager. Teknisk sett er dette to separate
@@ -47,7 +47,7 @@ Gateway.
 
 ![BROM](/datadeling/img/brom.svg "Logo for BROM er laget av Freepik fra www.flaticon.com")
 
-**Administrasjon av tilgang til dine meldinger**
+### Administrasjon av tilgang til dine meldinger
 
 En enkel selvbetjening foran RabbitMQ, så datatilbydere og konsumenter kan selv forvalte sine tilganger til notifikasjoner.
 
@@ -58,7 +58,7 @@ En enkel selvbetjening foran RabbitMQ, så datatilbydere og konsumenter kan selv
 
 ![RabbitMQ](/datadeling/img/rabbitmq-logo.png)
 
-**Håndtering av dine meldinger**
+### Håndtering av dine meldinger
 
 RabbitMQ ser til at meldinger, spesielt
 [notifikasjoner](/docs/datadeling/begreper/notifikasjon), leveres mellom

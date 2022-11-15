@@ -11,7 +11,7 @@ tjenesteeier.
 Som ansvarlig for data som andre kan ha bruk for, har du plikt til å dele dette
 i et API.
 
-1. Les [Hva er IntArk](/docs/datadeling/hva-er)
+1. Les [Hva er IntArk](https://www.uninett.no/Intark)
 2. Se [oversikten over roller og plikter i IntArk](/docs/datadeling/hva-er/roller) som er relevant for deg. Du som dataeier har rollen "Tilbyder".
 
 ## Hvordan komme i gang?

@@ -7,8 +7,6 @@ Relevant informasjon om IntArk for deg som sluttbruker.
 
 ## Mine data
 
-For innsyn i dine data: [Ta kontakt](/docs/datadeling/kontaktpunkt).
-
 IntArk er bare et verktøy for å gjøre datadeling ryddigere, for eksempel ved
 å enklere gi oversikt over hvilke data som er hvor. Ingenting er endret, det er
 fremdeles dine data, men med IntArk er det enklere å finne frem.
@@ -29,6 +27,4 @@ Merk at bruk av enkelte data vil påføre deg et ansvar, for eksempel bruk av
 personopplysninger. Dette må avtales for hver enkelt tilgang.
 
 - [Se veileder for å søke om tilgang til et API](/docs/datadeling/veiledere/api-manager/api-manager-be-om-tilgang)
-- For mer informasjon, se [introduksjon til hva IntArk er for noe](/docs/datadeling/hva-er), inkludert en kort video.
-
-Lurer du på noe? [Ta kontakt](/docs/datadeling/kontaktpunkt).
+- For mer informasjon, se [introduksjon til hva IntArk er for noe](https://www.uninett.no/Intark), inkludert en kort video.

@@ -10,10 +10,10 @@ datadeling hos din institusjon.
 ## Hva gjør jeg?
 
 1. **Forberedelser**
-   1. Sett deg inn i [hva fellestjenesten for datadeling er](/docs/datadeling/hva-er), og [konsekvensene](/docs/datadeling/hva-er/konsekvenser).
-   2. Plasser [roller og ansvar](/docs/datadeling/hva-er/roller) i din
+   1. Sett deg inn i [hva fellestjenesten for datadeling er](https://www.uninett.no/Intark), og [konsekvensene](/docs/datadeling/om/konsekvenser.md).
+   2. Plasser [roller og ansvar](/docs/datadeling/om/roller.md) i din
       institusjon. Se [Sjekkliste for innføring av
-      fellestjenesten](/docs/datadeling/veiledere/sjekkliste-innforing) for
+      fellestjenesten](/docs/datadeling/veiledere/innforing) for
       hjelp.
 2. **Administrativt**
    1. Kontakt Sikt for å få tilgang til fellestjenesten.

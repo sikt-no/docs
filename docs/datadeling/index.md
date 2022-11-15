@@ -20,16 +20,13 @@ Fellestjenesten for datadeling](https://www.uninett.no/Intark).
 - [Hvordan kommer min institusjon i gang med IntArk](/docs/datadeling/veiledere/innforing)
 - [Kom i gang med API manager](/docs/datadeling/teknisk-plattform/oversikt)
 - [Alle veiledere](/docs/datadeling/veiledere)
-- [Kurs og webinar](/docs/datadeling/kurs/)
 - [Gode praksiser og anbefalinger](/docs/datadeling/god-praksis)
 
 ## Hva er IntArk
 
-- [Introduksjon: Hva er IntArk](/docs/datadeling/hva-er/)
+- [Introduksjon: Hva er IntArk](https://www.uninett.no/Intark)
 - [Integrasjonsprinsippene](/docs/datadeling/prinsippene)
 - [Teknisk plattform for datadeling](/docs/datadeling/teknisk-plattform)
-- [Om forvaltningen](/docs/datadeling/forvaltning)
-- [Vedtak](/docs/datadeling/vedtak)
 - [Begreper](/docs/datadeling/begreper)
 
 ## Informasjon for deg

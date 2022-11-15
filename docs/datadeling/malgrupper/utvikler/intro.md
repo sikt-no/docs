@@ -4,7 +4,7 @@ title: Hva er IntArk i praksis, for utviklere
 
 Hva du som utvikler trenger å vite om IntArk, enten du lager integrasjoner
 eller tjenester. Dokumentet fordrer at du har lest det mer generelle [Hva er
-IntArk](/docs/datadeling/hva-er).
+IntArk](https://www.uninett.no/Intark).
 
 ## Hva er IntArk for meg som utvikler?
 

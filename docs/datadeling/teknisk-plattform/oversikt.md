@@ -63,6 +63,6 @@ vil endres. -->
 ## Annet
 
 - Teknisk plattform kjører i NREC. For IP-detaljer, se de [tekniske detaljene
-  om IntArk-plattformen](/docs/datadeling/teknisk-plattform/teknisk), og [NREC
+  om IntArk-plattformen](/docs/datadeling/teknisk-plattform/oversikt), og [NREC
   sin oversikt over
   subnett](https://iaas.readthedocs.io/team/installation/ip.html).

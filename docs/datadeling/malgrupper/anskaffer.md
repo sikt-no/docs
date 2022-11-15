@@ -17,6 +17,6 @@ dette i innkjøpet.
 
 Som anskaffer trenger du:
 
-1. Les [Hva er IntArk](/docs/datadeling/hva-er), inkludert en kort video.
+1. Les [Hva er IntArk](https://www.uninett.no/Intark).
 2. Les [veileder for anskaffelser](/docs/datadeling/veiledere/annet/anskaffelse).
 3. Sjekkliste for om en IT-tjeneste er IntArk-kompatibel [TODO lag og lenk]

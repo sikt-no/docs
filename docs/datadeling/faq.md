@@ -20,5 +20,5 @@ om tjenester. IntArk brukes allerede internt hos institusjoner.
 Ja, føringene fra IntArk må følges av sektoren. Formålet med IntArk er å gjøre
 det enklere å dele data, som vil kreve en innsats fra alle parter. Dette kan
 gjøre det mer kostbart for enkelttjenester, men til nytte for hele sektoren.
-Merk at [unntak fra føringene](/docs/datadeling/hva-er/prosessene/unntak) er
+Merk at [unntak fra føringene](/docs/datadeling/unntak) er
 tillatt.

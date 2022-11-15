@@ -252,5 +252,4 @@ I de to siste eksemplene har vi ikke inkludert informasjon om _hvor_ en ressurs 
 - [RabbitMQ sine tutorials for publisering og konsumering av meldinger](https://www.rabbitmq.com/getstarted.html)
 - [RabbitMQ sin beskrivelse av begrepene i AMQP](http://www.rabbitmq.com/tutorials/amqp-concepts.html)
 - [Beskrivelse av meldingsprotokollen AMQP 0.9.1](http://www.amqp.org/specification/0-9-1/amqp-org-download)
-- [Teknisk oppsett av meldingskøer](/docs/datadeling/teknisk-plattform/mq-oppsett)
 - [Integrasjonsmønsteret hendelsebasert provisjonering](/docs/datadeling/god-praksis/integrasjonsmonster/hendelsesbasert)
