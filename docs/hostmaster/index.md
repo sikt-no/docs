@@ -2,4 +2,4 @@
 title: Hostmaster
 ---
 
-[Nictool - Selvbetjening for redigering av DNS-data](./hostmaster/nictool/)
+[Nictool - Selvbetjening for redigering av DNS-data](./nictool)
