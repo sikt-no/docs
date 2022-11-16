@@ -19,6 +19,10 @@ const topics = (
       Tjenesten blir også tilgjengelig for et stort marked med 1,3 millioner
       potensielle Feide-brukere.
     </Topic>
+    <Topic title="Hostmaster" link="docs/hostmaster">
+      Sikt bistår sine kunder med domeneregistrering under .no. Vi bistår også med ulike DNS-tjenester
+      og spørsmål som gjelder tildeling og forvaltning av IP-adresser.
+    </Topic>
     <Topic
       title="Sikt fagspesifikasjoner"
       link="https://www.uninett.no/en/node/2055"
