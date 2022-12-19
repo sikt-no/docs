@@ -523,4 +523,4 @@ Se egen side for [dokumentasjon av Xymon-integrasjonen på verktøykassen](xymon
 ## Firewall Builder (fwbuilder)
 
 [Brukerdokumentasjon for Firewall Builder foreligger på en egen
-side](http://drift.uninett.no/utstyr/vk/fwbuilder.html).
+side](fwbuilder).
