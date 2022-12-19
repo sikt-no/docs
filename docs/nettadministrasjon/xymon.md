@@ -1,182 +1,132 @@
-<?php
-$mal_kontaktadresse="drift@uninett.no"; // obligatorisk
-$mal_overskrift="Xymon / Hobbit"; // obligatorisk
-$mal_tegnsett="utf-8";
-include "uninetttopp.php3";
-?>
-<dl>
-  <dt>REVISJON:</dt>
-  <dd>AUG-2021<dd>
-  <dt>ANSVARLIG:</dt>
-  <dd>Morten Brekkevold</dd>
-  <dt>DATO:</dt>
-  <dd>26.08.2021</dd>
-</dl>
+---
+title: Xymon-integrasjon på verktøykasser
+ansvarlig: morten.brekkevold@sikt.no
+date: 26.08.2021
+---
 
-<hr>
+## Innledning
 
-<h2>Innledning</h2>
-<p>
-Xymon (tidl. <em>Hobbit</em>) er et tjenesteovervåkningsverktøy som kjører på
-verktøykassen, og som er integrert med NAV-installasjonen der. Det er kun
-utstyr som legges inn i kategorien SRV i NAV som blir automatisk overvåket av
-Xymon. For mer informasjon om Xymon,
-se <a href="https://xymon.sourceforge.io/">Xymons hjemmesider.</a>
-</p>
+Xymon (tidl. *Hobbit*) er et tjenesteovervåkningsverktøy som kjører på
+verktøykassen, og som er integrert med NAV-installasjonen der. Det er
+kun utstyr som legges inn i kategorien `SRV` i NAV som blir automatisk
+overvåket av Xymon. For mer informasjon om Xymon, se [Xymons
+hjemmesider.](https://xymon.sourceforge.io/)
 
-<p>
-  Da Hobbit ble omdøpt til Xymon, var det en del begrepsbruk og
-  konfigurasjonsfiler som også endret seg. Dersom du er vant med de gamle
-  filene og begrepene, kan du
-  lese <a href="https://xymon.com/help/upgrade-to-430.txt">Xymons</a>
-  oppgraderingsnotater.
-</p>
+Da Hobbit ble omdøpt til Xymon, var det en del begrepsbruk og
+konfigurasjonsfiler som også endret seg. Dersom du er vant med de gamle
+filene og begrepene, kan du lese
+[Xymons](https://xymon.com/help/upgrade-to-430.txt)
+oppgraderingsnotater.
 
-<h2>Tjenester</h2>
-<p>
+## Tjenester
+
 Det er Xymon og Apache som må kjøre for at tjenesten skal virke.
-</p>
 
-<strong>xymon</strong>
-<ul>
-	<li>Daemon: </li>
-	<li>Start/stop: <code>/etc/init.d/xymon {start/stop/restart}</code></li>
-	<li>Configfiler: <code>/etc/xymon/</code></li>
-</ul>
+**xymon**
 
-<strong>apache2</strong>
-<ul>
-	<li>Daemon: <code>/usr/sbin/apache2</code></li>
-	<li>Start/stopp: <code>/etc/init.d/apache2 {start/stop/restart/reload}</code></li>
-	<li>config: <code>/etc/apache2/sites-enabled/25-nav-secure.conf</code></li>
-</ul>
+-   Daemon:
+-   Start/stop: `/etc/init.d/xymon {start/stop/restart}`
+-   Configfiler: `/etc/xymon/`
 
-<h2>Brukerdokumentasjon</h2>
+**apache2**
 
-<h3>Maskiner som overvåkes med Xymon</h3>
-<p>
-Hvert kvarter kjører et script på verktøykassen som konfigurerer Xymon til å
-overvåke alle maskiner fra <code>SRV</code>-kategorien i NAV. Dette gjør at det er bare ett
-sted for å vedlikeholde listen over servere som skal overvåkes i NAV og Xymon.
-Når en maskin registreres i NAV, kan den legges inn i opptil flere grupper
-(<em>device groups</em>). Disse gruppene blir også brukt som grupper i Xymon.
-</p>
+-   Daemon: `/usr/sbin/apache2`
+-   Start/stopp: `/etc/init.d/apache2 {start/stop/restart/reload}`
+-   config: `/etc/apache2/sites-enabled/25-nav-secure.conf`
 
-<h3>Overvåking av grupper</h3>
-<p>
-Man kan sette opp overvåking av bestemte services for hver enkelt gruppe. Man
-kan f.eks overvåke SMTP for alle servere som ligger i mail-gruppa. Dette
-gjøres ved å logge på verktøykassen med ssh. Man redigerer
-filen <code>/etc/nav/navsrv2hobbit.conf</code>. Her er et eksempel på hvordan
-man kan gjøre det:
-</p>
+## Brukerdokumentasjon
 
-<pre><code>
+### Maskiner som overvåkes med Xymon
+
+Hvert kvarter kjører et script på verktøykassen som konfigurerer Xymon
+til å overvåke alle maskiner fra `SRV`-kategorien i NAV. Dette gjør at
+det er bare ett sted for å vedlikeholde listen over servere som skal
+overvåkes i NAV og Xymon. Når en maskin registreres i NAV, kan den
+legges inn i opptil flere grupper (*device groups*). Disse gruppene blir
+også brukt som grupper i Xymon.
+
+### Overvåking av grupper
+
+Man kan sette opp overvåking av bestemte services for hver enkelt
+gruppe. Man kan f.eks overvåke SMTP for alle servere som ligger i
+mail-gruppa. Dette gjøres ved å logge på verktøykassen med ssh. Man
+redigerer filen `/etc/nav/navsrv2hobbit.conf`. Her er et eksempel på
+hvordan man kan gjøre det:
+
+```ini
 [ALL]
 services = ssh
 
 [MAIL]
 services = smtp
-</code></pre>
+```
 
-<p>
-Her ser vi at ssh overvåkes for samtlige maskiner, mens SMTP overvåkes bare
-for den gruppen av maskiner som befinner seg i gruppen MAIL i NAV. SSH ligger
-som standardovervåking for samtlige maskiner.
-</p>
+Her ser vi at ssh overvåkes for samtlige maskiner, mens SMTP overvåkes
+bare for den gruppen av maskiner som befinner seg i gruppen MAIL i NAV.
+SSH ligger som standardovervåking for samtlige maskiner.
 
-<h3>Overvåking av maskiner</h3>
-<p>
-  Man kan sette opp bestemte overvåkinger for hver enkelt maskin, ved å legge
-  til sine egne konfigurasjonsfiler på verktøykassen, under
-  <code>/etc/xymon/analysis.d/</code>. Verktøykassen overvåker seg selv med
-  Xymon på denne måten, og konfigurasjonen som brukes her kan ses i
-  filen <code>vk.cfg</code>.
-</p>
+### Overvåking av maskiner
 
-<p>
-  Et eksempel på en slik konfigurasjonsfil kan se slik ut:
-</p>
+Man kan sette opp bestemte overvåkinger for hver enkelt maskin, ved å
+legge til sine egne konfigurasjonsfiler på verktøykassen, under
+`/etc/xymon/analysis.d/`. Verktøykassen overvåker seg selv med Xymon på
+denne måten, og konfigurasjonen som brukes her kan ses i filen `vk.cfg`.
 
-<pre><code>
-HOST=testserver.uninett.no
-PROC        cfenvd 1 1 yellow
-PROC        cfservd 1 1 red
-PROC        munin-node 1 -1 red
-PROC        sshd
-PROC        ntpd 1 1 yellow
-DISK        /home 95 98
-DISK        /var/log 95 98
-</code></pre>
+Et eksempel på en slik konfigurasjonsfil kan se slik ut:
 
-<p>
-Her ser vi hvilke bestemte prosesser som er satt opp til overvåking med at det
-står <code>PROC</code> foran prosessnavnet. Bak hver prosess kan man ha et tall som angir
-hvor mange prosesser som kan kjøres. På prosessen <code>cfenvd</code> står det først tallet
-<code>1</code>, som betyr at det minimum må være én prosess (<em>mincount</em>) ved det navnet og bak
-tallet står det <code>1</code> (<em>maxcount</em>). Dette betyr at det kan kun være én (og bare én)
-prosess av <code>cfenvd</code>. Hvis ikke dette er oppfylt vil den blir markert som gul i
-Xymon, i motsetning til <code>cfservd</code>, der det vil bli markert som rødt. Man kan på
-denne måten angi hvor mange prosesser som skal kjøre. I tillegg kan man bruke
-verdien <code>-1</code>, som betyr at det kan være uendelig mange prosesser som kjøres.
-</p>
+    HOST=testserver.uninett.no
+    PROC        cfenvd 1 1 yellow
+    PROC        cfservd 1 1 red
+    PROC        munin-node 1 -1 red
+    PROC        sshd
+    PROC        ntpd 1 1 yellow
+    DISK        /home 95 98
+    DISK        /var/log 95 98
 
-<p>
-I tillegg kan man sette opp overvåking av disk-partisjoner.
-Hvis <code>/home</code> (som i eks. over) fylles opp til 95% vil den bli gul,
-mens kommer den på 98% vil den flagges rød i Xymon.
-</p>
+Her ser vi hvilke bestemte prosesser som er satt opp til overvåking med
+at det står `PROC` foran prosessnavnet. Bak hver prosess kan man ha et
+tall som angir hvor mange prosesser som kan kjøres. På prosessen
+`cfenvd` står det først tallet `1`, som betyr at det minimum må være én
+prosess (*mincount*) ved det navnet og bak tallet står det `1`
+(*maxcount*). Dette betyr at det kan kun være én (og bare én) prosess av
+`cfenvd`. Hvis ikke dette er oppfylt vil den blir markert som gul i
+Xymon, i motsetning til `cfservd`, der det vil bli markert som rødt. Man
+kan på denne måten angi hvor mange prosesser som skal kjøre. I tillegg
+kan man bruke verdien `-1`, som betyr at det kan være uendelig mange
+prosesser som kjøres.
 
-<p>
-  Som standard på samtlige servere står det følgende regler
-  (<code>/etc/xymon/analysis.cfg</code>):
-</p>
+I tillegg kan man sette opp overvåking av disk-partisjoner. Hvis `/home`
+(som i eks. over) fylles opp til 95% vil den bli gul, mens kommer den på
+98% vil den flagges rød i Xymon.
 
-<pre><code>
-DEFAULT
-UP      1h
-LOAD    5.0 10.0
-DISK    * 90 95
-MEMPHYS 100 101
-MEMSWAP 50 80
-MEMACT  90 97
-</code></pre>
+Som standard på samtlige servere står det følgende regler
+(`/etc/xymon/analysis.cfg`):
 
+    DEFAULT
+    UP      1h
+    LOAD    5.0 10.0
+    DISK    * 90 95
+    MEMPHYS 100 101
+    MEMSWAP 50 80
+    MEMACT  90 97
 
-<h3>Installere xymon-client på klienten</h3>
-<ul>
-  <li>
-    Programmet <strong>xymon-client</strong> må installeres på klienten som skal
+### Installere xymon-client på klienten
+
+-   Programmet **xymon-client** må installeres på klienten som skal
     overvåkes.
-  </li>
+-   IP-adressen til verktøykassen må settes i
+    `/etc/default/xymon-client`, slik at xymon-client vet hvor den skal
+    rapportere.
+-   For Windows-maskiner som skal overvåkes må
+    *[BBWin](http://bbwin.sourceforge.net/)* installeres på klienten.
 
-  <li>
-    IP-adressen til verktøykassen må settes
-    i <code>/etc/default/xymon-client</code>, slik at xymon-client vet hvor
-    den skal rapportere.
-  </li>
+### Varsling
 
-  <li>
-    For Windows-maskiner som skal overvåkes
-    må <em><a href="http://bbwin.sourceforge.net/">BBWin</a></em> installeres
-    på klienten.
-  </li>
+Varsling fra Xymon er integrert med NAVs hendelses- og alarmsystem, og
+styres gjennom din personlige alarmprofil i NAV. Her viser vi til
+[dokumentasjon om NAV](https://nav.readthedocs.io/ "Gå til NAVs
+dokumentasjon").
 
-</ul>
+## Kontaktadresser
 
-<h3>Varsling</h3>
-<p>
-Varsling fra Xymon er integrert med NAVs hendelses- og alarmsystem, og styres
-gjennom din personlige alarmprofil i NAV. Her viser vi
-til <a href="https://nav.readthedocs.io/" title="Gå til NAVs
-dokumentasjon">dokumentasjon om NAV</a>.
-</p>
-
-<h2>Kontaktadresser</h2>
-<ul>
-  <li><a href="mailto:kontakt@uninett.no">kontakt@uninett.no</a></li>
-</ul>
-
-<?php
-include "uninettbunn.php3";
-?>
+-   <kontakt@sikt.no>
