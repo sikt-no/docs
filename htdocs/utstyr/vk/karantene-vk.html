@@ -1,0 +1,308 @@
+<?php
+$mal_kontaktadresse="rune.sydskjor@uninett.no"; // obligatorisk
+$mal_overskrift="Karantene"; // obligatorisk
+$mal_tegnsett="utf-8";
+include "uninetttopp.php3";
+?>
+<dl>
+  <dt>REVISJON:</dt>
+  <dd>FEB-2011<dd>
+  <dt>ANSVARLIG:</dt>
+  <dd>Rune Sydskjør</dd>
+  <dt>DATO:</dt>
+  <dd>02.02.2011</dd>
+</dl>
+
+<hr>
+
+<h2>Innledning</h2>
+<p>
+I sin enkleste form er det kun ruterne og en server med squid/squidguard som trengs for å realisere en
+karantenenettsløsning. Ruteren vil sende all web-trafikk (port 80) til serveren som omskriver brukerens opprinnelig web-forespørsel og presenterer en annen webside med informasjon om karantenenettet og om
+hvorfor brukeren har havnet der.
+I tillegg trenger man også komponenter som setter en aktuell svitsjeport i et karantenenett/VLAN. Arnold i NAV kan for eksempel brukes for dette.
+I tillleg kan man der man har tatt ibruk 802.1x bruke "fallback-VLAN/unauth-VLAN" på switchene som sørger for å sette en bruker i karantene-vlan'et dersom han ikke klarer å logge seg inn.
+</p>
+<h2> Lag 2 WCCP vs. Lag 3 WCCP</h2>
+<p>
+Vi har to måter vi kan gjøre WCCP på. Enten via lag 2, der redirigering foregår i hardware på ruteren. Denne metoden er å foretrekke, men det krever at verktøykassen er svitsjet på lag 2 på ruteren der karantene vlan'et er definert. Denne løsningen fungerer mao. ikke der vi har en sentral verktøykasse og man vil ha karantene vlan på flere studiesteder. Da må man bruke WCCP på lag 3 istedet, og opprette en GRE-tunell fra ruteren mot verktøykassen. Lenger ned i dokumentasjonen er det nevnt ulike krav til de ulike metodene. Merk også at det kan se ut som noen rutertyper kun støtter lag 2 WCCP. Dette er sett på 4506 f.eks.
+</p>
+<h2>Oppsett på ruter/hos kunde</h2>
+<p>
+<h3>Skru på globalt</h3>
+<code>ip wccp web-cache redirect-list 108 group-list 8</code><br>
+Vha. denne kommandoen skrur man på WCCP globalt på ruteren. I tillegg setter vi en redirect-list som
+definerer hva som IKKE skal WCCP'es og en group-list som definerer hvilke Squid-servere som har lov til å
+opprette GRE-tunnel mot denne ruteren. Disse access-listene ser f.eks slik ut for ruter i halden:
+<pre>
+<code>
+access-list 8 permit 158.39.160.109
+access-list 8 deny any
+access-list 108 remark ** Ting som skal unnslippe WCCP
+access-list 108 deny ip any host 158.39.162.29
+access-list 108 permit ip any any
+</code>
+</pre>
+<p>
+<h3>Skru på for ett vlan</h3>
+<pre>
+<code>
+interface Vlan333
+ip access-group vlan333in in
+ip access-group vlan333out out
+ip wccp web-cache redirect in
+</code>
+</pre>
+Her setter vi at all web-trafikk (port 80) inn på VLANet skal redirigeres. På VLANene har vi i tillegg definert
+èn inngående og èn utgående access-liste. Dette for at i enkelte karantenenett skal det være mulig å gjøre
+enkelte ting (f.eks lese og sende mail). Slike åpninger defineres da i disse access-listene.
+</p>
+<h3>Pakkefilter/brannmur</h3>
+For lag 3 WCCP må GRE-trafikk tillates fra ruteren sin loopback-adresse til vk. For både lag2 og lag3 WCCP må det tillates trafikk fra IP-adressene til ruteren som er brukt i squid.conf. WCCP bruker UDP port 2048 mellom ruter og verktøykasse. Se nedenfor. Det beste er kanskje å gi full tilgang til disse IP-adressene:
+<pre>
+<code>
+! For filter ut mot verktøykasse:
+! Tillatt wccp mot verktøykasse
+access-list xxx permit gre host 128.39.103.5 host 158.39.160.109 ! kun for lag 3 WCCP
+access-list xxx permit ip host 128.39.46.74 host 158.38.160.109
+! Tillat trafikk fra karantene-nett mot hvem som helst på port 80
+access-list xxx permit tcp 'karantene-nett' any eq 80
+</code>
+</pre>
+<p>
+Verktøykassen må også få lov til å sende web-trafikk med "forfalsket" IP-adresse. Det betyr at man er nødt til å skru av urpf (<code>ip verify unicast source reachable-via rx allow-default</code>) på vlan-interfacet der verktøykassen står. Evt. dersom man har pakkefilter utgående fra vk, så må det tillates trafikk fra hvem som helst fra port 80 mot karantene-adressene
+<code>
+access-list xxx permit tcp any eq 80 'karantene-nett'
+</code>
+</p>
+<p>
+Det må også plukkes ut et nett for å bruke til IP-adresser for karantene-nettet, og en DHCP-server som deler ut adresser i dette segmentet for dette vlan'et.
+</p>
+<h2>Oppsett på verktøykasse</h2>
+
+halden-vk har ett ferdig oppsett med de rette filene i subversion for lag 3 WCCP, og kan brukes som mal. For lag 2 WCCP kan du bruke nesna-vk som mal. Pass på å gjøre lokale tilpasninger som passer per vk ved kopiering.
+<p>
+<h3>squid3</h3>
+Alle verktøykasser er satt opp default til ikke å starte squid. For at verktøykassen skal kjøre squid er du nødt til å legge til ei tom fil i cfengine per vk /etc/default/squid3. (Fra før finnes det ei fil der som sier exit)
+
+<h3>/etc/network/interfaces. Merk, kun nødvendig for lag 3 WCCP</h3>
+Denne fila vedlikeholdes via subversion, og endringer må gjøres der.
+For at GRE-tunnelen (mellom ruter og server) skal fungere opp mot de forskjellige ruterene, så må det legges
+inn ett tunnel-interface for hver ruter som ser slik ut. NB: her brukes IP-adressen til loopback interfacen til ruteren som tunnel-endepunkt i motsetning til i squid.conf der vi ikke kan bruke loopback-interfacen sin IP-adresse.
+<pre>
+<code>
+auto 'tunnellnavn'
+    iface 'tunnellnavn' inet static
+    address 'adresse for vk'
+    netmask 255.255.255.255
+    mtu 1476
+    pre-up iptunnel add 'tunnellnavn' mode gre local 'adresse for vk' remote 'loopback for ruter'
+    post-down iptunnel del 'tunnellnavn'
+</code>
+</pre>
+
+Her er ett ekspempel ved hiof:
+<pre>
+<code>
+auto tun-c6500-h-1
+    iface tun-c6500-h-1 inet static
+    address 158.39.160.109
+    netmask 255.255.255.255
+    mtu 1476
+    pre-up iptunnel add tun-c6500-h-1 mode gre local 158.39.160.109 remote 128.39.103.5
+    post-down iptunnel del tun-c6500-h-1
+</code>
+</pre>
+Her er adressen på tunnel-interfacet lik IP-adressen til serveren, men med maske 255.255.255.255. MTU
+settes til 1476 for å slippe fragmentering av GRE-pakkene.
+HUSK: Ett slikt interface for HVER ruter som serveren skal kunne snakke med. <code>ifup 'tunnellnavn'</code> må kjøres manuelt på vk etterpå for å få opp interfacet.
+</p>
+
+<h3>/etc/squid3/squid.conf</h3>
+Slik ser hele squid.conf ut, og her må man tilpasse IP-adresse i wccp2_router til å stemme lokalt:
+<pre>
+<code>
+acl manager proto cache_object
+acl localhost src 127.0.0.1/32
+acl to_localhost dst 127.0.0.0/8
+
+# Kan strupes inn for kun å gjelde karantene-nettet
+acl karantenenett src 0.0.0.0/0
+
+acl SSL_ports port 443
+acl Safe_ports port 80
+acl Safe_ports port 21
+acl Safe_ports port 443
+acl Safe_ports port 70
+acl Safe_ports port 210
+acl Safe_ports port 1025
+acl Safe_ports port 65535
+acl Safe_ports port 280
+acl Safe_ports port 488
+acl Safe_ports port 591
+acl Safe_ports port 777
+acl CONNECT method CONNECT
+
+http_access allow manager localhost
+http_access deny manager
+http_access deny !Safe_ports
+http_access deny CONNECT !SSL_ports
+http_access deny to_localhost
+
+http_access allow localhost
+http_access allow karantenenett
+
+# wccp2_router skal staa til default gw for squid server, eller til nærmeste link-adresse (loopback fungerer ikke)
+wccp2_router 158.39.160.1
+wccp2_router 128.39.46.74
+# Dersom verktøykassen står tilkoblet ruteren den skal snakke wccp med, kan dette gjøres på lag 2 (og dermed også i hardware på ruteren) med disse kommandoene. Disse må være utkommentert dersom institusjonen har flere studiesteder, og skal bruke denne løsningen mot samme verktøykasse. (Trafikk må da gå på lag 3)
+#wccp2_forwarding_method 2
+#wccp2_return_method 2
+#wccp2_assignment_method 2
+
+http_access deny all
+
+icp_access deny all
+
+htcp_access deny all
+
+http_port 3128 transparent
+
+hierarchy_stoplist cgi-bin ?
+
+logformat squid %tl %6tr %&gt;a %Ss/%03>Hs %&lt;st %rm %ru %un %Sh/%&lt;A %mt
+
+access_log /var/log/squid3/access.log squid
+
+url_rewrite_program /usr/bin/squidGuard -c /etc/squid/squidGuard.conf
+
+url_rewrite_children 10
+
+cache deny all
+
+refresh_pattern ^ftp:	1440	20%	10080
+refresh_pattern ^gopher:	1440	0%	1440
+refresh_pattern .	0	20%	4320
+
+icp_port 3130
+
+coredump_dir /var/spool/squid3
+
+</code>
+</pre>
+
+<h3>/etc/squid/squidGuard.conf</h3>
+<p>
+Slik ser squidGuard.conf ut:
+<pre>
+<code>
+logdir /var/log/squid3
+
+# Her er det kun definert èn klasse
+# Du kan lage flere klasser og filtrere på avsenderadresse. Da kan du redirigere til forskjellige sider
+src abuse {
+        ip 0.0.0.0/0
+}
+
+dest aapne {
+	# Sier hvilke url/domener som ikke skal redirigeres.
+        # Disse ligger under /var/lib/squidguard/db/
+        urllist aapne_url
+        domainlist aapne_domain
+}
+
+# Husk at du her må redirigere til ei webside som ligger i aapne_domain eller aapne_url
+acl {
+        abuse {
+                pass aapne none
+                redirect 302:http://karantene.hix.no
+        }
+
+        default {
+                pass aapne none
+                redirect 302:http://karantene.hix.no
+        }
+}
+</code>
+</pre>
+</p>
+
+<h3>/var/lib/squidguard/db/aapne_url</h3>
+Denne fila opprettes og redigeres direkte på hver enkelt vk og er skrivbar for lokale brukere som er medlem av gruppa netops
+<pre>
+<code>
+# List opp hvilke URL'er som skal slippe igjennom uten redirect
+www.hix.no/kontakt_it_avdeling.html
+</code>
+</pre>
+
+<h3>/var/lib/squidguard/db/aapne_domain</h3>
+Denne fila opprettes og redigeres direkte på hver enkelt vk og er skrivbar for lokale brukere som er medlem av gruppa netops
+<pre>
+<code>
+# List opp hvilke domener som skal slippe igjennom uten redirect
+hix.no
+microsoftupdate.com
+virusupdate.com
+</code>
+</pre>
+
+<p>
+<h3>/proc/sys/net/ipv4/ip_forward</h3>
+Denne må stå til 1 slik at redirigering kan skje via iptables. Opprett fila 10_ipv4_forward.conf under katalogen /etc/sysctl.d/ inn i subversion og legg inn linja <code>net.ipv4.ip_forward = 1</code>. Endringa legges til i runtime ved å kjøre sysctl -p etter at fila er kopiert ut på vk.
+</p>
+
+<p>
+<h3>IPtables</h3>
+Disse vedlikeholdes via cfengine. I filene <code> /etc/network/if-up.d/squid3 </code> og <code>/etc/network/if-down.d/squid3</code> legger vi inn oppstart/fjerning av iptables-regel når interface går opp eller ned.
+<pre>
+<code>if-up.d/squid3</code> ser slik ut:
+<code>
+#! /bin/sh -e
+
+# For lag 3 WCCP:
+# Insert iptables rule when tunnell interface is going up
+if [ "$IFACE" = tun-c6500-h-1 ]; then
+        iptables -t nat -A PREROUTING -i tun-c6500-h-1 -p tcp --dport 80 -j REDIRECT --to-ports 3128
+fi
+
+# For lag 2 WCCP:
+if [ "$IFACE" = eth0 ]; then
+	iptables -t nat -A PREROUTING -i eth0 -p tcp -s 'karantenenett/maske' --dport 80 -j REDIRECT --to-ports 3128
+fi
+
+</code>
+I <code>if-down.d/squid3</code> fjerner vi den samme regelen:
+<code>
+#! /bin/sh -e
+
+# For lag 3 WCCP:
+# Remove iptables rule when tunnell interface is going down
+if [ "$IFACE" = tun-c6500-h-1 ]; then
+        iptables -t nat -D PREROUTING -i tun-c6500-h-1 -p tcp --dport 80 -j REDIRECT --to-ports 3128
+fi
+
+# For lag 2 WCCP:
+if [ "$IFACE" = eth0 ]; then
+	iptables -t nat -D PREROUTING -i eth0 -p tcp -s 'karantenenett/maske' --dport 80 -j REDIRECT --to-ports 3128
+fi
+
+</code>
+</pre>
+tun-c6500-h-1 refererer her til tunnellinterfacet i /etc/network/interfaces. Har man flere tuneller må man ha egne innslag for hver tunnell.
+Dette sørger for at trafikk inn på tunnel-interfacet (fra ruteren) på TCP-port 80 blir REDIRECT'et til TCP-port 3128 hvor squid lytter.<br>
+<code> iptables -v -t nat -nL </code> gir deg status på disse reglene.
+</p>
+
+<h2>Overvåkning</h2>
+<p>
+Husk å legge til overvåkning av squid i bigbrother for hver enkelt vk! Dette ligger i subversion for bigbrother i fila <code>/etc/hobbit/hobbit-clients.d/uninett.cfg</code>
+</p>
+<h2>Kontaktpersoner</h2>
+<ul>
+  <li>rune.sydskjor@uninett.no</li>
+</ul>
+
+<?php
+include "uninettbunn.php3";
+?>
