@@ -10,9 +10,8 @@ Dette dokument er myntet på lokalt IKT driftspersonell ved
 høgskole/universitet som er bruker av verktøykassen. Verktøykassene er
 som kjent drevet fra Sikt. Driftsinstruks for Sikt Service Center og
 beredskapsvakt [foreligger i
-tillegg.](https://kind.uninett.no/driftwiki/instruks/vk/index.html) For
-en generell beskrivelse av verktøykassetjenesten, se
-[her](https://www.uninett.no/verkt%C3%B8ykasse).
+tillegg](https://kind.uninett.no/driftwiki/instruks/vk/index.html). Se Sikts nettsider [for
+en generell beskrivelse av tjenesten](https://sikt.no/tjenester/nettadministrasjon).
 
 For å benytte flere av tjenestene på verktøykassen kreves naturlig nok
 relevant konfigurasjon av nettutstyret. Vi viser til [Uninett
@@ -21,7 +20,7 @@ fagspesifikasjoner (UFS-er)](https://www.uninett.no/ufs/nett).
 Vi minner også om at svitsjene i campusnettet bør (les: *må*) være på en
 forsvarlig programvareversjon.
 
-## <span id="vedlikeholdsvindu">Vedlikeholdsvindu</span>
+## Vedlikeholdsvindu
 
 Tjenesten har fast vedlikeholdsvindu på **tirsdager mellom klokken 10:00
 og 11:00**.
@@ -31,10 +30,10 @@ av maskinvaren, hovedsakelig i forbindelse med sikkerhetsoppdateringer,
 uten at det blir gitt nærmere beskjed i forkant. Det kan forekomme
 merkbare driftsforstyrrelser.
 
-## <span id="Sikkerhetsdirektiv">Sikkerhetsdirektiv for verktøykassene</span>
+## Sikkerhetsdirektiv for verktøykassene
 
 Sikt har driftsansvar for verktøykassene, se definert
-[sikkerhetsdirektiv](sikkerhetsdirektiv.html) for detaljer rundt drift-
+[sikkerhetsdirektiv](sikkerhetsdirektiv) for detaljer rundt drift-
 og sikkerhetsopplegget.
 
 Siden driftsansvaret ligger til Sikt er ryddigste løsning at *kun* Sikt
@@ -43,28 +42,30 @@ dere som brukere kan gjøre tilstrekkelig for å rette feil rundt
 applikasjonene m.m. Dette gjør vi ved å gi dere nødvendige
 sudo-rettigheter, samt lesetilgang til filer (se Brukertilgang under).
 
-### <span id="kontaktpunkt">Kontaktpunkt</span>
+### Kontaktpunkt
 
 -   For driftshenvendelser, ta kontakt med <kontakt@sikt.no>
 -   For diskusjon/spørsmål om bruk av verktøyene, bruk
-    <vk@uninett.no>.
+    <vk@lister.sikt.no>.
     Alle som er registrert i Sikts driftsdatabase som teknisk ansvarlig
     for en verktøykasse ute hos en kunde blir automatisk abonnent på
     denne listen.
 -   Se ellers [kontaktadresser og telefonnumre på våre
     hjemmesider](https://sikt.no/kontakt-oss)
 
-## <span id="Brukertilgang">Brukertilgang til verktøykassen</span>
+## Brukertilgang til verktøykassen
 
 For å logge inn på verktøykassen med ssh må du ha bruker. Du bør være
-medlem av gruppen netops, da det bl.a. gir filrettigheter under
-/tftpboot. Videre vil du om du kjører /bin/bash få satt hensiktsmessig
-umask for tftp-tjenesten.
+medlem av gruppen `netops`, da det bl.a. gir filrettigheter under
+`/tftpboot`. Videre vil du om du kjører `/bin/bash` få satt hensiktsmessig
+*umask* for tftp-tjenesten.
 
 For å legge til ny bruker gjør administrator:
 
-      useradd -g netops -m -s /bin/bash <nyperson>
-      passwd <nyperson>
+```shell
+useradd -g netops -m -s /bin/bash <nyperson>
+passwd <nyperson>
+```
 
 Merk at det er det samme passord som blir brukt ved radiusautentisering
 mot nettelektronikken. Merk også at det kan bli endringer her,
@@ -75,111 +76,111 @@ Alle brukere som er i gruppe <span class="kbd">netops</span> gis (via
 root-tilgang. For å se hvilke sudo-muligheter man har kan man kjøre
 kommandoen:
 
-      sudo -l
+```shell
+sudo -l
+```
 
 Blant kommandoene som kan kjøres via sudo er:
 
-<span class="kbd">nav</span>
-Generell kommando for å kontrollere nav
+- `nav`: Generell kommando for å kontrollere nav
 
-<span class="kbd">service apache2 reload</span>
-Relaste konfigurasjon for webtjeneren
+- `service apache2 reload`: Relaste konfigurasjon for webtjeneren
 
-<span class="kbd">service nfsen \[start|stop\]</span>
-Starte/stoppe NfSen
+- `service nfsen \[start|stop\]`: Starte/stoppe NfSen
 
 For å relaste apache webtjeneren kan man feks kjøre kommandoen:
 
-      sudo service apache2 reload
+```shell
+sudo service apache2 reload
+```
 
-## <span id="tftp">tftp</span>
+## tftp
 
-tftp-tjenesten gjør det mulig å skrive og laste konfigurasjon til/fra
-nettutstyret. tftp-demonen er sikret med en konfigurasjonsfil
-/tftpboot/tftpd.conf. For å forenkle vedlikehold blir denne filen
+*tftp*-tjenesten gjør det mulig å skrive og laste konfigurasjon til/fra
+nettutstyret. *tftp*-demonen er sikret med en konfigurasjonsfil
+`/tftpboot/tftpd.conf`. For å forenkle vedlikehold blir denne filen
 autogenerert etter følgende kjøreregler.
 
 Når en ny svitsj skal legges til i tftp konfigurasjonen:
 
-1.  Legg til svitsjen i /tftpboot/tftpd.txt Syntaks sees lett i fila:
+1.  Legg til svitsjen i `/tftpboot/tftpd.txt` Syntaks sees lett i fila:
 
-             "svitsj"           "ipadresse"
-        eks:    lillehammer-gsw     128.39.3.44
+    ```
+            "svitsj"           "ipadresse"
+    eks:    lillehammer-gsw     128.39.3.44
+    ```
 
-2.  Etter at tftpd.txt er redigert, kjør make (du står på /tftpboot)
-    Vips, så er ny tftp.conf laget.
+2.  Etter at `tftpd.txt` er redigert, kjør make (du står på `/tftpboot`)
+    Vips, så er ny `tftp.conf` laget.
 
-3.  Du må da opprette den nye filen med touch "svitsj-confg" (eks: touch
-    lillehammer-gsw-confg )
+3.  Du må da opprette den nye filen med touch "svitsj-confg" (eks: `touch
+    lillehammer-gsw-confg`)
 
 4.  Nå kan du fra svitsjen skrive konfigurasjonen til verktøykasse med
     write network.
 
-Tilsvarende kan bokser slettes fra tftpd.txt / tftpd.conf.
+Tilsvarende kan bokser slettes fra `tftpd.txt` / `tftpd.conf`.
 
--   Merk: På sikt vil vi søke å automatisere denne manuelle
-    vedlikeholdsprosessen ved å bruke NAV som kilde. Dvs at du kun
-    legger inn utstyr i NAV, utstyret vil da automagisk kunne bruke
-    tftp-tjenesten.
-
-For å bevare historikk på konfigurasjon benyttes RCS. Opplegget er
+For å bevare historikk på konfigurasjon benyttes *RCS*. Opplegget er
 automatisert ved at en nattlig cronjobb sjekker inn ny versjon av alle
 filer som er endret. Alle endringer blir rapportert som epost til
 mottagere angitt via variabelen nocoperators i fila
-/etc/default/uninett.conf (merk at denne filen er styrt av Sikts Puppet,
+`/etc/default/uninett.conf` (merk at denne filen er styrt av Sikts Puppet,
 ta kontakt med <kontakt@sikt.no> for å få gjort endringer). En varsling
-om låste RCS filer (avglemte innsjekkinger) blir også sendt periodisk
+om låste RCS-filer (avglemte innsjekkinger) blir også sendt periodisk
 til samme adresse.
 
 -   I tillegg til konfigurasjoner ligger også aksesslistefiler på
-    /tftpboot. Vedlikehold av disse og arbeid med aksesslister generelt
-    er ikke omtalt her. Se README fil på /tftpboot for mer info på
+    `/tftpboot`. Vedlikehold av disse og arbeid med aksesslister generelt
+    er ikke omtalt her. Se `README`-fil på `/tftpboot` for mer info på
     dette.
--   En siste ting som ligger på /tftpboot er software imager. Disse kan
+-   En siste ting som ligger på `/tftpboot` er software-imager. Disse kan
     lastes til svitsjer for oppgradering.
 
-## <span id="radius">Radius</span>
+## Radius
 
 Det er ingen bruker-konfigurasjon forbundet med radius som trengs å
 konfigureres på verktøykassene. Dette fordi radius er satt opp til bruke
-/etc/passwd som sin brukerkilde. Dersom brukerne her har satt passord
+`/etc/passwd` som sin brukerkilde. Dersom brukerne her har satt passord
 blir dette benyttet ved radiusautentisering. Dersom bruker på
-nettutstyret logger seg på med @uninett.no-endelse så er radiustjener på
+nettutstyret logger seg på med `@uninett.no`-endelse så er radiustjener på
 verktøykassen satt opp til å relée forespørsler til radiustjener på
-trane.uninett.no. Således kan Sikt drift komme inn (dersom ønskelig).
+`trane.uninett.no`. Således kan Sikt drift komme inn (dersom ønskelig).
 
-Det som imidlertid må konfigureres er /etc/freeradius/clients.conf
+Det som imidlertid *må* konfigureres er `/etc/freeradius/clients.conf`
 
 Eksempel fra HiL:
 
-    client 128.39.109.0/26 {
-       secret       = felles-hemmelighet
-       shortname    = hil-mngmt
-    }
+```
+client 128.39.109.0/26 {
+   secret       = felles-hemmelighet
+   shortname    = hil-mngmt
+}
+```
 
 Det vi angir her at alle svitsjene i området 128.39.109.1-63 tillates å
 snakke radius med verktøykassen gitt at de er konfigurert med samme
-felles-hemmelighet. Endringer i /etc/freeradius/clients.conf styres med
+felles-hemmelighet. Endringer i `/etc/freeradius/clients.conf` styres med
 Puppet og må meldes inn til <kontakt@sikt.no>.
 
-## <span id="syslog">Syslog</span>
+## Syslog
 
 All nettelektronikk bør syslogge til verktøykassen. Syslog er satt opp
 slik at alle meldinger logget til verktøykassen fra nettverket på
-facility local6 og local7 blir lagret i disse to filene:
+facility `local6` og `local7` blir lagret i disse to filene:
 
-    /var/log/network.log
-    /var/log/network_nav.log
+- `/var/log/network.log`
+- `/var/log/network_nav.log`
 
 Sistnevnte fil blir igjen lest og tømt av NAV sin bakgrunnsprosess
-logengine som kjører én gang i minuttet. Dataene blir lagt i NAVs
-syslog-database og er igjen søkbare gjennom NAVs Syslog Analyzer tool.
+`logengine`, som kjører én gang i minuttet. Dataene blir lagt i NAVs
+syslog-database og er igjen søkbare gjennom NAVs *Syslog Analyzer tool*.
 
-network.log blir ikke tømt, men komprimert og rotert en gang i døgnet.
+`network.log` blir ikke tømt, men komprimert og rotert en gang i døgnet.
 Dere kan således velge å søke i syslog i tekstmodus, direkte på
 verktøykassen, eller via NAV.
 
-## <span id="nav">NAV</span>
+## NAV
 
 NAV er omfattende å forklare. Vi viser her til [NAVs egen
 dokumentasjon](https://nav.readthedocs.io/en/latest/). Litt starthjelp:
@@ -213,8 +214,8 @@ kontakt med Sikt.
 
 Dette er satt for deg. Passordet kan leses fra attributten `userpw_nav`
 i filen `/etc/nav/db.conf`. Merk at du kan aksessere denne databasen ved
-å bruke dette passordet når du skriver <span class="kbd">psql nav
-nav</span>. For dypere feilsøking, eller dypere forståelse av databasen
+å bruke dette passordet når du skriver `psql nav
+nav`. For dypere feilsøking, eller dypere forståelse av databasen
 er dette nyttig.
 
 ### "Seede" databasen:
@@ -237,7 +238,7 @@ til systemet.
 
 ### Sjekk status på bakgrunnsprosesser og logger
 
--   Kommandoen <span class="kbd">sudo nav status</span> gir status på om
+-   Kommandoen `sudo nav status` gir status på om
     NAVs ulike bakgrunnsprosesser og cronjobber er aktive.
 -   Innsamlingsmotoren *ipdevpoll* logger (bl.a.) til
     `/var/log/nav/ipdevpoll.log `
@@ -247,15 +248,14 @@ til systemet.
     `eventengine.log` (hendelsessystemet) og `alertengine.log`
     (alarmsystemet).
 
-### <span id="feilsok-sms">Feilsøking av mobiltelefon/SMS-utsending</span>
+### Feilsøking av mobiltelefon/SMS-utsending
 
 Dersom du har problemer med utsending av SMS fra verktøykassen, kan du
 gjøre litt førstelinjes feilsøking før du feilmelder situasjonen til
 <kontakt@sikt.no>.
 
 -   Dersom mobilen/GSM-enheten er koblet til med en USB, verifisér at
-    mobilen/GSM-enheten er synlig på USB-bussen: <span
-    class="kbd">lsusb</span>
+    mobilen/GSM-enheten er synlig på USB-bussen: `lsusb`
 
     Forventet output skal ligne på dette
 
@@ -278,21 +278,18 @@ gjøre litt førstelinjes feilsøking før du feilmelder situasjonen til
         Bus 005 Device 003: ID 0403:6001 Future Technology Devices International, Ltd FT232 USB-Serial (UART) IC
 
 -   Verifisér at Gammu klarer å gjenkjenne den tilkoblede
-    mobiltelefonen: <span class="kbd">sudo -u navcron gammu
-    --identify</span>
+    mobiltelefonen: `sudo -u navcron gammu --identify`
 
 -   Verifisér at mobiltelefonen har forbindelse med GSM-nettverket:
-    <span class="kbd">sudo -u navcron gammu --networkinfo</span>
+    `sudo -u navcron gammu --networkinfo`
 
--   Verifisér at Gammu kan sende SMS-meldinger til din telefon: <span
-    class="kbd">echo "Melding" | sudo -u navcron gammu --sendsms TEXT
-    &lt;tlfnr&gt;</span>
+-   Verifisér at Gammu kan sende SMS-meldinger til din telefon:
+    `echo "Melding" | sudo -u navcron gammu --sendsms TEXT <tlfnr>`
 
 -   Verifisér at NAVs SMS-daemon kan sende SMS-meldinger til din
-    telefon: <span class="kbd">sudo -u navcron smsd.py -t
-    &lt;tlfnr&gt;</span>
+    telefon: `sudo -u navcron smsd.py -t <tlfnr>`
 
-### <span id="nav-radius-accounting">Sette opp NAV/verktøykassen for Radius Accounting-logging</span>
+### Sette opp NAV/verktøykassen for Radius Accounting-logging
 
 NAV tilbyr [brukersporing via accounting-logging fra
 FreeRADIUS-tjenere](https://nav.uninett.no/wiki/radius). Dette krever en
@@ -318,7 +315,7 @@ de gitte IP-adressene. Du vil få et brukernavn og et passord til
 PostgreSQL-databasen, som skal brukes til å konfigurere
 FreeRADIUS-tjeneren med.
 
-## <span id="sertifikathandtering">Sertifikathåndtering</span>
+## Sertifikathåndtering
 
 Webtjeneren på verktøykassen er bare tilgjengelig over *HTTPS*. Dette
 krever et tjenersertifikat. Vi bruker i dag [Let's
@@ -333,7 +330,7 @@ på verktøykassen holder de nødvendige URLene åpne for verden, men kan
 ellers begrense aksess til et valgfritt sett med IP-adresser. Henvend
 deg til vårt kontaktpunkt dersom du ønsker endringer i restriksjonene.
 
-## <span id="netflow">Netflow/NfSen</span>
+## Netflow/NfSen
 
 Verktøykassene bruker [NfSen](http://nfsen.sourceforge.net/) for å
 prosessere netflowdata som blir eksportert fra rutere. NfSen er et
@@ -347,14 +344,14 @@ netflow-eksportører ('sources') etter at systemet er startet , så det er
 lurt å ha alle disse klart på forhånd, og legge alle inn før systemet
 startes opp.
 
-Kildene defineres under <span class="kbd">sources</span> i <span
-class="kbd">/etc/nfsen/nfsen.conf.local</span>. Denne filen konfigureres
+Kildene defineres under `sources` i
+`/etc/nfsen/nfsen.conf.local`. Denne filen konfigureres
 av Puppet; eventuelle endringsønsker må meldes til Sikt.
 
 Mere inngående detaljer angående bruk av nfsen står på
 [nfsen](http://nfsen.sourceforge.net/) sine hjemmesider.
 
-Generelt om Netflow:
+### Generelt om Netflow
 
 -   En flow er definert som et sett av IP pakker som har en del felles
     felt i pakkehodet.
@@ -367,85 +364,86 @@ Generelt om Netflow:
     -   Type of service
     -   Input interface
 
-Grafene:
+### Grafene
 
 -   Grafene vil vise trafikk-mønsteret til kildene man eksporterer
     netflow-data ifra. Default er det satt opp slik at grafene er
     "stacked". Dvs. at dersom man eksporterer ifra flere kilder (har
     flere farger på grafene), legges den ene grafen på toppen av den
-    andre. Dette kan man endre ved å trykke på line graph på
-    details-fanen. Her kan man også endre til logaritmisk skala.
--   Under Graphs-fanen kan man se større grafer for henholdsvis Flows,
-    Packets eller Traffic.
--   Under Details-fanen kan man se detaljer for enten Flows, Packets
-    eller Traffic. Man kan velge en av de andre i de små thumbnailene på
+    andre. Dette kan man endre ved å trykke på *line graph* på
+    *details*-fanen. Her kan man også endre til logaritmisk skala.
+-   Under *Graphs*-fanen kan man se større grafer for henholdsvis *Flows*,
+    *Packets* eller *Traffic*.
+-   Under *Details*-fanen kan man se detaljer for enten *Flows*, *Packets*
+    eller *Traffic*. Man kan velge en av de andre i de små thumbnailene på
     høyresiden.
 -   Dersom man vil ekskludere en kilde ifra grafene, kan man trykke på
-    krysset under <span class="kbd">source</span> for hver kilde.
+    krysset under `source` for hver kilde.
 
-Hvordan grave i detaljene:
+### Hvordan grave i detaljene
 
 -   Angi tidsperiode
--   Dette gjør du enten ved å la den stå på <span class="kbd">Single
-    Timeslot</span> (5 min) under grafen, eller du velger en lengre
-    tidsperiode med å velge <span class="kbd">Time Window</span> under
+-   Dette gjør du enten ved å la den stå på `Single
+    Timeslot` (5 min) under grafen, eller du velger en lengre
+    tidsperiode med å velge `Time Window` under
     grafen og drar på pila som er nederst på grafen. Tidspunktet blir
     avmerket med grønn farge i grafen
 
-List Flows vs. Stat TopN:
+### List Flows vs. Stat TopN
 
--   <span class="kbd">List Flows</span> viser hele flows, og gjør ingen
+-   `List Flows` viser hele flows, og gjør ingen
     sortering basert på statistikk. Her vil det kun vises de antall
     flows man har valgt som først stemmer med det utvalget man har
     valgt. Man kan også aggregere data basert på de valgene man gjør.
--   <span class="kbd">Stat TopN</span> viser statistisk analyse og
+-   `Stat TopN` viser statistisk analyse og
     sorterer output basert på valgene du gjør.
--   <span class="kbd">Stat Any IP Address order by bytes</span> vil
+-   `Stat Any IP Address order by bytes` vil
     f.eks gi deg en liste over de som har overført mest data i valgt
     tidsperiode.
 
-Søk i netflow dataene:
+### Søk i netflow dataene
 
 -   tcpdump-aktig filter format
 -   Eks.:
-    -   host 158.38.x.y (Filtrerer ut all trafikk til/fra host
+    -   `host 158.38.x.y` (Filtrerer ut all trafikk til/fra host
         158.38.x.y)
-    -   src host 158.38.w.x and dst host 158.38.y.z (Filtrerer ut all
+    -   `src host 158.38.w.x and dst host 158.38.y.z` (Filtrerer ut all
         trafikk mellom disse to hostene der trafikken kommer fra
         158.38.w.x og sendes til 158.38.y.z, src=source,
         dst=destination)
-    -   proto tcp and src host 158.38.x.y (Filtrerer ut all tcp trafikk
+    -   `proto tcp and src host 158.38.x.y` (Filtrerer ut all tcp trafikk
         sendt ifra 158.38.x.y)
-    -   src host 158.38.w.x or host 158.38.y.z (Filtrerer ut trafikk fra
+    -   `src host 158.38.w.x or host 158.38.y.z` (Filtrerer ut trafikk fra
         host 158.38.x.y eller all trafikk til/fra host 158.38.y.z)
-    -   src host 158.38.x.y and src port 22 (Filtrerer ut all trafikk
+    -   `src host 158.38.x.y and src port 22` (Filtrerer ut all trafikk
         fra host 158.38.x.y der trafikken er sendt ifra port 22(ssh))
-    -   src port gt 80 and src port lt 123 (Filtrerer ut trafikk sendt
+    -   `src port gt 80 and src port lt 123` (Filtrerer ut trafikk sendt
         ifra portene mellom 80 og 123, gt= greater than, lt=less than)
-    -   src port 80 and not host 158.38.x.y (Filtrerer ut trafikk sendt
+    -   `src port 80 and not host 158.38.x.y` (Filtrerer ut trafikk sendt
         ifra port 80 og som ikke er sendt til/fra host 158.38.x.y)
-    -   src net 158.38.x.0/24 (Filtrerer ut trafikk sendt ifra nettet
+    -   `src net 158.38.x.0/24` (Filtrerer ut trafikk sendt ifra nettet
         158.38.x.0/24)
     -   Ett annet triks er å angi hvilke interface man skal plukke ut
-        trafikk ifra. Eks. in if 24, vil kun plukke ut trafikk som
+        trafikk ifra. Eks. `in if 24`, vil kun plukke ut trafikk som
         kommer inn på interface 24. Hvilket nummer et interface har på
-        et cisco-ruter finner man ut med kommandoen show snmp mib ifmib
-        ifindex. (Husk at netflow kun eksporteres fra trafikk inn på et
+        et cisco-ruter finner man ut med kommandoen `show snmp mib ifmib
+        ifindex`. (Husk at netflow kun eksporteres fra trafikk inn på et
         interface. Trafikk ut på et interface vil ikke bli eksportert,
         og må følgelig filtreres ut fra det interfacet hvor denne
-        trafikken kommer inn.) Skriver man derfor out if 24 vil dette da
+        trafikken kommer inn.) Skriver man derfor `out if 24` vil dette da
         bety det samme som, gi meg all trafikk **inn** på alle interface
         bortsett fra 24.
 
-Ferdigdefinerte filter man bruker ofte:
+### Ferdigdefinerte filter man bruker ofte
 
 -   Disse kan lagres som filer i filsystemet under katalogen
-    /var/lib/nfsen/filters
+    `/var/lib/nfsen/filters`
 -   Vanlig filtersyntaks brukes i disse filene også.
 -   Ferdigdefinerte filtre velges under boksen man skriver inn filtre
     der det vanligvis står and none
 
-Lage profiler:
+### Lage profiler
+
 For søk man gjør ofte og som man vil følge med grafisk over tid kan det
 være lurt å lage egne profiler som har oversikt over denne trafikken.
 Dersom man velger Real Profile lager dette egne flow-filer på
@@ -469,7 +467,7 @@ sourceforge](http://nfsen.sourceforge.net/) for detaljer.
         å prosessere og lage denne profilen
     -   Vis profilen etterpå ved å velge denne fra selected profile
 
-Alert:
+### Alert
 
 -   I nyeste utgave av nfsen kan man lage terskelbaserte alarmer.
 -   Dokumentasjonen på [nfsen sine
@@ -487,37 +485,43 @@ foer man melder feil.
     1 nfsend og 1 nfcapd per kilde(netflow-eksportør) Dersom ikke
     restart nfsen.
 -   Mottar du flows fra kilde?
-    Bruk gjerne tcpdump for å sjekke om du mottar flows. F.eks tcpdump
-    port 2055 Hvilken port du lytter på kan du finne i
-    /etc/nfsen/nfsen.conf.local under sources. Dersom ikke, sjekk
+    Bruk gjerne tcpdump for å sjekke om du mottar flows. F.eks `tcpdump
+    port 2055`. Hvilken port du lytter på kan du finne i
+    `/etc/nfsen/nfsen.conf.local` under sources. Dersom ikke, sjekk
     ruterconfig og access-lister.
 
-## <span id="cmdline">Command line tools</span>
+## Command line tools
 
 En del kjekke command line tools er installert på verktøykassene. Her
 følger en liste og kort omtale:
 
--   ping og traceroute (trenger vel ingen kommentar)
+-   `ping` og `traceroute` (trenger vel ingen kommentar)
 
--   snmpwalk (m.fl.)
+-   `snmpwalk` (m.fl.)
     Brukes til å polle utstyr med snmp, kjekt for NAV feilsøking.
 
-             Typisk syntaks:
-                snmpwalk -v2c -c
-             Eks:
-                snmpwalk -v2c -c public 10.10.10.1 ifinoctet
-                (henter inoctet tellere fra boks 10.10.10.1)
+    Typisk syntaks:
 
+    ```shell
+    snmpwalk -v2c -c <community> <ip> <oid>
+    ```
 
--   nmap
+    Eks:
+
+    ```shell
+    snmpwalk -v2c -c public 10.10.10.1 ifinoctet
+    ```
+    (henter inoctet tellere fra boks 10.10.10.1)
+
+-   `nmap`
     Brukes til scanne en host/sjekke om en port/sett av porter er åpne.
 
-## <span id="hobbit">Hobbit/Xymon</span>
+## Hobbit/Xymon
 
 Brukerdokumentasjon for Hobbit, se
 [her](https://drift.uninett.no/utstyr/vk/hobbit-vk.html)
 
-## <span id="fwbuilder">Firewall Builder (fwbuilder)</span>
+## Firewall Builder (fwbuilder)
 
 [Brukerdokumentasjon for Firewall Builder foreligger på en egen
 side](http://drift.uninett.no/utstyr/vk/fwbuilder.html).
