@@ -518,8 +518,7 @@ følger en liste og kort omtale:
 
 ## Hobbit/Xymon
 
-Brukerdokumentasjon for Hobbit, se
-[her](https://drift.uninett.no/utstyr/vk/hobbit-vk.html)
+Se egen side for [dokumentasjon av Xymon-integrasjonen på verktøykassen](xymon).
 
 ## Firewall Builder (fwbuilder)
 
