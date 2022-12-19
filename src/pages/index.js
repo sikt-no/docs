@@ -38,6 +38,11 @@ const topics = (
       sikkerhet i høysete. Vi leverer fastnett, trådløst nettverk, rutere,
       brannmurer og dataromnett.
     </Topic>
+    <Topic title="Nettadministrasjon" link="docs/nettadministrasjon">
+      Nettadministrasjon fra Sikt er et tilbud til virksomheter som ønsker
+      å drive eget lokalnett, og trenger gode verktøy for nettovervåkning
+      og trafikkanalyse.
+    </Topic>
   </>
 );
 
