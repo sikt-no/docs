@@ -88,8 +88,8 @@ const config = {
                 to: 'https://sikt.no/kontakt-oss',
               },
               {
-                label: 'About Sikt',
-                to: 'https://sikt.no/about-sikt',
+                label: 'Om Sikt',
+                to: 'https://sikt.no/om-sikt',
               },
               {
                 label: 'Personvernerklæring',
