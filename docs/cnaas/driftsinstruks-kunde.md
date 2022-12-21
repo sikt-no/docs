@@ -87,11 +87,11 @@ Opplæring i overvåkningssystemer gis etter behov.
   - Gjelder kun dersom kunden har fått tilgang til det trådløse overvåkningssystemet.
   - Logg inn og sjekk om det er rapporterte feil i trådløsnettet.  
 
-Dersom overvåkningssystemene ikke gir noe indikasjon på at det er noe feil så kommer "Sikts guide med tips og triks for å utføre grunnleggende feilsøking i lokalnett" til nytte. Denne finner du på [Grunnleggende feilsøking ved problemer i lokalnett](grunnleggende-feilsok-lokalnett). Her får du også mye informasjon som du kan bruke ved eskalering til Sikt. 
+Dersom overvåkningssystemene ikke gir noe indikasjon på at det er noe feil så kommer "Sikts guide med tips og triks for å utføre grunnleggende feilsøking i lokalnett" til nytte. Denne finner du på [Grunnleggende feilsøking ved problemer i lokalnett](grunnleggende-feilsok-lokalnett.md). Her får du også mye informasjon som du kan bruke ved eskalering til Sikt.
 
 #### Eskalering av incidenter til Sikt
 
-Se [Nødvendig informasjon før eskalering av lokalnett-relaterte saker til Sikt](info-ved-eskalering) for å se hva som må være med av informasjon før sak eskaleres til Sikt. Kontaktpunkt for Sikt finnes lengre opp i denne artikkelen under [Kontaktpunkter hos Sikt](#kontaktsikt).
+Se [Nødvendig informasjon før eskalering av lokalnett-relaterte saker til Sikt](info-ved-eskalering.md) for å se hva som må være med av informasjon før sak eskaleres til Sikt. Kontaktpunkt for Sikt finnes lengre opp i denne artikkelen under [Kontaktpunkter hos Sikt](#kontaktsikt).
 
 ### Sikt Servicesenter (SSC)
 
