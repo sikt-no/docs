@@ -33,7 +33,7 @@ merkbare driftsforstyrrelser.
 ## Sikkerhetsdirektiv for verktøykassene
 
 Sikt har driftsansvar for verktøykassene, se definert
-[sikkerhetsdirektiv](sikkerhetsdirektiv) for detaljer rundt drift-
+[sikkerhetsdirektiv](sikkerhetsdirektiv.md) for detaljer rundt drift-
 og sikkerhetsopplegget.
 
 Siden driftsansvaret ligger til Sikt er ryddigste løsning at *kun* Sikt
@@ -518,9 +518,9 @@ følger en liste og kort omtale:
 
 ## Hobbit/Xymon
 
-Se egen side for [dokumentasjon av Xymon-integrasjonen på verktøykassen](xymon).
+Se egen side for [dokumentasjon av Xymon-integrasjonen på verktøykassen](xymon.md).
 
 ## Firewall Builder (fwbuilder)
 
 [Brukerdokumentasjon for Firewall Builder foreligger på en egen
-side](fwbuilder).
+side](fwbuilder.md).
