@@ -1,7 +1,8 @@
 ---
 title: Xymon-integrasjon på verktøykasser
-ansvarlig: morten.brekkevold@sikt.no
-date: 26.08.2021
+last_update:
+  date: 2021-08-26
+  author: morten.brekkevold@sikt.no
 ---
 
 ## Innledning

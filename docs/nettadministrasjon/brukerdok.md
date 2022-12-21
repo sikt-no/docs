@@ -1,7 +1,8 @@
 ---
 title: Brukerdokumentasjon Verktøykasser
-ansvarlig: morten.brekkevold@sikt.no
-date: 2022-04-06
+last_update:
+  date: 2022-04-06
+  author: morten.brekkevold@sikt.no
 ---
 
 ## Innledning
