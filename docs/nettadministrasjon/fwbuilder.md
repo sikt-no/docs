@@ -1,7 +1,8 @@
 ---
 title: Firewall builder
-ansvarlig: Rune Sydskjør
-date: 2011-09-30
+last_update:
+  date: 2011-09-30
+  author: rune.sydskjor@sikt.no
 ---
 
 ## Innledning

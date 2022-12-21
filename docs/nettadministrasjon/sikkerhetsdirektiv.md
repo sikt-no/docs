@@ -1,7 +1,8 @@
 ---
 title: Sikkerhetsdirektiv for GigaCampus verktøykasser
-ansvarlig: vidar.faltinsen@sikt.no
-date: 2006-11-30
+last_update:
+  date: 2006-11-30
+  author: vidar.faltinsen@sikt.no
 ---
 
 ## 1. Om verktøykassene
