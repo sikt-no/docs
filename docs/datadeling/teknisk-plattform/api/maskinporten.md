@@ -13,7 +13,7 @@ For mer informasjon og forklaring av oppsett [se denne siden](/docs/datadeling/v
 ## Hvordan sette opp maskinporten API-et
 
 For å sette opp maksinporten APIet så trenger man en bruker i [digitaliseringsdirektoratet sin Samarbeidsportal](https://selvbetjening-samarbeid-ver2.difi.no), hvem som helst kan sette opp en integrasjon mot test miljøet til maskinporten. 
-For å sette opp en integrasjon mot maskinporten produksjon så trenger man enten å bli delegert rollen _Selvbetjening av integrasjoner i ID-porten/Maskinporten_ av hovedadministratoren til virksomheten vanligvis universitets/høyskole-direktøren, se digidir sin [dokumentasjon for hvordan dette tildeles](Selvbetjening av integrasjoner i ID-porten/Maskinporten). 
+For å sette opp en integrasjon mot maskinporten produksjon så trenger man enten å bli delegert rollen _Selvbetjening av integrasjoner i ID-porten/Maskinporten_ av hovedadministratoren til virksomheten vanligvis universitets/høyskole-direktøren, se digidir sin [dokumentasjon for hvordan dette tildeles](https://docs.digdir.no/docs/Maskinporten/maskinporten_sjolvbetjening_web.html#tilgang-i-produksjonsmilj%C3%B8). 
 Hvis man ikke har tilgang selv så kan noen med tilgang gjøre stegene i [konfigurasjonsteg i Samarbeidsportalen](#Konfigurasjonsteg-i-Samarbeidsportalen) for deg.
 
 Det er testet ut to forskjellige måter å autentisere seg mot maskinporten, den første er ved å bruke virksomhetssertifikatet, enten ved at sendes til på en sikker måte til IntArk drift, slik at de får lastet det opp i filsystemet til gravitee.
