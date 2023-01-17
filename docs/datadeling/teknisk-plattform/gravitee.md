@@ -121,8 +121,8 @@ avhengig av hvor godt API-et er designet.
 
 IntArk bruker open source versjonen av [Gravitee API
 management](https://gravitee.io). Vi kjører kun komponenten som heter _API
-management_, ikke _Access Management_ eller _Alert Engine_. Fra starten av 2022
-kjører vi versjon 3.
+management_, ikke _Access Management_ eller _Alert Engine_. Vi leverer versjon 
+3 av gravitee.
 
 Versjon 3 av Gravitee splitter opp administrasjonen av API-er og konsumenter på
 to forskjellige adresser. For å abonnere på et API bruker du
