@@ -49,16 +49,9 @@ like mellom institusjonene, bare med institusjonens forkortelse som forskjell.
 - Meldingskøene er tilgjengelig på adressen: `mq-INSTANS.intark.uh-it.no`
 - Brukergrensesnittet har adressen
   `https://mg-mgmt-INSTITUSJON.apps.CLUSTERFARGE.intark.uh-it.no`, der
-  `CLUSTERFARGE` varierer, og kan for eksempel være "`yellow`" eller "`blue`".
+  `CLUSTERFARGE` varierer, og kan for eksempel være "`green`" eller "`blue`".
   Instansen bytter cluster ved oppgraderinger. Du anbefales å heller bruke
   selvbetjeningsportalen.
-
-<!-- TODO: Sjekk med Ingvar om dette stemmer lenger:
-`https://mq-mgmt-INSTITUSJON.CLUSTERFARGE-apps.intark.uh-it.no`. der
-INSTITUSJON er for eksempel "uio", "ntnu", "oslomet" eller "himolde", og
-CLUSTERFARGE er for eksempel "yellow" eller "blue", avhengig av hvilket cluster
-instansen kjører på. Instansen vil bytte cluster ved oppgraderinger, så dette
-vil endres. -->
 
 ## Annet
 
