@@ -37,7 +37,7 @@ $ openssl rsa -in maskinporten-rs256.key -pubout -outform PEM -out maskinporten-
 Samarbeidsportalen krever at alle nøkler som skal lastes opp til bruk med maskinporten er i jwks formatet(JWK = Java Web Key). jwks er en egen base64-formatert presentasjon av offentlige nøkler.
 Det finnes så vidt vi vet ingen standard cli-verktøy som konverterer til/fra jwks, men det finnes verktøy og kodesnutter online som utfører dette.
 Verktøyene trenger kun den offentlige nøkkelen, så burde være uproblemtask å bruke det verktøyet man selv ønsker.
-Vi har brukt [pem_to_jwks.py](https://github.com/jpf/okta-jwks-to-pem.git) siden skriptet er lettlest og bruker kjente bibliotek. 
+Vi har brukt [pem_to_jwks.py](https://github.com/oyviaase/okta-jwks-to-pem.git) siden skriptet er lettlest og bruker kjente bibliotek. 
 Det finnes en PR som konverter skriptet til python 3 hvis man ønsker versjon av skriptet som er kompatibel med python3 istedenfor python2.
    1. Last ned konverterings verktøy for eksempel `pem_to_jwks.py`.
 ```bash 
