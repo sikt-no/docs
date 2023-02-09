@@ -11,6 +11,7 @@ Les [Driftsinstruks for kunder av "Lokalnett fra Sikt - CNaaS"](driftsinstruks-k
 
 ## Informasjon som bør være med i en sak
 
+- Organisasjonsnavn for kunde av CNaaS
 - Tidspunkt for feilen.
   - Dersom dette er sporadisk, oppgi tidspunkt for når feilen fant sted sist. Eventuelt kan flere tidspunkt oppgis. 
 - God beskrivelse av problemet
