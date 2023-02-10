@@ -37,7 +37,7 @@ $ openssl rsa -in maskinporten-rs256.key -pubout -outform PEM -out maskinporten-
 Samarbeidsportalen krever at alle nøkler som skal lastes opp til bruk med maskinporten er i jwks formatet(JWK = Java Web Key). jwks er en egen base64-formatert presentasjon av offentlige nøkler.
 Det finnes så vidt vi vet ingen standard cli-verktøy som konverterer til/fra jwks, men det finnes verktøy og kodesnutter online som utfører dette.
 Verktøyene trenger kun den offentlige nøkkelen, så burde være uproblemtask å bruke det verktøyet man selv ønsker.
-Vi har brukt [pem_to_jwks.py](https://github.com/jpf/okta-jwks-to-pem.git) siden skriptet er lettlest og bruker kjente bibliotek. 
+Vi har brukt [pem_to_jwks.py](https://github.com/oyviaase/okta-jwks-to-pem.git) siden skriptet er lettlest og bruker kjente bibliotek. 
 Det finnes en PR som konverter skriptet til python 3 hvis man ønsker versjon av skriptet som er kompatibel med python3 istedenfor python2.
    1. Last ned konverterings verktøy for eksempel `pem_to_jwks.py`.
 ```bash 
@@ -60,7 +60,7 @@ Vi antar dette er første gangen noen setter opp maskinporten i samarbeidsportal
    [![Administrer  integrasjoner](/datadeling/img/maskinporten/Samarbeidsportalen-administrasjon-av-tjeneste.png)](/datadeling/img/maskinporten/Samarbeidsportalen-administrasjon-av-tjeneste.png)
 3. Fyll ut skjemaet med følgende informasjon:
    - _Difi-tjeneste_: Maskinporten 
-   - __Scopes_: de man trenger(de fleste trenger i alle fall `dfo:ansatte`, `dfo:stillinger`, `dfo:ansatte.write` og `dfo:organisasjoner`) Scope settes ved å trykke på _Legg til scopes_ knappen 
+   - _Scopes_: de man trenger(ta kontakt med leverandørene av systemene for å få en oversikt over scopene dere må sette) Scope settes ved å trykke på _Legg til scopes_ knappen 
    - _Navn på integrasjonen_: vi har brukt `uio-gravitee-(prod|test)` avhengig av om det er snakk om maskinporten produksjons miljø eller maskinporten test miljø.
    - _Beskrivelse_: hva en du ønsker
    - _Tillatte grant types_: `urn:ietf:params:oauth:grant-type:jwt-bearer`
