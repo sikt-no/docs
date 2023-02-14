@@ -87,11 +87,11 @@ som kan se slik here ut:
 
 ### Konfigurasjons steg i Gravitee
 
-1. Kontakt support for å få fil med standardoppsett, og opprett tjenesten i API manager. Se [veileder for å registrere en tjeneste i API manager via fil](/docs/datadeling/veiledere/api-manager/importer-api).
+1. [Last ned template for API-definisjonen for maskinporten.](./maskinporten-api-template.json) og last den opp i graviteee. Se [veileder for å registrere en tjeneste i API manager via fil](/docs/datadeling/veiledere/api-manager/importer-api).
 2. Om dette er mot produksjonsystem i stedet for test, naviger til proxy og endpoint (under backend services) . Klikk på tannhjulet for PROD, fjern haken for backup endpoint. Slett TEST eller huk av for at test skal være backup endpint. **Husk å lagre**
 3. Gå på design. Klikk på policy "Generate JWT" Fyll inn:
    - __Key ID_: det samme parameteren man satte som `--kid` i steg 3.2 i [Lokale forberedelser](#Lokale-forberedelser)
-   - _audiences_: hvis produksjon endres den  til`https://maskinporten.no/`
+   - _audiences_: Settes til`https://maskinporten.no/`hvis det er produksjon eller `https://ver2.maskinporten.no` hvis det er test miljøet man skal bruke
    - _Private key_ Den private nøkkelen laget i steg 1 i [Lokale forberedelser](#Lokale-forberedelser)
    - **Husk å lagre**
 4. Gå til Portal og details. Klikk på _START THE API_ og _PUBLISH THE API_. Vi anbefaler at du for dette APIet ikke klikker på _MAKE PUBLIC_
