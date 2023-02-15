@@ -16,7 +16,7 @@ datadeling hos din institusjon.
       fellestjenesten](/docs/datadeling/veiledere/innforing) for
       hjelp.
 2. **Administrativt**
-   1. Kontakt Sikt for å få tilgang til fellestjenesten.
+   1. [Kontakt Sikt](https://sikt.no/kontakt-oss) for å få tilgang til fellestjenesten.
    2. Sikt avtaler formalia, som tjenesteavtale og databehandleravtale.
 3. **Ta i bruk Datadelingsplattformen**
    1. Vi setter opp [teknisk plattform](/docs/datadeling/teknisk-plattform)
