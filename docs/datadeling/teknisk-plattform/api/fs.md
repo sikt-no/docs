@@ -69,6 +69,21 @@ Se den [generelle veilederen](/docs/datadeling/veiledere/api-manager/api-manager
    ```
    Dette burde gi `HTTP 401` og `{"message":"Unauthorized","http_status_code":401}`.
 
+### Grunnoppsett for FS Gemini API
+Dette er et grunnoppsett mot FS Gemini API'et. Oppsettet kommer med en plan til bruk sammen med ServiceNow. Det er et oppsett satt opp mot [produksjonsmiljøet](fs-gemini-prod.json), samt et oppsett satt opp mot [utviklingsmiljøet](fs-gemini-preview.json).
+
+**Før import:**
+_Context path_ er satt til `/fs/gemini` og `/preview/fs/gemini`. Endre eventuelt denne om man benytter en annen _context path_ struktur.
+
+**Etter import:**
+Oppsettet bruker _API properties_ til å hente brukernavn og passord, og dette må derfor settes etter import av oppsettet:
+1. Gå til _Design_ på API-menyen
+2. Gå videre til _PROPERTIES_ i menyen oppe til høyre
+3. Legg inn bas64 encoded string av `bruker:passord` i verdifeltet til `fs_fsapi_api_key`
+4. Endre til _encrypted_
+5. **Husk å lagre**
+
+
 ## Konfigurasjon av meldingskø
 
 Les først om [RabbitMQ](/docs/datadeling/teknisk-plattform/rabbitmq) og (selvbetjeningsløsningen for RabbitMQ)[/docs/datadeling/teknisk-plattform/brom].
