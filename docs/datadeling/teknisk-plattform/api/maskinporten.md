@@ -12,6 +12,9 @@ Maskinporten, slik at du kan bruke dette for API som krever det.
 For mer informasjon og forklaring av oppsett, se [Backend-autentisering med
 JWTs](/docs/datadeling/veiledere/api-manager/jwt-mot-backend).
 
+Oppskriften er den samme for produksjons og testmiljøet til maskinporten. De 
+stegene som er forskjellig har vi markert hva som gjelder for produksjon og 
+hva som gjelder for test.
 
 ## 1 Få tilgang i Samarbeidsportalen
 
@@ -66,7 +69,7 @@ gjenbruke, kan du hoppe til steg 4:
 
 1. Logg inn i Samarbeidsportalen og velg _INTEGRASJONER_
 
-2. Trykk på _+Ny integrasjon_. Pass på at det står _VER2_ eller _PRODUKSJON_ i
+2. Trykk på _+Ny integrasjon_. Pass på at det står _PRODUKSJON_ eller _VER2_(for **testmiljøet** til maskinporten) i
    knappen ved siden av:
    [![Administrer  integrasjoner](/datadeling/img/maskinporten/Samarbeidsportalen-administrasjon-av-tjeneste.png)](/datadeling/img/maskinporten/Samarbeidsportalen-administrasjon-av-tjeneste.png)
 
@@ -85,27 +88,28 @@ gjenbruke, kan du hoppe til steg 4:
    [![Lag en ny  integrasjon](/datadeling/img/maskinporten/Samarbeidsportalen-opprett-tjeneste.png)](/datadeling/img/maskinporten/Samarbeidsportalen-opprett-tjeneste.png)
 
 4. Last opp JWT-nøkkel 
-Velg integrasjonen du nettopp laget og velg _Egne public nøkler_. I dialog-vinduet kopierer du inn output fra kommandoen i sted 2.3, men med hakeparentes rundt innholdet. Et eksempel:
+Velg integrasjonen du nettopp laget og velg _Egne public nøkler_. I dialog-vinduet kopierer du inn output fra kommandoen i steg 3 i [Lokale forberedelser](#Lokale-forberedelser), men med hakeparentes rundt innholdet. Et eksempel:
 ```
 [{"alg": "RS256", "e": "AQAB", "n": "XXXXXXXXXXXXXX...XXXXXXXXXXXXX", "kid": "uio-gravitee-test", "kty": "RSA", "use": "sig"}]
 ```
    [![Last opp nøkkel](/datadeling/img/maskinporten/Samarbeidsportalen-last-opp-nokkel.png)](/datadeling/img/maskinporten/Samarbeidsportalen-last-opp-nokkel.png)
 
-### Konfigurasjons steg i Gravitee
+### 4 Konfigurasjons steg i Gravitee
 
 1. [Last ned template for API-definisjonen for maskinporten.](./maskinporten-api-template.json) og last den opp i graviteee. Se [veileder for å registrere en tjeneste i API manager via fil](/docs/datadeling/veiledere/api-manager/importer-api).
-2. Om dette er mot produksjonsystem i stedet for test, naviger til proxy og endpoint (under backend services) . Klikk på tannhjulet for PROD, fjern haken for backup endpoint. Slett TEST eller huk av for at test skal være backup endpint. **Husk å lagre**
+2. Om dette er mot **produksjonsystem** i stedet for **test**, naviger til proxy og endpoint (under backend services) . Klikk på tannhjulet for PROD, fjern haken for backup endpoint. Slett TEST eller huk av for at test skal være backup endpint. **Husk å lagre**
 3. Gå på design. Klikk på policy "Generate JWT" Fyll inn:
-   - __Key ID_: det samme parameteren man satte som `--kid` i steg 3.2 i [Lokale forberedelser](#Lokale-forberedelser)
-   - _audiences_: Settes til`https://maskinporten.no/`hvis det er produksjon eller `https://ver2.maskinporten.no` hvis det er test miljøet man skal bruke
+   - __Key ID_: det samme parameteren man satte som `--kid` i steg 3 i [Lokale forberedelser](#Lokale-forberedelser)
+   - _audiences_: Settes til`https://maskinporten.no/`hvis det er **produksjon** eller `https://ver2.maskinporten.no` hvis det er **test** miljøet man skal bruke
    - _Private key_ Den private nøkkelen laget i steg 1 i [Lokale forberedelser](#Lokale-forberedelser)
    - **Husk å lagre**
+   [![Konfigurerer generateJWT](/datadeling/img/maskinporten/Samarbeidsportalen-last-opp-nokkel.png)](/datadeling/img/maskinporten/gravitee-generate-jwt-maskinporten.png)
 4. Gå til Portal og details. Klikk på _START THE API_ og _PUBLISH THE API_. Vi anbefaler at du for dette APIet ikke klikker på _MAKE PUBLIC_
 
 
 
 
-## Alternative oppsett
+## 5 Alternative oppsett
 
 Det som er beskrevet over er anbefalt måte å sette opp autentisering mot
 Maskinporten. Det finnes noen andre alternativ, men som vi ikke anbefaler:
