@@ -56,21 +56,13 @@ sudo-rettigheter, samt lesetilgang til filer (se Brukertilgang under).
 
 ## Brukertilgang til verktøykassen
 
-For å logge inn på verktøykassen med ssh må du ha bruker. Du bør være
-medlem av gruppen `netops`, da det bl.a. gir filrettigheter under
-`/tftpboot`. Videre vil du om du kjører `/bin/bash` få satt hensiktsmessig
-*umask* for tftp-tjenesten.
-
-For å legge til ny bruker gjør administrator:
-
-```shell
-useradd -g netops -m -s /bin/bash <nyperson>
-passwd <nyperson>
-```
-
-Merk at det er det samme passord som blir brukt ved radiusautentisering
-mot nettelektronikken. Merk også at det kan bli endringer her,
-SSH-nøkler for SSH-innlogging er svært aktuelt.
+For å logge inn på verktøykassen med ssh må du ha bruker.  Den som er teknisk
+ansvarlig for verktøykassen i din organisasjon kan bestille brukere ved å
+sende [e-post til kontakt@sikt.no](mailto:kontakt@sikt.no).  Nye brukere vil
+få satt et midlertidig passord av Sikt og bør endre dette ved første gangs
+innlogging.  Merk at det passordet du velger for denne kontoen er det samme
+som vil brukes dersom du setter opp verktøykassen som radiustjener for
+nettutstyret ditt.
 
 Alle brukere som er i gruppe <span class="kbd">netops</span> gis (via
 *sudo*) tilgang til å gjøre noen kommandoer som normalt trenger
