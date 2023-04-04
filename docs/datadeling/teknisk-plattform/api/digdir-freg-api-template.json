@@ -1,0 +1,352 @@
+{
+  "name": "Digdir FReg API Test",
+  "version": "v1",
+  "description": "Folkeregisterets API mot testmiljøet",
+  "visibility": "PRIVATE",
+  "picture": "data:image/png;base64,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",
+  "flows": [
+    {
+      "name": "",
+      "path-operator": {
+        "path": "/",
+        "operator": "STARTS_WITH"
+      },
+      "condition": "",
+      "consumers": [],
+      "methods": [],
+      "pre": [
+        {
+          "name": "HTTP Callout",
+          "description": "Innhente JWT fra Maskinporten",
+          "enabled": true,
+          "policy": "policy-http-callout",
+          "configuration": {
+            "headers": [
+              {
+                "name": "X-Gravitee-Api-Key",
+                "value": "{#properties['maskinporten_api_key']}"
+              },
+              {
+                "name": "scope",
+                "value": "{#jsonPath(#context.attributes, '$.scope')}"
+              },
+              {
+                "name": "iss",
+                "value": "{#properties['maskinporten_api_iss']}"
+              }
+            ],
+            "variables": [
+              {
+                "name": "token",
+                "value": "{#jsonPath(#calloutResponse.content, '$.access_token')}"
+              }
+            ],
+            "method": "GET",
+            "fireAndForget": false,
+            "scope": "REQUEST",
+            "errorStatusCode": "500",
+            "errorCondition": "{#calloutResponse.status >= 400 and #calloutResponse.status <= 599}",
+            "url": "https://path.to/intark-maskinporten-api",
+            "exitOnError": false
+          }
+        },
+        {
+          "name": "Transform Headers",
+          "description": "",
+          "enabled": true,
+          "policy": "transform-headers",
+          "configuration": {
+            "addHeaders": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {#context.attributes['token']}"
+              },
+              {
+                "name": "API_KEY",
+                "value": "X"
+              }
+            ],
+            "scope": "REQUEST"
+          }
+        }
+      ],
+      "post": [],
+      "enabled": true
+    }
+  ],
+  "gravitee": "2.0.0",
+  "flow_mode": "DEFAULT",
+  "resources": [],
+  "categories": [
+    "test"
+  ],
+  "pages": [
+    {
+      "id": "86b92e6e-1f56-42db-b92e-6e1f5672db6f",
+      "name": "Aside",
+      "type": "SYSTEM_FOLDER",
+      "order": 0,
+      "published": true,
+      "visibility": "PUBLIC",
+      "lastModificationDate": 1680598650637,
+      "contentType": "application/json",
+      "homepage": false,
+      "parentPath": "",
+      "excludedAccessControls": false,
+      "accessControls": [],
+      "api": "221502e7-8b29-4fc3-9502-e78b29ffc3da"
+    },
+    {
+      "id": "82ec3d00-9535-4c52-ac3d-0095354c52af",
+      "name": "Start her",
+      "type": "MARKDOWN",
+      "content": "API satt opp mot konsumenttestmiljøet (https://folkeregisteret-api-konsument.sits.no/) til Folkeregisterets API. Her finner du mer info om [ekstern dokumentasjon](/#!/apis/221502e7-8b29-4fc3-9502-e78b29ffc3da/documentation/521861ee-86f6-44dd-9861-ee86f664dd43).\n\n# Info om planer\n\n## Lesetilgang uten hjemmel\n\nDenne planen gir tilgang til endepunkter i scope ```folkeregister:deling/offentligutenhjemmel```.\n\nSub-path ```/uten-hjemmel``` er mappet mot FReg-endepunktet ```/folkeregisteret/api/offentligutenhjemmel/```. Det innebærer at alle forespørsler på for eksempel ```/folkeregisteret/api/offentligutenhjemmel/v1/personer/{personidentifikator}``` gjøres mot ```/uten-hjemmel/v1/personer/{personidentifikator}```.\n\n## Lesetilgang med hjemmel\n\nDenne planen gir tilgang til endepunkter i scope ```folkeregister:deling/offentligmedhjemmel```.\n\nSub-path ```/med-hjemmel``` er mappet mot FReg-endepunktet ```folkeregisteret/offentlig-med-hjemmel/api/```. Det innebærer at alle forespørsler på for eksempel ```folkeregisteret/offentlig-med-hjemmel/api/v1/personer/{personidentifikator}``` gjøres mot ```/med-hjemmel/v1/personer/{personidentifikator}```.\n\nSiden scope ```folkeregister:deling/offentligmedhjemmel``` inkluderer scope ```folkeregister:deling/offentligutenhjemmel``` så har denne planen også en mapping ```/uten-hjemmel``` mot ```/folkeregisteret/api/offentligutenhjemmel/```. Det innebærer at alle forespørsler på for eksempel ```/folkeregisteret/api/offentligutenhjemmel/v1/personer/{personidentifikator}``` gjøres mot ```/uten-hjemmel/v1/personer/{personidentifikator}```.",
+      "order": 1,
+      "lastContributor": "76163fc3-ce9e-402f-963f-c3ce9ea02f4e",
+      "published": true,
+      "visibility": "PUBLIC",
+      "lastModificationDate": 1680607789913,
+      "contentType": "text/yaml",
+      "homepage": true,
+      "parentPath": "",
+      "excludedAccessControls": false,
+      "accessControls": [],
+      "api": "221502e7-8b29-4fc3-9502-e78b29ffc3da",
+      "attached_media": []
+    },
+    {
+      "id": "521861ee-86f6-44dd-9861-ee86f664dd43",
+      "name": "Ekstern dokumentasjon",
+      "type": "MARKDOWN",
+      "content": "# Teknisk dokumentasjon\n* [Uten hjemmel](https://app.swaggerhub.com/apis/Skatteetaten_FREG/RettighetspakkerUtenTaushetsbelagtOff)\n* [Med hjemmel](https://app.swaggerhub.com/apis/Skatteetaten_FREG/Offentlig-med-hjemmel/)\n* [Endepunkter](https://skatteetaten.github.io/folkeregisteret-api-dokumentasjon/endepunkter/)\n\n\n# Annet\n* [Portal](https://skatteetaten.github.io/folkeregisteret-api-dokumentasjon/)",
+      "order": 2,
+      "lastContributor": "76163fc3-ce9e-402f-963f-c3ce9ea02f4e",
+      "published": true,
+      "visibility": "PUBLIC",
+      "lastModificationDate": 1680605568802,
+      "contentType": "text/yaml",
+      "homepage": false,
+      "parentPath": "",
+      "excludedAccessControls": false,
+      "accessControls": [],
+      "api": "221502e7-8b29-4fc3-9502-e78b29ffc3da",
+      "attached_media": []
+    },
+    {
+      "id": "9ac00c1e-25ef-4ee0-800c-1e25ef0ee0f2",
+      "name": "Ekstern dokumentasjon",
+      "type": "LINK",
+      "content": "521861ee-86f6-44dd-9861-ee86f664dd43",
+      "order": 3,
+      "lastContributor": "76163fc3-ce9e-402f-963f-c3ce9ea02f4e",
+      "published": true,
+      "visibility": "PUBLIC",
+      "lastModificationDate": 1680607564787,
+      "contentType": "application/json",
+      "configuration": {
+        "resourceType": "page",
+        "isFolder": "false",
+        "inherit": "true"
+      },
+      "homepage": false,
+      "parentId": "86b92e6e-1f56-42db-b92e-6e1f5672db6f",
+      "parentPath": "/Aside",
+      "excludedAccessControls": false,
+      "accessControls": [],
+      "api": "221502e7-8b29-4fc3-9502-e78b29ffc3da"
+    }
+  ],
+  "plans": [
+    {
+      "id": "755d1e01-157e-4092-9d1e-01157e1092c5",
+      "name": "Lesetilgang uten hjemmel",
+      "description": "Gir tilgang til scope folkeregister:deling/offentligutenhjemmel",
+      "validation": "MANUAL",
+      "security": "API_KEY",
+      "type": "API",
+      "status": "PUBLISHED",
+      "api": "221502e7-8b29-4fc3-9502-e78b29ffc3da",
+      "order": 1,
+      "characteristics": [
+        "folkeregister:deling/offentligutenhjemmel",
+        "offentligutenhjemmel"
+      ],
+      "created_at": 1680598650681,
+      "updated_at": 1680599884285,
+      "published_at": 1680599884285,
+      "paths": {},
+      "flows": [
+        {
+          "name": "",
+          "path-operator": {
+            "path": "/uten-hjemmel",
+            "operator": "STARTS_WITH"
+          },
+          "condition": "",
+          "consumers": [],
+          "methods": [
+            "GET"
+          ],
+          "pre": [
+            {
+              "name": "Assign attributes",
+              "description": "Legger til scope folkeregister:deling/offentligutenhjemmel",
+              "enabled": true,
+              "policy": "policy-assign-attributes",
+              "configuration": {
+                "scope": "REQUEST",
+                "attributes": [
+                  {
+                    "name": "scope",
+                    "value": "folkeregister:deling/offentligutenhjemmel"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Dynamic Routing",
+              "description": "Mapper path /uten-hjemmel til /folkeregisteret/api/offentligutenhjemmel",
+              "enabled": true,
+              "policy": "dynamic-routing",
+              "configuration": {
+                "rules": [
+                  {
+                    "pattern": "/uten-hjemmel/(.*)",
+                    "url": "{#endpoints['default']}/folkeregisteret/api/offentligutenhjemmel/{#group[0]}"
+                  }
+                ]
+              }
+            }
+          ],
+          "post": [],
+          "enabled": true
+        }
+      ],
+      "comment_required": false
+    },
+    {
+      "id": "5322f75f-f873-4cac-a2f7-5ff8732cacb5",
+      "name": "Lesetilgang med hjemmel",
+      "description": "Lesetilgang til scope folkeregister:deling/offentligmedhjemmel",
+      "validation": "MANUAL",
+      "security": "API_KEY",
+      "securityDefinition": "{}",
+      "type": "API",
+      "status": "PUBLISHED",
+      "api": "221502e7-8b29-4fc3-9502-e78b29ffc3da",
+      "order": 2,
+      "characteristics": [
+        "folkeregister:deling/offentligmedhjemmel",
+        "offentligmedhjemmel"
+      ],
+      "created_at": 1680603896933,
+      "updated_at": 1680604817916,
+      "published_at": 1680604356639,
+      "paths": {
+        "/": []
+      },
+      "flows": [
+        {
+          "name": "",
+          "path-operator": {
+            "path": "/med-hjemmel",
+            "operator": "STARTS_WITH"
+          },
+          "condition": "",
+          "consumers": [],
+          "methods": [
+            "GET"
+          ],
+          "pre": [
+            {
+              "name": "Assign attributes",
+              "description": "Legger til scope folkeregister:deling/offentligmedhjemmel",
+              "enabled": true,
+              "policy": "policy-assign-attributes",
+              "configuration": {
+                "scope": "REQUEST",
+                "attributes": [
+                  {
+                    "name": "scope",
+                    "value": "folkeregister:deling/offentligmedhjemmel folkeregister:deling/offentligutenhjemmel"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Dynamic Routing",
+              "description": "Mapper path /med-hjemmel til /folkeregisteret/offentlig-med-hjemmel/api",
+              "enabled": true,
+              "policy": "dynamic-routing",
+              "configuration": {
+                "rules": [
+                  {
+                    "pattern": "/med-hjemmel/(.*)",
+                    "url": "{#endpoints['default']}/folkeregisteret/offentlig-med-hjemmel/api/{#group[0]}"
+                  },
+                  {
+                    "pattern": "/uten-hjemmel/(.*)",
+                    "url": "{#endpoints['default']}/folkeregisteret/api/offentligutenhjemmel/{#group[0]}"
+                  }
+                ]
+              }
+            }
+          ],
+          "post": [],
+          "enabled": true
+        }
+      ],
+      "comment_required": false
+    }
+  ],
+  "metadata": [
+    {
+      "key": "email-support",
+      "name": "email-support",
+      "format": "MAIL",
+      "value": "${(api.primaryOwner.email)!''}",
+      "defaultValue": "support@change.me",
+      "apiId": "221502e7-8b29-4fc3-9502-e78b29ffc3da"
+    }
+  ],
+  "id": "221502e7-8b29-4fc3-9502-e78b29ffc3da",
+  "path_mappings": [],
+  "proxy": {
+    "virtual_hosts": [
+      {
+        "path": "/test/digdir/freg"
+      }
+    ],
+    "strip_context_path": false,
+    "preserve_host": false,
+    "groups": [
+      {
+        "name": "default-group",
+        "endpoints": [
+          {
+            "backup": false,
+            "inherit": true,
+            "name": "default",
+            "weight": 1,
+            "type": "http",
+            "target": "https://folkeregisteret-api-konsument.sits.no/"
+          }
+        ],
+        "load_balancing": {
+          "type": "ROUND_ROBIN"
+        },
+        "http": {
+          "connectTimeout": 5000,
+          "idleTimeout": 60000,
+          "keepAlive": true,
+          "readTimeout": 10000,
+          "pipelining": false,
+          "maxConcurrentConnections": 100,
+          "useCompression": true,
+          "followRedirects": false
+        }
+      }
+    ]
+  },
+  "response_templates": {}
+}
