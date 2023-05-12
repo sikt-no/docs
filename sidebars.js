@@ -6,6 +6,7 @@ const sidebars = {
   cnaas: require('./docs/cnaas/sidebars.js'),
   nettadministrasjon: require('./docs/nettadministrasjon/sidebars.js'),
   datadeling: require('./docs/datadeling/sidebars.js'),
+  educsc: require('./docs/educsc/sidebars.js'),
 };
 
 module.exports = sidebars;

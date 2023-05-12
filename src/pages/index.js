@@ -4,6 +4,10 @@ import { Topic, TopicList } from "../components/topiclist";
 
 const topics = (
   <>
+    <Topic title="eduCSC" link="docs/educsc">
+    Cybersikkerhetssenteret er sektorvist responsmiljø (SRM) for norsk forskning og høyere utdanning. 
+    Vi leverer en rekke sikkerhetstjenester, og er samlingspunktet for sikkerhetskompetansen i kunnskapssektoren.
+    </Topic>
     <Topic title="IAM" link="docs/iam">
       Identitets- og tilgangsstyring (IAM) handler om å gi studenter, forskere
       og ansatte riktig tilgang til digitale systemer, tjenester og ressurser,
