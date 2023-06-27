@@ -6,7 +6,7 @@ module.exports = [
     label: 'Prosjektinformasjon',
     items: [
       'iam/prosjekt', 
-      'iam/uib-pilot',
+      'iam',
     ],
   },
   {
@@ -42,7 +42,7 @@ module.exports = [
   'iam/virksomhetsroller',
   {
     type: 'category',
-    label: 'UiB Pilot',
+    label: 'UiB',
     items: [
       'iam/uib-targets',
     ],
