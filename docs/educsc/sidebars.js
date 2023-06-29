@@ -1,4 +1,4 @@
 module.exports = [
-    'educsc/index',
-  ];
+  'educsc/index',
+];
   
