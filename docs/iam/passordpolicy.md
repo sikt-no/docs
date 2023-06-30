@@ -2,47 +2,45 @@
 title: Passordpolicy
 ---
 
+## Retningslinjer for passord Felles IAM 
+
+Ved førstegangs pålogging ved kontoaktivering (Account Claim) må alle brukere sette et førstegangs passord. Se under her passordpolicy basert på anbefalinger fra NIST og forslag fra sikkerhetsavdelingen i Sikt. 
+
+•  Passordet må bestå av minst 8 tegn. Dette kan konfigureres av Sikt per  institusjon, i tillegg må institusjonenes egne oppsett og retningslinjer for passord samstemmes med dette. 
+
+•  Maks passordlengde skal være minst 64 tegn, AD begrenser dette til 127. Dette kan 
+   konfigureres av Sikt per institusjon. 
+
+•  Passordet blir ikke trimmet. 
+
+•  Passordtips vil ikke bli brukt. 
+
+•  Passord vil bli sjekket mot en liste over passord fra datainnbrudd. Til dette benyttes 
+   https://haveibeenpwned.com/API/v3.
+
+•  Passord som er vanlige, forventede eller kontekstspesifikke, bør ikke tillates. 
+
+•  Komposisjonsregler for passordet vil ikke bli brukt. 
+
+•  En måler for passordstyrke vil bli brukt til å hjelpe brukeren med å velge et 
+   sterkt passord.
+  
+•  Passord vil bli sjekket for gjentatte tegn. 
+
+•  Det vil være mulig å lime inn et passord i passordinngangen. 
+
+•  Standard er at de siste fem brukte passordene lagres, men dette er konfigurerbart 
+   for hver institusjon 
+
+•  Gjenbruk av tidligere passord vil ikke være tillatt.
 
 
-## Gyldige tegn
-
-Passordet kan kun inneholde tegn som er en del av ISO 8859-1.
 
 
-## Passordlengde
-
-Passordet kan maksimalt inneholde 127 tegn.
-
-Minimum lengde varierer basert på kompleksiteten til passordet.
-
-## Beregning av passord kompleksitet
-
-Kompleksiteten av et passord måles i poeng. Poengsummen et passord vil få er avhengig av bl.a. lengde og antall tegngrupper som er representert i passordet.
-Passordet må ha en kompleksitet på minst 32 poeng for å være gyldig.
 
 
-Algoritmen for å kalkulere kompleksitets poeng:
-* 4 poeng for det første tegnet i passordet
-* 2 poeng for hvert av de neste syv tegn
-* Hvert tegn fra tegn 9 til og med tegn 20 får 1.5 poeng
-* Hvert tegn etter tegn 20 får 1 poeng
-* 6 poeng bonus hvis passordet inneholder tegn av minst tre av de fire tegngruppene (store bokstaver, små bokstaver, tall og spesialtegn)
-* 8 poeng (total) bonus dersom passordet inneholder minst to tegn for hver av de tre tegngruppene beskrevet over
 
 
-Felles IAM har valgt å gjenbruke [samme passord policy som er brukt ved UiO](https://www.uio.no/tjenester/it/brukernavn-passord/passordtjenester/hjelp/kompleksitet.html), som er godt begrunnet.
 
-## Gjenbruk av passord
 
-En bruker kan ikke gjenbruke et tidligere brukt passord.
 
-## Utløpstid på passord
-
-Vi praktiserer ikke utløpstid på passord basert på anbefalinger fra blant annet [National Institute of Standards and Technology (NIST)](https://pages.nist.gov/800-63-FAQ/#q-b05).
-
-Med et høyt kompleksitetskrav og bruk av tofaktorautentisering vil utløp av passord gjøre mer skade enn nytte.
-
-## Anbefalinger
-Bruk helst et helt nytt og unikt passord som ikke er det samme eller ligner på det du bruker på andre nettsteder.
-
-Vi støtter råd og anbefalinger fra [Nasjonal Sikkerhetsmyndighet (NSM)](https://nsm.no/fagomrader/digital-sikkerhet/rad-og-anbefalinger-innenfor-digital-sikkerhet/rad-og-anbefalinger-om-passord).
