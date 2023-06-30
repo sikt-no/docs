@@ -6,7 +6,7 @@ module.exports = [
     label: 'Prosjektinformasjon',
     items: [
       'iam/prosjekt', 
-      'iam',
+      'iam/uib',
     ],
   },
   {
