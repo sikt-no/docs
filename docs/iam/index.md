@@ -21,4 +21,4 @@ For mer tekniske dypdykk:
 * [Felles IAM datamodell](./datamodell)
 * [REST API for integrasjoner mot målsystemer](./datamodell)
 
-I [referanser](./referanser) vil du finne flere lenker til andre kilder som dokumenterer løsningen ytterligere.
+Se [referanser](./referanser) vil du finne flere lenker til andre kilder som dokumenterer løsningen ytterligere.
