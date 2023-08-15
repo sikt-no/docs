@@ -1,5 +1,5 @@
 module.exports = [
-    'educsc/index',
-    'educsc/trusseletterretning/ms-defender'
+  'educsc/index',
+  'educsc/trusseletterretning/ms-defender',
 ];
 
