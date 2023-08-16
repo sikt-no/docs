@@ -1,8 +1,8 @@
-# docs.uninett.no
+# docs.sikt.no
 
 [![Deploy to GitHub Pages](https://github.com/sikt-no/docs/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/sikt-no/docs/actions/workflows/deploy.yml)
 
-This repository contains the site [docs.uninett.no](https://docs.uninett.no/).
+This repository contains the site [docs.sikt.no](https://docs.sikt.no/).
 
 This website is built using [Docusaurus 2](https://docusaurus.io/).
 
@@ -82,7 +82,7 @@ Once the branch is pushed, you can create a pull request for your new branch at 
 When you have created a new pull request, you should review the state of the pipeline for the pull request as well as verify the review copy of the site.
 Once you have verified that the changes are correct, merge the changes into the master branch.
 
-Merging the changes into the master branch will update the production site at [docs.uninett.no](https://docs.uninett.no/).
+Merging the changes into the master branch will update the production site at [docs.sikt.no](https://docs.sikt.no/).
 
 
 ## Updating dependencies

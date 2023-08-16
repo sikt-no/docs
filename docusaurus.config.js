@@ -8,13 +8,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Sikt teknisk dokumentasjon',
   tagline: 'Teknisk dokumentasjon på løsningene Sikt leverer for utdanning og forskning.',
-  url: 'https://docs.uninett.no/',
+  url: 'https://docs.sikt.no/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'sikt-no',
-  projectName: 'docs.uninett.no',
+  projectName: 'docs.sikt.no',
 
   presets: [
     [

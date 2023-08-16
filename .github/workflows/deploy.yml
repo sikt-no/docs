@@ -61,5 +61,5 @@ jobs:
           # Build output to publish to the branch 'gh-pages'
           publish_dir: ./build
           # Custom domain must be set with this Action, otherwise it won't be included!
-          cname: docs.uninett.no
+          cname: docs.sikt.no
           # Authorship should be implicit
