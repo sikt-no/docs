@@ -11,6 +11,9 @@ Slik går du fram:
   Merk deg **«directory (tenant) ID»** og **«application (client) ID»**.
 - Via «API permissions», legg til WindowDefenderATP: Ti.ReadWrite («Read and
   write IOCs belonging to the app»).
+  - Merk: Dette er **ikke** det samme som `Ti.ReadWrite.All`. Vi anbefaler ikke å bruke denne, siden
+    den gir større tilganger enn eduCSC trenger. Mer konkret kan vi få innsikt i ev. lukket
+    informasjon fra andre leverandører eller internt i indikatorlistene til Microsoft Defender.
 - Via «Certificates and secrets», lag en client secret. **Skriv ned innholdet i
   hemmeligheten**, dvs. «client secret». Husk også at denne må meldes til eduCSC
   på nytt om hemmeligheten går ut på dato (expiry).
