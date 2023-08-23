@@ -27,5 +27,9 @@ Meld deretter følgende tilbake til eduCSC (via IRT-chat):
   innkjøringsfasen. Dette kan enkelt skrus av eller på ved å sende melding til
   eduCSC.
 
+Synkronisering tar typisk 10 minutter etter det er lagt inn. For å teste på klient,
+sjekk om domenet `ms-atp.dnsbrannmur[.]no` lager varsel eller blokkering. Merk at
+det kan ta noe tid for Microsoft synkroniserer all dataen ut på endepunkt.
+
 Ved mistanke om falske positive, kontakt eduCSC via IRT-chat. Dette gjelder
 spesielt ved blokkering.
