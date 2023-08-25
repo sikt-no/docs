@@ -1,7 +1,6 @@
 ---
 title: GraphQL
 order: 2
-permalink: graphql
 ---
 
 ### What is GraphQL?
