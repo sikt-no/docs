@@ -48,7 +48,7 @@ const topics = (
       og trafikkanalyse.
     </Topic>
     <Topic title="API for personverntjenester" link="docs/api-pvt">
-      API-dokumentasjon for sikts personverntjenester.
+      API-dokumentasjon for Sikts personverntjenester.
     </Topic>
   </>
 );
