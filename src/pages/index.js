@@ -47,8 +47,8 @@ const topics = (
       å drive eget lokalnett, og trenger gode verktøy for nettovervåkning
       og trafikkanalyse.
     </Topic>
-    <Topic title="NSD-API" link="docs/nsdapi">
-      NSDs API-dokumentasjon.
+    <Topic title="API for personverntjenester" link="docs/api-pvt">
+      API-dokumentasjon for sikts personverntjenester.
     </Topic>
   </>
 );
