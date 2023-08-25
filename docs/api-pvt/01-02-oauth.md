@@ -2,7 +2,7 @@
 title: OAuth 2.0
 ---
 
-The NSD GraphQL API uses OAuth 2.0/OpenID Connect both internally and for external applications to make API calls on behalf of your organization.
+The Data Protection Services GraphQL API uses OAuth 2.0/OpenID Connect both internally and for external applications to make API calls on behalf of your organization.
 
 
 ## Request an access token (Service-to-service)
