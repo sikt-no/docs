@@ -43,7 +43,7 @@ Meld deretter følgende tilbake til eduCSC (via IRT-chat):
 Synkronisering tar typisk 10 minutter etter det er lagt inn. Du kan stadfeste at
 data kommer inn ved å besøke [sikkerhetsportalen til Microsoft](https://security.microsoft.com),
 gå til «Settings», deretter «Endpoints», «Indicators» og til sist «URLs/Domains».
-Reglene til eduCSC starter med «EDUCSC <FEEDNAMN» -».
+Tittelen på reglene til eduCSC starter med «EDUCSC <FEEDNAVN> -».
 
 For å teste på klient, sjekk om domenet `ms-atp.dnsbrannmur[.]no` lager varsel
 eller blokkering. Merk at det kan ta noe tid for Microsoft synkroniserer all
