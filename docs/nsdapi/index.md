@@ -1,6 +1,5 @@
 ---
 title: Introduction
-order: 1
 ---
 
 Welcome to [NSD](https://nsd.no)'s API documentation. NSD is developing a new unified API that exposes NSD's domain resources like "Meldeskjema" to consuming clients and services. Currently external access to the API is limited to user actions, but we are working to support access for external services and APIs some time in the future.
