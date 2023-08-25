@@ -2,7 +2,6 @@
 title: GraphQL
 order: 2
 permalink: graphql
-layout: doc
 ---
 
 ### What is GraphQL?
