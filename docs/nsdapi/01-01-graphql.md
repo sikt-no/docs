@@ -1,6 +1,5 @@
 ---
 title: GraphQL
-order: 2
 ---
 
 ### What is GraphQL?
