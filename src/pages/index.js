@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { Topic, TopicList } from "../components/topiclist";
+import { Topic, TopicList } from '../components/topiclist';
 
 const topics = (
   <>
@@ -46,6 +46,9 @@ const topics = (
       Nettadministrasjon fra Sikt er et tilbud til virksomheter som ønsker
       å drive eget lokalnett, og trenger gode verktøy for nettovervåkning
       og trafikkanalyse.
+    </Topic>
+    <Topic title="NSD-API" link="docs/nsdapi">
+      NSDs API-dokumentasjon.
     </Topic>
   </>
 );

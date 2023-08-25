@@ -7,6 +7,7 @@ const sidebars = {
   nettadministrasjon: require('./docs/nettadministrasjon/sidebars.js'),
   datadeling: require('./docs/datadeling/sidebars.js'),
   educsc: require('./docs/educsc/sidebars.js'),
+  nsdapi: require('./docs/nsdapi/sidebars.js'),
 };
 
 module.exports = sidebars;
