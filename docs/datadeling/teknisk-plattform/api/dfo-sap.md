@@ -18,11 +18,7 @@ For å kunne bruke DFØs API må din institusjon bli "oppgradert" hos DFØ. Mang
 DFØ krever autentisering via
 [Maskinporten](https://samarbeid.digdir.no/maskinporten/maskinporten/25) i sin
 kommunikasjon, så institusjonen må registrere seg der før integrasjonen kan
-påbegynnes. Maskinporten bruker sertifikater for autentisering, så
-institusjonen må ha virkssomhetssertifikat tilgjengelig, enten for å bruke det
-direkte til autentisering eller for å laste opp privat serfifikat som brukes av
-den enkelte integrasjon. Mot produksjonsystem brukes det vanlige
-virksomhetsertifikatet og mot test brukes testsertifikat.
+påbegynnes. Maskinporten benytter [Public Key Authentication](https://www.ssh.com/academy/ssh/public-key-authentication) for autentisering. Oppsettet innebærer at institusjonen genererer en hemmelig privat nøkkel til seg selv og en korresponderende offentlig nøkkel til Maskinporten. Den private nøkkelen brukes for å bekrefte identiteten til innehaveren, i dette tilfellet institusjonen. Den offentlige nøkkelen brukes av Maskinporten for å autentisere institusjonen og til å autorisere tilgang.
 
 Som de fleste andre APIene settes APIet opp med autentisering mot vår API gateway, og deretter sendes requesten videre til backend-APIet. I API gatewayen legger vi på token og evt. API-nøkkel som brukes mot DFØs APIer. Tjenesten som utsteder token kan enten settes opp i Gravitee ([se bruksanvisning her](/docs/datadeling/teknisk-plattform/api/maskinporten)) eller hos den enkelte institusjon
 
