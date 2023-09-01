@@ -1,23 +1,23 @@
 ---
 description:
-  "Hvordan du kan skjule JWT-autentisering i Gravitee, for eksempel for\
+  "Hvordan du kan setter opp JWT-autentisering i Gravitee, for eksempel for\
   \ Maskinporten, uten at hver API-eier trenger f\xE5 tilgang til n\xF8kkelen."
 title: Backend-autentisering med JWTs
 ---
 
 # Backend-autentisering med JWTs
 
-Hvordan du kan skjule JWT-autentisering i Gravitee, for eksempel for Maskinporten, uten at hver API-eier trenger få tilgang til nøkkelen.
+Hvordan du kan skjule JWT-autentisering i Gravitee, for eksempel for Maskinporten, uten at hver API-eier trenger få tilgang til nøkkelen. Merk at dette er en generell oppskrift. For oppsett av JWT til Maskinporten spesifikt, se [her](https://docs.sikt.no/docs/datadeling/teknisk-plattform/api/maskinporten/#4-konfigurasjons-steg-i-gravitee).
 
 ## Bakgrunn
 
 Flere API-er hos andre institusjoner, bl.a. DFØ, krever autentisering med maskinporten. Andre API kan kreve autentisering med andre Authorization servers. Som oftest er det best om applikasjonen får tilgang og autentiserer direkte mot Authorization serveren, men noen ganger kan det være hensiktsmessig å autentisere API gateway mot API gateway.
 
-DFØ har satt opp API-ene sine i maskinporten slik at man er nødt til å bruke virksomhetssertifikatet til autentisering. Med mange integrasjoner og andre applikasjoner som skal ha tilgang til disse API-ene blir dette sertifikatet lagret mange steder hvis hver applikasjon skal autentisere selv. For å begrense antall steder sertifikatet ligger blir denne autentiseringen heller utført i Gravitee.
+DFØ har satt opp API-ene sine i maskinporten slik at man er nødt til å bruke enten en assymetrisk nøkkel eller et virksomhetssertifikat til autentisering. Med mange integrasjoner og andre applikasjoner som skal ha tilgang til disse API-ene, blir disse hemmelighetene lagret flere steder hvis hver applikasjon skal autentisere selv. For å begrense antall steder hemmeligheter legges blir denne autentiseringen heller utført i Gravitee.
 
 ### Lage JWT i Gravitee
 
-Velg API-et du vil legge til autentisering for. Gå til design i venstre sidemeny, og deretter videre til Policies. Bruk policyen "Generate JWT" for å lage en JWT. Denne kan brukes videre, f.eks. i policyen "Add header" eller "HTTP Callout".
+Velg API'et du vil legge til autentisering for. Gå til design i venstre sidemeny, og deretter videre til Policies. Bruk policyen "Generate JWT" for å lage en JWT. Denne kan brukes videre, f.eks. i policyen "Add header" eller "HTTP Callout".
 
 Generate JWT:
 
