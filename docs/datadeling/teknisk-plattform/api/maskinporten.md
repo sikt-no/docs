@@ -16,6 +16,8 @@ Oppskriften er den samme for produksjons og testmiljøet til maskinporten. De
 stegene som er forskjellig har vi markert hva som gjelder for produksjon og 
 hva som gjelder for test.
 
+Husk at nøkler har varighet på **ett år** og må [fornyes](https://docs.digdir.no/docs/Maskinporten/maskinporten_feilsoking#invalid-assertion-client-authentication-failed-expired-key).
+
 ## 1 Få tilgang i Samarbeidsportalen
 
 1. Opprett en bruker i [Samarbeidsportalen til
