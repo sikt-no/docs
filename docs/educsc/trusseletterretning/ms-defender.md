@@ -1,4 +1,38 @@
-# Oppsett av MS Defender-integrasjon
+# Defender-integrasjonen til eduCSC
+
+MS Defender er et stadig mer brukt verktøy for å beskytte endepunkt og tjenere i
+sektoren. eduCSC tilbyr derfor en integrasjon som mater løsningen med fersk
+etterretning om truslene som vi sporer daglig. Det kommer inn fersk data fra oss
+hvert 10. minutt.
+
+Integrasjonen kan beskytte virksomheten gjennom at vi legger inn [indikatorer på
+ulike
+trusler](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/manage-indicators?view=o365-worldwide#indicator-of-compromise-ioc-overview).
+Merk at effekten likevel er avhengig av hvordan virksomheten din har satt opp
+Defender, hvilke nettlesere som brukes, plattformer og så videre. Vi anbefaler
+derfor sterkt å vurdere dokumentasjonen til Microsoft nærmere for hvordan
+oppsettes bør gjøres for å få effektiv beskyttelse:
+
+- Blokkering av velkjente IP-er og URL-er: Vi anbefaler alle å gjøre en
+  vurdering her, siden disse er effektive verktøy for å forebygge phishing og
+  enkelte typer malware. For eksempel vil ikke nødvendigvis URL-beskyttelse
+  fungere i andre nettlesere enn Edge uten ytterligere tiltak. Forsinkelen her
+  kan også være opptil 2 timer ut mot endepunkt. [Se dokumentasjonen til
+  Microsoft for mer
+  detaljer](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/indicator-ip-domain?view=o365-worldwide#before-you-begin).
+
+- Filbasert beskyttelse: Vi gjør i liten grad filbasert sporing i dag, da disse
+  er flyktige og ofte ferskvare. Løsningen vår kan likevel finne på å gjøre det
+  i sammenheng med skadelige epostvedlegg og lignende. [Se dokumentasjonen til
+  Microsoft for mer informasjon om bruk og
+  oppsett](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/indicator-file?view=o365-worldwide#before-you-begin).
+
+- Sertifikat: Vi gjør dette for TLS-sertifikatene for en del phishingnettsider,
+  for bredest mulig dekning. Merk at forsinkelsen på disse deteksjonene kan være
+  opptil 3 timer forsinket, avhengig av oppsett. [Se Microsoft for ytterligere
+  detaljer](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/indicator-certificates?view=o365-worldwide#before-you-begin).
+
+## Oppsett av MS Defender-integrasjon
 
 For å ta i bruk eduCSC sine sperrelister i Microsoft Defender ATP, må du lage en
 app-registrering hos Microsoft. eduCSC bruker denne til å kople seg til og
