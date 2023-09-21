@@ -1,7 +1,7 @@
 ---
 title: Brukerdokumentasjon Verktøykasser
 last_update:
-  date: 2022-04-06
+  date: 2023-09-21
   author: morten.brekkevold@sikt.no
 ---
 
@@ -307,6 +307,30 @@ accounting, og at denne gis tilgang til de riktige tabellene i NAV fra
 de gitte IP-adressene. Du vil få et brukernavn og et passord til
 PostgreSQL-databasen, som skal brukes til å konfigurere
 FreeRADIUS-tjeneren med.
+
+### Integrasjon med Argus
+
+Dersom du ønsker å integrere NAV-installasjonen på din verktøykasse med en
+Argus-instans, kan limetjenesten for dette enkelt slås på for din verktøykasse
+ved bestilling til <kontakt@sikt.no>.
+
+Når limetjenesten `nav-argus-glue` slås på, vil konfigurasjonsfilen
+`/etc/nav/navargus.yml` opprettes og gjøres skrivbar for alle som er medlem av
+gruppen `netops`.  Event Engine vil automatisk konfigureres til å levere
+hendelser til limetjenesten.  Dokumentasjon for selve limetjenesten fins på
+https://github.com/Uninett/nav-argus-glue
+
+Når limetjenesten er konfigurert, kan konnektivitet mot din Argus-instans
+testes ved å utføre følgende kommando:
+
+```shell
+/opt/venvs/nav/bin/navargus --test-api
+```
+
+Vær oppmerksom på at ved konfigurasjonendringer i `navargus.yml` bør NAVs Event
+Engine restartes med kommandoen `sudo nav restart eventengine` for å sikre at
+endringene tar effekt umiddelbart.
+
 
 ## Sertifikathåndtering
 
