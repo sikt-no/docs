@@ -331,6 +331,13 @@ Vær oppmerksom på at ved konfigurasjonendringer i `navargus.yml` bør NAVs Eve
 Engine restartes med kommandoen `sudo nav restart eventengine` for å sikre at
 endringene tar effekt umiddelbart.
 
+`navargus` kan også kjøres manuelt for å ta ut en rapport om hvilke NAV-alarmer
+og Argus-hendelser som ikke er synkroniserte, eller for å tvinge gjennom en
+full synkronisering.  Se følgende kommando for mer hjelp på dette:
+
+```shell
+/opt/venvs/nav/bin/navargus --help
+```
 
 ## Sertifikathåndtering
 
