@@ -32,10 +32,10 @@ oppsettes bør gjøres for å få effektiv beskyttelse:
   opptil 3 timer forsinket, avhengig av oppsett. [Se Microsoft for ytterligere
   detaljer](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/indicator-certificates?view=o365-worldwide#before-you-begin).
 
-## Kom i gang med MS Defender-integrasjoner
+## Kom i gang med MS Defender-integrasjonen
 
 - Send bestilling til kontakt@sikt.no. MS Defender-integrasjonen er inkludert
-som del av
+som en del av
 [pluss-abonnementet](https://sikt.no/tjenester/cybersikkerhetssenter-forskning-og-utdanning).
 - Når bestillingen er registrert, kan du sende info om ditt oppsett til eduCSC
   via din organisasjons egen SRM-kanal på Mattermost. eduCSC trenger følgende
