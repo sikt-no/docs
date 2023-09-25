@@ -32,7 +32,24 @@ oppsettes bør gjøres for å få effektiv beskyttelse:
   opptil 3 timer forsinket, avhengig av oppsett. [Se Microsoft for ytterligere
   detaljer](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/indicator-certificates?view=o365-worldwide#before-you-begin).
 
-## Oppsett av MS Defender-integrasjon
+## Kom i gang med MS Defender-integrasjoner
+
+- Send bestilling til kontakt@sikt.no. MS Defender-integrasjonen er inkludert
+som del av
+[pluss-abonnementet](https://sikt.no/tjenester/cybersikkerhetssenter-forskning-og-utdanning).
+- Når bestillingen er registrert, kan du sende info om ditt oppsett til eduCSC
+  via din organisasjons egen SRM-kanal på Mattermost. eduCSC trenger følgende
+  informasjon for å kunne aktivere MS Defender-integrasjonen for din
+  organisasjon:
+  - Directory (tenant) ID
+  - Application (client) ID
+  - Client secret
+  - Om du vil skru av blokkering i oppstarten (anbefalt).
+  - Om aktuelt: Et tak på hvor mange indikatorer vi skal synkronisere.
+
+For mer tekniske detaljer, se gjennomgangen under denne seksjonen.
+
+## Teknisk oppsett av MS Defender-integrasjon
 
 For å ta i bruk eduCSC sine sperrelister i Microsoft Defender ATP, må du lage en
 app-registrering hos Microsoft. eduCSC bruker denne til å kople seg til og
