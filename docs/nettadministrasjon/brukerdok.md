@@ -1,7 +1,7 @@
 ---
 title: Brukerdokumentasjon Verktøykasser
 last_update:
-  date: 2023-09-21
+  date: 2023-09-26
   author: morten.brekkevold@sikt.no
 ---
 
