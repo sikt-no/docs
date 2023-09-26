@@ -130,6 +130,40 @@ til samme adresse.
 -   En siste ting som ligger på `/tftpboot` er software-imager. Disse kan
     lastes til svitsjer for oppgradering.
 
+## FTP
+
+Fra 2023 er en *FTP*-tjener (basert på *proftpd*) et nytt mulig tilvalg på
+verktøykassen.  Dette kommer som et alternativ til det tftp-baserte
+konfigurasjonsarkivet under `/tftpboot` og kan være nyttig dersom man har
+utstyrstyper som ikke støtter (eller fraråder) bruk av tftp-protokollen til å
+fjernlagre konfigurasjon eller hente programvare.  Foreløpig gjelder dette mest
+Juniper-utstyr.
+
+For å ta i bruk FTP-tjeneren på din verktøykasse må man be Sikt om å slå den på
+først, ved å kontakte <kontakt@sikt.no>.
+
+### Oppsettet av FTP-tjeneren
+
+FTP-tjeneren vil servere filer fra katalogen `/tftpboot`.  Den er i
+utgangspunktet satt opp med èn anonym bruker og en autentisert bruker, som har
+forskjellige tilgangsnivåer.
+
+#### Anonym bruker
+
+Anonym FTP tillates, men den anonyme brukeren vil kun ha lesetilgang til filer
+som eies av systembrukeren `ftp`, og ingen skrivetilgang.  I utganspunktet vil
+bare katalogen `/tftptboot/images` være lesbar for denne brukeren.
+
+#### ftpuser
+
+Den autentiserte brukerkontoen heter `ftpuser`, som samsvarer med OS-brukeren
+`ftpuser`.  I tilfellet verktøykassen er en CNaaS-kasse, vil denne brukerens
+passord styres fra Vault.  I alle andre tilfeller må man sette passordet for
+brukeren lokalt på verktøykassen. Dette kan gjøres av alle brukere som er
+medlem av gruppen `netops`, ved å kjøre kommandoen `sudo passwd ftpuser`.
+
+
+
 ## Radius
 
 Det er ingen bruker-konfigurasjon forbundet med radius som trengs å
