@@ -78,6 +78,10 @@ Slik går du fram:
   Merk deg **«directory (tenant) ID»** og **«application (client) ID»**.
 - Via «API permissions», legg til WindowDefenderATP: Ti.ReadWrite («Read and
   write IOCs belonging to the app»).
+  - Du finner `WindowsDefenderATP` under `APIs my organization uses`, selv om det
+    strengt tatt er et offentlig Microsoft-API.
+  - Merk: Dette er **ikke** det samme som tilgangene under «Microsoft Graph».
+    Dette er et eldre API som verken vi eller Microsoft støtter.
   - Merk: Dette er **ikke** det samme som `Ti.ReadWrite.All`. Vi anbefaler ikke å bruke denne, siden
     den gir større tilganger enn eduCSC trenger. Mer konkret kan vi med denne tilgangen både se og endre
     indikatorer du eller andre leverandører har lagt inn, som nær alltid er unødvendig.
