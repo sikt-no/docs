@@ -55,6 +55,11 @@ For å ta i bruk eduCSC sine sperrelister i Microsoft Defender ATP, må du lage 
 app-registrering hos Microsoft. eduCSC bruker denne til å kople seg til og
 fortløpende legge inn indikatorer som skal blokkeres eller alarmeres.
 
+Løsningen vår bruker «custom network indicators». Dette må aktiveres manuelt
+gjennom Advanced-innstillingene i Defender for Endpoint. Se [Advanced
+Settings-dokumentasjonen](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/advanced-features?view=o365-worldwide)
+for informasjon om hvordan du går fram.
+
 I forkant bør du gjøre to vurderinger:
 
 - **Hvordan skal utrulling skje?** Vi kan skru av blokkering. Dermed vil ikke brukerne
