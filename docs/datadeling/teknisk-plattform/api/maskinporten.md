@@ -102,7 +102,7 @@ Velg integrasjonen du nettopp laget og velg _Egne public nøkler_. I dialog-vind
 2. Om dette er mot **produksjonsystem** i stedet for **test**, naviger til proxy og endpoint (under backend services) . Klikk på tannhjulet for PROD, fjern haken for backup endpoint. Slett TEST eller huk av for at test skal være backup endpint. **Husk å lagre**
 3. Gå på design. Klikk på policy "Generate JWT" Fyll inn:
    - __Key ID_: det samme parameteren man satte som `--kid` i steg 3 i [Lokale forberedelser](#Lokale-forberedelser)
-   - _audiences_: Settes til`https://maskinporten.no/`hvis det er **produksjon** eller `https://ver2.maskinporten.no` hvis det er **test** miljøet man skal bruke
+   - _audiences_: Settes til`https://maskinporten.no/`hvis det er **produksjon** eller `https://ver2.maskinporten.no/` hvis det er **test** miljøet man skal bruke
    - _Private key_ Den private nøkkelen laget i steg 1 i [Lokale forberedelser](#Lokale-forberedelser)
    - **Husk å lagre**
    [![Konfigurerer generateJWT](/datadeling/img/maskinporten/Samarbeidsportalen-last-opp-nokkel.png)](/datadeling/img/maskinporten/gravitee-generate-jwt-maskinporten.png)
