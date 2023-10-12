@@ -17,11 +17,11 @@ Se [fellesstudentsystem.no](https://www.fellesstudentsystem.no/) for mer informa
 
 Det finnes tre varianter av FS-API:
 
-| Miljø      | URL                                 |
-| ---------- | ----------------------------------- |
-| Produksjon | https://api.fellesstudentsystem.no/ |
-| Test/Demo  | https://fsapi-test.uio.no/          |
-| Utvikling  | https://fsapi-utv.uio.no/           |
+| Miljø      | URL                                      |
+| ---------- | ---------------------------------------- |
+| Produksjon | https://api.fellesstudentsystem.no/      |
+| Test/Demo  | https://api-test.fellesstudentsystem.no/ |
+| Utvikling  | https://api-utv.fellesstudentsystem.no/  |
 
 Besøk `/version` for å se hvilken versjon miljøet kjører.
 
