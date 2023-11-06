@@ -2,8 +2,7 @@
 image: /prosjekter/datadeling/arbeidsomrader/integrasjonsarkitektur/dokumentasjon/teknisk-plattform/figurer/rolf-picture.png
 pictureAlt: "Rolf"
 pictureCaption: "Rolf"
-title: Rolf er et rolleregister, som blant annet brukes av UH-sak (sak og arkiv) for å forvalte personers forretningsroller, som brukes for UH-sak sin tilgangsstyring. "Rolf SA API" er Rolf sitt API som er det som brukes av UH-sak.
-Rolf driftes av UiO, se nettsidene [Rolf sektorverktøy for systematisk bruk av roller](https://www.uio.no/tjenester/it/adm-app/rolf) for mer informasjon
+title: Rolf er et rolleregister, som blant annet brukes av UH-sak (sak og arkiv) for å forvalte personers forretningsroller, som brukes for UH-sak sin tilgangsstyring. "Rolf SA API" er Rolf sitt API som er det som brukes av UH-sak. Rolf driftes av UiO, se nettsidene [Rolf sektorverktøy for systematisk bruk av roller](https://www.uio.no/tjenester/it/adm-app/rolf) for mer informasjon
 ---
 
 Rolf SA Api er en påkrevd delkomponent i UH-SAK.
