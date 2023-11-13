@@ -194,5 +194,5 @@ spesifikke regler for Vlan 20.
 
 ## Kontaktpersoner
 
-- <rune.sydskjor@sikt.no>
-- <morten.knutsen@sikt.no>
+- rune.sydskjor@sikt.no
+- morten.knutsen@sikt.no

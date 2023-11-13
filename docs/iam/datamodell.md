@@ -270,8 +270,8 @@ Separated Student
 #### AdministrativeTechnicalStaff
 
 ```
-dfo:stillinger/{id}->stillingskat -> "stillingskatBetegn": "Administrativt personale"
-dfo:stillinger/{id}->stillingskat -> "stillingskatBetegn": "Drifts- og teknisk pers./andre tilsatte"
+dfo:stillinger/\{id}->stillingskat -> "stillingskatBetegn": "Administrativt personale"
+dfo:stillinger/\{id}->stillingskat -> "stillingskatBetegn": "Drifts- og teknisk pers./andre tilsatte"
 ```
 
 Create: Immediately
@@ -280,7 +280,7 @@ Access: On SD
 #### Faculty
 
 ```
-dfo:stillinger/{id}->stillingskat -> "stillingskatBetegn": "Undervisnings- og forsknings personale"
+dfo:stillinger/\{id}->stillingskat -> "stillingskatBetegn": "Undervisnings- og forsknings personale"
 ```
 
 Create: Immediately
@@ -289,8 +289,8 @@ Access: On SD
 #### HourlyPaid
 
 ```
-dfo:stillinger/{id}-> stillingskat
-dfo: ansatte/{id}-> medarbeiderundergruppe -> timelønnet
+dfo:stillinger/\{id}-> stillingskat
+dfo: ansatte/\{id}-> medarbeiderundergruppe -> timelønnet
 ```
 
 Create: Immediately
@@ -316,12 +316,12 @@ Disable Date + 180d
 
 Case 1, All bullet points are true:
 * Studierett = true
-* studieretter/{id} -> .privatist = false
-* studieretter/{id} -> .aktivStudent = true
+* studieretter/\{id} -> .privatist = false
+* studieretter/\{id} -> .aktivStudent = true
 
 Case 2, all bullet points are true:
 * Undervisningsmelding = true
-* studentundervisning/{id} ->.opptatt = true ('J')
+* studentundervisning/\{id} ->.opptatt = true ('J')
 
 Immediately on active right of study, up to 65 days prior to start date
 
@@ -329,12 +329,12 @@ Immediately on active right of study, up to 65 days prior to start date
 
 Case 1, all bullet points are true:
 * Studierett = true
-* studieretter/{id} -> .privatist = true
-* studieretter/{id} -> .aktivStudent = true
+* studieretter/\{id} -> .privatist = true
+* studieretter/\{id} -> .aktivStudent = true
 
 Case 2, all bullet points are true:
 * Eksamensmelding = true
-* studentundervisning/{id} ->.opptatt = false ('N')
+* studentundervisning/\{id} ->.opptatt = false ('N')
 * No active studierett with Privatist = false"
 
 Immediately on active study right for current semester up to 65 days prior to semester start date (there is a function in the API that will allow you to convert a semester name into a start and end date)
@@ -376,8 +376,8 @@ Disable Date + 180d
 #### Long Term Guest - Emeritus:
 
 ```
-dfø:ansatte/{id} -> .medarbeidergruppe = 9
-dfø:ansatte/{id} -> .medarbeiderundergruppe = [93]
+dfø:ansatte/\{id} -> .medarbeidergruppe = 9
+dfø:ansatte/\{id} -> .medarbeiderundergruppe = [93]
 ```
 
 Create: Immediately
@@ -386,7 +386,7 @@ Access: On SD
 #### Long Term Guest - Visiting Researcher
 
 ```
-dfø:ansatte/{id} -> .medarbeiderundergruppe = [94]
+dfø:ansatte/\{id} -> .medarbeiderundergruppe = [94]
 ```
 
 Create: Immediately
@@ -395,7 +395,7 @@ Access: On SD
 #### Long term Guest - Consultant
 
 ```
-dfø:ansatte/{id} -> .medarbeiderundergruppe = [95]
+dfø:ansatte/\{id} -> .medarbeiderundergruppe = [95]
 ```
 
 ## Portal directory

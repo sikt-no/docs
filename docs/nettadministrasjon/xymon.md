@@ -130,4 +130,4 @@ dokumentasjon").
 
 ## Kontaktadresser
 
--   <kontakt@sikt.no>
+-   kontakt@sikt.no

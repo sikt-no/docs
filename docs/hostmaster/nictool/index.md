@@ -27,7 +27,7 @@ webgrensesnittet. Ta kontakt med
 interessert i dette.
 
 Dokumentasjon til det nye grensesnittet finnes på
-<http://www.nictool.com/docs/client/>.
+http://www.nictool.com/docs/client/.
 
 ---
 

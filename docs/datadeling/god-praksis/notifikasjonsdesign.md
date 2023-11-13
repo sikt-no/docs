@@ -78,6 +78,7 @@ provisjonere den nyansatte umiddelbart.
 
 Eksempel på en notifikasjon som bruker CloudEvents-standarden:
 
+```
     {
         "specversion" : "1.0",
         "type" : "no.uio.cerebrum.account.create",
@@ -86,6 +87,7 @@ Eksempel på en notifikasjon som bruker CloudEvents-standarden:
         "id" : "4d3559ec67504aaba65d40b0363faad8",
         "time" : "2020-10-29T09:01:14Z",
     }
+```
 
 Dette eksempelet er en typisk "tynn melding", som forteller deg at en
 brukerkonto har blitt opprettet, men ikke så mye annet. For å vite mer om

@@ -51,5 +51,5 @@ Da vil svaret bli cachen med en nøkkel lik verdien i parameteret, f.eks. "sold"
 
 ### Expression Language-uttrykk
 
-{#request.params['status']} er et eksempel på et Expression Language-uttrykk. De er basert på Spring Exression Language (SpEL), og blir brukt som variabler i API Manager.
+\{#request.params['status']} er et eksempel på et Expression Language-uttrykk. De er basert på Spring Exression Language (SpEL), og blir brukt som variabler i API Manager.
 For å lese mer om dette, se offisiell dokumentasjon fra leverandøren.
