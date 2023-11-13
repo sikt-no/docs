@@ -34,13 +34,13 @@ Disse er verdt å merke seg:
 
 ### Bruke JWT til autentisering og motta bearer-token
 
-Dette gjøres med HTTP Callout. Legg inn URL til autentiserings-endepunktet du skal bruke og evt. headere/parametere. Legg ved JWT-en som akkurat ble laget ved å bruke Expression Language-notasjon: ${context.attributes['jwt.generated']}.
+Dette gjøres med HTTP Callout. Legg inn URL til autentiserings-endepunktet du skal bruke og evt. headere/parametere. Legg ved JWT-en som akkurat ble laget ved å bruke Expression Language-notasjon: $\{context.attributes['jwt.generated']}.
 
-F.eks. for å bruke mot maskinporten må du legge ved følgende data: grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=${context.attributes['jwt.generated']}.
+F.eks. for å bruke mot maskinporten må du legge ved følgende data: grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=$\{context.attributes['jwt.generated']}.
 
 ### Legge ved token
 
-For å legge på bearer-token mottatt med HTTP Callaout-policyer: i "Transform Headers"-policy, klikk på plusstegnet under add, fyll inn Authorization som "Name" og som "value": Bearer {#context.attributes['token']}.
+For å legge på bearer-token mottatt med HTTP Callaout-policyer: i "Transform Headers"-policy, klikk på plusstegnet under add, fyll inn Authorization som "Name" og som "value": Bearer \{#context.attributes['token']}.
 
 ### Eksempel: Maskinporten som API
 
@@ -83,8 +83,8 @@ I tillegg er de registrert som applikasjoner i API manager. Disse har og fått t
   - HTTP Method: GET (Kan også være POST. Da blir det generert nytt token hver gang. Det skaper unødvendig belastning på maskinporten og er tregt, men gjør feilsøking enklere)
   - URL: [https://gw-XXX.intark.uh-it.no/maskinporten-test/v2?iss=**\<ISSUER\>**&scope=**\<SCOPE\>**](https://gw-XXX.intark.uh-it.no/maskinporten-test/v2?iss=**<ISSUER>**&scope=**<SCOPE>**) (issuer finner du i samarbeidsportalen)
   - Legg til Header X-Gravitee-Api-Key. Verdien er API-nøkkelen fra forrige punkt
-  - Legg til Context variabel med navn = Token og value = {#jsonPath(#calloutResponse.content, '$.access_token')}
-- Dra så policyen Transform Header inn i midten. Under Add/update headers, legg til en med navn Authorization og verdi Bearer {#context.attributes['token']}
+  - Legg til Context variabel med navn = Token og value = \{#jsonPath(#calloutResponse.content, '$.access_token')}
+- Dra så policyen Transform Header inn i midten. Under Add/update headers, legg til en med navn Authorization og verdi Bearer \{#context.attributes['token']}
 
 Ønsker man å sende med multiple scopes til maskinporten så støttes dette, men formatet på strengen med scopes bestemmes utifra hvordan man sender med scopes til maskinporten APIet.
 

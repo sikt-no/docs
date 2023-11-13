@@ -15,12 +15,12 @@ like mellom institusjonene, bare med institusjonens forkortelse som forskjell.
 
 | Institusjon            | API manager                           | API gateway                          | Meldingskø                         | Selvbetjening for meldinger             |
 | ---------------------- | ------------------------------------- | ------------------------------------ | ---------------------------------- | --------------------------------------- |
-| NTNU                   | <https://api-ntnu.intark.uh-it.no>    | <https://gw-ntnu.intark.uh-it.no>    | amqps://mq-ntnu.intark.uh-it.no    | <https://brom-ntnu.intark.uh-it.no/>    |
-| Universitetet i Bergen | <https://api-uib.intark.uh-it.no>     | <https://gw-uib.intark.uh-it.no>     | amqps://mq-uib.intark.uh-it.no     | <https://brom-uib.intark.uh-it.no/>     |
-| Universitetet i Oslo   | <https://api-uio.intark.uh-it.no>     | <https://gw-uio.intark.uh-it.no>     | amqps://mq-uio.intark.uh-it.no     | <https://brom-uio.intark.uh-it.no/>     |
-| Universitetet i Tromø  | <https://api-uit.intark.uh-it.no>     | <https://gw-uit.intark.uh-it.no>     | amqps://mq-uit.intark.uh-it.no     | <https://brom-uit.intark.uh-it.no/>     |
-| OsloMet                | <https://api-oslomet.intark.uh-it.no> | <https://gw-oslomet.intark.uh-it.no> | amqps://mq-oslomet.intark.uh-it.no | <https://brom-oslomet.intark.uh-it.no/> |
-| HiMolde                | <https://api-himolde.intark.uh-it.no> | <https://gw-himolde.intark.uh-it.no> | amqps://mq-himolde.intark.uh-it.no | <https://brom-himolde.intark.uh-it.no/> |
+| NTNU                   | https://api-ntnu.intark.uh-it.no    | https://gw-ntnu.intark.uh-it.no    | amqps://mq-ntnu.intark.uh-it.no    | https://brom-ntnu.intark.uh-it.no    |
+| Universitetet i Bergen | https://api-uib.intark.uh-it.no     | https://gw-uib.intark.uh-it.no     | amqps://mq-uib.intark.uh-it.no     | https://brom-uib.intark.uh-it.no     |
+| Universitetet i Oslo   | https://api-uio.intark.uh-it.no     | https://gw-uio.intark.uh-it.no     | amqps://mq-uio.intark.uh-it.no     | https://brom-uio.intark.uh-it.no     |
+| Universitetet i Tromø  | https://api-uit.intark.uh-it.no     | https://gw-uit.intark.uh-it.no     | amqps://mq-uit.intark.uh-it.no     | https://brom-uit.intark.uh-it.no     |
+| OsloMet                | https://api-oslomet.intark.uh-it.no | https://gw-oslomet.intark.uh-it.no | amqps://mq-oslomet.intark.uh-it.no | https://brom-oslomet.intark.uh-it.no |
+| HiMolde                | https://api-himolde.intark.uh-it.no | https://gw-himolde.intark.uh-it.no | amqps://mq-himolde.intark.uh-it.no | https://brom-himolde.intark.uh-it.no |
 
 ## Gravitee
 

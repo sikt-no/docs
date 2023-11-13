@@ -45,9 +45,9 @@ sudo-rettigheter, samt lesetilgang til filer (se Brukertilgang under).
 
 ### Kontaktpunkt
 
--   For driftshenvendelser, ta kontakt med <kontakt@sikt.no>
+-   For driftshenvendelser, ta kontakt med kontakt@sikt.no
 -   For diskusjon/spørsmål om bruk av verktøyene, bruk
-    <vk@lister.sikt.no>.
+    vk@lister.sikt.no.
     Alle som er registrert i Sikts driftsdatabase som teknisk ansvarlig
     for en verktøykasse ute hos en kunde blir automatisk abonnent på
     denne listen.
@@ -119,7 +119,7 @@ automatisert ved at en nattlig cronjobb sjekker inn ny versjon av alle
 filer som er endret. Alle endringer blir rapportert som epost til
 mottagere angitt via variabelen nocoperators i fila
 `/etc/default/uninett.conf` (merk at denne filen er styrt av Sikts Puppet,
-ta kontakt med <kontakt@sikt.no> for å få gjort endringer). En varsling
+ta kontakt med kontakt@sikt.no for å få gjort endringer). En varsling
 om låste RCS-filer (avglemte innsjekkinger) blir også sendt periodisk
 til samme adresse.
 
@@ -140,7 +140,7 @@ fjernlagre konfigurasjon eller hente programvare.  Foreløpig gjelder dette mest
 Juniper-utstyr.
 
 For å ta i bruk FTP-tjeneren på din verktøykasse må man be Sikt om å slå den på
-først, ved å kontakte <kontakt@sikt.no>.
+først, ved å kontakte kontakt@sikt.no.
 
 ### Oppsettet av FTP-tjeneren
 
@@ -188,7 +188,7 @@ client 128.39.109.0/26 {
 Det vi angir her at alle svitsjene i området 128.39.109.1-63 tillates å
 snakke radius med verktøykassen gitt at de er konfigurert med samme
 felles-hemmelighet. Endringer i `/etc/freeradius/clients.conf` styres med
-Puppet og må meldes inn til <kontakt@sikt.no>.
+Puppet og må meldes inn til kontakt@sikt.no.
 
 ## Syslog
 
@@ -279,7 +279,7 @@ til systemet.
 
 Dersom du har problemer med utsending av SMS fra verktøykassen, kan du
 gjøre litt førstelinjes feilsøking før du feilmelder situasjonen til
-<kontakt@sikt.no>.
+kontakt@sikt.no.
 
 -   Dersom mobilen/GSM-enheten er koblet til med en USB, verifisér at
     mobilen/GSM-enheten er synlig på USB-bussen: `lsusb`
@@ -331,7 +331,7 @@ på NAV-wikien.](https://nav.uninett.no/wiki/radius)
 
 Deretter må Sikt gjøre konfigurasjonsendringer på verktøykassens
 PostgreSQL-database, slik at denne tillater innlogging fra din
-FreeRADIUS-tjener. Meld inn følgende detaljer til <kontakt@sikt.no>:
+FreeRADIUS-tjener. Meld inn følgende detaljer til kontakt@sikt.no:
 
 -   At du ønsker å sende FreeRADIUS accounting-logger til verktøykassen.
 -   IP-adressen(e) til din(e) FreeRADIUS-tjener(e).
@@ -346,7 +346,7 @@ FreeRADIUS-tjeneren med.
 
 Dersom du ønsker å integrere NAV-installasjonen på din verktøykasse med en
 Argus-instans, kan limetjenesten for dette enkelt slås på for din verktøykasse
-ved bestilling til <kontakt@sikt.no>.
+ved bestilling til kontakt@sikt.no.
 
 Når limetjenesten `nav-argus-glue` slås på, vil konfigurasjonsfilen
 `/etc/nav/navargus.yml` opprettes og gjøres skrivbar for alle som er medlem av
