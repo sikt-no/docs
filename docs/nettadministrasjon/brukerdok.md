@@ -581,4 +581,4 @@ Se egen side for [dokumentasjon av Xymon-integrasjonen på verktøykassen](xymon
 ## Firewall Builder (fwbuilder)
 
 [Brukerdokumentasjon for Firewall Builder foreligger på en egen
-side](fwbuilder.md).
+side](fwbuilder).
