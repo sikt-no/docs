@@ -31,8 +31,7 @@ export function Topic({ title, link, imageUrl, children }) {
 Topic.propTypes = {
   title: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
+  imageUrl: PropTypes.string,
 };
 
 export function TopicList({ children }) {
