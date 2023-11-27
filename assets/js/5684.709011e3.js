@@ -1,0 +1,1 @@
+(self.webpackChunkdocs_sikt_no=self.webpackChunkdocs_sikt_no||[]).push([[5684],{9039:(s,c,k)=>{"use strict";k.d(c,{Z:()=>n});var e=k(1336);const n=e},5525:()=>{}}]);
