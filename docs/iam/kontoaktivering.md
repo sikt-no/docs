@@ -1,6 +1,8 @@
 ---
 title: Account claim 
 ---
+
+![](/img/iam/kontoakt1.png)
 Account claim (kontoaktivering) er et eget brukergrensesnitt opprettet for å gjøre det mulig 
 for nye brukere å aktivere brukerkontoene sine. Kort fortalt benytter Account claim 
 IDporten, SMS og e-post eller Feide for å autentisere personer og lar dem utføre noen basis 
