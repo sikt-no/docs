@@ -8,6 +8,7 @@ const sidebars = {
   datadeling: require('./docs/datadeling/sidebars.js'),
   educsc: require('./docs/educsc/sidebars.js'),
   api_pvt: require('./docs/api-pvt/sidebars.js'),
+  kudaf: require('./docs/kudaf/sidebars.js'),
 };
 
 module.exports = sidebars;
