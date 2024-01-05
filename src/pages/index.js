@@ -50,6 +50,16 @@ const topics = (
     <Topic title="API for personverntjenester" link="docs/api-pvt">
       API-dokumentasjon for Sikts personverntjenester.
     </Topic>
+    <Topic
+      title="KUDAF"
+      link="docs/kudaf"
+      imageUrl="img/kudaf.svg"
+    >
+      Kunnskapssektorens datafellesskap (KUDAF) er en tosidig plattform som skal
+      gjøre det lettere for offentlige virksomheter å dele data med forskere og
+      andre interessenter. Dokumentasjonen er under utvikling, send en e-post til
+      kontakt@sikt.no med eventuelle spørsmål eller kommentarer. 
+    </Topic>
   </>
 );
 
