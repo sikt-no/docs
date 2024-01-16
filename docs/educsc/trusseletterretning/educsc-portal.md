@@ -1,4 +1,4 @@
-eduCSC Portal
+**eduCSC Portal**
 
 Portalen for Cybersikkerhetssenteret for forskning og utdanning(eduCSC) er inngangsporten til flere av tjenestene fra eduCSC. I portalen kan du gjøre enkel sårbarhetsshåndtering basert på dataen fra sårbarhetsskann, finne andre verktøy fra eduCSC, og styre enkelte av tjenestene til eduCSC.
 
