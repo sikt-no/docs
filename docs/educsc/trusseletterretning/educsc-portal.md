@@ -8,18 +8,18 @@ I portalen kan du:
 - Rapportere sikkerhetshendelser
 - Administrere brukere
 - Få tilgang til din virksomhets sårbarhetsdata
--- Se statistikk
--- Last ned sårbarhetsrapport
--- Behandle sårbarheter
+     - Se statistikk
+    - Last ned sårbarhetsrapport
+    - Behandle sårbarheter
 - Enkel tilgang til nyttige verktøy
--- Logganalyseverktøyet Humio / Falcon Logscale
--- MISP
--- IRT-chat
--- CyberCHef
--- PrivateBin
+    - Logganalyseverktøyet Humio / Falcon Logscale
+    - MISP
+    - IRT-chat
+    - CyberCHef
+    - PrivateBin
 - Oversikt over alle eduCSCs webinarer, kurs og arrangementer
 - Aktivere MS defender sperrelisteintegrasjon (Kommer snart)
-- Få tilgang til nye tjenester først 
+- Få tilgang til nye tjenester først  
 
 På Profil-siden finner du en liste over din organisasjons administratorer, som du kan kontakte for å få tilgang. Hvis dere ikke har noen org-administrator, kan vi aktivere det for dere hvis dere kontakter oss på IRT-chat eller kontakt@sikt.no.
 
@@ -31,5 +31,6 @@ For å få tilgang til [eduCSC Portal](https://portal.educsc.sikt.no) må du gj�
 1. Send en epost til kontakt@sikt.no hvor du skriver at din organisasjon ønsker tilgang til eduCSC Portal.
 2. eduCSC gir din organisasjon tilgang til å aktivere `eduCSC Portal` i Feide
 3. Din organisasjons **Feideadmin** logger inn i [Feide-kundeportal](https://kunde.feide.no/) og aktiverer `eduCSC Portal`
-4. Du har nå tilgang til [eduCSC Portal](https://portal.educsc.sikt.no) og kan gi andre brukere tilgang
-
+4. Logg inn på [eduCSC Portal](https://portal.educsc.sikt.no) ved bruk av Feide. Du vil få en feilmelding - det er OK.
+5. Gi beskjed til eduCSC at de foregående stegene er utført og at vi nå kan aktivere din bruker.
+6. Du har nå tilgang til [eduCSC Portal](https://portal.educsc.sikt.no) og kan gi andre brukere tilgang
