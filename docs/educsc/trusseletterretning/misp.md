@@ -1,12 +1,12 @@
-# Brukerdokumentasjon MISP
+# Brukerdokumentasjon MISP (Malware Information Sharing Platform)
 
-eduCSC publiserer en [MISP-tjener til bruk for deling i sektoren](https://edu.misp.educsc.no). Denne er tilgjenglig for kunder med abonnement Pluss.
+eduCSC publiserer en [MISP-tjener til bruk for deling i sektoren](https://edu.misp.educsc.no) (Malware Information Sharing Platform). Denne er tilgjenglig for kunder med abonnement Pluss.
 
 Organisasjonen må ha Feide for å få tilgang til tjenesten, men ellers er det ingen krav.
 
-## Hva er MISP
+## Hva er MISP (Malware Information Sharing Platform)
 
-[MISP](https://www.misp-project.org/) benyttes for deling av trusselindikatorer - dette kan være ondsinnede URLer, hasher for oppdaget skadevare eller generell etterretning rundt hendelser både i egen sektor og ute i verden.
+[MISP](https://www.misp-project.org/) (Malware Information Sharing Platform) benyttes for deling av trusselindikatorer - dette kan være ondsinnede URLer, hasher for oppdaget skadevare eller generell etterretning rundt hendelser både i egen sektor og ute i verden.
 
 eduCSCs Phishing-Reporter-tjeneste skriver sine data til MISP slik at dette kan behandles videre i andre systemer (eksempelvis DNS Brannmur), samt deles så bredt som mulig i sektoren.
 
@@ -29,4 +29,4 @@ Vi vil så opprette en tilgangsnøkkel som kan benyttes i egen tjener for å aut
 
 ## Bruk av MISP
 
-MISP er et relativt komplekst system med en overflod av muligheter (og muligheter for å gjøre feil, i eget system), så vi anbefaler sterkt å sette seg inn i [prosjektets dokumentasjon](https://www.misp-project.org/documentation/) for å få en god forståelse for hvordan tjenesten fungerer.
+MISP (Malware Information Sharing Platform) er et relativt komplekst system med en overflod av muligheter (og muligheter for å gjøre feil, i eget system), så vi anbefaler sterkt å sette seg inn i [prosjektets dokumentasjon](https://www.misp-project.org/documentation/) for å få en god forståelse for hvordan tjenesten fungerer.
