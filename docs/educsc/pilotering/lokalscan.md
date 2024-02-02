@@ -24,6 +24,7 @@ For å setje i gang treng vi:
   - Om ikkje kan vi ta utgangspunkt i prefiks som er delegert til dykk av
     Forskningsnettet.
 - IP-adresse og gateway (for både IPv4 og IPv6) til scanning
+  - Dette inkluderer detaljar om nettmaske/CIDR.
   - RFC1918 fungerer fint for IPv4, så framt dette blir ruta riktig til alle
     nett som skal scannast av sensoren.
   - IP-adressa *bør* opnast for i ulike brannmurar mot nett som skal scannast
