@@ -3,6 +3,6 @@ module.exports = [
   'educsc/trusseletterretning/educsc-portal',
   'educsc/trusseletterretning/ms-defender',
   'educsc/trusseletterretning/misp',
-  'educsc/trusseletterretning/sikker-kommunikasjonskanal',
+  'educsc/trusseletterretning/sikker-chat',
 ];
 
