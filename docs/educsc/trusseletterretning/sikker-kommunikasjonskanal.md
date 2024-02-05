@@ -1,4 +1,4 @@
-# Sikker kommunikasjonskanal
+# Sikker chat
 
 ## 1. Beskrivelse av tjenesten
 
