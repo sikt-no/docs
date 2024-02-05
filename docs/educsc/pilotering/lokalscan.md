@@ -38,5 +38,5 @@ For å setje i gang treng vi:
 Det kjem etter kvart meir funksjonalitet i eduCSC-portalen for å sjå rapportar
 og dashboard over funn frå lokalscan. Verksemda di må derfor vera innslusa i
 portalen for at de skal få tilgang til denne. Sjå
-[portal-dokumentasjonen](docs/educsc/trusseletterretning/educsc-portal) for meir
+[portal-dokumentasjonen](/docs/educsc/trusseletterretning/educsc-portal) for meir
 info om korleis de kjem i gang.
