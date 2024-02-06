@@ -28,9 +28,9 @@ På Profil-siden finner du en liste over din organisasjons administratorer, som 
 eduCSC Portal benytter [Feide](https://www.feide.no/) som innloggingsløsning.
 
 For å få tilgang til [eduCSC Portal](https://portal.educsc.sikt.no) må du gjøre følgende:
-1. Send en epost til kontakt@sikt.no hvor du skriver at din organisasjon ønsker tilgang til eduCSC Portal.
+1. Send epost til kontakt@sikt.no hvor du skriver at din organisasjon ønsker tilgang til eduCSC Portal.
 2. eduCSC gir din organisasjon tilgang til å aktivere `eduCSC Portal` i Feide
 3. Din organisasjons **Feideadmin** logger inn i [Feide-kundeportal](https://kunde.feide.no/) og aktiverer `eduCSC Portal`
 4. Logg inn på [eduCSC Portal](https://portal.educsc.sikt.no) ved bruk av Feide. Du vil få en feilmelding - det er OK.
-5. Gi beskjed til eduCSC at de foregående stegene er utført og at vi nå kan aktivere din bruker.
+5. Gi beskjed til eduCSC via epost at de foregående stegene er utført. Vi vil nå aktivere din bruker i eduCSC Portal. 
 6. Du har nå tilgang til [eduCSC Portal](https://portal.educsc.sikt.no) og kan gi andre brukere tilgang
