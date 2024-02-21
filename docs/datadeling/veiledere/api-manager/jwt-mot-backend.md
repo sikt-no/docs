@@ -48,7 +48,7 @@ I Gravitee har vi registrert maskinporten (p.t. versjon 2 test-løsningen) som e
 
 - API-et er ikke publisert
 - Det er sikret med API nøkkel og sperret til IP
-- Backend server endpoint er for test: [https://ver2.maskinporten.no/token](https://ver2.maskinporten.no/token)
+- Backend server endpoint er for test: [https://test.maskinporten.no/token](https://test.maskinporten.no/token)
 
 Det er satt opp med følgende policyer:
 

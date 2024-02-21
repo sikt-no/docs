@@ -21,7 +21,7 @@ Husk at nøkler har varighet på **ett år** og må [fornyes](https://docs.digdi
 ## 1 Få tilgang i Samarbeidsportalen
 
 1. Opprett en bruker i [Samarbeidsportalen til
-   Digdir](https://selvbetjening-samarbeid-ver2.difi.no). Hvis du vil kan du nå
+   Digdir](https://minside-samarbeid.digdir.no/). Hvis du vil kan du nå
    sette opp en integrasjon mot test-miljøet til Maskinporten.
 
 2. Få delegert rollen _Selvbetjening av integrasjoner i
@@ -102,7 +102,7 @@ Velg integrasjonen du nettopp laget og velg _Egne public nøkler_. I dialog-vind
 2. Om dette er mot **produksjonsystem** i stedet for **test**, naviger til proxy og endpoint (under backend services) . Klikk på tannhjulet for PROD, fjern haken for backup endpoint. Slett TEST eller huk av for at test skal være backup endpint. **Husk å lagre**
 3. Gå på design. Klikk på policy "Generate JWT" Fyll inn:
    - __Key ID_: det samme parameteren man satte som `--kid` i steg 3 i [Lokale forberedelser](#Lokale-forberedelser)
-   - _audiences_: Settes til`https://maskinporten.no/`hvis det er **produksjon** eller `https://ver2.maskinporten.no/` hvis det er **test** miljøet man skal bruke
+   - _audiences_: Settes til`https://maskinporten.no/`hvis det er **produksjon** eller `https://test.maskinporten.no/` hvis det er **test** miljøet man skal bruke
    - _Private key_ Den private nøkkelen laget i steg 1 i [Lokale forberedelser](#Lokale-forberedelser)
    - **Husk å lagre**
    [![Konfigurerer generateJWT](/datadeling/img/maskinporten/Samarbeidsportalen-last-opp-nokkel.png)](/datadeling/img/maskinporten/gravitee-generate-jwt-maskinporten.png)

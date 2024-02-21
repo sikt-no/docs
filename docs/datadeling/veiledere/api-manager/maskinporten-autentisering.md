@@ -51,7 +51,7 @@ I menyen for **Signature** la RS256 være valgt (det er eneste som støttes av m
 
 I menyen **JWKS Resolver**, velg JWKS_URL.
 
-I **Resolver parameter** skriv eller lim inn URL hvor API Gatewayen kan finne maskinportens offentlige sertifikat. I produksjon er dette https://maskinporten.no/jwk , i test er det https://ver2.maskinporten.no/jwk eller https://ver1.maskinporten.no/jwk , alt etter hvilket testmiljø man benytter.
+I **Resolver parameter** skriv eller lim inn URL hvor API Gatewayen kan finne maskinportens offentlige sertifikat. I produksjon er dette https://maskinporten.no/jwk , i test er det ```https://test.maskinporten.no/jwk```
 
 Om du vil kunne bruke informasjon fra tokenet til flere sjekker og/eller i policyer, huk av for **Extract JWT Claims**.
 
