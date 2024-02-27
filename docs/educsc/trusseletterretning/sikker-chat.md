@@ -30,6 +30,8 @@ Kontoer opprettes av eduCSC når et nytt IRT opprettes, og når eksisterende IRT
 
 Ved første innlogging må det settes et varig passord, og tofaktorautentisering via mobiltelefon må settes opp. Kontoen kan aksesseres fra nettleser, applikasjon eller mobil-app, men mobil-app kan først benyttes etter at tofaktorautentisering er satt opp.
 
+Merk at tjenesten er relativt streng på klientadressens geografiske tilknytning, så ved reise til utland eller opphold tett opp mot riksgrensen kan VPN hjem til egen institusjon være nødvendig.
+
 ## 6. Kanaler
 
 Nye IRT-brukere blir i utgangspunktet påmeldt kanalene «Diskusjon» og «Sosialt», men bør også legges til «Hendelser» og «SRM – virksomhetsnavn», samt «Nyheter», «Konferanser» og «Sårbarhetsscan» dersom disse er av interesse.
