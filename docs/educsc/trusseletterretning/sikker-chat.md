@@ -42,7 +42,7 @@ Kontoer som ikke er i aktiv bruk sperres etter en tid, men kan raskt gjenåpnes 
 
 ## 8. Glemt passord
 
-For maksimalt sikkerhetsnivå er "Glemt passord"-funksjonaliteten slått av. Kontakt eduCSC for tilbakestilling av passord og få tilgang til brukeren
+For maksimalt sikkerhetsnivå er "Glemt passord"-funksjonaliteten slått av. Kontakt eduCSC for tilbakestilling av passord og få tilgang til brukeren.
 
 ## 9. Push-varsling
 
