@@ -38,8 +38,12 @@ Nye IRT-brukere blir i utgangspunktet påmeldt kanalene «Diskusjon» og «Sosia
 
 ## 7. Vedlikehold av kontoer
 
-Kontoer som ikke er i aktiv bruk sperres etter en tid, men kan raskt gjenåpnes ved kontakt med eduCSC. For maksimalt sikkerhetsnivå er muligheten til å initiere passordbytte selv slått av. Dette reflekteres imidlertid ikke helt korrekt i grensesnittet; man må kontakte eduCSC for å få hjelp til dette selv om valget ser ut til å være tilgjengelig.
+Kontoer som ikke er i aktiv bruk sperres etter en tid, men kan raskt gjenåpnes ved kontakt med eduCSC. 
 
-## 8. Push-varsling
+## 8. Glemt passord
+
+For maksimalt sikkerhetsnivå er "Glemt passord"-funksjonaliteten slått av. Kontakt eduCSC for tilbakestilling av passord og få tilgang til brukeren
+
+## 9. Push-varsling
 
 Spesielt for de som er ansvarlige for et IRT eller inngår i en vaktordning anbefaler vi å sette opp push-varsling til mobil. Uansett om man ønsker å bruke mobil-appen eller bare få et mobilvarsel om at man bør kikke innom grensesnittet på PCen forutsetter dette at man installerer mobil-appen «Mattermost» fra Play Store eller App Store og sette opp denne til å bruke https://irt-chat.uninett.no med egen bruker. Under «Settings» (tannhjul til høyre på verktøylinja) → «Notifications» finner man «Mobile Push Notifications» hvor man kan velge mellom varsel for all aktivitet eller «mentions and direct messages» (samt «Never» for å skru av varslingen, for eksempel når man går av vakt). Valget nedenfor, «Words That Trigger Mentions» brukes til å konfigurere hva som skal oppfylle kriteriet for «mentions and direct messages». Her anbefaler vi å legge inn kortnavnet på teamet og eventuelle andre navn som refererer til det.
