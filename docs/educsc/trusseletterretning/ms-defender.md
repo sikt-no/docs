@@ -34,7 +34,6 @@ oppsettes bør gjøres for å få effektiv beskyttelse:
 
 ## Kom i gang med MS Defender-integrasjonen
 
-### Manuelt oppsett
 - Send bestilling til kontakt@sikt.no. MS Defender-integrasjonen er inkludert
 som en del av
 [pluss-abonnementet](https://sikt.no/tjenester/cybersikkerhetssenter-forskning-og-utdanning).
