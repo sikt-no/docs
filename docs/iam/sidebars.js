@@ -1,6 +1,7 @@
 module.exports = [
   'iam/index',
   'iam/gevinster',
+  /*
   {
     type: 'category',
     label: 'Prosjektinformasjon',
@@ -8,7 +9,7 @@ module.exports = [
       'iam/prosjekt', 
       'iam/uib',
     ],
-  },
+  },*/
   {
     type: 'category',
     label: 'Prosessinformasjon',
