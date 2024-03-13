@@ -47,6 +47,10 @@ som en del av
   - Om du vil skru av blokkering i oppstarten (anbefalt).
   - Om aktuelt: Et tak på hvor mange indikatorer vi skal synkronisere.
 
+  Du kan også konfigurere MS-defender koblingen direkte i eduCSC Portal. Logg inn i eduCSC Portal og naviger deg til "Microsoft Defender Integrasjon" i menyen til venstre. Fyll inn nødvendig data og trykk "Lagre":
+  ![image](https://github.com/sikt-no/docs/assets/6864506/ecc2b78f-f8c0-411c-9401-2c135ab5ff64)
+
+
 For mer tekniske detaljer, se gjennomgangen under denne seksjonen.
 
 ## Teknisk oppsett av MS Defender-integrasjon
