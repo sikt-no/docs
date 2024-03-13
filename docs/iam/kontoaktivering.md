@@ -19,3 +19,6 @@ Hvis noe går galt under disse prosessene, får brukeren informative feilmelding
 mulig oppgitt hvordan man kan endre det. Men hvis noe uventet oppstår eller et problem er 
 vedvarende, blir man bli bedt om å kontakte Helpdesk. Meldingen inneholder 
 kontaktinformasjonen til institusjonens egen Helpdesk.
+
+
+
