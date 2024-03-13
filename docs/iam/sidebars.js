@@ -1,14 +1,7 @@
 module.exports = [
   'iam/index',
   'iam/gevinster',
-  {
-    type: 'category',
-    label: 'Prosjektinformasjon',
-    items: [
-      'iam/prosjekt', 
-      'iam/uib',
-    ],
-  },
+  
   {
     type: 'category',
     label: 'Prosessinformasjon',
@@ -40,12 +33,6 @@ module.exports = [
   'iam/livssyklus',
   'iam/brukernavn',
   'iam/virksomhetsroller',
-  {
-    type: 'category',
-    label: 'UiB',
-    items: [
-      'iam/uib-targets',
-    ],
-  },
-  'iam/referanser',
+   
+   'iam/referanser',
 ];
