@@ -3,14 +3,6 @@ module.exports = [
   'iam/gevinster',
   {
     type: 'category',
-    label: 'Prosjektinformasjon',
-    items: [
-      'iam/prosjekt', 
-      'iam/uib',
-    ],
-  },
-  {
-    type: 'category',
     label: 'Prosessinformasjon',
     items: [
       'iam/ansvar',
@@ -40,12 +32,5 @@ module.exports = [
   'iam/livssyklus',
   'iam/brukernavn',
   'iam/virksomhetsroller',
-  {
-    type: 'category',
-    label: 'UiB',
-    items: [
-      'iam/uib-targets',
-    ],
-  },
   'iam/referanser',
 ];
