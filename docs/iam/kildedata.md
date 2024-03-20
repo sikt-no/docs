@@ -25,7 +25,6 @@ Løsningen forutsetter at det finnes et organisasjonsregister som minimum inneho
 Løsningen vil benytte kortnavn/akronym som felles identifikator i en del prosesseringer, eksempelvis i å kunne adressere samme mål bare skilt av engasjementstype, som MN-II_Ansatt og MN-II_Student.
 
 
-
 ### Prosess for organisasjonsendring
 Organisasjonsendringer forekommer, og det stilles krav til implementeringsrekkefølge slik at integriteten i tilgangsmodellene opprettholdes. Figuren viser rekkefølgen på endringer som må skje før en registrerer ansatte/studenter på en ny enhet:
 
