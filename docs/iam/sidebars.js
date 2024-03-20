@@ -1,7 +1,6 @@
 module.exports = [
   'iam/index',
   'iam/gevinster',
-  
   {
     type: 'category',
     label: 'Prosessinformasjon',
@@ -33,6 +32,5 @@ module.exports = [
   'iam/livssyklus',
   'iam/brukernavn',
   'iam/virksomhetsroller',
-   
-   'iam/referanser',
+  'iam/referanser',
 ];
