@@ -67,7 +67,6 @@ Det benyttes et utvidbart utvalg av parametere for å bestemme og tildele forret
 ![To-trinnsprosess for tildeling av tilganger](/img/iam/bilde4.png)
 
 
-
 ### Ansatte
 
 En JML-prosess for en ansatt kan se ut på følgende vis:

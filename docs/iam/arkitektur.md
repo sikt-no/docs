@@ -23,7 +23,6 @@ Hovedstegene i IAM består av:
 
 ## Systemarkitektur
 
-
 Felles IAM innfører ett felles produkt for forsyning, RapidIdentity (RI) fra Identity Automation. RI består av flere komponenter, der de viktigste er:
 
 * Rapid Identity Core Services bestående av et integrasjonslag (Connect) lagringsstruktur (MetaVault og Metadirectory) samt en portal tilgang til tjenesten
