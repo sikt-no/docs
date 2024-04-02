@@ -15,7 +15,6 @@ Oversikt over underordnedes generelle tilganger, særlig de som har utvidede/pri
 | Informasjonssikkerhetsansvarlig  | Ha oversikt over hvilke tilganger som forvaltes av IAM, særlig alle brukere med privilegerte tilganger | Tilslutning til etablerte og foreslåtte tilgangsregler. Godkjenning av tilgangsforespørsler knyttet til sensitiv informasjon og/eller privilegerte tilganger |
 
 
-
 ## Varslingsrutiner
 
 <!-- TBD (Her bør det inn en kortfattet beskrivelse av change- og incidentsprosessene) -->
