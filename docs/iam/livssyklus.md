@@ -3,6 +3,7 @@ title: Livssyklus for identitet og tilgang
 ---
 
 
+
 ![Livssyklus tilganger](/img/iam/iamforvaltning.PNG)
 
 
