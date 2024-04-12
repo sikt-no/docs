@@ -29,7 +29,7 @@ Brukeren vil logge på med sitt lokale brukernavn etter å ha valgt institusjon.
 
 ### Azure AD og pålogging på klient PC
 
-Normalt sett vil institusjonene sette opp Azure AD slik at brukeren logger på med ePPN til Microsofts tjenester. Ønsker innspill her … Mer utfyllende info?
+<!-- Normalt sett vil institusjonene sette opp Azure AD slik at brukeren logger på med ePPN til Microsofts tjenester. Ønsker innspill her … Mer utfyllende info? -->
 
 ### UH-ID
 
