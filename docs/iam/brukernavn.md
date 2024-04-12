@@ -112,20 +112,20 @@ Brukeren vil oppstå hos UiB med følgende konto og personobjekt
 | UiB   | Lokalt brukernavn | Olanor                                 |
 | UiB   | ePPN              | [Olanor@uib.no ](mailto:Olanor@uib.no) |
 
-Hvis brukeren senere on-boardes NTNU, vil konto og personobjekt bli som følger:
+Hvis brukeren senere on-boardes OsloMet, vil konto og personobjekt bli som følger:
 
 | Scope | Identifikator     | Eksempel                                       |
 | ----- | ----------------- | ---------------------------------------------- |
 | Core  | Fødselsnummer     | 10017012345                                    |
 | Core  | UH brukernavn     | [Olnor1234 ](mailto:Olnor1234@uib.no)          |
 | Core  | UH-ID             | 7d673e3c-baea-11ea-b3de-0242ac130004           |
-| Core  | Aktiv tilhørighet | UiB, NTNU                                      |
+| Core  | Aktiv tilhørighet | UiB, OsloMet                                      |
 | UiB   | Ansattnummer      | 100199991                                      |
 | UiB   | Lokalt brukernavn | Olanor                                         |
 | UiB   | ePPN              | [Olanor@uib.no ](mailto:Olanor@uib.no)         |
-| NTNU  | Ansattnummer      | 10012223                                       |
-| NTNU  | Lokalt brukernavn | Olnor1234                                      |
-| NTNU  | ePPN              | [olnor1234@ntnu.no ](mailto:olnor1234@ntnu.no) |
+| OsloMet  | Ansattnummer      | 10012223                                       |
+| OsloMet  | Lokalt brukernavn | Olnor1234                                      |
+| OsloMet  | ePPN              | [olnor1234@oslomet.no ](mailto:olnor1234@oslomet.no) |
 
 ### On-boarding av person første gang i IAM
 
@@ -141,20 +141,20 @@ Kari Normann registreres som ansatt fra FS til UiB:
 | UiB   | Lokalt brukernavn | Kanor997                                   |
 | UiB   | ePPN              | [kanor997@uib.no ](mailto:kanor997@uib.no) |
 
-Kari Normann dukker så opp som student hos NTNU:
+Kari Normann dukker så opp som student hos OsloMet:
 
 | Scope | Identifikator     | Eksempel                                     |
 | ----- | ----------------- | -------------------------------------------- |
 | Core  | Fødselsnummer     | 11037012345                                  |
 | Core  | UH brukernavn     | Kanor997                                     |
 | Core  | UH-ID             | ccd950fe-baea-11ea-b3de-0242ac130004         |
-| Core  | Aktiv tilhørighet | UiB, NTNU                                    |
+| Core  | Aktiv tilhørighet | UiB, OsloMet                                    |
 | UiB   | Ansattnummer      | 200299991                                    |
 | UiB   | Lokalt brukernavn | Kanor997                                     |
 | UiB   | ePPN              | [kanor997@uib.no ](mailto:kanor997@uib.no)   |
-| NTNU  | FS løpenummer     | 19283746                                     |
-| NTNU  | Lokalt brukernavn | Kanor997                                     |
-| NTNU  | ePPN              | [kanor997@ntnu.no ](mailto:kanor997@ntnu.no) |
+| OsloMet  | FS løpenummer     | 19283746                                     |
+| OsloMet  | Lokalt brukernavn | Kanor997                                     |
+| OsloMet  | ePPN              | [kanor997@oslomet.no ](mailto:kanor997@oslomet.no) |
 
 
 
@@ -174,16 +174,16 @@ Gitt et scenario hvor vi har to personinnslag som feilaktig har oppstått som du
 | UiB   | Lokalt brukernavn | Kanor997                                   |
 | UiB   | ePPN              | [kanor997@uib.no ](mailto:kanor997@uib.no) |
 
-**Kari Normann – student hos NTNU**
+**Kari Normann – student hos OsloMet**
 
 | Scope | Identifikator     | Eksempel                             |
 | ----- | ----------------- | ------------------------------------ |
 | Core  | Fødselsnummer     | 11037012345                          |
 | Core  | UH-brukernavn     | Kanor384                             |
 | Core  | UH-ID             | ccd950fe-baea-11ea-b3de-0242ac130004 |
-| Core  | Aktiv tilhørighet | NTNU                                 |
-| NTNU  | FS løpenummer     | 19283746                             |
-| NTNU  | Lokalt brukernavn | Kanor384                             |
+| Core  | Aktiv tilhørighet | OsloMet                                 |
+| OsloMet  | FS løpenummer     | 19283746                             |
+| OsloMet  | Lokalt brukernavn | Kanor384                             |
 
 
 ## Generering av nye brukernavn
