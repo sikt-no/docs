@@ -36,8 +36,6 @@ Les mer om
 **Økt operasjonell gevinst**
 
 *  Bedre utnyttelse av interne ressurser og reduksjon av feil gjennom automatisering og standardisering av prosesser.
-*  Reduksjon av unødvendige lisenskostnader ved å fjerne brukere som ikke lenger skal ha tilgang 
-<!--(ta bort denne, evt utdype nærmere hvor denne kommer fra, hvor stor er den?) - se på denne, obs ikke økonomiske gevinster -->
 *  Økt produktivitet og brukeropplevelse for sluttbrukere gjennom innføring av ytterligere funksjonalitet og økt selvbetjening.
 
 Les mer om
