@@ -16,7 +16,7 @@ module.exports = [
       'iam/arkitektur',
       'iam/datamodell',
       'iam/kildedata',
-      'iam/rest-api',
+      'iam/scim',
       'iam/passordpolicy',
       'iam/rapportering',
     ],
