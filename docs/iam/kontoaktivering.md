@@ -19,3 +19,17 @@ Hvis noe går galt under disse prosessene, får brukeren informative feilmelding
 mulig oppgitt hvordan man kan endre det. Men hvis noe uventet oppstår eller et problem er 
 vedvarende, blir man bli bedt om å kontakte Helpdesk. Meldingen inneholder 
 kontaktinformasjonen til institusjonens egen Helpdesk.
+
+## Aktivere brukerkonto (norsk fødselsnummer)
+
+Når en person registreres i SAP, GREG eller i FS ved en virksomhet opprettes det automatisk 
+en brukerkonto i Rapid Identity. Basert på konfigurerbart antall dager i forkant av startdato, 
+sendes en e-post fra Rapid Identity til brukeren sin privat e-postadresse, med informasjon 
+og vedlagt lenke. 
+Dersom brukeren har norsk e-ID, vil lenken som oppgis føre brukeren til kontoaktivering 
+(Account Claim) hvor han/hun kan velge den autentiseringsmetoden i ID-porten de ønsker.
+
+## Brukerveiledning for aktivering av konto
+
+1. Velg “Aktivere brukerkontoen”.
+![](/img/iam/kontoakt1.png)
