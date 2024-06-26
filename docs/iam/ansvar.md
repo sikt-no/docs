@@ -18,4 +18,4 @@ Oversikt over underordnedes generelle tilganger, særlig de som har utvidede/pri
 
 ## Varslingsrutiner
 
-TBD (Her bør det inn en kortfattet beskrivelse av change- og incidentsprosessene)
+<!-- TBD (Her bør det inn en kortfattet beskrivelse av change- og incidentsprosessene) -->

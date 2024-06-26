@@ -5,7 +5,7 @@ title: Referanser
 
 Produktdokumentasjon
 
-* [Rapid identity produktdokumentasjon](https://ri-doc-lts-html5.identitymgmt.net/index.html?lang=en)
+* [Rapid identity produktdokumentasjon](https://help.rapididentity.com/)
 * [Rapid Identity Product API Referece](https://swagger-api.identitymgmt.net/?v=lts)
 
 Videoer
