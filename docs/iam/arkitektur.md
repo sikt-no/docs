@@ -18,7 +18,7 @@ Hovedstegene i IAM består av:
 
 * Avslutning av bruker (deprovisjonering)
 
-![Forsyning og tilgangskontroll](/img/iam/figur1.png)
+![Forsyning og tilgangskontroll](/img/iam/arkitektur.png)
 
 
 ## Systemarkitektur
@@ -33,4 +33,4 @@ Felles IAM innfører ett felles produkt for forsyning, RapidIdentity (RI) fra Id
 I tillegg innføres en tjeneste for sikker identifisering og kontoaktivering for nye ansatte og studenter, Sikt Account Claim.
 
 
-![systemarkitektur](/img/iam/systemarkitektur.png)
+![systemarkitektur](/img/iam/systemarkitekturen.png)
