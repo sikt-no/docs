@@ -3,22 +3,33 @@ title: Identitets og tilgangsstyring (Felles IAM)
 disableTitleTagline: true
 ---
 
-Identitets- og tilgangsstyring (IAM) handler om å gi studenter, forskere og ansatte riktig tilgang til digitale systemer, tjenester og ressurser, samt avslutte tilgang for brukere som ikke lenger skal ha det.
+Identitets- og tilgangsstyring (IAM) handler om å gi studenter, ansatte og gjester riktig tilganger til digitale systemer og tjenester. Samt avslutte tilganger til systemer, tjenester og ressurser for brukere som ikke lenger skal ha det.
 
-[Les mer om IAM-tjenesten på sikt.no](https://sikt.no/tjenester/felles-iam)
+Basisprodukt som benyttes i denne Felles IAM løsningen er [Rapid Identity](./IAM/produkt), utviklet av 3. parts leverandøren Identity Automations. Sikt leverer tilpasninger og implementering i Norge i henhold til UH sektoren og virksomheter behov og endringsønsker. I tillegg benyttes Account Claim (kontoaktivering) som Sikt både utvikler og drifter.
 
-Her vil du finne overordnet systemdokumentasjon, og etterhvert brukerdokumentasjon. [En overordnet arkitektur for IAM](./arkitektur) og [gevinster](./gevinster) vil være en gode steder å starte for å bedre forstå IAM.
+For en overordnet beskrivelse av funksjonalitet [Les mer om IAM-tjenesten på sikt.no](https://sikt.no/tjenester/felles-iam)
 
-Felles IAM vil [livssyklusen til studenter, ansatte og gjester](./livssyklus), og opprette, endre og fjerne digitale kontoer basert på data fra [kildesystemer](./kildedata). Felles IAM kan identifisere en person på tvers av utdanningsinstitusjoner, og [generere et nasjonalt unikt brukernavn og en identifikator](./brukernavn). Når en bruker møter en utdanningsinstitusjon for første gang vil vedkommende møte [en brukervennlig kontoaktivering](./kontoaktivering), hvor man blant annet setter passordet, i henhold til [felles passordpolicy](./passordpolicy). Noe av den mest sentrale funksjonaliteten i Felles IAM er [tilgangsstyring til målsystemer](./tilgangsstyring), hvor tilganger kan settes basert på [virksomhetsroller](./virksomhetsroller).
+For informasjon om arkitektur se
+[En overordnet arkitektur for IAM](./IAM/arkitektur) 
 
-Når tilgangsstyring er samlet og kontrollert fra et sted vil [rapportering](./rapportering) gi oversikt og kontroll, og bidra til å hjelpe med å etterlevere lovverk og standarder.
+og for mulig gevinstrealisering se [Gevinster ved Felles IAM](./IAM/gevinster) 
 
-Forvaltning av IAM på en institusjon er et samarbeid, hvor [ansvar fordeles ut i organisasjonen](./ansvar), og er ikke begrenset til IT-avdelingen.
+### Brukerkonto (tilgang)
 
-Felles IAM er realisert med produktet [Rapid Identity](./produkt) levert av Identity Automations.
+[Livssyklus for identitet og tilgang](./IAM/livssyklus) har som utgangspunkt å opprette, endre og fjerne brukerkontoer basert på data fra [kildesystemer](./IAM/kildedata). 
+Noe av den mest sentrale funksjonaliteten i Felles IAM er [tilgangsstyring til målsystemer](./IAM/tilgangsstyring), hvor tilganger kan settes basert på [virksomhetsroller](./IAM/virksomhetsroller).
+
+Felles IAM kan identifisere en person på tvers av utdanningsinstitusjoner, og [generere et nasjonalt unikt brukernavn og en identifikator](./IAM/brukernavn).
+Når en bruker møter en utdanningsinstitusjon for første gang skjer det via et unikt brukergrensesnitt [Account Claim](./IAM/kontoaktivering), hvor man blant annet setter passordet, i henhold til [Passordpolicy](./IAM/passordpolicy). 
+
+### Rapportering 
+Når tilgangsstyring er samlet og kontrollert fra et sted vil [rapportering](./IAM/rapportering) gi oversikt og kontroll, og bidra til å hjelpe med å etterlevere lovverk og standarder.
+
+### Forvaltning 
+Forvaltning av IAM på en institusjon er et samarbeid, hvor [ansvar fordeles ut i organisasjonen](./IAM/ansvar), og er ikke begrenset til IT-avdelingen.
 
 For mer tekniske dypdykk:
-* [Felles IAM datamodell](./datamodell)
-* [REST API for integrasjoner mot målsystemer](./datamodell)
+* [Felles IAM datamodell](./IAM/datamodell)
+* [REST API for integrasjoner mot målsystemer](./IAM/datamodell)
 
-I [referanser](./referanser) vil du finne flere lenker til andre kilder som dokumenterer løsningen ytterligere.
+I [referanser](./IAM/referanser) vil du finne flere lenker til andre kilder som dokumenterer løsningen ytterligere.
