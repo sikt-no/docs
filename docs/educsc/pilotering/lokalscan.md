@@ -1,4 +1,4 @@
-# Pilot: Scanning av lokalt nett
+# Scanning av lokalt nett
 
 Lokalscan er ei teneste for å få betre oversikt i eige nett. Dette kan bidra til
 å oppdaga skugge-IT, sårbare eller kompromitterte tenester. Det blir dermed
