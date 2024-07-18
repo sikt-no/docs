@@ -2,8 +2,8 @@
 title: REST API & SCIM
 ---
 
-Rest API definerer det foreslåtte [SCIM](https://tools.ietf.org/html/rfc7643)-grensesnittet som skal tilbys av IGA-implementeringer i den norske høyere utdanningssektoren.
-Hovedbruksområdet for dette API-et er å muliggjøre IntARK-stil provisjonering av brukerkontoer.
+Dokumentasjon av det foreslåtte [SCIM](https://tools.ietf.org/html/rfc7643)-grensesnittet som skal tilbys av IAM-implementeringer i den norske høyere utdanningssektoren.
+Hovedbruksområdet for dette API-et er å tilgjengeligjøre henting av brukerdata via IntArk
 
 En funksjonell mock-up av dette API-et er tilgjengelig via [UiBs API Gateway](https://api-uib.intark.uh-it.no/#!/apis/91a73d99-d9b2-452a-a73d-99d9b2e52a9a/detail).
 
@@ -16,7 +16,7 @@ De standardiserte stiene for SCIM inkluderer;
 (Vi bruker kun User-endepunktene akkurat nå)
 
 ## Personer vs brukerkontoer
-SCIM er i utgangspubktet utformet som en REST-basert erstatning for LDAP. Som har de samme 
+SCIM er i utgangspunktet utformet som en REST-basert erstatning for LDAP. Som har de samme 
 tvertydlighetene når det gjelder hva brukerobjektene representerer.
 Er de personer eller er de kontoer som tilhører personer(og andre enheter).
 
@@ -30,7 +30,7 @@ Man kan også ha kontoer som ikke tilhører personer.
 Dette kan være kontoer som representerer enheter, applikasjoner eller andre systemer.
 
 
-## De minste implementasjonskravene
+## Minimumskrav
 
 I denne seksjonen blir det definert hva som er minstekravnene til implementasjonen.
 
@@ -39,9 +39,9 @@ I denne seksjonen blir det definert hva som er minstekravnene til implementasjon
 * Implementere `/Users?filter=userName eq "..."` Gjør det mulig å slå opp en bestemt konto.
 * Implementere `/Users?userName=...` En mer praktisk ustandardistert versjon av det samme som over.
 * Gjøre `/Groups` funksjonell, men det er greit at den bare returnerer `ListResponse`.
-* Post MQ melding når et brukerobjekt på brukerobjekter.
+* Publisere meldinger på meldingskø når et brukerobjekt er Opprettet, Oppdatert eller Slettet.
 
-Følgende felt bør minst være tilgjengelig på brukerobjekter.
+Følgende attributter bør være tilgjengelig på brukerobjektet.
 
 * `.id`
 * `.meta`
@@ -57,13 +57,11 @@ Følgende felt bør minst være tilgjengelig på brukerobjekter.
 * `.no:edu:scim:user:eduPersonPrincipalName`
 * `.no:edu:scim:user:userPrincipalName`
 
-## Hendelser
+## Meldinger (MQ)
 
-Oppdaterer objektene som er eksponert i dette API-et, og signaliseres av hendelser 
-til IntArk MQ og følger det foreslåtte [SCIM Event Extension](https://tools.ietf.org/html/draft-hunt-scim-notify-00) 
-strukturen
+Oppdatering på brukerobjekt som er eksponsert i dette API-et varsles via meldinger til IntArk MQ og følger det foreslåtte [SCIM Event Extension](https://tools.ietf.org/html/draft-hunt-scim-notify-00) strukturen
 
-Siden IntArk foretrekker overfladiske meldinger, så inkluderes det ikke i `.values` attributten.
+Siden IntArk foretrekker korte/mindre meldinger, så inkluderes ikke `.values` attributtet.
 
 Disse hendelsene er kodet i JSON og ser slik ut:
 
@@ -100,9 +98,9 @@ kan være nyttige og som vi foretrekker all implementasjon til å vurdere.
 
 ### User `.id`
 
-Dette bør helst være en UUID-lignende streng,
-men siden tjenesten kan bruke andre formater,
-for eksempel ved å la `.username` være `.id`.
+Dette bør helst være en UUID-lignende streng, 
+men tjenesten tillater også andre formater være `.id`  
+sånn som for eksempel `.username`.
 Det bør være mulig å be om JSON-objektet som
 representerer denne brukeren med en URL-sti på 
 `/Users/{id}`, der `{id}` erstattes med verdien av dette 
@@ -275,8 +273,8 @@ særlige grunner til å kreve dette.
 Feide-ID av denne brukerkontoen er spesifisert i dette feltet.
 Dette feltet er kun tilstede for brukere som ikke er tilgjengelig gjennom Feide.
 
-Det vil være den samme verdien som `eduPersonPrincipalName` attributtet
-i LDAP og spesivisert [norEdu\*](https://docs.feide.no/reference/schema/attributes/edupersonprincipalname.html#saml-attribute-edupersonprincipalname).
+Det vil være den samme verdien som `eduPersonPrincipalName` attributtet 
+i LDAP og spesifisert [norEdu\*](https://docs.feide.no/reference/schema/attributes/edupersonprincipalname.html#saml-attribute-edupersonprincipalname).
 
 Eksempel på verdi: `gaa041@uib.no`
 
@@ -301,7 +299,7 @@ Det er ikke nødvendig med implementeringer for å gi denne utvidelsen.
 
 ### User `.enterprise.employeeNumber`
 
-Dette er DFØ ID for ansatte som eieer denne kontoen.
+Dette er DFØ ID for  den ansatte som eier denne kontoen. 
 Hvis begge er tilstede, skal denne ha samme verdi som `.no:edu:scim:user.employeeNumber`.
 
 ### User `.enterprise.costCenter`
