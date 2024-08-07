@@ -9,8 +9,7 @@ Basisproduktet som benyttes i Felles IAM løsningen er [Rapid Identity](./produk
 
 For en overordnet beskrivelse av funksjonalitet [Les mer om IAM-tjenesten på sikt.no](https://sikt.no/tjenester/felles-iam)
 
-For informasjon om arkitektur se
-[En overordnet arkitektur for IAM](./arkitektur) 
+For informasjon om arkitektur se [En overordnet arkitektur for IAM](./arkitektur) 
 
 og for mulig gevinstrealisering se [Gevinster ved Felles IAM](./gevinster) 
 
