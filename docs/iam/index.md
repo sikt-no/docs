@@ -20,7 +20,7 @@ og for mulig gevinstrealisering se [Gevinster ved Felles IAM](./gevinster)
 Noe av den mest sentrale funksjonaliteten i Felles IAM er [tilgangsstyring til målsystemer](./tilgangsstyring), hvor tilganger kan settes basert på [virksomhetsroller](./virksomhetsroller).
 
 Felles IAM kan identifisere en person på tvers av utdanningsinstitusjoner, og [generere et nasjonalt unikt brukernavn og en identifikator](./brukernavn).
-Når en bruker møter en utdanningsinstitusjon for første gang skjer det via et unikt brukergrensesnitt [Account Claim](./kontoaktivering), hvor man blant annet setter passordet, i henhold til [Passordpolicy](./passordpolicy). 
+Når en bruker møter en utdanningsinstitusjon for første gang, skjer det via et unikt brukergrensesnitt [Account Claim](./kontoaktivering), hvor man blant annet setter passordet, i henhold til [Passordpolicy](./passordpolicy). 
 
 ### Rapportering 
 Når tilgangsstyring er samlet og kontrollert fra et sted vil [rapportering](./rapportering) gi oversikt og kontroll, og bidra til å hjelpe med å etterlevere lovverk og standarder.
