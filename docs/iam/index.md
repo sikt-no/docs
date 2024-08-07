@@ -3,7 +3,7 @@ title: Identitets og tilgangsstyring (Felles IAM)
 disableTitleTagline: true
 ---
 
-Identitets- og tilgangsstyring (Felles IAM) handler om å gi studenter, ansatte og gjester riktig tilganger til digitale systemer og tjenester. Samt avslutte tilganger til systemer, tjenester og ressurser for brukere som ikke lenger skal ha det.
+Identitets- og tilgangsstyring (Felles IAM) handler om å gi studenter, ansatte og gjester de riktige tilgangene til digitale systemer og tjenester. Samt avslutte tilganger til systemer, tjenester og ressurser for brukere som ikke lenger skal ha det.
 
 Basisprodukt som benyttes i denne Felles IAM løsningen er [Rapid Identity](./produkt), utviklet av 3. parts leverandøren Identity Automations. Sikt leverer tilpasninger og implementering i Norge i henhold til UH sektoren og virksomheter behov og endringsønsker. I tillegg benyttes Account Claim (kontoaktivering) som Sikt både utvikler og drifter.
 
