@@ -2,20 +2,21 @@
 title: Overordnet arkitektur
 ---
 
-Identitets- og tilgangsstyring(IAM) er en samling av prosesser og teknologiske løsninger som bistår instutisjonene med å gi rette tilganger til studenter, ansatte og gjester basert på spesifikke tjenestebehov. IAM har ansvar for å håndtere disse tilgangene på en etterprøvbar måte, samt for å avslutte dem når det ikke lenger er behov for dem. Derfor spiller IAM en vesentlg rolle i styringen av livssyklusen til digitale identiteter.
+Identitets- og tilgangsstyring(Felles IAM) er en samling av prosesser og teknologiske løsninger som bistår institusjonene med å gi rette tilganger til studenter, ansatte og gjester basert på tjenestebehov. Felles IAM har ansvar for å håndtere tilgangene på en etterprøvbar måte, samt for å avslutte tilgangene når det ikke lenger er behov for dem. Felles IAM har dermend en vesentlig rolle i styringen av livssyklusen til digitale identiteter.
+Derfor spiller Felles IAM en vesentlg rolle i styringen av livssyklusen til digitale identiteter.
 
 Felles IAM innfører felles teknologiske løsninger for hele sektoren, noe som er et sentralt tiltak for å støtte [strategiske mål og gevinster](./gevinster).
 
 Hovedstegene i IAM består av:
 
-* Forsyning, også kjent som provisjonering, er prosessen der en identitet blir bekreftet, og tilganger i forskjellinge målsystemer blir opprettet basert på brukerens forretnngsrolle eller roller. Denne prosessen skjer i bakgrunnen når en bruker starter, endrer eller avslutter et engasjement, som en stilling eller et studium. ved første gangs oppstart vil det bli registrert en unik digital identitet, kjent som UH-ID. Forsyningen kan være automatisk, halvautomatisk(med manuell bestilling og godkjenning, men automatisk utførelse), eller manuell.
+* Forsyning, også kjent som provisjonering, er prosessen der en identitet blir bekreftet, og tilganger i forskjellige målsystemer blir opprettet basert på brukerens forretningsrolle eller roller. Denne prosessen skjer i bakgrunnen når en bruker starter, endrer eller avslutter et engasjement, som en stilling eller et studium. ved første gangs oppstart vil det bli registrert en unik digital identitet, kjent som UH-ID. Forsyningen kan være automatisk, halvautomatisk(med manuell bestilling og godkjenning, men automatisk utførelse), eller manuell.
 
   Etter at en bruker er provisjonert, kan brukeren benytte de systemene denne er provisjonert til. Normalt vil alle operasjoner gjennomgå følgende steg en eller flere ganger i løpet av en økt:
   * Autentisering er en prosess som innebærer identifisering og bekreftelse av brukerens identitet. Både lokale og sentrale tjenester brukes som kilder for autentisering, og bekreftelsen av at brukeren virkelig er den personen de hevder å være, kan innebære ett eller flere trinn. Denne prosessen foregår hver gang en bruker initierer en økt med en beskyttet tjeneste.
-  * Tilgangssjekk, også kjent som teknisk autorisering, er prosessen med å sjekke brukerens systemtilgang for å bestemme om en bestemt operasjon er tillatt. Denne prosessen utføres vanligvis på en kontinuerlig måte innenfor hvert system.
-  * Der det kreves sporbarhet, blir (bestemte) brukerhandlinger logget, og i noen tilfeller forsterkes dette for å sikre ikke-benektbarhet. Denne prosedyren utføres basert på konfigurasjonen som er satt opp i hvert system som brukes. Over tid vil det bli tatt i bruk en metode for å samle relevante logger i et sentralt system.
+  * Tilgangssjekk, også kjent som teknisk autorisering, sjekker brukerens systemtilgang for å verifisere om en bestemt brukerhandling er tillatt. Denne prosessen utføres vanligvis kontinuerlig innenfor hvert system.
+  * Logging av brukerhandlinger utføres for å støtte behovet for sporbarhet. Denne prosedyren utføres basert på kofigurasjon som er satt opp i hvert system som brukes. Loggene lagres i et sentralt system, og som bestemte ressurser ved hver enkelt institusjon får tilgang til.
 
-* Avslutning av bruker, også kjent som deprovisjonering, er en viktig del av brukeradministrasjonen. Dette innebærer å avslutte en brukers tilgang til systemer og data når de ikke lenger trenger det, for eksempel hvis en ansatt slutter i bedriften. Deprovisjonering sikrer at tidligere brukere ikke lenger har tilgang til sensitiv informasjon og hjelper med å opprettholde sikkerheten i systemene. Det er viktig at denne prosessen blir utført nøye og systematisk for å unngå potensielle sikkerhetsrisikoer.
+* Avslutning av bruker, også kjent som deprovisjonering, er en viktig del av brukeradministrasjonen. Dette innebærer å avslutte en brukers tilgang til systemer og data når de ikke lenger trenger det, for eksempel når en studierett oppheves eller en ansatt slutter ved institusjonen. Deprovisjonering sikrer at tidligere brukere ikke lenger har tilgang til sensitiv informasjon og hjelper med å opprettholde sikkerheten i systemene. Det er viktig at denne prosessen blir utført nøye og systematisk for å unngå potensielle sikkerhetsrisikoer.
 
 ![Forsyning og tilgangskontroll](/img/iam/arkitektur.png)
 
