@@ -32,5 +32,12 @@ module.exports = [
   'iam/livssyklus',
   'iam/brukernavn',
   'iam/virksomhetsroller',
+  {
+    type: 'category',
+    label: 'Funksjonsbeskrivelser',
+    items: [
+      'iam/deputy',
+    ],
+  },
   'iam/referanser',
 ];
