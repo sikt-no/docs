@@ -2,7 +2,7 @@
 title: Overordnet arkitektur
 ---
 
-Identitets- og tilgangsstyring(Felles IAM) er en samling av prosesser og teknologiske løsninger som bistår institusjonene med å gi rette tilganger til studenter, ansatte og gjester basert på tjenestebehov. Felles IAM har ansvar for å håndtere tilgangene på en etterprøvbar måte, samt å avslutte tilgangene når det ikke lenger er behov for dem. Felles IAM har dermed en vesentlig rolle i styringen av livssyklusen til digitale identiteter. Derfor spiller Felles IAM en vesentlg rolle i styringen av livssyklusen til digitale identiteter.
+Identitets- og tilgangsstyring(Felles IAM) er en samling av prosesser og teknologiske løsninger som bistår institusjonene med å gi rette tilganger til studenter, ansatte og gjester basert på tjenestebehov. Felles IAM har ansvar for å håndtere tilgangene på en etterprøvbar måte, samt å avslutte tilgangene når det ikke lenger er behov for dem. Felles IAM har dermed en vesentlig rolle i styringen av livssyklusen til digitale identiteter. Derfor spiller Felles IAM en vesentlig rolle i styringen av livssyklusen til digitale identiteter.
 
 Felles IAM innfører felles teknologiske løsninger for hele sektoren, noe som er et sentralt tiltak for å støtte [strategiske mål og gevinster](./gevinster).
 
