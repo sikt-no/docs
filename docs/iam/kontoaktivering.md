@@ -222,9 +222,15 @@ bestå av tall.
 ### Endre bilde
 
 Endre bilde-funksjonen lar deg laste opp og oppdatere profilbilder, som kan sendes til 
-tjenester som "Studentbevisappen", Office365, adgangskortsystemer osv. For å endre bildet 
-må du eventuelt navigere til "Min konto" etterfulgt av "Endre bilde", der kan du laste opp et 
-bilde, hvis ikke noe bilde er lagret i systemet, eller erstatte et opplastet bilde med et nytt. 
+tjenester som "Studentbevisappen", Office365, adgangskortsystemer osv. 
+For å endre bildet må du eventuelt navigere til "Min konto" etterfulgt av "Endre bilde", der kan du laste opp et bilde, hvis ikke noe bilde er lagret i systemet, eller erstatte et opplastet bilde med et nytt. 
+
+Du kan laste opp et bilde på inntil 5MB. Hvis bilde overstiger 3000pixler i høyde/bredde blir bildet skalert til 3000pixler. Sideforholdet på bildet blir bevart. Hvis bildet overstiger 0.5MB så nedjusteres kvaliteten på bildet gradvis til det er nede på 0.5MB.
+<!-- gitlab707 RT415669 -->
+
+
+
+
 
 ### Bestill adgangskort
 
