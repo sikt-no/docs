@@ -14,6 +14,36 @@ Når det eksisterer mange autonome Wi-Fi-løsninger for de forskjellige leietake
 
 *Dette dokumentet har som mål å informere om utfordringer dette kan skape i kontorbygg og hvilke kjøreregler Sikt anbefaler å ha for at Wi-Fi skal bli så godt som mulig for alle parter.*
 
+## Sameksistens, oppsummert
+Hva kreves av partene.
+
+### Gårdeier
+Koordinering: Sørge for at det er en koordinert innsats blant leietakerne for å unngå interferens.
+
+Infrastruktur: Tilby en infrastruktur som støtter optimal plassering av aksesspunkter.
+
+Retningslinjer: Etablere og håndheve retningslinjer for Wi-Fi-bruk i bygget. Retningslinjer må vedlikeholdes i tritt med teknologisk utvikling, og lokale behov.
+
+### Leietaker
+Sendestyrke: Konfigurere aksesspunkter med lavest mulig sendestyrke som fortsatt gir tilstrekkelig dekning. Bruk "auto" om det finnes.
+
+Kanalvalg på 2.4GHz: Bruke kun kanalene 1, 6 og 11 for å unngå interferens.
+
+Deaktivere 802.11b: Slå av foreldet standard 802.11b ved å fjerne lavere hastigheter (1, 2, 5.5 og 11Mbps).
+
+Kanalvalg på 5GHz: Bruke alle tilgjengelige kanaler (24 stk) og konfigurere automatisk kanalvalg.
+
+Kanalbredde/Channel bonding:  
+- Unngå “channel bonding” på 2.4GHz.
+- På 5GHz, begrense det til maksimum 40MHz. I områder med høy klienttetthet bruk kun 20MHz kanalbredde.
+- På 6Ghz er 80MHz kanabredde maks, og 40 MHz ved høy klienttetthet.
+
+### Fremtidige endringer
+
+Leietakere forplikter seg til å samarbeide med gårdeier kontinuerlig for å sikre så god sameksistens som mulig mellom alle leietakere. Leietaker må forholde seg til eventuelle fremtidige endringer i retningslinjene.
+
+Disse tiltakene vi bidra til å redusere interferens og sikre stabil og tilstrekkelig kapasitet for alle brukere i kontorbygget.
+
 ## Litt mer om frekvenser og kanaler
 
 Pr. dags dato opererer Wi-Fi på frekvensområdene 2.4Ghz, 5GHz og 6GHz. 
