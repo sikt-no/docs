@@ -114,14 +114,9 @@ Velg integrasjonen du nettopp laget og velg _Egne public nøkler_. I dialog-vind
 ## 5 Alternative oppsett
 
 Det som er beskrevet over er anbefalt måte å sette opp autentisering mot
-Maskinporten. Det finnes noen andre alternativ, men som vi ikke anbefaler:
+Maskinporten. Det finnes alternativ, men som vi ikke anbefaler:
 
-Den første er å bruke virksomhetssertifikatet direkte. Virksomhetssertifikatet
-lastes da opp i API manager, slik at det brukes av token-tjenesten. Dette
-anbefales ikke siden virksomhetssertifikatet generelt ikke bør deles utenfor
-egen institusjon.
-
-Det andre alternativet er å sette opp en mikrotjeneste som kjører lokalt hos
+Det er å sette opp en mikrotjeneste som kjører lokalt hos
 institusjonen, som håndterer tokens når API manager gjør API-kall mot
 Maskinporten. Dette er noe mer komplisert enn anbefalingen, siden det krever at
 du setter opp og drifter en lokal tjeneste.
