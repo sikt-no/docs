@@ -44,7 +44,7 @@ module.exports = [
         items: [
           'iam/integrasjoner/Local_processing_aho',
           'iam/integrasjoner/Local_Processing_hivolda',
-          'iam/integrasjoner/Local_processing_nmbu)',
+          'iam/integrasjoner/Local_processing_nmbu',
         ],
       },
     ],
