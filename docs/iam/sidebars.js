@@ -37,14 +37,14 @@ module.exports = [
     label: 'Funksjonsbeskrivelser',
     items: [
       'iam/deputy',
-      'iam/internal_processing (sikt)',
+      'iam/internal_processing_sikt',
       {
         type: 'category',
         label: 'Integrasjoner',
         items: [
-          'iam/integrasjoner/Local_processing(aho)',
-          'iam/integrasjoner/Local_Processing(hivolda)',
-          'iam/integrasjoner/Local_processing(nmbu))',
+          'iam/integrasjoner/Local_processing_aho',
+          'iam/integrasjoner/Local_Processing_hivolda',
+          'iam/integrasjoner/Local_processing_nmbu)',
         ],
       },
     ],
