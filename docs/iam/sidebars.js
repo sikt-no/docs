@@ -37,16 +37,13 @@ module.exports = [
     label: 'Funksjonsbeskrivelser',
     items: [
       'iam/deputy',
-      'iam/internal_processing_sikt',
-      {
-        type: 'category',
-        label: 'Integrasjoner',
-        items: [
-          'iam/integrasjoner/Local_processing_aho',
-          'iam/integrasjoner/Local_Processing_hivolda',
-          'iam/integrasjoner/Local_processing_nmbu',
-        ],
-      },
+    ],
+  },
+  {
+    type: 'category',
+    label: 'Integrasjoner',
+    items: [
+      'iam/integrasjoner/bergHansen_integrasjon',
     ],
   },
   'iam/referanser',
