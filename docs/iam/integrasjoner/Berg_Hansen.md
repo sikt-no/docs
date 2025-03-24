@@ -1,0 +1,74 @@
+---
+title: Berg Hansen
+---
+
+## PortalLdapToBergHansenCSV  
+ ### Description
+This script generates a CSV file containing employee data formatted for Berg-Hansen. It retrieves data from a Portal LDAP, processes it, and optionally uploads the file to a remote SFTP server.
+
+### Input Parameters
+- `log_only`: Boolean indicating whether to only log the output without uploading it to the remote server.
+
+### Local Variables
+- `genderTitleMap`: A mapping of gender codes to titles (Mr/Ms).
+- `gender`: A variable to store the gender of the employee.
+- `date`: The current date formatted as `yyyyMMdd`.
+- `hours`: The current time formatted as `HHmmss`.
+- `outputFileName`: The name of the output CSV file.
+- `localFilePath`: The local directory path where the output file will be saved.
+- `sessionPortalLDAP`: Connection object for Portal LDAP.
+- `fileOut`: The file output object for writing the CSV file.
+- `remoteFileSys`: The remote filesystem object for SFTP connection.
+- `ldapRecords`: The set of records fetched from Portal LDAP.
+- `outputData`: An array to store the formatted output data.
+- `recordBergHansen`: A record object to store the formatted data for each employee.
+- `formattedBirthdate`: The formatted birthdate of the employee.
+- `selectedUsername`: The selected username for the employee.
+- `selectedEmail`: The selected email address for the employee.
+- `splitDeptCode`: An array containing the split department code.
+- `numRecords`: The number of records in the output data array.
+- `formattedTime`: The current date and time formatted as `yyyy-MM-dd HH:mm:ss:ms`.
+- `outputStr`: The final output string to be written to the CSV file.
+- `result`: The result of the file save operation.
+
+### Workflow
+1. **Initialize Variables**
+- Set initial values for variables and format the current date and time.
+
+2. **Create Connections**
+- Establish a connection to Portal LDAP.
+- Handle connection errors by logging and returning.
+
+3. **Open Output File**
+- Open the local output file for writing in ISO-8859-1 character set.
+- If `log_only` is false, establish a remote SFTP connection.
+
+4. **Query Records**
+- Fetch employee records from Portal LDAP based on specific filters and attributes.
+
+5. **Process Records**
+- Iterate over each LDAP record and format the data for Berg-Hansen.
+- Populate the `recordBergHansen` object with formatted values.
+- Append the formatted record to the `outputData` array.
+
+6. **Write Data**
+- Insert the header row into the `outputData` array.
+- Join the array into a single string and write it to the local output file.
+- If `log_only` is false, upload the file to the remote SFTP server.
+
+7. **Close Connections**
+- Close the local output file and the Portal LDAP connection.
+- If a remote SFTP connection was established, close it as well.
+
+### External Systems and Communications
+- **Portal LDAP**: Used to fetch employee records and attributes.
+- **Remote SFTP Server**: Optionally used to upload the generated CSV file.
+
+### Response Codes/Outputs
+- The script logs the output data and the result of the file save operation.
+- If `log_only` is false, the script uploads the file to the remote SFTP server and logs the result.
+
+### Summary
+This script generates a CSV file containing employee data formatted for Berg-Hansen. It retrieves data from Portal LDAP, processes it, and optionally uploads the file to a remote SFTP server. The script handles various data formatting requirements and ensures that the output is correctly structured for Berg-Hansen's needs. 
+
+ --- 
