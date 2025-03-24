@@ -1,0 +1,94 @@
+---
+title: WISEflow
+--- 
+
+## PortalLdapToWISEflow
+ ### Description
+This script provisions users and roles to WISEflow. It processes user records, performs necessary transformations, and updates or creates user accounts in WISEflow. The script also handles enabling, disabling, and updating user roles based on specific conditions.
+
+### Input Parameters
+- `key_field`: String (optional)
+- `key_value`: String (optional)
+- `log_only`: Boolean (optional)
+- `debug`: Boolean (optional)
+- `process_all`: Boolean (optional)
+- `load`: Boolean
+
+### Local Variables
+- `actionSetName`: The name of the current action set.
+- `total`, `totalSkipped`, `totalUnchanged`, `totalAdd`, `totalAddFail`, `totalUpdate`, `totalUpdateFail`, `totalEnable`, `totalEnableFail`, `totalDisable`, `totalDisableFail`: Counters for tracking various operations and their outcomes.
+- `policyFile`: The file containing the WISEflow ruleset.
+- `processedAccounts`: Array to store processed accounts.
+- `targetSystem`: The target system, WISEflow.
+- `rolesToProvision`: Array of roles that RI is allowed to provision/deprovision.
+- `langMap`: Mapping of languages to their respective codes.
+
+### Workflow
+1. **Initialize Variables**
+- Set initial values for counters and other variables.
+- Adjust `rolesToProvision` based on global settings.
+
+2. **Create Connections**
+- Establish connection to Portal LDAP.
+- Handle connection errors by logging and invoking `G3_ErrorHandler`.
+
+3. **Retrieve API Data**
+- Fetch all roles from WISEflow.
+- Handle errors in retrieving roles.
+
+4. **Set Cookie**
+- Determine the appropriate cookie based on `log_only` parameter.
+
+5. **Query Records**
+- Fetch records from Portal LDAP based on `key_field` and `key_value` or use a change iterator.
+- Handle debug logging.
+
+6. **Iterate Over Records**
+- For each record, skip if the change type is "delete".
+- Skip accounts already processed.
+- Fetch detailed LDAP record and skip if essential attributes are missing.
+- Determine user entitlements and provisioning status.
+- Log processing information.
+
+7. **Transform Record**
+- Perform transformations on the record.
+- Set various attributes like `firstName`, `lastName`, `emails`, `phone`, `preferred_language`, `externalIds`, etc.
+
+8. **Access Logic**
+- Determine authorized accesses based on the ruleset.
+- Append accesses to the record.
+
+9. **Query System for User**
+- Match user in WISEflow based on various identifiers.
+- Handle errors and duplicate accounts.
+
+10. **Create or Update User**
+- **Create New User**:
+    - If the user does not exist in WISEflow and is assigned or requested, create a new user.
+    - Log the creation process and update Portal LDAP with provisioning status.
+- **Update or Disable User**:
+    - If the user exists in WISEflow, compare changes and update the account if necessary.
+    - Handle enabling, disabling, and updating roles, emails, and external IDs.
+    - Log the update process and update Portal LDAP with provisioning status if needed.
+
+11. **Update Portal LDAP**
+- Update Portal LDAP with the changes.
+- Handle errors in updating Portal LDAP.
+
+12. **Close Connections**
+- Close the established connection to Portal LDAP.
+
+13. **Log Results**
+- Log the results of the provisioning process, including totals for each operation and failures.
+
+### External Systems and Communications
+- **WISEflow**: The script interacts with the WISEflow API to perform user provisioning and role management.
+- **Portal LDAP**: Used to fetch user records and update user attributes.
+
+### Response Codes/Outputs
+- None explicitly mentioned.
+
+### Summary
+This script provisions users and roles to WISEflow by processing user records, performing necessary transformations, and updating or creating user accounts. It handles various operations such as enabling, disabling, and updating roles based on specific conditions. The script ensures data consistency and logs detailed results of the provisioning process. 
+
+ --- 

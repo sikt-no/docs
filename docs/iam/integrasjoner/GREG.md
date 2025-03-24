@@ -1,0 +1,93 @@
+---
+title: GREG
+---
+
+## PortalLDAPToGreg
+ ### Description
+This script synchronizes user data from the Portal LDAP directory to the UiB Target system, Greg. It processes user records, performs necessary transformations, and updates or creates user accounts in Greg. The script also handles enabling, disabling, and updating user accounts based on specific conditions.
+
+### Input Parameters
+- `key_field`: String (optional)
+- `key_value`: String (optional)
+- `log_only`: Boolean (optional)
+
+### Local Variables
+- `actionSetName`: The name of the current action set.
+- `fileDate`: The current date formatted as `yyyyMMdd`.
+- `total`, `totalSkipped`, `totalUnchanged`, `totalAdd`, `totalAddFail`, `totalUpdate`, `totalUpdateFail`, `totalEnable`, `totalEnableFail`, `totalDisable`, `totalDisableFail`: Counters for tracking various operations and their outcomes.
+- `processedAccounts`: Array to keep track of processed accounts.
+- `sessionPortalLDAP`: Connection object for Portal LDAP.
+- `headers`: Record to store HTTP headers for Greg API.
+- `cookie`: The cookie used for LDAP change tracking.
+- `recordChanges`: The set of records fetched from Portal LDAP.
+- `recordChange`: The current record being processed.
+- `recordLDAP`: Detailed LDAP record of the current user.
+- `record`: The record formatted for provisioning to Greg.
+- `selectedUsername`: The username selected for the user.
+- `selectedEmail`: The email address selected for the user.
+- `accountAlreadyProcessed`: Boolean indicating if the account has already been processed.
+- `arraySystemEntitlements`, `arrayRequestedSystemEntitlements`, `arrayProvisionedSystems`: Arrays of system entitlements, requested entitlements, and provisioned systems for the user.
+- `hasGregEntitlement`, `hasRequestedEntitlement`, `hasGregProvisioned`: Booleans indicating the user's entitlements and provisioning status for Greg.
+- `recordGreg`: The record fetched from Greg.
+- `allOrgunits`, `usersOrgunits`, `gregOrgunits`, `orgunits`: Arrays for organizational units.
+- `OrgExists`: Boolean indicating if the organizational unit exists in Greg.
+- `result`: The result of the API call to Greg.
+- `recordUpdate`, `recordAdd`: Records for updating LDAP.
+- `extProperties`: Extended properties for the user.
+
+### Workflow
+1. **Initialize Variables**
+- Set initial values for counters and other variables.
+
+2. **Create Connections**
+- Establish connections to Portal LDAP.
+- Handle connection errors by logging and invoking `G3_ErrorHandler`.
+- Set HTTP headers for Greg API.
+
+3. **Set Cookie**
+- Determine the appropriate cookie based on `log_only` parameter.
+
+4. **Query Records**
+- Fetch records from Portal LDAP based on `key_field` and `key_value`.
+- If no specific key is provided, use a change iterator to fetch records.
+
+5. **Iterate Over Records**
+- For each record, skip if the change type is "delete".
+- Fetch detailed LDAP record and skip if essential attributes are missing.
+- Determine user entitlements and provisioning status.
+- Log processing information.
+
+6. **Transform Record**
+- Perform static and dynamic transformations on the record.
+- Set various attributes like `feide_id`, `first_name`, `last_name`, `work_email`, etc.
+
+7. **Match and Update Greg**
+- **Check Existence in Greg**:
+    - Check if the user exists in Greg.
+    - Handle errors and duplicate accounts.
+- **Create New Account**:
+    - If the user does not exist in Greg and is entitled to Greg, create a new account.
+    - Perform necessary data formation and set attributes.
+    - Log the creation process and update Portal LDAP with provisioning status.
+- **Update Existing Account**:
+    - If the user exists in Greg, compare changes and update the account if necessary.
+    - Handle enabling, disabling, and updating of the account based on the user's entitlements and changes.
+    - Log the update process and update Portal LDAP with provisioning status if needed.
+
+8. **Close Connections**
+- Close all established connections to Portal LDAP.
+
+9. **Log Results**
+- Log the results of the synchronization process, including totals for each operation and failures.
+
+### External Systems and Communications
+- **Portal LDAP**: Used to fetch user records and update user attributes.
+- **Greg**: The target system where user accounts are created, updated, enabled, and disabled.
+
+### Response Codes/Outputs
+- None explicitly mentioned.
+
+### Summary
+This script synchronizes user data from the Portal LDAP directory to Greg. It handles various operations such as creating, updating, enabling, and disabling user accounts based on specific conditions. The script ensures data consistency and logs detailed results of the synchronization process. 
+
+ --- 
