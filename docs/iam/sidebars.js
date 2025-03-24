@@ -50,7 +50,7 @@ module.exports = [
       'iam/integrasjoner/Lenel DB',
       'iam/integrasjoner/Salto',
       'iam/integrasjoner/TopDesk',
-      'iam/integrasjoner/Wiseflow'
+      'iam/integrasjoner/Wiseflow',
     ],
   },
   {
