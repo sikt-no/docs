@@ -34,19 +34,38 @@ module.exports = [
   'iam/virksomhetsroller',
   {
     type: 'category',
+    label: 'Integrasjoner',
+    items: [
+      'iam/integrasjoner/Active Directory',
+      'iam/integrasjoner/Alma',
+      'iam/integrasjoner/Apex',
+      'iam/integrasjoner/Berg_Hansen',
+      'iam/integrasjoner/Cristin',
+      'iam/integrasjoner/Google',
+      'iam/integrasjoner/GREG',
+      'iam/integrasjoner/IknowBase',
+      'iam/integrasjoner/inspera',
+      'iam/integrasjoner/Integra',
+      'iam/integrasjoner/Lenel API',
+      'iam/integrasjoner/Lenel DB',
+      'iam/integrasjoner/Salto',
+      'iam/integrasjoner/TopDesk',
+      'iam/integrasjoner/Wiseflow'
+    ],
+  },
+  {
+    type: 'category',
     label: 'Funksjonsbeskrivelser',
     items: [
       'iam/deputy',
       'iam/internal_processing_sikt',
-      {
-        type: 'category',
-        label: 'Integrasjoner',
-        items: [
-          'iam/integrasjoner/Local_processing_aho',
-          'iam/integrasjoner/Local_Processing_hivolda',
-          'iam/integrasjoner/Local_processing_nmbu',
-        ],
-      },
+    ],
+  },
+  {
+    type: 'category',
+    label: 'Integrasjoner',
+    items: [
+      'iam/integrasjoner/bergHansen_integrasjon',
     ],
   },
   'iam/referanser',
