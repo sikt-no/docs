@@ -68,5 +68,12 @@ module.exports = [
       'iam/integrasjoner/bergHansen_integrasjon',
     ],
   },
+  {
+    type: 'category',
+    label: 'Integrasjoner',
+    items: [
+      'iam/integrasjoner/bergHansen_integrasjon',
+    ],
+  },
   'iam/referanser',
 ];
