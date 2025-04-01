@@ -37,6 +37,7 @@ module.exports = [
     label: 'Funksjonsbeskrivelser',
     items: [
       'iam/deputy',
+      'iam/short-term-guest',
     ],
   },
   {
