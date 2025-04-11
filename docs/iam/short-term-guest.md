@@ -39,6 +39,8 @@ Kortvarige gjester skal få forretningsrollen 'iam:shorttermguest'. Verifiser gj
 
 Hvilke systemtilganger brukeren skal få, må defineres av institusjon i filen system_entitlements.json. Denne finnes i prosjektet G3_Internal_Processing &rarr; Files &rarr; json_policies. Avhengig av behov må listen av roller til de ulike ressursene oppdateres med "iam:shorttermguest".
 
+For å kunne gi ulike systemtilganger til personer med samme forretningsrolle (iam:shorttermguest), kan bestillbare rettigheter tilpasses og tilordnes, slik at den enkelte selv eller deres sponsor kan bestille basert på tjenestlig behov. For at Kortvarig gjest selv skal kunne gjøre dette, forutsetter det at "iam:shorttermguest" blir provisjonert til AD/LDAP først, for etter kontoaktivering å kunne logge seg på Felles IAM og gjennomføre bestilling.
+
 ### Hvordan ta i bruk kortvarig gjest
 Institusjoner som ønsker å ta i bruk kortvarig gjest funksjonaliteten, må ta hensyn til konfigurasjonsmulighetene nevnt over og verifisere at forretningsroller og systemtilganger er korrekte.
 
