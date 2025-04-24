@@ -154,7 +154,7 @@
         "type": "cache",
         "enabled": true,
         "timeToIdleSeconds": 0,
-        "timeToLiveSeconds": 3599,
+        "timeToLiveSeconds": 118,
         "maxEntriesLocalHeap": 1000
       }
     }
@@ -244,7 +244,7 @@
               "enabled": true,
               "policy": "cache",
               "configuration": {
-                "timeToLiveSeconds": 3599,
+                "timeToLiveSeconds": 118,
                 "cacheName": "token-cache",
                 "methods": [
                   "GET",
