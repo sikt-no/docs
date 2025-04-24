@@ -1,0 +1,90 @@
+---
+title: Integra
+---
+
+## PortalLDAPToIntegra
+ ### Description
+This script handles the provisioning of new and updated users to Integra. It performs various operations such as creating, updating, and deactivating user accounts based on their entitlements and status.
+
+### Input Parameters
+- `key_field`: Enum: `idautoPersonSystem1ID`, `idautoPersonSAMAccountName`, `idautoID` (optional)
+- `key_value`: String (optional)
+- `log_only`: Boolean
+
+### Local Variables
+- `totalSkipped`: Counter for skipped records.
+- `totalAdded`: Counter for added records.
+- `totalAddedFail`: Counter for failed additions.
+- `totalUpdated`: Counter for updated records.
+- `totalUpdatedFail`: Counter for failed updates.
+- `cookie`: The cookie used for LDAP change tracking.
+- `sessionPortalLDAP`: Connection object for Portal LDAP.
+- `recordChanges`: The set of records fetched from Portal LDAP.
+- `recordChange`: The current record being processed.
+- `recordLDAP`: Detailed LDAP record of the current user.
+- `arraySystemEntitlements`, `arrayRequestedEntitlements`, `arrayProvisionedSystems`, `arrayProvisionedEntitlements`: Arrays of system entitlements and provisioned entitlements for the user.
+- `hasApproles2`, `hasApproles6`: Booleans indicating if the user has specific roles.
+- `integraAuthorized`, `integraProvisioned`, `integraDeactivate`: Booleans indicating the user's authorization, provisioning status, and deactivation status.
+- `selectedUsername`, `selectedEmail`: The username and email selected for the user.
+- `recordIntegra`: The record formatted for provisioning to Integra.
+- `givenName`, `sn`: The given name and surname of the user.
+- `splitBirthdate`, `arrayAccessZones`, `affiliation`, `primaryAffiliation`, `splitDeptCode`, `splitExt11Tuple`, `splitExt11FirstValue`: Various formatted attributes for the user.
+- `newIntegraId`: The new Integra ID for the user.
+- `recordFromIntegra`: The record fetched from Integra.
+- `recordUpdatePortal`: The record to be updated in Portal LDAP.
+
+### Workflow
+1. **Initialize Variables**
+- Set initial values for counters and other variables.
+
+2. **Set Cookie**
+- Determine the appropriate cookie based on `log_only` parameter.
+
+3. **Create Connection**
+- Establish connection to Portal LDAP.
+- Handle connection errors by logging.
+
+4. **Query Records**
+- Fetch records from Portal LDAP based on `key_field` and `key_value`.
+- If no specific key is provided, use a change iterator to fetch records.
+
+5. **Iterate Over Records**
+- For each record, skip if the change type is "delete".
+- Fetch detailed LDAP record and skip if essential attributes are missing.
+- Determine user entitlements and provisioning status.
+- Log processing information.
+
+6. **Transform Record**
+- Perform static and dynamic transformations on the record.
+- Set various attributes like `givenName`, `sn`, `birthdate`, `controlNumber`, `accessZones`, `freeInfo1`, `freeInfo2`, `folderPath`, `freeInfo3`, `department`, `integraId`.
+
+7. **Provision to Integra**
+- **Deactivate Account**:
+    - If the user is deactivated or access is revoked, move the user to the deactivated folder and block all cards.
+- **Create New Account**:
+    - If the user is authorized but not provisioned, check if the account already exists in Integra.
+    - If the account exists, update the account.
+    - If the account does not exist, create a new account.
+    - Handle errors during the provisioning process.
+    - Update Portal LDAP with provisioning status.
+- **Update Existing Account**:
+    - If the user is authorized and provisioned, update the account in Integra.
+    - Handle errors during the update process.
+
+8. **Close Connection**
+- Close the established connection to Portal LDAP.
+
+9. **Log Results**
+- Log the results of the provisioning process, including totals for each operation and failures.
+
+### External Systems and Communications
+- **Portal LDAP**: Used to fetch user records and update user attributes.
+- **Integra**: The target system where user accounts are created, updated, and deactivated.
+
+### Response Codes/Outputs
+- None explicitly mentioned.
+
+### Summary
+This script handles the provisioning of new and updated users to Integra. It performs various operations such as creating, updating, and deactivating user accounts based on their entitlements and status. The script ensures data consistency and logs detailed results of the provisioning process. 
+
+ --- 
