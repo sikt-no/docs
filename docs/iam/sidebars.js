@@ -38,6 +38,7 @@ module.exports = [
     items: [
       'iam/deputy',
       'iam/short-term-guest',
+      'iam/life-cycle-students',
     ],
   },
   {
