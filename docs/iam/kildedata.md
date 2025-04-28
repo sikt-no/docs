@@ -32,4 +32,5 @@ Organisasjonsendringer forekommer, og det stilles krav til implementeringsrekkef
 3.	Opprette organisasjonsenhet i de målsystemer som er berørt, og som ikke håndterer endringen automatisk
 4.	Oppdatere regelsettet i RI
 
-![](/img/iam/orgendring.png)
+![](/img/iam/midorgendring3.png)
+
