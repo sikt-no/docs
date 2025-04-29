@@ -9,8 +9,8 @@ This process is divided into two policy paths:
 
 In addition to the above, early activation and grace period applies, which is detailed further in the process table.
 
-![](/img/iam/studporst3.png)
+![](/img/iam/life-cycle-process-student.png)
 
-![](/img/iam/studactive1.png)
+![](/img/iam/life-cycle-process-student2.png)
 
 
