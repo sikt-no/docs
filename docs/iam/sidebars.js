@@ -57,6 +57,7 @@ module.exports = [
       'iam/integrasjoner/Integra',
       'iam/integrasjoner/Lenel API',
       'iam/integrasjoner/Lenel DB',
+      'iam/integrasjoner/Pureservice',
       'iam/integrasjoner/Salto',
       'iam/integrasjoner/TopDesk',
       'iam/integrasjoner/Wiseflow',
