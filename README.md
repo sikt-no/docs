@@ -116,9 +116,6 @@ Please proceed to inspect that the resulting build(s) work as expected before yo
 
 ### Updating Docusaurus
 
-Docusaurus 2 is still in beta, which means that they sometimes perform breaking changes.
-Some extra care should therefore be taken when updating Docusaurus.
-
 The safest way to update Docusaurus is to create two directories with the old and new version of Docusaurus and then compare those two directories.
 This allows you to see what has changed between the versions in addition to the version numbers of the packages.
 
@@ -127,7 +124,7 @@ First install the version in use in `packages.json` in the `old`-directory:
 ```console
 $ mkdir -p /tmp/docusaurus-update/old
 $ cd /tmp/docusaurus-update/old
-$ npx create-docusaurus@2.0.0-beta.14 docs-sikt-no classic
+$ npx create-docusaurus@3.7.0 docs-sikt-no classic
 [...]
 Success! Created docs-sikt-no
 Inside that directory, you can run several commands:
