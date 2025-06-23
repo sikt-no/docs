@@ -14,15 +14,17 @@ const darkCodeTheme = themes.dracula;
 const config = {
   title: 'Sikt teknisk dokumentasjon',
   tagline: 'Teknisk dokumentasjon på løsningene Sikt leverer for utdanning og forskning.',
+  favicon: 'img/favicon.ico',
+
   url: 'https://docs.sikt.no/',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
 
   // GitHub pages deployment config.
   organizationName: 'sikt-no',
   projectName: 'docs.sikt.no',
+
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
 
   presets: [
     [
@@ -43,7 +45,7 @@ const config = {
     ],
   ],
 
-  themeConfig: 
+  themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
@@ -117,7 +119,7 @@ const config = {
         disableSwitch: false,
       },
     }),
-    
+
   plugins: [
     require.resolve('docusaurus-lunr-search'),
   ],
