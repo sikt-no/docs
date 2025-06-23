@@ -4,9 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-const {themes} = require('prism-react-renderer');
-const lightCodeTheme = themes.github;
-const darkCodeTheme = themes.dracula;
+import {themes as prismThemes} from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -26,20 +24,28 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
+  // Even if you don't use internationalization, you can use this field to set
+  // useful metadata like html lang. For example, if your site is Chinese, you
+  // may want to replace "en" with "zh-Hans".
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en'],
+  },
+
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: './sidebars.js',
           // Please change this to your repo.
           editUrl:
             'https://github.com/sikt-no/docs/tree/master/',
           showLastUpdateTime: true,
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: './src/css/custom.css',
         },
       }),
     ],
@@ -111,8 +117,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Sikt – Kunnskapssektorens tjenesteleverandør`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
       },
       colorMode: {
         defaultMode: 'light',
@@ -125,4 +131,4 @@ const config = {
   ],
 };
 
-module.exports = config;
+export default config;
