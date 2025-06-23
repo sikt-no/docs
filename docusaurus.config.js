@@ -14,6 +14,11 @@ const config = {
   tagline: 'Teknisk dokumentasjon på løsningene Sikt leverer for utdanning og forskning.',
   favicon: 'img/favicon.ico',
 
+  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
+  future: {
+    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+  },
+
   url: 'https://docs.sikt.no/',
   baseUrl: '/',
 
