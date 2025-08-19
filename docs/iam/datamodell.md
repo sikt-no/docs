@@ -41,12 +41,11 @@ En bruker kan ha flere innslag i master_persons hvis brukeren har tilknytning ti
 | start\_date               | varchar       | 10               | Yes          |
 | end\_date                 | varchar       | 10               | Yes          |
 | end\_reason               | varchar       | 254              | Yes          |
-| main\_position            | varchar       | 12               | Yes          |
+| main\_position            | varchar       | 48               | Yes          |
 | main\_position\_percent   | varchar       | 6                | Yes          |
 | main\_organization        | varchar       | 12               | Yes          |
 | secondary\_positions      | varchar       | 500              | Yes          |
 | external\_id              | varchar       | 254              | Yes          |
-| email                     | varchar       | 254              | Yes          |
 | telephone                 | varchar       | 100              | Yes          |
 | personal\_mobile          | varchar       | 30               | Yes          |
 | personal\_mobile\_foreign | varchar       | 30               | Yes          |
@@ -62,6 +61,15 @@ En bruker kan ha flere innslag i master_persons hvis brukeren har tilknytning ti
 | extension\_sent           | date          |                  | Yes          |
 | extended\_to              | date          |                  | Yes          |
 | fs\_pin                   | varchar       | 12               | Yes          |
+| manager                   | bit           |                  | Yes          |
+| gender                    | varchar       | 20               | Yes          |
+| reservation               | varchar       | 200              | Yes          |
+| fagperson                 | bit           |                  | Yes          |
+| legacy\_username          | varchar       | 50               | Yes          |
+| legacy\_email             | varchar       | 200              | Yes          |
+| campus                    | varchar       | 10               | Yes          |
+| language\_preferred       | varchar       | 50               | Yes          |
+| dfo\_brukerident          | varchar       | 12               | Yes          |
 | source\_institution       | varchar       | 10               | No           |
 | source\_system            | varchar       | 3                | No           |
 | source\_id                | varchar       | 50               | No           |
@@ -78,9 +86,13 @@ Databasetabellene inneholder informasjon fra SAP om ansatte, organisasjoner og s
   * `employees_load`
   * `orgs_load`
   * `positions_load`
+  * `contracts_load`
+  * `loa_load`
 * SAP Master-tabeller
   * `master_orgs`
   * `master_positions`
+  * `master_contracts`
+  * `master_loa`
 
 
 #### SAP master_orgs
@@ -102,6 +114,8 @@ Databasetabellene inneholder informasjon fra SAP om ansatte, organisasjoner og s
 | source\_institution | varchar       | 45               | No           |             | source\_institution                                                            |
 | source\_system      | varchar       | 45               | No           |             | source\_system                                                                 |
 | source\_id          | varchar       | 45               | No           |             | id                                                                             |
+| deputy\_id          | varchar       | 100              | Yes          |             | source\_institution + ":" + source\_system + ":employee: + deputy\_id          |
+| deputy\_held\_to    | varchar       | 10               | Yes          |             | deputy\_held\_to                                                               |
 | inserted\_at        | datetime      |                  | No           |             | _System date_                                                                  |
 | updated\_at         | datetime      |                  | No           |             | _System date_                                                                  |
 | processed\_at       | datetime      |                  | Yes          |             | _System date_                                                                  |
@@ -110,26 +124,30 @@ Databasetabellene inneholder informasjon fra SAP om ansatte, organisasjoner og s
 
 #### SAP master_positions
 
-| **Field**           | **Data Type** | **Field Length** | **Nullable** | **Pri Key** | **Source Table: **positions\_load                                    |
-| ------------------- | ------------- | ---------------- | ------------ | ----------- | -------------------------------------------------------------------- |
-| id                  | varchar       | 45               | No           | X           | source\_institution + “:” + source\_system + “:positions:” + id      |
-| held\_by            | varchar       | 45               | No           | X           | source\_institution + “:” + source\_system + “:employee:” + held\_by |
-| held\_from          | date          |                  | Yes          |             | held\_from                                                           |
-| held\_until         | date          |                  | Yes          |             | held\_until                                                          |
-| status              | varchar       | 1                | No           |             | _calculated – “A”|”I”_                                               |
-| job\_code           | varchar       | 12               | Yes          |             | job\_code                                                            |
-| title               | varchar       | 50               | Yes          |             | title                                                                |
-| organization        | varchar       | 33               | No           |             | source\_institution + “:” + source\_system + “:orgs:” + organization |
-| yrk                 | varchar       | 10               | Yes          |             | yrk                                                                  |
-| position\_group     | varchar       | 50               | Yes          |             | postion\_group                                                       |
-| position\_group\_id | varchar       | 12               | Yes          |             | postion\_group\_id                                                   |
-| source\_institution | varchar       | 45               | No           |             | source\_institution                                                  |
-| source\_system      | varchar       | 45               | No           |             | source\_system                                                       |
-| source\_id          | varchar       | 45               | No           |             | id + “:” held\_by                                                    |
-| inserted\_at        | datetime      |                  | No           |             | _System date_                                                        |
-| updated\_at         | datetime      |                  | No           |             | _System date_                                                        |
-| processed\_at       | datetime      |                  | Yes          |             | _System date_                                                        |
-| process\_id         | varchar       | 45               | Yes          |             | _Internal process ID_                                                |
+| **Field**            | **Data Type** | **Field Length** | **Nullable** | **Pri Key** | **Source Table: **positions\_load                                    |
+| -------------------  | ------------- | ---------------- | ------------ | ----------- | -------------------------------------------------------------------- |
+| id                   | varchar       | 45               | No           | X           | source\_institution + “:” + source\_system + “:positions:” + id      |
+| held\_by             | varchar       | 45               | No           | X           | source\_institution + “:” + source\_system + “:employee:” + held\_by |
+| held\_from           | date          |                  | Yes          |             | held\_from                                                           |
+| held\_until          | date          |                  | Yes          |             | held\_until                                                          |
+| adjusted\_held\_from | date          |                  | Yes          |             | adjusted\_held\_from                                                 |
+| adjusted\_held\_until| date          |                  | Yes          |             | adjusted\_held\_until                                                |
+| status               | varchar       | 1                | No           |             | _calculated – “A”|”I”_                                               |
+| job\_code            | varchar       | 12               | Yes          |             | job\_code                                                            |
+| title                | varchar       | 50               | Yes          |             | title                                                                |
+| organization         | varchar       | 33               | No           |             | source\_institution + “:” + source\_system + “:orgs:” + organization |
+| yrk                  | varchar       | 10               | Yes          |             | yrk                                                                  |
+| position\_group      | varchar       | 50               | Yes          |             | postion\_group                                                       |
+| position\_group\_id  | varchar       | 12               | Yes          |             | postion\_group\_id                                                   |
+| source\_institution  | varchar       | 45               | No           |             | source\_institution                                                  |
+| source\_system       | varchar       | 45               | No           |             | source\_system                                                       |
+| source\_id           | varchar       | 45               | No           |             | id + “:” held\_by                                                    |
+| sponsor              | varchar       | 65               | Yes          |             | Sponsors emailaddress                                                |
+| custom_title         | varchar       | 40               | Yes          |             | custom_title                                                         |
+| inserted\_at         | datetime      |                  | No           |             | _System date_                                                        |
+| updated\_at          | datetime      |                  | No           |             | _System date_                                                        |
+| processed\_at        | datetime      |                  | Yes          |             | _System date_                                                        |
+| process\_id          | varchar       | 45               | Yes          |             | _Internal process ID_                                                |
 
 ### FS Tabeller
 Databasetabellene inneholder data fra FS om vurderingstider, land, språk, semester, studentvurderinger, studentundervisning, studienivåer, studieprogrammer, studieretter og emner. Last-tabellene populeres direkte ved bruk av API-kall til FS via IntArk. Master-tabellene populeres ved bruk av data i last-tabellene.
@@ -149,6 +167,9 @@ Databasetabellene inneholder data fra FS om vurderingstider, land, språk, semes
   * `teaching_load`
   * `teachingactivity_load`
   * `topics_load`
+  * `participants_load`
+  * `evucourse_load`
+  * `evucourseparticipation_load`
 * FS Master-tabeller
   * `master_assessmenttimes`
   * `master_countries`
@@ -163,6 +184,10 @@ Databasetabellene inneholder data fra FS om vurderingstider, land, språk, semes
   * `master_teaching`
   * `master_teachingactivity`
   * `master_topics`
+  * `master_participants`
+  * `master_evucourse`
+  * `master_evucourseparticipation`
+
 
 
 ### OrgReg Tabell
@@ -171,7 +196,7 @@ Databasetabellen orgreg_load inneholder alle orgenhetene registrert i OrgReg. Ta
 
 | **Field**                       | **Data Type** | **Field Length** | **Nullable** | **Pri Key** | **API Source: **orgreg                        |
 | ----------------------------- | ------------- | ---------------- | ------------ | ----------- | --------------------------------------------- |
-| source\_institution           | varchar       | 5                | No           | X           | _static – Action Set ‘institution’ parameter_ |
+| source\_institution           | varchar       | 10               | No           | X           | _static – Action Set ‘institution’ parameter_ |
 | source\_system                | varchar       | 10               | No           | X           | _static – ‘OrgReg’_                           |
 | external\_key\_source\_system | varchar       | 45               | No           | X           | externalKeys.sourceSystem                     |
 | external\_key\_type           | varchar       | 45               | No           | X           | externalKeys.Type                             |
@@ -181,7 +206,7 @@ Databasetabellen orgreg_load inneholder alle orgenhetene registrert i OrgReg. Ta
 | english\_name                 | varchar       | 200              | Yes          |             | englishName                                   |
 | valid\_from                   | date          |                  | Yes          |             | validFrom                                     |
 | norwegian\_homepage           | varchar       | 100              | Yes          |             | norwegianHomepage                             |
-| norwegian\_name               | varchar       | 100              | Yes          |             | norwegianName                                 |
+| norwegian\_name               | varchar       | 200              | Yes          |             | norwegianName                                 |
 | email                         | varchar       | 45               | Yes          |             | email                                         |
 | acronym                       | varchar       | 45               | Yes          |             | acronym                                       |
 | english\_homepage             | varchar       | 45               | Yes          |             | englishHomepage                               |
@@ -223,7 +248,7 @@ Portal directory er en LDAP-katalog som inneholder informasjon om brukere.
 | idautoPersonPreferredName        | Preferred Name               | User’s preferred first name                                                  | String              | Mick                                                                                                   |               |
 | idautoPersonPreferredLastName    | Preferred Last Name          | User’s preferred last name                                                   | String              | Mous                                                                                                   |               |
 | displayName                      | Full Name                    | Full legal name from source                                                  | String              | Micky Mouse                                                                                            |               |
-| idautoPersonAffiliation          | Primary Affiliation          | User’s primary affiliation                                                   | String              | Employee                                                                                               | ✓             |
+| idautoPersonAffiliation          | Primary Affiliation          | User’s primary affiliation (Account type)                                    | String              | Employee                                                                                               |                |
 | idautoPersonAffiliations         | Affiliations                 | Multivalued field containing all birthright roles associated with the person | String              | \[Employee, Student\]                                                                                  | ✓             |
 | idautoPersonDeptCode             | Primary ORG Tuple            | Primary org affiliation tuple                                                | String              | 0000001501\|IT\|IT-Senter\|Department of IT Services\|000000                                           |               |
 | idautoPersonDeptCodes            | Affiliated ORGs Tuple        | Affiliated orgs tuple                                                        | String              | [0000001501\|IT\|IT-Senter\|Department of IT Services\|000000]                                         | ✓             |
@@ -251,25 +276,25 @@ Portal directory er en LDAP-katalog som inneholder informasjon om brukere.
 | idautoPersonExtBool2             | Account override Flag        | User will not be deleted if override flag is true                            | Boolean             | TRUE                                                                                                   |               |
 | idautoPersonExtBool3             | Account Deletion override Flag    | User will be deleted if override flag is true                           | Boolean             | TRUE                                                                                                   |               |
 | idautoPersonExtBool4             | Claim Mail Sent              | Marks the user indicating that claim mail has been sent                      | Boolean             | TRUE                                                                                                   |               |
-| idautoPersonAllAccessTermDate    | Deprovision Date             | Used for tracking when an account was disabled in RI                         | String (zulu)       | 202103310000Z                                                                                          |               |
+| idautoPersonAllAccessTermDate    | Deprovision Date             | Used for tracking when an account was disabled in RI                         | Date (zulu)       | 202103310000Z                                                                                          |               |
 | idautoPersonSchoolID             | FS Personløpenummer          | "Personløpenummer" from FS                                                   | String              | 11122                                                                                                  |               |
 | idautoPersonStuID                | FS Student Number            | Student Number from FS                                                       | String              | 333444                                                                                                 |               |
-| idautoPersonEnrollDate           | Student start date           | Calculated startdate for student affiliation                                 | String (zulu)       | 202401010000Z                                                                                          |               |
-| idautoPersonTermDate             | Student end date             | Calculated enddate for student affiliation                                   | String (zulu)       | 202407010000Z                                                                                          |               |
+| idautoPersonEnrollDate           | Student start date           | Calculated startdate for student affiliation                                 | Date (zulu)       | 202401010000Z                                                                                          |               |
+| idautoPersonTermDate             | Student end date             | Calculated enddate for student affiliation                                   | Date (zulu)       | 202407010000Z                                                                                          |               |
 | idautoPersonGraduationDate       | Student extension date       | Will be set if the user requests to extend their account                     | String              | 2024-08-01                                                                                             |               |
 | idautoPersonCourseCodes          | FS Subject Codes             | Subject codes from FS                                                        | String              | \[roles:PRV000,studentassessment:VPL01]                                                                | ✓             |
 | idautoPersonPayrollID            | Employee Number              | Employee number                                                              | String              | 30202                                                                                                  |               |
 | idautoPersonHRID                 | Greg ID                      | Guest (GREG) number                                                          | String              | 1234                                                                                                   |               |
 | idautoPersonStaffStartDate       | Employee Start Date          | Calculated startdate for employee & guests                                   | String              | 2024-08-01                                                                                             |               |
 | idautoPersonStaffEndDate         | Employee End Date            | Calculated enddate for employee & guests                                     | String              | 2025-01-01                                                                                             |               |
-| idautoPersonManagedOrgs          | Manager's ORG                | ORG where a user is a manager of                                             | String              | SAM-U-HHS                                                                                              |               |
-| idautoPersonManagerID            | UID number                   | UID number                                                                   | String              |                                                                                                        | ✓              |
+| idautoPersonManagedOrgs          | Manager's ORG                | ORG where a user is a manager of                                             | String              | SAM-U-HHS                                                                                              | ✓             |
+| idautoPersonManagerID            | UID number                   | UID number                                                                   | String              | 98765                                                                                                  |               |
 | manager                          | Manager's UH-ID with DN	    | Manager's UH-ID with DN (Same as Ext12 but with entire DN)                   | String              | idautoID=15d2de0b-b103-47d8-bddb-f595f8238fb0,ou=Accounts,dc=meta                                      |               |
 | idautoPersonDeptDescr            | Main position ID and FTE %   | Main position ID and FTE % (Stillingsprosent)                                | String              | 999999\|100                                                                                            |               |
-| idautoPersonDeptDescrs      | Secondary position ID and FTE %   | Secondary position ID and FTE % (for Employees and Guest from SAP and Greg)  | String              |                                                                                                        | ✓             |
-| idautoPersonEndDate              | Sponsored Accounts end date  | Sponsored Accounts end date                                                  | Date/Time           |                                                                                                        |               |
+| idautoPersonDeptDescrs           | Secondary position IDs       | Secondary position IDs (for Employees and Guest from SAP and Greg)           | String              | 999999                                                                                                 | ✓             |
+| idautoPersonEndDate              | Sponsored Accounts end date  | Sponsored Accounts end date                                                  | Date (zulu)       | 202407010000Z                                                                                          |               |
 | idautoPersonJobCode              | Main Position Tuple          | Main Position Tuple                                                          | String              | 1009\|999999\|2310 112\|HV-U-NVH-R                                                                     |               |
-| idautoPersonJobCodes             | Stillingskategori            | Stillingskategori                                                            | String              | Undervisnings- og forsknings personale                                                                 |               |
+| idautoPersonJobCodes             | Stillingskategori            | Stillingskategori                                                            | String              | Undervisnings- og forsknings personale                                                                 | ✓             |
 | idautoPersonJobTitle             | Job Title    | Job Title (Position title tuple “position title \| preferred title-n \| preferred title-e”. ) | String      | Default: "Universitetslektor". Alternative: "Universitetslektor \| Universitetslektor i matematikk \| University lecturer in Mathematics"  | | 
 | idautoPersonLocCodes             | Location codes               | Location codes (Institution abbreviation)                                    | String              | omet-dev                                                                                              | ✓              |
 | idautoPersonOfficePhone          | Office Phone                 | Office Phone Number                                                          | String              | ##########                                                                                             |               |
@@ -277,13 +302,13 @@ Portal directory er en LDAP-katalog som inneholder informasjon om brukere.
 | idautoPersonStateID              | Passport Number              | Passport Number                                                              | String              | 1112233NO                                                                                              |               |
 | idautoPersonClaimCode            | Claim Code                   | Claim Code with date it was assigned and used                                | String              | 11f08c1d-c265-45d7-89d2-7a371f5629c5\|20210413\|20210414                                               |               |
 | idautoPersonClaimFlag            | Account Claimed              | Indicates whether or not the account has been claimed                        | Boolean             | TRUE                                                                                                   |               |
-| idautoPersonContractStartDate    | Contract start date          | Contract start date                                                          |                     | yyyyMMddHHmm                                                                                           |               |
-| idautoPersonContractEndDate      | Contract end date            | Contract end date                                                            |                     | yyyyMMddHHmm                                                                                           |               |
+| idautoPersonContractStartDate    | Contract start date          | Contract start date                                                          | Date (zulu)         | yyyyMMddHHmm                                                                                           |               |
+| idautoPersonContractEndDate      | Contract end date            | Contract end date                                                            | Date (zulu)         | yyyyMMddHHmm                                                                                           |               |
 | idautoPersonHomeEmail            | Personal Email               | Personal Email Address                                                       | Email Single-Valued | micky@example.no                                                                                       |               |
 | idautoPersonHomePhone            | Personal phone               | Personal phone number                                                        | String              | +4712345678                                                                                            |               |
 | mobile                           | Personal Mobile              | Personal Mobile number                                                       | String              | +4712345678                                                                                            |               |
 | idautoPersonBirthDate            | Birthdate                    | User's Date of Birth                                                         | String              | 30.01.1980                                                                                             |               |
-| idautoPersonWorkStreetAddress| Work Address Tuple | Work address tuple (work address\|office address\|campus\|building\|office number)  | String  | Default: Pilestredet 46,0167 Oslo. Alternative: Pilestredet 46,0167 Oslo\|Stensberggata 29,0170 Oslo\|Pilestredet\|P-111\|P-111-123 |     |
+| idautoPersonWorkStreetAddress| Work Address Tuple | Work address tuple (work address\|office address\|campus\|building\|office number)  | String  | Default: Pilestredet 46,0167 Oslo. Alternative: Pilestredet 46,0167 Oslo\|Stensberggata 29,0170 Oslo\|Pilestredet\|P-111\|P-111-123 | ✓   |
 | l                                | City                         | User’s Home City                                                             | String              | Oslo                                                                                                   |               |
 | postalCode                       | Postal Code                  | User’s Home Postal code                                                      | String              | 0001                                                                                                   |               |
 | idautoPersonGender               | Gender                       | Gender (f / m)                                                               | String              | f                                                                                                      |               |
