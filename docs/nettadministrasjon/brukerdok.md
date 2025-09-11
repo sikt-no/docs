@@ -318,7 +318,7 @@ kontakt@sikt.no.
     `echo "Melding" | sudo -u navcron gammu --sendsms TEXT <tlfnr>`
 
 -   Verifisér at NAVs SMS-daemon kan sende SMS-meldinger til din
-    telefon: `sudo -u navcron smsd.py -t <tlfnr>`
+    telefon: `sudo -u navcron smsd -t <tlfnr>`
 
 ### Sette opp NAV/verktøykassen for Radius Accounting-logging
 
