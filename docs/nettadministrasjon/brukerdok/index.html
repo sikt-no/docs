@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.8.1">
 <title data-rh="true">Brukerdokumentasjon Verktøykasser | Sikt teknisk dokumentasjon</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://docs.sikt.no/docs/nettadministrasjon/brukerdok"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Brukerdokumentasjon Verktøykasser | Sikt teknisk dokumentasjon"><meta data-rh="true" name="description" content="Innledning"><meta data-rh="true" property="og:description" content="Innledning"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.sikt.no/docs/nettadministrasjon/brukerdok"><link data-rh="true" rel="alternate" href="https://docs.sikt.no/docs/nettadministrasjon/brukerdok" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.sikt.no/docs/nettadministrasjon/brukerdok" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Brukerdokumentasjon Verktøykasser","item":"https://docs.sikt.no/docs/nettadministrasjon/brukerdok"}]}</script><link rel="stylesheet" href="/assets/css/styles.50a669a0.css">
-<script src="/assets/js/runtime~main.4c54a7e9.js" defer="defer"></script>
-<script src="/assets/js/main.3dce7763.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.1b9f9445.js" defer="defer"></script>
+<script src="/assets/js/main.e773b71f.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
@@ -72,7 +72,7 @@ kommandoen:</p>
 <p><code>service apache2 reload</code>: Relaste konfigurasjon for webtjeneren</p>
 </li>
 <li>
-<p><code>service nfsen \[start|stop\]</code>: Starte/stoppe NfSen</p>
+<p><code>service nfsen [start|stop]</code>: Starte/stoppe NfSen</p>
 </li>
 </ul>
 <p>For å relaste apache webtjeneren kan man feks kjøre kommandoen:</p>
@@ -228,24 +228,14 @@ gjøre litt førstelinjes feilsøking før du feilmelder situasjonen til
 <a href="mailto:kontakt@sikt.no" target="_blank" rel="noopener noreferrer">kontakt@sikt.no</a>.</p>
 <ul>
 <li>
-<p>Dersom mobilen/GSM-enheten er koblet til med en USB, verifisér at
-mobilen/GSM-enheten er synlig på USB-bussen: <code>lsusb</code></p>
-<p>Forventet output skal ligne på dette</p>
-<p>Bus 004 Device 001: ID 0000:0000
-Bus 003 Device 001: ID 0000:0000
-Bus 002 Device 001: ID 0000:0000
-Bus 001 Device 003: ID 0fce<!-- -->:d057<!-- --> Sony Ericsson Mobile Communications AB
-Bus 001 Device 001: ID 0000:0000</p>
-<p>Dersom det er en GSM-enhet tilkoblet med USB-dongle er det donglen,
-og ikke GSM-enheten som blir identifisert. Se siste linje:</p>
-<p>Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-Bus 005 Device 002: ID 0a81:0205 Chesen Electronics Corp. PS/2 Keyboard+Mouse Adapter
-Bus 005 Device 003: ID 0403:6001 Future Technology Devices International, Ltd FT232 USB-Serial (UART) IC</p>
+<p>Dersom den tilkoblede enheten er en Teltonika TRM240 koblet til med en USB,
+verifisér at mobilen/GSM-enheten er synlig på USB-bussen: <code>lsusb</code></p>
+<p>Output skal inneholde en linje som ligner på denne:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Bus 002 Device 008: ID 2c7c:0121 Quectel Wireless Solutions Co., Ltd. EC21 LTE modem</span><br></span></code></pre></div></div>
+<p>Dersom det er en eldre GSM-enhet tilkoblet med USB-dongle er det donglen,
+og ikke GSM-enheten som blir identifisert. Eksempel på linje som
+identifiserer en typisk dongle som har vært levert av oss:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Bus 005 Device 003: ID 0403:6001 Future Technology Devices International, Ltd FT232 USB-Serial (UART) IC</span><br></span></code></pre></div></div>
 </li>
 <li>
 <p>Verifisér at Gammu klarer å gjenkjenne den tilkoblede
@@ -261,7 +251,7 @@ mobiltelefonen: <code>sudo -u navcron gammu --identify</code></p>
 </li>
 <li>
 <p>Verifisér at NAVs SMS-daemon kan sende SMS-meldinger til din
-telefon: <code>sudo -u navcron smsd.py -t &lt;tlfnr&gt;</code></p>
+telefon: <code>sudo -u navcron smsd -t &lt;tlfnr&gt;</code></p>
 </li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="sette-opp-navverktøykassen-for-radius-accounting-logging">Sette opp NAV/verktøykassen for Radius Accounting-logging<a href="#sette-opp-navverktøykassen-for-radius-accounting-logging" class="hash-link" aria-label="Direct link to Sette opp NAV/verktøykassen for Radius Accounting-logging" title="Direct link to Sette opp NAV/verktøykassen for Radius Accounting-logging">​</a></h3>
