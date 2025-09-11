@@ -281,30 +281,20 @@ Dersom du har problemer med utsending av SMS fra verktøykassen, kan du
 gjøre litt førstelinjes feilsøking før du feilmelder situasjonen til
 kontakt@sikt.no.
 
--   Dersom mobilen/GSM-enheten er koblet til med en USB, verifisér at
-    mobilen/GSM-enheten er synlig på USB-bussen: `lsusb`
+-   Dersom den tilkoblede enheten er en Teltonika TRM240 koblet til med en USB,
+    verifisér at mobilen/GSM-enheten er synlig på USB-bussen: `lsusb`
 
-    Forventet output skal ligne på dette
-
-    ```
-    Bus 004 Device 001: ID 0000:0000
-    Bus 003 Device 001: ID 0000:0000
-    Bus 002 Device 001: ID 0000:0000
-    Bus 001 Device 003: ID 0fce:d057 Sony Ericsson Mobile Communications AB
-    Bus 001 Device 001: ID 0000:0000
-    ```
-
-    Dersom det er en GSM-enhet tilkoblet med USB-dongle er det donglen,
-    og ikke GSM-enheten som blir identifisert. Se siste linje:
+    Output skal inneholde en linje som ligner på denne:
 
     ```
-    Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-    Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-    Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-    Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-    Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-    Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-    Bus 005 Device 002: ID 0a81:0205 Chesen Electronics Corp. PS/2 Keyboard+Mouse Adapter
+    Bus 002 Device 008: ID 2c7c:0121 Quectel Wireless Solutions Co., Ltd. EC21 LTE modem
+    ```
+
+    Dersom det er en eldre GSM-enhet tilkoblet med USB-dongle er det donglen,
+    og ikke GSM-enheten som blir identifisert. Eksempel på linje som
+    identifiserer en typisk dongle som har vært levert av oss:
+
+    ```
     Bus 005 Device 003: ID 0403:6001 Future Technology Devices International, Ltd FT232 USB-Serial (UART) IC
     ```
 
