@@ -79,7 +79,7 @@ Blant kommandoene som kan kjøres via sudo er:
 
 - `service apache2 reload`: Relaste konfigurasjon for webtjeneren
 
-- `service nfsen \[start|stop\]`: Starte/stoppe NfSen
+- `service nfsen [start|stop]`: Starte/stoppe NfSen
 
 For å relaste apache webtjeneren kan man feks kjøre kommandoen:
 
@@ -286,23 +286,27 @@ kontakt@sikt.no.
 
     Forventet output skal ligne på dette
 
-        Bus 004 Device 001: ID 0000:0000
-        Bus 003 Device 001: ID 0000:0000
-        Bus 002 Device 001: ID 0000:0000
-        Bus 001 Device 003: ID 0fce:d057 Sony Ericsson Mobile Communications AB
-        Bus 001 Device 001: ID 0000:0000
+    ```
+    Bus 004 Device 001: ID 0000:0000
+    Bus 003 Device 001: ID 0000:0000
+    Bus 002 Device 001: ID 0000:0000
+    Bus 001 Device 003: ID 0fce:d057 Sony Ericsson Mobile Communications AB
+    Bus 001 Device 001: ID 0000:0000
+    ```
 
     Dersom det er en GSM-enhet tilkoblet med USB-dongle er det donglen,
     og ikke GSM-enheten som blir identifisert. Se siste linje:
 
-        Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-        Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-        Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-        Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-        Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-        Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-        Bus 005 Device 002: ID 0a81:0205 Chesen Electronics Corp. PS/2 Keyboard+Mouse Adapter
-        Bus 005 Device 003: ID 0403:6001 Future Technology Devices International, Ltd FT232 USB-Serial (UART) IC
+    ```
+    Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+    Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+    Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+    Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+    Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+    Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+    Bus 005 Device 002: ID 0a81:0205 Chesen Electronics Corp. PS/2 Keyboard+Mouse Adapter
+    Bus 005 Device 003: ID 0403:6001 Future Technology Devices International, Ltd FT232 USB-Serial (UART) IC
+    ```
 
 -   Verifisér at Gammu klarer å gjenkjenne den tilkoblede
     mobiltelefonen: `sudo -u navcron gammu --identify`
