@@ -11,7 +11,7 @@ Dette dokument er myntet på lokalt IKT driftspersonell ved
 høgskole/universitet som er bruker av verktøykassen. Verktøykassene er
 som kjent drevet fra Sikt. Driftsinstruks for Sikt Service Center og
 beredskapsvakt [foreligger i
-tillegg](https://kind.uninett.no/driftwiki/instruks/vk/index.html). Se Sikts nettsider [for
+tillegg](https://interndocs.sikt.no/docs/nettadministrasjon/vk/driftsinstruks). Se Sikts nettsider [for
 en generell beskrivelse av tjenesten](https://sikt.no/tjenester/nettadministrasjon).
 
 For å benytte flere av tjenestene på verktøykassen kreves naturlig nok
