@@ -34,13 +34,25 @@ Ved førstegangs pålogging ved kontoaktivering (Account Claim) må alle brukere
 
 •  Gjenbruk av tidligere passord vil ikke være tillatt.
 
+### Passord algoritme
+- Må ha lengde over institusjonens minimumskrav (typisk 16 men kan konfigureres per institusjon).
+- Må ha lengde under institusjonens maksimalkrav (typisk 127 på grunn av AD).
+- Kontekstbasert passord er ikke tillatt. F.eks. universitetetitroms, arcticuniversityofnorway etc.
+- Kan ikke inneholde brukernavn.
+- Kan ikke inneholde brukerens navn.
 
+Etter dette kommer en algoritme som kalkulerer passordets styrke. Poengsummen for at passordet skal godkjennes er 32 eller høyere.
+Karakterene i passordet deles inn i 4 kategorier: store bokstaver, små bokstaver, siffer og spesialtegn.
+Det itereres gjennom hver karakter.
+- Bare de 4 første forekomster av en karakter får poeng.
+- Bare forekomster som er ulikt den foregående karakteren får poeng.
+- Første karakter: +4 poeng.
+- 2-8 karakter: +2 poeng hver.
+- 9-20 karakter: + 1.5 poeng hver.
+- 21+ karakter: + 1 poeng hver.
 
+Bonuspoeng:
+- Hvis alle 4 kategoriene er oppfylt to ganger: +8 poeng.
+- Hvis tre av kategoriene er oppfylt: +6 poeng.
 
-
-
-
-
-
-
-
+Du kan kun få en av bonusene. Oppfyller du kravene for begge vil du få +8 poeng.
