@@ -39,6 +39,7 @@ module.exports = [
       'iam/deputy',
       'iam/short-term-guest',
       'iam/life-cycle-students',
+      'iam/systemroller',
     ],
   },
   {
@@ -61,6 +62,13 @@ module.exports = [
       'iam/integrasjoner/Salto',
       'iam/integrasjoner/TopDesk',
       'iam/integrasjoner/Wiseflow',
+    ],
+  },
+  {
+    type: 'category',
+    label: 'Versjoner',
+    items: [
+      'iam/versjoner/g4',
     ],
   },
   'iam/referanser',
