@@ -10,9 +10,9 @@ title: Gevinster ved Felles IAM
 læring.
 
 Les mer om
-* [Felles IAM brukernavn og identifikatorer](./brukernavn)
-* [Felles IAM virksomhetsroller](./virksomhetsroller)
-* [Felles IAM livssyklus](./livssyklus)
+* [Felles IAM brukernavn og identifikatorer](/docs/iam/brukernavn)
+* [Felles IAM virksomhetsroller](/docs/iam/virksomhetsroller)
+* [Felles IAM livssyklus](/docs/iam/livssyklus)
 
 **Økt sikkerhet**
 
@@ -20,8 +20,8 @@ Les mer om
 * Redusert risiko for identitetsforfalskning som følge av deling av kontoer. Med en bedre løsning for identitetshåndtering og brukervennlige metoder for å få tilgang, er det mindre sannsynlig at passord og kontoer deles.
 
 Les mer om
-* [Felles IAM tilgangsstyring](./tilgangsstyring)
-* [Felles IAM livssyklus](./livssyklus)
+* [Felles IAM tilgangsstyring](/docs/iam/tilgangsstyring)
+* [Felles IAM livssyklus](/docs/iam/livssyklus)
 
 **Etterlevelse av lovverk og interne standarder**
 
@@ -29,9 +29,9 @@ Les mer om
 * Sikre oppfyllelse av lovkrav.
 
 Les mer om
-* [Felles IAM rapportering](./rapportering)
-* [Felles IAM livssyklus](./livssyklus)
-* [Felles IAM ansvarligsfordeling](./ansvar)
+* [Felles IAM rapportering](/docs/iam/rapportering)
+* [Felles IAM livssyklus](/docs/iam/livssyklus)
+* [Felles IAM ansvarligsfordeling](/docs/iam/ansvar)
 
 **Økt operasjonell gevinst**
 
@@ -39,5 +39,5 @@ Les mer om
 *  Økt produktivitet og brukeropplevelse for sluttbrukere gjennom innføring av ytterligere funksjonalitet og økt selvbetjening.
 
 Les mer om
-* [Felles IAM automatisert tilgangsstyring](./tilgangsstyring)
-* [Felles IAM enkel og brukervennlig kontoaktivering](./kontoaktivering)
+* [Felles IAM automatisert tilgangsstyring](/docs/iam/tilgangsstyring)
+* [Felles IAM enkel og brukervennlig kontoaktivering](/docs/iam/kontoaktivering)

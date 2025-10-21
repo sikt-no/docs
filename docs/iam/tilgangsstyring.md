@@ -3,9 +3,9 @@ title: Tilgangsstyring
 ---
 
 
-I felles IAM styres tilganger ut ifra en fast modell, hvor [virksomhetsroller](./virksomhetsroller) automatisk genereres ut ifra hentet fra kildesystemene. For hvert målsystem finnes et regelsett som tildeler systemrettigheter for målsystemet basert på virksomhetsroller og innplassering i organisasjonen.
+I felles IAM styres tilganger ut ifra en fast modell, hvor [virksomhetsroller](/docs/iam/virksomhetsroller) automatisk genereres ut ifra hentet fra kildesystemene. For hvert målsystem finnes et regelsett som tildeler systemrettigheter for målsystemet basert på virksomhetsroller og innplassering i organisasjonen.
 
-[Les også om identitet livssyklus](./livssyklus) som også omhandler livssyklus for tilganger.
+[Les også om identitet livssyklus](/docs/iam/livssyklus) som også omhandler livssyklus for tilganger.
 
 Vi definerer:
 
@@ -54,7 +54,7 @@ Figur 7: Eksempel på prosessering av "Joiner" (AMF/ORG-ERA)
 * Standardiseres på tvers av institusjoner
 * Må utvikles/utvides over tid
 
-[Oversikt over virksomhetsroller](./virksomhetsroller)
+[Oversikt over virksomhetsroller](/docs/iam/virksomhetsroller)
 
 
 ## Regelmotor
