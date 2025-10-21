@@ -4,7 +4,7 @@ title: Overordnet arkitektur
 
 Identitets- og tilgangsstyring(Felles IAM) er en samling av prosesser og teknologiske løsninger som bistår institusjonene med å gi rette tilganger til studenter, ansatte og gjester basert på tjenestebehov. Felles IAM har ansvar for å håndtere tilgangene på en etterprøvbar måte, samt å avslutte tilgangene når det ikke lenger er behov for dem. Felles IAM har dermed en vesentlig rolle i styringen av livssyklusen til digitale identiteter. Derfor spiller Felles IAM en vesentlig rolle i styringen av livssyklusen til digitale identiteter.
 
-Felles IAM innfører felles teknologiske løsninger for hele sektoren, noe som er et sentralt tiltak for å støtte [strategiske mål og gevinster](./gevinster).
+Felles IAM innfører felles teknologiske løsninger for hele sektoren, noe som er et sentralt tiltak for å støtte [strategiske mål og gevinster](/docs/iam/gevinster).
 
 Hovedstegene i IAM består av:
 
@@ -31,7 +31,7 @@ Felles IAM innfører ett felles produkt for forsyning, RapidIdentity (RI) fra Id
 
 * Portalen inneholder en lokal lagringsstruktur som kalles "Portal Directory", hvor data blir oppbevart. I tillegg til dette omfatter portalen også Brukerportalen, et verktøy skapt for sluttbrukere og tjenesteforvaltere. Brukerportalen er utformet slik at disse brukerne får muligheten til å håndtere og administrere brukerdata på en effektiv måte.
 
-* I tillegg til de tidligere nevnte funksjonene, benyttes også tjenesten [Account Claim](kontoaktivering.md). Dette er en tjeneste for å sikre korrekt identifisering og aktivering av kontoer for nye ansatte og studenter. Ved opprettelse av nye brukerkontoer går brukerne gjennom Account Claim for å aktivere kontoen sin. Videre er også Account Claim det verktøyet man bruker for å tilbakestille passord.
+* I tillegg til de tidligere nevnte funksjonene, benyttes også tjenesten [Account Claim](/docs/iam/kontoaktivering). Dette er en tjeneste for å sikre korrekt identifisering og aktivering av kontoer for nye ansatte og studenter. Ved opprettelse av nye brukerkontoer går brukerne gjennom Account Claim for å aktivere kontoen sin. Videre er også Account Claim det verktøyet man bruker for å tilbakestille passord.
 
 
 
