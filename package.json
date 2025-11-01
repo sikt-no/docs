@@ -23,7 +23,7 @@
     "eslint": "^9.35.0",
     "eslint-plugin-react": "^7.37.5",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.1.1",
+    "react": "^19.2.0",
     "react-dom": "^19.1.1"
   },
   "browserslist": {
