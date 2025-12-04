@@ -16,7 +16,7 @@ Søking gjøres i `Explore` i sidebaren. Trykk der.
 
 ![Grafanas Explore-knapp i sidebaren](grafana-explore-sidebar.png)
 
-På denne siden er det noen felter du må ta stilling til før du vil se noen logger. Noen er påkrevd og noen har default-verdier som er
+På denne siden er det noen felter du må ta stilling til før du vil se noen logger. Noen er påkrevd og noen har default-verdier du kan endre.
 
 ![alt text](grafana-explore.png)
 
@@ -32,8 +32,6 @@ På denne siden er det noen felter du må ta stilling til før du vil se noen lo
 
 ## Begrepsdefinisjoner man burde være klar over ifb. filtrering
 
-Først noen begrepsdefinisjoner man burde få med seg om man skal filtrere på deler av en loggmelding.
-
 En loggmelding består hovedsakelig av to deler:
 ![Figur som viser at en logglinjer består av to deler, en meldingskropp som er et JSON-objekt og metadata](log-line-overview.png)
 1. Denne kaller vi `Line`, og den kan tenkes på som hoveddelen eller *kroppen* av meldingen. Litt uintuitivt, men hele JSON-objektet man ser her referes til som `line`. Når man filtrer med `Line contains` så sjekker man om hele dette objektet, som råtekst, inneholder tekst-strengen man søker etter.
@@ -41,6 +39,12 @@ En loggmelding består hovedsakelig av to deler:
 
 ## Finne flere loggmeldinger som ligner på en du ser på
 
-Et brukstilfelle Grafana støtter veldig godt er om du vil finne flere loggmeldinger som inneholder en del av informasjonen du ser på akkurat nå i en annen loggmelding. F.eks. om du ser på en melding med en spesifikk UHID og du vil finne alle feilmeldinger som inneholder den samme UHID-en.
+Et brukstilfelle Grafana støtter veldig godt er om du vil finne flere loggmeldinger som inneholder en del av en annen loggmelding, en melding du har åpen akkurat nå. F.eks. om du ser på en melding med en spesifikk UHID og du vil finne alle loggmeldinger som inneholder den samme UHID-en.
 
+Dette gjøres ved å selecte teksten du vil søke etter i meldingen i Grafanagrensesnittet. En kontekstmeny vil så komme opp der du kan velge `Add as line contains filter`.
 
+![alt text](add-as-line-contains-filter.png)
+
+Dette vil oppdatere søket ditt til å kun inneholde loggmeldinger som inneholder teksten du har søkt etter. Teksten du har søkt etter blir highlighted i oransje i resultatet.
+
+![alt text](line-contains-search-done.png)
