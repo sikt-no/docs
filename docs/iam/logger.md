@@ -6,7 +6,7 @@ Tjenesten krever Feide-innlogging, og tilgang til tjenesten må bestilles fra Fe
  * Fullt navn
  * Feide-ID (Denne finner du på [https://innsyn.feide.no/aboutme](https://innsyn.feide.no/aboutme) under `Personopplysninger > Personlig ID hos vertsorganisasjonen`)
 
-I grafana har hver institusjon sin egen organisasjon, og kan kun se sine egne logger. Per nå er det et subset av logger fra ActionSet i RapidIdentity som kommer hit, og de klassifiserer i én av to kategorier:
+I grafana har hver institusjon sin egen organisasjon, og kan kun se sine egne logger. Per nå er det et subset av logger fra ActionSet i RapidIdentity som kommer hit, og de klassifiseres i en av to kategorier:
  * Error: feilmeldinger
  * Audit: endringsmelding på en bruker
 
