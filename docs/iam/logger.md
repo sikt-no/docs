@@ -14,11 +14,11 @@ I grafana har hver institusjon sin egen organisasjon, og kan kun se sine egne lo
 
 Søking gjøres i `Explore` i sidebaren. Trykk der.
 
-![Grafanas Explore-knapp i sidebaren](grafana-explore-sidebar.png)
+![Grafanas Explore-knapp i sidebaren](/img/iam/grafana-explore-sidebar.png)
 
 På denne siden er det noen felter du må ta stilling til før du vil se noen logger. Noen er påkrevd og noen har default-verdier du kan endre.
 
-![alt text](grafana-explore.png)
+![alt text](/img/iam/grafana-explore.png)
 
 1. **Påkrevd**: Under `Label filter` trykk `Select label` og velg `Subscription`
 2. **Påkrevd**: Under `Label filter` trykk `Select value` og velg enten `audit` eller `errors`, avhengig av hva slags meldinger du vil se
@@ -33,7 +33,7 @@ På denne siden er det noen felter du må ta stilling til før du vil se noen lo
 ## Begrepsdefinisjoner man burde være klar over ifb. filtrering
 
 En loggmelding består hovedsakelig av to deler:
-![Figur som viser at en logglinjer består av to deler, en meldingskropp som er et JSON-objekt og metadata](log-line-overview.png)
+![Figur som viser at en logglinjer består av to deler, en meldingskropp som er et JSON-objekt og metadata](/img/iam/log-line-overview.png)
 1. Denne kaller vi `Line`, og den kan tenkes på som hoveddelen eller *kroppen* av meldingen. Litt uintuitivt, men hele JSON-objektet man ser her referes til som `line`. Når man filtrer med `Line contains` så sjekker man om hele dette objektet, som råtekst, inneholder tekst-strengen man søker etter.
 2. Dette er `Fields`, og er hovedsakelig metadata om meldingen, og kan mer tenkes på som bakenforliggende felter som systemet bruker for å lagre dataen på riktig måte.
 
@@ -43,11 +43,11 @@ Et brukstilfelle Grafana støtter veldig godt er om du vil finne flere loggmeldi
 
 Dette gjøres ved å selecte teksten du vil søke etter i meldingen i Grafanagrensesnittet. En kontekstmeny vil så komme opp der du kan velge `Add as line contains filter`.
 
-![alt text](add-as-line-contains-filter.png)
+![alt text](/img/iam/add-as-line-contains-filter.png)
 
 Dette vil oppdatere søket ditt til å kun inneholde loggmeldinger som inneholder teksten du har søkt etter. Teksten du har søkt etter blir highlighted i oransje i resultatet.
 
-![alt text](line-contains-search-done.png)
+![alt text](/img/iam/line-contains-search-done.png)
 
 ## Notifikasjoner og alarmer
 
