@@ -30,7 +30,7 @@ På denne siden er det noen felter du må ta stilling til før du vil se noen lo
 
 **Et notat om generell Grafana-dokumentasjon**: Om du leser generell Grafana-dokumentasjon så er det verdt å vite at vårt oppsett bruker `Loki` som `data source`. Dokumentasjon som gjelder andre typer datakilder enn `Loki` kan derfor være mangelfull eller misvisende.
 
-## Begrepsdefinisjoner man burde være klar over ifb. filtrering
+### Begrepsdefinisjoner man burde være klar over ifb. filtrering
 
 En loggmelding består hovedsakelig av to deler:
 ![Figur som viser at en logglinjer består av to deler, en meldingskropp som er et JSON-objekt og metadata](/img/iam/log-line-overview.png)
