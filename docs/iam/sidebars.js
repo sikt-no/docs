@@ -40,6 +40,7 @@ module.exports = [
       'iam/short-term-guest',
       'iam/life-cycle-students',
       'iam/systemroller',
+      'iam/logger',
     ],
   },
   {
