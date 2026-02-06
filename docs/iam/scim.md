@@ -77,7 +77,14 @@ Brukerressursen returnerer følgende JSON-struktur:
       "type": "work"
     }
   ],
-  "roles": ["iam:employee", "iam:student"],
+  "roles": [
+        {
+            "value": "iam:employee"
+        },
+        {
+            "value": "iam:student"
+        }
+    ],
   "groups": [
     {
       "value": "gruppe-uuid",
