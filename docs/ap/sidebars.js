@@ -4,21 +4,21 @@ module.exports = [
     type: 'category',
     label: 'HR',
     items: [
-      'ap/index'
+      'ap/index',
     ],
   },
   {
     type: 'category',
     label: 'Økonomi',
     items: [
-      'ap/index'
+      'ap/index',
     ],
   },
   {
     type: 'category',
     label: 'Datadeling',
     items: [
-      'ap/index'
+      'ap/index',
     ],
-  }
+  },
 ];
