@@ -4,6 +4,9 @@ import { Topic, TopicList } from '../components/topiclist';
 
 const topics = (
   <>
+    <Topic title="Analyseplattformen" link="docs/ap" imageUrl="img/favicon.ico">
+    Analyseplattformen leverer blablablabla. Dokumentasjonen er under utvikling.
+    </Topic>
     <Topic title="eduCSC" link="docs/educsc">
     Cybersikkerhetssenteret er sektorvist responsmiljø (SRM) for norsk forskning og høyere utdanning. 
     Vi leverer en rekke sikkerhetstjenester, og er samlingspunktet for sikkerhetskompetansen i kunnskapssektoren.

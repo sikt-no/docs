@@ -2,6 +2,7 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
+  ap: require('./docs/ap/sidebars.js'),
   iam: require('./docs/iam/sidebars.js'),
   cnaas: require('./docs/cnaas/sidebars.js'),
   nettadministrasjon: require('./docs/nettadministrasjon/sidebars.js'),
