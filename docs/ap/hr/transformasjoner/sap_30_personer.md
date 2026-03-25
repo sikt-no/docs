@@ -15,7 +15,7 @@
 ## Kalkulerte og avledede kolonner
 | Kolonne | Formel / Logikk |
 |---------|-----------------|
-| **zx_aktiv_rad** | `Ja` dersom: <br>• Raden er aktiv i dag (`dato_fra ≤ current_date ≤ dato_til`), eller <br>• Det er seneste rad for personen og `dato_til` er passert <br>Ellers `Nei` |
+| **zx_aktiv_rad** | `Ja` dersom: <br />• Raden er aktiv i dag (`dato_fra ≤ current_date ≤ dato_til`), eller <br />• Det er seneste rad for personen og `dato_til` er passert <br />Ellers `Nei` |
 | **toakontrakter_finnes** | `Ja` hvis personen har minst én PA9024-kontrakt som overlapper radens dato-intervall, ellers `Nei` |
 
 ## Transformasjonslogikk
