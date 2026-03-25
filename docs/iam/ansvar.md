@@ -18,7 +18,7 @@ Det finnes mange som er involvert utover sluttbrukerne i å støtte opp under JM
 
 ## Komme i gang med Felles IAM
 
-Felles IAM en IT-støttet prosess for å understøtte livsløpet til personene som er innom institusjonen. Sikre at de riktige personene har de riktige tilgangen til riktig tid.
+Felles IAM er en fellesløsning som støtter livsløpet til personene som er innom institusjonen. Sikre at de riktige personene har de riktige tilgangen til riktig tid.
 
 Lengden på Implementeringsløpet er avhengig av institusjonens deltakelse og modenhet når det gjelder IAM, men 8-12 uker er typisk lengde. Om lag 3 måneder før selve innføringsprosjektets oppstart gjennomføres et forberedelsesmøte. Dette for å avtale omfanget for Felles IAM og hvilke målsystemer som løsningen skal håndtere tilganger til.
 
