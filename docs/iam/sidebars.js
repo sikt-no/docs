@@ -1,7 +1,7 @@
 module.exports = [
   'iam/index',
   'iam/gevinster',
-    {
+  {
     type: 'category',
     label: 'Produktinformasjon',
     items: [
