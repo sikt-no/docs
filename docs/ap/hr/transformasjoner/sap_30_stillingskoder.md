@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_stillingskoder
+# sap_30_stillingskoder
 
 ## Formål
 - Tilgjengeliggjøre stillingskoder som grunnlag for **dim_stillingskode** i Analyseplattformen.

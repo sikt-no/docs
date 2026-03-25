@@ -1,4 +1,4 @@
-# Oppsummering – sap_20_stillinger_pa0001
+# sap_20_stillinger_pa0001
 
 ## Formål
 - Sammenstiller informasjon relatert til stillinger i PA0001 fra 10-tabellene til én tabell.

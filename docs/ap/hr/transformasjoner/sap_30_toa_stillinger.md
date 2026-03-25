@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_toa_stillinger
+# sap_30_toa_stillinger
 
 ## Formål
 - Lage grunnlagstabell for fak_toa_stillinger i lag 30.

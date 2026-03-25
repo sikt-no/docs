@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_lovhjemler
+# sap_30_lovhjemler
 
 ## Formål
 - Tilgjengeliggjøre lovhjemler som benyttes i SAP som grunnlag for **dim_lovhjemmel** i Analyseplattformen.

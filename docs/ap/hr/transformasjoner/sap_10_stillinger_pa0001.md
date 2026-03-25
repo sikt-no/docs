@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_stillinger_pa0001
+# sap_10_stillinger_pa0001
 
 ## Datakilder
 | Tabell | Formål | Filtre | Rolle |

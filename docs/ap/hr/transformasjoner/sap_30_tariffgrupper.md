@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_tariffgrupper
+# sap_30_tariffgrupper
 
 ## Formål
 - Tilgjengeliggjøre tariffgrupper som grunnlag for **dim_tariffgruppe** i Analyseplattformen.

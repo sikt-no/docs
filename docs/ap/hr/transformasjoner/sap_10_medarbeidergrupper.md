@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_medarbeidergrupper
+# sap_10_medarbeidergrupper
 
 ## Formål
 Tabell for medarbeidergrupper med BOT-definert gruppering av alle medarbeidergrupper i `tilknytningsform`.

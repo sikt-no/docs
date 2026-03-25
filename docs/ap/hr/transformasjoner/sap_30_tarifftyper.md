@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_tarifftyper
+# sap_30_tarifftyper
 
 ## Formål
 - Tilgjengeliggjøre tarifftyper som grunnlag for **dim_tarifftype** i Analyseplattformen.

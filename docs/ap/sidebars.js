@@ -7,7 +7,7 @@ const transformasjonDocIds = fs
   .readdirSync(transformasjonerDir)
   .filter((file) => file.endsWith('.md'))
   .map((file) => `ap/hr/transformasjoner/${file.replace(/\.md$/, '')}`)
-  .sort((a, b) => a.localeCompare(b, 'en', {numeric: true}));
+  .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }));
 
 const byPrefix = (prefix) =>
   transformasjonDocIds.filter((docId) =>
@@ -41,20 +41,6 @@ module.exports = [
           },
         ],
       },
-    ],
-  },
-  {
-    type: 'category',
-    label: 'Økonomi',
-    items: [
-      'ap/index',
-    ],
-  },
-  {
-    type: 'category',
-    label: 'Datadeling',
-    items: [
-      'ap/index',
     ],
   },
 ];

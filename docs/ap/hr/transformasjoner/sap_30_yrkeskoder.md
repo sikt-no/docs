@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_yrkeskoder
+# sap_30_yrkeskoder
 
 ## Formål
 - Etablere dimensjonen **dim_yrkeskode** i Analyseplattformen.

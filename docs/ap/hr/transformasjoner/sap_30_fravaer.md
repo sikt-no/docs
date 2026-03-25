@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_fravaer
+# sap_30_fravaer
 
 ## Formål
 - Etablere faktatabellen **fak_fravaer**, som viser fravær på datonivå og er koblet til korrekt stillingsinformasjon.

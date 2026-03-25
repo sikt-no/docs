@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_fravaerstyper
+# sap_10_fravaerstyper
 
 ## Formål
 Bygger en komplett oversikt over fraværstyper med tilhørende tekster, SAP-kategorier og BOTs egendefinerte kategorier/indikatorer. Brukes som oppslagstabell i fraværsanalyser.

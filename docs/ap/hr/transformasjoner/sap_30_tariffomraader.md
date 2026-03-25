@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_tariffomraader
+# sap_30_tariffomraader
 
 ## Formål
 - Tilgjengeliggjøre tariffområder som grunnlag for **dim_tariffomraade** i Analyseplattformen.

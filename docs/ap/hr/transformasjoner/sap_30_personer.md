@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_personer
+# sap_30_personer
 
 ## Formål
 - Tilgjengeliggjøre personhistorikk som grunnlag for **dim_person** i Analyseplattformen.

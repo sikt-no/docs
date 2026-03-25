@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_medarbeidergrupper
+# sap_30_medarbeidergrupper
 
 ## Formål
 - Tilgjengeliggjøre medarbeidergrupper som grunnlag for **dim_medarbeidergruppe** i Analyseplattformen.

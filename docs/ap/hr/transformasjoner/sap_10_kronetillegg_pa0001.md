@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_kronetillegg_pa0001
+# sap_10_kronetillegg_pa0001
 
 ## Formål
 - Beregner kronetillegg for stillinger i PA0001 basert på PA0014 og et definert sett med lønnarter. 

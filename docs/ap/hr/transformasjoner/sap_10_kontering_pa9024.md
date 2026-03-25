@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_kontering_pa9024
+# sap_10_kontering_pa9024
 
 ## Formål
 - Beregner konteringsprosent for stillinger fra PA9024. 

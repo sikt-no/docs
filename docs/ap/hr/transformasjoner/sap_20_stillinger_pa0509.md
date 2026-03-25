@@ -1,4 +1,4 @@
-# Oppsummering – sap_20_stillinger_pa0509
+# sap_20_stillinger_pa0509
 
 ## Formål
 - Sammenstiller informasjon og historikk for **tilleggsstillinger og fungeringer** registrert i PA0509.  

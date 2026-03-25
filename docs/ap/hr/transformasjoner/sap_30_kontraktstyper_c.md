@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_kontraktstyper_c
+# sap_30_kontraktstyper_c
 
 ## Formål
 Tilgjengeliggjøre kontraktstyper som grunnlag for **dim_kontraktstype_c** i Analyseplattformen.

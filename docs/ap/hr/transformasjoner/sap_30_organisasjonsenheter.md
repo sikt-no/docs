@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_organisasjonsenheter
+# sap_30_organisasjonsenheter
 
 ## Formål
 - Tilgjengeliggjøre organisasjonsenheter som grunnlag for **dim_organisasjon_sap** i Analyseplattformen.

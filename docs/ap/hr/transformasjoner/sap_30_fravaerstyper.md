@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_fravaerstyper
+# sap_30_fravaerstyper
 
 ## Formål
 - Etablere dimensjonstabellen **dim_fravaerstype** i Analyseplattformen.
