@@ -1,14 +1,7 @@
 module.exports = [
   'iam/index',
   'iam/gevinster',
-  {
-    type: 'category',
-    label: 'Prosessinformasjon',
-    items: [
-      'iam/ansvar',
-    ],
-  },
-  {
+    {
     type: 'category',
     label: 'Produktinformasjon',
     items: [
@@ -19,6 +12,13 @@ module.exports = [
       'iam/scim',
       'iam/passordpolicy',
       'iam/rapportering',
+    ],
+  },
+  {
+    type: 'category',
+    label: 'Informasjon før innføring',
+    items: [
+      'iam/ansvar',
     ],
   },
   {
