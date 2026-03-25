@@ -1,4 +1,4 @@
-# Oppsummering – sap_20_stillinger_pa9024
+# sap_20_stillinger_pa9024
 
 ## Formål
 - Sammenstiller informasjon relatert til stillinger og kontrakter i PA9024  fra 10-tabellene til én tabell.

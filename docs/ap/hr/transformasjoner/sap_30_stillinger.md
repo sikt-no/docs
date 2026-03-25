@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_stillinger
+# sap_30_stillinger
 
 ## Formål
 - Sammenstille alle stillingsforhold for ansatte i UH-sektoren til én samlet faktatabell (**fak_stillinger**) i tjeneste 2.

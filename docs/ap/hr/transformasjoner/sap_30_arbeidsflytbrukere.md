@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_arbeidsflytbrukere
+# sap_30_arbeidsflytbrukere
 
 ## Formål
 - Vise hvilke brukere som er en del av arbeidsflyten i hver organisasjonsenhet.

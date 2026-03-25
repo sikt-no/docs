@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_typer_stilling
+# sap_30_typer_stilling
 
 ## Formål
 - Tilgjengeliggjøre kodeverk for **type stilling** som grunnlag for analyser og dimensjoner i Analyseplattformen.

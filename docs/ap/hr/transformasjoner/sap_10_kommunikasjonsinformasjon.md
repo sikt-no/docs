@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_kommunikasjonsinformasjon
+# sap_10_kommunikasjonsinformasjon
 
 ## Formål
 Henter kommunikasjonsinformasjon for ansatte fra PA0105 og PA9052. Inneholder brukernavn, e-postadresser og telefonnumre (jobb og privat). Kun siste gjeldende versjon per ansatt; ingen historikk.

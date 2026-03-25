@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_ledere
+# sap_30_ledere
 
 ## Formål
 - Vise hvem som er **leder for hver organisasjonsenhet**.

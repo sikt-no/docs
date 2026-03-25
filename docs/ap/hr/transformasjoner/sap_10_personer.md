@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_personer
+# sap_10_personer
 
 ## Formål
 - Sammenstiller informasjon relatert til personer med historikk fra PA-tabeller til en helhetlig personvisning med `dato_fra` og `dato_til`.

@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_lonn_pa0509
+# sap_10_lonn_pa0509
 
 ## Formål
 - Beregner lønn for tilleggsstillinger i PA0509 som også tar hensyn til lønnstrinn.

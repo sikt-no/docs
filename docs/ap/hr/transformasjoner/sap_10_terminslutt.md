@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_terminslutt
+# sap_10_terminslutt
 
 ## Formål
 Henter terminslutt-datoer fra PA0019 for utvalgte `dato_type`-verdier og lagrer siste gyldige terminslutt per institusjon, ansatt og kode.

@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_grunnlonn_pa0001
+# sap_10_grunnlonn_pa0001
 
 ## Formål
 Beregner grunnlønn knyttet til stillinger i PA0001 basert på logikk for hovedtariffperiodene. Håndterer tre perioder:

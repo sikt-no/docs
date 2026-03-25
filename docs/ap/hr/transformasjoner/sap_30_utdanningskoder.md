@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_utdanningskoder
+# sap_30_utdanningskoder
 
 ## Formål
 - Etablere dimensjonen **dim_utdanningskode** i Analyseplattformen.

@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_kontering_overstyrt_pa0509
+# sap_10_kontering_overstyrt_pa0509
 
 ## Formål
 Henter overstyrt kontering for tilleggsstillinger basert på ASSHR og ASSOB. Brukes når det er satt overstyrt kontering (infotype 0509) i SAP.

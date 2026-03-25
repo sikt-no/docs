@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_stillinger_pa9024
+# sap_10_stillinger_pa9024
 
 ## Formål
 - Kombinerer kontraktsdata i PA9024 og ZEAC_CONTRA_DATA.

@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_ansettelsesdato
+# sap_10_ansettelsesdato
 
 ## Formål
 Henter ansettelsesdato fra PA0041 ved å søke gjennom 24 datotype/dato-kolonnepar. Prioriterer datotype '01' for HVL, deretter 'VB' for alle institusjoner.

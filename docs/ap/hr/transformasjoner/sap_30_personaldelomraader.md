@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_personaldelomraader
+# sap_30_personaldelomraader
 
 ## Formål
 - Etablere transformasjonstabell **sap_30_personaldelomraader** som danner grunnlaget for dim_personaldelomraade i Analyseplattformen.

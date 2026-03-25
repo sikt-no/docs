@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_lonn_pa9024
+# sap_10_lonn_pa9024
 
 ## Formål
 - Beregner lønn for stillinger i PA9024 . 

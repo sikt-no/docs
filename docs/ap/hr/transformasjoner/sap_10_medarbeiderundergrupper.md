@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_medarbeiderundergrupper
+# sap_10_medarbeiderundergrupper
 
 ## Formål
 Tabell for medarbeiderundergrupper med BOT-definert gruppering av alle medarbeidergrupper i `avlonningsform`. Dette gjør at man enkelt kan skille ut f.eks. måneds- eller timelønnede stillinger.

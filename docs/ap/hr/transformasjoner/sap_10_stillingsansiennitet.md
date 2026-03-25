@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_stillingsansiennitet
+# sap_10_stillingsansiennitet
 
 ## Formål
 Henter stillingsansiennitet (`dato_ansiennitet_stilling`) fra PA0041 basert på `dato_type = 'ST'`. Benyttes som lookup-tabell for å berike stillinger fra PA0001 med ansiennitetsdato.

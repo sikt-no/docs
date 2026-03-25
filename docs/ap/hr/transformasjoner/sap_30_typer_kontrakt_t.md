@@ -1,4 +1,4 @@
-# Oppsummering – sap_30_typer_kontrakt_t
+# sap_30_typer_kontrakt_t
 
 ## Formål
 Tilgjengeliggjøre kontraktstyper som grunnlag for **dim_type_kontrakt_t** i Analyseplattformen.

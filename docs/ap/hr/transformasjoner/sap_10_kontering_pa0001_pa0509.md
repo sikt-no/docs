@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_kontering_pa0001_pa0509
+# sap_10_kontering_pa0001_pa0509
 
 ## Formål
 Henter standard kontering for stillinger fra PA0027. Støtter delt kontering (flere konteringsobjekter med prosent). Brukes for PA0001/PA0509-stillinger med mindre stillingen har overstyrt kontering — da brukes `sap_10_kontering_overstyrt_pa0509`.

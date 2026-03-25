@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_fodselsdager
+# sap_10_fodselsdager
 
 ## Formål
 Genererer en liste over alle fødselsdager for hver ansatt fra 1990 til neste år. Brukes til å skape datobrudd i `sap_20_stillinger*` slik at alder beregnes korrekt i alle datointervaller.

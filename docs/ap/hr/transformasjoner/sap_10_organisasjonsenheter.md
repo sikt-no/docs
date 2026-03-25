@@ -1,4 +1,4 @@
-# Oppsummering – sap_10_organisasjonsenheter
+# sap_10_organisasjonsenheter
 
 ## Formål
 - Lager en utflatet organisasjonsstruktur med opptil 10 nivåer og historiske data basert på HRP1001-relasjoner.
