@@ -35,8 +35,8 @@
 | **fullt_navn** | `etternavn + ', ' + fornavn` |
 | **ansatt_navn** | `fornavn + ' ' + etternavn` |
 | **land_kode_arbeid** | Søk i PA3363 attributt_id_1–30 etter `9901`/`9902`. Hent tilhørende attributt_verdi_X. Prioritet: 9901 → 9902. |
-| **skattekorttype_hoved** | Klassifiserer hovedskattekort basert på `skattekorttype_kode_hoved` fra PA0173:<br>• `P` → Prosentskattekort<br>• `T` → Tabellkort<br>• `F` → Frikort<br>• `U` → Ubegrenset<br>• `''` eller `NULL` → Ingen skattekort<br>• Ellers → Annet |
-| **skattekorttype_bi** | Klassifiserer bi-skattekort basert på `skattekorttype_kode_bi` fra PA0173:<br>• `P` → Prosentskattekort<br>• `T` → Tabellkort<br>• `F` → Frikort<br>• `U` → Ubegrenset<br>• `''` eller `NULL` → Ingen skattekort<br>• Ellers → Annet |
+| **skattekorttype_hoved** | Klassifiserer hovedskattekort basert på `skattekorttype_kode_hoved` fra PA0173:<br />• `P` → Prosentskattekort<br />• `T` → Tabellkort<br />• `F` → Frikort<br />• `U` → Ubegrenset<br />• `''` eller `NULL` → Ingen skattekort<br />• Ellers → Annet |
+| **skattekorttype_bi** | Klassifiserer bi-skattekort basert på `skattekorttype_kode_bi` fra PA0173:<br />• `P` → Prosentskattekort<br />• `T` → Tabellkort<br />• `F` → Frikort<br />• `U` → Ubegrenset<br />• `''` eller `NULL` → Ingen skattekort<br />• Ellers → Annet |
 
 ## Transformasjonslogikk
 

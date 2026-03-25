@@ -50,7 +50,7 @@ Resultatet er én rad per unikt stillingsforhold per konsistent periode.
 | **dim_medarbeidergruppe** | medarbeidergruppe_kode | medarbeidergruppe_kode | SAP-dimensjon |
 | **dim_medarbeiderundergruppe** | medarbeiderundergruppe_kode | medarbeiderundergruppe_kode | SAP-dimensjon |
 | **dim_organisasjon_sap** | organisasjon_id | organisasjon_id | SAP-dimensjon |
-| **dim_person** | ansatt_nummer<br>dato_fra<br>dato_til | ansatt_nummer<br>dato_fra<br>dato_til | SAP-dimensjon (fakta‐intervall må overlappe dim‐intervall) |
+| **dim_person** | ansatt_nummer<br />dato_fra<br />dato_til | ansatt_nummer<br />dato_fra<br />dato_til | SAP-dimensjon (fakta‐intervall må overlappe dim‐intervall) |
 | **dim_poststed** | postnummer_adresse | postnummer | Fellesdimensjon |
 | **dim_spraak** | spraak_kommunikasjon | spraak_kode | Fellesdimensjon |
 | **dim_stillingskode** | stillingskode | stillingskode | Fellesdimensjon |

@@ -29,7 +29,7 @@
 | **styrk_kode** | Hardkodet til `'-1'` (STYRK registreres ikke for PA0509-stillinger). |
 | **aaremaal** | `CASE WHEN medarbeidergruppe_kode = '3' THEN 'Ja' WHEN medarbeidergruppe_kode IS NULL THEN 'Ukjent' ELSE 'Nei' END` |
 | **prosent_arbeid** | Hentet fra `sap_10_personer.prosent_arbeid` (basert på PA0007). |
-| **alder** | Validerer fødselsdato fra `sap_10_personer`. Ugyldig (1900-01-01 eller <16/>110 år) → `-1`. Ellers: framtidige rader bruker `dato_fra`, historiske/aktive rader bruker `LEAST(GETDATE(), dato_til)`. |
+| **alder** | Validerer fødselsdato fra `sap_10_personer`. Ugyldig (1900-01-01 eller under 16/over 110 år) → `-1`. Ellers: framtidige rader bruker `dato_fra`, historiske/aktive rader bruker `LEAST(GETDATE(), dato_til)`. |
 | **prosent_stilling** | Hentet fra `sap_10_lonn_pa0509.prosent_stilling`. |
 | **prosent_kontering** | `COALESCE(kontering.prosent_kontering, kontering_overstyrt.prosent_kontering * 100, 100.00)` – standard kontering først, ellers overstyrt (skalert til prosent), ellers 100%. |
 | **aarsverk** | `prosent_stilling × (prosent_kontering / 100) / 100`. Resultat castes til `decimal(4,3)`. |

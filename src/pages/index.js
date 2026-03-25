@@ -5,11 +5,11 @@ import { Topic, TopicList } from '../components/topiclist';
 const topics = (
   <>
     <Topic title="Analyseplattformen" link="docs/ap" imageUrl="img/favicon.ico">
-    Analyseplattformen leverer blablablabla. Dokumentasjonen er under utvikling.
+      Analyseplattformen leverer datavarehus og rapporteringsløsninger for virksomhetsstyring. Dokumentasjonen er under utvikling.
     </Topic>
     <Topic title="eduCSC" link="docs/educsc">
-    Cybersikkerhetssenteret er sektorvist responsmiljø (SRM) for norsk forskning og høyere utdanning. 
-    Vi leverer en rekke sikkerhetstjenester, og er samlingspunktet for sikkerhetskompetansen i kunnskapssektoren.
+      Cybersikkerhetssenteret er sektorvist responsmiljø (SRM) for norsk forskning og høyere utdanning.
+      Vi leverer en rekke sikkerhetstjenester, og er samlingspunktet for sikkerhetskompetansen i kunnskapssektoren.
     </Topic>
     <Topic title="IAM" link="docs/iam">
       Identitets- og tilgangsstyring (IAM) handler om å gi studenter, forskere
@@ -61,7 +61,7 @@ const topics = (
       Kunnskapssektorens datafellesskap (KUDAF) er en tosidig plattform som skal
       gjøre det lettere for offentlige virksomheter å dele data med forskere og
       andre interessenter. Dokumentasjonen er under utvikling, send en e-post til
-      kontakt@sikt.no med eventuelle spørsmål eller kommentarer. 
+      kontakt@sikt.no med eventuelle spørsmål eller kommentarer.
     </Topic>
   </>
 );
