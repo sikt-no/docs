@@ -2,15 +2,7 @@
 title: Account Claim 
 ---
 
-![](/img/iam/kontoakt1.png)
-Account Claim (kontoaktivering) er et eget brukergrensesnitt opprettet for å gjøre det mulig 
-for nye brukere å aktivere brukerkontoene sine. Kort fortalt benytter Account Claim 
-ID-porten, SMS og e-post eller Feide for å autentisere personer og lar dem utføre noen basis 
-funksjoner gjeldende sin egen konto. Standard funksjonalitet inkluderer det å aktivere 
-brukerkonto, endre passordet og opprette et nytt passord hvis man har glemt det 
-nåværende.
-
-![](/img/iam/kontoakt1.png)
+![](/img/iam/aktivl3.png)
 Account Claim (kontoaktivering) er et eget brukergrensesnitt opprettet for å gjøre det mulig 
 for nye brukere å aktivere brukerkontoene sine. Kort fortalt benytter Account Claim 
 ID-porten, SMS og e-post eller Feide for å autentisere personer og lar dem utføre noen basis 
@@ -30,41 +22,48 @@ kontaktinformasjonen til institusjonens egen Helpdesk.
 
 ## Aktivere brukerkonto (norsk fødselsnummer)
 
-Når en person registreres i SAP, GREG eller i FS ved en virksomhet opprettes det automatisk 
+Når en person registreres i SAP,UBW,GREG eller i FS ved en virksomhet opprettes det automatisk 
 en brukerkonto i Rapid Identity. Basert på konfigurerbart antall dager i forkant av startdato, 
 sendes en e-post fra Rapid Identity til brukeren sin privat e-postadresse, med informasjon 
 og vedlagt lenke. 
+
 Dersom brukeren har norsk e-ID, vil lenken som oppgis føre brukeren til kontoaktivering 
 (Account Claim) hvor han/hun kan velge den autentiseringsmetoden i ID-porten de ønsker.
 
 ## Brukerveiledning for aktivering av konto
 
 1. Velg “Aktivere brukerkontoen”.
-![](/img/iam/kontoakt1.png)
+![](/img/iam/kontoaktl3.png)
 
 2. Klikk “Logg inn med ID-porten".
-![](/img/iam/aktivk2.png)
+![](/img/iam/idportl3.png)
 
 3. Velg foretrukket elektronisk ID for å bekrefte identiteten din. 
-![](/img/iam/eid1.png)
+![](/img/iam/idportll3.png)
 
 4. Etter at du har logget inn må du gå gjennom en introduksjon til universitetets IKT-reglement. 
 ![](/img/iam/iktreg1.png)
 
 5. Etter du har gått gjennom IKT-reglementet, må du akseptere dine plikter og bekrefte at du er kjent med virksomhetens personvernerklæring. Klikk deretter “Bekreft”. 
+
 ![](/img/iam/sikke1.png)
 
 6. Nå kan du opprette et passord (lage gode passord se Retningslinjer for passord) Skriv inn ønsket passord, repeter ønsket passord og klikk deretter “Lagre passord “. 
+
 ![](/img/iam/lagpass1.png)
 
 7. Når det er gjort har du aktivert brukerkontoen din. 
+
 ![](/img/iam/actko1.png)
 
 
-Husk brukernavnet ditt (1) og din nye e-postadresse (2) som vises på denne siden. De vil du 
+8. Husk brukernavnet ditt (1) og din nye e-postadresse (2) som vises på denne siden. De vil du 
 trenge seinere. 
 I etterkant av aktiveringen vil du også få tilsendt denne informasjon til din institusjonelle 
 epost som student eller ansatt og til din private e-postadresse.
+
+![](/img/iam/epostl4.png)
+
 
 ## Aktivere brukerkonto (uten fødselsnummer) 
 
@@ -78,11 +77,12 @@ Denne tjenesten er tilgjengelig både på norsk og engelsk.
 
 ## Brukerveiledning for aktivering av konto (uten fødselsnummer) 
 
-1.  Eksempel på e-post til person uten fødselsnummer; 
-![](/img/iam/velcome1.png)
+1.  Eksempel på e-post til person uten fødselsnummer;
 
 Noen e-postsystemer kan sortere denne meldingen som spam/søppelpost. Sjekk derfor i 
 mappen for spam/søppelpost dersom du ikke har fått en ventet melding.
+
+![](/img/iam/velcome1.png)
 
 2. Når du har fullført stegene som du kommer til når du trykker på lenken i e-posten vil du komme til følgende steg hvor du skal be om å få tilsendt en SMS med en 
 engangskode.
@@ -160,14 +160,14 @@ Account Claim. Brukeren må først autentisere seg enten via ID-porten eller 2-f
 autentisering for så kunne sette et nytt passord i samsvar med passordpolicyen. 
 Det er institusjonen som avgjør hvor funksjonen “Glemt passord” skal tilgjengeliggjøres. 
 
-![](/img/iam/itsto1.png)
+![](/img/iam/bruksl2.png)
 
 
 ## Brukerveiledning ved glemt passord 
 
 1. Når du klikker på “Glemt passord” ledes du først til autentisering som utføres ved hjelp av “Logg inn med ID-porten", eller alternativet som inkluderer E-post og SMS. 
 
-![](/img/iam/glem1.png)
+![](/img/iam/idportl3.png)
 
 2. Velger du alternativet “Kan ikke bruke ID-porten" blir du spurt om brukernavn eller e-postadresse. Når du har oppgitt dette vil du få tilsendt en e-post til din 
 institusjonelle e-post som student eller ansatt og til din private e-postadresse. 
@@ -175,15 +175,15 @@ Eposten inneholder en lenke som du kan bruke for å opprette nytt passord.
 
 3. Etter å ha utført autentiseringen ledes du videre til Account Claims hovedside og kan velge “Glemt passord”. 
 
-![](/img/iam/glemp2.png)
+![](/img/iam/glmepl3.png)
 
 4. Velg “Nytt passord”, opprett og avslutt med “Lagre passord”
 
-![](/img/iam/glemop2.png)
+![](/img/iam/glempll3.png)
 
 5. Du får følgende melding som bekrefter når passordet er endret;  
 
-![](/img/iam/bekreft2.png)
+![](/img/iam/bekrefl3.png)
  
 
 ## Min konto

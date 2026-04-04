@@ -1,5 +1,5 @@
 ---
-title: Produktet Rapid Identity
+title: RapidIdentity
 ---
 
 

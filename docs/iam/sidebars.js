@@ -6,6 +6,7 @@ module.exports = [
     label: 'Produktinformasjon',
     items: [
       'iam/produkt',
+      'iam/kontoaktivering',
       'iam/arkitektur',
       'iam/datamodell',
       'iam/kildedata',
@@ -25,7 +26,6 @@ module.exports = [
     type: 'category',
     label: 'Brukerinformasjon',
     items: [
-      'iam/kontoaktivering',
       'iam/tilgangsstyring',
     ],
   },
