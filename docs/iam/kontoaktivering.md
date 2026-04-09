@@ -6,23 +6,23 @@ title: Account Claim
 Account Claim (kontoaktivering) er et eget brukergrensesnitt opprettet for å gjøre det mulig 
 for nye brukere å aktivere brukerkontoene sine. Kort fortalt benytter Account Claim 
 ID-porten, SMS og e-post eller Feide for å autentisere personer og lar dem utføre noen basis 
-funksjoner gjeldende sin egen konto. Standard funksjonalitet inkluderer det å aktivere 
-brukerkonto, endre passordet og opprette et nytt passord hvis man har glemt det 
+funksjoner gjeldende sin egen konto. Standardfunksjonalitet inkluderer aktivering av 
+brukerkonto, endring av passord og oppretting nytt passord hvis man har glemt det 
 nåværende.
 
-I tillegg til dette har applikasjonen støtte for endring av adgangskortets PIN-kode og 
+I tillegg til dette har applikasjonen støtte for endring av PIN-kode til adgangskort og 
 bestilling av nytt adgangskort samt opplasting og sletting av bilde av bruker.
 De sistnevnte funksjonene finner man under "Min konto", hvis institusjonen har aktivert 
 dette i konfigurasjonen.
 
 Hvis noe går galt under disse prosessene, får brukeren informative feilmeldinger og om 
 mulig oppgitt hvordan man kan endre det. Men hvis noe uventet oppstår eller et problem er 
-vedvarende, blir man bli bedt om å kontakte Helpdesk. Meldingen inneholder 
+vedvarende, blir brukeren bedt om å kontakte Helpdesk. Meldingen inneholder 
 kontaktinformasjonen til institusjonens egen Helpdesk.
 
 ## Aktivere brukerkonto (norsk fødselsnummer)
 
-Når en person registreres i SAP,UBW,GREG eller i FS ved en virksomhet opprettes det automatisk 
+Når en person registreres i SAP, UBW, GREG eller FS ved en virksomhet opprettes det automatisk 
 en brukerkonto i Rapid Identity. Basert på konfigurerbart antall dager i forkant av startdato, 
 sendes en e-post fra Rapid Identity til brukeren sin privat e-postadresse, med informasjon 
 og vedlagt lenke. 
@@ -48,7 +48,7 @@ Dersom brukeren har norsk e-ID, vil lenken som oppgis føre brukeren til kontoak
 
 ![](/img/iam/sikke1.png)
 
-6. Nå kan du opprette et passord (lage gode passord se Retningslinjer for passord) Skriv inn ønsket passord, repeter ønsket passord og klikk deretter “Lagre passord “. 
+6. Nå kan du opprette et passord, skriv inn ønsket passord og gjenta ønsket passord. Deretter klikk på "lagre passord". Det er krav til hvordan et passord skal se ut. Hvis du er usikker, kan du klikke på "Hvordan lage gode passord" for å se hvilke retningslinjer som gjelder. 
 
 ![](/img/iam/lagpass1.png)
 
@@ -57,10 +57,10 @@ Dersom brukeren har norsk e-ID, vil lenken som oppgis føre brukeren til kontoak
 ![](/img/iam/actko1.png)
 
 
-8. Husk brukernavnet ditt (1) og din nye e-postadresse (2) som vises på denne siden. De vil du 
-trenge seinere. 
+8. Husk brukernavnet ditt (1) og den nye e-postadressen din (2) som vises på denne siden. De vil du 
+trenge senere. 
 I etterkant av aktiveringen vil du også få tilsendt denne informasjon til din institusjonelle 
-epost som student eller ansatt og til din private e-postadresse.
+e-postadresse (som student eller ansatt) og til din private e-postadresse.
 
 ![](/img/iam/epostl4.png)
 
@@ -68,9 +68,9 @@ epost som student eller ansatt og til din private e-postadresse.
 ## Aktivere brukerkonto (uten fødselsnummer) 
 
 Hvis brukeren ikke har norsk fødselsnummer (National Identification Number), må 
-identiteten bekreftes ved hjelp av standard 2 faktorautentisering dette inkluderer e-post til privat e-postadresse samt en SMS eller automatisk taleoppringning (hvis valgt) til privat mobilnummer. 
+identiteten bekreftes ved hjelp av standard tofaktorautentisering. Dette inkluderer e-post til privat e-postadresse samt en SMS eller automatisk taleoppringning (hvis valgt) til privat mobilnummer. 
 
-For å autentisere via denne fremgangsmåten må brukeren klikke på lenken i e-posten for å starte prosessen å aktivere kontoen. Deretter vil brukeren motta en bekreftelseskode gitt på SMS eller automatisk taleoppringning (hvis valgt) som må skrives inn koden i bekreftelsesinntastingsfeltet.
+For å autentisere via denne fremgangsmåten må brukeren klikke på lenken i e-posten for å starte prosessen for å aktivere kontoen. Deretter vil brukeren motta en bekreftelseskode gitt på SMS eller automatisk taleoppringning (hvis valgt) som må skrives inn i feltet for bekreftelseskode.
 
 Denne tjenesten er tilgjengelig både på norsk og engelsk. 
 
@@ -84,17 +84,16 @@ mappen for spam/søppelpost dersom du ikke har fått en ventet melding.
 
 ![](/img/iam/velcome1.png)
 
-2. Når du har fullført stegene som du kommer til når du trykker på lenken i e-posten vil du komme til følgende steg hvor du skal be om å få tilsendt en SMS med en 
-engangskode.
+2.  Når du har fullført stegene du kommer til etter å ha klikket på lenken i e-posten, vil du komme til følgende steg hvor du skal be om å få tilsendt en SMS med en engangskode.
 
 ![](/img/iam/smsak1.png)
 
-3. Du må så bekrefte innloggingen med engangskoden som du fikk tilsendt i forrige 
-steg. Skriv inn koden du fikk tilsendt på SMS eller automatisk taleoppringning og trykk “Enter” for å bekrefte. 
+3. Du må deretter bekrefte innloggingen med engangskoden som du fikk tilsendt i forrige 
+steg. Skriv inn koden du fikk tilsendt på SMS eller automatisk taleoppringning, og trykk “Enter” for å bekrefte. 
 
 ![](/img/iam/logsms1.png)
 
-4. Etter at du har skrevet koden inn må du gå gjennom en introduksjon til universitetets IKT-reglement.
+4. Etter at du har skrevet inn koden må du gå gjennom en introduksjon til universitetets IKT-reglement.
 
 ![](/img/iam/sikke1.png)
 
@@ -103,17 +102,17 @@ steg. Skriv inn koden du fikk tilsendt på SMS eller automatisk taleoppringning 
 ![](/img/iam/sikke1.png)
 
 
-6. Nå må du opprette et passord. Skriv inn ønsket passord, gjentar ønsket passord og 
-klikk deretter “Lagre passord”. 
+6. Nå kan du opprette et passord. Skriv inn ønsket passord og gjenta ønsket passord. Deretter 
+klikk på “Lagre passord”. 
 
 ![](/img/iam/lagpass1.png)
 
-7. Når det er gjort har du aktivert brukerkontoen din. 
+7. Når det er gjort, har du aktivert brukerkontoen din. 
 
 ![](/img/iam/actko1.png)
 
-Husk brukernavnet ditt (1) og din nye e-postadresse (2) som vises på denne siden. De vil du 
-trenge seinere. 
+Husk brukernavnet ditt (1) og den nye e-postadressen din (2) som vises på denne siden. De vil du 
+trenge senere. 
 I etterkant av aktiveringen vil du også få tilsendt denne informasjon til din institusjonelle 
 epost som student eller ansatt, og til din private e-postadresse. 
 
@@ -156,8 +155,7 @@ Ved førstegangs pålogging ved kontoaktivering (Account Claim) må alle brukere
 ## Glemt passord
 
 Hvis brukere glemmer passordet sitt, kan de via lenke ledes til alternativet "Glemt passord" i 
-Account Claim. Brukeren må først autentisere seg enten via ID-porten eller 2-faktor 
-autentisering for så kunne sette et nytt passord i samsvar med passordpolicyen. 
+Account Claim. Brukeren må først autentisere seg enten via ID-porten eller tofaktorautentisering for så kunne sette et nytt passord i samsvar med passordpolicyen. 
 Det er institusjonen som avgjør hvor funksjonen “Glemt passord” skal tilgjengeliggjøres. 
 
 ![](/img/iam/bruksl2.png)
@@ -173,7 +171,7 @@ Det er institusjonen som avgjør hvor funksjonen “Glemt passord” skal tilgje
 institusjonelle e-post som student eller ansatt og til din private e-postadresse. 
 Eposten inneholder en lenke som du kan bruke for å opprette nytt passord. 
 
-3. Etter å ha utført autentiseringen ledes du videre til Account Claims hovedside og kan velge “Glemt passord”. 
+3. Etter å ha utført autentiseringen, ledes du videre til Account Claims hovedside og kan velge “Glemt passord”. 
 
 ![](/img/iam/glmepl3.png)
 
@@ -208,22 +206,20 @@ Følgende funksjoner stiller krav til arkitektur hos aktuell institusjonen
 
 <!--![](/img/iam/minko3.png)-->
 
-## Endre PIN-kode
+### Endre PIN-kode
 
-For å endre PIN-kode eller sette den inn for første gang logger du deg inn på Account Claim 
-via Feide og velger “Min konto”. 
-For å endre koden klikker du på "Endre PIN-kode", setter inn ny PIN-kode og trykker på "Lagre PIN-kode"
+For å Lage ny PIN-kode for første gang eller endre PIN-kode, logger du deg inn på Account Claim via Feide og velger "Min konto". 
+For å endre koden klikker du på "Endre PIN-kode", For å lagre PIN-koden trykker du "Lagre PIN-kode".
 
 ![](/img/iam/epin1.png)
 
-Begrensningene for PIN-koden er at PIN-koden må være nøyaktig fire tegn lang og bare 
-bestå av tall.
+En PIN-kode må inneholde fire tegn og består kun av tall.
 
 ### Endre bilde
 
 Endre bilde-funksjonen lar deg laste opp og oppdatere profilbilder, som kan sendes til 
 tjenester som "Studentbevisappen", Office365, adgangskortsystemer osv. 
-For å endre bildet må du eventuelt navigere til "Min konto" etterfulgt av "Endre bilde", der kan du laste opp et bilde, hvis ikke noe bilde er lagret i systemet, eller erstatte et opplastet bilde med et nytt. 
+For å endre bildet må du navigere til "Min konto" etterfulgt av "Endre bilde", der kan du laste opp et bilde, hvis ikke noe bilde er lagret i systemet, eller erstatte et opplastet bilde med et nytt. 
 
 Du kan laste opp et bilde på inntil 5MB. Hvis bilde overstiger 3000pixler i høyde/bredde blir bildet skalert til 3000pixler. Sideforholdet på bildet blir bevart. Hvis bildet overstiger 0.5MB så nedjusteres kvaliteten på bildet gradvis til det er nede på 0.5MB.
 <!-- gitlab707 RT415669 -->
@@ -238,7 +234,7 @@ Ved bruk av alternativet "Bestill adgangskort" blir du samtidig presentert for i
 retningslinjer for foto- og adgangskort gjennom lenker. 
 
 For å fullføre handlingen må du eventuelt velge hentested, hvis det er aktuelt, og deretter 
-trykke på "bestill" -knappen som sender bestillingen til Rapid Identity.
+trykke på "bestill"-knappen som sender bestillingen til RapidIdentity.
 
 
 
