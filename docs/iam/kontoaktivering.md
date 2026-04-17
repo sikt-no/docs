@@ -227,7 +227,6 @@ Du kan laste opp et bilde på inntil 5MB. Hvis bilde overstiger 3000pixler i hø
 
 
 
-
 ### Bestill adgangskort
 
 Ved bruk av alternativet "Bestill adgangskort" blir du samtidig presentert for institusjonens 
