@@ -4,7 +4,7 @@ title: Kildedata
 
 ## Krav til registrering av kildedata
 
-Studentregistreringen skjer automatisk eller manuelt hvor alle nødvendige kildedata registreres. Tildeling av tilganger initieres når aktivStudent eller aktivKlasse er sant. For ansatte så må følgende krav oppfylles for at tildeling av tilganger vil initieres:
+Studentregistreringen skjer automatisk eller manuelt hvor alle nødvendige kildedata registreres. Tildeling av tilganger initieres når aktivStudent er lik sant. For ansatte så må følgende krav oppfylles for at tildeling av tilganger vil initieres:
 
 * I tillegg til verifiserbar personalia, må fødselsnummer eller D-nummer registreres. I fravær av dette må fødselsdato, passnummer og nasjonalitet registreres
 * Organisasjonstilhørighet
