@@ -38,7 +38,7 @@ Les mer om
 
 ###  Rasjonalisering av forvaltning
 
-* Økt standardisering,samme rollemodell;
+* Økt standardisering, samme rollemodell;
   * Automatisering av hele eller deler av prosesser
   * Redusere dobbeltarbeid
   * Enklere passordendring
