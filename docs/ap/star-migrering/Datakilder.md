@@ -7,7 +7,7 @@ For å ikke skape for mye rot i Tableau, har vi valgt å legge rapporter og data
 ## Hvordan teste en datakilde? 
 
 ### Se på rådata først
-Når du åpner en datakilde i Tableau Desktop, vil du se en tabell nederst på skjermen (*Data Source*-fanen). Her kan du bla gjennom dataene og sjekke at det ser fornuftig ut – riktige navn, datoer, tall osv.
+Når du åpner en datakilde i Tableau, vil du se en tabell nederst på skjermen (*Data Source*-fanen). Her kan du bla gjennom dataene og sjekke at det ser fornuftig ut – riktige navn, datoer, tall osv.
 
 ### Tell opp rader
 Dra et felt (f.eks. "Navn" eller "ID") inn i arket og velg å telle antall. Da ser du raskt om det er omtrent så mange rader som du forventer. Hvis du vet at det skal være 500 studenter og Tableau viser 50 000, er noe galt.
@@ -49,36 +49,36 @@ Kort sagt handler det om å bruke sunn fornuft og sjekke at tallene "lukter rikt
 | SOST | STAR | Fullført | Ja, med avvik |
 | SPS_Studieprogramstudent | STAR | Fullført | Ja, med avvik |
 | SOAPIVOT_Søknadsalternativ_pivotert | STAR | Avventer | Ja |
-| SVP_Studentvurderingskombinasjonsprotokoll | STAR | | Ja, med avvik |
-| EDS_SVP_Emne_dette_semester_Vurderingsprotokoll | STAR | | Ja |
-| PHD_DRGRAD | STAR | | Ja, med avvik |
-| GST_Gjennomstromming_student | STAR | | Ja, med avvik |
+| SVP_Studentvurderingskombinasjonsprotokoll | STAR | Fullført | Ja, med avvik |
+| EDS_SVP_Emne_dette_semester_Vurderingsprotokoll | STAR | Fullført | Ja |
+| PHD_DRGRAD | STAR | Fullført | Ja, med avvik |
+| GST_Gjennomstromming_student | STAR | Fullført | Ja, med avvik |
 | FS_KLIENT_STATISTIKK | STAR (Sikt-intern kilde) | Ikke nødvendig | Ja |
-| SOA_Soknadsalternativ | STAR | | Ja, med avvik |
-| EIP_Emne_i_gradprotokoll | STAR | | Ja, med avvik |
-| GSP_Gjennomstromming_studieprogram | STAR | | Ja, med avvik |
-| SVPS_Studentvurderingskombinasjonsprotokoll_sensur | STAR | | Ja |
-| EIPE_Emne_i_gradprotokoll_med_ekstern | STAR | | Ja, med avvik |
-| SOAX_Søknadsalternativ_til_eksterne_institusjoner | STAR | | Ja, med avvik |
+| SOA_Soknadsalternativ | STAR | Fullført | Ja, med avvik |
+| EIP_Emne_i_gradprotokoll | STAR | Fullført | Ja, med avvik |
+| GSP_Gjennomstromming_studieprogram | STAR | Fullført | Ja, med avvik |
+| SVPS_Studentvurderingskombinasjonsprotokoll_sensur | STAR | Fullført | Ja |
+| EIPE_Emne_i_gradprotokoll_med_ekstern | STAR | Fullført | Ja, med avvik |
+| SOAX_Søknadsalternativ_til_eksterne_institusjoner | STAR | Fullført | Ja, med avvik |
 | EMNEINFO_RIKSREVISJON | STAR (Sikt-intern kilde) | Ikke nødvendig | Ja |
 | SVPS_Studentvurderingskombinasjonsprotokoll_sensur_test | STAR | | Ja |
 | SAKSBEHANDLER | STAR (Sikt-intern kilde) | Ikke nødvendig | Ja |
-| Studieprogramstudent_registerkort | STAR | | Ja, med avvik |
-| SVPDEL_Sensur_testkilde | STAR | | Ja |
-| SVPDEL_Studentvurderingskombinasjonsprotokoll_delmener | STAR | | Ja |
-| GSPI_Gjennomstrømning_studieprogram_individ | STAR | | Ja |
-| DIM_DBH_STUDIEPROGRAM | STAR | | Ja, med avvik |
-| GST_Gjennomstromming_student_UiO | STAR | | Ja, med avvik |
-| EDS_Emne_dette_semester_vurderingsprotokoll | STAR | | Ja |
-| STUDIEBAROMETER | STAR | | Ja |
+| Studieprogramstudent_registerkort | STAR | Avventer | Ja, med avvik |
+| SVPDEL_Sensur_testkilde | STAR | Fullført | Ja |
+| SVPDEL_Studentvurderingskombinasjonsprotokoll_delmener | STAR | Fullført | Ja |
+| GSPI_Gjennomstrømning_studieprogram_individ | STAR | Avventer | Ja |
+| DIM_DBH_STUDIEPROGRAM | STAR | Fullført | Ja, med avvik |
+| GST_Gjennomstromming_student_UiO | STAR | Fullført | Ja, med avvik |
+| EDS_Emne_dette_semester_vurderingsprotokoll | STAR | Fullført | Ja |
+| STUDIEBAROMETER | STAR | Avventer | Ja |
 | Studiebarometeret | STAR | Ikke nødvendig | Ikke nødvendig |
-| SVPA_Studentvurderingskombinasjonsprotokoll_aggregert | STAR | | Ja |
+| SVPA_Studentvurderingskombinasjonsprotokoll_aggregert | STAR | Avventer | Ja |
 | Tableau_statistikk | STAR (Sikt-intern kilde) | Ikke nødvendig | Ikke nødvendig |
-| SPSR_Rekruttering | STAR | | Ja, med avvik |
-| VKK_Vurderklage | STAR | | Ja |
-| GSTHK_uten_tilganskontroll | STAR | | Ja, med avvik |
-| Språk_knyttet_til_emne | STAR | | Ja |
-| Digitale_vitnemål | STAR | | Ja |
+| SPSR_Rekruttering | STAR | Fullført | Ja, med avvik |
+| VKK_Vurderklage | STAR | Fullført | Ja |
+| GSTHK_uten_tilganskontroll | STAR | Fullført | Ja, med avvik |
+| Språk_knyttet_til_emne | STAR | Fullført | Ja |
+| Digitale_vitnemål | STAR | Fullført | Ja |
 | UTE_Utestenging | STAR (RUST) | Ikke nødvendig | Ja, med avvik |
 | SOKNAD_ASK_FS-og-Excel | ASK (Hkdir) | Ikke nødvendig | Ja |
 | SOST_KVOTE_STUDIUM | SO-datavarehus | Ikke nødvendig | Ja |
