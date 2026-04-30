@@ -105,20 +105,20 @@ Vil du hjelpe oss å validere at data stemmer for din institusjon? Ta kontakt me
 | fak_vgdok | x | x |
 | fak_vurdkombklage | x | x |
 | fak_vurdkombprotlogg_klage | x | x |
-| dim_alder | | |
+| dim_alder | x | x |
 | dim_dbh_avdeling | | |
-| dim_dbh_studieprogram | | |
-| dim_eksamenssted | | |
+| dim_dbh_studieprogram | x | x |
+| dim_eksamenssted | x | x |
 | dim_emne | | |
 | dim_fag_so (sodm.dim_fag) | | |
 | dim_forslagvedtak | | |
 | dim_fylke | | |
 | dim_gradkodeliste | | |
 | dim_institusjonsstatus_dv | | |
-| dim_kommisjon | | |
-| dim_kommune | | |
-| dim_kvalgrunnlag | | |
-| dim_kvoterunde | | |
+| dim_kommisjon | x | |
+| dim_kommune | x | x |
+| dim_kvalgrunnlag | x | |
+| dim_kvoterunde | x | |
 | dim_kvoterunde_so (sodm.dim_kvoterunde) | | |
 | dim_land | | |
 | dim_mottstatus | | |
