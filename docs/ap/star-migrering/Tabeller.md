@@ -109,48 +109,48 @@ Vil du hjelpe oss å validere at data stemmer for din institusjon? Ta kontakt me
 | dim_dbh_avdeling | | |
 | dim_dbh_studieprogram | x | x |
 | dim_eksamenssted | x | x |
-| dim_emne | | |
-| dim_fag_so (sodm.dim_fag) | | |
-| dim_forslagvedtak | | |
-| dim_fylke | | |
-| dim_gradkodeliste | | |
-| dim_institusjonsstatus_dv | | |
-| dim_kommisjon | x | |
+| dim_emne | x | |
+| dim_fag_so (sodm.dim_fag) | x | TBV |
+| dim_forslagvedtak | x | TBV |
+| dim_fylke | x | x |
+| dim_gradkodeliste | x | x |
+| dim_institusjonsstatus_dv | x | x |
+| dim_kommisjon | x | TBV |
 | dim_kommune | x | x |
-| dim_kvalgrunnlag | x | |
-| dim_kvoterunde | x | |
-| dim_kvoterunde_so (sodm.dim_kvoterunde) | | |
-| dim_land | | |
-| dim_mottstatus | | |
-| dim_opptaksorgan | | |
-| dim_poststed | | |
-| dim_semester | | |
-| dim_soeker | | |
-| dim_soknadstatus | | |
-| dim_spesieltgrunnlagstatus | | |
-| dim_spprogregeltermin | | |
-| dim_sprak | | |
-| dim_studentgrunnlag | | |
-| dim_studierettstatus | | |
-| dim_studium_sodb (sopgdm.dim_studium) | | |
-| dim_tidligopptakstatus | | |
-| dim_tilbudsgaranti_b | | |
-| dim_tilbudsgaranti_b_so (sodm.dim_tilbudsgaranti_b) | | |
-| dim_tilbudsgaranti_s | | |
-| dim_tilbudsgaranti_s_so (sodm.dim_tilbudsgaranti_s) | | |
-| dim_tilbudsgaranti_t | | |
-| dim_tilbudsgaranti_t_so (sodm.dim_tilbudsgaranti_t) | | |
-| dim_tilbudstattype | | |
-| dim_tilbudstatus_so (sodm.dim_tilbudstatus) | | |
-| dim_tilbudsvar | | |
-| dim_utestengstatus_lovhjemmel | | |
-| dim_utvekslingsprogram | | |
-| dim_utvekslingstatus | | |
-| dim_vilkarstatus | | |
-| dim_vurderingsform | | |
-| dim_vurderingskombinasjon | | |
-| dim_vurderingstid | | |
-| dim_xstatus | | |
+| dim_kvalgrunnlag | x | TBV |
+| dim_kvoterunde | x | x |
+| dim_kvoterunde_so (sodm.dim_kvoterunde) | x | x |
+| dim_land | x | x |
+| dim_mottstatus | x | x |
+| dim_opptaksorgan | x | x |
+| dim_poststed | Under arbeid | |
+| dim_semester | x | x |
+| dim_soeker | x | TBV |
+| dim_soknadstatus | x | x |
+| dim_spesieltgrunnlagstatus | x | x |
+| dim_spprogregeltermin | x | x |
+| dim_sprak | x | x |
+| dim_studentgrunnlag | x | TBV |
+| dim_studierettstatus | x | x |
+| dim_studium_sodb (sopgdm.dim_studium) | x | TBV |
+| dim_tidligopptakstatus | x | x |
+| dim_tilbudsgaranti_b | under arbeid | |
+| dim_tilbudsgaranti_b_so (sodm.dim_tilbudsgaranti_b) | x | x |
+| dim_tilbudsgaranti_s | x | x |
+| dim_tilbudsgaranti_s_so (sodm.dim_tilbudsgaranti_s) | x | x |
+| dim_tilbudsgaranti_t | x | x |
+| dim_tilbudsgaranti_t_so (sodm.dim_tilbudsgaranti_t) | x | x |
+| dim_tilbudstattype | x | x |
+| dim_tilbudstatus_so (sodm.dim_tilbudstatus) | x | x |
+| dim_tilbudsvar | x | x |
+| dim_utestengstatus_lovhjemmel | x | x |
+| dim_utvekslingsprogram | x | x |
+| dim_utvekslingstatus | x | x |
+| dim_vilkarstatus | x | x |
+| dim_vurderingsform | x | x |
+| dim_vurderingskombinasjon | x | TBV |
+| dim_vurderingstid | x | x |
+| dim_xstatus | x | x |
 | fak_dbh_stud_utveksling_ind | | |
 | fak_drgrad | | |
 | fak_ekstres_i_gradprot | | |
