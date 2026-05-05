@@ -2,7 +2,7 @@
 
 ## Testoversikt
 
-Vi jobber kontinuerlig med intern testing av dataene og tabellene vi har migrert fra STAR. 
+Vi jobber kontinuerlig med intern testing av dataene og tabellene vi har migrert fra STAR. TBV står for "to be verified". Det betyr at vi har rettet opp, men må kjøre flere tester for å verifisere at det ble korrekt. 
 Vil du hjelpe oss å validere at data stemmer for din institusjon? Ta kontakt med tonje.bakke@sikt.no 
 
 | Tabeller | Testet | Rettet |
