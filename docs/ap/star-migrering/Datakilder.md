@@ -35,10 +35,10 @@ Kort sagt handler det om å bruke sunn fornuft og sjekke at tallene "lukter rikt
 | Studieprogram                                                   | STAR                      | Fullført          | Ja                 |
 | UTV_Utveksling                                                  | STAR                      | Fullført          | Ja, med avvik      |
 | TILSATTDATA                                                     | STAR                      | Fullført          | Ja, med avvik      |
-| Søkerlister                                                     | STAR                      | Avventer          | Ja                 |
+| Søkerlister                                                     | STAR                      | Fullført          | Ja                 |
 | GSTM_Studentmobilitet                                           | STAR                      | Fullført          | Ja, med avvik      |
-| EMK_Emnekombinasjoner                                           | STAR                      | Avventer          | Ja                 |
-| PHD_RAPPORTERINGSKONTROLL                                       | STAR                      | Avventer          | Ja                 |
+| EMK_Emnekombinasjoner                                           | STAR                      | Fullført          | Ja                 |
+| PHD_RAPPORTERINGSKONTROLL                                       | STAR                      | Fullfært          | Ja                 |
 | Finans_doktorgrader                                             | STAR                      | Fullført          | Ja                 |
 | Finans_utveksling                                               | STAR                      | Fullført          | Ja, med avvik      |
 | Finans_studiepoengproduksjon                                    | STAR                      | Fullført          | Ja                 |
@@ -46,14 +46,14 @@ Kort sagt handler det om å bruke sunn fornuft og sjekke at tallene "lukter rikt
 | FAK_UNDERVISNINGSMELDING                                        | STAR                      | Fullført          | Ja                 |
 | VPL_Vurderingsprotokoll_logg_klage                              | STAR                      | Fullført          | Ja                 |
 | GSTHK_Gjennomstromming_student_hovedprogram_og_kvalifikasjoner  | STAR                      | Fullført          | Ja, med avvik      |
-| AKKUMULERT_DBH_DRGRAD_AVLAGT_V (FSDM)                           | STAR                      | Avventer          | Ja                 |
-| AKKUMULERT_DBH_GJENNOMSTR_STUDPROG_V                            | STAR                      | Avventer          | Ja                 |
-| AKKUMULERT_DBH_STUD_OPPNADD_KVAL                                | STAR                      | Avventer          | Til test           |
+| AKKUMULERT_DBH_DRGRAD_AVLAGT_V (FSDM)                           | STAR                      | Fullført          | Ja                 |
+| AKKUMULERT_DBH_GJENNOMSTR_STUDPROG_V                            | STAR                      | Fullført          | Ja                 |
+| AKKUMULERT_DBH_STUD_OPPNADD_KVAL                                | STAR                      | Fullført          | Til test           |
 | GSAPKA_Gjennomstromming_studieprogram_kvalifikasjoner_aggregert | STAR                      | Fullført          | Ja, med avvik      |
 | Finans_kandidater                                               | STAR                      | Fullført          | Ja                 |
 | SOST                                                            | STAR                      | Fullført          | Ja, med avvik      |
 | SPS_Studieprogramstudent                                        | STAR                      | Fullført          | Ja, med avvik      |
-| SOAPIVOT_Søknadsalternativ_pivotert                             | STAR                      | Avventer          | Ja                 |
+| SOAPIVOT_Søknadsalternativ_pivotert                             | STAR                      | Fullført          | Ja                 |
 | SVP_Studentvurderingskombinasjonsprotokoll                      | STAR                      | Fullført          | Ja, med avvik      |
 | EDS_SVP_Emne_dette_semester_Vurderingsprotokoll                 | STAR                      | Fullført          | Ja                 |
 | PHD_DRGRAD                                                      | STAR                      | Fullført          | Ja, med avvik      |
@@ -66,24 +66,24 @@ Kort sagt handler det om å bruke sunn fornuft og sjekke at tallene "lukter rikt
 | EIPE_Emne_i_gradprotokoll_med_ekstern                           | STAR                      | Fullført          | Ja, med avvik      |
 | SOAX_Søknadsalternativ_til_eksterne_institusjoner               | STAR                      | Fullført          | Ja, med avvik      |
 | EMNEINFO_RIKSREVISJON                                           | STAR (Sikt-intern kilde)  | Ikke nødvendig    | Ja                 |
-| SVPS_Studentvurderingskombinasjonsprotokoll_sensur_test         | STAR                      |                   | Ja                 |
+| SVPS_Studentvurderingskombinasjonsprotokoll_sensur_test         | STAR                      | Fullført          | Ja                 |
 | SAKSBEHANDLER                                                   | STAR (Sikt-intern kilde)  | Ikke nødvendig    | Ja                 |
-| Studieprogramstudent_registerkort                               | STAR                      | Avventer          | Ja, med avvik      |
+| Studieprogramstudent_registerkort                               | STAR                      | Fullført          | Ja, med avvik      |
 | SVPDEL_Sensur_testkilde                                         | STAR                      | Fullført          | Ja                 |
 | SVPDEL_Studentvurderingskombinasjonsprotokoll_delmener          | STAR                      | Fullført          | Ja                 |
-| GSPI_Gjennomstrømning_studieprogram_individ                     | STAR                      | Avventer          | Ja                 |
-| DIM_DBH_STUDIEPROGRAM                                           | STAR                      | Fullført          | Ja, med avvik      |
+| GSPI_Gjennomstrømning_studieprogram_individ                     | STAR                      | Fullført          | Ja                 |
+| DIM_DBH_STUDIEPROGRAM                                           | STAR                      | Fullført          | Ja                 |
 | GST_Gjennomstromming_student_UiO                                | STAR                      | Fullført          | Ja, med avvik      |
 | EDS_Emne_dette_semester_vurderingsprotokoll                     | STAR                      | Fullført          | Ja                 |
 | STUDIEBAROMETER                                                 | STAR                      | Avventer          | Ja                 |
 | Studiebarometeret                                               | STAR                      | Ikke nødvendig    | Ikke nødvendig     |
-| SVPA_Studentvurderingskombinasjonsprotokoll_aggregert           | STAR                      | Avventer          | Ja                 |
+| SVPA_Studentvurderingskombinasjonsprotokoll_aggregert           | STAR                      | Fullført          | Ja                 |
 | Tableau_statistikk                                              | STAR (Sikt-intern kilde)  | Ikke nødvendig    | Ikke nødvendig     |
 | SPSR_Rekruttering                                               | STAR                      | Fullført          | Ja, med avvik      |
 | VKK_Vurderklage                                                 | STAR                      | Fullført          | Ja                 |
 | GSTHK_uten_tilganskontroll                                      | STAR                      | Fullført          | Ja, med avvik      |
 | Språk_knyttet_til_emne                                          | STAR                      | Fullført          | Ja                 |
-| Digitale_vitnemål                                               | STAR                      | Fullført          | Ja                 |
+| Digitale_vitnemål                                               | STAR                      | Fullført          | Ja, med avvik      |
 | UTE_Utestenging                                                 | STAR (RUST)               | Ikke nødvendig    | Ja, med avvik      |
 | SOKNAD_ASK_FS-og-Excel                                          | ASK (Hkdir)               | Ikke nødvendig    | Ja                 |
 | SOST_KVOTE_STUDIUM                                              | SO-datavarehus            | Ikke nødvendig    | Ja                 |
@@ -95,3 +95,6 @@ Kort sagt handler det om å bruke sunn fornuft og sjekke at tallene "lukter rikt
 | DOK_VGDOK                                                       | SO-datavarehus (NVB)      | Ikke nødvendig    | Ja, med avvik      |
 | SOAPS_SOKNALT_pluss_siste_VM                                    | SO-datavarehus (NVB + SO) | Ikke nødvendig    | Ja                 |
 | Studieoversikt test                                             | SO-datavarehus            | Ikke nødvendig    | Ja                 |
+| FAG_VGDOKFAG                                                    | SO-datavarehus (NVB)      | Ikke nødvendig    | Ja, med avvik      |
+| MRK_VGDOKMERKNAD                                                | SO-datavarehus (NVB)      | Ikke nødvendig    | Ja, med avvik      |
+| FEIL_NVBFILVGDOKFEIL                                            | SO-datavarehus (NVB)      | Ikke nødvendig    | Ja, med avvik      |

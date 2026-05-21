@@ -15,7 +15,7 @@ Vil du hjelpe oss å validere at data stemmer for din institusjon? Ta kontakt me
 | dim_studieprogram_rapportering                      | x      | x      |
 | dim_campus                                          | x      | x      |
 | dim_sted                                            | x      | x      |
-| dim_institusjon                                     | x      | TBV    |
+| dim_institusjon                                     | x      | x      |
 | dim_studieretning                                   | x      | x      |
 | dim_person                                          | x      | TBV    |
 | dim_studieprogram                                   | x      | x      |
@@ -151,15 +151,40 @@ Vil du hjelpe oss å validere at data stemmer for din institusjon? Ta kontakt me
 | dim_vurderingskombinasjon                           | x      | x      |
 | dim_vurderingstid                                   | x      | x      |
 | dim_xstatus                                         | x      | x      |
+| fak_dbh_drgrad_avlagt_ind                           |        |        |
+| fak_dbh_gjennomstr_studprog                         |        |        |
+| fak_dbh_stud_eksamen_ind                            | x      | tbv    |
+| fak_dbh_stud_oppnadd_kval_ind                       |        |        |
 | fak_dbh_stud_utveksling_ind                         |        |        |
 | fak_drgrad                                          |        |        |
-| fak_ekstres_i_gradprot                              |        |        |
+| fak_ekstres_i_gradprot                              | x      | x      |
 | fak_emne_i_gradprot                                 | x      | x      |
+| fak_gjennomstr_student                              | x      | tbv    |
 | fak_gjennomstr_studprog                             |        |        |
+| fak_gjennomstr_studprog_ind                         |        |        |
+| fak_nvbfilvgdokfeil                                 |        |        |
+| fak_oppnadd_grad_prot                               |        |        |
+| fak_personfagprofil                                 | x      | x      |
+| fak_personfagprofil_uio_v                           |        |        |
+| fak_personkvalgrunnlag                              |        |        |
+| fak_soknadsalternativ                               |        |        |
+| fak_soknadsalternativ_pivot                         |        |        |
 | fak_soknalt                                         | x      |        |
+| fak_sost_kvote                                      | x      | x      |
+| fak_sost_soknalt                                    | x      | x      |
+| fak_stat_soknalt                                    | x      | tbv    |
+| fak_studentvurdkombprotokoll                        |        |        |
 | fak_studieprogramstudent                            |        |        |
 | fak_studieprogramstudent_unikv                      |        |        |
+| fak_svp_delemner                                    | x      |        |
+| fak_svp_sensur                                      | x      |        |
+| fak_tilsattdata                                     |        |        |
 | fak_undervisningsmelding                            |        |        |
-| fak_utestenging                                     |        |        |
+| fak_utestenging                                     | x      | x      |
+| fak_utvperson                                       | x      | x      |
 | fak_vgdok_unik_foerstevm_v                          |        |        |
 | fak_vgdok_unik_sistevm_v                            |        |        |
+| fak_vgdokfag                                        |        |        |
+| fak_vgdokmerkand                                    |        |        |
+| fak_vurdkombklage                                   |        |        |
+| fak_vurdkombprotologg_klage                         |        |        |
