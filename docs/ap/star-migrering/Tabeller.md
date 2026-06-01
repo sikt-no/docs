@@ -133,9 +133,9 @@ Vil du hjelpe oss å validere at data stemmer for din institusjon? Ta kontakt me
 | dim_vurdresstatus                                   | x      | x      |
 | dim_xstatus                                         | x      | x      |
 | fak_dbh_drgrad_avlagt_ind                           | x      | x      |
-| fak_dbh_gjennomstr_studprog                         |        |        |
+| fak_dbh_gjennomstr_studprog                         | x      | x      |
 | fak_dbh_stud_eksamen_ind                            | x      | x      |
-| fak_dbh_stud_oppnadd_kval_ind                       |        | tbv    |
+| fak_dbh_stud_oppnadd_kval_ind                       | x      | x      |
 | fak_dbh_stud_utveksling_ind                         | x      | x      |
 | fak_drgrad                                          | x      | tbv    |
 | fak_drgrad_semester                                 |        |        |
@@ -144,33 +144,33 @@ Vil du hjelpe oss å validere at data stemmer for din institusjon? Ta kontakt me
 | fak_emne_i_gradprot                                 | x      | x      |
 | fak_gjennomstr_student                              | x      |på vent |
 | fak_gjennomstr_studprog                             |        |på vent |
-| fak_gjennomstr_studprog_ind                         |        |        |
-| fak_nvbfilvgdokfeil                                 |        |        |
-| fak_oppnadd_grad_prot                               |        |        |
+| fak_gjennomstr_studprog_ind                         | x      | tbv    |
+| fak_nvbfilvgdokfeil                                 | x      | x      |
+| fak_oppnadd_grad_prot                               | x      | tbv    |
 | fak_personfagprofil                                 | x      | x      |
 | fak_personfagprofil_uio_v                           | x      | x      |
 | fak_personkvalgrunnlag                              | x      | x      |
-| fak_soeknadsalternativ                              |        |        |
+| fak_soeknadsalternativ                              | x      | x      |
 | fak_soknad                                          | x      | x      |
 | fak_soknadsalternativ                               |        |        |
 | fak_soknadsalternativ_pivot                         |        |        |
-| fak_soknalt                                         | x      | tbv    |
+| fak_soknalt                                         | x      | x      |
 | fak_sost_kvote                                      | x      | x      |
 | fak_sost_soknalt                                    | x      | x      |
 | fak_stat_soknalt                                    | x      | x      |
-| fak_studentvurdkombprotokoll                        |        |        |
-| fak_studieprogramstudent                            |        |        |
-| fak_studieprogramstudent_unikv                      |        |        |
+| fak_studentvurdkombprotokoll                        | x      | tbv    |
+| fak_studieprogramstudent                            | x      | x      |
+| fak_studieprogramstudent_unikv                      | x      | x      |
 | fak_svp_delemner                                    | x      | x      |
 | fak_svp_sensur                                      | x      | x      |
 | fak_tilsattdata                                     | x      | tbv    |
-| fak_undervisningsmelding                            |        |        |
+| fak_undervisningsmelding                            | x      | x      |
 | fak_utestenging                                     | x      | x      |
-| fak_utvperson                                       | x      | tbv    |
+| fak_utvperson                                       | x      | x      |
 | fak_vgdok                                           | x      | x      |
-| fak_vgdok_unik_foerstevm_v                          | x      | tbv    |
-| fak_vgdok_unik_sistevm_v                            | x      | tbv    |
-| fak_vgdokfag                                        | x      | tbv    |
+| fak_vgdok_unik_foerstevm_v                          | x      | x      |
+| fak_vgdok_unik_sistevm_v                            | x      | x      |
+| fak_vgdokfag                                        | x      | x      |
 | fak_vgdokmerkand                                    | x      | x      |
 | fak_vurdkombklage                                   | x      | x      |
 | fak_vurdkombprotlogg_klage                          | x      | x      |
