@@ -44,7 +44,7 @@ Se også: Autoritativt kildesystem
 
 ## Andre begrep
 
-<!-- prettier-ignore -->
+{/* prettier-ignore */}
 | Begrep | Forklaring |
 | --- | --- |
 | Konsument | Rollen til en tjeneste eller system som ønsker å motta data fra en tilbyder. Avhengig av kontekst, kan dette også være snakk om en person, gruppe, enhet, utvikler eller sluttbruker. |

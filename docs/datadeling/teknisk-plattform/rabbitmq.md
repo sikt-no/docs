@@ -176,7 +176,7 @@ av hverandre.
 
 ## Notifikasjoner
 
-<!-- TODO: Flytt alt dette til "god-praksis". -->
+{/* TODO: Flytt alt dette til "god-praksis". */}
 
 I IntArk bruker vi RabbitMQ primært for det vi kaller **tynne meldinger**,
 eller **notifikasjoner**. Notifikasjonene brukes primært til å informere om at

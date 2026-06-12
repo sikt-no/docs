@@ -40,4 +40,4 @@ Ved fase 0 så forberedes og avtales workshops som er en del av selve implemente
 
 
 
-<!-- TBD (Her bør det inn en kortfattet beskrivelse av change- og incidentsprosessene) -->
+{/* TBD (Her bør det inn en kortfattet beskrivelse av change- og incidentsprosessene) */}

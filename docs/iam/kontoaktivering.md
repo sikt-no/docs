@@ -188,7 +188,7 @@ Eposten inneholder en lenke som du kan bruke for å opprette nytt passord.
 
 Under "Min konto" er det også mulig å bytte et passord. Ved utførelse bytte av passord under “Min konto” er det en forutsetning at du husker eksisterende passord, og har logget inn med det passordet som skal byttes.
 
-<!--![](/img/iam/minko2.png)-->
+{/*![](/img/iam/minko2.png)*/}
 
 MERK: Du bør bytte passord hvis du har mistanke 
 om at det kan bli misbrukt, eller f.eks. hvis samme passord har vært brukt på andre 
@@ -204,7 +204,7 @@ Følgende funksjoner stiller krav til arkitektur hos aktuell institusjonen
 
 • Bestille adgangskort
 
-<!--![](/img/iam/minko3.png)-->
+{/*![](/img/iam/minko3.png)*/}
 
 ### Endre PIN-kode
 
@@ -222,7 +222,7 @@ tjenester som "Studentbevisappen", Office365, adgangskortsystemer osv.
 For å endre bildet må du navigere til "Min konto" etterfulgt av "Endre bilde", der kan du laste opp et bilde, hvis ikke noe bilde er lagret i systemet, eller erstatte et opplastet bilde med et nytt. 
 
 Du kan laste opp et bilde på inntil 5MB. Hvis bilde overstiger 3000pixler i høyde/bredde blir bildet skalert til 3000pixler. Sideforholdet på bildet blir bevart. Hvis bildet overstiger 0.5MB så nedjusteres kvaliteten på bildet gradvis til det er nede på 0.5MB.
-<!-- gitlab707 RT415669 -->
+{/* gitlab707 RT415669 */}
 
 
 

@@ -22,8 +22,8 @@ vi spesielt:
 - Lisensiering er _sterkt anbefalt_ å si noe om, da det gjør det enklere for
   konsumentene å bruke dataene riktig.
 
-<!-- TODO: Lisensiering: HAr vi ein passande default-lisens å henvise til, for
-meir begrensa data? Til dømes https://data.norge.no/nlod/no/ -->
+{/* TODO: Lisensiering: HAr vi ein passande default-lisens å henvise til, for
+meir begrensa data? Til dømes https://data.norge.no/nlod/no/ */}
 
 ## Hvordan beskrive datasett i fellestjenesten?
 

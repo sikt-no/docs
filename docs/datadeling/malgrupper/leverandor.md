@@ -13,8 +13,8 @@ UH-sektoren. Dette påvirker også anskaffelser av systemer og tjenester for
 UH-sektoren.
 
 - Se [Hva er IntArk](https://www.uninett.no/Intark) for en kort innføring.
-  <!-- - Se oversikt over hvilke krav IntArk har til en tjeneste som skal tilgjengeliggjøre data (tilbyder). TODO -->
-  <!-- - Se oversikt over hvilke krav IntArk har til en tjeneste som skal lese data (konsument). TODO -->
+  {/* - Se oversikt over hvilke krav IntArk har til en tjeneste som skal tilgjengeliggjøre data (tilbyder). TODO */}
+  {/* - Se oversikt over hvilke krav IntArk har til en tjeneste som skal lese data (konsument). TODO */}
 
 Se også [veileder for
 anskaffere](/docs/datadeling/veiledere/annet/anskaffelse), som gir deg

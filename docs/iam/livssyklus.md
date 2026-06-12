@@ -25,9 +25,9 @@ Autoritative datakilder er:
 
 Tilganger til en bruker tildeles som følge av oppstart, endring   eller avslutning av et engasjement. Dette kalles også for JML-prosesser (Joiner, Mover, Leaver). De use-casene som støttes av RI er:
 
-<!-- | Kildesystem    | Brukertype    | J | M | L | Spesifikasjon                              | UC inst.  | UC Core  |
+{/* | Kildesystem    | Brukertype    | J | M | L | Spesifikasjon                              | UC inst.  | UC Core  |
 | ---  | --- | --- | --- | --- | --- | --- | --- |
-| SAP     | Ansatt | X | X | X | Livssyklusprosess for alle brukertyper | 1.1-1.8 | 1.1-1.4 | -->
+| SAP     | Ansatt | X | X | X | Livssyklusprosess for alle brukertyper | 1.1-1.8 | 1.1-1.4 | */}
 
 **Automatiske prosesser**
 

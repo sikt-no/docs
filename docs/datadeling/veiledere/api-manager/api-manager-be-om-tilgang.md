@@ -63,7 +63,7 @@ Du kan bruke en av:
 - Native (iOS, Android, ...)
 - Backend-to-Backend
 
-<!-- TODO: [OpenID Connect Dynamic Client Registration](https://openid.net/specs/openid-connect-registration-1_0.html) -->
+{/* TODO: [OpenID Connect Dynamic Client Registration](https://openid.net/specs/openid-connect-registration-1_0.html) */}
 
 ### Søk om tilgang
 
