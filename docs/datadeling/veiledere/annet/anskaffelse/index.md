@@ -9,8 +9,8 @@ applikasjonsforvalter før du velger et produkt eller leverandør. Dette gjelder
 både om din tjeneste vil kunne inneholde data som kan være nyttig for andre, og
 om din tjeneste skal hente data fra andre av institusjonens tjenester.
 
-<!-- TODO: Denne veilederen kan med fordel revideres sammen med innkjøpere fra
-Sikt -->
+{/* TODO: Denne veilederen kan med fordel revideres sammen med innkjøpere fra
+Sikt */}
 
 ## Hvorfor følge fellestjenesten sine anbefalinger?
 

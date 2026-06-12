@@ -91,7 +91,7 @@ The following system roles are configured and in use for Felles IAM from G4.
       </ul>
     </td>
   </tr>
-  <!--neste linje-->
+  {/*neste linje*/}
   <tr>
   <td>Connect Administrator</td>
   <td>Connect Admin</td>
@@ -105,7 +105,7 @@ The following system roles are configured and in use for Felles IAM from G4.
   </ul>
   </td>
   </tr>
-  <!--neste linje-->
+  {/*neste linje*/}
   <tr>
   <td>Connect Operator</td>
   <td>Connect Operator</td>
@@ -119,7 +119,7 @@ The following system roles are configured and in use for Felles IAM from G4.
   </ul>
   </td>
   </tr>
-<!--neste linje-->
+{/*neste linje*/}
   <tr>
   <td>Connect Auditor</td>
   <td>Connect Auditor</td>
@@ -133,7 +133,7 @@ The following system roles are configured and in use for Felles IAM from G4.
     Note! Avoid assigning the combination of Connect Administrator and Connect Auditor as that only grants access as Connect Auditor to the Connect Projects 
   </td>
   </tr>
-<!--neste linje-->
+{/*neste linje*/}
   <tr>
   <td>Portal Administrator</td>
   <td>Portal Profiles Admin</td>
@@ -148,7 +148,7 @@ The following system roles are configured and in use for Felles IAM from G4.
     Note! This role alone cannot access the Configuration module.
   </td>
   </tr>
-  <!--neste linje-->
+  {/*neste linje*/}
   <tr>
   <td>Portal Group Manager</td>
   <td>Portal Group Manager</td>
@@ -163,7 +163,7 @@ The following system roles are configured and in use for Felles IAM from G4.
     Can become the owner or manager of a RapidIdentity Role
   </td>
   </tr>
-<!--neste linje-->
+{/*neste linje*/}
   <tr>
   <td>Portal Group Viewer</td>
   <td>Portal Group Viewer</td>
@@ -176,7 +176,7 @@ As a Portal Role Viewer, you:
   </ul>
   </td>
   </tr>
-<!--neste linje-->
+{/*neste linje*/}
   <tr>
   <td>Portal Help Desk</td>
   <td>Portal Profiles Helpdesk</td>
@@ -191,7 +191,7 @@ Provides limited access to the People, Roles, and Requests module:
   </ul>
   </td>
   </tr>
-<!--neste linje-->
+{/*neste linje*/}
   <tr>
   <td>Portal Reporting Manager</td>
   <td>Portal Reporting Manager</td>
@@ -204,7 +204,7 @@ Has a medium-level role within the Reports module:
   </ul>
   </td>
   </tr>
-<!--neste linje-->
+{/*neste linje*/}
   <tr>
   <td>Portal Reporting Viewer</td>
   <td>Portal Reporting Viewer</td>
@@ -215,7 +215,7 @@ A limited view of the Reports module:
   </ul>
   </td>
   </tr>
-  <!--neste linje-->
+  {/*neste linje*/}
   <tr>
   <td>Portal Sponsor</td>
   <td>Portal Sponsorship Sponsor</td>

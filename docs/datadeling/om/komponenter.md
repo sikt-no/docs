@@ -64,8 +64,8 @@ API gateway må støtte:
 
 - Datatilbyder må få oversikt over hvem som har hentet ut hvilke data.
 
-<!-- TODO: Distribuerte API gateways, for dei større som ønsker det. Legge til
-om dette? -->
+{/* TODO: Distribuerte API gateways, for dei større som ønsker det. Legge til
+om dette? */}
 
 ## Meldingskø
 

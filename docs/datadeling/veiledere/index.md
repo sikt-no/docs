@@ -6,8 +6,8 @@ title: Veiledere i IntArk
 Veiledninger for bruk av fellestjenesten for datadeling, og datadeling
 generelt. Ta kontakt hvis det er noe du savner.
 
-<!-- TODO: Lag samla oversikt, eller fjerne lenker til dei vanlegaste
-veiledarane? -->
+{/* TODO: Lag samla oversikt, eller fjerne lenker til dei vanlegaste
+veiledarane? */}
 
 ## API manager
 
