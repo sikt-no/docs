@@ -12,3 +12,7 @@ Vi deler data gjennom Deltasharing, og dokumentasjonen for Deltashare finnes her
 [Bruker-til-maskin deling (PowerBI)](https://learn.microsoft.com/en-us/azure/databricks/delta-sharing/sharing-over-oidc-u2m)
 
 Brukerdokumentasjon for rapporter i power BI er under utvikling. 
+
+## Veikart 2026
+
+![Veikart for Analyseplattformen 2026, som viser planlagte leveranser og milepæler fordelt over måneder.](/img/ap/Veikart2026.jpg)
