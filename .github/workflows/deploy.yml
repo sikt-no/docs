@@ -28,6 +28,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          # Full git history is required so Docusaurus' showLastUpdateTime can
+          # resolve the real last-commit date per file. A shallow clone (the
+          # default fetch-depth: 1) makes every page report the build commit's
+          # date instead.
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
