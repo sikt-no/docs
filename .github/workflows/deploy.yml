@@ -27,7 +27,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           # Full git history is required so Docusaurus' showLastUpdateTime can
           # resolve the real last-commit date per file. A shallow clone (the
