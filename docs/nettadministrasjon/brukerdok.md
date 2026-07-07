@@ -274,6 +274,9 @@ til systemet.
     (tjenesteovervåkeren), `thresholdmon.log` (terskelovervåkeren),
     `eventengine.log` (hendelsessystemet) og `alertengine.log`
     (alarmsystemet).
+-   NAVs webgrensesnitt logger til systemd-journalen (ikke til fil). Se
+    loggen med `journalctl -u uwsgi@nav`; medlemmer av gruppen `netops`
+    har lesetilgang uten sudo.
 
 ### Feilsøking av mobiltelefon/SMS-utsending
 
