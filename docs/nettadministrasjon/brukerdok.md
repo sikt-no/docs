@@ -9,14 +9,15 @@ last_update:
 
 Dette dokument er myntet på lokalt IKT driftspersonell ved
 høgskole/universitet som er bruker av verktøykassen. Verktøykassene er
-som kjent drevet fra Sikt. Driftsinstruks for Sikt Service Center og
+som kjent drevet fra Sikt. Driftsinstruks for Sikt Service Center, NOC og
 beredskapsvakt [foreligger i
 tillegg](https://interndocs.sikt.no/docs/nettadministrasjon/vk/driftsinstruks). Se Sikts nettsider [for
 en generell beskrivelse av tjenesten](https://sikt.no/tjenester/nettadministrasjon).
 
-For å benytte flere av tjenestene på verktøykassen kreves naturlig nok
-relevant konfigurasjon av nettutstyret. Vi viser til [Uninett
-fagspesifikasjoner (UFS-er)](https://www.uninett.no/ufs/nett).
+For å benytte flere av tjenestene på verktøykassen kreves naturlig nok relevant
+konfigurasjon av nettutstyret. Vi viser til [Beste praksis
+fagspesifikasjoner](https://sikt.no/ressurser/beste-praksis-fagspesifikasjoner)
+(tidligere UFS / Uninett fagspesifikasjoner).
 
 Vi minner også om at svitsjene i campusnettet bør (les: *må*) være på en
 forsvarlig programvareversjon.
