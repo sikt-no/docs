@@ -77,14 +77,14 @@ Blant kommandoene som kan kjøres via sudo er:
 
 - `nav`: Generell kommando for å kontrollere nav
 
-- `service apache2 reload`: Relaste konfigurasjon for webtjeneren
+- `systemctl reload apache2`: Relaste konfigurasjon for webtjeneren
 
-- `service nfsen [start|stop]`: Starte/stoppe NfSen
+- `systemctl [start|stop] nfsen`: Starte/stoppe NfSen
 
 For å relaste apache webtjeneren kan man feks kjøre kommandoen:
 
 ```shell
-sudo service apache2 reload
+sudo systemctl reload apache2
 ```
 
 ## tftp
