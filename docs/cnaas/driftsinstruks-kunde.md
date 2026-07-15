@@ -29,7 +29,7 @@ Fageksperter i Sikt Campustjenester fungerer som 2. linje i Sikt. Alle henvendel
 
 ## Kontaktpunkter
 
-### Kontaktpunkter hos kunden {#kontaktkunden}
+### Kontaktpunkter hos kunden {/* #kontaktkunden */}
 
 Sikt registerer følgende kontaktpunkter i sine systemer som brukes ved behov:
 
@@ -41,7 +41,7 @@ Sikt registerer følgende kontaktpunkter i sine systemer som brukes ved behov:
 - **Teknisk ansvarlig**: En eller flere personer som er teknisk ansvarlig og/eller ressurser hos kunden. Brukes som kontaktpunkt ved alvorlige hendelser utenfor kundens normalåpningstid. Det er også kun disse personene som har mulighet til å bestille endringer i CNaaS-tjenesten. 
 - **Juridisk/administrativ ansvarlig**: En eller flere personer som kan kontaktes ved merkantile henvendelser. 
 
-### Kontaktpunkter hos Sikt {#kontaktsikt}
+### Kontaktpunkter hos Sikt {/* #kontaktsikt */}
 
 Sikts single point of contact er alltid Sikt Servicesenter (SSC).  
 

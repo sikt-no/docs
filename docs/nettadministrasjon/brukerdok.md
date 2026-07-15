@@ -9,14 +9,15 @@ last_update:
 
 Dette dokument er myntet på lokalt IKT driftspersonell ved
 høgskole/universitet som er bruker av verktøykassen. Verktøykassene er
-som kjent drevet fra Sikt. Driftsinstruks for Sikt Service Center og
+som kjent drevet fra Sikt. Driftsinstruks for Sikt Service Center, NOC og
 beredskapsvakt [foreligger i
 tillegg](https://interndocs.sikt.no/docs/nettadministrasjon/vk/driftsinstruks). Se Sikts nettsider [for
 en generell beskrivelse av tjenesten](https://sikt.no/tjenester/nettadministrasjon).
 
-For å benytte flere av tjenestene på verktøykassen kreves naturlig nok
-relevant konfigurasjon av nettutstyret. Vi viser til [Uninett
-fagspesifikasjoner (UFS-er)](https://www.uninett.no/ufs/nett).
+For å benytte flere av tjenestene på verktøykassen kreves naturlig nok relevant
+konfigurasjon av nettutstyret. Vi viser til [Beste praksis
+fagspesifikasjoner](https://sikt.no/ressurser/beste-praksis-fagspesifikasjoner)
+(tidligere UFS / Uninett fagspesifikasjoner).
 
 Vi minner også om at svitsjene i campusnettet bør (les: *må*) være på en
 forsvarlig programvareversjon.
@@ -77,14 +78,14 @@ Blant kommandoene som kan kjøres via sudo er:
 
 - `nav`: Generell kommando for å kontrollere nav
 
-- `service apache2 reload`: Relaste konfigurasjon for webtjeneren
+- `systemctl reload apache2`: Relaste konfigurasjon for webtjeneren
 
-- `service nfsen [start|stop]`: Starte/stoppe NfSen
+- `systemctl [start|stop] nfsen`: Starte/stoppe NfSen
 
 For å relaste apache webtjeneren kan man feks kjøre kommandoen:
 
 ```shell
-sudo service apache2 reload
+sudo systemctl reload apache2
 ```
 
 ## tftp
@@ -274,6 +275,9 @@ til systemet.
     (tjenesteovervåkeren), `thresholdmon.log` (terskelovervåkeren),
     `eventengine.log` (hendelsessystemet) og `alertengine.log`
     (alarmsystemet).
+-   NAVs webgrensesnitt logger til systemd-journalen (ikke til fil). Se
+    loggen med `journalctl -u uwsgi@nav`; medlemmer av gruppen `netops`
+    har lesetilgang uten sudo.
 
 ### Feilsøking av mobiltelefon/SMS-utsending
 
