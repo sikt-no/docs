@@ -7,7 +7,7 @@ Kategori: Query / User Lookup
 ## Formål
 
 Komplett brukeroversikt på tvers av alle systemer. Samler og viser brukerdata 
-fra Portal, Master Vault, kildesystemer (SAP, FS, GREG) og målsystemer 
+fra Portal, last- og mastertabeller, kildesystemer (SAP, FS, GREG) og målsystemer 
 (AD, Feide LDAP, ServiceNow, Lenel, Alma).
 
 Brukes til:

@@ -1,5 +1,5 @@
 
-# Report_SystemTests (Suite)
+# Report_SystemTests (Daily Issue Report)
 
 Kategori: Rapportering / Datakvalitet og Systemovervåkning
 Versjon: v4.0

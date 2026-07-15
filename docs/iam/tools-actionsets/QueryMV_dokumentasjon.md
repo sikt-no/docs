@@ -1,16 +1,16 @@
 
 # _QueryMV
 
-Kategori: Query / Master Vault
+Kategori: Query / last- og mastertabeller
 
 
 ## Formål
 
-Spør opp data fra RIDB (Master Vault) tabeller. Gir tilgang til alle master-
-tabeller og load-tabeller for ansatte, studenter, organisasjoner og roller.
+Spør opp data fra RIDB last- og mastertabeller. Gir tilgang til alle master-
+tabeller og last-tabeller for ansatte, studenter, organisasjoner og roller.
 
 Brukes til:
-- Rask ad-hoc spørring mot Master Vault uten SQL-klient
+- Rask ad-hoc spørring mot last- og Mastertabeller uten SQL-klient
 - Verifisering av data i master_persons, master_identifiers, master_positions etc.
 - Debugging av datainnlasting fra kildesystemer (employees_load, students_load)
 - Kontroll av meldingskøer (message_queue_cache, message_queue_errors)
@@ -20,11 +20,11 @@ Brukes til:
 ## Hvordan kjøre
 
 ### Input-parametere:
-- table (enum, påkrevd): Tabellnavn fra Master Vault
+- table (enum, påkrevd): Tabellnavn fra last- og Mmstertabeller
   * Master-tabeller: master_persons, master_identifiers, master_positions, 
     master_contracts, master_loa, master_orgs, master_studyrights, 
     master_studentassessments, master_roles, etc.
-  * Load-tabeller: employees_load, students_load, positions_load, 
+  * Last-tabeller: employees_load, students_load, positions_load, 
     contracts_load, orgs_load, roles_load, etc.
   * Kø-tabeller: message_queue_cache, message_queue_errors, 
     message_queue_history, message_queue_future_dated
