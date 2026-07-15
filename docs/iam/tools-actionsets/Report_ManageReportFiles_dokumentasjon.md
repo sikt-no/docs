@@ -4,7 +4,7 @@
 Kategori: Filhåndtering / Vedlikehold
 
 
-## Formålmål
+## Formål
 
 Automatisk arkivering og sletting av gamle rapportfiler basert på alder og 
 konfigurerbare regler. Holder rapportmappene ryddige ved å flytte gamle 

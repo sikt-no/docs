@@ -26,22 +26,21 @@ Brukes til:
 - uhid (string, påkrevd): UH-ID for brukeren som skal omdøpes
 - new_username (string, valgfri): Ønsket nytt brukernavn. Hvis ikke angitt,
   genererer IDW et nytt brukernavn automatisk basert på oppdatert navneinfo.
+- add_to_blacklist (boolean, valgfri): Hvis denne settes til true, blir det gamle brukernavnet lagt til på svarelisten over brukernavn som ikke blir opprettet.
 
 ### Eksempler:
 - WFM_RenameUser("3ddf4822-77ed-4c27-909e-7c826ca10423")
 - WFM_RenameUser("3ddf4822-77ed-4c27-909e-7c826ca10423", "olano0012")
+- WFM_RenameUser("3ddf4822-77ed-4c27-909e-7c826ca10423", "olano0012", true)
 
 Flyten:
-1. Oppretter databasetilkobling til RIDB
-2. Bygger autentiseringsheader mot IDW API (Basic Auth)
-3. Konstruerer API-URL: `{idwBaseUrl}/V2/rename/{uhid}[?username={new_username}]`
-4. Henter brukerens nåværende UHUN fra master_persons
-5. Ekstraherer bokstavdelen (5 tegn) fra UHUN og legger til blacklisted_words
-   via IDW API-endepunkt /V2/add-blacklist-word/
-6. Sender rename-forespørsel (HTTP POST) til IDW
-7. Oppdaterer master_persons med nytt brukernavn og nullstiller process_id
+1. Oppretter databasetilkobling til RIDB og IDW
+2. Henter brukerens nåværende UHUN fra master_persons
+3. Sjekker om man skal legge til gamlet brukernavn i blacklist
+4. Sender rename-forespørsel til IDW
+5. Oppdaterer master_persons med nytt brukernavn og nullstiller process_id
    og processed_at for reprosessering
-8. Lukker databasetilkobling og returnerer resultat
+6. Lukker databasetilkobling og returnerer resultat
 
 
 ## Resultat

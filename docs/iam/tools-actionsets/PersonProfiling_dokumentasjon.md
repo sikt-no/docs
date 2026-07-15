@@ -54,7 +54,7 @@ Rapporten henter og viser data fra følgende seksjoner:
    - Kaller TOOL_CourseProfiling med uhid
    - Viser alle EVU-kurspåmeldinger for brukeren
 
-4. MASTER VAULT (RIDB): tabeller basert på affiliasjon
+4. Last- og mastertabeller (RIDB): tabeller basert på affiliasjon
    Alltid inkludert:
    - master_persons
 

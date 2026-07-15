@@ -28,7 +28,7 @@ Start ActionSet direkte fra RI Connect eller schedule som automatisk jobb.
 ActionSettet sjekker følgende systemer:
 - Kildesystemer: FS API, SAP API, GREG API
 - Identity Bridge: Agents (heartbeat) og Bridges (connectivity)
-- RapidIdentity: RIDB (Master Vault), Portal LDAP
+- RapidIdentity: RIDB (last- og mastertabeller), Portal LDAP
 - Målsystemer: Active Directory, Feide LDAP
 - Jobs: Running processes (status og runtime)
 
@@ -54,7 +54,7 @@ Fargekoding:
 - Grønn rad: System OK
 - Rød rad: Feil/ikke tilgjengelig
 
-Feil logges også til ErrorHandler for integrasjon med Humio/logging-system.
+Feil logges også til ErrorHandler for integrasjon med Grafana/logging-system.
 
 CSV-fil (/data/healthcheck.csv) inneholder:
 - timestamp: Når feilen oppstod

@@ -15,6 +15,7 @@ Brukes til:
 - Konsolidering etter identitetskollisjoner
 - Lokal opprydding etter sentral merge utført av Sikt
 
+Du finner dokumentet for merge-prosedyren i Teams-kanalen «Erfaringskanalen, Nasjonalt brukerforum», under Dokumenter → 6. Opplæringsmateriell og rutiner → Merge process.docx.
 
 ## Hvordan kjøre
 
