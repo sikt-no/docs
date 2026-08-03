@@ -38,7 +38,7 @@ Sikt leverer fellestjenesten for Datadeling. Fellestjenesten inkluderer:
 | Hjelp til å dele               | Support, rådgivning og [anbefalinger]     |
 | Verktøy for å dele             | [Teknisk plattform]                       |
 
-<!-- TODO: sjekk om detaljane stemmer med tidlegare presentasjonar. Vurder å lage figur av det - vert finare. -->
+{/* TODO: sjekk om detaljane stemmer med tidlegare presentasjonar. Vurder å lage figur av det - vert finare. */}
 
 [teknisk plattform]: /docs/datadeling/teknisk-plattform
 [styringsregler]: /docs/datadeling/styringsregler
