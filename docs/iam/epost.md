@@ -18,4 +18,3 @@ Algoritmen for e-postadresse på fulltnavn format ivaretar flere fornavn, men vi
 * Ola Jens Nordmann Hansen -> ola.j.hansen@inst.no
 * Ola-Jens Nordmann -> ola-jens.nordmann@inst.no
 
-
