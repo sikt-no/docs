@@ -25,6 +25,6 @@ Velger nyeste rad per `bilagstype_kode` basert på `sist_oppdatert` via `remove_
 - `replace_empty_column_values`: Erstatter tomme verdier i forretningsnøkkelkolonner.
 - `insert_unknown_row`: Legger til ukjent-rad for uløste fremmednøkler.
 
-### Lastelogikk og måltabeller
+### 3. Lastelogikk og måltabeller
 
 Laster til `gold_okonomi.dim_bilagstype` som SCD Type 1 via `load_dimension_scd1` med `delete_when_not_matched=True`.

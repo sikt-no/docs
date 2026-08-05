@@ -53,6 +53,6 @@ Velger nyeste rad per `kontakt_id` basert på `sist_oppdatert` via `remove_dupli
 - `replace_empty_column_values`: Erstatter tomme verdier i forretningsnøkkelkolonner.
 - `insert_unknown_row`: Legger til ukjent-rad for uløste fremmednøkler.
 
-### Lastelogikk og måltabeller
+### 5. Lastelogikk og måltabeller
 
 Laster til `gold_okonomi.dim_kunde` som SCD Type 1 via `load_dimension_scd1` med `delete_when_not_matched=True`.

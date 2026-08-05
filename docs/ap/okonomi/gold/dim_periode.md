@@ -37,6 +37,6 @@ Velger nyeste rad per `["periode_id", "periode"]` basert på `sist_oppdatert` vi
 - `replace_empty_column_values`: Erstatter tomme verdier i forretningsnøkkelkolonner.
 - `insert_unknown_row`: Legger til ukjent-rad for uløste fremmednøkler.
 
-### Lastelogikk og måltabeller
+### 4. Lastelogikk og måltabeller
 
 Laster til `gold_okonomi.dim_periode` som SCD Type 1 via `load_dimension_scd1` med `delete_when_not_matched=True`.

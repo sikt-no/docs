@@ -6,19 +6,18 @@ Laster prosjektdimensjonen (`dim_prosjekt`) i gold-laget fra `silver_ubw.atsproj
 
 ## Datakilder
 
-| Tabell                             | Formål                | Filtre                                             | Rolle                                                            |
-| ---------------------------------- | --------------------- | -------------------------------------------------- | ---------------------------------------------------------------- |
-| **silver_ubw.atsproject**          | Prosjekter            | Ingen                                              | Primærkilde                                                      |
-| **silver_ubw.agldimvalue**         | Interne prosjekter    | `attributt_id = 'B0'`, IKKE i atsproject           | Supplerende kilde (union)                                        |
-| **silver_ubw.ahsresources**        | Ressurser             | Ingen                                              | Lookup for prosjektleder                                         |
-| **silver_ubw.atsproject**          | Prosjekter            | Ingen                                              | Self-join for `hovedprosjekt_navn`                               |
-| **silver_ubw.afxprobesk**          | Prosjektbeskrivelse   | Ingen                                              | Lookup for `saksnr`, `annen_ekstern_ref`, `sammendrag`           |
-| **silver_ubw.afxprosamarbeid**     | Samarbeidsinfo        | Ingen                                              | Lookup for koordinator- og partnerprosjektdata                   |
-| **silver_ubw.agldimvalue**         | Dimensjonsverdier     | `attributt_id='A4'`                                | Lookup for `prosjektkoordinator_navn`                            |
-| **silver_ubw.afxproadmin**         | Administrative roller | Ingen                                              | Lookup for prosjektøkonom, forskningsrådgiver, admin (aggregert) |
-| **silver_ubw.afxpropreaward**      | Pre-award             | Ingen                                              | Lookup for `referanse_navn`, `kostnadskalkyle`                   |
-| **silver_ubw.udv_proj_change_log** | Endringslogg          | `status IN ('C','T')`                              | Lookup for `dato_sperret_avsluttet`                              |
-| **silver_ubw.aatrelvalue**         | Relasjonsverdier      | `attributes=["B0"]`, `related_attributes` varierer | Institusjonsspesifikke dimensjoner                               |
+| Tabell                             | Formål                | Filtre                                   | Rolle                                                            |
+| ---------------------------------- | --------------------- | ---------------------------------------- | ---------------------------------------------------------------- |
+| **silver_ubw.atsproject**          | Prosjekter            | Ingen                                    | Primærkilde                                                      |
+| **silver_ubw.agldimvalue**         | Interne prosjekter    | `attributt_id = 'B0'`, IKKE i atsproject | Supplerende kilde (union)                                        |
+| **silver_ubw.ahsresources**        | Ressurser             | Ingen                                    | Lookup for prosjektleder                                         |
+| **silver_ubw.atsproject**          | Prosjekter            | Ingen                                    | Self-join for `hovedprosjekt_navn`                               |
+| **silver_ubw.afxprobesk**          | Prosjektbeskrivelse   | Ingen                                    | Lookup for `saksnr`, `annen_ekstern_ref`, `sammendrag`           |
+| **silver_ubw.afxprosamarbeid**     | Samarbeidsinfo        | Ingen                                    | Lookup for koordinator- og partnerprosjektdata                   |
+| **silver_ubw.agldimvalue**         | Dimensjonsverdier     | `attributt_id='A4'`                      | Lookup for `prosjektkoordinator_navn`                            |
+| **silver_ubw.afxproadmin**         | Administrative roller | Ingen                                    | Lookup for prosjektøkonom, forskningsrådgiver, admin (aggregert) |
+| **silver_ubw.afxpropreaward**      | Pre-award             | `attributt_id='B0'` AND `line_no=0`      | Lookup for `referanse_navn`, `kostnadskalkyle`                   |
+| **silver_ubw.udv_proj_change_log** | Endringslogg          | `status IN ('C','T')`                    | Lookup for `dato_sperret_avsluttet`                              |
 
 ## Forretningsnøkler
 
@@ -87,6 +86,6 @@ Interne prosjekter fra `agldimvalue` (B0) som ikke finnes i `atsproject` union-e
 - `replace_empty_column_values`: Erstatter tomme verdier i forretningsnøkkelkolonner.
 - `insert_unknown_row`: Legger til ukjent-rad for uløste fremmednøkler.
 
-### Lastelogikk og måltabeller
+### 8. Lastelogikk og måltabeller
 
 Laster til `gold_okonomi.dim_prosjekt` som SCD Type 1 via `load_dimension_scd1` med `delete_when_not_matched=True`.

@@ -70,6 +70,6 @@ Velger nyeste rad per `konto_kode` basert på `periode_til` via `remove_duplicat
 - `replace_empty_column_values`: Erstatter tomme verdier i forretningsnøkkelkolonner.
 - `insert_unknown_row`: Legger til ukjent-rad for uløste fremmednøkler.
 
-### Lastelogikk og måltabeller
+### 7. Lastelogikk og måltabeller
 
 Laster til `gold_okonomi.dim_konto` som SCD Type 1 via `load_dimension_scd1` med `delete_when_not_matched=True`.
