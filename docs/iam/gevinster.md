@@ -60,4 +60,3 @@ Les mer om
 Les mer om
 * [Felles IAM automatisert tilgangsstyring](/docs/iam/tilgangsstyring)
 * [Felles IAM enkel og brukervennlig kontoaktivering](/docs/iam/kontoaktivering)
-
