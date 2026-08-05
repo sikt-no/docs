@@ -50,6 +50,6 @@ Velger nyeste rad per forretningsnøkkel (`attributt_id`, `anlegg_id`) basert p�
 - `replace_empty_column_values`: Erstatter tomme verdier i forretningsnøkkelkolonner.
 - `insert_unknown_row`: Legger til ukjent-rad for uløste fremmednøkler.
 
-### Lastelogikk og måltabeller
+### 5. Lastelogikk og måltabeller
 
 Laster til `gold_okonomi.dim_anlegg` som SCD Type 1 via `load_dimension_scd1` med `delete_when_not_matched=True` (sletter rader som ikke lenger finnes i kilden).

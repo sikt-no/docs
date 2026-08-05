@@ -21,6 +21,6 @@ Laster dimensjonen for hovedfinansiering (`dim_hovedfinansiering`) i gold-laget 
 - `replace_empty_column_values`: Erstatter tomme verdier i forretningsnøkkelkolonner.
 - `insert_unknown_row`: Legger til ukjent-rad for uløste fremmednøkler.
 
-### Lastelogikk og måltabeller
+### 2. Lastelogikk og måltabeller
 
 Laster til `gold_okonomi.dim_hovedfinansiering` som SCD Type 1 via `load_dimension_scd1` med `delete_when_not_matched=True`.

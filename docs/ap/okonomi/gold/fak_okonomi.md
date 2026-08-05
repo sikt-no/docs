@@ -56,16 +56,16 @@ Parametere styrer om tabellen lastes fullt på nytt eller kun for de siste N år
 
 ### 4. Beregnede kolonner
 
-| Kolonne                  | Logikk                                                                          |
-| ------------------------ | ------------------------------------------------------------------------------- |
-| `zk_dim_dato`            | Periodemapping: periode 00→0101, 01–12→MM01, 13→1231; konvertert til dato       |
-| `prosjekt_nummer`        | Utledet fra `dimensjon_2`–`dimensjon_7` basert på institusjonskonfigurasjon     |
-| `delprosjekt_nummer`     | Utledet fra `dimensjon_2`–`dimensjon_7` basert på institusjonskonfigurasjon     |
-| `bygg_nummer`            | Utledet fra `dimensjon_2`–`dimensjon_7` basert på institusjonskonfigurasjon     |
-| `ressurs_nummer`         | Utledet fra `dimensjon_2`–`dimensjon_7` basert på institusjonskonfigurasjon     |
-| `hovedfinansiering_kode` | Utledet via `create_hovedfinansiering_columns()` (institusjonsspesifikk logikk) |
-| Opprinnelig budsjett     | Utledet via `create_opprinnelig_budsjett_columns()`                             |
-| Revidert budsjett        | Utledet via `create_revidert_budsjett_columns()`                                |
+| Kolonne                  | Logikk                                                                                            |
+| ------------------------ | ------------------------------------------------------------------------------------------------- |
+| `zk_dim_dato`            | Periodemapping: periode 00→(år)0101,01->(år)0102 02–12→(år)MM01, 13→(år)1231; konvertert til dato |
+| `prosjekt_nummer`        | Utledet fra `dimensjon_2`–`dimensjon_7` basert på institusjonskonfigurasjon                       |
+| `delprosjekt_nummer`     | Utledet fra `dimensjon_2`–`dimensjon_7` basert på institusjonskonfigurasjon                       |
+| `bygg_nummer`            | Utledet fra `dimensjon_2`–`dimensjon_7` basert på institusjonskonfigurasjon                       |
+| `ressurs_nummer`         | Utledet fra `dimensjon_2`–`dimensjon_7` basert på institusjonskonfigurasjon                       |
+| `hovedfinansiering_kode` | Utledet via `create_hovedfinansiering_columns()` (institusjonsspesifikk logikk)                   |
+| Opprinnelig budsjett     | Utledet via `create_opprinnelig_budsjett_columns()`                                               |
+| Revidert budsjett        | Utledet via `create_revidert_budsjett_columns()`                                                  |
 
 ### 5. Dimensjonslookups
 
@@ -90,6 +90,6 @@ Alle dimensjonssurrogatnøkler lagres med prefiks `zk_dim_`:
 | `zk_dim_hovedfinansiering`     | `hovedfinansiering_kode`            |
 | `zk_dim_organisasjon`          | `organisasjon_id_nivaa6` (BOT)      |
 
-### Lastelogikk og måltabeller
+### 6. Lastelogikk og måltabeller
 
 Laster til `gold_okonomi.fak_okonomi` inkrementelt via `write_table_incrementally()` med mulighet for full reload.

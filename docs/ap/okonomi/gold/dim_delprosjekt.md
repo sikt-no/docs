@@ -57,16 +57,16 @@ Velger nyeste rad per `delprosjekt_nummer` basert på `dato_til` via `remove_dup
 
 ### 4. Beregnede kolonner
 
-| Kolonne                 | Logikk                                              |
-| ----------------------- | --------------------------------------------------- |
-| `delprosjekt`           | `concat(delprosjekt_nummer, " ", delprosjekt_navn)` |
-| `dato_fra` / `dato_til` | Datoer før 1900-01-01 erstattes med 1900-01-01      |
+| Kolonne        | Logikk                                              |
+| -------------- | --------------------------------------------------- |
+| `delprosjekt`  | `concat(delprosjekt_nummer, " ", delprosjekt_navn)` |
+| `dato_sperret` | Datoer før 1900-01-01 erstattes med 1900-01-01      |
 
 ### 5. Datakvalitet
 
 - `replace_empty_column_values`: Erstatter tomme verdier i forretningsnøkkelkolonner.
 - `insert_unknown_row`: Legger til ukjent-rad for uløste fremmednøkler.
 
-### Lastelogikk og måltabeller
+### 6. Lastelogikk og måltabeller
 
 Laster til `gold_okonomi.dim_delprosjekt` som SCD Type 1 via `load_dimension_scd1` med `delete_when_not_matched=True`.
