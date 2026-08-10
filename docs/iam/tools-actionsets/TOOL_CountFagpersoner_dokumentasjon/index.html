@@ -1,0 +1,66 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-iam/tools-actionsets/TOOL_CountFagpersoner_dokumentasjon" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.1"><title data-rh=true>TOOL_CountFagpersoner | Sikt teknisk dokumentasjon</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://docs.sikt.no/docs/iam/tools-actionsets/TOOL_CountFagpersoner_dokumentasjon /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="TOOL_CountFagpersoner | Sikt teknisk dokumentasjon"/><meta data-rh=true name=description content="Kategori: FSActions / People / Reporting"/><meta data-rh=true property=og:description content="Kategori: FSActions / People / Reporting"/><link data-rh=true rel=icon href=/img/favicon.ico /><link data-rh=true rel=canonical href=https://docs.sikt.no/docs/iam/tools-actionsets/TOOL_CountFagpersoner_dokumentasjon /><link data-rh=true rel=alternate href=https://docs.sikt.no/docs/iam/tools-actionsets/TOOL_CountFagpersoner_dokumentasjon hreflang=en /><link data-rh=true rel=alternate href=https://docs.sikt.no/docs/iam/tools-actionsets/TOOL_CountFagpersoner_dokumentasjon hreflang=x-default /><link rel=stylesheet href=/assets/css/styles.71814bc5.css /><script src=/assets/js/runtime~main.477805eb.js defer></script><script src=/assets/js/main.fbae27a7.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t;document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/sikt_logo.svg /><link rel=preload as=image href=/img/sikt_logo_white.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/sikt_logo.svg alt="Sikt logo" class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/sikt_logo_white.svg alt="Sikt logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">teknisk dokumentasjon</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class=navbarSearchContainer_Bca1><div class=navbar__search><span aria-label="expand searchbar" role=button class=search-icon tabindex=0></span><input id=search_input_react type=search placeholder=Loading... aria-label=Search class="navbar__search-input search-bar" disabled/></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type=button class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>TOOL_CountFagpersoner</h1></header>
+<p>Kategori: FSActions / People / Reporting</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=formål>Formål<a href=#formål class=hash-link aria-label="Direct link to Formål" title="Direct link to Formål" translate=no>​</a></h2>
+<p>Henter og teller fagpersoner fra Felles Studentsystem (FS) via API.
+Analyserer status (aktiv/inaktiv), utenlandsk tilhørighet basert på fødselsnummer,
+og sjekker om personene eksisterer i Portal LDAP med korrekt rolle.</p>
+<p>Brukes til:</p>
+<ul>
+<li class="">Rapportering av antall fagpersoner i FS</li>
+<li class="">Verifisering av datakvalitet og konsistens mellom FS og IAM</li>
+<li class="">Identifisering av utenlandske fagpersoner og deres e-postregistrering</li>
+<li class="">Feilsøking av manglende tilganger for fagpersoner</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=hvordan-kjøre>Hvordan kjøre<a href=#hvordan-kjøre class=hash-link aria-label="Direct link to Hvordan kjøre" title="Direct link to Hvordan kjøre" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=input-parametere>Input-parametere:<a href=#input-parametere class=hash-link aria-label="Direct link to Input-parametere:" title="Direct link to Input-parametere:" translate=no>​</a></h3>
+<ul>
+<li class="">key (string, valgfri): ID for å slå opp en spesifikk person. Hvis tom hentes alle.</li>
+<li class="">mv_session (object, valgfri): Eksisterende databasekobling (for ytelse).</li>
+<li class="">debug (boolean, valgfri): Aktiverer utvidet logging.</li>
+<li class="">write_to_file (boolean, valgfri): Skriver detaljert resultat til CSV-fil.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=eksempler>Eksempler:<a href=#eksempler class=hash-link aria-label="Direct link to Eksempler:" title="Direct link to Eksempler:" translate=no>​</a></h3>
+<ul>
+<li class="">TOOL_CountFagpersoner()                         -- Full rapport til logg</li>
+<li class="">TOOL_CountFagpersoner(null, null, false, true)  -- Full rapport til CSV</li>
+<li class="">TOOL_CountFagpersoner("12345")                  -- Sjekk spesifikk person</li>
+</ul>
+<p>Prosessflyt:</p>
+<ol>
+<li class="">Kobler til RIDB og Portal LDAP</li>
+<li class="">Henter data fra FS API (/personer?fagperson=true)</li>
+<li class="">Itererer gjennom alle sider med resultater</li>
+<li class="">For hver person:<!-- -->
+<ul>
+<li class="">Sjekker om fagperson er aktiv eller inaktiv</li>
+<li class="">Analyserer fødselsnummer for å identifisere utlendinger (D-nummer logikk)</li>
+<li class="">Sjekker e-postadresser (privat vs. institusjon)</li>
+<li class="">Slår opp i Portal LDAP på personløpenummer (pln)</li>
+<li class="">Verifiserer om brukeren har rollen "fs fagperson" i idautoPersonAppRoles2</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=resultat>Resultat<a href=#resultat class=hash-link aria-label="Direct link to Resultat" title="Direct link to Resultat" translate=no>​</a></h2>
+<p>Logger oppsummering til konsoll:</p>
+<ul>
+<li class="">Totalt antall prosesserte</li>
+<li class="">Antall aktive og inaktive fagpersoner</li>
+<li class="">Antall utlendinger med privat og institusjonell e-post</li>
+</ul>
+<p>CSV-eksport (hvis write_to_file=true):</p>
+<ul>
+<li class="">Filbane: /reports/fagpersoner_yyyymmdd.csv</li>
+<li class="">Format: pln;status;pd_status</li>
+<li class="">Innhold: Personløpenummer, FS-status (AKTIV/inaktiv), og status i LDAP
+(AKTIV, inaktiv, Not eligible, eller (not found))</li>
+</ul>
+<p>Feilscenarier:</p>
+<ul>
+<li class="">Tilkoblingsfeil mot database/LDAP -> Stopper kjøring</li>
+<li class="">404 fra FS API -> Logger som slettet kilde, fortsetter/avslutter pent</li>
+<li class="">API-feil -> Prøver igjen opptil 5 ganger før avbrudd</li>
+</ul>
+<p>Skrevet med hjelp av AI</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/sikt-no/docs/tree/master/docs/iam/tools-actionsets/TOOL_CountFagpersoner_dokumentasjon.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"><span class=theme-last-updated>Last updated<!-- --> on <b><time datetime=2026-08-10T13:31:16.000Z itemprop=dateModified>Aug 10, 2026</time></b></span></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#formål class="table-of-contents__link toc-highlight">Formål</a><li><a href=#hvordan-kjøre class="table-of-contents__link toc-highlight">Hvordan kjøre</a><ul><li><a href=#input-parametere class="table-of-contents__link toc-highlight">Input-parametere:</a><li><a href=#eksempler class="table-of-contents__link toc-highlight">Eksempler:</a></ul><li><a href=#resultat class="table-of-contents__link toc-highlight">Resultat</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Sikt Docs</div><ul class="footer__items clean-list"><li class=footer__item><p>Teknisk dokumentasjon på fellesløsningene Sikt leverer for utdanning og forskning.</ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Hvordan bidra?</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://github.com/sikt-no/docs#editing-the-site-directly-from-the-web-browser target=_blank rel="noopener noreferrer" class=footer__link-item>Endre innholdet fra nettleseren</a><li class=footer__item><a href=https://github.com/sikt-no/docs#editing-the-site-locally target=_blank rel="noopener noreferrer" class=footer__link-item>Endre innholdet lokalt</a><li class=footer__item><a href=https://github.com/sikt-no/docs/issues target=_blank rel="noopener noreferrer" class=footer__link-item>Opprette en issue i GitHub</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Kontaktinformasjon</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://sikt.no/kontakt-oss target=_blank rel="noopener noreferrer" class=footer__link-item>Kontakt oss</a><li class=footer__item><a href=https://sikt.no/om-sikt target=_blank rel="noopener noreferrer" class=footer__link-item>Om Sikt</a><li class=footer__item><a href=https://sikt.no/personvernerklaering target=_blank rel="noopener noreferrer" class=footer__link-item>Personvernerklæring</a></ul></div></div><div class="footer__bottom text--center"><div class=margin-bottom--sm><img src=/img/sikt_logo_white.svg alt="Sikt Logo" class="footer__logo themedComponent_mlkZ themedComponent--light_NVdE" width=104 height=28 /><img src=/img/sikt_logo_white.svg alt="Sikt Logo" class="footer__logo themedComponent_mlkZ themedComponent--dark_xIcU" width=104 height=28 /></div><div class=footer__copyright>Copyright © 2026 Sikt – Kunnskapssektorens tjenesteleverandør</div></div></div></footer></div></body>
