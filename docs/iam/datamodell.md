@@ -11,7 +11,7 @@ Databasetabellen inneholder digitale identiteter (definert av en UH-ID) og dens 
 | Field      | Data Type | Field Length | Nullable | Pri Key | Source: master\_employee and master\_student processing |
 | ---------- | --------- | ------------ | -------- | ------- | ------------------------------------------------------- |
 | created_at |           |              | No       |         | Timestamp of identity creation                          |
-| held_by    | varchar   | 36           | No       | X       | UHID - Randomly generated GUID                          |
+| held_by    | varchar   | 36           | No       | X       | UHID - Randomly generated UUID                          |
 | identifier | varchar   | 200          | No       | X       | identifier type + “:” + identifier value                |
 | institution| varchar   |              | No       |         | Source institution                                      |
 | type       | varchar   |              | No       |         | identifier type                                         |
@@ -233,9 +233,9 @@ Portal directory er en LDAP-katalog som inneholder informasjon om brukere.
 
 
 
-| Attribute                        | Display name                 | Description                                                                  | Type                | Example                                                                                                | Mullti valued |
+| Attribute                        | Display name                 | Description                                                                  | Type                | Example                                                                                                | Multi valued |
 | -------------------------------- | ---------------------------- | ---------------------------------------------------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------ | ------------- |
-| idautoID                         | UH-ID                        | UHID (Automatically Generated GUID)                                          | String              | 3ddf4822-77ed-4c27-909e-7c826ca10423                                                                   |               |
+| idautoID                         | UH-ID                        | UHID (Automatically Generated UUID)                                          | String              | 3ddf4822-77ed-4c27-909e-7c826ca10423                                                                   |               |
 | idautoPersonSAMAccountName       | UH-UN (UH username)          | UH username (2+3+4)                                                          | String              | laols0070                                                                                              |               |
 | idautoPersonSystem1ID            | Legacy Username              | Institution unique username                                                  | String              | lao123                                                                                                 |               |
 | idautoPersonSystem2ID            | Legacy Email                 | Institution unique email                                                     | String              | lao123@institution.no                                                                                  |               |
@@ -263,7 +263,7 @@ Portal directory er en LDAP-katalog som inneholder informasjon om brukere.
 | idautoPersonAppRoles7            | Target IDs                   | User identifiers for synced target systems.                                  | String              | \[topdeskoperator:0f24b366-35d4-4891-98d5-b4a372c099ec, topdesk:d03b615b-5a86-47a4-a06d-45925c5431a6\] | ✓             |
 | idautoPersonAppRoles8            | Requested System Entitlements Provisioned| System entitlements that have been requested and provisioned     | String              | \[topdesk:operator, topdeskoperatorgroup:4c28c38f-c1aa-4685-a5d6-dad78923f241]                         | ✓             |
 | idautoPersonAppRoles10           | Business Roles	              | Business roles (tech name)                                                   | String              | \[iam:employee, iam:manager, iam:adm]                                                                  | ✓             |
-| idautoPersonExt5                 | PIN Code                     | PIN Code for accesscard                                                      | String              | 1234                                                                                                   |               |
+| idautoPersonExt5                 | PIN Code                     | PIN Code for accesscard                                                      | AES-128 encrypted String              |                                                                                                    |               |
 | idautoPersonExt6                 | Guest Sponsor                | Guest sponsor (e.g. from GREG)                                               | String              | 15d2de0b-b103-47d8-bddb-f595f8238fb0                                                                   |               |
 | idautoPersonExt9                 | Engagement Tuple             | Multivalued engagement tuple                                                 | String              | ["studentstatus=aktiv\|privatist=false\|student=true" , "1009\|2310 112\|1\|1\|01.01.2012\|31.12.9999"]| ✓             |
 | idautoPersonExt10                | Engagement Types Tuple       | Multivalued engagement types tuple                                           | String              | [roles\|IPH3000\|ERGB\|,position\|institution\|HV-U-NVH\|HV-U-NVH-R\|fcaf059a-7018-4f73-a177-2b4543e9576d]| ✓             |
@@ -327,3 +327,6 @@ Felles IAM provisjonerer brukere og grupper til Active Directory (AD). For hver 
 Felles IAM provisjonerer brukerobjekt til LDAP (Feide). Flere institusjoner har tatt i bruk tjenesten [Feidehotell](https://sikt.no/tjenester/feide-hotell) ved overgang til Felles IAM. Ved bruk av Feidehotell provisjonerer vi attributter som er påkrevd og anbefalt fra [Feide](https://docs.feide.no/reference/schema/info_uh/index.html).
 
 For institusjoner som benytter egen LDAP gjør vi en kartlegging av hvilke attributter som skal provisjoneres til LDAP, utover de som er påkrevd og anbefalt fra Feide.
+
+## Andre Integrasjoner
+Oversikt over alle integrasjoner som er tilgjengelige i Felles IAM vises under "Integrasjoner" i menyen til venstre.
