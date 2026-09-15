@@ -92,4 +92,4 @@ Alle dimensjonssurrogatnøkler lagres med prefiks `zk_dim_`:
 
 ### 6. Lastelogikk og måltabeller
 
-Laster til `gold_okonomi.fak_okonomi` inkrementelt via `write_table_incrementally()` med mulighet for full reload.
+Laster til `gold_okonomi.fak_okonomi` inkrementelt via `write_table_incrementally()` med mulighet for full reload. Parametere styrer om tabellen lastes fullt på nytt eller kun for de siste N år, filtrert på kolonnen `periode`.
