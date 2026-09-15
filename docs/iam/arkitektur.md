@@ -23,16 +23,18 @@ Hovedstegene i IAM består av:
 ## Systemarkitektur
 
 
-Felles IAM innfører ett felles produkt for forsyning, RapidIdentity (RI) fra Identity Automation. RI består av flere komponenter, der de viktigste er:
+Felles IAM innfører ett felles produkt for identitet og tilgangsstyring, RapidIdentity (RI) fra Identity Automation. RI består av flere komponenter, der de viktigste er:
 
 * IdW, eller identitetsvarehus, er et datavarehus brukt på tvers av de ulike institusjonene. Dets hovedformål er å lagre identifikatorer som sikrer nøyaktig identitetskontroll og kriteriematching. IdW består av flere databasetabeller, hvor de mest sentrale er masteridentifikatorer (master identifiers), som spiller en nøkkelrolle i datahåndteringen.
 
-* RIDB (RapidIdentity DataBase) er en struktur som lagrer data lokalt. Den tar inn kildedata, eller rådata, og begynner en prosess for å organisere denne dataen. Først flyttes dataen til "lasttabeller", som er midlertidige lagringssteder. Fra disse lasttabellene blir dataen deretter flyttet til "mastertabellene", som er det endelige lagringsstedet. Mastertabellene hjelper med å holde dataen organisert og lett tilgjengelig.
+* Inst. Portal (Institutsjonsens instans) er en struktur som lagrer data lokalt. Den tar inn kildedata, eller rådata, og begynner en prosess for å organisere denne dataen. Først flyttes dataen til "lasttabeller", som er midlertidige lagringssteder. Fra disse lasttabellene blir dataen deretter flyttet til "mastertabellene", som er strukturerte data på tvers av kildesystem. Mastertabellene hjelper med å holde dataen organisert og lett tilgjengelig.
 
-* Portalen inneholder en lokal lagringsstruktur som kalles "Portal Directory", hvor data blir oppbevart. I tillegg til dette omfatter portalen også Brukerportalen, et verktøy skapt for sluttbrukere og tjenesteforvaltere. Brukerportalen er utformet slik at disse brukerne får muligheten til å håndtere og administrere brukerdata på en effektiv måte.
+* Inst. Portal inneholder også en lokal lagringsstruktur som kalles "Portal Directory", hvor data blir oppbevart. I tillegg til dette omfatter portalen også Brukerportalen, et verktøy skapt for sluttbrukere og tjenesteforvaltere. Brukerportalen er utformet slik at disse brukerne får muligheten til å håndtere og administrere brukerdata på en effektiv måte.
 
-* I tillegg til de tidligere nevnte funksjonene, benyttes også tjenesten [Account Claim](/docs/iam/kontoaktivering). Dette er en tjeneste for å sikre korrekt identifisering og aktivering av kontoer for nye ansatte og studenter. Ved opprettelse av nye brukerkontoer går brukerne gjennom Account Claim for å aktivere kontoen sin. Videre er også Account Claim det verktøyet man bruker for å tilbakestille passord.
+* I tillegg til de tidligere nevnte funksjonene, inngår også tjenesten [Account Claim](/docs/iam/kontoaktivering). Dette er en tjeneste for å sikre korrekt identifisering og aktivering av kontoer for nye ansatte og studenter. Ved opprettelse av nye brukerkontoer går brukerne gjennom Account Claim for å aktivere kontoen sin. Videre er også Account Claim det verktøyet man bruker for å tilbakestille passord.
 
 
 
-![systemarkitektur](/img/iam/systemarkitekturen.png)
+![systemarkitektur](/img/iam/ark20261.png)
+
+Arkitekturoversikt Felles IAM. Blå ramme markerer de komponentene som utgjør tjenesten Felles IAM. Rødmarkert område inkluderer Rapid Identity, levert av Identity Automation. Komponenter utenfor blå ramme inngår i verdikjeden, men er ikke del av tjenesten.
