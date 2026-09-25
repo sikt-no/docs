@@ -3,12 +3,12 @@
 Cybersikkerhetssenteret har et eget bruker- og tilgangshåndteringssystem. I dette systemet får brukere en eduCSC-konto opprettet lokalt. Det gjør at virksomheter som ikke har Feide kan bruke eduCSC-tjenester, og at vi er mer robuste for nedetid. 
 
 Per september 2026 er følgende eduCSC-tjenester innrullert i eduCSC SSO:
-- [eduCSC Portal](trusseletterretning/educsc-portal.md)
+- [eduCSC Portal](educsc-portal.md)
 
 Vi vil utvide løsningen til samtlige eduCSC-tjenester i tiden som kommer:
-- [Peiling](trusseletterretning/peiling.md)
-- [MISP](trusseletterretning/misp.md)
-- [Sikker chat](trusseletterretning/sikker-chat.md)
+- [Peiling](peiling.md)
+- [MISP](misp.md)
+- [Sikker chat](sikker-chat.md)
 
 
 ## Aktivering av tjenesten i Feide

@@ -1,6 +1,6 @@
 # DNS-brannmur
 
-Mange phishing-kampanjer og enkelte typer malware kan enkelt blokkeres ved å hindre oppslag til domenet de peker til. DNS-brannmuren til eduCSC bruker såkalt RPZ til å gjøre dette, og bruker den samme oppdaterte dataen som ligger til grunn for [MS Defender-integrasjonen](trusseletterretning/ms-defender.md) vår. Tjenesten er tilgjengelig for Pluss-kunder. 
+Mange phishing-kampanjer og enkelte typer malware kan enkelt blokkeres ved å hindre oppslag til domenet de peker til. DNS-brannmuren til eduCSC bruker såkalt RPZ til å gjøre dette, og bruker den samme oppdaterte dataen som ligger til grunn for [MS Defender-integrasjonen](ms-defender.md) vår. Tjenesten er tilgjengelig for Pluss-kunder. 
 
 ## Hvordan tjenesten fungerer
 
