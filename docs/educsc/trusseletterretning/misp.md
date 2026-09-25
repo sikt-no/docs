@@ -1,6 +1,6 @@
 # MISP (Malware Information Sharing Platform)
 
-eduCSC publiserer en [MISP-tjener til bruk for deling i sektoren](https://edu.misp.educsc.no). Denne er tilgjenglig for kunder med abonnement Pluss.
+eduCSC publiserer en [MISP-tjener til bruk for deling i sektoren](https://edu.misp.educsc.no). Denne er tilgjenglig for alle kunder. 
 
 Organisasjonen må ha Feide for å få tilgang til tjenesten, men ellers er det ingen krav.
 
