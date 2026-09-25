@@ -1,16 +1,16 @@
 # DNS-brannmur
 
-Mange phishing-kampanjer og enkelte typer malware kan enkelt blokkeres ved å hindre oppslag til domenet de peker til. DNS-brannmuren til eduCSC bruker såkalt RPZ til å gjøre dette, og bruker den samme oppdaterte dataen som ligger til grunn forMS Defender-integrasjonen vår.
+Mange phishing-kampanjer og enkelte typer malware kan enkelt blokkeres ved å hindre oppslag til domenet de peker til. DNS-brannmuren til eduCSC bruker såkalt RPZ til å gjøre dette, og bruker den samme oppdaterte dataen som ligger til grunn for [MS Defender-integrasjonen](ms-defender.md) vår. Tjenesten er tilgjengelig for Pluss-kunder. 
 
 ## Hvordan tjenesten fungerer
 
-Ved blokkering sender vi brukeren videre til et synkehull, hvor vi logger forespørselen og ev. annen relevant informasjon for statistikk- og driftsformål. Brukeren får også opp en nettside som forklarer at forespørselen ble blokkert og en enkel forklaring av hva tjenesten DNS-brannmur er.
+Ved blokkering sender vi brukeren videre til et synkehull, hvor vi logger forespørselen og annen relevant informasjon for statistikk- og driftsformål. Brukeren får også opp en nettside som forklarer at forespørselen ble blokkert og en enkel forklaring av hva tjenesten DNS-brannmur er.
 
 Tjenesten baserer seg på navnetjenerne som Sikt allerede driver. Disse er stabile og geografisk distribuert for å sikre en mest mulig pålitelig tjeneste.
 
 ## Kom i gang
 
-Før du setter i gang må du melde inn hvilke nett som skal beskyttes. Klienter utenfor dette nettet vil ikke få DNS-brannmur. Send detaljene til sak@sikt.no og vi bekrefter når vi har gjort nødvendige oppdateringer på kanten vår.
+Før du setter i gang må du melde inn hvilke nett som skal beskyttes. Klienter utenfor dette nettet vil ikke få DNS-brannmur. Send detaljene til sak@sikt.no og vi bekrefter når vi har gjort nødvendige oppdateringer på vår kant.
 
 Først og fremst må du konfigurere klienter til å bruke navnetjenerne til Sikt:
 

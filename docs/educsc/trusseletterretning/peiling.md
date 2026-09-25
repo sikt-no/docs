@@ -1,6 +1,6 @@
 # Peiling – virksomhetens sikkerhetsdata fra eduCSC
 
-*Peiling* er hvor sikkerhetsdata for din virksomhet fra eduCSC blir gjort tilgjengelige gjennom dashbord og direkteoppslag i datakilder. I Peiling kan du finne data knyttet til sårbarheter og trusler på ditt nettverk og dermed «få peiling» på hva neste steg er. 
+_Peiling_ er hvor sikkerhetsdata for din virksomhet fra eduCSC blir gjort tilgjengelige gjennom dashbord og direkteoppslag i datakilder. I Peiling kan du finne data knyttet til sårbarheter og trusler på ditt nettverk og dermed «få peiling» på hva neste steg er. 
 
 Peiling finner du på https://peiling.educsc.sikt.no.
 

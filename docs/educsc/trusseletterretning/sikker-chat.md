@@ -2,7 +2,7 @@
 
 ## 1. Beskrivelse av tjenesten
 
-Sikker chatløsning for sektoren dekker både IRT-chat for operativt hendelseshåndteringspersonell og CISO-chat for informasjonssikkerhetsansvarlige. Tjenesten forutsetter basisabonnement pluss en kostnadsfri tilleggsavtale som formaliserer et IRT (incident response team eller hendelseshåndteringsteam) og binder begge parter til å behandle informasjon som utveksles etter trafikklysprotokollen (TLP).
+Sikker chatløsning for sektoren dekker både IRT-chat for operativt hendelseshåndteringspersonell og CISO-chat for informasjonssikkerhetsansvarlige. Tjenesten forutsetter basisabonnement samt en kostnadsfri tilleggsavtale som formaliserer et IRT (incident response team eller hendelseshåndteringsteam) og binder begge parter til å behandle informasjon som utveksles etter trafikklysprotokollen (TLP).
 
 *Trafikklysprotokollen (TLP) kan du lese mer om [her](https://www.first.org/tlp/). Kort sagt er all informasjon som ikke eksplisitt er markert som noe annet TLP:AMBER, noe som betyr at den kan deles med andre medlemmer av eget sikkerhetsteam eller andre personer i egen virksomhet som har tjenestlig behov for den.*
 

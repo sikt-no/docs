@@ -1,6 +1,6 @@
 # Defender-integrasjonen til eduCSC
 
-MS Defender er et stadig mer brukt verktøy for å beskytte endepunkt og tjenere i
+_MS Defender_ er et stadig mer brukt verktøy for å beskytte endepunkt og tjenere i
 sektoren. eduCSC tilbyr derfor en integrasjon som mater løsningen med fersk
 etterretning om truslene som vi sporer daglig. Det kommer inn fersk data fra oss
 hvert 10. minutt.
