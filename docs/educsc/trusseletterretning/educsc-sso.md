@@ -8,8 +8,6 @@ Per september 2026 er følgende eduCSC-tjenester innrullert i eduCSC SSO:
 Vi vil utvide løsningen til samtlige eduCSC-tjenester i tiden som kommer:
 - [Peiling](peiling.md)
 - [MISP](misp.md)
-- [Sikker chat](sikker-chat.md)
-
 
 ## Aktivering av tjenesten i Feide
 Før Keycloak kan tas i bruk må organisasjoner som benytter Feide for innlogging aktivere den tilhørende Feide-applikasjonen. Virksomhetens Feide-administrator må logge inn i [Feide Kundeportal](https://kunde.feide.no/) og aktivere applikasjonen «eduCSC SSO». 
