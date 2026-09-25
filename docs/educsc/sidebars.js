@@ -1,6 +1,6 @@
 module.exports = [
   'educsc/index',
-  'educsc/educsc-sso',
+  'educsc/trusseletterretning/educsc-sso',
   'educsc/trusseletterretning/educsc-portal',
   'educsc/trusseletterretning/peiling',
   'educsc/trusseletterretning/ms-defender',
