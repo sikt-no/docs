@@ -25,6 +25,6 @@ I Portalen kan du:
 
 eduCSC Portal benytter [eduCSC SSO](educsc-sso.md) som innloggingsløsning, med mulighet for bruk av Feide i tillegg til passord og MFA. 
 
-Hvis virksomheten ikke har en administrator i Portalen, kan vi aktivere det for dere hvis dere kontakter oss på [IRT-chat](sikker-chat.md) eller kontakt@sikt.no. Administratoren vil deretter kunne legge til flere brukere i virksomheten. 
+Hvis virksomheten ikke har en administrator i Portalen, kan vi aktivere det for dere hvis dere kontakter oss på [IRT-chat](trusseletterretning/sikker-chat.md) eller kontakt@sikt.no. Administratoren vil deretter kunne legge til flere brukere i virksomheten. 
 
 
