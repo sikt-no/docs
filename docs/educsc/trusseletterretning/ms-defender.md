@@ -37,20 +37,16 @@ oppsettes bør gjøres for å få effektiv beskyttelse:
 - Send bestilling til kontakt@sikt.no. MS Defender-integrasjonen er inkludert
 som en del av
 [pluss-abonnementet](https://sikt.no/tjenester/cybersikkerhetssenter-forskning-og-utdanning).
-- Når bestillingen er registrert, kan du sende info om ditt oppsett til eduCSC
-  via din organisasjons egen SRM-kanal på Mattermost. eduCSC trenger følgende
-  informasjon for å kunne aktivere MS Defender-integrasjonen for din
-  organisasjon:
-  - Directory (tenant) ID
-  - Application (client) ID
-  - Client secret
-  - Om du vil skru av blokkering i oppstarten (anbefalt).
-  - Om aktuelt: Et tak på hvor mange indikatorer vi skal synkronisere.
+- Når bestillingen er registrert, kan du konfigurere oppsettet av Defender-integrasjonen direkte i eduCSC Portal. Logg inn i [eduCSC Portal](https://portal.educsc.sikt.no) og naviger deg til «Defender-integrasjon» i venstremenyen. Fyll inn nødvendig data og trykk «Lagre»: 
+  - Azure tenant ID (directory ID)
+  - Azure application ID (client ID)
+  - Azure application secret (client secret)
+  - Maks indikatorer (maks 15 000)
+  - Utløpsdato
+  - «Kun alarmering»:  Om du vil skru av blokkering i oppstarten (anbefalt).
 
-  Du kan også konfigurere MS-defender koblingen direkte i eduCSC Portal. Logg inn i eduCSC Portal og naviger deg til "Microsoft Defender Integrasjon" i menyen til venstre. Fyll inn nødvendig data og trykk "Lagre":
-  ![image](https://github.com/sikt-no/docs/assets/6864506/ecc2b78f-f8c0-411c-9401-2c135ab5ff64)
-
-
+OBS: Korrekt utløpsdato er nødvendig for at eduCSC skal kunne varsle om at kredensialene er i ferd med å utløpe og må fornyes. 
+  
 For mer tekniske detaljer, se gjennomgangen under denne seksjonen.
 
 ## Teknisk oppsett av MS Defender-integrasjon
@@ -90,8 +86,8 @@ Slik går du fram:
     den gir større tilganger enn eduCSC trenger. Mer konkret kan vi med denne tilgangen både se og endre
     indikatorer du eller andre leverandører har lagt inn, som nær alltid er unødvendig.
 - Via «Certificates and secrets», lag en client secret. **Skriv ned innholdet i
-  hemmeligheten**, dvs. «client secret». Husk også at denne må meldes til eduCSC
-  på nytt om hemmeligheten går ut på dato (expiry).
+  hemmeligheten**, dvs. «client secret» og noter samtidig utløpsdatoen (expiry). Husk også at denne må meldes til eduCSC
+  på nytt om hemmeligheten går ut på dato.
 
 Meld deretter følgende tilbake til eduCSC (via IRT-chat):
 
@@ -114,5 +110,4 @@ eller blokkering. Merk at det kan ta noe tid for Microsoft synkroniserer all
 dataen ut på endepunkt.
 
 Ved mistanke om falske positive, kontakt eduCSC via IRT-chat. Dette gjelder
-spesielt ved blokkering. Det samme gjelder om du vil gjøre endringer i oppsettet,
-for eksempel skru på blokkering eller minke antallet indikatorer.
+spesielt ved blokkering.
