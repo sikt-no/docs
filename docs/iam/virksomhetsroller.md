@@ -2,11 +2,14 @@
 title: Virksomhetsroller
 ---
 
-Basert på tilgjengelig informasjon i kildesystemer. Henholdsvis FS og SAP. Kvaliteten på tildeling av virksomhetsroller i IAM, vil avhenge av datakvalitet i kildesystemene.
+Virksomhetsroller (også kalt forretningsroller) tildeles brukeren automatisk basert på tilgjengelig informasjon fra kildesystemene. Kvaliteten og muligheten for å ha fingranulerte virksomhetsroller avhenger av datakvaliteten i kildesystemene.
+Vi tilbyr standardiserte roller som utgangspunkt for nye institusjoner. Det er mulig å utvide med nye roller og å konfigurere eksisterende roller for den enkelte institusjon. Vi ønsker høy grad av standardisering i sektoren, men legger også til rette for lokal tilpasning.
 
-Disse virksomhetsrollene må standardiseres på tvers av institusjonene. Etter hvert som flere og flere institusjoner onboardes felles IAM kan det bli gjort justeringer på virksomhetsrollene som en del av standadardiseringsarbeidet.
+Virksomhetsrollene (forretningsrollene) er første steg i ORG-ERA, som er tilgangskontrollmotoren i Felles IAM.
+ORG-ERA er basert på Organisasjon, Engasjement, Roller og Attributter.
+En bruker kan ha én eller flere virksomhetsroller basert på brukerens tilknytning til institusjonen. Modellen støtter Role-Based Access Control (RBAC) og Attribute-Based Access Control (ABAC). 
 
-Virksomhetsrollene må utvikles over tid. Dette er startoppstillingen ved Felles IAM sommeren 2021:
+Virksomhetsrollene utvikles over tid. Tabellen under viser utgangspunktet i Felles IAM fra sommeren 2021:
 
 | Virksomhetsrolle | Beskrivelse |
 | --- | --- |
@@ -24,7 +27,7 @@ Virksomhetsrollene må utvikles over tid. Dette er startoppstillingen ved Felles
 | Kursstudent | |
 | Privatist | |
 | Gjest | |
-| Emereti | |
+| Emeriti | |
 | Gjesteforsker | |
 | Konsulent | |
 | Kortvarig gjest | |
