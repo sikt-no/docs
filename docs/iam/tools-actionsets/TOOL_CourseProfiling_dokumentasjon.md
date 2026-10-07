@@ -8,12 +8,12 @@ Kategori: Tool / EVU / Kurs / Profiling
 
 Henter og analyserer kursdeltakelse fra MetaVault (RIDB) for EVU-kurs (etter- og
 videreutdanning). Verktøyet sjekker også mot Portal Directory (LDAP) om deltakerne
-har fått tildelt forventet virksomhetsrolle (iam:courseattendant), og kan trigge
+har fått tildelt forventet forretningsrolle (iam:courseattendant), og kan trigge
 reprocessing for brukere som ikke er korrekt provisjonert.
 
 Brukes til:
 - Troubleshooting av kursdeltakelse og provisjonering for EVU-studenter
-- Verifisere at deltakere på et kurs har fått riktig virksomhetsrolle i Portal
+- Verifisere at deltakere på et kurs har fått riktig forretningsrolle i Portal
 - Identifisere deltakere med feil status (ikke aktive, ikke akseptert, mangler rolle)
 - Se alle EVU-kurs en spesifikk bruker er påmeldt
 - Trigge reprocessing for uprovisionerte deltakere på et kurs
@@ -45,7 +45,7 @@ Ved søk på course_code + term vises en tabell over deltakere med kolonnene:
 Kolonnebeskrivelse:
 - Active:  Om kurset er aktivt i master_evucourse (1 = ja)
 - Accept:  Deltakerens response_status_code fra FS (J = akseptert)
-- InPD:    Om brukeren har virksomhetsrollen iam:courseattendant i Portal Directory (J = ja)
+- InPD:    Om brukeren har forretningsrollen iam:courseattendant i Portal Directory (J = ja)
 
 Fargekoding per deltaker:
 - MØRK GRØNN: Alt OK – aktiv, akseptert og har riktig rolle i Portal

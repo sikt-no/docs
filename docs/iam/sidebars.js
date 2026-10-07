@@ -31,7 +31,7 @@ module.exports = [
   },
   'iam/livssyklus',
   'iam/brukernavn',
-  'iam/virksomhetsroller',
+  'iam/forretningsroller',
   {
     type: 'category',
     label: 'Funksjonsbeskrivelser',

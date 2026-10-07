@@ -6,7 +6,7 @@ Kategori: Report / Business Roles
 
 ## Formål
 
-Genererer en rapport over alle virksomhetsroller (business roles) i 
+Genererer en rapport over alle forretningsroller (business roles) i 
 idautoPersonAppRoles10 og viser kombinasjoner av roller som brukere har.
 Identifiserer hvilke roller som ofte forekommer sammen.
 

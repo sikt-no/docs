@@ -10,7 +10,7 @@ title: Gevinster ved Felles IAM
 
 Les mer om
 * [Felles IAM brukernavn og identifikatorer](/docs/iam/brukernavn)
-* [Felles IAM virksomhetsroller](/docs/iam/virksomhetsroller)
+* [Felles IAM forretningsroller](/docs/iam/forretningsroller)
 * [Felles IAM livssyklus](/docs/iam/livssyklus)
 
 ###  Økt sikkerhet

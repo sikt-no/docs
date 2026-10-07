@@ -16,7 +16,7 @@ og for mulig gevinstrealisering se [Gevinster ved Felles IAM](/docs/iam/gevinste
 ### Brukerkonto (tilgang)
 
 [Livssyklus for identitet og tilgang](/docs/iam/livssyklus) har som utgangspunkt å opprette, endre og fjerne brukerkontoer basert på data fra [kildesystemer](/docs/iam/kildedata). 
-En av de mest sentrale funksjonalitetene i Felles IAM er [tilgangsstyring til målsystemer](/docs/iam/tilgangsstyring), hvor tilganger kan settes basert på [virksomhetsroller](/docs/iam/virksomhetsroller).
+En av de mest sentrale funksjonalitetene i Felles IAM er [tilgangsstyring til målsystemer](/docs/iam/tilgangsstyring), hvor tilganger kan settes basert på [forretningsroller](/docs/iam/forretningsroller).
 
 Felles IAM kan identifisere en person på tvers av utdanningsinstitusjoner, og [generere et nasjonalt unikt brukernavn og en identifikator](/docs/iam/brukernavn).
 Når en bruker møter en utdanningsinstitusjon for første gang, skjer det via et unikt brukergrensesnitt [Account Claim](/docs/iam/kontoaktivering), hvor man blant annet setter passordet, i henhold til [Passordpolicy](/docs/iam/passordpolicy). 
