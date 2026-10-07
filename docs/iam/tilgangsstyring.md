@@ -2,13 +2,13 @@
 title: Tilgangsstyring
 ---
 
-I Felles IAM styres tilganger av tilgangskontrollmotoren ORG-ERA som automatisk tildeler brukeren [virksomhetsroller](/docs/iam/virksomhetsroller) basert på data fra kildesystemene. Brukeren blir deretter automatisk provisjonert til målsystemene sine basert på virksomhetsrollene. For hvert målsystem finnes et regelsett som tildeler systemrettigheter i målsystemet basert på virksomhetsrollene og organisatorisk tilhørighet.
+I Felles IAM styres tilganger av tilgangskontrollmotoren ORG-ERA som automatisk tildeler brukeren [forretningsroller](/docs/iam/forretningsroller) basert på data fra kildesystemene. Brukeren blir deretter automatisk provisjonert til målsystemene sine basert på forretningsrollene. For hvert målsystem finnes et regelsett som tildeler systemrettigheter i målsystemet basert på forretningsrollene og organisatorisk tilhørighet.
 
 [Les også om identitet livssyklus](/docs/iam/livssyklus) som også omhandler livssyklus for tilganger.
 
 Vi definerer:
 
-* Virksomhetsrolle - en rolle du har basert på rollen du har i organisasjonen. En virksomhetsrolle er også knyttet til en organisasjonsenhet.
+* Forretningsrolle - en rolle du har basert på rollen du har i organisasjonen. En forretningsrolle er også knyttet til en organisasjonsenhet.
 * Systemrettighet - en tilgang du har blitt tildelt i et spesifikt målsystem. Begrepet *entitlements* brukes også ofte om dette. Vi skiller mellom:
   * system entitlements, som gir deg tilgang til et målsytem.
   * access enttilements, som gir deg spesifikke rettigheter innad i et målsystem
@@ -27,7 +27,7 @@ Eksempel på tildeling av systemrettigheter for Kari på studieadminsitrasjon:
 
 ![](/img/iam/tilgangsstyring3.png)
 
-I selvbejeningsgrensesnittet til Felles IAM vises både virksomhetsroller og tilgangen brukeren har i målsystemene:
+I selvbejeningsgrensesnittet til Felles IAM vises både forretningsroller og tilgangen brukeren har i målsystemene:
 
 ![](/img/iam/tilgangsstyring4.png)
 
@@ -46,14 +46,14 @@ Figur 7: Eksempel på prosessering av "Joiner" (AMF/ORG-ERA)
 
 
 
-## Virksomhetsroller
+## Forretningsroller
 
 * Basert på tilgjengelig informasjon i kildesystemer.
 * Avhengig av datakvalitet i kildesystemer
 * Standardiseres på tvers av institusjoner
 * Må utvikles/utvides over tid
 
-[Oversikt over virksomhetsroller](/docs/iam/virksomhetsroller)
+[Oversikt over forretningsroller](/docs/iam/forretningsroller)
 
 
 ## Regelmotor
@@ -64,7 +64,7 @@ Figur 7: Eksempel på prosessering av "Joiner" (AMF/ORG-ERA)
 * UI for enkelt vedlikehold av regelsettene vil komme i en senere versjon av Felles IAM
 * Per nå regelsett i JSON-format
 
-Tilgangskontrollmotoren ORG-ERA kan sees på som en totrinnsrakett der brukeren først får tildelt virksomhetsrollene sine, som igjen fører til automatisk provisjonering til målsystemene. Felles IAM ønsker høyest mulig grad av automatisering og tilbyr ferdige integrasjoner mot mange målsystemer.
+Tilgangskontrollmotoren ORG-ERA kan sees på som en totrinnsrakett der brukeren først får tildelt forretningsrollene sine, som igjen fører til automatisk provisjonering til målsystemene. Felles IAM ønsker høyest mulig grad av automatisering og tilbyr ferdige integrasjoner mot mange målsystemer.
 
 ## Bestillbare rettigheter (tilganger)
 Felles IAM støtter bestillbare rettigheter for de tilgangene som ikke kan gis automatisk.
