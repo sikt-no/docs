@@ -11,14 +11,15 @@ Integrasjonslaget, RI Connect, består av en rekke konnektorer (Action Set) som 
 
 Konnektorene som utvikles skal videreutvikles og forvaltes med tanke på gjenbruk på tvers av institusjoner. Det er med andre ord et mål om at tilpasning til den enkelte institusjon ikke skal gjøres i Action Set-koden, men i all hovedsak i tilgangsregelsettet som utarbeides.
 
-Ettersom RI er master for å opprette og forvalte den unike digitale nasjonale identiteten til alle brukere, UH-ID, vil også kildesystemene   oppdateres med denne informasjonen etter at identiteten er opprettet, eller endret. Dette illustrerer at det er flere kilder til autoritative data, data som inneholder informasjon som evalueres for å bedømme tildeling av roller og tilganger og/eller som fungerer som triggere på slike.
+Ettersom RI er master for å opprette og forvalte den unike digitale nasjonale identiteten til alle brukere, UH-ID, vil også kildesystemene oppdateres med denne informasjonen etter at identiteten er opprettet, eller endret. Dette illustrerer at det er flere kilder til autoritative data, data som inneholder informasjon som evalueres for å bedømme tildeling av roller og tilganger og/eller som fungerer som triggere på slike.
 
 Autoritative datakilder er:
 
-* SAP for ansatte, oppdragstakere, timelønnede og langvarige gjester
+* SAP eller UBW for ansatte, oppdragstakere, timelønnede og langvarige gjester
 * FS for studenter
 * RI for kortvarige gjester. I tillegg er RI master for UH-ID og forretningsroller
-* OrgReg for knytningen mellom organisasjonsenheter i SAP og FS, og som supplement til manglende organisasjonsinformasjon i SAP og FS.
+* GREG alternativ for langvarige gjester på lik linje som SAP/UBW
+* OrgReg for knytningen mellom organisasjonsenheter i SAP og FS, og som supplement til manglende organisasjonsinformasjon i SAP og FS
 
 
 ## Livssyklus tilganger
@@ -93,12 +94,12 @@ Trigger for «Joiner» vil være en melding om aktivStudent (alternativt aktivKl
 Gjester kategoriseres og registreres i henhold til følgende struktur:
 
 | Kategori  | Beskrivelse | Krav til registrering | Register |
-| ---  | --- | --- | --- |
-| Kortvarige gjester | Eksterne uten krav til honorar, der varigheten av forholdet er 30 dager eller mindre. Rettigheter er forhåndsdefinert og begrenset. Brukeren får ikke Feidekonto. | Sponsor angir navn, e-post, sluttdato, og evt. mobiltelefonnummer og fødselsnummer. Gjesten gjennomgår Account claim, og knyttes til sponsorens organisasjonsenhet. Midlertidige brukernavn på formen `etternavn` | RI Institusjonskatalog via RI Portal |
-| Langvarige gjester | Eksterne uten krav til honorar. Rettigheter er forhåndsdefinert og gis ihht det tilgangsregelsett som til enhver tid er gjeldende. | Tilsvarende informasjon som ved ansattregistrering, unntatt forhold som er knyttet til lønn. | SAP |
-| Eksterne administratorer | Systemleverandører som har behov for administratortilgang for systemvedlikehold | TBD (ikke adressert av prosjektet) Registreres som langvarig gjest med utvidete tilgangsrettigheter.| SAP |
-| Oppdragstaker | Eksterne med krav til honorar | De krav som ToA-prosessen stiller | SAP |
-| Ekstern sensor | Ekstern med behov for tilgang til Inspera for sensur av et fag, tildelt i FS gjennom en kommisjon | De krav som ToA-prosessen stiller. Fødselsdato og passnummer kan erstatte norsk fødselsnummer eller D-nummer. YRK 2310121 skal benyttes | SAP |
+| ------------------------- | ------------- | ---------------- | ------------ |
+| Kortvarige gjester | Eksterne uten krav til honorar, der varigheten av forholdet er 30 dager eller mindre. Rettigheter er forhåndsdefinert og begrenset. Brukeren får ikke Feidekonto. | Sponsor angir navn, e-post, sluttdato, og evt. mobiltelefonnummer og fødselsnummer. Gjesten gjennomgår Account claim, og knyttes til sponsorens organisasjonsenhet. Midlertidige brukernavn på formen `etternavn` | RI Institusjonskatalog via RI Portal | 
+| Langvarige gjester | Eksterne uten krav til honorar. Rettigheter er forhåndsdefinert og gis ihht det tilgangsregelsett som til enhver tid er gjeldende. | Tilsvarende informasjon som ved ansattregistrering, unntatt forhold som er knyttet til lønn.| SAP / UBW / GREG | 
+| Eksterne administratorer | Systemleverandører som har behov for administratortilgang for systemvedlikehold | TBD (ikke adressert av prosjektet) Registreres som langvarig gjest med utvidete tilgangsrettigheter.| SAP / UBW |
+| Oppdragstaker | Eksterne med krav til honorar | De krav som ToA-prosessen stiller | SAP / UBW | 
+|Ekstern sensor | Ekstern med behov for tilgang til Inspera for sensur av et fag, tildelt i FS gjennom en kommisjon | De krav som ToA-prosessen stiller. Fødselsdato og passnummer kan erstatte norsk fødselsnummer eller D-nummer. YRK 2310121 skal benyttes | SAP / UBW |
 
 
 ## Deaktivering av tilganger

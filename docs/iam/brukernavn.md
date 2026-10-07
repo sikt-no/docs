@@ -37,6 +37,14 @@ Alle studenter i IAM vil ha en livslang personsentrisk identitet som understøtt
 
 `985651dd-8495-4d89-865b-d2187e96702c`
 
+### ESI – nasjonal identifikasjon
+
+FS gjør i dag oppslag mot IdW for studenter som skal ha Europeisk Student Identifikator 
+(ESI). Verdien lagres i FS og benyttes mot det europeiske ESC-registeret og Europeisk 
+studentbevis. Det er UH-ID som blir brukt som ESI verdi. Vi oppretter UH-ID for alle studenter 
+som trenger en ESI, uavhengig av hvilken institusjon du tilhører. Felles IAM er dermed 
+allerede et nasjonalt oppslagspunkt for identifikasjon innenfor utdanning ([for mer info se FS](https://fs.sikt.no/utviklerhandbok/konsument/tilgangskontrollogg/2025-11-17-tilgang_til_student_esi/)).
+
 ## Identifikator i kildesystemer
 
 ### Identifikator i SAP
