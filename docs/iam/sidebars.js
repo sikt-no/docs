@@ -50,6 +50,7 @@ module.exports = [
   {
     type: 'category',
     label: 'Integrasjoner',
+    link: { type: 'doc', id: 'iam/integrasjoner/index' },
     items: [
       'iam/integrasjoner/Active Directory',
       'iam/integrasjoner/Alma',
@@ -78,6 +79,7 @@ module.exports = [
   {
     type: 'category',
     label: 'Tools actionsets',
+    link: { type: 'doc', id: 'iam/tools-actionsets/index' },
     items: [
       'iam/tools-actionsets/QueryIDW_dokumentasjon',
       'iam/tools-actionsets/QueryMergeUserInfo_dokumentasjon',
