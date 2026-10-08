@@ -13,6 +13,7 @@ module.exports = [
       'iam/scim',
       'iam/passordpolicy',
       'iam/rapportering',
+      'iam/konfigurasjon',
     ],
   },
   {
