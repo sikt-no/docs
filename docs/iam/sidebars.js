@@ -43,6 +43,7 @@ module.exports = [
       'iam/epost',
       'iam/life-cycle-students',
       'iam/systemroller',
+      'iam/grupper',
       'iam/logger',
     ],
   },
