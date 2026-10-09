@@ -6,7 +6,7 @@ Grupper i Felles IAM brukes til å samle brukere som skal nås eller samarbeide 
 
 ## Gruppemodulen
 
-Grupper opprettes, vedlikeholdes og slettes i modulen «Groups» i brukergrensesnittet til Felles IAM. For hver gruppe kan institusjonen definere:
+Grupper opprettes, vedlikeholdes og slettes i modulen «Grupper» i brukergrensesnittet til Felles IAM. For hver gruppe kan institusjonen definere:
 
 - hvem som eier gruppen
 - hvem som kan vedlikeholde gruppen
