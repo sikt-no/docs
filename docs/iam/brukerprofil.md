@@ -8,7 +8,7 @@ Under finner du beskrivelse av feltene som kan styres direkte:
 
 ## Foretrukket visningsnavn
 
-Brukere som ønsker å bruke et annet navn enn det folkeregistrerte, kan få endret fornavn og/eller etternavn. Institusjonen velger én av tre måter å håndtere dette på:
+Brukere som ønsker å bruke et annet navn enn det som står i folkeregisteret, kan få endret fornavn og/eller etternavn. Institusjonen velger én av tre måter å håndtere dette på:
 
 - **Bestillbar rettighet:** Brukeren oppgir ønsket navn i en [bestilling](/docs/iam/tilgangsstyring#bestillbare-rettigheter-tilganger), som godkjennes automatisk eller av leder eller en godkjenningsgruppe.
 - **Direkte endring:** Brukeren skriver inn navnet selv i Felles IAM, uten godkjenning.
@@ -37,5 +37,5 @@ Brukere som ikke ønsker å bli publisert på institusjonens nettsider, kan rese
 
 ## Kontor- og Teams-telefoni
 
-Felles IAM kan holde oversikt over institusjonens tilgjengelige telefonnumre og tildele dem automatisk. Brukere som trenger kontortelefon eller telefonnummer i Teams, kan også bestille det gjennom en bestillbar rettighet i selvbetjeningsgrensesnittet. Se også integrasjonen [OfficePhone](/docs/iam/integrasjoner/Officephone).
+Felles IAM kan holde oversikt over institusjonens tilgjengelige telefonnumre og tildele dem automatisk. Alternativt kan brukere som trenger kontortelefon eller telefonnummer i Teams, bestille et nummer gjennom en bestillbar rettighet i selvbetjeningsgrensesnittet. Se også integrasjonen [OfficePhone](/docs/iam/integrasjoner/Officephone).
 
