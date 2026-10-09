@@ -5,7 +5,7 @@ title: Gevinster ved Felles IAM
 ##  Understøtte strategiske mål
 
 * Et felles IAM vil styrke sektorens evne til å håndtere videre digitalisering ved å legge til rette for felles tjenester, harmoniserte prosesser og standardisering. Det vil også understøtte samhandling på tvers av institusjonene, studentmobilitet og livslang læring.
-* Et sektorovergripende identitetsregister med eduID og UHID er sentralt for å sikre at institusjonene kan dokumentere hvem som har tilgang til hvilke ressurser, hvem som har gitt tilgangen, og på hvilket grunnlag. Et felles register bidrar dessuten til å redusere duplikater av identiteter, særlig for personer uten norsk fødselsnummer. Det støtter også utstedelsen av europeisk studentidentifikator (ESI).
+* Et nasjonalt identitetsregister med eduID og UHID er sentralt for å sikre at institusjonene kan dokumentere hvem som har tilgang til hvilke ressurser, hvem som har gitt tilgangen, og på hvilket grunnlag. Et felles register bidrar dessuten til å redusere duplikater av identiteter, særlig for personer uten norsk fødselsnummer. Det støtter også utstedelsen av europeisk studentidentifikator (ESI).
 
 
 Les mer om
