@@ -19,7 +19,7 @@ En integrasjon håndterer hele livssyklusen til brukeren i målsystemet:
 
 Hvilke brukere som provisjoneres til et målsystem, styres av [forretningsroller](/docs/iam/forretningsroller) og [bestillbare rettigheter](/docs/iam/tilgangsstyring#bestillbare-rettigheter-tilganger).
 
-De fleste integrasjonene kommuniserer med målsystemet via API, for eksempel REST, GraphQL eller SOAP. Andre kobler seg direkte til målsystemet via LDAP eller databasetilkobling, eller genererer filer, for eksempel CSV eller XML, som overføres via SFTP.
+De fleste integrasjonene kommuniserer med målsystemet via API, for eksempel REST, GraphQL eller SOAP. Noen kobler seg direkte til målsystemet, for eksempel via LDAP eller en databasetilkobling. Andre genererer filer i formater som CSV eller XML, som overføres via SFTP.
 
 ## Tilbakeskriving
 
@@ -33,7 +33,7 @@ Vi utvikler også nye integrasjoner basert på innspill fra institusjonene. Kost
 
 ## Vedlikehold
 
-Integrasjonene vedlikeholdes og oppdateres jevnlig. Når det skjer endringer i et målsystem, eller når det er ønske om ny funksjonalitet, oppdaterer vi integrasjonen, og oppdateringen kommer alle institusjonene som bruker den til gode. Behovet for vedlikehold fanger vi opp både selv og gjennom innspill fra institusjonene.
+Integrasjonene vedlikeholdes og oppdateres jevnlig. Når et målsystem endres, eller det er ønske om ny funksjonalitet, oppdaterer vi integrasjonen. Alle institusjonene som bruker den, får dermed nytte av oppdateringen. Behovet for vedlikehold fanger vi opp både selv og gjennom innspill fra institusjonene.
 
 ## Dokumentasjon for hver integrasjon
 
