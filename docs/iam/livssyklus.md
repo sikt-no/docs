@@ -98,7 +98,7 @@ Gjester kategoriseres og registreres i henhold til følgende struktur:
 | Kortvarige gjester | Eksterne uten krav til honorar, der varigheten av forholdet er 30 dager eller mindre. Rettigheter er forhåndsdefinert og begrenset. Brukeren får ikke Feidekonto. | Sponsor angir navn, e-post, sluttdato, og evt. mobiltelefonnummer og fødselsnummer. Gjesten gjennomgår Account claim, og knyttes til sponsorens organisasjonsenhet. Midlertidige brukernavn på formen `etternavn` | RI Institusjonskatalog via RI Portal | 
 | Langvarige gjester | Eksterne uten krav til honorar. Rettigheter er forhåndsdefinert og gis ihht det tilgangsregelsett som til enhver tid er gjeldende. | Tilsvarende informasjon som ved ansattregistrering, unntatt forhold som er knyttet til lønn.| SAP / UBW / GREG | 
 | Eksterne administratorer | Systemleverandører som har behov for administratortilgang for systemvedlikehold | TBD (ikke adressert av prosjektet) Registreres som langvarig gjest med utvidete tilgangsrettigheter.| SAP / UBW / GREG |
-| Oppdragstaker | Eksterne med krav til honorar | De krav som ToA-prosessen stiller | SAP / UBW | 
+| Oppdragstaker | Eksterne med krav til honorar | De krav som ToA-prosessen stiller | SAP / UBW / GREG | 
 |Ekstern sensor | Ekstern med behov for tilgang til Inspera for sensur av et fag, tildelt i FS gjennom en kommisjon | De krav som ToA-prosessen stiller. Fødselsdato og passnummer kan erstatte norsk fødselsnummer eller D-nummer. YRK 2310121 skal benyttes | SAP / UBW / GREG |
 
 
