@@ -21,7 +21,9 @@ oppgraderingsnotater.
 
 ## Tjenester
 
-Det er Xymon og Apache som må kjøre for at tjenesten skal virke.
+Det er Xymon og webtjeneren som må kjøre for at tjenesten skal virke.
+Webtjeneren er enten nginx eller Apache, avhengig av kassen (se
+[Webtjener](brukerdok.md#webtjener) i brukerdokumentasjonen).
 
 **xymon**
 
@@ -29,7 +31,14 @@ Det er Xymon og Apache som må kjøre for at tjenesten skal virke.
 -   Start/stop: `systemctl {start|stop|restart} xymon`
 -   Configfiler: `/etc/xymon/`
 
-**apache2**
+**nginx** (kasser med nginx)
+
+-   Daemon: `/usr/sbin/nginx`
+-   Start/stopp: `systemctl {start|stop|restart|reload} nginx`
+-   config: `/etc/nginx/sites-enabled/vk-navsite.conf`, med Xymon-delen i
+    `/etc/nginx/snippets/vk-xymon.conf`
+
+**apache2** (kasser med Apache)
 
 -   Daemon: `/usr/sbin/apache2`
 -   Start/stopp: `systemctl {start|stop|restart|reload} apache2`
