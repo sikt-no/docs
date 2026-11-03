@@ -70,6 +70,7 @@ module.exports = [
       'iam/integrasjoner/Pureservice',
       'iam/integrasjoner/Salto',
       'iam/integrasjoner/Servicenow',
+      'iam/integrasjoner/Sikt KI',
       'iam/integrasjoner/TopDesk',
       'iam/integrasjoner/Wiseflow',
       'iam/integrasjoner/Writebacktodfo',
