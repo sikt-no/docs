@@ -26,13 +26,13 @@ Det er Xymon og Apache som må kjøre for at tjenesten skal virke.
 **xymon**
 
 -   Daemon:
--   Start/stop: `/etc/init.d/xymon {start/stop/restart}`
+-   Start/stop: `systemctl {start|stop|restart} xymon`
 -   Configfiler: `/etc/xymon/`
 
 **apache2**
 
 -   Daemon: `/usr/sbin/apache2`
--   Start/stopp: `/etc/init.d/apache2 {start/stop/restart/reload}`
+-   Start/stopp: `systemctl {start|stop|restart|reload} apache2`
 -   config: `/etc/apache2/sites-enabled/25-nav-secure.conf`
 
 ## Brukerdokumentasjon
