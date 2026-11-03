@@ -78,15 +78,32 @@ Blant kommandoene som kan kjøres via sudo er:
 
 - `nav`: Generell kommando for å kontrollere nav
 
-- `systemctl reload apache2`: Relaste konfigurasjon for webtjeneren
+- `systemctl reload nginx` eller `systemctl reload apache2`: Relaste
+  konfigurasjon for webtjeneren (se [Webtjener](#webtjener) for hvilken
+  kassen din bruker)
 
 - `systemctl [start|stop] nfsen`: Starte/stoppe NfSen
 
-For å relaste apache webtjeneren kan man feks kjøre kommandoen:
+For å relaste webtjeneren på en kasse med nginx kan man feks kjøre
+kommandoen:
 
 ```shell
-sudo systemctl reload apache2
+sudo systemctl reload nginx
 ```
+
+## Webtjener
+
+Verktøykassene er i ferd med å gå over fra Apache til nginx som
+webtjener. Webtjeneren serverer NAV, Xymon og NfSen. Du kan sjekke hvilken
+webtjener kassen din bruker med kommandoen:
+
+```shell
+systemctl is-active nginx apache2
+```
+
+Den av dem som svarer `active` er i bruk. Tilgangsloggene for webtjeneren
+finner du i systemd-journalen på kasser med nginx (`journalctl -t nginx`),
+og i katalogen `/var/log/apache2/` på kasser med Apache.
 
 ## tftp
 

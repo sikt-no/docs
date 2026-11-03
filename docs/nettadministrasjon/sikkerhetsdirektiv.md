@@ -116,7 +116,7 @@ verktøykassene. Brukertilgang er bl.a. nødvendig for å håndtere
 tftp-tjenesten. Det er også nødvendig for å se i loggfiler, se i netflow
 rådatafiler (men her er det meste tilgjengelig via web) og i database
 m.m. Drifspersonale gis også et tilstrekkelig sett av sudo rettigheter
-slik at man lokalt kan restarte nav, apache, nfsen m.m. Det forutsettes
+slik at man lokalt kan restarte nav, webtjeneren, nfsen m.m. Det forutsettes
 at lokalt driftspersonale har en brukeradferd som samsvarer med de
 privilegier som er gitt.
 
