@@ -29,6 +29,7 @@ module.exports = [
     items: [
       'iam/tilgangsstyring',
       'iam/brukerprofil',
+      'iam/personvernerklaering',
     ],
   },
   'iam/livssyklus',
