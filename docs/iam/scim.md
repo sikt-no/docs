@@ -2,8 +2,8 @@
 title: SCIM API
 ---
 
-**Versjon:** 4.0  
-**Dato:** 4. februar 2026  
+**Versjon:** 4.4  
+**Dato:** 16. november 2026  
 **Generasjon:** Felles IAM G4
 
 Dette dokumentet beskriver Felles IAM SCIM API-implementasjonen, inkludert LDAP-til-SCIM attributt-mappinger, API-responsstrukturer og eksterne avhengigheter.
@@ -21,10 +21,10 @@ Lenke til [Swagger fil](https://sikt-dev.eu001-rapididentity.com/api/rest/restpo
 
 ## Innholdsfortegnelse
 
-1. [Brukerressurs (/Users)](#brukerressurs)
+1. [Brukerressurs (/Users)](#brukerressurs-users)
    - [Brukerobjektstruktur](#brukerobjektstruktur)
    - [Brukerattributt-mappinger](#brukerattributt-mappinger)
-2. [Grupperessurs (/Groups)](#grupperessurs)
+2. [Grupperessurs (/Groups)](#grupperessurs-groups)
    - [Gruppeobjektstruktur](#gruppeobjektstruktur)
    - [Gruppeattributt-mappinger](#gruppeattributt-mappinger)
 3. [Attributt-transformasjoner](#attributt-transformasjoner)
@@ -44,7 +44,8 @@ Brukerressursen returnerer følgende JSON-struktur:
   "schemas": [
     "urn:ietf:params:scim:schemas:core:2.0:User",
     "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
-    "no:edu:scim:user"
+    "no:edu:scim:user",
+    "no:edu:scim:custom"
   ],
   "id": "UHID",
   "externalId": "UHID",
@@ -129,6 +130,9 @@ Brukerressursen returnerer følgende JSON-struktur:
       }
     ]
   },
+  "no:edu:scim:custom": {
+    "idautoPersonAppRoles2": ["verdi1", "verdi2"]
+  },
   "meta": {
     "resourceType": "User",
     "created": "2024-01-15T10:30:00Z",
@@ -137,6 +141,8 @@ Brukerressursen returnerer følgende JSON-struktur:
   }
 }
 ```
+
+`no:edu:scim:custom` er bare med når institusjonen har konfigurert egne attributter (se [Custom-utvidelse](#custom-utvidelse-noeduscimcustom)).
 
 ### Brukerattributt-mappinger
 
@@ -148,7 +154,7 @@ Brukerressursen returnerer følgende JSON-struktur:
 | `externalId` | `idautoID` | Streng | Ingen | Unik bruker-ID (UHID) |
 | `userName` | `idautoPersonSystem5ID` | Streng | Ingen | Brukerens innloggingsnavn (Feide ID) |
 | `displayName` | `displayName` | Streng | Beregnet fra foretrukket navn | Visningsnavn for brukeren |
-| `name.formatted` | `displayName` | Streng | Ingen | Formatert fullt navn |
+| `name.formatted` | `givenName`, `middleName`, `sn` | Streng | Satt sammen av fornavn, mellomnavn og etternavn (foretrukne navn brukes hvis tilgjengelig) | Formatert fullt navn |
 | `name.familyName` | `sn` | Streng | Bruker `idautoPersonPreferredLastName` hvis tilgjengelig | Etternavn |
 | `name.givenName` | `givenName` | Streng | Bruker `idautoPersonPreferredName` hvis tilgjengelig | Fornavn |
 | `profileUrl` | `idautoPersonProfileUrl` | Streng | Ingen | URL til brukerprofil |
@@ -164,9 +170,6 @@ Brukerressursen returnerer følgende JSON-struktur:
 | `addresses[type=work].locality` | `idautoPersonWorkCity` | Streng | Ingen | Arbeidsadresse by |
 | `addresses[type=work].postalCode` | `idautoPersonWorkPostalCode` | Streng | Ingen | Arbeidsadresse postnummer |
 | `addresses[type=work].country` | `idautoPersonWorkCountry` | Streng | Ingen | Arbeidsadresse land |
-| `addresses[type=home].streetAddress` | `idautoPersonStreetAddress` | Streng | Ingen | Hjemmeadresse gateadresse |
-| `addresses[type=home].locality` | `l` | Streng | Ingen | Hjemmeadresse by |
-| `addresses[type=home].postalCode` | `postalCode` | Streng | Ingen | Hjemmeadresse postnummer |
 | `roles` | `idautoPersonAppRoles10` | Array | Flerverdiet | Forretningsroller |
 | `groups` | `memberOf` | Array | DN konverteres til SCIM-referanse | Gruppemedlemskap |
 | `meta.created` | `createTimestamp` | DatoTid | LDAP→SCIM datoformat | Opprettelsestidspunkt i RI Portalen |
@@ -192,11 +195,22 @@ Brukerressursen returnerer følgende JSON-struktur:
 | `fsPersonNumber` | `idautoPersonSchoolID` | Streng | Ingen | FS-personløpenummer fra Felles Studentsystem |
 | `gregPersonNumber` | `idautoPersonHRID` | Streng | Ingen | GREG-personnummer fra gjesteregistrering |
 | `eduPersonPrincipalName` | `idautoPersonSystem5ID` | Streng | Ingen | Feide ID |
-| `userPrincipalName` | Konfigurerbar | Streng | Standard: `idautoPersonSystem2ID`, fallback: `uid@inst_domain` | UPN hos institusjonen (AD) |
+| `userPrincipalName` | Konfigurerbar | Streng | Standard: `idautoPersonSystem2ID`, fallback: `idautoPersonSystem5ID` | UPN hos institusjonen (AD) |
 | `norEduPersonNIN` | `idautoPersonNationalID` | Streng | **Filtrert fra responser** (kun søk) | Fødselsnummer (kun søk, returneres ikke) |
 | `accountType` | `idautoPersonAffiliations` | Streng | Beregnet: returnerer "primary" hvis gyldige tilknytninger | Kontotype |
 | `primaryOrgUnit` | `idautoPersonDeptCode` | Objekt | Parset: `symbol\|nameNb\|nameEn\|legacyStedkode` | Primær organisasjonsenhet |
-| `orgUnits` | `idautoPersonDeptCodes` | Array | Parset til array av OrgUnit-objekter | Liste over organisasjonsenheter |
+| `orgUnits` | `idautoPersonDeptCodes` | Array | Parset til array av OrgUnit-objekter med `type` `primary` eller `secondary` | Liste over organisasjonsenheter |
+
+For brukere som kun har forretningsrollen `iam:externalnoaccess`, returneres `userName`, `emails`, `eduPersonPrincipalName` og standard `userPrincipalName` som `null`, med mindre `Global.scimExposeExternalNoAccess` er satt til `true`.
+
+#### Custom-utvidelse (`no:edu:scim:custom`)
+
+Institusjonen kan eksponere egne RI-attributter i skjemaet `no:edu:scim:custom` ved å liste dem i `Global.scimCustomAttributes`. Skjemaet er bare med i responsen når variabelen er satt.
+
+- Attributtene angis som en kommaseparert liste uten mellomrom, f.eks. `idautoPersonAppRoles2,idautoPersonAppRoles5`.
+- SCIM-attributtet får samme navn som RI-attributtet.
+- Datatype kan angis med suffiksene `:array`, `:string`, `:bool` eller `:number`. Uten datatype returneres flerverdige attributter som array og enverdige som streng. Eksempelvis kan man tvinge idautoPersonAppRoles2 til å være en array ved å presisere `idautoPersonAppRoles2:array`
+- Attributtene kan brukes i `filter` og `attributes`, f.eks. `filter=no:edu:scim:custom:idautoPersonAppRoles2 eq "verdi1"`.
 
 ---
 
@@ -217,7 +231,7 @@ Grupperessursen returnerer følgende JSON-struktur:
       "value": "bruker-uhid",
       "$ref": "https://.../Users/bruker-uhid",
       "displayName": "Brukernavn",
-      "type": "User"
+      "type": "direct"
     }
   ],
   "meta": {
@@ -239,6 +253,8 @@ Grupperessursen returnerer følgende JSON-struktur:
 | `members` | `member` | Array | DN konverteres til SCIM-referanse | Liste over gruppemedlemmer |
 | `meta.created` | `createTimestamp` | DatoTid | LDAP→SCIM datoformat | Opprettelsestidspunkt |
 | `meta.lastModified` | `modifyTimestamp` | DatoTid | LDAP→SCIM datoformat |
+
+Grupper som er listet i `Global.scimGroupExcludeList` eksponeres ikke, verken i `/Groups` eller i brukerens `groups`.
 
 ---
 
@@ -273,9 +289,11 @@ Attributter som inneholder LDAP Distinguished Names (`memberOf`, `member`, `mana
   "value": "uhid",
   "$ref": "https://base-url/ResourceType/uhid",
   "displayName": "Navn fra displayName/cn",
-  "type": "direct|User"
+  "type": "direct"
 }
 ```
+
+`type` settes bare på `groups` og `members`, ikke på `manager`.
 
 ### Datoformat-konvertering
 
@@ -306,6 +324,8 @@ Til strukturerte objekter:
 }
 ```
 
+`type` finnes bare i `orgUnits`, og er `primary` for brukerens primære enhet og `secondary` for øvrige enheter.
+
 ---
 
 ## Eksterne avhengigheter
@@ -326,7 +346,10 @@ Disse variablene må konfigureres i RapidIdentity Connect-miljøet:
 | `Global.guestAffiliations` | Gjest-tilknytningsverdier | `External,Long Term Guest,...` |
 | `Global.disabledAffiliations` | Deaktiverte konto-tilknytninger | `Separated Employee,Deceased,...` |
 | `Global.shortTermGuestAffiliations` | Korttidsgjest-tilknytninger | `Short-Term Guest` |
-| `Global.DisableMQ` | Deaktiver meldingskø | `true` |
+| `Global.DisableMQ` | Meldinger publiseres kun når verdien er `false` | `false` |
+| `Global.scimCustomAttributes` | RI-attributter som eksponeres i `no:edu:scim:custom` (se [Custom-utvidelse](#custom-utvidelse-noeduscimcustom)) | `idautoPersonAppRoles2:array` |
+| `Global.scimGroupExcludeList` | Grupper (cn) som ikke eksponeres via SCIM | `gruppe1,gruppe2` |
+| `Global.scimExposeExternalNoAccess` | Eksponer brukernavn og e-post for brukere som kun har rollen `iam:externalnoaccess` | `false` |
 
 ### Standardkonfigurasjon (alle institusjoner)
 
@@ -364,18 +387,18 @@ Ligger i Scim prosjektet under 'Files':
 | Operator | Beskrivelse | Eksempel | LDAP-oversettelse |
 |----------|-------------|----------|-------------------|
 | `eq` | Er lik | `userName eq "bruker@inst.no"` | `(attr=verdi)` |
-| `ne` | Er ikke lik | `userType ne "Other"` | `(!(attr=verdi))` |
+| `ne` | Er ikke lik | `title ne "Konsulent"` | `(!(attr=verdi))` |
 | `co` | Inneholder | `displayName co "Hansen"` | `(attr=*verdi*)` |
 | `sw` | Starter med | `userName sw "ola"` | `(attr=verdi*)` |
 | `ew` | Slutter med | `emails.value ew "@inst.no"` | `(attr=*verdi)` |
-| `gt` | Større enn | `meta.created gt "2024-01-01"` | `(&(attr>=verdi)(!(attr=verdi)))` |
-| `lt` | Mindre enn | `meta.lastModified lt "2024-06-01"` | `(&(attr<=verdi)(!(attr=verdi)))` |
-| `ge` | Større eller lik | `meta.created ge "2024-01-01"` | `(attr>=verdi)` |
-| `le` | Mindre eller lik | `meta.created le "2024-12-31"` | `(attr<=verdi)` |
+| `gt` | Større enn | `meta.created gt "2024-01-01T00:00:00Z"` | `(&(attr>=verdi)(!(attr=verdi)))` |
+| `lt` | Mindre enn | `meta.lastModified lt "2024-06-01T00:00:00Z"` | `(&(attr<=verdi)(!(attr=verdi)))` |
+| `ge` | Større eller lik | `meta.created ge "2024-01-01T00:00:00Z"` | `(attr>=verdi)` |
+| `le` | Mindre eller lik | `meta.created le "2024-12-31T23:59:59Z"` | `(attr<=verdi)` |
 | `pr` | Finnes | `title pr` | `(attr=*)` |
-| `and` | Logisk OG | `active eq true and userType eq "Employee"` | `(&filter1 filter2)` |
-| `or` | Logisk ELLER | `userType eq "Employee" or userType eq "Student"` | `(\|filter1 filter2)` |
-| `not` | Logisk IKKE | `not(userType eq "Other")` | `(!filter)` |
+| `and` | Logisk OG | `active eq true and title pr` | `(&filter1 filter2)` |
+| `or` | Logisk ELLER | `userName eq "ola@inst.no" or userName eq "kari@inst.no"` | `(\|filter1 filter2)` |
+| `not` | Logisk IKKE | `not(title pr)` | `(!filter)` |
 
 ### Ikke-støttede funksjoner
 
@@ -528,27 +551,27 @@ GET /scim/v2/Users?norEduPersonNIN=12345678901
 
 For mer avanserte søk kan du bruke `filter`-parameteren med SCIM-filtersyntaks:
 
-#### Hent aktive ansatte
+#### Hent aktive brukere opprettet etter en dato
 
 ```http
-GET /scim/v2/Users?filter=active%20eq%20true%20and%20userType%20eq%20%22Employee%22
+GET /scim/v2/Users?filter=active%20eq%20true%20and%20meta.created%20ge%20%222024-01-01T00:00:00Z%22
 ```
 
-**Dekodet:** `filter=active eq true and userType eq "Employee"`
+**Dekodet:** `filter=active eq true and meta.created ge "2024-01-01T00:00:00Z"`
 
-**Beskrivelse:** Finner alle brukere som er aktive og har brukertype "Employee".
+**Beskrivelse:** Finner alle aktive brukere som ble opprettet 1. januar 2024 eller senere.
 
 ---
 
-#### Hent ansatte eller studenter
+#### Hent flere brukere med brukernavn
 
 ```http
-GET /scim/v2/Users?filter=userType%20eq%20%22Employee%22%20or%20userType%20eq%20%22Student%22
+GET /scim/v2/Users?filter=userName%20eq%20%22ola%40inst.no%22%20or%20userName%20eq%20%22kari%40inst.no%22
 ```
 
-**Dekodet:** `filter=userType eq "Employee" or userType eq "Student"`
+**Dekodet:** `filter=userName eq "ola@inst.no" or userName eq "kari@inst.no"`
 
-**Beskrivelse:** Finner alle brukere som enten er ansatte eller studenter.
+**Beskrivelse:** Finner brukerne med de oppgitte brukernavnene.
 
 ---
 
@@ -631,12 +654,12 @@ GET /scim/v2/Users?filter=meta.created%20ge%20%222024-01-01T00:00:00Z%22
 #### Kombinere tekstoperatorer med andre filtre
 
 ```http
-GET /scim/v2/Users?filter=userName%20ew%20%22%40inst.no%22%20and%20active%20eq%20true%20and%20userType%20eq%20%22Employee%22
+GET /scim/v2/Users?filter=userName%20ew%20%22%40inst.no%22%20and%20active%20eq%20true
 ```
 
-**Dekodet:** `filter=userName ew "@inst.no" and active eq true and userType eq "Employee"`
+**Dekodet:** `filter=userName ew "@inst.no" and active eq true`
 
-**Beskrivelse:** Finner alle aktive ansatte med institusjonens e-postdomene.
+**Beskrivelse:** Finner alle aktive brukere med institusjonens domene i brukernavnet.
 
 ---
 
@@ -684,7 +707,7 @@ GET /scim/v2/Users?active=true&startIndex=1&count=100
 GET /scim/v2/Users?attributes=userName,displayName,emails
 ```
 
-**Respons:** Returnerer kun `userName`, `displayName` og `emails` for hver bruker.
+**Respons:** Returnerer kun `userName`, `displayName` og `emails` for hver bruker, i tillegg til `id`, som alltid returneres.
 
 ---
 
@@ -742,7 +765,7 @@ GET /scim/v2/Users/550e8400-e29b-41d4-a716-446655440000
 
 ## SCIM-hendelser - Meldingskø
 
-SCIM API-et kan publisere endringsmeldinger til en meldingskø når brukere opprettes, endres eller slettes. Institusjonen er selv ansvarlig for å sette opp og konfigurere meldingskøen som SCIM-systemet skal publisere til.
+SCIM API-et kan publisere endringsmeldinger til en meldingskø når brukere opprettes, endres, aktiveres eller deaktiveres. Institusjonen er selv ansvarlig for å sette opp og konfigurere meldingskøen som SCIM-systemet skal publisere til.
 
 Implementasjonen følger [SCIM Notify-standarden](https://datatracker.ietf.org/doc/html/draft-hunt-scim-notify-00)
 
@@ -752,7 +775,6 @@ Implementasjonen følger [SCIM Notify-standarden](https://datatracker.ietf.org/d
 |------|-------------|
 | `ADD` | Ny bruker opprettet |
 | `MODIFY` | Brukerattributter endret |
-| `DELETE` | Bruker slettet |
 | `ACTIVATE` | Brukerkonto aktivert |
 | `DEACTIVATE` | Brukerkonto deaktivert |
 
@@ -760,7 +782,7 @@ Implementasjonen følger [SCIM Notify-standarden](https://datatracker.ietf.org/d
 
 Meldinger publiseres til emnet (topic): `no.{inst}.iga.scim.user.{hendelsestype}`
 
-inst er basert på Global variabelen `Global.SCIMBaseUrl`
+`inst` er første del av Global-variabelen `Global.inst_domain` (f.eks. gir `uib.no` verdien `uib`).
 
 Eksempel på emne er meldningen "no.uib.iga.scim.user.modify".
 
@@ -775,7 +797,7 @@ Eksempel på meldingsstruktur:
     "https://gw-inst.intark.uh-it.no/scim/v2/Users/uhid-12345"
   ],
   "attributes": [
-    "displayName",
+    "name.formatted",
     "name.givenName",
     "emails[type eq \"work\"]",
     "phoneNumbers[type eq \"work\"]"
@@ -786,9 +808,9 @@ Siden IntArk foretrekker korte/mindre meldinger, så inkluderes ikke `.values` a
 
 **Felter:**
 - `schemas`: SCIM Event-skjema
-- `type`: Hendelsestype (ADD/MODIFY/DELETE/ACTIVATE/DEACTIVATE)
+- `type`: Hendelsestype (ADD/MODIFY/ACTIVATE/DEACTIVATE)
 - `time`: Tidspunkt for hendelsen (ISO 8601)
 - `resourceUris`: URI til den påvirkede ressursen
-- `attributes`: Liste over attributter som ble endret (kun for MODIFY)
+- `attributes`: Liste over attributter som ble endret (for ADD og MODIFY)
 
 ---
