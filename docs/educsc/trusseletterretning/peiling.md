@@ -6,12 +6,12 @@ Peiling finner du på https://peiling.educsc.sikt.no.
 
 ## Få tilgang til Peiling
 
-Peiling benytter [Feide](https://www.feide.no/) som innloggingsløsning. Alle virksomheter tilknyttet eduCSC er allerede gitt tilgang til å aktivere tjenesten i Feide.
+Peiling benytter [eduCSC SSO](educsc-sso.md) som innloggingsløsning, med mulighet for bruk av Feide i tillegg til passord og MFA.
 
 For å få tilgang til [Peiling](https://peiling.educsc.sikt.no) må din virksomhet gjøre følgende:
 1. Sørg for at en bruker med din e-postadresse allerede er lagt til som medlem i din virksomhet i [eduCSC Portalen](https://portal.educsc.sikt.no). En admin i din virksomhet kan legge deg til. 
-1. Din organisasjons **Feide-admin** logger inn i [Feide-kundeportal](https://kunde.feide.no/) og aktiverer tjenesten `eduCSC Peiling`.
-4. Logg inn på [Peiling](https://peiling.educsc.sikt.no) ved bruk av Feide. Merk at tjenesten er begrenset til forskningsnettet (AS224), slik at VPN er nødvendig fra eksterne lokasjoner.
+1. Hvis virksomheten skal bruke Feide for innlogging: Din organisasjons **Feide-admin** logger inn i [Feide-kundeportal](https://kunde.feide.no/) og aktiverer applikasjonen «eduCSC SSO».
+1. Logg inn på [Peiling](https://peiling.educsc.sikt.no) med [eduCSC SSO](educsc-sso.md). Merk at tjenesten er begrenset til forskningsnettet (AS224), slik at VPN er nødvendig fra eksterne lokasjoner.
 
 ## Bruk av Peiling
 

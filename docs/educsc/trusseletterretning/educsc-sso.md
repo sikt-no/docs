@@ -2,17 +2,16 @@
 
 Cybersikkerhetssenteret har et eget bruker- og tilgangshåndteringssystem. I dette systemet får brukere en eduCSC-konto opprettet lokalt. Det gjør at virksomheter som ikke har Feide kan bruke eduCSC-tjenester, og at vi er mer robuste for nedetid. 
 
-Per september 2026 er følgende eduCSC-tjenester innrullert i eduCSC SSO:
-- [eduCSC Portal](educsc-portal.md)
+De fleste virksomheter logger inn med Feide, men Feide er ikke et krav: Virksomheter uten Feide logger inn med passord og 2-faktorautentisering.
 
-Vi vil utvide løsningen til samtlige eduCSC-tjenester i tiden som kommer:
+Per november 2026 er følgende eduCSC-tjenester innrullert i eduCSC SSO:
+- [eduCSC Portal](educsc-portal.md)
 - [Peiling](peiling.md)
 - [MISP](misp.md)
-- [Sikker chat](sikker-chat.md)
 
 
-## Aktivering av tjenesten i Feide
-Før Keycloak kan tas i bruk må organisasjoner som benytter Feide for innlogging aktivere den tilhørende Feide-applikasjonen. Virksomhetens Feide-administrator må logge inn i [Feide Kundeportal](https://kunde.feide.no/) og aktivere applikasjonen «eduCSC SSO». 
+## Innlogging med Feide (valgfritt)
+Virksomheter som vil benytte Feide for innlogging må først aktivere den tilhørende Feide-applikasjonen. Virksomhetens Feide-administrator må logge inn i [Feide Kundeportal](https://kunde.feide.no/) og aktivere applikasjonen «eduCSC SSO». Virksomheter uten Feide kan hoppe over dette steget. 
  
 ## Legge til nye brukere 
 En ny eduCSC-bruker opprettes i Portalen av en eksisterende administrator. Gå til venstremenyen > Min virksomhet > Tilgangsstyring og trykk på knappen «Legg til bruker». Fyll inn brukerens e-postadresse i virksomheten og hvilke tilganger den skal ha. 
