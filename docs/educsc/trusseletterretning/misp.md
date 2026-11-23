@@ -2,7 +2,7 @@
 
 eduCSC publiserer en [MISP-tjener til bruk for deling i sektoren](https://edu.misp.educsc.no). Denne er tilgjenglig for alle kunder. 
 
-Organisasjonen må ha Feide for å få tilgang til tjenesten, men ellers er det ingen krav.
+MISP benytter [eduCSC SSO](educsc-sso.md) som innloggingsløsning, med mulighet for bruk av Feide i tillegg til passord og MFA.
 
 ## Hva er MISP
 
@@ -14,10 +14,13 @@ I tillegg til brukere i MISP, kan man også koble sin egen MISP-tjeneste opp mot
 
 ## Komme i gang med brukere i eduCSC MISP
 
-Før man kan ta i bruk tjenesten, må følgende utføres:
+For å få tilgang til MISP må man ha en bruker i [eduCSC Portal](educsc-portal.md) som er registrert som IRT-medlem:
 
-1. Aktiver tjenesten **eduCSC Education sector MISP** for din organisasjon i [Feide kundeportal](https://kunde.feide.no). Er denne ikke tilgjengeliggjort for din organisasjon, må Sikts servicesenter kontaktes på [kontakt@sikt.no](mailto:kontakt@sikt.no)
-1. Bestill brukere ved å kontakte Sikts servicesenter på [kontakt@sikt.no](mailto:kontakt@sikt.no?subject=Bestilling%20av%20brukere%20i%20eduCSC%20MISP&body=Vi%20bestiller%20herved%20følgende%20brukere%20i%20MISP:%0A%0A-%20fornavn.etternavn@organisasjon.no%0A-%20fornavn.etternavn2@organisasjon.no). Merk at man her skal oppgi brukernes epostadresser (som under feltet `Mail` på [Feide innsyn](https://innsyn.feide.no/aboutme))
+1. En administrator i din virksomhet legger deg til som bruker i Portalen. Se [Legge til nye brukere](https://docs.sikt.no/docs/educsc/trusseletterretning/educsc-sso/#legge-til-nye-brukere).
+1. Administratoren krysser av for «IRT-medlem» under «MISP-tilgang» på brukeren. Det gir rollen User i MISP. Administratoren kan i stedet velge MISP-rollen Publisher eller Org Admin.
+1. Hvis virksomheten skal bruke Feide for innlogging: Aktiver applikasjonen «eduCSC SSO» for din organisasjon i [Feide kundeportal](https://kunde.feide.no).
+
+IRT-medlemmer i Portalen blir automatisk opprettet i MISP. Brukere som ikke er IRT-medlem har ikke tilgang.
 
 ## Kobling MISP-til-MISP
 
