@@ -4,7 +4,7 @@ Cybersikkerhetssenteret har et eget bruker- og tilgangshåndteringssystem. I det
 
 De fleste virksomheter logger inn med Feide, men Feide er ikke et krav: Virksomheter uten Feide logger inn med passord og 2-faktorautentisering.
 
-Per november 2026 er følgende eduCSC-tjenester innrullert i eduCSC SSO:
+Følgende eduCSC-tjenester er innrullert i eduCSC SSO:
 - [eduCSC Portal](educsc-portal.md)
 - [Peiling](peiling.md)
 - [MISP](misp.md)
