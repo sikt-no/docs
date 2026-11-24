@@ -10,7 +10,7 @@ Følgende eduCSC-tjenester er innrullert i eduCSC SSO:
 - [MISP](misp.md)
 
 
-## Innlogging med Feide (valgfritt)
+## Aktivering av tjenesten i Feide
 Virksomheter som vil benytte Feide for innlogging må først aktivere den tilhørende Feide-applikasjonen. Virksomhetens Feide-administrator må logge inn i [Feide Kundeportal](https://kunde.feide.no/) og aktivere applikasjonen «eduCSC SSO». Virksomheter uten Feide kan hoppe over dette steget. 
  
 ## Legge til nye brukere 
